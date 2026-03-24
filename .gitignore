@@ -1,0 +1,30 @@
+# Environment and secrets
+.env
+
+# Browser sessions (login cookies)
+_opensquad/_browser_profile/
+
+# Node
+node_modules/
+
+# IDE / editor
+.vscode/
+.history/
+
+# Playwright cache
+.playwright-cli/
+.playwright-mcp/
+
+# Antigravity
+.antigravity/
+
+# Claude Code local settings
+.claude/settings.local.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+/tmp/
+*.tmp

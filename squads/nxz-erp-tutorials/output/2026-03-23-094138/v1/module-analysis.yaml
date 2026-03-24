@@ -1,0 +1,535 @@
+module:
+  name: point_of_sale
+  path: odoo/addons/point_of_sale
+  description: >
+    Modulo de Ponto de Venda (PDV) do Odoo 12. Permite gerenciar sessoes de caixa,
+    registrar vendas, controlar abertura e fechamento de caixa com controle de numerario.
+    Uma sessao representa um periodo de operacao do caixa (geralmente um dia).
+
+custom_modules:
+  - name: nxz_auto_pos_opening
+    path: addons/nexuz/nxz_auto_pos_opening
+    description: >
+      Modulo Nexuz que adiciona abertura e fechamento automatico de sessoes do PDV
+      via cron job. Permite configurar horarios de abertura/fechamento e um usuario
+      responsavel padrao. Requer que o controle de caixa esteja desativado.
+    relevance: >
+      Automatiza o processo de abertura/fechamento para pontos de venda que operam
+      em horarios fixos sem controle de numerario.
+
+  - name: nxz_pos_close_session
+    path: addons/nexuz/nxz_pos_close_session
+    description: >
+      Modulo Nexuz que permite fechar a sessao diretamente da interface do PDV (frontend),
+      gerencia controle de caixa no fechamento, imprime relatorio Z (relatorio de fim de sessao)
+      e envia relatorio de fechamento por email para usuarios selecionados.
+    relevance: >
+      Extende o fechamento da sessao com relatorio Z e notificacao por email.
+      Adiciona linhas de controle de caixa customizadas ao formulario da sessao.
+
+  - name: nxz_pos_closing_report
+    path: addons/nexuz/nxz_pos_closing_report
+    description: >
+      Modulo Nexuz que adiciona um relatorio de fechamento diario do PDV,
+      disponivel no menu Imprimir da sessao.
+    relevance: >
+      Fornece relatorio imprimivel de fechamento para conferencia do operador e gerente.
+
+navigation:
+  - menu: "Ponto de Venda > Painel"
+    menu_technical_path: "menu_point_root > menu_pos_dashboard"
+    action: action_pos_config_kanban
+    view_type: kanban
+    description: >
+      Tela principal do modulo PDV. Exibe os pontos de venda configurados em cartoes (kanban).
+      A partir daqui o operador pode iniciar uma nova sessao ou retomar/fechar uma existente.
+
+  - menu: "Ponto de Venda > Pedidos > Sessoes"
+    menu_technical_path: "menu_point_root > menu_point_of_sale > menu_pos_session_all"
+    action: action_pos_session
+    view_type: tree/kanban/form
+    description: >
+      Lista todas as sessoes do PDV. Acessivel apenas para gerentes (Gerente do PDV).
+      Permite visualizar sessoes abertas, em fechamento e encerradas.
+    groups:
+      - "Ponto de Venda / Gerente"
+
+personas:
+  - id: operador_caixa
+    name: "Operador de Caixa"
+    access_group: "Ponto de Venda / Usuario"
+    technical_group: point_of_sale.group_pos_user
+    relevance: >
+      O operador de caixa e o principal usuario que abre e fecha sessoes do PDV.
+      Pode criar sessoes, abrir o caixa, realizar vendas e fechar a sessao.
+      Nao pode acessar a lista de sessoes diretamente (somente via Painel).
+    permissions:
+      - "Pode ler e editar sessoes do PDV"
+      - "Pode criar sessoes do PDV"
+      - "Nao pode excluir sessoes"
+      - "Pode ler e editar extratos bancarios vinculados ao PDV"
+      - "Pode definir saldo inicial e final do caixa"
+
+  - id: gerente_pdv
+    name: "Gerente do PDV"
+    access_group: "Ponto de Venda / Gerente"
+    technical_group: point_of_sale.group_pos_manager
+    relevance: >
+      O gerente pode realizar todas as operacoes do operador, alem de acessar
+      a lista de sessoes, configurar pontos de venda, e forcar o fechamento
+      quando ha divergencia acima do limite permitido no saldo de caixa.
+    permissions:
+      - "Todas as permissoes do operador"
+      - "Pode excluir sessoes e extratos"
+      - "Pode acessar o menu Sessoes diretamente"
+      - "Pode forcar fechamento com diferenca acima do limite"
+      - "Pode configurar pontos de venda"
+
+screens:
+  - id: dashboard_kanban
+    name: "Painel do Ponto de Venda"
+    path: "Ponto de Venda > Painel"
+    view_type: kanban
+    description: >
+      Tela inicial do modulo PDV. Mostra cada ponto de venda configurado como um
+      cartao com o status da sessao atual, nome do operador e data do ultimo fechamento.
+    fields:
+      - name: name
+        label: "Nome do Ponto de Venda"
+        type: char
+        required: true
+        help: "Nome do PDV configurado (ex: Caixa Principal, Caixa 01)"
+      - name: current_session_state
+        label: "Status da Sessao"
+        type: selection
+        required: false
+        help: "Estado da sessao atual: Controle de Abertura, Em Andamento, Controle de Fechamento"
+      - name: pos_session_username
+        label: "Operador"
+        type: char
+        required: false
+        help: "Nome do usuario responsavel pela sessao atual"
+      - name: last_session_closing_date
+        label: "Data do Ultimo Fechamento"
+        type: datetime
+        required: false
+        help: "Data e hora do ultimo fechamento de sessao deste PDV"
+      - name: last_session_closing_cash
+        label: "Saldo de Caixa"
+        type: monetary
+        required: false
+        help: "Saldo final de caixa da ultima sessao fechada"
+    buttons:
+      - name: open_session_cb
+        label: "Nova Sessao"
+        action: >
+          Cria uma nova sessao do PDV. Se o controle de caixa estiver desativado,
+          abre diretamente a interface do PDV. Se estiver ativado, abre o formulario
+          da sessao para definir o saldo inicial.
+        visible_when: "Nenhuma sessao ativa e nenhum outro operador usando o PDV"
+      - name: open_ui
+        label: "Continuar Vendendo"
+        action: "Abre a interface de vendas do PDV para a sessao em andamento"
+        visible_when: "Sessao com status Em Andamento"
+      - name: open_existing_session_cb
+        label: "Abrir Sessao"
+        action: "Abre o formulario da sessao no estado Controle de Abertura para definir saldo inicial"
+        visible_when: "Sessao com status Controle de Abertura"
+      - name: open_existing_session_cb
+        label: "Fechar"
+        action: "Abre o formulario da sessao para iniciar o processo de fechamento"
+        visible_when: "Sessao com status Em Andamento ou Controle de Fechamento"
+
+  - id: session_form
+    name: "Formulario da Sessao do PDV"
+    path: "Painel > [Clique no PDV] > Formulario da Sessao"
+    view_type: form
+    description: >
+      Formulario detalhado da sessao. Mostra informacoes do operador, PDV,
+      datas de abertura/fechamento, controle de caixa e resumo por metodo de pagamento.
+    fields:
+      - name: name
+        label: "Identificador da Sessao"
+        type: char
+        required: true
+        readonly: true
+        help: "Codigo sequencial gerado automaticamente (ex: PDV/001)"
+      - name: user_id
+        label: "Responsavel"
+        type: many2one
+        required: true
+        readonly_states: "Editavel apenas no Controle de Abertura"
+        help: "Usuario responsavel pela sessao. Preenchido automaticamente com o usuario logado."
+      - name: config_id
+        label: "Ponto de Venda"
+        type: many2one
+        required: true
+        help: "PDV associado a esta sessao"
+      - name: start_at
+        label: "Data de Abertura"
+        type: datetime
+        required: false
+        readonly: true
+        help: "Data e hora em que a sessao foi aberta. Preenchida automaticamente."
+        visible_when: "Estado diferente de Controle de Abertura"
+      - name: stop_at
+        label: "Data de Fechamento"
+        type: datetime
+        required: false
+        readonly: true
+        help: "Data e hora em que a sessao foi fechada. Preenchida automaticamente."
+        visible_when: "Estado igual a Fechada e Contabilizada"
+      - name: state
+        label: "Status"
+        type: selection
+        required: true
+        readonly: true
+        help: "Estado atual da sessao"
+        options:
+          - value: opening_control
+            label: "Controle de Abertura"
+          - value: opened
+            label: "Em Andamento"
+          - value: closing_control
+            label: "Controle de Fechamento"
+          - value: closed
+            label: "Fechada e Contabilizada"
+      - name: cash_register_balance_start
+        label: "Saldo Inicial"
+        type: monetary
+        required: false
+        readonly: true
+        help: "Total das linhas de controle de caixa na abertura"
+        visible_when: "Controle de caixa ativado"
+      - name: cash_register_total_entry_encoding
+        label: "Transacoes"
+        type: monetary
+        required: false
+        readonly: true
+        help: "Total de todas as transacoes de vendas em dinheiro"
+        visible_when: "Controle de caixa ativado e estado diferente de Controle de Abertura"
+      - name: cash_register_balance_end
+        label: "Saldo Teorico de Fechamento"
+        type: monetary
+        required: false
+        readonly: true
+        help: "Soma do saldo inicial com as transacoes"
+        visible_when: "Controle de caixa ativado e estado diferente de Controle de Abertura"
+      - name: cash_register_balance_end_real
+        label: "Saldo Real de Fechamento"
+        type: monetary
+        required: false
+        readonly: true
+        help: "Total informado pelo operador na contagem de caixa do fechamento"
+        visible_when: "Controle de caixa ativado e estado diferente de Controle de Abertura"
+      - name: cash_register_difference
+        label: "Diferenca"
+        type: monetary
+        required: false
+        readonly: true
+        help: "Diferenca entre o saldo teorico e o saldo real de fechamento"
+        visible_when: "Controle de caixa ativado e estado diferente de Controle de Abertura"
+      - name: statement_ids
+        label: "Resumo por Metodo de Pagamento"
+        type: one2many
+        required: false
+        help: "Lista de extratos bancarios com saldo por metodo de pagamento"
+        visible_when: "Estado diferente de Controle de Abertura"
+        subfields:
+          - name: name
+            label: "Nome"
+          - name: journal_id
+            label: "Diario"
+          - name: balance_start
+            label: "Saldo Inicial"
+          - name: total_entry_encoding
+            label: "Transacoes"
+          - name: balance_end_real
+            label: "Saldo Final Real"
+          - name: difference
+            label: "Diferenca"
+          - name: state
+            label: "Estado"
+      - name: cashcontrol_ids
+        label: "Linhas de Controle de Caixa"
+        type: one2many
+        required: false
+        help: "Linhas customizadas de controle de caixa (adicionadas pelo modulo nxz_pos_close_session)"
+        source_module: nxz_pos_close_session
+        subfields:
+          - name: coin_value
+            label: "Valor da Moeda/Nota"
+          - name: number_of_coins
+            label: "Quantidade"
+          - name: subtotal
+            label: "Subtotal"
+    buttons:
+      - name: action_pos_session_open
+        label: "Abrir Sessao"
+        action: >
+          Muda o estado da sessao de Controle de Abertura para Em Andamento.
+          Registra a data/hora de abertura. Abre os extratos bancarios.
+        visible_when: "Estado = Controle de Abertura E controle de caixa ativado"
+      - name: open_frontend_cb
+        label: "Continuar Vendendo"
+        action: "Abre a interface de vendas do PDV no navegador"
+        visible_when: "Estado = Em Andamento"
+      - name: action_pos_session_closing_control
+        label: "Encerrar Sessao"
+        action: >
+          Inicia o processo de fechamento. Muda o estado para Controle de Fechamento.
+          Se o controle de caixa estiver desativado, fecha e contabiliza automaticamente.
+        visible_when: "Estado = Em Andamento E controle de caixa ativado"
+      - name: action_pos_session_closing_control
+        label: "Validar Fechamento e Contabilizar"
+        action: >
+          Fecha e contabiliza a sessao diretamente (sem etapa intermediaria de controle de caixa).
+        visible_when: "Estado = Em Andamento E controle de caixa desativado"
+      - name: action_pos_session_validate
+        label: "Validar Fechamento e Contabilizar"
+        action: >
+          Valida o fechamento final. Confirma os extratos bancarios, confirma os pedidos
+          e muda o estado para Fechada e Contabilizada. Verifica se a diferenca de caixa
+          esta dentro do limite permitido (se nao, somente gerentes podem forcar).
+        visible_when: "Estado = Controle de Fechamento"
+      - name: open_cashbox_start
+        label: "Definir Saldo Inicial"
+        action: >
+          Abre popup para informar a contagem de notas/moedas para definir o saldo
+          inicial do caixa. Permite informar valor e quantidade de cada nota/moeda.
+        visible_when: "Estado = Controle de Abertura E controle de caixa ativado"
+        location: "Caixa de botoes (stat buttons)"
+      - name: open_cashbox_end
+        label: "Definir Saldo Final"
+        action: >
+          Abre popup para informar a contagem de notas/moedas para definir o saldo
+          real de fechamento do caixa.
+        visible_when: "Controle de caixa ativado E estado diferente de Controle de Abertura e Fechada"
+        location: "Caixa de botoes (stat buttons)"
+      - name: put_money_in
+        label: "Entrada de Dinheiro"
+        action: "Registra uma entrada de dinheiro no caixa (suprimento)"
+        visible_when: "Controle de caixa ativado E estado Em Andamento ou Controle de Fechamento"
+        location: "Caixa de botoes (stat buttons)"
+      - name: take_money_out
+        label: "Saida de Dinheiro"
+        action: "Registra uma retirada de dinheiro do caixa (sangria)"
+        visible_when: "Controle de caixa ativado E estado Em Andamento ou Controle de Fechamento"
+        location: "Caixa de botoes (stat buttons)"
+    workflow_states:
+      - "Controle de Abertura > Em Andamento > Controle de Fechamento > Fechada e Contabilizada"
+
+  - id: session_list
+    name: "Lista de Sessoes"
+    path: "Ponto de Venda > Pedidos > Sessoes"
+    view_type: tree
+    description: >
+      Lista tabular de todas as sessoes. Acessivel apenas para gerentes do PDV.
+    fields:
+      - name: config_id
+        label: "Ponto de Venda"
+        type: many2one
+      - name: name
+        label: "Identificador da Sessao"
+        type: char
+      - name: user_id
+        label: "Responsavel"
+        type: many2one
+      - name: start_at
+        label: "Data de Abertura"
+        type: datetime
+      - name: stop_at
+        label: "Data de Fechamento"
+        type: datetime
+      - name: state
+        label: "Status"
+        type: selection
+
+  - id: cashbox_popup
+    name: "Controle de Caixa (Popup)"
+    path: "Formulario da Sessao > Definir Saldo Inicial / Definir Saldo Final"
+    view_type: form (popup)
+    description: >
+      Janela popup para contagem de notas e moedas. Acessada ao clicar nos botoes
+      Definir Saldo Inicial ou Definir Saldo Final no formulario da sessao.
+      Usa o modelo account.bank.statement.cashbox.
+    fields:
+      - name: cashbox_lines_ids
+        label: "Linhas de Contagem"
+        type: one2many
+        help: "Lista de notas/moedas com valor unitario, quantidade e subtotal"
+        subfields:
+          - name: coin_value
+            label: "Valor Unitario"
+            type: float
+          - name: number
+            label: "Quantidade"
+            type: integer
+          - name: subtotal
+            label: "Subtotal"
+            type: float
+            readonly: true
+
+flows:
+  - name: "Abrir uma Sessao do PDV (com Controle de Caixa)"
+    description: >
+      Fluxo completo para abrir uma nova sessao do Ponto de Venda quando o
+      controle de caixa esta ativado na configuracao do PDV.
+    preconditions:
+      - "O usuario deve ter o grupo Ponto de Venda / Usuario ou Gerente"
+      - "O PDV deve estar configurado (ter diario de vendas e metodos de pagamento)"
+      - "Nao pode haver outra sessao aberta para o mesmo usuario ou mesmo PDV"
+      - "O controle de caixa deve estar ativado na configuracao do PDV"
+    steps:
+      - step: 1
+        action: "Acessar o modulo Ponto de Venda no menu principal"
+        screen: dashboard_kanban
+        screenshot_hint: "Capturar o menu lateral com 'Ponto de Venda' destacado e o Painel aberto"
+      - step: 2
+        action: "Localizar o cartao do PDV desejado no Painel e clicar no botao 'Nova Sessao'"
+        screen: dashboard_kanban
+        screenshot_hint: "Capturar o cartao do PDV com o botao 'Nova Sessao' visivel e destacado"
+        notes: >
+          Se ja houver uma sessao em Controle de Abertura, o botao sera 'Abrir Sessao'
+          em vez de 'Nova Sessao'.
+      - step: 3
+        action: "O sistema abre o formulario da sessao no estado Controle de Abertura. Clicar no botao 'Definir Saldo Inicial' na area de botoes"
+        screen: session_form
+        screenshot_hint: "Capturar o formulario da sessao com estado 'Controle de Abertura' e o botao 'Definir Saldo Inicial' destacado"
+      - step: 4
+        action: "Na janela popup de Controle de Caixa, informar a quantidade de cada nota/moeda presente no caixa e clicar em Confirmar"
+        screen: cashbox_popup
+        screenshot_hint: "Capturar a janela popup com as linhas de contagem de notas/moedas preenchidas"
+      - step: 5
+        action: "De volta ao formulario, verificar o saldo inicial exibido e clicar no botao 'Abrir Sessao'"
+        screen: session_form
+        screenshot_hint: "Capturar o formulario com o saldo inicial preenchido e o botao 'Abrir Sessao' destacado"
+      - step: 6
+        action: "A sessao muda para o estado 'Em Andamento'. O operador pode clicar em 'Continuar Vendendo' para acessar a interface de vendas"
+        screen: session_form
+        screenshot_hint: "Capturar o formulario com estado 'Em Andamento' e o botao 'Continuar Vendendo'"
+
+  - name: "Abrir uma Sessao do PDV (sem Controle de Caixa)"
+    description: >
+      Fluxo simplificado para abrir uma sessao quando o controle de caixa esta
+      desativado. A sessao abre automaticamente e redireciona para a interface de vendas.
+    preconditions:
+      - "O usuario deve ter o grupo Ponto de Venda / Usuario ou Gerente"
+      - "O PDV deve estar configurado"
+      - "O controle de caixa deve estar desativado na configuracao do PDV"
+    steps:
+      - step: 1
+        action: "Acessar o modulo Ponto de Venda no menu principal"
+        screen: dashboard_kanban
+        screenshot_hint: "Capturar o Painel do PDV"
+      - step: 2
+        action: "Clicar no botao 'Nova Sessao' no cartao do PDV desejado"
+        screen: dashboard_kanban
+        screenshot_hint: "Capturar o botao 'Nova Sessao' no cartao do PDV"
+      - step: 3
+        action: "O sistema cria a sessao, abre automaticamente (sem etapa de controle de abertura) e redireciona para a interface de vendas do PDV"
+        screen: dashboard_kanban
+        screenshot_hint: "Capturar a interface de vendas do PDV aberta"
+        notes: >
+          Quando o controle de caixa esta desativado, o metodo create() da sessao
+          ja chama action_pos_session_open() automaticamente, pulando o estado
+          Controle de Abertura.
+
+  - name: "Fechar uma Sessao do PDV (com Controle de Caixa)"
+    description: >
+      Fluxo completo para fechar uma sessao do PDV quando o controle de caixa
+      esta ativado. Inclui contagem de caixa e validacao.
+    preconditions:
+      - "Deve existir uma sessao aberta (estado Em Andamento) para o PDV"
+      - "Todos os pedidos devem estar no estado 'pago' para serem confirmados"
+      - "O controle de caixa deve estar ativado"
+    steps:
+      - step: 1
+        action: "No Painel do PDV, clicar no botao 'Fechar' no cartao do PDV com sessao ativa"
+        screen: dashboard_kanban
+        screenshot_hint: "Capturar o cartao do PDV com badge 'Em Andamento' e o botao 'Fechar' destacado"
+      - step: 2
+        action: "O sistema abre o formulario da sessao. Clicar no botao 'Encerrar Sessao' no cabecalho"
+        screen: session_form
+        screenshot_hint: "Capturar o formulario da sessao com o botao 'Encerrar Sessao' destacado"
+      - step: 3
+        action: "A sessao muda para o estado 'Controle de Fechamento'. Clicar no botao 'Definir Saldo Final' na area de botoes"
+        screen: session_form
+        screenshot_hint: "Capturar o formulario com estado 'Controle de Fechamento' e o botao 'Definir Saldo Final' destacado"
+      - step: 4
+        action: "Na janela popup, informar a contagem de notas/moedas do caixa e clicar em Confirmar"
+        screen: cashbox_popup
+        screenshot_hint: "Capturar a janela popup de controle de caixa com valores preenchidos para o fechamento"
+      - step: 5
+        action: "Verificar o Saldo Real de Fechamento, o Saldo Teorico e a Diferenca. Clicar em 'Validar Fechamento e Contabilizar'"
+        screen: session_form
+        screenshot_hint: "Capturar a area de resumo financeiro com saldo teorico, saldo real e diferenca, e o botao 'Validar Fechamento e Contabilizar'"
+        notes: >
+          Se a diferenca entre o saldo teorico e o real for maior que o limite
+          configurado no diario, somente um gerente pode forcar o fechamento.
+          Usuarios comuns receberao um erro.
+      - step: 6
+        action: "O sistema confirma os pedidos, reconcilia pagamentos, contabiliza os lancamentos e fecha a sessao. O usuario e redirecionado ao Painel"
+        screen: dashboard_kanban
+        screenshot_hint: "Capturar o Painel do PDV apos fechamento, mostrando a data do ultimo fechamento e saldo"
+
+  - name: "Fechar uma Sessao do PDV (sem Controle de Caixa)"
+    description: >
+      Fluxo simplificado para fechar uma sessao quando o controle de caixa
+      esta desativado. O fechamento e validacao acontecem em um unico passo.
+    steps:
+      - step: 1
+        action: "No Painel do PDV, clicar no botao 'Fechar' no cartao do PDV"
+        screen: dashboard_kanban
+        screenshot_hint: "Capturar o botao 'Fechar' no cartao do PDV"
+      - step: 2
+        action: "No formulario da sessao, clicar em 'Validar Fechamento e Contabilizar'"
+        screen: session_form
+        screenshot_hint: "Capturar o formulario com o botao 'Validar Fechamento e Contabilizar'"
+        notes: >
+          Sem controle de caixa, o botao exibido no estado Em Andamento ja e
+          'Validar Fechamento e Contabilizar' (em vez de 'Encerrar Sessao'),
+          pulando a etapa de Controle de Fechamento.
+      - step: 3
+        action: "O sistema fecha e contabiliza automaticamente. Redireciona ao Painel"
+        screen: dashboard_kanban
+        screenshot_hint: "Capturar o Painel apos fechamento"
+
+business_rules:
+  - rule: "Sessao unica por usuario"
+    description: >
+      Um usuario nao pode ter mais de uma sessao ativa (nao fechada) ao mesmo tempo.
+      Se tentar, o sistema exibe: 'Nao e possivel criar duas sessoes ativas com o mesmo responsavel.'
+  - rule: "Sessao unica por PDV"
+    description: >
+      Cada ponto de venda so pode ter uma sessao aberta por vez.
+      Se tentar abrir outra, o sistema exibe: 'Outra sessao ja esta aberta para este ponto de venda.'
+  - rule: "Limite de diferenca de caixa"
+    description: >
+      Se a diferenca entre o saldo teorico e o real de fechamento for maior que
+      o limite configurado no diario de pagamento, somente gerentes do PDV podem
+      forcar o fechamento. Operadores comuns recebem um erro.
+  - rule: "Pedidos devem estar pagos"
+    description: >
+      Para fechar a sessao, todos os pedidos devem estar no estado 'pago'.
+      Pedidos em rascunho impedem o fechamento (o modulo nxz_auto_pos_opening
+      tenta finalizar pagamentos de rascunho automaticamente antes do fechamento).
+  - rule: "Sessao de outro usuario"
+    description: >
+      O operador nao pode usar a sessao de outro usuario para acessar a interface
+      de vendas. O sistema exibe: 'Voce nao pode usar a sessao de outro usuario.'
+
+key_configuration:
+  - field: cash_control
+    label: "Controle de Caixa"
+    location: "Configuracao do PDV"
+    impact: >
+      Quando ativado, requer que o operador informe o saldo inicial na abertura
+      e o saldo final no fechamento. Quando desativado, a sessao abre e fecha
+      automaticamente sem contagem de numerario.
+  - field: journal_ids
+    label: "Metodos de Pagamento"
+    location: "Configuracao do PDV"
+    impact: >
+      Define os metodos de pagamento disponiveis na sessao. Para cada metodo,
+      um extrato bancario e criado automaticamente na abertura da sessao.

@@ -1,0 +1,37 @@
+name: "NXZ ERP Tutorial Pipeline"
+description: "Pipeline para criacao de tutoriais operacionais com screenshots automaticas"
+
+steps:
+  - id: checkpoint-topic
+    file: steps/01-checkpoint-topic.md
+    type: checkpoint
+
+  - id: explore-module
+    file: steps/02-explore-module.md
+    agent: explorer
+    execution: subagent
+    model_tier: powerful
+
+  - id: write-tutorial
+    file: steps/03-write-tutorial.md
+    agent: writer
+    execution: inline
+    format: technical-writing
+
+  - id: checkpoint-review-draft
+    file: steps/04-checkpoint-review-draft.md
+    type: checkpoint
+
+  - id: capture-screenshots
+    file: steps/05-capture-screenshots.md
+    agent: capturer
+    execution: inline
+
+  - id: assemble-final
+    file: steps/06-assemble-final.md
+    agent: assembler
+    execution: inline
+
+  - id: checkpoint-approval
+    file: steps/07-checkpoint-approval.md
+    type: checkpoint

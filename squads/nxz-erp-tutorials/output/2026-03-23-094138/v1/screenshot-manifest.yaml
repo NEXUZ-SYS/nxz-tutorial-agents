@@ -1,0 +1,60 @@
+screenshots:
+  - id: 1
+    file: "01-painel-pdv.png"
+    marker: "[SCREENSHOT: Painel do Ponto de Venda - Menu lateral com Ponto de Venda selecionado - Cartoes dos PDVs visiveis]"
+    path: "screenshots/01-painel-pdv.png"
+    status: captured
+    notes: "Painel com 3 PDVs: PDV 1 (Fechando o Controle), PDV 2 e 3 (Em Andamento)"
+
+  - id: 2
+    file: "02-formulario-sessao-fechando-controle.png"
+    marker: "[SCREENSHOT: Formulario da Sessao - Estado Controle de Fechamento - Botao Definir Saldo Final destacado]"
+    path: "screenshots/02-formulario-sessao-fechando-controle.png"
+    status: captured
+    notes: "Formulario com resumo financeiro, botoes de Reforcar/Sangrar Caixa e Definir saldo de fechamento"
+    also_covers:
+      - "[SCREENSHOT: Formulario da Sessao - Resumo financeiro com saldo teorico, saldo real e diferenca - Botao Validar Fechamento e Contabilizar destacado]"
+      - "[SCREENSHOT: Formulario da Sessao - Estado Em Andamento - Botao Encerrar Sessao destacado]"
+
+  - id: 3
+    file: "03-popup-controle-caixa.png"
+    marker: "[SCREENSHOT: Popup de Controle de Caixa - Linhas de contagem com valores e quantidades preenchidos - Botao Confirmar visivel]"
+    path: "screenshots/03-popup-controle-caixa.png"
+    status: captured
+    notes: "Popup do modelo Controle de Caixa com tabela de Valor/Quantidade/Subtotal e botoes Confirmar/Cancelar"
+    also_covers:
+      - "[SCREENSHOT: Popup de Controle de Caixa - Contagem de fechamento preenchida - Botao Confirmar visivel]"
+
+  - id: 4
+    file: "04-sessao-em-andamento.png"
+    marker: "[SCREENSHOT: Formulario da Sessao - Estado Em Andamento - Botao Continuar Vendendo destacado]"
+    path: "screenshots/04-sessao-em-andamento.png"
+    status: captured
+    notes: "Sessao Em Andamento com botoes Continuar Vendendo e Validar Encerramento e Lancar Entradas"
+
+  - id: 5
+    file: "05-sessao-fechada-lancada.png"
+    marker: "[SCREENSHOT: Painel do Ponto de Venda - Apos fechamento - Data do ultimo fechamento e saldo visivel no cartao]"
+    path: "screenshots/05-sessao-fechada-lancada.png"
+    status: captured
+    notes: "Sessao no estado Fechado e Lancado com Data de Abertura, Data de Fechamento e resumo Validado"
+
+  - id: 6
+    marker: "[SCREENSHOT: Painel do Ponto de Venda - Cartao do PDV com botao Nova Sessao destacado]"
+    status: failed
+    notes: "Nao foi possivel capturar: todos os PDVs tem sessoes ativas neste ambiente de producao"
+
+  - id: 7
+    marker: "[SCREENSHOT: Formulario da Sessao - Estado Controle de Abertura - Botao Definir Saldo Inicial destacado]"
+    status: failed
+    notes: "Nao foi possivel capturar: nenhuma sessao no estado Controle de Abertura neste momento"
+
+  - id: 8
+    marker: "[SCREENSHOT: Formulario da Sessao - Saldo inicial preenchido - Botao Abrir Sessao destacado]"
+    status: failed
+    notes: "Nao foi possivel capturar: nenhuma sessao no estado Controle de Abertura neste momento"
+
+  - id: 9
+    marker: "[SCREENSHOT: Painel do Ponto de Venda - Cartao do PDV com status Em Andamento - Botao Fechar destacado]"
+    status: failed
+    notes: "O Painel nao exibe botoes na view accessibility snapshot do kanban; a screenshot do Painel foi capturada sem os botoes de acao visiveis"

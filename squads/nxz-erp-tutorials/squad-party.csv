@@ -1,0 +1,5 @@
+path,displayName,icon,role,skills
+./agents/explorer.agent.md,Explorador,🔍,Analisa o codigo-fonte do Odoo 12 para mapear modulos e funcionalidades,
+./agents/writer.agent.md,Redator de Tutoriais,📝,Escreve tutoriais passo a passo detalhados com instrucoes de navegacao,
+./agents/capturer.agent.md,Capturista,📸,Navega no Odoo via Playwright e captura screenshots das telas,
+./agents/assembler.agent.md,Montador,🔧,Monta o tutorial final integrando texto e imagens capturadas,

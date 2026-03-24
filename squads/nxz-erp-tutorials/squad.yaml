@@ -1,0 +1,54 @@
+code: nxz-erp-tutorials
+name: "NXZ ERP Tutorial Creator"
+description: >
+  Squad que cria tutoriais operacionais completos com capturas de tela automaticas
+  para treinamento de colaboradores do NXZ ERP (Odoo 12). Produz documentos Markdown
+  com screenshots reais capturados via Playwright, segmentados por persona
+  (operador de caixa, garcom, gerente, proprietario).
+version: "1.0.0"
+skills:
+  - notion-publisher
+  - chatwoot-publish
+
+config:
+  odoo_url: "http://localhost:8012"
+  odoo_user: "nexuz@nexuz.com.br"
+  odoo_password: "admin"
+  erp_codebase: "/home/walterfrey/Documentos/code/nexuz/odoo_12"
+  output_format: "markdown"
+
+pipeline:
+  steps:
+    - id: checkpoint-topic
+      file: pipeline/steps/01-checkpoint-topic.md
+      type: checkpoint
+    - id: explore-module
+      file: pipeline/steps/02-explore-module.md
+      agent: explorer
+      execution: subagent
+    - id: write-tutorial
+      file: pipeline/steps/03-write-tutorial.md
+      agent: writer
+      execution: inline
+      format: technical-writing
+    - id: checkpoint-review-draft
+      file: pipeline/steps/04-checkpoint-review-draft.md
+      type: checkpoint
+    - id: capture-screenshots
+      file: pipeline/steps/05-capture-screenshots.md
+      agent: capturer
+      execution: inline
+    - id: assemble-final
+      file: pipeline/steps/06-assemble-final.md
+      agent: assembler
+      execution: inline
+    - id: checkpoint-approval
+      file: pipeline/steps/07-checkpoint-approval.md
+      type: checkpoint
+    - id: checkpoint-publish
+      file: pipeline/steps/08-checkpoint-publish.md
+      type: checkpoint
+    - id: publish
+      file: pipeline/steps/09-publish.md
+      agent: assembler
+      execution: inline

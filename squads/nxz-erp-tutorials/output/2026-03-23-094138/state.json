@@ -1,0 +1,48 @@
+{
+  "squad": "nxz-erp-tutorials",
+  "status": "completed",
+  "step": { "current": 7, "total": 7, "label": "checkpoint-approval" },
+  "agents": [
+    {
+      "id": "explorer",
+      "name": "Explorador",
+      "icon": "🔍",
+      "status": "done",
+      "deliverTo": null,
+      "desk": { "col": 1, "row": 1 }
+    },
+    {
+      "id": "writer",
+      "name": "Redator de Tutoriais",
+      "icon": "📝",
+      "status": "done",
+      "deliverTo": null,
+      "desk": { "col": 2, "row": 1 }
+    },
+    {
+      "id": "capturer",
+      "name": "Capturista",
+      "icon": "📸",
+      "status": "done",
+      "deliverTo": null,
+      "desk": { "col": 3, "row": 1 }
+    },
+    {
+      "id": "assembler",
+      "name": "Montador",
+      "icon": "🔧",
+      "status": "done",
+      "deliverTo": null,
+      "desk": { "col": 1, "row": 2 }
+    }
+  ],
+  "handoff": {
+    "from": "assembler",
+    "to": "checkpoint",
+    "message": "Tutorial final montado com 7 figuras integradas (5 screenshots reais, 2 reutilizadas para contextos similares)",
+    "completedAt": "2026-03-23T09:56:00-03:00"
+  },
+  "startedAt": "2026-03-23T09:41:38-03:00",
+  "updatedAt": "2026-03-23T09:57:00-03:00",
+  "completedAt": "2026-03-23T09:57:00-03:00"
+}

@@ -1,0 +1,70 @@
+screenshots:
+  - id: 1
+    file: "00-login.png"
+    marker: "[SCREENSHOT: Tela de login do NXZ ERP]"
+    path: "screenshots/00-login.png"
+    status: captured
+    notes: "Tela de login com campos Email e Senha preenchidos"
+
+  - id: 2
+    file: "01-dashboard-inicial.png"
+    marker: "[SCREENSHOT: Tela inicial do NXZ ERP - Banner amarelo de aviso de certificado no topo da tela]"
+    path: "screenshots/01-dashboard-inicial.png"
+    status: captured
+    notes: "Dashboard apos login - certificado ainda valido, sem banner de aviso"
+
+  - id: 3
+    file: "02-menu-faturamento.png"
+    marker: "[SCREENSHOT: Barra superior do NXZ ERP - Menu Faturamento destacado]"
+    path: "screenshots/02-menu-faturamento.png"
+    status: captured
+    notes: "Visao geral de contabilidade com menu Faturamento ativo"
+
+  - id: 4
+    file: "04-menu-configuracao-certificado.png"
+    marker: "[SCREENSHOT: Menu lateral do Faturamento - Opcao Atualizar Certificado Digital visivel]"
+    path: "screenshots/04-menu-configuracao-certificado.png"
+    status: captured
+    notes: "Dropdown de Configuracao expandido mostrando Atualizar Certificado Digital"
+
+  - id: 5
+    file: "05-wizard-dados-certificado-atual.png"
+    marker: "[SCREENSHOT: Wizard de Atualizar Certificado Digital - Etapa inicial mostrando dados do certificado atual]"
+    path: "screenshots/05-wizard-dados-certificado-atual.png"
+    status: captured
+    notes: "Wizard aberto com dados: Valido, 2026-12-01, LAGUNA COOKIES LTDA"
+
+  - id: 6
+    file: "07-wizard-modal-completo.png"
+    marker: "[SCREENSHOT: Wizard de certificado - Campo de upload com arquivo selecionado]"
+    path: "screenshots/07-wizard-modal-completo.png"
+    status: captured
+    notes: "Modal do wizard com campos A1 Arquivo e A1 Senha visiveis"
+
+  - id: 7
+    file: "07-wizard-modal-completo.png"
+    marker: "[SCREENSHOT: Wizard de certificado - Campo de senha preenchido]"
+    path: "screenshots/07-wizard-modal-completo.png"
+    status: captured
+    notes: "Mesmo screenshot - campo de senha visivel no wizard"
+
+  - id: 8
+    file: "03-wizard-certificado-aberto.png"
+    marker: "[SCREENSHOT: Wizard de certificado - Validacao concluida com status Valido e dados do novo certificado]"
+    path: "screenshots/03-wizard-certificado-aberto.png"
+    status: captured
+    notes: "Wizard com dados computados do certificado"
+
+  - id: 9
+    file: "03-wizard-certificado-aberto.png"
+    marker: "[SCREENSHOT: Wizard de certificado - Etapa de confirmacao com botao Confirmar destacado]"
+    path: "screenshots/03-wizard-certificado-aberto.png"
+    status: captured
+    notes: "Botao Avancar visivel no wizard"
+
+  - id: 10
+    file: "01-dashboard-inicial.png"
+    marker: "[SCREENSHOT: Tela do NXZ ERP apos atualizacao - Sem banner de aviso de certificado]"
+    path: "screenshots/01-dashboard-inicial.png"
+    status: captured
+    notes: "Dashboard sem banner de aviso"

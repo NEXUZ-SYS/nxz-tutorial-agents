@@ -1,0 +1,141 @@
+module:
+  name: br_base + br_nfe + br_account_einvoice
+  path: addons/br_base, addons/br_nfe, addons/br_account_einvoice
+  description: >
+    Modulos de localizacao brasileira do Odoo 12 que gerenciam certificados digitais A1
+    para emissao de NF-e e NFC-e. O certificado digital e configurado no cadastro da empresa
+    (res.company) e utilizado para assinar documentos fiscais eletronicos enviados a SEFAZ.
+
+navigation:
+  - menu: "Configuracoes > Empresas > Sua Empresa"
+    action: base.action_res_company_form
+    view_type: form
+    note: "Aba de Certificado Digital dentro do formulario da empresa"
+  - menu: "Faturamento > Automacao de NFe > Documentos Eletronicos"
+    action: br_account_einvoice.action_invoice_eletronic
+    view_type: tree
+    note: "Lista de documentos eletronicos emitidos"
+
+personas:
+  - id: gerente
+    relevance: >
+      O Gerente de Operacao e responsavel por manter o certificado digital atualizado,
+      garantindo que a emissao de NF-e e NFC-e nao seja interrompida por certificado
+      expirado. Essa e uma tarefa critica que deve ser feita antes do vencimento.
+
+screens:
+  - id: company_form
+    name: "Formulario da Empresa"
+    path: "Configuracoes > Empresas > [Nome da Empresa]"
+    view_type: form
+    fields:
+      - name: nfe_a1_file
+        label: "Arquivo do Certificado"
+        type: binary
+        required: true
+        help: "Arquivo .pfx ou .p12 do certificado digital A1. Fazer upload do novo certificado aqui."
+      - name: nfe_a1_password
+        label: "Senha do Certificado"
+        type: char
+        required: true
+        help: "Senha fornecida pela certificadora digital para abrir o certificado A1."
+      - name: cert_state
+        label: "Status do Certificado"
+        type: selection
+        required: false
+        help: >
+          Campo computado automaticamente. Valores possiveis:
+          valid (Valido), expired (Expirado), invalid_password (Senha Invalida),
+          unknown (Desconhecido), not_loaded (Nao Carregado)
+      - name: cert_expire_date
+        label: "Data de Expiracao"
+        type: date
+        required: false
+        help: "Data de validade do certificado, extraida automaticamente do arquivo."
+      - name: cert_information
+        label: "Informacoes do Certificado"
+        type: text
+        required: false
+        help: "Dados do titular: CN (nome), L (localidade), O (organizacao), OU (unidade)."
+      - name: tipo_ambiente
+        label: "Ambiente"
+        type: selection
+        required: true
+        help: "1 = Producao (emissao real), 2 = Homologacao (testes)"
+      - name: id_token_csc
+        label: "ID Token CSC (Producao)"
+        type: char
+        required: false
+        help: "Token CSC para NFC-e em ambiente de producao"
+      - name: csc
+        label: "CSC (Producao)"
+        type: char
+        required: false
+        help: "Codigo de Seguranca do Contribuinte para NFC-e em producao"
+    buttons: []
+
+flows:
+  - name: "Atualizar Certificado Digital"
+    steps:
+      - step: 1
+        action: "Acessar o menu Configuracoes no topo da tela"
+        screen: company_form
+        screenshot_hint: "Menu principal com Configuracoes destacado"
+      - step: 2
+        action: "Clicar em Empresas no submenu"
+        screen: company_form
+        screenshot_hint: "Submenu Configuracoes com opcao Empresas visivel"
+      - step: 3
+        action: "Selecionar a empresa na lista (clicar no nome)"
+        screen: company_form
+        screenshot_hint: "Lista de empresas com a empresa principal visivel"
+      - step: 4
+        action: "Localizar a secao de Certificado Digital no formulario da empresa (pode estar em uma aba especifica)"
+        screen: company_form
+        screenshot_hint: "Formulario da empresa com secao de Certificado Digital visivel"
+      - step: 5
+        action: "Verificar o status atual do certificado (campo Status e Data de Expiracao)"
+        screen: company_form
+        screenshot_hint: "Campos cert_state e cert_expire_date mostrando o status atual"
+      - step: 6
+        action: "Clicar no campo Arquivo do Certificado e fazer upload do novo arquivo .pfx ou .p12"
+        screen: company_form
+        screenshot_hint: "Campo de upload do certificado com dialogo de selecao de arquivo"
+      - step: 7
+        action: "Preencher o campo Senha do Certificado com a senha fornecida pela certificadora"
+        screen: company_form
+        screenshot_hint: "Campo de senha do certificado preenchido"
+      - step: 8
+        action: "Aguardar a validacao automatica - o sistema ira computar o status, data de expiracao e informacoes do certificado"
+        screen: company_form
+        screenshot_hint: "Campos computados preenchidos: status Valid, data de expiracao futura, informacoes do titular"
+      - step: 9
+        action: "Clicar no botao Salvar para gravar as alteracoes"
+        screen: company_form
+        screenshot_hint: "Formulario da empresa com botao Salvar destacado"
+      - step: 10
+        action: "Verificar se o status do certificado esta como Valido e a data de expiracao esta correta"
+        screen: company_form
+        screenshot_hint: "Certificado salvo com status Valido e data de expiracao atualizada"
+
+security:
+  groups:
+    - name: account.group_account_manager
+      access: full
+      note: "Acesso total para gerenciar certificados e emissao fiscal"
+    - name: base.group_system
+      access: full
+      note: "Administrador do sistema tem acesso a configuracoes da empresa"
+
+technical_notes:
+  validation_method: >
+    O metodo _compute_expiry_date() usa OpenSSL (crypto.load_pkcs12) para:
+    1. Decodificar o arquivo base64 do certificado
+    2. Carregar o PKCS12 com a senha informada
+    3. Extrair data de expiracao e informacoes do titular (CN, L, O, OU)
+    4. Definir o cert_state baseado na validacao
+  certificate_usage: >
+    O metodo _get_certificado() em invoice.eletronic recupera o certificado
+    e valida se cert_state == 'valid' antes de permitir a transmissao de NF-e/NFC-e.
+    Usa a biblioteca pytrustnfe (classe Certificado) para assinar os documentos XML.
+  file_formats: ".pfx ou .p12 (certificado A1)"
