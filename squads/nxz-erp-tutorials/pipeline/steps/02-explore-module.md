@@ -17,8 +17,11 @@ de menus, telas, campos, botoes e fluxos operacionais.
 ## Instrucoes
 
 1. Leia o arquivo de selecao de topico para entender qual modulo/funcionalidade documentar
-2. Explore o codigo-fonte em `~/Documentos/code/nexuz/odoo_12`
-3. Localize o modulo correspondente (addons ou modulos custom)
+2. Se o codebase estiver disponivel (config `erp_codebase` no squad.yaml), explore o codigo-fonte
+3. Se o codebase NAO estiver disponivel (null), explore o Odoo via interface web usando Playwright:
+   - Leia as credenciais do arquivo `.env` (ODOO_SAAS_URL, ODOO_SAAS_USER, ODOO_SAAS_PASSWORD)
+   - Navegue pelos menus do modulo para mapear telas, campos e fluxos
+4. Localize o modulo correspondente
 4. Mapeie completamente:
    - Estrutura de menus (menuitem XML)
    - Views (form, tree, kanban) com todos os campos
@@ -32,7 +35,8 @@ de menus, telas, campos, botoes e fluxos operacionais.
 
 ## Contexto
 
-- **Codebase:** ~/Documentos/code/nexuz/odoo_12
+- **Codebase:** Definido em squad.yaml config.erp_codebase (pode ser null se indisponivel)
+- **Odoo URL:** Definido em .env (ODOO_SAAS_URL) — usar para exploracao via interface web
 - **Framework:** Odoo 12 (Python, XML views, PostgreSQL)
 - **Foco:** Mapeamento operacional (como o usuario usa), nao tecnico
 

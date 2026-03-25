@@ -1,0 +1,48 @@
+{
+  "squad": "nxz-captain-qa",
+  "status": "completed",
+  "step": { "current": 8, "total": 8, "label": "checkpoint-approval" },
+  "agents": [
+    {
+      "id": "collector",
+      "name": "Carlos Coleta",
+      "icon": "🗂️",
+      "status": "done",
+      "deliverTo": null,
+      "desk": { "col": 1, "row": 1 }
+    },
+    {
+      "id": "tester",
+      "name": "Tina Teste",
+      "icon": "🧪",
+      "status": "done",
+      "deliverTo": null,
+      "desk": { "col": 2, "row": 1 }
+    },
+    {
+      "id": "evaluator",
+      "name": "Claudinho Critério",
+      "icon": "📊",
+      "status": "done",
+      "deliverTo": null,
+      "desk": { "col": 3, "row": 1 }
+    },
+    {
+      "id": "reporter",
+      "name": "Rita Relatório",
+      "icon": "📋",
+      "status": "done",
+      "deliverTo": null,
+      "desk": { "col": 1, "row": 2 }
+    }
+  ],
+  "handoff": {
+    "from": "reporter",
+    "to": null,
+    "message": "Relatorio QA aprovado. Score geral 2.44/5.0, taxa aprovacao 10%, 9 gaps na KB identificados.",
+    "completedAt": "2026-03-25T15:45:00.000Z"
+  },
+  "startedAt": "2026-03-25T15:25:01.000Z",
+  "updatedAt": "2026-03-25T15:45:00.000Z",
+  "completedAt": "2026-03-25T15:45:00.000Z"
+}

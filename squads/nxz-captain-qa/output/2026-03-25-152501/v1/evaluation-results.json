@@ -1,0 +1,165 @@
+{
+  "evaluator": "Claudinho Criterio",
+  "evaluation_date": "2026-03-25",
+  "rubric_version": "1.0",
+  "threshold": 3.5,
+  "evaluations": [
+    {
+      "test_id": 1,
+      "topic": "produto-sumiu",
+      "scores": {
+        "correcao": {"score": 3, "reasoning": "A resposta sugere verificar configuracao e atualizar catalogo, o que e parcialmente correto. Porem nao menciona os passos especificos do NXZ ERP (ex: verificar se o produto esta 'Disponivel no PDV' no cadastro). Informacao correta mas generica."},
+        "relevancia": {"score": 4, "reasoning": "Responde diretamente a pergunta sobre produto sumido no PDV. Todos os pontos sao relevantes ao problema."},
+        "tom": {"score": 4, "reasoning": "Tom profissional e prestativo. Usa formatacao clara com passos numerados. Poderia ser mais empatico no inicio (ex: 'Entendo que isso pode atrapalhar suas vendas')."},
+        "resolucao": {"score": 2, "reasoning": "As instrucoes sao muito genericas para resolver o problema sozinho. O cliente precisaria de orientacao especifica sobre onde encontrar as configuracoes no NXZ ERP. Escalacao para humano seria necessaria."},
+        "completude": {"score": 2, "reasoning": "Faltam detalhes cruciais: caminho de menu no NXZ ERP, campos especificos a verificar, e o que fazer se o produto estiver configurado corretamente mas mesmo assim nao aparece."}
+      },
+      "avg_score": 3.0,
+      "status": "REPROVADO"
+    },
+    {
+      "test_id": 2,
+      "topic": "certificado-digital",
+      "scores": {
+        "correcao": {"score": 5, "reasoning": "Passo a passo exato com menus reais do NXZ ERP: Faturamento > Configuracao > Atualizar Certificado Digital > campo A1 Arquivo. Corresponde ao procedimento real."},
+        "relevancia": {"score": 5, "reasoning": "Responde exatamente o que foi perguntado, com o procedimento especifico para o NXZ ERP."},
+        "tom": {"score": 4, "reasoning": "Tom claro e profissional. Instrucoes bem estruturadas com passos numerados. Ligeiramente tecnico mas adequado."},
+        "resolucao": {"score": 5, "reasoning": "Com essas instrucoes, o cliente conseguiria atualizar o certificado digital sozinho sem precisar de agente humano."},
+        "completude": {"score": 4, "reasoning": "Cobre os passos principais. Poderia incluir observacoes sobre formato do arquivo (.pfx) e validade do certificado."}
+      },
+      "avg_score": 4.6,
+      "status": "APROVADO"
+    },
+    {
+      "test_id": 3,
+      "topic": "impressora",
+      "scores": {
+        "correcao": {"score": 3, "reasoning": "Dicas basicas de troubleshooting de impressora (cabos, papel, configuracoes) sao corretas mas genericas. Nao menciona configuracoes especificas do NXZ ERP para impressoras termicas."},
+        "relevancia": {"score": 4, "reasoning": "As dicas sao relevantes para o problema de impressora do caixa."},
+        "tom": {"score": 4, "reasoning": "Tom prestativo e organizado com lista de verificacoes."},
+        "resolucao": {"score": 2, "reasoning": "Dicas muito genericas. Nao cobre configuracao de impressora no NXZ PDV, drivers, ou teste de impressao pelo sistema. Escalacao necessaria."},
+        "completude": {"score": 2, "reasoning": "Faltam: configuracao de impressora no NXZ, verificacao de driver, teste de impressao via sistema, e problemas comuns especificos de impressoras termicas."}
+      },
+      "avg_score": 3.0,
+      "status": "REPROVADO"
+    },
+    {
+      "test_id": 4,
+      "topic": "senha",
+      "scores": {
+        "correcao": {"score": 3, "reasoning": "Sugere usar 'Esqueci minha senha' o que e parcialmente correto. Porem menciona 'NXZ AI' como sistema, quando deveria ser 'NXZ ERP'. A funcionalidade depende da configuracao do Odoo."},
+        "relevancia": {"score": 4, "reasoning": "Responde a pergunta sobre recuperacao de senha."},
+        "tom": {"score": 4, "reasoning": "Tom claro e direto."},
+        "resolucao": {"score": 2, "reasoning": "Se o sistema de recuperacao por email nao estiver configurado (comum em Odoo 12), o cliente fica sem solucao. Nao menciona alternativa (contatar admin)."},
+        "completude": {"score": 2, "reasoning": "Faltam: alternativa caso email nao funcione, contato do admin, procedimento de reset pelo backend."}
+      },
+      "avg_score": 3.0,
+      "status": "REPROVADO"
+    },
+    {
+      "test_id": 5,
+      "topic": "erro-pdv",
+      "scores": {
+        "correcao": {"score": 2, "reasoning": "Admite nao ter informacoes e sugere apenas reiniciar. Nao e incorreto, mas e extremamente raso. Problemas de tela branca em Odoo POS geralmente envolvem cache, extensoes de browser, ou erros de JS."},
+        "relevancia": {"score": 3, "reasoning": "A sugestao de reiniciar e relevante mas insuficiente."},
+        "tom": {"score": 3, "reasoning": "Tom honesto ao admitir limitacao, mas poderia oferecer mais empatia."},
+        "resolucao": {"score": 1, "reasoning": "Nao resolve. Apenas sugere reiniciar e verificar atualizacoes. Escalacao obrigatoria."},
+        "completude": {"score": 1, "reasoning": "Praticamente nenhuma informacao util fornecida. Faltam: limpar cache, verificar console JS, testar em modo anonimo, verificar logs."}
+      },
+      "avg_score": 2.0,
+      "status": "REPROVADO"
+    },
+    {
+      "test_id": 6,
+      "topic": "nf-devolucao",
+      "scores": {
+        "correcao": {"score": 1, "reasoning": "Admite nao ter informacao alguma. Nota fiscal de devolucao e uma funcionalidade padrao do NXZ ERP (Odoo 12 com modulo nxz_br_nfe)."},
+        "relevancia": {"score": 2, "reasoning": "A sugestao de consultar documentacao e fracamente relevante."},
+        "tom": {"score": 3, "reasoning": "Tom educado mas frustrante para o cliente que precisa de ajuda."},
+        "resolucao": {"score": 1, "reasoning": "Nao resolve absolutamente nada. Escalacao obrigatoria."},
+        "completude": {"score": 1, "reasoning": "Zero informacao sobre NF de devolucao. Gap critico na knowledge base."}
+      },
+      "avg_score": 1.6,
+      "status": "REPROVADO"
+    },
+    {
+      "test_id": 7,
+      "topic": "cadastro-produto",
+      "scores": {
+        "correcao": {"score": 1, "reasoning": "Admite nao ter informacao. Cadastro de produto e uma das funcoes mais basicas do ERP."},
+        "relevancia": {"score": 2, "reasoning": "Apenas redireciona para documentacao."},
+        "tom": {"score": 3, "reasoning": "Educado mas nao resolve."},
+        "resolucao": {"score": 1, "reasoning": "Nao resolve. Gap basico na KB."},
+        "completude": {"score": 1, "reasoning": "Zero informacao. Gap critico."}
+      },
+      "avg_score": 1.6,
+      "status": "REPROVADO"
+    },
+    {
+      "test_id": 8,
+      "topic": "kds",
+      "scores": {
+        "correcao": {"score": 3, "reasoning": "Dicas genericas de troubleshooting de rede sao corretas. Mas nao menciona configuracoes especificas do NXZ KDS."},
+        "relevancia": {"score": 4, "reasoning": "Relevante para o problema de comunicacao KDS-PDV."},
+        "tom": {"score": 4, "reasoning": "Tom claro e estruturado."},
+        "resolucao": {"score": 2, "reasoning": "Dicas muito genericas. Nao cobre configuracao do KDS no NXZ, verificacao de rota de pedidos, ou status do servico."},
+        "completude": {"score": 2, "reasoning": "Faltam detalhes especificos do NXZ KDS."}
+      },
+      "avg_score": 3.0,
+      "status": "REPROVADO"
+    },
+    {
+      "test_id": 9,
+      "topic": "sangria",
+      "scores": {
+        "correcao": {"score": 1, "reasoning": "Nenhuma resposta gerada."},
+        "relevancia": {"score": 1, "reasoning": "Sem resposta."},
+        "tom": {"score": 1, "reasoning": "Sem resposta."},
+        "resolucao": {"score": 1, "reasoning": "Sem resposta."},
+        "completude": {"score": 1, "reasoning": "Sem resposta. Gap total na KB para sangria."}
+      },
+      "avg_score": 1.0,
+      "status": "REPROVADO"
+    },
+    {
+      "test_id": 10,
+      "topic": "relatorio",
+      "scores": {
+        "correcao": {"score": 1, "reasoning": "Admite nao ter informacao. Relatorio de vendas e funcionalidade padrao."},
+        "relevancia": {"score": 2, "reasoning": "Apenas redireciona."},
+        "tom": {"score": 3, "reasoning": "Educado mas inutil."},
+        "resolucao": {"score": 1, "reasoning": "Nao resolve."},
+        "completude": {"score": 1, "reasoning": "Zero informacao. Gap critico."}
+      },
+      "avg_score": 1.6,
+      "status": "REPROVADO"
+    }
+  ],
+  "aggregate_metrics": {
+    "overall_avg_score": 2.44,
+    "approval_rate": 10,
+    "total_tested": 10,
+    "total_approved": 1,
+    "total_rejected": 9,
+    "dimensions": {
+      "correcao": {"avg": 2.3, "min": 1, "max": 5},
+      "relevancia": {"avg": 3.1, "min": 1, "max": 5},
+      "tom": {"avg": 3.3, "min": 1, "max": 4},
+      "resolucao": {"avg": 1.7, "min": 1, "max": 5},
+      "completude": {"avg": 1.7, "min": 1, "max": 4}
+    },
+    "knowledge_base_gaps": [
+      "Sangria no PDV (zero cobertura)",
+      "Cadastro de produto (zero cobertura)",
+      "NF de devolucao (zero cobertura)",
+      "Relatorio de vendas (zero cobertura)",
+      "Erro PDV / tela branca (zero cobertura)",
+      "Recuperacao de senha (cobertura parcial)",
+      "Impressora termica (cobertura parcial)",
+      "KDS (cobertura parcial)",
+      "Produto sumiu no PDV (cobertura parcial)"
+    ],
+    "top_performer": "certificado-digital (4.6/5.0)",
+    "worst_performers": ["sangria (1.0)", "nf-devolucao (1.6)", "cadastro-produto (1.6)", "relatorio (1.6)"]
+  }
+}

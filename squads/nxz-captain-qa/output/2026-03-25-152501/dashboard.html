@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Captain QA Dashboard — Nexuz</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: hsl(262, 80%, 50%);
+    --primary-light: hsl(262, 35%, 93%);
+    --primary-20: hsla(262, 80%, 50%, 0.2);
+    --primary-40: hsla(262, 80%, 50%, 0.4);
+    --destructive: hsl(0, 84%, 60%);
+    --destructive-light: hsl(0, 84%, 95%);
+    --success: hsl(142, 71%, 45%);
+    --success-light: hsl(142, 71%, 93%);
+    --warning: hsl(38, 92%, 50%);
+    --warning-light: hsl(38, 92%, 93%);
+    --foreground: hsl(0, 0%, 15%);
+    --muted: hsl(0, 0%, 45%);
+    --border: hsl(0, 0%, 90%);
+    --bg: hsl(0, 0%, 100%);
+    --card: hsl(0, 0%, 100%);
+    --warm-bg: hsl(40, 20%, 97%);
+    --font-serif: 'DM Serif Display', serif;
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--font-sans); color: var(--foreground); background: var(--warm-bg); }
+
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+
+  /* Header */
+  .header { background: var(--bg); border-bottom: 1px solid var(--border); padding: 16px 0; }
+  .header-inner { display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-family: var(--font-sans); font-weight: 700; font-size: 20px; color: var(--primary); }
+  .header-meta { font-size: 13px; color: var(--muted); font-family: var(--font-mono); }
+
+  /* Hero */
+  .hero { padding: 48px 0 32px; }
+  .hero h1 { font-family: var(--font-serif); font-size: 42px; font-weight: 400; margin-bottom: 8px; }
+  .hero p { color: var(--muted); font-size: 16px; max-width: 600px; }
+
+  /* Score Cards Row */
+  .score-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 32px; }
+  @media (max-width: 768px) { .score-cards { grid-template-columns: repeat(2, 1fr); } }
+  .score-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; transition: all 0.2s; }
+  .score-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+  .score-card .label { font-size: 13px; color: var(--muted); font-weight: 500; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .score-card .value { font-family: var(--font-mono); font-size: 36px; font-weight: 600; }
+  .score-card .sub { font-size: 13px; color: var(--muted); margin-top: 4px; }
+  .score-card.danger .value { color: var(--destructive); }
+  .score-card.success .value { color: var(--success); }
+  .score-card.warning .value { color: var(--warning); }
+  .score-card.neutral .value { color: var(--primary); }
+
+  /* Section */
+  .section { margin-bottom: 32px; }
+  .section h2 { font-family: var(--font-serif); font-size: 28px; font-weight: 400; margin-bottom: 16px; }
+  .section h3 { font-size: 16px; font-weight: 600; margin-bottom: 12px; }
+
+  /* Dimension Bars */
+  .dim-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 768px) { .dim-grid { grid-template-columns: 1fr; } }
+  .dim-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; }
+  .dim-row { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+  .dim-row:last-child { margin-bottom: 0; }
+  .dim-label { width: 110px; font-size: 14px; font-weight: 500; flex-shrink: 0; }
+  .dim-bar-bg { flex: 1; height: 32px; background: var(--primary-light); border-radius: 100px; overflow: hidden; position: relative; }
+  .dim-bar { height: 100%; border-radius: 100px; transition: width 1s ease; }
+  .dim-bar.red { background: var(--destructive); }
+  .dim-bar.yellow { background: var(--warning); }
+  .dim-bar.green { background: var(--success); }
+  .dim-bar.purple { background: var(--primary); }
+  .dim-score { font-family: var(--font-mono); font-size: 14px; font-weight: 600; width: 50px; text-align: right; flex-shrink: 0; }
+
+  /* Test Results Table */
+  .table-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+  .table-card table { width: 100%; border-collapse: collapse; }
+  .table-card th { background: var(--primary-light); padding: 12px 16px; text-align: left; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); }
+  .table-card td { padding: 12px 16px; border-top: 1px solid var(--border); font-size: 14px; }
+  .table-card tr:hover td { background: hsl(262, 35%, 98%); }
+  .badge { display: inline-block; padding: 2px 10px; border-radius: 100px; font-size: 12px; font-weight: 600; font-family: var(--font-mono); }
+  .badge.pass { background: var(--success-light); color: var(--success); }
+  .badge.fail { background: var(--destructive-light); color: var(--destructive); }
+  .badge.warn { background: var(--warning-light); color: var(--warning); }
+  .score-num { font-family: var(--font-mono); font-weight: 600; }
+
+  /* Gaps */
+  .gap-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  @media (max-width: 768px) { .gap-grid { grid-template-columns: 1fr; } }
+  .gap-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 20px; }
+  .gap-card .priority { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+  .gap-card .priority.high { color: var(--destructive); }
+  .gap-card .priority.medium { color: var(--warning); }
+  .gap-card .priority.low { color: var(--muted); }
+  .gap-card .topic { font-weight: 600; font-size: 15px; margin-bottom: 4px; }
+  .gap-card .desc { font-size: 13px; color: var(--muted); }
+
+  /* Recommendations */
+  .rec-list { list-style: none; }
+  .rec-item { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 20px 24px; margin-bottom: 12px; display: flex; gap: 16px; align-items: flex-start; }
+  .rec-num { font-family: var(--font-mono); font-size: 24px; font-weight: 700; color: var(--primary); flex-shrink: 0; width: 40px; }
+  .rec-content .rec-title { font-weight: 600; font-size: 15px; margin-bottom: 4px; }
+  .rec-content .rec-desc { font-size: 13px; color: var(--muted); }
+  .rec-content .rec-impact { font-size: 12px; color: var(--success); font-weight: 600; margin-top: 4px; }
+
+  /* Footer */
+  .footer { padding: 32px 0; text-align: center; color: var(--muted); font-size: 13px; border-top: 1px solid var(--border); margin-top: 48px; background: var(--bg); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="container header-inner">
+    <div class="logo">NXZ Captain QA</div>
+    <div class="header-meta">Run: 2026-03-25 &bull; Team: Relacionamento &bull; Assistant: NXZ AI (ID:3)</div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="hero">
+    <h1>Dashboard de Qualidade</h1>
+    <p>Avaliacao do Chatwoot Captain NXZ AI com base em 20 conversas reais do time Relacionamento, periodo de 18 a 25 de marco de 2026.</p>
+  </div>
+
+  <!-- Score Cards -->
+  <div class="score-cards">
+    <div class="score-card danger">
+      <div class="label">Score Geral</div>
+      <div class="value">2.44</div>
+      <div class="sub">de 5.0 &bull; Insuficiente</div>
+    </div>
+    <div class="score-card danger">
+      <div class="label">Taxa de Aprovacao</div>
+      <div class="value">10%</div>
+      <div class="sub">1 de 10 testes</div>
+    </div>
+    <div class="score-card neutral">
+      <div class="label">Conversas Coletadas</div>
+      <div class="value">20</div>
+      <div class="sub">10 temas testados</div>
+    </div>
+    <div class="score-card warning">
+      <div class="label">Gaps na KB</div>
+      <div class="value">9</div>
+      <div class="sub">5 com zero cobertura</div>
+    </div>
+  </div>
+
+  <!-- Dimensions -->
+  <div class="section">
+    <h2>Scores por Dimensao</h2>
+    <div class="dim-card">
+      <div class="dim-row">
+        <div class="dim-label">Correcao</div>
+        <div class="dim-bar-bg"><div class="dim-bar red" style="width:46%"></div></div>
+        <div class="dim-score" style="color:var(--destructive)">2.3</div>
+      </div>
+      <div class="dim-row">
+        <div class="dim-label">Relevancia</div>
+        <div class="dim-bar-bg"><div class="dim-bar yellow" style="width:62%"></div></div>
+        <div class="dim-score" style="color:var(--warning)">3.1</div>
+      </div>
+      <div class="dim-row">
+        <div class="dim-label">Tom</div>
+        <div class="dim-bar-bg"><div class="dim-bar yellow" style="width:66%"></div></div>
+        <div class="dim-score" style="color:var(--warning)">3.3</div>
+      </div>
+      <div class="dim-row">
+        <div class="dim-label">Resolucao</div>
+        <div class="dim-bar-bg"><div class="dim-bar red" style="width:34%"></div></div>
+        <div class="dim-score" style="color:var(--destructive)">1.7</div>
+      </div>
+      <div class="dim-row">
+        <div class="dim-label">Completude</div>
+        <div class="dim-bar-bg"><div class="dim-bar red" style="width:34%"></div></div>
+        <div class="dim-score" style="color:var(--destructive)">1.7</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Test Results -->
+  <div class="section">
+    <h2>Resultados por Teste</h2>
+    <div class="table-card">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Tema</th>
+            <th>Correcao</th>
+            <th>Relevancia</th>
+            <th>Tom</th>
+            <th>Resolucao</th>
+            <th>Completude</th>
+            <th>Media</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="score-num">1</td>
+            <td>Produto sumiu</td>
+            <td class="score-num">3</td>
+            <td class="score-num">4</td>
+            <td class="score-num">4</td>
+            <td class="score-num">2</td>
+            <td class="score-num">2</td>
+            <td class="score-num">3.0</td>
+            <td><span class="badge fail">REPROVADO</span></td>
+          </tr>
+          <tr style="background:hsl(142,71%,97%)">
+            <td class="score-num">2</td>
+            <td><strong>Certificado digital</strong></td>
+            <td class="score-num" style="color:var(--success)">5</td>
+            <td class="score-num" style="color:var(--success)">5</td>
+            <td class="score-num">4</td>
+            <td class="score-num" style="color:var(--success)">5</td>
+            <td class="score-num">4</td>
+            <td class="score-num" style="color:var(--success)"><strong>4.6</strong></td>
+            <td><span class="badge pass">APROVADO</span></td>
+          </tr>
+          <tr>
+            <td class="score-num">3</td>
+            <td>Impressora</td>
+            <td class="score-num">3</td>
+            <td class="score-num">4</td>
+            <td class="score-num">4</td>
+            <td class="score-num">2</td>
+            <td class="score-num">2</td>
+            <td class="score-num">3.0</td>
+            <td><span class="badge fail">REPROVADO</span></td>
+          </tr>
+          <tr>
+            <td class="score-num">4</td>
+            <td>Senha</td>
+            <td class="score-num">3</td>
+            <td class="score-num">4</td>
+            <td class="score-num">4</td>
+            <td class="score-num">2</td>
+            <td class="score-num">2</td>
+            <td class="score-num">3.0</td>
+            <td><span class="badge fail">REPROVADO</span></td>
+          </tr>
+          <tr>
+            <td class="score-num">5</td>
+            <td>Erro PDV</td>
+            <td class="score-num">2</td>
+            <td class="score-num">3</td>
+            <td class="score-num">3</td>
+            <td class="score-num">1</td>
+            <td class="score-num">1</td>
+            <td class="score-num" style="color:var(--destructive)">2.0</td>
+            <td><span class="badge fail">REPROVADO</span></td>
+          </tr>
+          <tr>
+            <td class="score-num">6</td>
+            <td>NF devolucao</td>
+            <td class="score-num" style="color:var(--destructive)">1</td>
+            <td class="score-num">2</td>
+            <td class="score-num">3</td>
+            <td class="score-num" style="color:var(--destructive)">1</td>
+            <td class="score-num" style="color:var(--destructive)">1</td>
+            <td class="score-num" style="color:var(--destructive)">1.6</td>
+            <td><span class="badge fail">REPROVADO</span></td>
+          </tr>
+          <tr>
+            <td class="score-num">7</td>
+            <td>Cadastro produto</td>
+            <td class="score-num" style="color:var(--destructive)">1</td>
+            <td class="score-num">2</td>
+            <td class="score-num">3</td>
+            <td class="score-num" style="color:var(--destructive)">1</td>
+            <td class="score-num" style="color:var(--destructive)">1</td>
+            <td class="score-num" style="color:var(--destructive)">1.6</td>
+            <td><span class="badge fail">REPROVADO</span></td>
+          </tr>
+          <tr>
+            <td class="score-num">8</td>
+            <td>KDS</td>
+            <td class="score-num">3</td>
+            <td class="score-num">4</td>
+            <td class="score-num">4</td>
+            <td class="score-num">2</td>
+            <td class="score-num">2</td>
+            <td class="score-num">3.0</td>
+            <td><span class="badge fail">REPROVADO</span></td>
+          </tr>
+          <tr style="background:hsl(0,84%,97%)">
+            <td class="score-num">9</td>
+            <td><strong>Sangria</strong></td>
+            <td class="score-num" style="color:var(--destructive)">1</td>
+            <td class="score-num" style="color:var(--destructive)">1</td>
+            <td class="score-num" style="color:var(--destructive)">1</td>
+            <td class="score-num" style="color:var(--destructive)">1</td>
+            <td class="score-num" style="color:var(--destructive)">1</td>
+            <td class="score-num" style="color:var(--destructive)"><strong>1.0</strong></td>
+            <td><span class="badge fail">REPROVADO</span></td>
+          </tr>
+          <tr>
+            <td class="score-num">10</td>
+            <td>Relatorio vendas</td>
+            <td class="score-num" style="color:var(--destructive)">1</td>
+            <td class="score-num">2</td>
+            <td class="score-num">3</td>
+            <td class="score-num" style="color:var(--destructive)">1</td>
+            <td class="score-num" style="color:var(--destructive)">1</td>
+            <td class="score-num" style="color:var(--destructive)">1.6</td>
+            <td><span class="badge fail">REPROVADO</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Knowledge Base Gaps -->
+  <div class="section">
+    <h2>Gaps na Knowledge Base</h2>
+    <div class="gap-grid">
+      <div class="gap-card">
+        <div class="priority high">Prioridade Alta</div>
+        <div class="topic">Cadastro de Produto</div>
+        <div class="desc">Zero cobertura. Funcao basica do ERP com alta demanda.</div>
+      </div>
+      <div class="gap-card">
+        <div class="priority high">Prioridade Alta</div>
+        <div class="topic">Relatorio de Vendas</div>
+        <div class="desc">Zero cobertura. Demanda diaria dos gerentes.</div>
+      </div>
+      <div class="gap-card">
+        <div class="priority high">Prioridade Alta</div>
+        <div class="topic">Sangria no PDV</div>
+        <div class="desc">Zero cobertura. Operacao frequente de caixa.</div>
+      </div>
+      <div class="gap-card">
+        <div class="priority high">Prioridade Alta</div>
+        <div class="topic">NF de Devolucao</div>
+        <div class="desc">Zero cobertura. Operacao fiscal obrigatoria.</div>
+      </div>
+      <div class="gap-card">
+        <div class="priority medium">Prioridade Media</div>
+        <div class="topic">Erro PDV / Tela Branca</div>
+        <div class="desc">Zero cobertura. Problema recorrente de suporte.</div>
+      </div>
+      <div class="gap-card">
+        <div class="priority medium">Prioridade Media</div>
+        <div class="topic">Recuperacao de Senha</div>
+        <div class="desc">Cobertura parcial. Falta procedimento NXZ especifico.</div>
+      </div>
+      <div class="gap-card">
+        <div class="priority medium">Prioridade Media</div>
+        <div class="topic">Impressora Termica</div>
+        <div class="desc">Cobertura parcial. Faltam configuracoes NXZ.</div>
+      </div>
+      <div class="gap-card">
+        <div class="priority low">Prioridade Baixa</div>
+        <div class="topic">KDS</div>
+        <div class="desc">Cobertura parcial. Faltam configuracoes especificas.</div>
+      </div>
+      <div class="gap-card">
+        <div class="priority low">Prioridade Baixa</div>
+        <div class="topic">Produto Sumiu no PDV</div>
+        <div class="desc">Cobertura parcial. Faltam caminhos de menu.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recommendations -->
+  <div class="section">
+    <h2>Recomendacoes</h2>
+    <ul class="rec-list">
+      <li class="rec-item">
+        <div class="rec-num">01</div>
+        <div class="rec-content">
+          <div class="rec-title">Criar documentacao para os 4 gaps de prioridade alta</div>
+          <div class="rec-desc">Artigos no Help Center para: cadastro de produto, relatorio de vendas, sangria no PDV, NF de devolucao. Cada artigo com passo a passo e caminhos de menu reais.</div>
+          <div class="rec-impact">Impacto estimado: taxa de aprovacao de 10% para ~50%</div>
+        </div>
+      </li>
+      <li class="rec-item">
+        <div class="rec-num">02</div>
+        <div class="rec-content">
+          <div class="rec-title">Enriquecer documentacao dos 3 gaps de prioridade media</div>
+          <div class="rec-desc">Troubleshooting especifico do NXZ para: erro PDV, recuperacao de senha, e configuracao de impressora termica.</div>
+          <div class="rec-impact">Impacto estimado: +15-20% na taxa de aprovacao</div>
+        </div>
+      </li>
+      <li class="rec-item">
+        <div class="rec-num">03</div>
+        <div class="rec-content">
+          <div class="rec-title">Configurar fallback inteligente no Captain</div>
+          <div class="rec-desc">Quando nao encontrar resposta, oferecer: link para base de conhecimento, horario do suporte, opcao de abrir ticket. Nunca responder apenas "nao encontrei".</div>
+          <div class="rec-impact">Melhoria de experiencia mesmo sem resolver</div>
+        </div>
+      </li>
+      <li class="rec-item">
+        <div class="rec-num">04</div>
+        <div class="rec-content">
+          <div class="rec-title">Corrigir nomenclatura: NXZ AI para NXZ ERP</div>
+          <div class="rec-desc">O Captain referencia "NXZ AI" como sistema em vez de "NXZ ERP". Ajustar nas instrucoes do assistant.</div>
+          <div class="rec-impact">Acao rapida, melhoria de profissionalismo</div>
+        </div>
+      </li>
+      <li class="rec-item">
+        <div class="rec-num">05</div>
+        <div class="rec-content">
+          <div class="rec-title">Re-executar QA apos implementar recomendacoes</div>
+          <div class="rec-desc">Rodar esta squad novamente para medir progresso e validar que os novos artigos melhoram os scores.</div>
+          <div class="rec-impact">Meta: score >= 3.5 e taxa de aprovacao >= 60%</div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="container">
+    NXZ Captain QA Dashboard &bull; Gerado em 25/03/2026 &bull; Opensquad
+  </div>
+</div>
+
+</body>
+</html>

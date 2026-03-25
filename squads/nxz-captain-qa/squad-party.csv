@@ -1,0 +1,5 @@
+path,displayName,icon,role,skills
+./agents/collector.agent.md,Carlos Coleta,🗂️,Extrai conversas do Chatwoot via API filtrando por time e periodo,
+./agents/tester.agent.md,Tina Teste,🧪,Envia mensagens dos clientes ao Playground do Captain e captura respostas,
+./agents/evaluator.agent.md,Claudinho Critério,📊,Avalia e pontua respostas do Captain usando rubrica de qualidade,
+./agents/reporter.agent.md,Rita Relatório,📋,Gera relatorio detalhado com metricas agregadas por time,

@@ -1,0 +1,55 @@
+code: nxz-captain-qa
+name: "NXZ Captain QA"
+description: >
+  Squad de teste e avaliacao do Chatwoot Captain (agente de IA) nos atendimentos
+  da Nexuz. Extrai conversas reais do Chatwoot por time e periodo, envia mensagens
+  dos clientes ao Playground do Captain, compara respostas com as reais, e gera
+  relatorios com metricas de acerto, tom e resolucao. Suporta os 3 times:
+  Suporte Tecnico, Implantacao e Comercial.
+version: "1.0.0"
+skills:
+  - web_search
+  - web_fetch
+
+config:
+  chatwoot_url: "${CHATWOOT_BASE_URL}"
+  chatwoot_token: "${CHATWOOT_API_TOKEN}"
+  chatwoot_account: "${CHATWOOT_ACCOUNT_ID}"
+  output_format: "markdown"
+
+data:
+  - pipeline/data/research-brief.md
+  - pipeline/data/domain-framework.md
+  - pipeline/data/quality-criteria.md
+  - pipeline/data/anti-patterns.md
+
+pipeline:
+  steps:
+    - id: checkpoint-config
+      file: pipeline/steps/01-checkpoint-config.md
+      type: checkpoint
+    - id: collect-conversations
+      file: pipeline/steps/02-collect-conversations.md
+      agent: collector
+      execution: subagent
+    - id: run-playground-tests
+      file: pipeline/steps/03-run-playground-tests.md
+      agent: tester
+      execution: inline
+    - id: checkpoint-review-sample
+      file: pipeline/steps/04-checkpoint-review-sample.md
+      type: checkpoint
+    - id: evaluate-responses
+      file: pipeline/steps/05-evaluate-responses.md
+      agent: evaluator
+      execution: inline
+    - id: checkpoint-review-results
+      file: pipeline/steps/06-checkpoint-review-results.md
+      type: checkpoint
+    - id: generate-report
+      file: pipeline/steps/07-generate-report.md
+      agent: reporter
+      execution: inline
+    - id: checkpoint-approval
+      file: pipeline/steps/08-checkpoint-approval.md
+      type: checkpoint

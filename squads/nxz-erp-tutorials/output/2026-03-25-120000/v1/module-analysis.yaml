@@ -1,0 +1,432 @@
+module:
+  name: "Ponto de Venda"
+  path: "Ponto de Venda"
+  description: >
+    Modulo de Ponto de Venda (PDV/POS) do NXZ ERP (Odoo 12). Gerencia terminais
+    de venda, sessoes de caixa, pedidos, produtos, vouchers e relatorios.
+    Nao possui um relatorio dedicado de sangrias. As sangrias (retiradas de
+    dinheiro do caixa) sao registradas como linhas de controle de caixa
+    (Cash Control Lines) dentro de cada sessao do PDV, acessiveis via
+    Ponto de Venda > Pedidos > Sessoes > [sessao] > secao Cash Control Line.
+
+navigation:
+  - menu: "Ponto de Venda"
+    view_type: kanban
+    description: "Tela principal - mostra terminais PDV em cards"
+  - menu: "Ponto de Venda > Painel"
+    view_type: dashboard
+  - menu: "Ponto de Venda > Painel POS"
+    view_type: dashboard
+  - menu: "Ponto de Venda > Pedidos > Pedidos"
+    view_type: list
+  - menu: "Ponto de Venda > Pedidos > Sessoes"
+    view_type: kanban/list
+    description: "Lista de sessoes de caixa (onde sangrias ficam registradas)"
+  - menu: "Ponto de Venda > Pedidos > Clientes"
+    view_type: list
+  - menu: "Ponto de Venda > Produto"
+    view_type: list
+  - menu: "Ponto de Venda > Relatorios > Pedidos"
+    view_type: pivot/graph
+  - menu: "Ponto de Venda > Relatorios > Pedidos Por Hora"
+    view_type: pivot/graph
+  - menu: "Ponto de Venda > Relatorios > Pedidos Pagos"
+    view_type: pivot/graph
+  - menu: "Ponto de Venda > Relatorios > Detalhes de Vendas"
+    view_type: wizard
+    description: "Wizard para gerar relatorio de vendas por periodo e terminal"
+  - menu: "Ponto de Venda > Relatorios > Logs Fechamento e Abertura"
+    view_type: list
+    description: "Auto Controle de Sessao - logs de abertura/fechamento"
+  - menu: "Ponto de Venda > Relatorios > Relatorio de Custo"
+    view_type: report
+  - menu: "Ponto de Venda > Vouchers e Cupons"
+    view_type: list
+  - menu: "Ponto de Venda > Configuracao"
+    view_type: form
+
+personas:
+  - id: gerente
+    relevance: >
+      O gerente precisa consultar as sangrias para controlar retiradas de
+      dinheiro do caixa, verificar saldos e garantir que nao ha desvios.
+  - id: operador_caixa
+    relevance: >
+      O operador de caixa realiza as sangrias durante o turno e precisa
+      registrar corretamente no sistema.
+  - id: financeiro
+    relevance: >
+      O setor financeiro audita as sangrias para conciliacao de caixa.
+
+screens:
+  - id: pdv_painel
+    name: "Painel do Ponto de Venda"
+    path: "Ponto de Venda"
+    view_type: kanban
+    description: >
+      Tela principal mostrando os terminais PDV em formato de cards.
+      Cada card mostra nome do PDV, status da sessao, ultimo fechamento
+      e saldo em dinheiro.
+    fields:
+      - name: nome_pdv
+        label: "Nome do PDV"
+        type: text
+        required: true
+        help: "Ex: PDV 1 Caixa - TCLSC (PDV 1 Caixa)"
+      - name: status_sessao
+        label: "Status"
+        type: badge
+        required: true
+        help: "Fechando o Controle / Em Andamento / Fechado e Lancado"
+      - name: ultimo_fechamento
+        label: "Ultimo Fechamento"
+        type: date
+        required: false
+      - name: saldo_dinheiro
+        label: "Saldo em dinheiro"
+        type: monetary
+        required: false
+    buttons:
+      - name: manage
+        label: "Manage"
+        action: "Abre configuracoes do terminal PDV"
+    data_observed:
+      - "PDV 1 Caixa - TCLSC: Fechando o Controle, ultimo fechamento 25/01/2026, saldo R$ 993,85"
+      - "PDV 2 Totem - TCLSC: Em Andamento, ultimo fechamento 27/01/2026, saldo R$ 0,00"
+      - "PDV 3 iFood - TCLSC: Em Andamento, ultimo fechamento 27/01/2026, saldo R$ 0,00"
+
+  - id: sessoes_list
+    name: "Sessoes"
+    path: "Ponto de Venda > Pedidos > Sessoes"
+    view_type: list
+    description: >
+      Lista todas as sessoes de caixa do PDV. Cada sessao representa
+      um periodo de operacao de um terminal. E a partir daqui que se
+      acessa os detalhes de sangrias.
+    fields:
+      - name: ponto_de_venda
+        label: "Ponto de Venda"
+        type: many2one
+        required: true
+      - name: id_sessao
+        label: "ID da Sessao"
+        type: char
+        required: true
+        help: "Ex: POS/2026/01/25/260"
+      - name: responsavel
+        label: "Responsavel"
+        type: many2one
+        required: true
+      - name: data_abertura
+        label: "Data de Abertura"
+        type: datetime
+        required: true
+      - name: data_fechamento
+        label: "Data de Fechamento"
+        type: datetime
+        required: false
+      - name: situacao
+        label: "Situacao"
+        type: selection
+        required: true
+        help: "Em Andamento / Fechando o Controle / Fechado e Lancado"
+    buttons:
+      - name: exportar_xls
+        label: "Exportar XLS"
+        action: "Exporta a lista de sessoes para planilha Excel"
+    data_observed:
+      total_records: 178
+
+  - id: sessao_form
+    name: "Formulario da Sessao"
+    path: "Ponto de Venda > Pedidos > Sessoes > [sessao]"
+    view_type: form
+    description: >
+      Detalhes de uma sessao de caixa. Mostra informacoes de abertura,
+      fechamento, saldos e contem as secoes Resumo por Metodos de Pagamento
+      e Cash Control Line onde as sangrias sao registradas.
+    fields:
+      - name: sessao_id
+        label: "Sessao"
+        type: char
+        required: true
+      - name: responsavel
+        label: "Responsavel"
+        type: many2one
+        required: true
+      - name: ponto_de_venda
+        label: "Ponto de Venda"
+        type: many2one
+        required: true
+      - name: data_abertura
+        label: "Data de Abertura"
+        type: datetime
+        required: true
+      - name: data_fechamento
+        label: "Data de Fechamento"
+        type: datetime
+        required: false
+      - name: saldo_abertura
+        label: "Saldo de Abertura"
+        type: monetary
+        required: true
+        help: "Valor em dinheiro no caixa ao abrir a sessao"
+      - name: transacoes
+        label: "+ Transacoes"
+        type: monetary
+        required: true
+        help: "Soma das transacoes em dinheiro (inclui sangrias como valores negativos)"
+      - name: saldo_final_teorico
+        label: "= Saldo Final Teorico"
+        type: monetary
+        required: true
+        help: "Saldo calculado: Abertura + Transacoes"
+      - name: saldo_fechamento_real
+        label: "Saldo de Fechamento Real"
+        type: monetary
+        required: true
+      - name: diferenca
+        label: "Diferenca"
+        type: monetary
+        required: true
+        help: "Diferenca entre saldo teorico e real"
+      - name: resumo_pagamentos
+        label: "Resumo por Metodos de Pagamento"
+        type: one2many
+        required: false
+        help: "Cards com extrato bancario por metodo de pagamento"
+      - name: cash_control_line
+        label: "Cash Control Line"
+        type: one2many
+        required: false
+        help: "Linhas de controle de caixa - AQUI FICAM AS SANGRIAS"
+    buttons:
+      - name: editar
+        label: "Editar"
+        action: "Habilita edicao do formulario"
+      - name: imprimir
+        label: "Imprimir"
+        action: "Gera impressao da sessao"
+      - name: acao
+        label: "Acao"
+        action: "Menu de acoes adicionais"
+      - name: mais
+        label: "Mais"
+        action: "Opcoes adicionais"
+    status_bar:
+      - "Em Andamento"
+      - "Fechando o Controle"
+      - "Fechado e Lancado"
+    data_observed:
+      session_example: "POS/2026/01/25/260"
+      saldo_abertura: "R$ 2.241,35"
+      transacoes: "R$ -1.247,50"
+      saldo_final_teorico: "R$ 993,85"
+      saldo_fechamento_real: "R$ 993,85"
+      diferenca: "R$ 0,00"
+      payment_methods_count: 7
+      cash_control_lines_count: 6
+
+  - id: extrato_bancario_dialog
+    name: "Extrato Bancario (Dialog)"
+    path: "Ponto de Venda > Pedidos > Sessoes > [sessao] > Resumo por Metodos de Pagamento > [card]"
+    view_type: dialog/form
+    description: >
+      Dialog que abre ao clicar em um card de metodo de pagamento.
+      Mostra o extrato bancario para aquele metodo naquela sessao.
+    fields:
+      - name: nome
+        label: "Nome"
+        type: char
+        required: true
+      - name: diario
+        label: "Diario"
+        type: many2one
+        required: true
+        help: "Ex: [MANUAL] Voucher (manual) (BRL)"
+      - name: data
+        label: "Data"
+        type: date
+        required: true
+      - name: empresa
+        label: "Empresa"
+        type: many2one
+        required: true
+        help: "Ex: The Cookiery - SC Matriz"
+      - name: saldo_inicial
+        label: "Saldo Inicial"
+        type: monetary
+        required: true
+      - name: saldo_final
+        label: "Saldo Final"
+        type: monetary
+        required: true
+      - name: transacoes
+        label: "Transacoes"
+        type: one2many
+        required: false
+      - name: saldo_calculado
+        label: "Saldo Calculado"
+        type: monetary
+        required: true
+    buttons:
+      - name: acoes_rapidas
+        label: "Acoes rapidas"
+        action: "Menu de acoes rapidas"
+      - name: fechar
+        label: "Fechar"
+        action: "Fecha o dialog"
+    status_bar:
+      - "Validado"
+
+  - id: logs_fechamento_abertura
+    name: "Auto Controle de Sessao"
+    path: "Ponto de Venda > Relatorios > Logs Fechamento e Abertura"
+    view_type: list
+    description: "Logs automaticos de abertura e fechamento de sessoes."
+    fields:
+      - name: created_on
+        label: "Created on"
+        type: datetime
+        required: true
+      - name: ponto_de_venda
+        label: "Ponto de Venda"
+        type: many2one
+        required: true
+      - name: acao
+        label: "Acao"
+        type: selection
+        required: true
+      - name: sessao
+        label: "Sessao"
+        type: many2one
+        required: true
+      - name: descricao_log
+        label: "Descricao do log"
+        type: text
+        required: false
+      - name: responsavel
+        label: "Responsavel"
+        type: many2one
+        required: true
+      - name: state
+        label: "State"
+        type: selection
+        required: true
+    buttons:
+      - name: exportar_xls
+        label: "Exportar XLS"
+        action: "Exporta logs para Excel"
+
+  - id: detalhes_vendas_wizard
+    name: "Detalhes de Vendas"
+    path: "Ponto de Venda > Relatorios > Detalhes de Vendas"
+    view_type: wizard
+    description: "Wizard para gerar relatorio de detalhes de vendas por periodo."
+    fields:
+      - name: data_inicio
+        label: "Data de Inicio"
+        type: datetime
+        required: true
+      - name: data_final
+        label: "Data Final"
+        type: datetime
+        required: true
+      - name: pontos_de_venda
+        label: "Pontos de Venda"
+        type: many2many
+        required: false
+        help: "Lista de terminais PDV para filtrar"
+    buttons:
+      - name: imprimir
+        label: "Imprimir"
+        action: "Gera o relatorio PDF"
+      - name: cancelar
+        label: "Cancelar"
+        action: "Fecha o wizard"
+
+flows:
+  - name: "Consultar Sangrias via Sessao do PDV"
+    description: >
+      Fluxo principal para consultar sangrias. Como nao existe um relatorio
+      dedicado de sangrias, o caminho e acessar a sessao do PDV e verificar
+      as linhas de controle de caixa (Cash Control Lines).
+    steps:
+      - step: 1
+        action: "Acessar Ponto de Venda no menu principal"
+        screen: pdv_painel
+        screenshot_hint: "Tela principal do PDV com os 3 terminais em cards"
+      - step: 2
+        action: "Clicar no menu Pedidos > Sessoes"
+        screen: sessoes_list
+        screenshot_hint: "Lista de sessoes com colunas PDV, ID Sessao, Responsavel, Datas, Situacao"
+      - step: 3
+        action: "Clicar em uma sessao fechada (ex: PDV 1 Caixa, Fechado e Lancado)"
+        screen: sessao_form
+        screenshot_hint: "Formulario da sessao mostrando saldos de abertura, transacoes, saldo final"
+      - step: 4
+        action: "Rolar ate a secao Cash Control Line para ver as sangrias"
+        screen: sessao_form
+        screenshot_hint: "Secao Cash Control Line com registros de sangria (retiradas)"
+      - step: 5
+        action: "Opcionalmente, clicar em um card de Resumo por Metodos de Pagamento para ver o extrato de Dinheiro"
+        screen: extrato_bancario_dialog
+        screenshot_hint: "Dialog do Extrato Bancario mostrando transacoes de dinheiro incluindo sangrias"
+
+  - name: "Verificar Saldo e Diferenca de Caixa"
+    description: >
+      Fluxo para verificar se o caixa fechou corretamente, comparando
+      o saldo teorico com o saldo real.
+    steps:
+      - step: 1
+        action: "Acessar Ponto de Venda > Pedidos > Sessoes"
+        screen: sessoes_list
+        screenshot_hint: "Lista de sessoes filtrada ou ordenada"
+      - step: 2
+        action: "Abrir uma sessao com status Fechado e Lancado"
+        screen: sessao_form
+        screenshot_hint: "Formulario mostrando Saldo de Abertura, Transacoes, Saldo Final Teorico"
+      - step: 3
+        action: "Verificar o campo Diferenca (deve ser R$ 0,00 se caixa bateu)"
+        screen: sessao_form
+        screenshot_hint: "Campos Saldo de Fechamento Real e Diferenca em destaque"
+
+  - name: "Gerar Relatorio de Detalhes de Vendas"
+    description: >
+      Fluxo para gerar um relatorio consolidado de vendas por periodo.
+      Nao e especifico de sangrias, mas mostra um resumo geral.
+    steps:
+      - step: 1
+        action: "Acessar Ponto de Venda > Relatorios > Detalhes de Vendas"
+        screen: detalhes_vendas_wizard
+        screenshot_hint: "Wizard com campos de Data de Inicio e Data Final"
+      - step: 2
+        action: "Definir o periodo desejado e selecionar os PDVs"
+        screen: detalhes_vendas_wizard
+        screenshot_hint: "Campos preenchidos com datas e PDVs selecionados"
+      - step: 3
+        action: "Clicar em Imprimir para gerar o relatorio"
+        screen: detalhes_vendas_wizard
+        screenshot_hint: "Botao Imprimir sendo clicado"
+
+notes:
+  sangria_report_status: >
+    NAO EXISTE um menu ou relatorio dedicado de Sangrias ou Retiradas de Caixa
+    no modulo Ponto de Venda deste NXZ ERP (Odoo 12). As sangrias sao registradas
+    como linhas dentro das sessoes do PDV, especificamente na secao Cash Control Line
+    do formulario de cada sessao. Para consultar sangrias, o usuario deve navegar
+    ate a sessao desejada e verificar essas linhas. O campo + Transacoes no
+    formulario da sessao mostra o total de movimentacoes em dinheiro (incluindo
+    sangrias como valores negativos).
+
+  terminals_found:
+    - name: "PDV 1 Caixa - TCLSC (PDV 1 Caixa)"
+      description: "Caixa principal, operado manualmente"
+    - name: "PDV 2 Totem - TCLSC (PDV 2 Totem)"
+      description: "Terminal de autoatendimento (totem)"
+    - name: "PDV 3 iFood - TCLSC (PDV 3 iFood)"
+      description: "Terminal integrado com iFood (delivery)"
+
+  empresa: "The Cookiery - SC Matriz"
+  total_sessoes: 178
+  periodo_dados: "Janeiro 2026"

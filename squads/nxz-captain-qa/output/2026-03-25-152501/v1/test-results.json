@@ -1,0 +1,111 @@
+{
+  "assistant_id": 3,
+  "assistant_name": "NXZ AI",
+  "test_date": "2026-03-25",
+  "test_method": "copilot_threads",
+  "team": "relacionamento",
+  "team_id": 2,
+  "total_conversations_collected": 20,
+  "total_tests_run": 10,
+  "test_pairs": [
+    {
+      "test_id": 1,
+      "topic": "produto-sumiu",
+      "conv_ref": 1492,
+      "customer_question": "Meu produto sumiu do cardapio do PDV, nao aparece mais para vender. Como faco para ele voltar?",
+      "captain_response": "Para resolver o problema de um produto que sumiu do cardapio do PDV, voce pode tentar os seguintes passos: 1. Verifique a Configuracao do Produto: Acesse o sistema de gerenciamento de produtos e certifique-se de que o produto esta corretamente configurado para aparecer no PDV. 2. Atualize o Catalogo: As vezes, a atualizacao do catalogo de produtos no sistema pode resolver problemas de exibicao.",
+      "used_knowledge_base": true,
+      "status": "success"
+    },
+    {
+      "test_id": 2,
+      "topic": "certificado-digital",
+      "conv_ref": 1488,
+      "customer_question": "Preciso atualizar o certificado digital para emitir nota fiscal. Qual o passo a passo?",
+      "captain_response": "Para atualizar o certificado digital no NXZ ERP e emitir nota fiscal, siga estes passos: 1. Abra o NXZ ERP no navegador e faca login com o usuario administrador. 2. Clique no icone de menu no canto superior esquerdo e selecione Faturamento. 3. Na tela de Faturamento, clique em Configuracao e depois em Atualizar Certificado Digital. 4. Na janela que abrir, localize o campo A1 Arquivo...",
+      "used_knowledge_base": true,
+      "status": "success"
+    },
+    {
+      "test_id": 3,
+      "topic": "impressora",
+      "conv_ref": 1485,
+      "customer_question": "A impressora do caixa parou de imprimir os cupons. O que devo verificar?",
+      "captain_response": "Para resolver o problema da impressora do caixa que parou de imprimir cupons, voce pode verificar os seguintes pontos: 1. Conexoes: Certifique-se de que todos os cabos estao corretamente conectados. 2. Papel: Verifique se ha papel na impressora e se esta corretamente posicionado. 3. Configuracoes: Confira as configuracoes da impressora no sistema.",
+      "used_knowledge_base": false,
+      "status": "success"
+    },
+    {
+      "test_id": 4,
+      "topic": "senha",
+      "conv_ref": 1490,
+      "customer_question": "Esqueci minha senha do sistema e nao consigo acessar. Como recupero?",
+      "captain_response": "Para recuperar sua senha de acesso ao sistema, voce pode seguir o procedimento padrao de recuperacao de senha. Normalmente, isso envolve clicar em Esqueci minha senha na tela de login do sistema NXZ AI. Voce recebera um e-mail com instrucoes para redefinir sua senha.",
+      "used_knowledge_base": false,
+      "status": "success"
+    },
+    {
+      "test_id": 5,
+      "topic": "erro-pdv",
+      "conv_ref": 1489,
+      "customer_question": "O PDV esta dando erro ao abrir, aparece tela branca. O que fazer?",
+      "captain_response": "Atualmente, nao ha informacoes especificas na documentacao sobre como resolver o erro de tela branca ao abrir o PDV. Recomendo verificar se ha atualizacoes pendentes para o software ou reiniciar o sistema para ver se o problema persiste.",
+      "used_knowledge_base": false,
+      "status": "success"
+    },
+    {
+      "test_id": 6,
+      "topic": "nf-devolucao",
+      "conv_ref": 1483,
+      "customer_question": "Como emitir uma nota fiscal de devolucao no NXZ ERP?",
+      "captain_response": "Atualmente, nao ha informacoes especificas disponiveis sobre como emitir uma nota fiscal de devolucao no NXZ ERP. Recomendo verificar diretamente no sistema NXZ ERP ou consultar a documentacao interna.",
+      "used_knowledge_base": false,
+      "status": "success"
+    },
+    {
+      "test_id": 7,
+      "topic": "cadastro-produto",
+      "conv_ref": 1486,
+      "customer_question": "Preciso cadastrar um novo produto no cardapio. Como faco?",
+      "captain_response": "Atualmente, nao encontrei informacoes especificas sobre como cadastrar um novo produto no cardapio usando o NXZ AI. Recomendo verificar a documentacao interna ou consultar um colega.",
+      "used_knowledge_base": false,
+      "status": "success"
+    },
+    {
+      "test_id": 8,
+      "topic": "kds",
+      "conv_ref": 1493,
+      "customer_question": "O KDS da cozinha nao esta recebendo os pedidos do PDV. Como resolver?",
+      "captain_response": "Para resolver o problema do KDS da cozinha que nao esta recebendo pedidos do PDV: 1. Verifique a Conexao de Rede: Certifique-se de que ambos os dispositivos estao conectados a mesma rede. 2. Reinicie os Dispositivos. 3. Verifique Configuracoes.",
+      "used_knowledge_base": false,
+      "status": "success"
+    },
+    {
+      "test_id": 9,
+      "topic": "sangria",
+      "conv_ref": 1487,
+      "customer_question": "Como faco para fazer uma sangria no caixa do PDV?",
+      "captain_response": null,
+      "used_knowledge_base": false,
+      "status": "no_response"
+    },
+    {
+      "test_id": 10,
+      "topic": "relatorio",
+      "conv_ref": 1484,
+      "customer_question": "Preciso gerar um relatorio de vendas do mes. Onde encontro isso?",
+      "captain_response": "Atualmente, nao encontrei informacoes especificas sobre como gerar um relatorio de vendas do mes no sistema NXZ AI. Recomendo verificar a documentacao ou os recursos de ajuda do sistema.",
+      "used_knowledge_base": false,
+      "status": "success"
+    }
+  ],
+  "summary": {
+    "total_success": 9,
+    "total_no_response": 1,
+    "total_with_kb": 2,
+    "total_generic": 7,
+    "kb_topics": ["certificado-digital", "produto-sumiu"],
+    "no_kb_topics": ["impressora", "senha", "erro-pdv", "nf-devolucao", "cadastro-produto", "kds", "relatorio"],
+    "no_response_topics": ["sangria"]
+  }
+}

@@ -1,0 +1,42 @@
+screenshots:
+  - id: 1
+    file: "01-painel-pdv.png"
+    marker: "[SCREENSHOT: Painel principal do Ponto de Venda - Cards dos terminais PDV visiveis com status e saldo]"
+    path: "screenshots/01-painel-pdv.png"
+    status: captured
+    notes: "3 terminais visiveis: PDV 1 Caixa, PDV 2 Totem, PDV 3 iFood"
+
+  - id: 2
+    file: "02-lista-sessoes.png"
+    marker: "[SCREENSHOT: Lista de Sessoes do PDV - Colunas Ponto de Venda, ID da Sessao, Responsavel, Data de Abertura, Data de Fechamento, Situacao]"
+    path: "screenshots/02-lista-sessoes.png"
+    status: captured
+    notes: "178 sessoes no total, visao lista com todas as colunas"
+
+  - id: 3
+    file: "03-sessao-selecionada.png"
+    marker: "[SCREENSHOT: Lista de Sessoes - Destaque em uma sessao com situacao Fechado e Lancado sendo selecionada]"
+    path: "screenshots/03-sessao-selecionada.png"
+    status: captured
+    notes: "Sessao POS/2026/01/25/260, PDV 1 Caixa, topo do formulario com dados gerais"
+
+  - id: 4
+    file: "04-saldos-sessao.png"
+    marker: "[SCREENSHOT: Formulario da Sessao do PDV - Campos Saldo de Abertura, Transacoes, Saldo Final Teorico, Saldo de Fechamento Real e Diferenca visiveis]"
+    path: "screenshots/04-saldos-sessao.png"
+    status: captured
+    notes: "Saldo de Abertura R$ 2.241,35, Transacoes R$ -1.247,50, Saldo Final Teorico R$ 993,85, Fechamento Real R$ 993,85, Diferenca R$ 0,00"
+
+  - id: 5
+    file: "05-cash-control-line.png"
+    marker: "[SCREENSHOT: Secao Cash Control Line no formulario da sessao - Lista de linhas de controle de caixa com sangrias visiveis]"
+    path: "screenshots/05-cash-control-line.png"
+    status: captured
+    notes: "Secao Cash Control Line visivel abaixo dos cards de Resumo por Metodos de Pagamento. Secao vazia nesta sessao especifica."
+
+  - id: 6
+    file: "06-extrato-bancario.png"
+    marker: "[SCREENSHOT: Dialog do Extrato Bancario - Metodo Dinheiro aberto com transacoes listadas incluindo sangrias]"
+    path: "screenshots/06-extrato-bancario.png"
+    status: captured
+    notes: "Dialog Extrato Bancario com Diario, Data, Empresa, Saldo Inicial/Final, aba Transacoes. Aberto para metodo Voucher (manual)."

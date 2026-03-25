@@ -1,0 +1,14 @@
+name: "NXZ Captain QA Pipeline"
+description: >
+  Pipeline de teste automatizado do Chatwoot Captain. Coleta conversas reais,
+  testa no Playground, avalia respostas e gera relatorios.
+version: "1.0.0"
+steps:
+  - checkpoint-config
+  - collect-conversations
+  - run-playground-tests
+  - checkpoint-review-sample
+  - evaluate-responses
+  - checkpoint-review-results
+  - generate-report
+  - checkpoint-approval

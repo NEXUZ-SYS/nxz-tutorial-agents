@@ -16,10 +16,10 @@ marcadas no tutorial.
 ## Instrucoes
 
 1. Leia o tutorial draft e extraia todos os marcadores [SCREENSHOT: ...]
-2. Faca login no Odoo:
-   - URL: http://localhost:8012/web/login
-   - Email: nexuz@nexuz.com.br
-   - Senha: admin
+2. Faca login no Odoo usando as credenciais do arquivo `.env` na raiz do projeto:
+   - URL: ${ODOO_SAAS_URL}/web/login
+   - Email: ${ODOO_SAAS_USER}
+   - Senha: ${ODOO_SAAS_PASSWORD}
 3. Para cada marcador de screenshot, em ordem:
    a. Navegue ate a tela indicada pelo caminho de menus
    b. Reproduza o estado descrito (preencher campos, selecionar filtros, etc.)

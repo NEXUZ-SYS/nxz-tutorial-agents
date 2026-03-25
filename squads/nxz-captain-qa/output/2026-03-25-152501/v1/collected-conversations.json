@@ -1,0 +1,3012 @@
+{
+  "config": {
+    "team": "relacionamento",
+    "team_id": 2,
+    "period": "2026-03-18 to 2026-03-25",
+    "volume": 20
+  },
+  "conversations": [
+    {
+      "id": 1493,
+      "status": "resolved",
+      "created_at": "2026-03-19T19:45:02.000Z",
+      "messages": [
+        {
+          "id": 36247,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "Ola",
+          "created_at": "2026-03-19T19:45:02.000Z"
+        },
+        {
+          "id": 36248,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added aguardando-menu",
+          "created_at": "2026-03-19T19:45:03.000Z"
+        },
+        {
+          "id": 36249,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Olá!    \n👋 Bem-vindo a NXZ.    \nComo podemos te ajudar hoje?    \n1️⃣ Suporte   \n2️⃣ Financeiro    \n3️⃣ Comercial",
+          "created_at": "2026-03-19T19:45:03.000Z"
+        },
+        {
+          "id": 36250,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "1",
+          "created_at": "2026-03-19T19:45:07.000Z"
+        },
+        {
+          "id": 36251,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System removed aguardando-menu",
+          "created_at": "2026-03-19T19:45:08.000Z"
+        },
+        {
+          "id": 36252,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added dept-suporte",
+          "created_at": "2026-03-19T19:45:08.000Z"
+        },
+        {
+          "id": 36253,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Certo!  \nComo posso te ajudar?  \n1️⃣ Problema no PDV / caixa / KDS  \n2️⃣ Nota fiscal / Nota de devolução / certificado digital  \n3️⃣ Senha ou acesso incorreto / bloqueado  \n4️⃣ Impressora não imprime  \n5️⃣ Cadastro ou edição de preço ou produto  \n6️⃣ Outro problema / falar com atendente",
+          "created_at": "2026-03-19T19:45:08.000Z"
+        },
+        {
+          "id": 36254,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "5",
+          "created_at": "2026-03-19T19:45:16.000Z"
+        },
+        {
+          "id": 36255,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added SLA policy Suporte Padrão",
+          "created_at": "2026-03-19T19:45:16.000Z"
+        },
+        {
+          "id": 36256,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System removed dept-suporte",
+          "created_at": "2026-03-19T19:45:16.000Z"
+        },
+        {
+          "id": 36257,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added falar-atendente",
+          "created_at": "2026-03-19T19:45:16.000Z"
+        },
+        {
+          "id": 36258,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Assigned to Luiz Moreira via relacionamento by Automation System",
+          "created_at": "2026-03-19T19:45:17.000Z"
+        },
+        {
+          "id": 36259,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Entendido! 👨‍💻 nosso suporte logo ira te atender\n\n——\n\nNosso horario de atendimento⏰ Seg–Sex 8h30 às 18h | Sáb 9h–12h",
+          "created_at": "2026-03-19T19:45:17.000Z"
+        },
+        {
+          "id": 36260,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Conversa foi marcada como resolvida por Carol Oliveira",
+          "created_at": "2026-03-19T19:45:36.000Z"
+        },
+        {
+          "id": 36261,
+          "type": "template",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Ficamos felizes em ajudar!    \n😊 Conte conosco sempre que precisar.  Tenha um ótimo dia! 👋✨ \n\nComo você avalia nosso atendimento hoje?",
+          "created_at": "2026-03-19T19:45:36.000Z"
+        }
+      ],
+      "had_captain": true,
+      "had_handoff": true,
+      "message_count": 15
+    },
+    {
+      "id": 1492,
+      "status": "resolved",
+      "created_at": "2026-03-19T19:14:16.000Z",
+      "messages": [
+        {
+          "id": 36217,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "Ola",
+          "created_at": "2026-03-19T19:14:16.000Z"
+        },
+        {
+          "id": 36218,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added aguardando-menu",
+          "created_at": "2026-03-19T19:14:17.000Z"
+        },
+        {
+          "id": 36219,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Olá!    \n👋 Bem-vindo a NXZ.    \nComo podemos te ajudar hoje?    \n1️⃣ Suporte   \n2️⃣ Financeiro    \n3️⃣ Comercial",
+          "created_at": "2026-03-19T19:14:17.000Z"
+        },
+        {
+          "id": 36220,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "1",
+          "created_at": "2026-03-19T19:14:24.000Z"
+        },
+        {
+          "id": 36221,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System removed aguardando-menu",
+          "created_at": "2026-03-19T19:14:24.000Z"
+        },
+        {
+          "id": 36222,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added dept-suporte",
+          "created_at": "2026-03-19T19:14:25.000Z"
+        },
+        {
+          "id": 36223,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Certo!    \nComo posso te ajudar?    \n1️⃣ Problema no PDV / caixa    \n2️⃣ Nota fiscal / certificado digital    \n3️⃣ Senha ou acesso bloqueado    \n4️⃣ Impressora não imprime    \n5️⃣ Produto sumiu do sistema    \n6️⃣ Outro problema / falar com atendente",
+          "created_at": "2026-03-19T19:14:25.000Z"
+        },
+        {
+          "id": 36224,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "5",
+          "created_at": "2026-03-19T19:14:38.000Z"
+        },
+        {
+          "id": 36225,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added SLA policy Suporte Padrão",
+          "created_at": "2026-03-19T19:14:38.000Z"
+        },
+        {
+          "id": 36226,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System removed dept-suporte",
+          "created_at": "2026-03-19T19:14:38.000Z"
+        },
+        {
+          "id": 36227,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added prod-erp",
+          "created_at": "2026-03-19T19:14:38.000Z"
+        },
+        {
+          "id": 36228,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Entendido! Veja o passo a passo para resolver: 🛒\n\n👉 [link do artigo Produto sumiu do seu Help Center]\n\nIsso resolveu seu problema?\n\n✅ SIM\n\n❌ NÃO — para falar com atendente",
+          "created_at": "2026-03-19T19:14:38.000Z"
+        },
+        {
+          "id": 36229,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "X",
+          "created_at": "2026-03-19T19:15:01.000Z"
+        },
+        {
+          "id": 36230,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added falar-atendente",
+          "created_at": "2026-03-19T19:15:01.000Z"
+        },
+        {
+          "id": 36231,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Assigned to relacionamento by Automation System",
+          "created_at": "2026-03-19T19:15:02.000Z"
+        },
+        {
+          "id": 36232,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "👨‍💻 Estou te transferindo para o nosso suporte.\n\nNosso horário de atendimento é:  \n🕐 Segunda a Sexta: 8h30 às 18h\n\nSe estiver dentro do horário, o suporte já foi notificado e breve irá te atender😊",
+          "created_at": "2026-03-19T19:15:02.000Z"
+        },
+        {
+          "id": 36233,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "Oi",
+          "created_at": "2026-03-19T19:16:26.000Z"
+        },
+        {
+          "id": 36234,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Conversa foi marcada como resolvida por Carol Oliveira",
+          "created_at": "2026-03-19T19:17:27.000Z"
+        },
+        {
+          "id": 36235,
+          "type": "template",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Ficamos felizes em ajudar!    \n😊 Conte conosco sempre que precisar.  Tenha um ótimo dia! 👋✨ \n\nComo você avalia nosso atendimento hoje?",
+          "created_at": "2026-03-19T19:17:27.000Z"
+        }
+      ],
+      "had_captain": true,
+      "had_handoff": true,
+      "message_count": 19
+    },
+    {
+      "id": 1491,
+      "status": "resolved",
+      "created_at": "2026-03-19T18:50:53.000Z",
+      "messages": [
+        {
+          "id": 36205,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "34561474876338",
+          "created_at": "2026-03-19T18:50:53.000Z"
+        },
+        {
+          "id": 36206,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added aguardando-menu",
+          "created_at": "2026-03-19T18:50:53.000Z"
+        },
+        {
+          "id": 36207,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Olá!    \n👋 Bem-vindo a NXZ.    \nComo podemos te ajudar hoje?    \n1️⃣ Suporte   \n2️⃣ Financeiro    \n3️⃣ Comercial",
+          "created_at": "2026-03-19T18:50:53.000Z"
+        },
+        {
+          "id": 36208,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System removed aguardando-menu",
+          "created_at": "2026-03-19T18:50:53.000Z"
+        },
+        {
+          "id": 36209,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added dept-suporte",
+          "created_at": "2026-03-19T18:50:54.000Z"
+        },
+        {
+          "id": 36210,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Certo!    \nComo posso te ajudar?    \n1️⃣ Problema no PDV / caixa    \n2️⃣ Nota fiscal / certificado digital    \n3️⃣ Senha ou acesso bloqueado    \n4️⃣ Impressora não imprime    \n5️⃣ Produto sumiu do sistema    \n6️⃣ Outro problema / falar com atendente",
+          "created_at": "2026-03-19T18:50:54.000Z"
+        },
+        {
+          "id": 36211,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System removed dept-suporte",
+          "created_at": "2026-03-19T18:50:54.000Z"
+        },
+        {
+          "id": 36212,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added falar-atendente",
+          "created_at": "2026-03-19T18:50:54.000Z"
+        },
+        {
+          "id": 36213,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Assigned to relacionamento by Automation System",
+          "created_at": "2026-03-19T18:50:54.000Z"
+        },
+        {
+          "id": 36214,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "👨‍💻 Estou te transferindo para o nosso suporte.\n\nNosso horário de atendimento é:  \n🕐 Segunda a Sexta: 8h30 às 18h\n\nSe estiver dentro do horário, o suporte já foi notificado e breve irá te atender😊",
+          "created_at": "2026-03-19T18:50:55.000Z"
+        },
+        {
+          "id": 36215,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Conversa foi marcada como resolvida por Carol Oliveira",
+          "created_at": "2026-03-19T18:52:27.000Z"
+        },
+        {
+          "id": 36216,
+          "type": "template",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Ficamos felizes em ajudar!    \n😊 Conte conosco sempre que precisar.  Tenha um ótimo dia! 👋✨ \n\nComo você avalia nosso atendimento hoje?",
+          "created_at": "2026-03-19T18:52:27.000Z"
+        }
+      ],
+      "had_captain": true,
+      "had_handoff": true,
+      "message_count": 12
+    },
+    {
+      "id": 1490,
+      "status": "resolved",
+      "created_at": "2026-03-19T18:48:27.000Z",
+      "messages": [
+        {
+          "id": 36190,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "Oi *pessual",
+          "created_at": "2026-03-19T18:48:27.000Z"
+        },
+        {
+          "id": 36191,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added aguardando-menu",
+          "created_at": "2026-03-19T18:48:27.000Z"
+        },
+        {
+          "id": 36192,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Olá!    \n👋 Bem-vindo a NXZ.    \nComo podemos te ajudar hoje?    \n1️⃣ Suporte   \n2️⃣ Financeiro    \n3️⃣ Comercial",
+          "created_at": "2026-03-19T18:48:27.000Z"
+        },
+        {
+          "id": 36193,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "1",
+          "created_at": "2026-03-19T18:48:31.000Z"
+        },
+        {
+          "id": 36194,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System removed aguardando-menu",
+          "created_at": "2026-03-19T18:48:31.000Z"
+        },
+        {
+          "id": 36195,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added dept-suporte",
+          "created_at": "2026-03-19T18:48:31.000Z"
+        },
+        {
+          "id": 36196,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Certo!    \nComo posso te ajudar?    \n1️⃣ Problema no PDV / caixa    \n2️⃣ Nota fiscal / certificado digital    \n3️⃣ Senha ou acesso bloqueado    \n4️⃣ Impressora não imprime    \n5️⃣ Produto sumiu do sistema    \n6️⃣ Outro problema / falar com atendente",
+          "created_at": "2026-03-19T18:48:32.000Z"
+        },
+        {
+          "id": 36197,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "6",
+          "created_at": "2026-03-19T18:49:11.000Z"
+        },
+        {
+          "id": 36198,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added SLA policy Suporte Padrão",
+          "created_at": "2026-03-19T18:49:11.000Z"
+        },
+        {
+          "id": 36199,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System removed dept-suporte",
+          "created_at": "2026-03-19T18:49:11.000Z"
+        },
+        {
+          "id": 36200,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added falar-atendente",
+          "created_at": "2026-03-19T18:49:11.000Z"
+        },
+        {
+          "id": 36201,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Assigned to relacionamento by Automation System",
+          "created_at": "2026-03-19T18:49:12.000Z"
+        },
+        {
+          "id": 36202,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "👨‍💻 Estou te transferindo para o nosso suporte.\n\nNosso horário de atendimento é:  \n🕐 Segunda a Sexta: 8h30 às 18h\n\nSe estiver dentro do horário, o suporte já foi notificado e breve irá te atender😊",
+          "created_at": "2026-03-19T18:49:12.000Z"
+        },
+        {
+          "id": 36203,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Conversa foi marcada como resolvida por Carol Oliveira",
+          "created_at": "2026-03-19T18:50:28.000Z"
+        },
+        {
+          "id": 36204,
+          "type": "template",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Ficamos felizes em ajudar!    \n😊 Conte conosco sempre que precisar.  Tenha um ótimo dia! 👋✨ \n\nComo você avalia nosso atendimento hoje?",
+          "created_at": "2026-03-19T18:50:28.000Z"
+        }
+      ],
+      "had_captain": true,
+      "had_handoff": true,
+      "message_count": 15
+    },
+    {
+      "id": 1489,
+      "status": "resolved",
+      "created_at": "2026-03-19T18:46:06.000Z",
+      "messages": [
+        {
+          "id": 36168,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "",
+          "created_at": "2026-03-19T18:46:07.000Z"
+        },
+        {
+          "id": 36169,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added aguardando-menu",
+          "created_at": "2026-03-19T18:46:07.000Z"
+        },
+        {
+          "id": 36170,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Olá!    \n👋 Bem-vindo a NXZ.    \nComo podemos te ajudar hoje?    \n1️⃣ Suporte   \n2️⃣ Financeiro    \n3️⃣ Comercial",
+          "created_at": "2026-03-19T18:46:07.000Z"
+        },
+        {
+          "id": 36173,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "Preciso de ajuda com o sistema",
+          "created_at": "2026-03-19T18:46:19.000Z"
+        },
+        {
+          "id": 36174,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "1",
+          "created_at": "2026-03-19T18:46:41.000Z"
+        },
+        {
+          "id": 36175,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System removed aguardando-menu",
+          "created_at": "2026-03-19T18:46:41.000Z"
+        },
+        {
+          "id": 36176,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added dept-suporte",
+          "created_at": "2026-03-19T18:46:41.000Z"
+        },
+        {
+          "id": 36177,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Certo!    \nComo posso te ajudar?    \n1️⃣ Problema no PDV / caixa    \n2️⃣ Nota fiscal / certificado digital    \n3️⃣ Senha ou acesso bloqueado    \n4️⃣ Impressora não imprime    \n5️⃣ Produto sumiu do sistema    \n6️⃣ Outro problema / falar com atendente",
+          "created_at": "2026-03-19T18:46:41.000Z"
+        },
+        {
+          "id": 36178,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "5",
+          "created_at": "2026-03-19T18:46:50.000Z"
+        },
+        {
+          "id": 36179,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added SLA policy Suporte Padrão",
+          "created_at": "2026-03-19T18:46:50.000Z"
+        },
+        {
+          "id": 36180,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System removed dept-suporte",
+          "created_at": "2026-03-19T18:46:50.000Z"
+        },
+        {
+          "id": 36181,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added prod-erp",
+          "created_at": "2026-03-19T18:46:50.000Z"
+        },
+        {
+          "id": 36182,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Entendido! Veja o passo a passo para resolver: 🛒\n\n👉 [link do artigo Produto sumiu do seu Help Center]\n\nIsso resolveu seu problema?\n\n✅ SIM\n\n❌ NÃO — para falar com atendente",
+          "created_at": "2026-03-19T18:46:50.000Z"
+        },
+        {
+          "id": 36183,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "Preciso falar com alguém",
+          "created_at": "2026-03-19T18:47:09.000Z"
+        },
+        {
+          "id": 36184,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added falar-atendente",
+          "created_at": "2026-03-19T18:47:09.000Z"
+        },
+        {
+          "id": 36185,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Assigned to Luiz Moreira via relacionamento by Automation System",
+          "created_at": "2026-03-19T18:47:09.000Z"
+        },
+        {
+          "id": 36186,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "👨‍💻 Estou te transferindo para o nosso suporte.\n\nNosso horário de atendimento é:  \n🕐 Segunda a Sexta: 8h30 às 18h\n\nSe estiver dentro do horário, o suporte já foi notificado e breve irá te atender😊",
+          "created_at": "2026-03-19T18:47:09.000Z"
+        },
+        {
+          "id": 36187,
+          "type": "outgoing",
+          "sender_type": "user",
+          "sender_name": "Carol Oliveira",
+          "content": "teste 4 ok\n",
+          "created_at": "2026-03-19T18:47:46.000Z"
+        },
+        {
+          "id": 36188,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Conversa foi marcada como resolvida por Carol Oliveira",
+          "created_at": "2026-03-19T18:47:48.000Z"
+        },
+        {
+          "id": 36189,
+          "type": "template",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Ficamos felizes em ajudar!    \n😊 Conte conosco sempre que precisar.  Tenha um ótimo dia! 👋✨ \n\nComo você avalia nosso atendimento hoje?",
+          "created_at": "2026-03-19T18:47:48.000Z"
+        }
+      ],
+      "had_captain": true,
+      "had_handoff": true,
+      "message_count": 20
+    },
+    {
+      "id": 1488,
+      "status": "resolved",
+      "created_at": "2026-03-19T18:43:49.000Z",
+      "messages": [
+        {
+          "id": 36146,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "Preciso acessar o sistema e não estou conseguindo",
+          "created_at": "2026-03-19T18:43:49.000Z"
+        },
+        {
+          "id": 36147,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added aguardando-menu",
+          "created_at": "2026-03-19T18:43:50.000Z"
+        },
+        {
+          "id": 36148,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Olá!    \n👋 Bem-vindo a NXZ.    \nComo podemos te ajudar hoje?    \n1️⃣ Suporte   \n2️⃣ Financeiro    \n3️⃣ Comercial",
+          "created_at": "2026-03-19T18:43:50.000Z"
+        },
+        {
+          "id": 36149,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "1",
+          "created_at": "2026-03-19T18:43:57.000Z"
+        },
+        {
+          "id": 36150,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System removed aguardando-menu",
+          "created_at": "2026-03-19T18:43:57.000Z"
+        },
+        {
+          "id": 36151,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added dept-suporte",
+          "created_at": "2026-03-19T18:43:57.000Z"
+        },
+        {
+          "id": 36152,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Certo!    \nComo posso te ajudar?    \n1️⃣ Problema no PDV / caixa    \n2️⃣ Nota fiscal / certificado digital    \n3️⃣ Senha ou acesso bloqueado    \n4️⃣ Impressora não imprime    \n5️⃣ Produto sumiu do sistema    \n6️⃣ Outro problema / falar com atendente",
+          "created_at": "2026-03-19T18:43:57.000Z"
+        },
+        {
+          "id": 36153,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "2",
+          "created_at": "2026-03-19T18:44:10.000Z"
+        },
+        {
+          "id": 36154,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added SLA policy Suporte Padrão",
+          "created_at": "2026-03-19T18:44:10.000Z"
+        },
+        {
+          "id": 36155,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Assigned to Sabrina Wendl by Automation System",
+          "created_at": "2026-03-19T18:44:11.000Z"
+        },
+        {
+          "id": 36156,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Assigned to financeiro by Automation System",
+          "created_at": "2026-03-19T18:44:11.000Z"
+        },
+        {
+          "id": 36157,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System removed dept-suporte",
+          "created_at": "2026-03-19T18:44:11.000Z"
+        },
+        {
+          "id": 36158,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added prod-erp",
+          "created_at": "2026-03-19T18:44:11.000Z"
+        },
+        {
+          "id": 36159,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Entendido!  \nVeja o artigo com o passo a passo para resolver:  \n👉 [link do artigo Nota Fiscal / Certificado do seu Help Center]  \nIsso resolveu seu problema?  \n✅ SIM  \n❌ NÃO — para falar com atendente",
+          "created_at": "2026-03-19T18:44:11.000Z"
+        },
+        {
+          "id": 36160,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "6",
+          "created_at": "2026-03-19T18:44:21.000Z"
+        },
+        {
+          "id": 36161,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "Atendente",
+          "created_at": "2026-03-19T18:44:35.000Z"
+        },
+        {
+          "id": 36162,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added falar-atendente",
+          "created_at": "2026-03-19T18:44:35.000Z"
+        },
+        {
+          "id": 36163,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Assigned to Luiz Moreira via relacionamento by Automation System",
+          "created_at": "2026-03-19T18:44:36.000Z"
+        },
+        {
+          "id": 36164,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "👨‍💻 Estou te transferindo para o nosso suporte.\n\nNosso horário de atendimento é:  \n🕐 Segunda a Sexta: 8h30 às 18h\n\nSe estiver dentro do horário, o suporte já foi notificado e breve irá te atender😊",
+          "created_at": "2026-03-19T18:44:36.000Z"
+        },
+        {
+          "id": 36165,
+          "type": "outgoing",
+          "sender_type": "user",
+          "sender_name": "Carol Oliveira",
+          "content": "teste 3 ok",
+          "created_at": "2026-03-19T18:44:54.000Z"
+        },
+        {
+          "id": 36166,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Conversa foi marcada como resolvida por Carol Oliveira",
+          "created_at": "2026-03-19T18:45:26.000Z"
+        },
+        {
+          "id": 36167,
+          "type": "template",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Ficamos felizes em ajudar!    \n😊 Conte conosco sempre que precisar.  Tenha um ótimo dia! 👋✨ \n\nComo você avalia nosso atendimento hoje?",
+          "created_at": "2026-03-19T18:45:26.000Z"
+        }
+      ],
+      "had_captain": true,
+      "had_handoff": true,
+      "message_count": 22
+    },
+    {
+      "id": 1487,
+      "status": "resolved",
+      "created_at": "2026-03-19T18:40:12.000Z",
+      "messages": [
+        {
+          "id": 36129,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "1234456778990088",
+          "created_at": "2026-03-19T18:40:12.000Z"
+        },
+        {
+          "id": 36130,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added aguardando-menu",
+          "created_at": "2026-03-19T18:40:12.000Z"
+        },
+        {
+          "id": 36131,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added SLA policy Financeiro",
+          "created_at": "2026-03-19T18:40:12.000Z"
+        },
+        {
+          "id": 36132,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Olá!    \n👋 Bem-vindo a NXZ.    \nComo podemos te ajudar hoje?    \n1️⃣ Suporte   \n2️⃣ Financeiro    \n3️⃣ Comercial",
+          "created_at": "2026-03-19T18:40:12.000Z"
+        },
+        {
+          "id": 36133,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Assigned to financeiro by Automation System",
+          "created_at": "2026-03-19T18:40:13.000Z"
+        },
+        {
+          "id": 36134,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System removed aguardando-menu",
+          "created_at": "2026-03-19T18:40:13.000Z"
+        },
+        {
+          "id": 36135,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added dept-financeiro",
+          "created_at": "2026-03-19T18:40:13.000Z"
+        },
+        {
+          "id": 36136,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Entendido! 💙  \nEstou te transferindo para o Financeiro.  \nBreve iremos te atender!",
+          "created_at": "2026-03-19T18:40:13.000Z"
+        },
+        {
+          "id": 36137,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "1",
+          "created_at": "2026-03-19T18:40:16.000Z"
+        },
+        {
+          "id": 36138,
+          "type": "outgoing",
+          "sender_type": "user",
+          "sender_name": "Carol Oliveira",
+          "content": "teste com CNPJ falhouXXX",
+          "created_at": "2026-03-19T18:40:44.000Z"
+        },
+        {
+          "id": 36139,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Sistema de Automação adicionou falar-atendente",
+          "created_at": "2026-03-19T18:40:44.000Z"
+        },
+        {
+          "id": 36140,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Atribuído a Luiz Moreira por Sistema de Automação",
+          "created_at": "2026-03-19T18:40:45.000Z"
+        },
+        {
+          "id": 36141,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Atribuído a relacionamento por Sistema de Automação",
+          "created_at": "2026-03-19T18:40:45.000Z"
+        },
+        {
+          "id": 36142,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "👨‍💻 Estou te transferindo para o nosso suporte.\n\nNosso horário de atendimento é:  \n🕐 Segunda a Sexta: 8h30 às 18h\n\nSe estiver dentro do horário, o suporte já foi notificado e breve irá te atender😊",
+          "created_at": "2026-03-19T18:40:45.000Z"
+        },
+        {
+          "id": 36143,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "3",
+          "created_at": "2026-03-19T18:41:00.000Z"
+        },
+        {
+          "id": 36144,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Conversa foi marcada como resolvida por Carol Oliveira",
+          "created_at": "2026-03-19T18:41:24.000Z"
+        },
+        {
+          "id": 36145,
+          "type": "template",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Ficamos felizes em ajudar!    \n😊 Conte conosco sempre que precisar.  Tenha um ótimo dia! 👋✨ \n\nComo você avalia nosso atendimento hoje?",
+          "created_at": "2026-03-19T18:41:24.000Z"
+        }
+      ],
+      "had_captain": true,
+      "had_handoff": true,
+      "message_count": 17
+    },
+    {
+      "id": 1486,
+      "status": "resolved",
+      "created_at": "2026-03-19T18:39:14.000Z",
+      "messages": [
+        {
+          "id": 36110,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "Me ajudem por favor",
+          "created_at": "2026-03-19T18:39:14.000Z"
+        },
+        {
+          "id": 36111,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added aguardando-menu",
+          "created_at": "2026-03-19T18:39:15.000Z"
+        },
+        {
+          "id": 36112,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Olá!    \n👋 Bem-vindo a NXZ.    \nComo podemos te ajudar hoje?    \n1️⃣ Suporte   \n2️⃣ Financeiro    \n3️⃣ Comercial",
+          "created_at": "2026-03-19T18:39:15.000Z"
+        },
+        {
+          "id": 36113,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "1",
+          "created_at": "2026-03-19T18:39:19.000Z"
+        },
+        {
+          "id": 36114,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System removed aguardando-menu",
+          "created_at": "2026-03-19T18:39:19.000Z"
+        },
+        {
+          "id": 36115,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added dept-suporte",
+          "created_at": "2026-03-19T18:39:19.000Z"
+        },
+        {
+          "id": 36116,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Certo!    \nComo posso te ajudar?    \n1️⃣ Problema no PDV / caixa    \n2️⃣ Nota fiscal / certificado digital    \n3️⃣ Senha ou acesso bloqueado    \n4️⃣ Impressora não imprime    \n5️⃣ Produto sumiu do sistema    \n6️⃣ Outro problema / falar com atendente",
+          "created_at": "2026-03-19T18:39:19.000Z"
+        },
+        {
+          "id": 36117,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "1",
+          "created_at": "2026-03-19T18:39:25.000Z"
+        },
+        {
+          "id": 36118,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added SLA policy Suporte Padrão",
+          "created_at": "2026-03-19T18:39:25.000Z"
+        },
+        {
+          "id": 36119,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System removed dept-suporte",
+          "created_at": "2026-03-19T18:39:25.000Z"
+        },
+        {
+          "id": 36120,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added prod-erp",
+          "created_at": "2026-03-19T18:39:25.000Z"
+        },
+        {
+          "id": 36121,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Entendido! Veja o passo a passo para resolver: \n\n👉 [link do artigo Produto sumiu do seu Help Center]\n\nIsso resolveu seu problema?\n\n✅ SIM\n\n❌ NÃO — para falar com atendente",
+          "created_at": "2026-03-19T18:39:25.000Z"
+        },
+        {
+          "id": 36122,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "X",
+          "created_at": "2026-03-19T18:39:33.000Z"
+        },
+        {
+          "id": 36123,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added falar-atendente",
+          "created_at": "2026-03-19T18:39:33.000Z"
+        },
+        {
+          "id": 36124,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Assigned to relacionamento by Automation System",
+          "created_at": "2026-03-19T18:39:33.000Z"
+        },
+        {
+          "id": 36125,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "👨‍💻 Estou te transferindo para o nosso suporte.\n\nNosso horário de atendimento é:  \n🕐 Segunda a Sexta: 8h30 às 18h\n\nSe estiver dentro do horário, o suporte já foi notificado e breve irá te atender😊",
+          "created_at": "2026-03-19T18:39:33.000Z"
+        },
+        {
+          "id": 36126,
+          "type": "outgoing",
+          "sender_type": "user",
+          "sender_name": "Carol Oliveira",
+          "content": "teste 2 ok",
+          "created_at": "2026-03-19T18:39:56.000Z"
+        },
+        {
+          "id": 36127,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Conversa foi marcada como resolvida por Carol Oliveira",
+          "created_at": "2026-03-19T18:39:59.000Z"
+        },
+        {
+          "id": 36128,
+          "type": "template",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Ficamos felizes em ajudar!    \n😊 Conte conosco sempre que precisar.  Tenha um ótimo dia! 👋✨ \n\nComo você avalia nosso atendimento hoje?",
+          "created_at": "2026-03-19T18:39:59.000Z"
+        }
+      ],
+      "had_captain": true,
+      "had_handoff": true,
+      "message_count": 19
+    },
+    {
+      "id": 1485,
+      "status": "resolved",
+      "created_at": "2026-03-19T18:37:51.000Z",
+      "messages": [
+        {
+          "id": 36091,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "Preciso de ajuda",
+          "created_at": "2026-03-19T18:37:51.000Z"
+        },
+        {
+          "id": 36092,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added aguardando-menu",
+          "created_at": "2026-03-19T18:37:51.000Z"
+        },
+        {
+          "id": 36093,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Olá!    \n👋 Bem-vindo a NXZ.    \nComo podemos te ajudar hoje?    \n1️⃣ Suporte   \n2️⃣ Financeiro    \n3️⃣ Comercial",
+          "created_at": "2026-03-19T18:37:51.000Z"
+        },
+        {
+          "id": 36094,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "1",
+          "created_at": "2026-03-19T18:37:56.000Z"
+        },
+        {
+          "id": 36095,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System removed aguardando-menu",
+          "created_at": "2026-03-19T18:37:56.000Z"
+        },
+        {
+          "id": 36096,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added dept-suporte",
+          "created_at": "2026-03-19T18:37:56.000Z"
+        },
+        {
+          "id": 36097,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Certo!    \nComo posso te ajudar?    \n1️⃣ Problema no PDV / caixa    \n2️⃣ Nota fiscal / certificado digital    \n3️⃣ Senha ou acesso bloqueado    \n4️⃣ Impressora não imprime    \n5️⃣ Produto sumiu do sistema    \n6️⃣ Outro problema / falar com atendente",
+          "created_at": "2026-03-19T18:37:56.000Z"
+        },
+        {
+          "id": 36098,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "3",
+          "created_at": "2026-03-19T18:38:02.000Z"
+        },
+        {
+          "id": 36099,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added SLA policy Suporte Padrão",
+          "created_at": "2026-03-19T18:38:02.000Z"
+        },
+        {
+          "id": 36100,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System removed dept-suporte",
+          "created_at": "2026-03-19T18:38:02.000Z"
+        },
+        {
+          "id": 36101,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added falar-atendente",
+          "created_at": "2026-03-19T18:38:03.000Z"
+        },
+        {
+          "id": 36102,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Entendido! Veja o passo a passo para resolver o problema com a senha;\n\n👉 [link do artigo Impressora do seu Help Center]\n\nIsso resolveu seu problema?\n\n✅ SIM\n\n❌ NÃO — para falar com atendente",
+          "created_at": "2026-03-19T18:38:03.000Z"
+        },
+        {
+          "id": 36103,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "Nao",
+          "created_at": "2026-03-19T18:38:10.000Z"
+        },
+        {
+          "id": 36104,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Assigned to relacionamento by Automation System",
+          "created_at": "2026-03-19T18:38:10.000Z"
+        },
+        {
+          "id": 36105,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "👨‍💻 Estou te transferindo para o nosso suporte.\n\nNosso horário de atendimento é:  \n🕐 Segunda a Sexta: 8h30 às 18h\n\nSe estiver dentro do horário, o suporte já foi notificado e breve irá te atender😊",
+          "created_at": "2026-03-19T18:38:10.000Z"
+        },
+        {
+          "id": 36106,
+          "type": "outgoing",
+          "sender_type": "user",
+          "sender_name": "Carol Oliveira",
+          "content": "teste ok\n",
+          "created_at": "2026-03-19T18:38:45.000Z"
+        },
+        {
+          "id": 36107,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Conversa foi marcada como resolvida por Carol Oliveira",
+          "created_at": "2026-03-19T18:38:54.000Z"
+        },
+        {
+          "id": 36108,
+          "type": "template",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Ficamos felizes em ajudar!    \n😊 Conte conosco sempre que precisar.  Tenha um ótimo dia! 👋✨ \n\nComo você avalia nosso atendimento hoje?",
+          "created_at": "2026-03-19T18:38:54.000Z"
+        },
+        {
+          "id": 36109,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Carol Oliveira removeu falar-atendente",
+          "created_at": "2026-03-19T18:38:55.000Z"
+        }
+      ],
+      "had_captain": true,
+      "had_handoff": true,
+      "message_count": 19
+    },
+    {
+      "id": 1483,
+      "status": "resolved",
+      "created_at": "2026-03-19T17:33:24.000Z",
+      "messages": [
+        {
+          "id": 36057,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "Oi",
+          "created_at": "2026-03-19T17:33:24.000Z"
+        },
+        {
+          "id": 36058,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added aguardando-menu",
+          "created_at": "2026-03-19T17:33:25.000Z"
+        },
+        {
+          "id": 36059,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Olá!    \n👋 Bem-vindo a NXZ.    \nComo podemos te ajudar hoje?    \n1️⃣ Suporte   \n2️⃣ Financeiro    \n3️⃣ Comercial",
+          "created_at": "2026-03-19T17:33:25.000Z"
+        },
+        {
+          "id": 36060,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "1",
+          "created_at": "2026-03-19T17:33:29.000Z"
+        },
+        {
+          "id": 36061,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System removed aguardando-menu",
+          "created_at": "2026-03-19T17:33:29.000Z"
+        },
+        {
+          "id": 36062,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added dept-suporte",
+          "created_at": "2026-03-19T17:33:30.000Z"
+        },
+        {
+          "id": 36063,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Certo!    \nComo posso te ajudar?    \n1️⃣ Problema no PDV / caixa    \n2️⃣ Nota fiscal / certificado digital    \n3️⃣ Senha ou acesso bloqueado    \n4️⃣ Impressora não imprime    \n5️⃣ Produto sumiu do sistema    \n6️⃣ Outro problema / falar com atendente",
+          "created_at": "2026-03-19T17:33:30.000Z"
+        },
+        {
+          "id": 36064,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "2",
+          "created_at": "2026-03-19T17:33:37.000Z"
+        },
+        {
+          "id": 36065,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added SLA policy Suporte Padrão",
+          "created_at": "2026-03-19T17:33:38.000Z"
+        },
+        {
+          "id": 36066,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Assigned to Sabrina Wendl by Automation System",
+          "created_at": "2026-03-19T17:33:38.000Z"
+        },
+        {
+          "id": 36067,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Assigned to financeiro by Automation System",
+          "created_at": "2026-03-19T17:33:38.000Z"
+        },
+        {
+          "id": 36068,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "Nota fiscal",
+          "created_at": "2026-03-19T17:33:51.000Z"
+        },
+        {
+          "id": 36069,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added prod-erp",
+          "created_at": "2026-03-19T17:33:51.000Z"
+        },
+        {
+          "id": 36070,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Entendido!  \nVeja o artigo com o passo a passo para resolver:  \n👉 [link do artigo Nota Fiscal / Certificado do seu Help Center]  \nIsso resolveu seu problema?  \n✅ SIM  \n❌ NÃO — para falar com atendente",
+          "created_at": "2026-03-19T17:33:51.000Z"
+        },
+        {
+          "id": 36071,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "Nao",
+          "created_at": "2026-03-19T17:34:05.000Z"
+        },
+        {
+          "id": 36072,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System removed dept-suporte",
+          "created_at": "2026-03-19T17:34:05.000Z"
+        },
+        {
+          "id": 36073,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added falar-atendente",
+          "created_at": "2026-03-19T17:34:05.000Z"
+        },
+        {
+          "id": 36074,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Assigned to Luiz Moreira by Automation System",
+          "created_at": "2026-03-19T17:34:05.000Z"
+        },
+        {
+          "id": 36075,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Assigned to relacionamento by Automation System",
+          "created_at": "2026-03-19T17:34:06.000Z"
+        },
+        {
+          "id": 36076,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "👨‍💻 Estou te transferindo para o nosso suporte.   \n   \nNosso horário de atendimento é:    \n🕐 Segunda a Sexta: 8h30 às 18h \n\nSe estiver dentro do horário, o suporte já foi notificado e te atende em breve.    \nSe estiver fora do horário, retornaremos no próximo dia útil! 😊",
+          "created_at": "2026-03-19T17:34:06.000Z"
+        },
+        {
+          "id": 36077,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Conversa foi marcada como resolvida por Carol Oliveira",
+          "created_at": "2026-03-19T17:34:18.000Z"
+        },
+        {
+          "id": 36078,
+          "type": "template",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Ficamos felizes em ajudar!    \n😊 Conte conosco sempre que precisar.  Tenha um ótimo dia! 👋✨ \n\nComo você avalia nosso atendimento hoje?",
+          "created_at": "2026-03-19T17:34:18.000Z"
+        }
+      ],
+      "had_captain": true,
+      "had_handoff": true,
+      "message_count": 22
+    },
+    {
+      "id": 1481,
+      "status": "resolved",
+      "created_at": "2026-03-19T17:31:16.000Z",
+      "messages": [
+        {
+          "id": 36027,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "Boa tarde",
+          "created_at": "2026-03-19T17:31:16.000Z"
+        },
+        {
+          "id": 36028,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added aguardando-menu",
+          "created_at": "2026-03-19T17:31:16.000Z"
+        },
+        {
+          "id": 36029,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Olá!    \n👋 Bem-vindo a NXZ.    \nComo podemos te ajudar hoje?    \n1️⃣ Suporte   \n2️⃣ Financeiro    \n3️⃣ Comercial",
+          "created_at": "2026-03-19T17:31:16.000Z"
+        },
+        {
+          "id": 36030,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "1",
+          "created_at": "2026-03-19T17:31:24.000Z"
+        },
+        {
+          "id": 36031,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System removed aguardando-menu",
+          "created_at": "2026-03-19T17:31:24.000Z"
+        },
+        {
+          "id": 36032,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added dept-suporte",
+          "created_at": "2026-03-19T17:31:24.000Z"
+        },
+        {
+          "id": 36033,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Certo!    \nComo posso te ajudar?    \n1️⃣ Problema no PDV / caixa    \n2️⃣ Nota fiscal / certificado digital    \n3️⃣ Senha ou acesso bloqueado    \n4️⃣ Impressora não imprime    \n5️⃣ Produto sumiu do sistema    \n6️⃣ Outro problema / falar com atendente",
+          "created_at": "2026-03-19T17:31:24.000Z"
+        },
+        {
+          "id": 36034,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "5",
+          "created_at": "2026-03-19T17:31:34.000Z"
+        },
+        {
+          "id": 36035,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added SLA policy Suporte Padrão",
+          "created_at": "2026-03-19T17:31:35.000Z"
+        },
+        {
+          "id": 36036,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "Sumiu",
+          "created_at": "2026-03-19T17:31:53.000Z"
+        },
+        {
+          "id": 36037,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "Produto",
+          "created_at": "2026-03-19T17:32:03.000Z"
+        },
+        {
+          "id": 36038,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "6",
+          "created_at": "2026-03-19T17:32:09.000Z"
+        },
+        {
+          "id": 36039,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "Humano",
+          "created_at": "2026-03-19T17:32:20.000Z"
+        },
+        {
+          "id": 36040,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added falar-atendente",
+          "created_at": "2026-03-19T17:32:20.000Z"
+        },
+        {
+          "id": 36041,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Assigned to relacionamento by Automation System",
+          "created_at": "2026-03-19T17:32:20.000Z"
+        },
+        {
+          "id": 36042,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "👨‍💻 Estou te transferindo para o nosso suporte.   \n   \nNosso horário de atendimento é:    \n🕐 Segunda a Sexta: 8h30 às 18h \n\nSe estiver dentro do horário, o suporte já foi notificado e te atende em breve.    \nSe estiver fora do horário, retornaremos no próximo dia útil! 😊",
+          "created_at": "2026-03-19T17:32:20.000Z"
+        },
+        {
+          "id": 36043,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Conversa foi marcada como resolvida por Carol Oliveira",
+          "created_at": "2026-03-19T17:32:49.000Z"
+        },
+        {
+          "id": 36044,
+          "type": "template",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Ficamos felizes em ajudar!    \n😊 Conte conosco sempre que precisar.  Tenha um ótimo dia! 👋✨ \n\nComo você avalia nosso atendimento hoje?",
+          "created_at": "2026-03-19T17:32:49.000Z"
+        }
+      ],
+      "had_captain": true,
+      "had_handoff": true,
+      "message_count": 18
+    },
+    {
+      "id": 1480,
+      "status": "resolved",
+      "created_at": "2026-03-19T17:30:11.000Z",
+      "messages": [
+        {
+          "id": 36012,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "Preciso de ajuda",
+          "created_at": "2026-03-19T17:30:12.000Z"
+        },
+        {
+          "id": 36013,
+          "type": "template",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Olá! 👋 Bem-vindo ao Suporte da Nexuz.\r\n\r\nDigite seu CNPJ e nos informe em como podemos ajudar?",
+          "created_at": "2026-03-19T17:30:12.000Z"
+        },
+        {
+          "id": 36014,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added aguardando-menu",
+          "created_at": "2026-03-19T17:30:12.000Z"
+        },
+        {
+          "id": 36015,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Olá!    \n👋 Bem-vindo a NXZ.    \nComo podemos te ajudar hoje?    \n1️⃣ Suporte   \n2️⃣ Financeiro    \n3️⃣ Comercial",
+          "created_at": "2026-03-19T17:30:12.000Z"
+        },
+        {
+          "id": 36016,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System removed aguardando-menu",
+          "created_at": "2026-03-19T17:30:12.000Z"
+        },
+        {
+          "id": 36017,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added dept-suporte",
+          "created_at": "2026-03-19T17:30:13.000Z"
+        },
+        {
+          "id": 36018,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Certo!    \nComo posso te ajudar?    \n1️⃣ Problema no PDV / caixa    \n2️⃣ Nota fiscal / certificado digital    \n3️⃣ Senha ou acesso bloqueado    \n4️⃣ Impressora não imprime    \n5️⃣ Produto sumiu do sistema    \n6️⃣ Outro problema / falar com atendente",
+          "created_at": "2026-03-19T17:30:13.000Z"
+        },
+        {
+          "id": 36019,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System removed dept-suporte",
+          "created_at": "2026-03-19T17:30:13.000Z"
+        },
+        {
+          "id": 36020,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added falar-atendente",
+          "created_at": "2026-03-19T17:30:13.000Z"
+        },
+        {
+          "id": 36021,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Assigned to Luiz Moreira by Automation System",
+          "created_at": "2026-03-19T17:30:14.000Z"
+        },
+        {
+          "id": 36022,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Assigned to relacionamento by Automation System",
+          "created_at": "2026-03-19T17:30:14.000Z"
+        },
+        {
+          "id": 36023,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "👨‍💻 Estou te transferindo para o nosso suporte.   \n   \nNosso horário de atendimento é:    \n🕐 Segunda a Sexta: 8h30 às 18h \n\nSe estiver dentro do horário, o suporte já foi notificado e te atende em breve.    \nSe estiver fora do horário, retornaremos no próximo dia útil! 😊",
+          "created_at": "2026-03-19T17:30:14.000Z"
+        },
+        {
+          "id": 36024,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "👨‍💻 Estou te transferindo para o nosso suporte.   \n   \nNosso horário de atendimento é:    \n🕐 Segunda a Sexta: 8h30 às 18h \n\nSe estiver dentro do horário, o suporte já foi notificado e te atende em breve.    \nSe estiver fora do horário, retornaremos no próximo dia útil! 😊",
+          "created_at": "2026-03-19T17:30:14.000Z"
+        },
+        {
+          "id": 36025,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Conversa foi marcada como resolvida por Carol Oliveira",
+          "created_at": "2026-03-19T17:30:46.000Z"
+        },
+        {
+          "id": 36026,
+          "type": "template",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Ficamos felizes em ajudar!    \n😊 Conte conosco sempre que precisar.  Tenha um ótimo dia! 👋✨ \n\nComo você avalia nosso atendimento hoje?",
+          "created_at": "2026-03-19T17:30:46.000Z"
+        }
+      ],
+      "had_captain": true,
+      "had_handoff": true,
+      "message_count": 15
+    },
+    {
+      "id": 1477,
+      "status": "resolved",
+      "created_at": "2026-03-19T14:45:31.000Z",
+      "messages": [
+        {
+          "id": 35982,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "Boa tarde",
+          "created_at": "2026-03-19T14:45:31.000Z"
+        },
+        {
+          "id": 35983,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added aguardando-menu",
+          "created_at": "2026-03-19T14:45:32.000Z"
+        },
+        {
+          "id": 35984,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Olá!    \n👋 Bem-vindo a NXZ.    \nComo podemos te ajudar hoje?    \n1️⃣ Suporte   \n2️⃣ Financeiro    \n3️⃣ Comercial",
+          "created_at": "2026-03-19T14:45:32.000Z"
+        },
+        {
+          "id": 35985,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added fora-do-horario",
+          "created_at": "2026-03-19T14:45:32.000Z"
+        },
+        {
+          "id": 35991,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "1",
+          "created_at": "2026-03-19T14:45:38.000Z"
+        },
+        {
+          "id": 35992,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "Suporte",
+          "created_at": "2026-03-19T14:45:51.000Z"
+        },
+        {
+          "id": 35993,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added dept-suporte",
+          "created_at": "2026-03-19T14:45:52.000Z"
+        },
+        {
+          "id": 35994,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Certo!    \nComo posso te ajudar?    \n1️⃣ Problema no PDV / caixa    \n2️⃣ Nota fiscal / certificado digital    \n3️⃣ Senha ou acesso bloqueado    \n4️⃣ Impressora não imprime    \n5️⃣ Produto sumiu do sistema    \n6️⃣ Outro problema / falar com atendente",
+          "created_at": "2026-03-19T14:45:52.000Z"
+        },
+        {
+          "id": 35995,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added falar-atendente",
+          "created_at": "2026-03-19T14:45:52.000Z"
+        },
+        {
+          "id": 35996,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Assigned to Luiz Moreira via relacionamento by Automation System",
+          "created_at": "2026-03-19T14:45:52.000Z"
+        },
+        {
+          "id": 35997,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Entendido! 👨‍💻 Estou te transferindo para o nosso suporte.\n\nEle vai te atender em breve. Enquanto isso, pode descrever melhor o seu problema para agilizar o atendimento!",
+          "created_at": "2026-03-19T14:45:52.000Z"
+        },
+        {
+          "id": 35998,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Conversa foi marcada como resolvida por Carol Oliveira",
+          "created_at": "2026-03-19T14:47:08.000Z"
+        },
+        {
+          "id": 35999,
+          "type": "template",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Ficamos felizes em ajudar!    \n😊 Conte conosco sempre que precisar.  Tenha um ótimo dia! 👋✨ \n\nComo você avalia nosso atendimento hoje?",
+          "created_at": "2026-03-19T14:47:08.000Z"
+        }
+      ],
+      "had_captain": true,
+      "had_handoff": true,
+      "message_count": 13
+    },
+    {
+      "id": 1476,
+      "status": "resolved",
+      "created_at": "2026-03-19T13:54:09.000Z",
+      "messages": [
+        {
+          "id": 35948,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "Bom dia",
+          "created_at": "2026-03-19T13:54:09.000Z"
+        },
+        {
+          "id": 35949,
+          "type": "template",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Olá! 👋 Bem-vindo ao Suporte da Nexuz.\r\n\r\nDigite seu CNPJ e nos informe em como podemos ajudar?",
+          "created_at": "2026-03-19T13:54:10.000Z"
+        },
+        {
+          "id": 35950,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added aguardando-menu",
+          "created_at": "2026-03-19T13:54:10.000Z"
+        },
+        {
+          "id": 35951,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Olá!    \n👋 Bem-vindo a NXZ.    \nComo podemos te ajudar hoje?    \n1️⃣ Suporte   \n2️⃣ Financeiro    \n3️⃣ Comercial",
+          "created_at": "2026-03-19T13:54:10.000Z"
+        },
+        {
+          "id": 35952,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System removed aguardando-menu",
+          "created_at": "2026-03-19T13:54:10.000Z"
+        },
+        {
+          "id": 35953,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added dept-suporte",
+          "created_at": "2026-03-19T13:54:11.000Z"
+        },
+        {
+          "id": 35954,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Certo!    \nComo posso te ajudar?    \n1️⃣ Problema no PDV / caixa    \n2️⃣ Nota fiscal / certificado digital    \n3️⃣ Senha ou acesso bloqueado    \n4️⃣ Impressora não imprime    \n5️⃣ Produto sumiu do sistema    \n6️⃣ Outro problema / falar com atendente",
+          "created_at": "2026-03-19T13:54:11.000Z"
+        },
+        {
+          "id": 35955,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added falar-atendente",
+          "created_at": "2026-03-19T13:54:11.000Z"
+        },
+        {
+          "id": 35956,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Assigned to Luiz Moreira via relacionamento by Automation System",
+          "created_at": "2026-03-19T13:54:12.000Z"
+        },
+        {
+          "id": 35957,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Entendido! 👨‍💻 Estou te transferindo para o nosso suporte.\n\nEle vai te atender em breve. Enquanto isso, pode descrever melhor o seu problema para agilizar o atendimento!",
+          "created_at": "2026-03-19T13:54:12.000Z"
+        },
+        {
+          "id": 35958,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System removed dept-suporte",
+          "created_at": "2026-03-19T13:54:12.000Z"
+        },
+        {
+          "id": 35959,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Entendido! 👨‍💻 Vou te passar para um de nossos atendentes.\n\nEnquanto isso pode descrever com mais detalhes o que está acontecendo! ",
+          "created_at": "2026-03-19T13:54:13.000Z"
+        },
+        {
+          "id": 35960,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Conversa foi marcada como resolvida por Carol Oliveira",
+          "created_at": "2026-03-19T13:55:32.000Z"
+        },
+        {
+          "id": 35961,
+          "type": "template",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Ficamos felizes em ajudar!    \n😊 Conte conosco sempre que precisar.  Tenha um ótimo dia! 👋✨ \n\nComo você avalia nosso atendimento hoje?",
+          "created_at": "2026-03-19T13:55:32.000Z"
+        }
+      ],
+      "had_captain": true,
+      "had_handoff": true,
+      "message_count": 14
+    },
+    {
+      "id": 1475,
+      "status": "resolved",
+      "created_at": "2026-03-19T13:17:13.000Z",
+      "messages": [
+        {
+          "id": 35934,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "Ola",
+          "created_at": "2026-03-19T13:17:13.000Z"
+        },
+        {
+          "id": 35935,
+          "type": "template",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Olá! 👋 Bem-vindo ao Suporte da Nexuz.\r\n\r\nDigite seu CNPJ e nos informe em como podemos ajudar?",
+          "created_at": "2026-03-19T13:17:13.000Z"
+        },
+        {
+          "id": 35936,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added menu-principal",
+          "created_at": "2026-03-19T13:17:13.000Z"
+        },
+        {
+          "id": 35937,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Olá!    \n👋 Bem-vindo a NXZ.    \nComo podemos te ajudar hoje?    \n1️⃣ Suporte   \n2️⃣ Financeiro    \n3️⃣ Comercial",
+          "created_at": "2026-03-19T13:17:13.000Z"
+        },
+        {
+          "id": 35938,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System removed menu-principal",
+          "created_at": "2026-03-19T13:17:14.000Z"
+        },
+        {
+          "id": 35939,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added dept-suporte",
+          "created_at": "2026-03-19T13:17:14.000Z"
+        },
+        {
+          "id": 35940,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Certo!    \nComo posso te ajudar?    \n1️⃣ Problema no PDV / caixa    \n2️⃣ Nota fiscal / certificado digital    \n3️⃣ Senha ou acesso bloqueado    \n4️⃣ Impressora não imprime    \n5️⃣ Produto sumiu do sistema    \n6️⃣ Outro problema / falar com atendente",
+          "created_at": "2026-03-19T13:17:14.000Z"
+        },
+        {
+          "id": 35941,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System removed dept-suporte",
+          "created_at": "2026-03-19T13:17:15.000Z"
+        },
+        {
+          "id": 35942,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added falar-atendente",
+          "created_at": "2026-03-19T13:17:15.000Z"
+        },
+        {
+          "id": 35943,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Assigned to relacionamento by Automation System",
+          "created_at": "2026-03-19T13:17:15.000Z"
+        },
+        {
+          "id": 35944,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Entendido! 👨‍💻 Vou te passar para um de nossos atendentes.\n\nEnquanto isso pode descrever com mais detalhes o que está acontecendo! ",
+          "created_at": "2026-03-19T13:17:15.000Z"
+        },
+        {
+          "id": 35945,
+          "type": "outgoing",
+          "sender_type": "user",
+          "sender_name": "Luiz Moreira",
+          "content": "😁",
+          "created_at": "2026-03-19T13:18:42.000Z"
+        },
+        {
+          "id": 35946,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Conversa foi marcada como resolvida por Luiz Moreira",
+          "created_at": "2026-03-19T13:18:54.000Z"
+        },
+        {
+          "id": 35947,
+          "type": "template",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Ficamos felizes em ajudar!    \n😊 Conte conosco sempre que precisar.  Tenha um ótimo dia! 👋✨ \n\nComo você avalia nosso atendimento hoje?",
+          "created_at": "2026-03-19T13:18:54.000Z"
+        }
+      ],
+      "had_captain": true,
+      "had_handoff": true,
+      "message_count": 14
+    },
+    {
+      "id": 1471,
+      "status": "resolved",
+      "created_at": "2026-03-19T11:48:48.000Z",
+      "messages": [
+        {
+          "id": 35825,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "Ola",
+          "created_at": "2026-03-19T11:48:48.000Z"
+        },
+        {
+          "id": 35826,
+          "type": "template",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Olá! 👋 Bem-vindo ao Suporte da Nexuz.\r\n\r\nDigite seu CNPJ e nos informe em como podemos ajudar?",
+          "created_at": "2026-03-19T11:48:48.000Z"
+        },
+        {
+          "id": 35827,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added menu-principal",
+          "created_at": "2026-03-19T11:48:48.000Z"
+        },
+        {
+          "id": 35828,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added fora-do-horario",
+          "created_at": "2026-03-19T11:48:48.000Z"
+        },
+        {
+          "id": 35829,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Olá!    \n👋 Bem-vindo a NXZ.    \nComo podemos te ajudar hoje?    \n1️⃣ Suporte   \n2️⃣ Financeiro    \n3️⃣ Comercial",
+          "created_at": "2026-03-19T11:48:48.000Z"
+        },
+        {
+          "id": 35830,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added falar-atendente",
+          "created_at": "2026-03-19T11:48:49.000Z"
+        },
+        {
+          "id": 35831,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Assigned to Luiz Moreira by Automation System",
+          "created_at": "2026-03-19T11:48:49.000Z"
+        },
+        {
+          "id": 35832,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Assigned to relacionamento by Automation System",
+          "created_at": "2026-03-19T11:48:49.000Z"
+        },
+        {
+          "id": 35833,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Entendido! 👨‍💻 Vou te passar para um de nossos atendentes.\n\nEnquanto isso pode descrever com mais detalhes o que está acontecendo! ",
+          "created_at": "2026-03-19T11:48:49.000Z"
+        },
+        {
+          "id": 35834,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added dept-suporte",
+          "created_at": "2026-03-19T11:48:50.000Z"
+        },
+        {
+          "id": 35835,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Certo!    \nComo posso te ajudar?    \n1️⃣ Problema no PDV / caixa    \n2️⃣ Nota fiscal / certificado digital    \n3️⃣ Senha ou acesso bloqueado    \n4️⃣ Impressora não imprime    \n5️⃣ Produto sumiu do sistema    \n6️⃣ Outro problema / falar com atendente",
+          "created_at": "2026-03-19T11:48:50.000Z"
+        },
+        {
+          "id": 35836,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Carol Oliveira removeu fora-do-horario",
+          "created_at": "2026-03-19T11:48:55.000Z"
+        },
+        {
+          "id": 35837,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Carol Oliveira removeu dept-suporte",
+          "created_at": "2026-03-19T11:48:56.000Z"
+        },
+        {
+          "id": 35838,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Carol Oliveira removeu falar-atendente",
+          "created_at": "2026-03-19T11:48:57.000Z"
+        },
+        {
+          "id": 35839,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Conversa foi marcada como resolvida por Carol Oliveira",
+          "created_at": "2026-03-19T11:48:59.000Z"
+        },
+        {
+          "id": 35840,
+          "type": "template",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Ficamos felizes em ajudar!    \n😊 Conte conosco sempre que precisar.  Tenha um ótimo dia! 👋✨ \n\nComo você avalia nosso atendimento hoje?",
+          "created_at": "2026-03-19T11:48:59.000Z"
+        }
+      ],
+      "had_captain": true,
+      "had_handoff": true,
+      "message_count": 16
+    },
+    {
+      "id": 1470,
+      "status": "resolved",
+      "created_at": "2026-03-19T11:46:35.000Z",
+      "messages": [
+        {
+          "id": 35801,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "Bom dia",
+          "created_at": "2026-03-19T11:46:35.000Z"
+        },
+        {
+          "id": 35802,
+          "type": "template",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Olá! 👋 Bem-vindo ao Suporte da Nexuz.\r\n\r\nDigite seu CNPJ e nos informe em como podemos ajudar?",
+          "created_at": "2026-03-19T11:46:35.000Z"
+        },
+        {
+          "id": 35803,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added fora-do-horario",
+          "created_at": "2026-03-19T11:46:35.000Z"
+        },
+        {
+          "id": 35804,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Olá!    \n👋 Bem-vindo a NXZ.    \nComo podemos te ajudar hoje?    \n1️⃣ Suporte   \n2️⃣ Financeiro    \n3️⃣ Comercial",
+          "created_at": "2026-03-19T11:46:35.000Z"
+        },
+        {
+          "id": 35805,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added menu-principal",
+          "created_at": "2026-03-19T11:46:35.000Z"
+        },
+        {
+          "id": 35806,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added falar-atendente",
+          "created_at": "2026-03-19T11:46:36.000Z"
+        },
+        {
+          "id": 35807,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Assigned to Luiz Moreira by Automation System",
+          "created_at": "2026-03-19T11:46:36.000Z"
+        },
+        {
+          "id": 35808,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Assigned to relacionamento by Automation System",
+          "created_at": "2026-03-19T11:46:36.000Z"
+        },
+        {
+          "id": 35809,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Entendido! 👨‍💻 Vou te passar para um de nossos atendentes.\n\nEnquanto isso pode descrever com mais detalhes o que está acontecendo! ",
+          "created_at": "2026-03-19T11:46:36.000Z"
+        },
+        {
+          "id": 35810,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added dept-suporte",
+          "created_at": "2026-03-19T11:46:37.000Z"
+        },
+        {
+          "id": 35811,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Certo!    \nComo posso te ajudar?    \n1️⃣ Problema no PDV / caixa    \n2️⃣ Nota fiscal / certificado digital    \n3️⃣ Senha ou acesso bloqueado    \n4️⃣ Impressora não imprime    \n5️⃣ Produto sumiu do sistema    \n6️⃣ Outro problema / falar com atendente",
+          "created_at": "2026-03-19T11:46:37.000Z"
+        },
+        {
+          "id": 35812,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "2",
+          "created_at": "2026-03-19T11:47:37.000Z"
+        },
+        {
+          "id": 35813,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added SLA policy Suporte Padrão",
+          "created_at": "2026-03-19T11:47:37.000Z"
+        },
+        {
+          "id": 35814,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Assigned to Sabrina Wendl by Automation System",
+          "created_at": "2026-03-19T11:47:37.000Z"
+        },
+        {
+          "id": 35815,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Assigned to financeiro by Automation System",
+          "created_at": "2026-03-19T11:47:38.000Z"
+        },
+        {
+          "id": 35816,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System removed dept-suporte",
+          "created_at": "2026-03-19T11:47:38.000Z"
+        },
+        {
+          "id": 35817,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added prod-erp",
+          "created_at": "2026-03-19T11:47:38.000Z"
+        },
+        {
+          "id": 35818,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Entendido!  \nVeja o artigo com o passo a passo para resolver:  \n👉 [link do artigo Nota Fiscal / Certificado do seu Help Center]  \nIsso resolveu seu problema?  \n✅ SIM  \n❌ NÃO — para falar com atendente",
+          "created_at": "2026-03-19T11:47:38.000Z"
+        },
+        {
+          "id": 35819,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "X",
+          "created_at": "2026-03-19T11:47:54.000Z"
+        },
+        {
+          "id": 35820,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Assigned to Luiz Moreira by Automation System",
+          "created_at": "2026-03-19T11:47:54.000Z"
+        },
+        {
+          "id": 35821,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Assigned to relacionamento by Automation System",
+          "created_at": "2026-03-19T11:47:55.000Z"
+        },
+        {
+          "id": 35822,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Entendido! 👨‍💻 Vou te passar para um de nossos atendentes.\n\nEnquanto isso pode descrever com mais detalhes o que está acontecendo! ",
+          "created_at": "2026-03-19T11:47:55.000Z"
+        },
+        {
+          "id": 35823,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Conversa foi marcada como resolvida por Carol Oliveira",
+          "created_at": "2026-03-19T11:48:43.000Z"
+        },
+        {
+          "id": 35824,
+          "type": "template",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Ficamos felizes em ajudar!    \n😊 Conte conosco sempre que precisar.  Tenha um ótimo dia! 👋✨ \n\nComo você avalia nosso atendimento hoje?",
+          "created_at": "2026-03-19T11:48:43.000Z"
+        }
+      ],
+      "had_captain": true,
+      "had_handoff": true,
+      "message_count": 24
+    },
+    {
+      "id": 1467,
+      "status": "resolved",
+      "created_at": "2026-03-19T01:27:54.000Z",
+      "messages": [
+        {
+          "id": 35746,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "Ola",
+          "created_at": "2026-03-19T01:27:54.000Z"
+        },
+        {
+          "id": 35747,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added menu-principal",
+          "created_at": "2026-03-19T01:27:54.000Z"
+        },
+        {
+          "id": 35748,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Olá!    \n👋 Bem-vindo a NXZ.    \nComo podemos te ajudar hoje?    \n1️⃣ Suporte   \n2️⃣ Financeiro    \n3️⃣ Comercial",
+          "created_at": "2026-03-19T01:27:54.000Z"
+        },
+        {
+          "id": 35749,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "1",
+          "created_at": "2026-03-19T01:27:58.000Z"
+        },
+        {
+          "id": 35750,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System removed menu-principal",
+          "created_at": "2026-03-19T01:27:58.000Z"
+        },
+        {
+          "id": 35751,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added dept-suporte",
+          "created_at": "2026-03-19T01:27:59.000Z"
+        },
+        {
+          "id": 35752,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Certo!    \nComo posso te ajudar?    \n1️⃣ Problema no PDV / caixa    \n2️⃣ Nota fiscal / certificado digital    \n3️⃣ Senha ou acesso bloqueado    \n4️⃣ Impressora não imprime    \n5️⃣ Produto sumiu do sistema    \n6️⃣ Outro problema / falar com atendente",
+          "created_at": "2026-03-19T01:27:59.000Z"
+        },
+        {
+          "id": 35753,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "Problema",
+          "created_at": "2026-03-19T01:28:15.000Z"
+        },
+        {
+          "id": 35754,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added SLA policy Suporte Padrão",
+          "created_at": "2026-03-19T01:28:15.000Z"
+        },
+        {
+          "id": 35755,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "6",
+          "created_at": "2026-03-19T01:28:41.000Z"
+        },
+        {
+          "id": 35756,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System removed dept-suporte",
+          "created_at": "2026-03-19T01:28:41.000Z"
+        },
+        {
+          "id": 35757,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added falar-atendente",
+          "created_at": "2026-03-19T01:28:41.000Z"
+        },
+        {
+          "id": 35758,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Assigned to Luiz Moreira by Automation System",
+          "created_at": "2026-03-19T01:28:42.000Z"
+        },
+        {
+          "id": 35759,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Assigned to relacionamento by Automation System",
+          "created_at": "2026-03-19T01:28:42.000Z"
+        },
+        {
+          "id": 35760,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Entendido! 👨‍💻 Estou te transferindo para um de nossos atendentes.\n\nEnquanto isso, pode me informar o seu CNPJ e descrever melhor o seu problema para agilizar o atendimento!",
+          "created_at": "2026-03-19T01:28:42.000Z"
+        },
+        {
+          "id": 35761,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "Meu sistema esta fora do ar",
+          "created_at": "2026-03-19T01:29:08.000Z"
+        },
+        {
+          "id": 35762,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "🚨 Identificamos que seu sistema pode estar parado!    \nO suporte já foi notificado e vai te atender com prioridade máxima agora!",
+          "created_at": "2026-03-19T01:29:08.000Z"
+        },
+        {
+          "id": 35763,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Conversa foi marcada como resolvida por Carol Oliveira",
+          "created_at": "2026-03-19T01:29:23.000Z"
+        },
+        {
+          "id": 35764,
+          "type": "template",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Ficamos felizes em ajudar!    \n😊 Conte conosco sempre que precisar.  Tenha um ótimo dia! 👋✨ \n\nComo você avalia nosso atendimento hoje?",
+          "created_at": "2026-03-19T01:29:23.000Z"
+        }
+      ],
+      "had_captain": true,
+      "had_handoff": true,
+      "message_count": 19
+    },
+    {
+      "id": 1465,
+      "status": "resolved",
+      "created_at": "2026-03-19T01:19:34.000Z",
+      "messages": [
+        {
+          "id": 35722,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "Ola",
+          "created_at": "2026-03-19T01:19:34.000Z"
+        },
+        {
+          "id": 35723,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added SLA policy Suporte Padrão",
+          "created_at": "2026-03-19T01:19:34.000Z"
+        },
+        {
+          "id": 35724,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added menu-principal",
+          "created_at": "2026-03-19T01:19:34.000Z"
+        },
+        {
+          "id": 35725,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Olá!    \n👋 Bem-vindo a NXZ.    \nComo podemos te ajudar hoje?    \n1️⃣ Suporte   \n2️⃣ Financeiro    \n3️⃣ Comercial",
+          "created_at": "2026-03-19T01:19:34.000Z"
+        },
+        {
+          "id": 35726,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "1",
+          "created_at": "2026-03-19T01:19:40.000Z"
+        },
+        {
+          "id": 35727,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System removed menu-principal",
+          "created_at": "2026-03-19T01:19:40.000Z"
+        },
+        {
+          "id": 35728,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added dept-suporte",
+          "created_at": "2026-03-19T01:19:40.000Z"
+        },
+        {
+          "id": 35729,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Certo!    \nComo posso te ajudar?    \n1️⃣ Problema no PDV / caixa    \n2️⃣ Nota fiscal / certificado digital    \n3️⃣ Senha ou acesso bloqueado    \n4️⃣ Impressora não imprime    \n5️⃣ Produto sumiu do sistema    \n6️⃣ Outro problema / falar com atendente",
+          "created_at": "2026-03-19T01:19:40.000Z"
+        },
+        {
+          "id": 35730,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "6",
+          "created_at": "2026-03-19T01:19:47.000Z"
+        },
+        {
+          "id": 35731,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System removed dept-suporte",
+          "created_at": "2026-03-19T01:19:47.000Z"
+        },
+        {
+          "id": 35732,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added falar-atendente",
+          "created_at": "2026-03-19T01:19:47.000Z"
+        },
+        {
+          "id": 35733,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Assigned to Luiz Moreira by Automation System",
+          "created_at": "2026-03-19T01:19:47.000Z"
+        },
+        {
+          "id": 35734,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Assigned to relacionamento by Automation System",
+          "created_at": "2026-03-19T01:19:47.000Z"
+        },
+        {
+          "id": 35735,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Entendido! 👨‍💻 Estou te transferindo para um de nossos atendentes.\n\nEnquanto isso, pode me informar o seu CNPJ e descrever melhor o seu problema para agilizar o atendimento!",
+          "created_at": "2026-03-19T01:19:47.000Z"
+        },
+        {
+          "id": 35736,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "Meu sistema esta fora do ar preciso de ajuda",
+          "created_at": "2026-03-19T01:20:06.000Z"
+        },
+        {
+          "id": 35737,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "🚨 Identificamos que seu sistema pode estar parado!    \nO suporte já foi notificado e vai te atender com prioridade máxima agora!",
+          "created_at": "2026-03-19T01:20:06.000Z"
+        },
+        {
+          "id": 35738,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Conversa foi marcada como resolvida por Carol Oliveira",
+          "created_at": "2026-03-19T01:20:49.000Z"
+        },
+        {
+          "id": 35739,
+          "type": "template",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Ficamos felizes em ajudar!    \n😊 Conte conosco sempre que precisar.  Tenha um ótimo dia! 👋✨ \n\nComo você avalia nosso atendimento hoje?",
+          "created_at": "2026-03-19T01:20:49.000Z"
+        }
+      ],
+      "had_captain": true,
+      "had_handoff": true,
+      "message_count": 18
+    },
+    {
+      "id": 1463,
+      "status": "resolved",
+      "created_at": "2026-03-19T01:16:33.000Z",
+      "messages": [
+        {
+          "id": 35691,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "Ola",
+          "created_at": "2026-03-19T01:16:33.000Z"
+        },
+        {
+          "id": 35692,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added SLA policy Suporte Padrão",
+          "created_at": "2026-03-19T01:16:33.000Z"
+        },
+        {
+          "id": 35693,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added menu-principal",
+          "created_at": "2026-03-19T01:16:34.000Z"
+        },
+        {
+          "id": 35694,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Olá!    \n👋 Bem-vindo a NXZ.    \nComo podemos te ajudar hoje?    \n1️⃣ Suporte   \n2️⃣ Financeiro    \n3️⃣ Comercial",
+          "created_at": "2026-03-19T01:16:34.000Z"
+        },
+        {
+          "id": 35695,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "1",
+          "created_at": "2026-03-19T01:16:38.000Z"
+        },
+        {
+          "id": 35696,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System removed menu-principal",
+          "created_at": "2026-03-19T01:16:38.000Z"
+        },
+        {
+          "id": 35697,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added dept-suporte",
+          "created_at": "2026-03-19T01:16:38.000Z"
+        },
+        {
+          "id": 35698,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Certo!    \nComo posso te ajudar?    \n1️⃣ Problema no PDV / caixa    \n2️⃣ Nota fiscal / certificado digital    \n3️⃣ Senha ou acesso bloqueado    \n4️⃣ Impressora não imprime    \n5️⃣ Produto sumiu do sistema    \n6️⃣ Outro problema / falar com atendente",
+          "created_at": "2026-03-19T01:16:38.000Z"
+        },
+        {
+          "id": 35699,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "2",
+          "created_at": "2026-03-19T01:16:43.000Z"
+        },
+        {
+          "id": 35700,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System removed dept-suporte",
+          "created_at": "2026-03-19T01:16:44.000Z"
+        },
+        {
+          "id": 35701,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added prod-erp",
+          "created_at": "2026-03-19T01:16:44.000Z"
+        },
+        {
+          "id": 35702,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Entendido!  \nVeja o artigo com o passo a passo para resolver:  \n👉 [link do artigo Nota Fiscal / Certificado do seu Help Center]  \nIsso resolveu seu problema?  \n✅ SIM  \n❌ NÃO — para falar com atendente",
+          "created_at": "2026-03-19T01:16:44.000Z"
+        },
+        {
+          "id": 35703,
+          "type": "incoming",
+          "sender_type": "contact",
+          "sender_name": "Carol Oliveira",
+          "content": "X",
+          "created_at": "2026-03-19T01:16:55.000Z"
+        },
+        {
+          "id": 35704,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Automation System added falar-atendente",
+          "created_at": "2026-03-19T01:16:55.000Z"
+        },
+        {
+          "id": 35705,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Assigned to Luiz Moreira by Automation System",
+          "created_at": "2026-03-19T01:16:55.000Z"
+        },
+        {
+          "id": 35706,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Assigned to relacionamento by Automation System",
+          "created_at": "2026-03-19T01:16:56.000Z"
+        },
+        {
+          "id": 35707,
+          "type": "outgoing",
+          "sender_type": "Captain::Assistant",
+          "sender_name": null,
+          "content": "Entendido! 👨‍💻 Vou te passar para um de nossos atendentes.\n\nEnquanto isso pode descrever com mais detalhes o que está acontecendo! ",
+          "created_at": "2026-03-19T01:16:56.000Z"
+        },
+        {
+          "id": 35708,
+          "type": "activity",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Conversa foi marcada como resolvida por Carol Oliveira",
+          "created_at": "2026-03-19T01:18:05.000Z"
+        },
+        {
+          "id": 35709,
+          "type": "template",
+          "sender_type": null,
+          "sender_name": null,
+          "content": "Ficamos felizes em ajudar!    \n😊 Conte conosco sempre que precisar.  Tenha um ótimo dia! 👋✨ \n\nComo você avalia nosso atendimento hoje?",
+          "created_at": "2026-03-19T01:18:05.000Z"
+        }
+      ],
+      "had_captain": true,
+      "had_handoff": true,
+      "message_count": 19
+    }
+  ],
+  "total_collected": 20,
+  "total_with_captain": 20
+}

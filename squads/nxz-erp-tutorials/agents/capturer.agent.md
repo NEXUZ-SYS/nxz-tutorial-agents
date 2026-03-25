@@ -37,9 +37,9 @@ principles:
 ### Configuracao do Playwright
 
 ```
-URL: http://localhost:8012
-Login: nexuz@nexuz.com.br
-Senha: admin
+URL: ${ODOO_SAAS_URL} (definido em .env)
+Login: ${ODOO_SAAS_USER} (definido em .env)
+Senha: ${ODOO_SAAS_PASSWORD} (definido em .env)
 Viewport: 1920x1080
 Formato: PNG
 Diretorio de saida: squads/nxz-erp-tutorials/output/{run_id}/screenshots/
@@ -47,11 +47,12 @@ Diretorio de saida: squads/nxz-erp-tutorials/output/{run_id}/screenshots/
 
 ### Fluxo de Login
 
-1. Navegar para http://localhost:8012/web/login
-2. Preencher campo "Email" com nexuz@nexuz.com.br
-3. Preencher campo "Password" com admin
-4. Clicar no botao "Log in"
-5. Aguardar a dashboard carregar completamente
+1. Ler credenciais do arquivo `.env` na raiz do projeto (ODOO_SAAS_URL, ODOO_SAAS_USER, ODOO_SAAS_PASSWORD)
+2. Navegar para {ODOO_SAAS_URL}/web/login
+3. Preencher campo "Email" com {ODOO_SAAS_USER}
+4. Preencher campo "Password" com {ODOO_SAAS_PASSWORD}
+5. Clicar no botao "Log in"
+6. Aguardar a dashboard carregar completamente
 
 ### Captura de Screenshots
 

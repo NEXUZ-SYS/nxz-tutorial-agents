@@ -11,10 +11,10 @@ skills:
   - chatwoot-publish
 
 config:
-  odoo_url: "http://localhost:8012"
-  odoo_user: "nexuz@nexuz.com.br"
-  odoo_password: "admin"
-  erp_codebase: "/home/walterfrey/Documentos/code/nexuz/odoo_12"
+  odoo_url: "${ODOO_SAAS_URL}"
+  odoo_user: "${ODOO_SAAS_USER}"
+  odoo_password: "${ODOO_SAAS_PASSWORD}"
+  erp_codebase: "${ERP_CODEBASE}"
   output_format: "markdown"
 
 pipeline:

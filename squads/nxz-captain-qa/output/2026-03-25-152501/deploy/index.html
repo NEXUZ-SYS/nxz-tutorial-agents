@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Captain QA Report — Nexuz</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: hsl(262, 80%, 50%);
+  --primary-end: hsl(280, 70%, 60%);
+  --primary-light: hsl(262, 35%, 93%);
+  --primary-20: hsla(262, 80%, 50%, 0.15);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-light: hsl(0, 84%, 95%);
+  --success: hsl(142, 71%, 45%);
+  --success-light: hsl(142, 71%, 93%);
+  --warning: hsl(38, 92%, 50%);
+  --warning-light: hsl(38, 92%, 93%);
+  --fg: hsl(0, 0%, 15%);
+  --muted: hsl(0, 0%, 45%);
+  --border: hsl(0, 0%, 90%);
+  --bg: hsl(0, 0%, 100%);
+  --warm: hsl(40, 20%, 97%);
+  --serif: 'DM Serif Display', serif;
+  --sans: 'Plus Jakarta Sans', sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: var(--sans); color: var(--fg); background: var(--bg); line-height: 1.6; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+/* Nav */
+nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 12px 0; }
+nav .inner { display: flex; align-items: center; justify-content: space-between; }
+nav .logo { font-weight: 700; font-size: 18px; background: linear-gradient(135deg, var(--primary), var(--primary-end)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+nav .links { display: flex; gap: 24px; }
+nav .links a { text-decoration: none; color: var(--muted); font-size: 13px; font-weight: 500; transition: color 0.2s; }
+nav .links a:hover { color: var(--primary); }
+.badge-live { background: var(--destructive); color: white; font-size: 10px; padding: 2px 8px; border-radius: 100px; font-weight: 600; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{ opacity:1 } 50%{ opacity:0.6 } }
+
+/* Hero */
+.hero { padding: 64px 0 48px; text-align: center; }
+.hero .tag { display: inline-block; background: var(--primary-light); color: var(--primary); font-size: 12px; font-weight: 600; padding: 4px 14px; border-radius: 100px; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.5px; }
+.hero h1 { font-family: var(--serif); font-size: clamp(32px, 5vw, 56px); font-weight: 400; margin-bottom: 12px; }
+.hero h1 span { background: linear-gradient(135deg, var(--primary), var(--primary-end)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.hero p { color: var(--muted); font-size: 16px; max-width: 600px; margin: 0 auto; }
+.hero .meta { display: flex; justify-content: center; gap: 32px; margin-top: 24px; font-size: 13px; color: var(--muted); font-family: var(--mono); }
+
+/* Cards */
+.cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 48px; }
+@media (max-width: 768px) { .cards { grid-template-columns: repeat(2, 1fr); } }
+.card { background: var(--bg); border: 1px solid var(--border); border-radius: 16px; padding: 24px; transition: all 0.3s; position: relative; overflow: hidden; }
+.card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+.card .icon { font-size: 28px; margin-bottom: 8px; }
+.card .label { font-size: 12px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+.card .value { font-family: var(--mono); font-size: 40px; font-weight: 700; line-height: 1.1; }
+.card .sub { font-size: 12px; color: var(--muted); margin-top: 4px; }
+.card.red .value { color: var(--destructive); }
+.card.green .value { color: var(--success); }
+.card.yellow .value { color: var(--warning); }
+.card.purple .value { color: var(--primary); }
+.card::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+.card.red::after { background: var(--destructive); }
+.card.green::after { background: var(--success); }
+.card.yellow::after { background: var(--warning); }
+.card.purple::after { background: var(--primary); }
+
+/* Section */
+.section { margin-bottom: 56px; }
+.section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+.section-header h2 { font-family: var(--serif); font-size: 32px; font-weight: 400; }
+.section-header .num { background: var(--primary); color: white; font-family: var(--mono); font-size: 14px; font-weight: 600; width: 32px; height: 32px; border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+
+/* Dimension Bars */
+.dims { background: var(--bg); border: 1px solid var(--border); border-radius: 16px; padding: 32px; }
+.dim { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+.dim:last-child { margin-bottom: 0; }
+.dim .name { width: 120px; font-size: 14px; font-weight: 600; flex-shrink: 0; }
+.dim .bar-bg { flex: 1; height: 36px; background: var(--warm); border-radius: 100px; overflow: hidden; }
+.dim .bar { height: 100%; border-radius: 100px; transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1); width: 0; }
+.dim .bar.animated { /* set via JS */ }
+.dim .score { font-family: var(--mono); font-size: 16px; font-weight: 700; width: 45px; text-align: right; }
+.dim .status { font-size: 18px; width: 30px; text-align: center; }
+
+/* Table */
+.tbl-wrap { background: var(--bg); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+table { width: 100%; border-collapse: collapse; }
+th { background: var(--primary-light); padding: 14px 16px; text-align: left; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); }
+td { padding: 14px 16px; border-top: 1px solid var(--border); font-size: 14px; }
+tr:hover td { background: hsl(262, 35%, 98%); }
+.mono { font-family: var(--mono); font-weight: 600; }
+.badge { display: inline-block; padding: 3px 12px; border-radius: 100px; font-size: 11px; font-weight: 700; font-family: var(--mono); }
+.badge.pass { background: var(--success-light); color: var(--success); }
+.badge.fail { background: var(--destructive-light); color: var(--destructive); }
+.highlight-row { background: hsl(142, 71%, 97%) !important; }
+.worst-row { background: hsl(0, 84%, 98%) !important; }
+.score-cell { text-align: center; }
+.score-1 { color: var(--destructive); }
+.score-2 { color: hsl(0, 60%, 55%); }
+.score-3 { color: var(--warning); }
+.score-4 { color: hsl(142, 50%, 45%); }
+.score-5 { color: var(--success); }
+
+/* Gaps */
+.gaps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+@media (max-width: 768px) { .gaps { grid-template-columns: 1fr; } }
+.gap { background: var(--bg); border: 1px solid var(--border); border-radius: 16px; padding: 20px; border-left: 4px solid; transition: all 0.2s; }
+.gap:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+.gap.high { border-left-color: var(--destructive); }
+.gap.med { border-left-color: var(--warning); }
+.gap.low { border-left-color: var(--muted); }
+.gap .pri { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+.gap.high .pri { color: var(--destructive); }
+.gap.med .pri { color: var(--warning); }
+.gap.low .pri { color: var(--muted); }
+.gap .topic { font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+.gap .desc { font-size: 13px; color: var(--muted); }
+
+/* Pipeline Viz */
+.pipeline { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; justify-content: center; padding: 32px; background: var(--bg); border: 1px solid var(--border); border-radius: 16px; }
+.pipe-step { display: flex; align-items: center; gap: 8px; }
+.pipe-node { background: var(--primary-light); color: var(--primary); padding: 8px 16px; border-radius: 10px; font-size: 13px; font-weight: 600; white-space: nowrap; }
+.pipe-node.checkpoint { background: var(--warning-light); color: hsl(38, 70%, 40%); }
+.pipe-node.active { background: var(--primary); color: white; }
+.pipe-arrow { color: var(--border); font-size: 18px; }
+
+/* Recs */
+.recs { display: flex; flex-direction: column; gap: 12px; }
+.rec { background: var(--bg); border: 1px solid var(--border); border-radius: 16px; padding: 24px; display: flex; gap: 20px; transition: all 0.2s; }
+.rec:hover { border-color: var(--primary); box-shadow: 0 4px 12px var(--primary-20); }
+.rec .num { font-family: var(--mono); font-size: 28px; font-weight: 700; color: var(--primary); flex-shrink: 0; width: 44px; }
+.rec .title { font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+.rec .desc { font-size: 13px; color: var(--muted); margin-bottom: 6px; }
+.rec .impact { font-size: 12px; color: var(--success); font-weight: 600; background: var(--success-light); display: inline-block; padding: 2px 10px; border-radius: 100px; }
+
+/* Squad Viz */
+.squad-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+@media (max-width: 768px) { .squad-grid { grid-template-columns: repeat(2, 1fr); } }
+.agent-card { background: var(--bg); border: 1px solid var(--border); border-radius: 16px; padding: 20px; text-align: center; }
+.agent-card .emoji { font-size: 36px; margin-bottom: 8px; }
+.agent-card .name { font-weight: 700; font-size: 14px; }
+.agent-card .role { font-size: 12px; color: var(--muted); }
+.agent-card .tasks { font-size: 11px; color: var(--primary); font-family: var(--mono); margin-top: 8px; }
+
+/* Insight */
+.insight-box { background: linear-gradient(135deg, hsl(262, 40%, 97%), hsl(280, 30%, 96%)); border: 1px solid hsl(262, 30%, 88%); border-radius: 16px; padding: 32px; margin-bottom: 24px; }
+.insight-box h3 { font-family: var(--serif); font-size: 22px; margin-bottom: 12px; }
+.insight-box p { color: var(--muted); font-size: 14px; }
+.insight-box .highlight { color: var(--primary); font-weight: 600; }
+
+/* Footer */
+footer { padding: 40px 0; text-align: center; color: var(--muted); font-size: 12px; border-top: 1px solid var(--border); background: var(--warm); }
+footer a { color: var(--primary); text-decoration: none; }
+
+/* Animate on scroll */
+.fade-in { opacity: 0; transform: translateY(20px); transition: all 0.6s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container inner">
+    <div class="logo">NXZ Captain QA</div>
+    <div class="links">
+      <a href="#metricas">Metricas</a>
+      <a href="#testes">Testes</a>
+      <a href="#gaps">Gaps</a>
+      <a href="#squad">Squad</a>
+      <a href="#acoes">Acoes</a>
+      <span class="badge-live">RUN 25/03</span>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="tag">Alinhamento Semanal</div>
+    <h1>Relatorio de <span>Qualidade do Captain</span></h1>
+    <p>Avaliacao automatizada do agente de IA NXZ AI com base em conversas reais do time Relacionamento, usando frameworks RAGAS e G-Eval.</p>
+    <div class="meta">
+      <span>25 Mar 2026</span>
+      <span>Team: Relacionamento</span>
+      <span>20 conversas</span>
+      <span>10 temas</span>
+    </div>
+  </div>
+</section>
+
+<!-- KPIs -->
+<section class="container" id="metricas">
+  <div class="cards fade-in">
+    <div class="card red">
+      <div class="icon">📉</div>
+      <div class="label">Score Geral</div>
+      <div class="value" data-target="2.44" data-decimals="2">0</div>
+      <div class="sub">de 5.0 &middot; Insuficiente</div>
+    </div>
+    <div class="card red">
+      <div class="icon">🎯</div>
+      <div class="label">Taxa de Aprovacao</div>
+      <div class="value" data-target="10" data-suffix="%" data-decimals="0">0</div>
+      <div class="sub">1 de 10 testes aprovados</div>
+    </div>
+    <div class="card purple">
+      <div class="icon">💬</div>
+      <div class="label">Conversas Analisadas</div>
+      <div class="value" data-target="20" data-decimals="0">0</div>
+      <div class="sub">10 temas representativos</div>
+    </div>
+    <div class="card yellow">
+      <div class="icon">🕳️</div>
+      <div class="label">Gaps na KB</div>
+      <div class="value" data-target="9" data-decimals="0">0</div>
+      <div class="sub">5 com zero cobertura</div>
+    </div>
+  </div>
+</section>
+
+<!-- Insight Box -->
+<section class="container">
+  <div class="insight-box fade-in">
+    <h3>Insight Principal</h3>
+    <p>O Captain <span class="highlight">so responde bem quando tem documentacao especifica</span>. O unico tema aprovado (Certificado Digital, 4.6/5.0) possui passo a passo detalhado na Knowledge Base com caminhos de menu reais do NXZ ERP. Os outros 9 temas receberam respostas genericas ou nenhuma resposta, revelando que <span class="highlight">a Knowledge Base cobre apenas ~11% dos temas de suporte</span>.</p>
+  </div>
+</section>
+
+<!-- Dimensions -->
+<section class="container section fade-in">
+  <div class="section-header">
+    <div class="num">1</div>
+    <h2>Scores por Dimensao</h2>
+  </div>
+  <div class="dims">
+    <div class="dim">
+      <div class="name">Correcao</div>
+      <div class="bar-bg"><div class="bar" data-width="46" style="background:var(--destructive)"></div></div>
+      <div class="score score-2">2.3</div>
+      <div class="status">❌</div>
+    </div>
+    <div class="dim">
+      <div class="name">Relevancia</div>
+      <div class="bar-bg"><div class="bar" data-width="62" style="background:var(--warning)"></div></div>
+      <div class="score score-3">3.1</div>
+      <div class="status">⚠️</div>
+    </div>
+    <div class="dim">
+      <div class="name">Tom</div>
+      <div class="bar-bg"><div class="bar" data-width="66" style="background:var(--warning)"></div></div>
+      <div class="score score-3">3.3</div>
+      <div class="status">⚠️</div>
+    </div>
+    <div class="dim">
+      <div class="name">Resolucao</div>
+      <div class="bar-bg"><div class="bar" data-width="34" style="background:var(--destructive)"></div></div>
+      <div class="score score-1">1.7</div>
+      <div class="status">❌</div>
+    </div>
+    <div class="dim">
+      <div class="name">Completude</div>
+      <div class="bar-bg"><div class="bar" data-width="34" style="background:var(--destructive)"></div></div>
+      <div class="score score-1">1.7</div>
+      <div class="status">❌</div>
+    </div>
+  </div>
+</section>
+
+<!-- Test Results Table -->
+<section class="container section fade-in" id="testes">
+  <div class="section-header">
+    <div class="num">2</div>
+    <h2>Resultados por Teste</h2>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>#</th><th>Tema</th><th class="score-cell">COR</th><th class="score-cell">REL</th><th class="score-cell">TOM</th><th class="score-cell">RES</th><th class="score-cell">COM</th><th class="score-cell">Media</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="mono">1</td><td>Produto sumiu</td><td class="score-cell mono score-3">3</td><td class="score-cell mono score-4">4</td><td class="score-cell mono score-4">4</td><td class="score-cell mono score-2">2</td><td class="score-cell mono score-2">2</td><td class="score-cell mono">3.0</td><td><span class="badge fail">REPROVADO</span></td></tr>
+        <tr class="highlight-row"><td class="mono">2</td><td><strong>Certificado digital</strong></td><td class="score-cell mono score-5">5</td><td class="score-cell mono score-5">5</td><td class="score-cell mono score-4">4</td><td class="score-cell mono score-5">5</td><td class="score-cell mono score-4">4</td><td class="score-cell mono score-5"><strong>4.6</strong></td><td><span class="badge pass">APROVADO</span></td></tr>
+        <tr><td class="mono">3</td><td>Impressora</td><td class="score-cell mono score-3">3</td><td class="score-cell mono score-4">4</td><td class="score-cell mono score-4">4</td><td class="score-cell mono score-2">2</td><td class="score-cell mono score-2">2</td><td class="score-cell mono">3.0</td><td><span class="badge fail">REPROVADO</span></td></tr>
+        <tr><td class="mono">4</td><td>Senha</td><td class="score-cell mono score-3">3</td><td class="score-cell mono score-4">4</td><td class="score-cell mono score-4">4</td><td class="score-cell mono score-2">2</td><td class="score-cell mono score-2">2</td><td class="score-cell mono">3.0</td><td><span class="badge fail">REPROVADO</span></td></tr>
+        <tr><td class="mono">5</td><td>Erro PDV</td><td class="score-cell mono score-2">2</td><td class="score-cell mono score-3">3</td><td class="score-cell mono score-3">3</td><td class="score-cell mono score-1">1</td><td class="score-cell mono score-1">1</td><td class="score-cell mono score-2">2.0</td><td><span class="badge fail">REPROVADO</span></td></tr>
+        <tr><td class="mono">6</td><td>NF devolucao</td><td class="score-cell mono score-1">1</td><td class="score-cell mono score-2">2</td><td class="score-cell mono score-3">3</td><td class="score-cell mono score-1">1</td><td class="score-cell mono score-1">1</td><td class="score-cell mono score-1">1.6</td><td><span class="badge fail">REPROVADO</span></td></tr>
+        <tr><td class="mono">7</td><td>Cadastro produto</td><td class="score-cell mono score-1">1</td><td class="score-cell mono score-2">2</td><td class="score-cell mono score-3">3</td><td class="score-cell mono score-1">1</td><td class="score-cell mono score-1">1</td><td class="score-cell mono score-1">1.6</td><td><span class="badge fail">REPROVADO</span></td></tr>
+        <tr><td class="mono">8</td><td>KDS</td><td class="score-cell mono score-3">3</td><td class="score-cell mono score-4">4</td><td class="score-cell mono score-4">4</td><td class="score-cell mono score-2">2</td><td class="score-cell mono score-2">2</td><td class="score-cell mono">3.0</td><td><span class="badge fail">REPROVADO</span></td></tr>
+        <tr class="worst-row"><td class="mono">9</td><td><strong>Sangria</strong></td><td class="score-cell mono score-1">1</td><td class="score-cell mono score-1">1</td><td class="score-cell mono score-1">1</td><td class="score-cell mono score-1">1</td><td class="score-cell mono score-1">1</td><td class="score-cell mono score-1"><strong>1.0</strong></td><td><span class="badge fail">REPROVADO</span></td></tr>
+        <tr><td class="mono">10</td><td>Relatorio vendas</td><td class="score-cell mono score-1">1</td><td class="score-cell mono score-2">2</td><td class="score-cell mono score-3">3</td><td class="score-cell mono score-1">1</td><td class="score-cell mono score-1">1</td><td class="score-cell mono score-1">1.6</td><td><span class="badge fail">REPROVADO</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Gaps -->
+<section class="container section fade-in" id="gaps">
+  <div class="section-header">
+    <div class="num">3</div>
+    <h2>Gaps na Knowledge Base</h2>
+  </div>
+  <div class="gaps">
+    <div class="gap high"><div class="pri">Prioridade Alta</div><div class="topic">Cadastro de Produto</div><div class="desc">Zero cobertura. Funcao basica do ERP com alta demanda diaria.</div></div>
+    <div class="gap high"><div class="pri">Prioridade Alta</div><div class="topic">Relatorio de Vendas</div><div class="desc">Zero cobertura. Demanda diaria dos gerentes de operacao.</div></div>
+    <div class="gap high"><div class="pri">Prioridade Alta</div><div class="topic">Sangria no PDV</div><div class="desc">Zero cobertura. Operacao frequente de caixa. Captain nao gerou resposta.</div></div>
+    <div class="gap high"><div class="pri">Prioridade Alta</div><div class="topic">NF de Devolucao</div><div class="desc">Zero cobertura. Operacao fiscal obrigatoria.</div></div>
+    <div class="gap med"><div class="pri">Prioridade Media</div><div class="topic">Erro PDV / Tela Branca</div><div class="desc">Zero cobertura. Problema recorrente no suporte.</div></div>
+    <div class="gap med"><div class="pri">Prioridade Media</div><div class="topic">Recuperacao de Senha</div><div class="desc">Cobertura parcial. Falta procedimento especifico do NXZ.</div></div>
+    <div class="gap med"><div class="pri">Prioridade Media</div><div class="topic">Impressora Termica</div><div class="desc">Cobertura parcial. Faltam configs do NXZ ERP.</div></div>
+    <div class="gap low"><div class="pri">Prioridade Baixa</div><div class="topic">KDS</div><div class="desc">Cobertura parcial. Faltam configuracoes especificas.</div></div>
+    <div class="gap low"><div class="pri">Prioridade Baixa</div><div class="topic">Produto Sumiu no PDV</div><div class="desc">Cobertura parcial. Faltam caminhos de menu reais.</div></div>
+  </div>
+</section>
+
+<!-- Squad Intelligence -->
+<section class="container section fade-in" id="squad">
+  <div class="section-header">
+    <div class="num">4</div>
+    <h2>Como a Squad Funciona</h2>
+  </div>
+
+  <div class="insight-box" style="margin-bottom:24px">
+    <h3>Opensquad: Orquestracao Multi-Agente</h3>
+    <p>A squad <span class="highlight">NXZ Captain QA</span> e um time de 4 agentes de IA especializados que trabalham em sequencia para testar automaticamente a qualidade do Captain. Cada agente tem uma responsabilidade unica e passa seus resultados para o proximo.</p>
+  </div>
+
+  <div class="squad-grid">
+    <div class="agent-card">
+      <div class="emoji">🗂️</div>
+      <div class="name">Carlos Coleta</div>
+      <div class="role">Extrai conversas do Chatwoot via API</div>
+      <div class="tasks">2 tasks &middot; subagent</div>
+    </div>
+    <div class="agent-card">
+      <div class="emoji">🧪</div>
+      <div class="name">Tina Teste</div>
+      <div class="role">Envia perguntas ao Playground do Captain</div>
+      <div class="tasks">2 tasks &middot; inline</div>
+    </div>
+    <div class="agent-card">
+      <div class="emoji">📊</div>
+      <div class="name">Claudinho Criterio</div>
+      <div class="role">Avalia respostas com rubrica RAGAS/G-Eval</div>
+      <div class="tasks">2 tasks &middot; inline</div>
+    </div>
+    <div class="agent-card">
+      <div class="emoji">📋</div>
+      <div class="name">Rita Relatorio</div>
+      <div class="role">Gera relatorio com metricas e recomendacoes</div>
+      <div class="tasks">2 tasks &middot; inline</div>
+    </div>
+  </div>
+
+  <div class="pipeline">
+    <div class="pipe-step"><div class="pipe-node checkpoint">Config</div><span class="pipe-arrow">&rarr;</span></div>
+    <div class="pipe-step"><div class="pipe-node active">🗂️ Coleta</div><span class="pipe-arrow">&rarr;</span></div>
+    <div class="pipe-step"><div class="pipe-node active">🧪 Teste</div><span class="pipe-arrow">&rarr;</span></div>
+    <div class="pipe-step"><div class="pipe-node checkpoint">Revisao</div><span class="pipe-arrow">&rarr;</span></div>
+    <div class="pipe-step"><div class="pipe-node active">📊 Avaliacao</div><span class="pipe-arrow">&rarr;</span></div>
+    <div class="pipe-step"><div class="pipe-node checkpoint">Revisao</div><span class="pipe-arrow">&rarr;</span></div>
+    <div class="pipe-step"><div class="pipe-node active">📋 Relatorio</div><span class="pipe-arrow">&rarr;</span></div>
+    <div class="pipe-step"><div class="pipe-node checkpoint">Aprovacao</div></div>
+  </div>
+</section>
+
+<!-- Recommendations -->
+<section class="container section fade-in" id="acoes">
+  <div class="section-header">
+    <div class="num">5</div>
+    <h2>Proximas Acoes</h2>
+  </div>
+  <div class="recs">
+    <div class="rec">
+      <div class="num">01</div>
+      <div>
+        <div class="title">Criar documentacao para os 4 gaps de prioridade alta</div>
+        <div class="desc">Artigos no Help Center para: cadastro de produto, relatorio de vendas, sangria no PDV, NF de devolucao. Cada artigo com passo a passo detalhado e caminhos de menu reais do NXZ ERP.</div>
+        <span class="impact">Impacto: taxa de aprovacao de 10% para ~50%</span>
+      </div>
+    </div>
+    <div class="rec">
+      <div class="num">02</div>
+      <div>
+        <div class="title">Enriquecer documentacao dos 3 gaps de prioridade media</div>
+        <div class="desc">Troubleshooting especifico do NXZ para: erro PDV (tela branca), recuperacao de senha, e configuracao de impressora termica.</div>
+        <span class="impact">Impacto: +15-20% na taxa de aprovacao</span>
+      </div>
+    </div>
+    <div class="rec">
+      <div class="num">03</div>
+      <div>
+        <div class="title">Configurar fallback inteligente no Captain</div>
+        <div class="desc">Quando nao encontrar resposta: oferecer link para KB, horario do suporte e opcao de abrir ticket. Eliminar respostas "nao encontrei informacoes".</div>
+        <span class="impact">Melhoria de experiencia mesmo sem resolver</span>
+      </div>
+    </div>
+    <div class="rec">
+      <div class="num">04</div>
+      <div>
+        <div class="title">Corrigir nomenclatura: NXZ AI &rarr; NXZ ERP</div>
+        <div class="desc">O Captain referencia "NXZ AI" como nome do sistema. Ajustar nas instrucoes do assistant para "NXZ ERP".</div>
+        <span class="impact">Acao rapida, melhoria imediata</span>
+      </div>
+    </div>
+    <div class="rec">
+      <div class="num">05</div>
+      <div>
+        <div class="title">Re-executar QA apos implementar melhorias</div>
+        <div class="desc">Rodar a squad novamente para medir progresso. Expandir para os times Comercial e Implantacao.</div>
+        <span class="impact">Meta: score >= 3.5 e aprovacao >= 60%</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>Gerado automaticamente pela squad <strong>NXZ Captain QA</strong> via <a href="#">Opensquad</a></p>
+    <p style="margin-top:4px">Run: 2026-03-25-152501 &middot; Nexuz &middot; Chatwoot Captain Enterprise</p>
+  </div>
+</footer>
+
+<script>
+// Animate numbers on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      // Animate number counters
+      entry.target.querySelectorAll('[data-target]').forEach(el => {
+        const target = parseFloat(el.dataset.target);
+        const decimals = parseInt(el.dataset.decimals || 0);
+        const suffix = el.dataset.suffix || '';
+        let current = 0;
+        const step = target / 40;
+        const timer = setInterval(() => {
+          current += step;
+          if (current >= target) { current = target; clearInterval(timer); }
+          el.textContent = current.toFixed(decimals) + suffix;
+        }, 30);
+      });
+      // Animate bars
+      entry.target.querySelectorAll('.bar[data-width]').forEach(bar => {
+        setTimeout(() => { bar.style.width = bar.dataset.width + '%'; }, 200);
+      });
+    }
+  });
+}, { threshold: 0.2 });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Smooth scroll for nav links
+document.querySelectorAll('nav a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelector(a.getAttribute('href')).scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+{
+  "squad": "nxz-erp-tutorials",
+  "status": "completed",
+  "step": { "current": 9, "total": 9, "label": "publish" },
+  "agents": [
+    {
+      "id": "explorer",
+      "name": "Explorador",
+      "icon": "🔍",
+      "status": "done",
+      "deliverTo": null,
+      "desk": { "col": 1, "row": 1 }
+    },
+    {
+      "id": "writer",
+      "name": "Redator de Tutoriais",
+      "icon": "📝",
+      "status": "done",
+      "deliverTo": null,
+      "desk": { "col": 2, "row": 1 }
+    },
+    {
+      "id": "capturer",
+      "name": "Capturista",
+      "icon": "📸",
+      "status": "done",
+      "deliverTo": null,
+      "desk": { "col": 3, "row": 1 }
+    },
+    {
+      "id": "assembler",
+      "name": "Montador",
+      "icon": "🔧",
+      "status": "done",
+      "deliverTo": null,
+      "desk": { "col": 1, "row": 2 }
+    }
+  ],
+  "handoff": {
+    "from": "assembler",
+    "to": null,
+    "message": "Tutorial publicado no Chatwoot Help Center (Article ID: 42, portal: base-de-conhecimento-suporte, categoria: NXZ ERP).",
+    "completedAt": "2026-03-25T12:36:00.000Z"
+  },
+  "startedAt": "2026-03-25T12:00:00.000Z",
+  "updatedAt": "2026-03-25T12:36:00.000Z",
+  "completedAt": "2026-03-25T12:36:00.000Z"
+}

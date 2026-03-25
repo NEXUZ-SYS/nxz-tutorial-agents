@@ -34,3 +34,12 @@
 - **Resultado:** Aprovado e salvo no Notion
 - **Screenshots:** 5 capturadas de 9 planejadas (4 falharam por limitacoes do ambiente de producao - nenhuma sessao em estado Controle de Abertura e todos os PDVs com sessoes ativas)
 - **Notas:** Ambiente SaaS de producao limita capturas de screenshots para estados que nao estao ativos no momento. Screenshots reutilizadas para contextos similares (abertura/fechamento). Tutorial salvo no Notion em "Testes tutoriais com IA".
+
+### Run 2026-03-25-120000
+- **Topico:** Como Consultar as Sangrias no NXZ ERP
+- **Persona:** Gerente de Operacao
+- **Nivel:** Basico
+- **Resultado:** Aprovado e publicado no Chatwoot
+- **Screenshots:** 6 capturadas de 6 planejadas (100%)
+- **Publicacao:** Chatwoot Help Center, portal "base-de-conhecimento-suporte", categoria "NXZ ERP", Article ID 42
+- **Notas:** Nao existe relatorio dedicado de sangrias no NXZ ERP. Sangrias ficam nas Cash Control Lines dentro das sessoes do PDV (Ponto de Venda > Pedidos > Sessoes > [sessao]). Credenciais do Odoo foram atualizadas durante a execucao (senha mudou para 102030). Empresa no ambiente: The Cookiery - SC Matriz. Scroll no Odoo requer manipulacao do element <main> via JS (document.querySelector('main').scrollTop).
