@@ -1,0 +1,98 @@
+code: nxz-faq-chatwoot
+name: "NXZ FAQ Generator para Chatwoot"
+description: >
+  Squad que extrai perguntas reais dos clientes no Chatwoot, gera FAQs
+  estruturadas por produto e categoria, testa o agente de IA no Playground
+  do Captain, e publica no Help Center via API. Objetivo: reduzir suporte
+  nivel 1 em 80%. Validadora: Carol Oliveira. Frequencia: quinzenal.
+version: "1.1.0"
+skills:
+  - chatwoot-publish
+  - telegram-notify
+
+config:
+  chatwoot_url: "${CHATWOOT_BASE_URL}"
+  chatwoot_token: "${CHATWOOT_API_TOKEN}"
+  chatwoot_account: "${CHATWOOT_ACCOUNT_ID}"
+  telegram_token: "${TELEGRAM_BOT_TOKEN}"
+  telegram_notify_chat: "${TELEGRAM_NOTIFY_CHAT_ID}"
+  telegram_admin_chat: "${TELEGRAM_ADMIN_CHAT_ID}"
+  output_format: "markdown"
+  # Configuracoes do squad
+  min_ticket_frequency: 3
+  max_test_questions: 20
+  test_timeout_seconds: 30
+  faqs_per_product_first_run: 5
+
+data:
+  - pipeline/data/faq-templates.md
+  - pipeline/data/product-categories.md
+
+pipeline:
+  steps:
+    - id: checkpoint-config
+      file: pipeline/steps/01-checkpoint-config.md
+      type: checkpoint
+
+    - id: extract-tickets
+      file: pipeline/steps/02-extract-tickets.md
+      agent: extractor
+      execution: subagent
+
+    - id: analyze-patterns
+      file: pipeline/steps/03-analyze-patterns.md
+      agent: analyst
+      execution: inline
+      # Outputs: pattern-report.md + topics-to-generate.json
+
+    - id: checkpoint-topics
+      file: pipeline/steps/04-checkpoint-topics.md
+      type: checkpoint
+      # Carol aprova QUAIS FAQs serao geradas antes do writer comecar
+      # Output: approved-topics.json
+
+    - id: generate-faqs
+      file: pipeline/steps/05-generate-faqs.md
+      agent: writer
+      execution: inline
+      # Para e pergunta ao usuario se precisar de caminhos de menu sem acesso
+      # Output: faqs_index.md + artigos em output/faqs/
+
+    - id: validate-navigation
+      file: pipeline/steps/06-validate-navigation.md
+      agent: tester
+      execution: inline
+      # Verifica via Playwright cada caminho de menu nos artigos gerados
+      # Para e pergunta ao usuario se nao tiver acesso ao produto
+      # Output: navigation-validation-report.md + screenshots
+
+    - id: prepare-tests
+      file: pipeline/steps/07-prepare-tests.md
+      agent: curator
+      execution: inline
+
+    - id: run-playground-tests
+      file: pipeline/steps/08-run-playground-tests.md
+      agent: tester
+      execution: inline
+
+    - id: notify-reviewer
+      file: pipeline/steps/09-notify-reviewer.md
+      agent: publisher
+      execution: inline
+
+    - id: checkpoint-review
+      file: pipeline/steps/10-checkpoint-review.md
+      type: checkpoint
+      # Carol ve: FAQs + relatorio de navegacao + relatorio de testes
+      # Artigos com navigation_validated: false aparecem como REQUER_REVISAO_NAVEGACAO
+
+    - id: publish-faqs
+      file: pipeline/steps/11-publish-faqs.md
+      agent: publisher
+      execution: inline
+
+    - id: generate-report
+      file: pipeline/steps/12-generate-report.md
+      agent: analyst
+      execution: inline

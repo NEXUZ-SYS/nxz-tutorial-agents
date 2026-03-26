@@ -1,0 +1,4438 @@
+{
+  "extraction_date": "2026-03-26",
+  "period": {
+    "start": "2026-03-11",
+    "end": "2026-03-26"
+  },
+  "total_conversations": 171,
+  "total_questions": 514,
+  "questions": [
+    {
+      "conversation_id": 1350,
+      "question_text": "Estamos com um problema no sistema",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão"
+      ],
+      "created_at": "2026-03-26T15:07:21Z"
+    },
+    {
+      "conversation_id": 1350,
+      "question_text": "Tentando cancelar uma venda de ontem no caixa",
+      "product": "NXZ ERP",
+      "labels": [
+        "atendimento_padrão"
+      ],
+      "created_at": "2026-03-26T15:07:30Z"
+    },
+    {
+      "conversation_id": 1350,
+      "question_text": "De 18,00",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão"
+      ],
+      "created_at": "2026-03-26T15:07:32Z"
+    },
+    {
+      "conversation_id": 1350,
+      "question_text": "E ele\nNão tá fechando",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão"
+      ],
+      "created_at": "2026-03-26T15:07:36Z"
+    },
+    {
+      "conversation_id": 1350,
+      "question_text": "Não estamos conseguindo abrir o caixa de hj",
+      "product": "NXZ ERP",
+      "labels": [
+        "atendimento_padrão"
+      ],
+      "created_at": "2026-03-26T15:07:44Z"
+    },
+    {
+      "conversation_id": 1350,
+      "question_text": "Por isso",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão"
+      ],
+      "created_at": "2026-03-26T15:07:45Z"
+    },
+    {
+      "conversation_id": 1350,
+      "question_text": "A venda",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão"
+      ],
+      "created_at": "2026-03-26T15:08:12Z"
+    },
+    {
+      "conversation_id": 1350,
+      "question_text": "A minha barista tá falando com vcs",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão"
+      ],
+      "created_at": "2026-03-26T15:09:14Z"
+    },
+    {
+      "conversation_id": 1350,
+      "question_text": "Ela vai explicar melhor",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão"
+      ],
+      "created_at": "2026-03-26T15:09:18Z"
+    },
+    {
+      "conversation_id": 1532,
+      "question_text": "Vou bem, e você?",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-25T19:02:16Z"
+    },
+    {
+      "conversation_id": 1532,
+      "question_text": "Perfeito! Vou verificar",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-25T19:02:23Z"
+    },
+    {
+      "conversation_id": 1368,
+      "question_text": "somente",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais",
+        "aguardando_selecao"
+      ],
+      "created_at": "2026-03-13T18:41:05Z"
+    },
+    {
+      "conversation_id": 1368,
+      "question_text": "gostaria de saber de um produto que está com preço zerado",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais",
+        "aguardando_selecao"
+      ],
+      "created_at": "2026-03-25T18:39:37Z"
+    },
+    {
+      "conversation_id": 1368,
+      "question_text": "45522143000100",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais",
+        "aguardando_selecao"
+      ],
+      "created_at": "2026-03-13T13:29:46Z"
+    },
+    {
+      "conversation_id": 1368,
+      "question_text": "meu certificado atualizado",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais",
+        "aguardando_selecao"
+      ],
+      "created_at": "2026-03-13T13:34:15Z"
+    },
+    {
+      "conversation_id": 1368,
+      "question_text": "senha 123456",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais",
+        "aguardando_selecao"
+      ],
+      "created_at": "2026-03-13T13:34:19Z"
+    },
+    {
+      "conversation_id": 1368,
+      "question_text": "deu certo?",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais",
+        "aguardando_selecao"
+      ],
+      "created_at": "2026-03-13T17:43:40Z"
+    },
+    {
+      "conversation_id": 1368,
+      "question_text": "do jd dos estados que venceu",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais",
+        "aguardando_selecao"
+      ],
+      "created_at": "2026-03-13T18:37:18Z"
+    },
+    {
+      "conversation_id": 1368,
+      "question_text": "o certificado que envei não é do furucho?",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais",
+        "aguardando_selecao"
+      ],
+      "created_at": "2026-03-13T18:37:37Z"
+    },
+    {
+      "conversation_id": 1368,
+      "question_text": "45522143000100   furucho",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais",
+        "aguardando_selecao"
+      ],
+      "created_at": "2026-03-13T18:38:51Z"
+    },
+    {
+      "conversation_id": 1528,
+      "question_text": "43627677000167",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-24T17:48:37Z"
+    },
+    {
+      "conversation_id": 1528,
+      "question_text": "Gostaria de realizar o cancelamento de contrato com a Nexus pois migramos para outro sistema",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-24T18:21:22Z"
+    },
+    {
+      "conversation_id": 1528,
+      "question_text": "Já encaminhei o e-mail! Muito obrigada",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-25T13:41:27Z"
+    },
+    {
+      "conversation_id": 1529,
+      "question_text": "Boa tarde! Tudo bem?",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-24T17:54:44Z"
+    },
+    {
+      "conversation_id": 1530,
+      "question_text": "54347304000159",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-24T17:57:21Z"
+    },
+    {
+      "conversation_id": 1530,
+      "question_text": "Toldo Cafeterias LTDA",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-24T17:57:32Z"
+    },
+    {
+      "conversation_id": 1530,
+      "question_text": "Envio do certificado Digital é para vocês?",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-24T17:58:01Z"
+    },
+    {
+      "conversation_id": 1522,
+      "question_text": "Se a gente resetar o roteador,  vai interferir alguma coisa no sistema?",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-24T17:26:22Z"
+    },
+    {
+      "conversation_id": 1522,
+      "question_text": "Preciso acertar o horário das câmeras da loja.",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-24T17:26:41Z"
+    },
+    {
+      "conversation_id": 1522,
+      "question_text": "Primeiro tem um produto com preço diferente no sistema. 👇🏻",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-24T17:47:18Z"
+    },
+    {
+      "conversation_id": 1522,
+      "question_text": "Segundo assunto. 👇🏻👇🏻👇🏻",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-24T17:49:53Z"
+    },
+    {
+      "conversation_id": 1522,
+      "question_text": "Se a gente resetar o roteador,  vai interferir alguma coisa no sistema?",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-24T17:50:05Z"
+    },
+    {
+      "conversation_id": 1522,
+      "question_text": "Preciso acertar o horário das câmeras da loja.",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-24T17:50:05Z"
+    },
+    {
+      "conversation_id": 1522,
+      "question_text": "Pois é 1 real????",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-24T18:02:07Z"
+    },
+    {
+      "conversation_id": 1522,
+      "question_text": "499956960001 22",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-24T16:41:26Z"
+    },
+    {
+      "conversation_id": 1522,
+      "question_text": "Aguardando.",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-24T17:11:46Z"
+    },
+    {
+      "conversation_id": 1526,
+      "question_text": "54.926.078/0001-60",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-24T17:11:41Z"
+    },
+    {
+      "conversation_id": 1526,
+      "question_text": "Preciso por favor que seja excluído essa forma de pagamento SOFT OPEN",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-24T17:12:00Z"
+    },
+    {
+      "conversation_id": 1526,
+      "question_text": "Ou então coloque uma senha para utilizar essa forma de pagamento",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-24T17:12:23Z"
+    },
+    {
+      "conversation_id": 1518,
+      "question_text": "não estou localizando no meu sistema, para atualizar o certificado",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-23T18:53:31Z"
+    },
+    {
+      "conversation_id": 1518,
+      "question_text": "53145790000160",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-23T18:53:36Z"
+    },
+    {
+      "conversation_id": 1518,
+      "question_text": "Recebi por e-mail como fazer, porém não tem atualizar certificado",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-23T19:52:39Z"
+    },
+    {
+      "conversation_id": 1518,
+      "question_text": "Agora ja nao consigo mais acessar, mas vou tentar amanhã e qualquer coisa retorno",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-23T19:58:43Z"
+    },
+    {
+      "conversation_id": 1517,
+      "question_text": "Vou encerrar o nosso atendimento!\n\nPrecisando de qualquer ajuda posteriormente, pode entrar em contato com a gente.\nTenha um bom trabalho e excelente dia!",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-23T16:59:35Z"
+    },
+    {
+      "conversation_id": 1365,
+      "question_text": "56444622000163",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-13T13:08:25Z"
+    },
+    {
+      "conversation_id": 1365,
+      "question_text": "Hoje venho informar que abrir um chamado formal junto a franquia para o encerramento das minhas atividades no dia 31de março de 2026.",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-13T13:08:53Z"
+    },
+    {
+      "conversation_id": 1365,
+      "question_text": "Bom dia, estou bem e você ? \n\nObrigada, seguirei com o e-mail.",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-13T13:46:40Z"
+    },
+    {
+      "conversation_id": 1513,
+      "question_text": "**List Menu:**\n\n*Title*: Unknown\n*Description*: Olá! Que bom que está por aqui! 😊\n\nPara que possamos te ajudar da melhor forma possível conte-nos sobre qual assunto você deseja falar, clicando no botão abaixo:\n*Footer*: Unknown\n\n**Section 1:** undefined\n**Line 1:**\n*▪️ Title:* Ser cliente Configr\n*▪️ Description:* Unknown\n*▪️ ID:* 5dd49bab-f81d-46a0-ab7c-7339c31673b9\n\n**Line 2:**\n*▪️ Title:* Consultivo\n*▪️ Description:* (negócios, estratégias, processos, ajuda com chamados...)\n*▪️ ID:* 606da1e9-eeec-45c2-b4bc-966a1fcb5ab2\n\n**Line 3:**\n*▪️ Title:* Financeiro\n*▪️ Description:* (faturas, NF, dúvida sobre valores...).\n*▪️ ID:* 819822c9-e299-42a9-98d4-eb16c54e26f5\n\n**Line 4:**\n*▪️ Title:* Suporte técnico\n*▪️ Description:* (site, dns, certificados...)\n*▪️ ID:* 87266c0e-f3ba-4b65-ab0f-1b75ecb251bc\n\n**Line 5:**\n*▪️ Title:* Dúvidas sobre o  painel\n*▪️ Description:* Unknown\n*▪️ ID:* 58025909-c4a1-4681-adb5-8416c3ccadb3\n\n**Line 6:**\n*▪️ Title:* Encerrar atendimento\n*▪️ Description:* Unknown\n*▪️ ID:* 35bf736f-7242-435f-9473-c2c6a05184b2",
+      "product": "NXZ ERP",
+      "labels": [],
+      "created_at": "2026-03-23T13:13:24Z"
+    },
+    {
+      "conversation_id": 1509,
+      "question_text": "Preciso",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-22T15:48:52Z"
+    },
+    {
+      "conversation_id": 1509,
+      "question_text": "De um suporte",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-22T15:48:54Z"
+    },
+    {
+      "conversation_id": 1511,
+      "question_text": "466 570 74 0001 04",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-23T11:53:33Z"
+    },
+    {
+      "conversation_id": 1511,
+      "question_text": "Nao esta aparecendo nada",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-23T11:53:55Z"
+    },
+    {
+      "conversation_id": 1511,
+      "question_text": "Sistema apresentando esse problema, sabem como posso resolver?",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-23T11:54:06Z"
+    },
+    {
+      "conversation_id": 1511,
+      "question_text": "Oi\nBom dia\nAparentemente ja voltou ao normal",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-23T12:16:48Z"
+    },
+    {
+      "conversation_id": 1511,
+      "question_text": "Pode deixar\nMuito obrigado",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-23T12:23:21Z"
+    },
+    {
+      "conversation_id": 1502,
+      "question_text": "Oi Luiz, boa tarde, tudo bem ?",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T19:13:08Z"
+    },
+    {
+      "conversation_id": 1502,
+      "question_text": "proteína vegana 2vzs",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T19:13:18Z"
+    },
+    {
+      "conversation_id": 1502,
+      "question_text": "e receita errada",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T19:13:19Z"
+    },
+    {
+      "conversation_id": 1502,
+      "question_text": "NO COFFER Peruíbe",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T19:52:07Z"
+    },
+    {
+      "conversation_id": 1505,
+      "question_text": "Ola boa noite",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T22:24:16Z"
+    },
+    {
+      "conversation_id": 1505,
+      "question_text": "Ah okay",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T22:24:24Z"
+    },
+    {
+      "conversation_id": 1504,
+      "question_text": "Certo , obrigado!",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T21:09:19Z"
+    },
+    {
+      "conversation_id": 1503,
+      "question_text": "O que eu coloco no campo série?",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T20:44:33Z"
+    },
+    {
+      "conversation_id": 1503,
+      "question_text": "Nenhuma nota foi localizada no período",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T20:46:09Z"
+    },
+    {
+      "conversation_id": 1503,
+      "question_text": "Seria assim?",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T20:58:22Z"
+    },
+    {
+      "conversation_id": 1503,
+      "question_text": "Consegui",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T21:10:40Z"
+    },
+    {
+      "conversation_id": 1503,
+      "question_text": "Poderia reenviar?",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T20:31:21Z"
+    },
+    {
+      "conversation_id": 1503,
+      "question_text": "Peço que aguarde alguns minutos. O sistema enviará automaticamente assim que ele finalizar o processo de validação das notas. Como o email ainda não estava configurado e precisei disparar manualmente o envio automatico, pode demorar um pouco. Caso precise urgentemente, pode acessar com o usuário gestor a partir do ERP. Módulo Faturamento > Configurações > Exportar NFe",
+      "product": "NXZ ERP",
+      "labels": [],
+      "created_at": "2026-03-20T20:34:31Z"
+    },
+    {
+      "conversation_id": 1503,
+      "question_text": "Encaminhei errado desculpa",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T20:35:01Z"
+    },
+    {
+      "conversation_id": 1503,
+      "question_text": "O que é ERP",
+      "product": "NXZ ERP",
+      "labels": [],
+      "created_at": "2026-03-20T20:35:34Z"
+    },
+    {
+      "conversation_id": 1503,
+      "question_text": "47145661000179",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T20:39:13Z"
+    },
+    {
+      "conversation_id": 1503,
+      "question_text": "É uma loja só",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T20:39:37Z"
+    },
+    {
+      "conversation_id": 1503,
+      "question_text": "No meu já fica aberto o sistema no meu celular\nAí nunca preciso fazer login\nEntão nao lembro",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T20:40:16Z"
+    },
+    {
+      "conversation_id": 1503,
+      "question_text": "47145661000179",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T19:37:47Z"
+    },
+    {
+      "conversation_id": 1503,
+      "question_text": "Onde consigo ver os Xmls das vendas?",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T19:38:34Z"
+    },
+    {
+      "conversation_id": 1503,
+      "question_text": "Como consigo exportar?",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T19:38:41Z"
+    },
+    {
+      "conversation_id": 1503,
+      "question_text": "Aconteceu algum problema que a contabilidade não recebeu e estão me pedindo",
+      "product": "NXZ ERP",
+      "labels": [],
+      "created_at": "2026-03-20T19:41:55Z"
+    },
+    {
+      "conversation_id": 1503,
+      "question_text": "Onde acho?",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T19:41:57Z"
+    },
+    {
+      "conversation_id": 1503,
+      "question_text": "fiscal@contabyu.com.br",
+      "product": "NXZ ERP",
+      "labels": [],
+      "created_at": "2026-03-20T20:19:48Z"
+    },
+    {
+      "conversation_id": 1503,
+      "question_text": "É esse",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T20:19:53Z"
+    },
+    {
+      "conversation_id": 1503,
+      "question_text": "O período de fevereiro",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T20:20:01Z"
+    },
+    {
+      "conversation_id": 1499,
+      "question_text": "Essas notas foram no relatório , mas constam como rascunho",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T18:15:05Z"
+    },
+    {
+      "conversation_id": 1499,
+      "question_text": "Estou aguardando orientação até agora",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T20:21:54Z"
+    },
+    {
+      "conversation_id": 1499,
+      "question_text": "Iniciei conversa com vocês 13h a até agora sem retorno",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T20:22:29Z"
+    },
+    {
+      "conversation_id": 1499,
+      "question_text": "Sim. A minha dúvida é, no caso de cancelamento , como inutilizar, cancelar a nota e enviar essa informação pra contabilidade ?",
+      "product": "NXZ ERP",
+      "labels": [],
+      "created_at": "2026-03-20T20:26:03Z"
+    },
+    {
+      "conversation_id": 1499,
+      "question_text": "A contabilidade já afirmou que houve quebra",
+      "product": "NXZ ERP",
+      "labels": [],
+      "created_at": "2026-03-20T20:45:53Z"
+    },
+    {
+      "conversation_id": 1499,
+      "question_text": "As três que passei",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T20:47:34Z"
+    },
+    {
+      "conversation_id": 1499,
+      "question_text": "24022\n23339\n23207",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T20:47:43Z"
+    },
+    {
+      "conversation_id": 1499,
+      "question_text": "55406324/0001-16",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T14:36:49Z"
+    },
+    {
+      "conversation_id": 1499,
+      "question_text": "Nossa contabilidade nos mandou uma relação de notas de saída idas no relatório como rascunho,",
+      "product": "NXZ ERP",
+      "labels": [],
+      "created_at": "2026-03-20T16:54:42Z"
+    },
+    {
+      "conversation_id": 1499,
+      "question_text": "Posso cancelar? E como informar sedaz nesses casos",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T16:55:15Z"
+    },
+    {
+      "conversation_id": 1499,
+      "question_text": "Inutilização da nota, com envio da informação para Sefaz",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T16:56:32Z"
+    },
+    {
+      "conversation_id": 1499,
+      "question_text": "Fico no aguardo",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T17:46:04Z"
+    },
+    {
+      "conversation_id": 1499,
+      "question_text": "As notas são essas",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T18:13:35Z"
+    },
+    {
+      "conversation_id": 1499,
+      "question_text": "24022\n23339\n23207",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T18:13:52Z"
+    },
+    {
+      "conversation_id": 1499,
+      "question_text": "Aí a contabilidade nos orientou a validar , ou cancelar , no caso de cancelamento , inutilização da nota , como proceder esse envio pra sefaz",
+      "product": "NXZ ERP",
+      "labels": [],
+      "created_at": "2026-03-20T18:14:42Z"
+    },
+    {
+      "conversation_id": 1501,
+      "question_text": "tdu bem?",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T17:59:23Z"
+    },
+    {
+      "conversation_id": 1501,
+      "question_text": "como filtro as vendas tirando o sabado mensal?",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T17:59:37Z"
+    },
+    {
+      "conversation_id": 1501,
+      "question_text": "Seg a sexta ( mas sem o sábado ) e depois total \nPra ver a diferença",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T18:11:05Z"
+    },
+    {
+      "conversation_id": 1494,
+      "question_text": "Muito bom dia.",
+      "product": "NXZ ERP",
+      "labels": [
+        "dept-financeiro",
+        "falar-atendente"
+      ],
+      "created_at": "2026-03-20T14:38:23Z"
+    },
+    {
+      "conversation_id": 1494,
+      "question_text": "Certo então ainda vamos ter pendente esse valor?",
+      "product": "NXZ ERP",
+      "labels": [
+        "dept-financeiro",
+        "falar-atendente"
+      ],
+      "created_at": "2026-03-20T16:16:34Z"
+    },
+    {
+      "conversation_id": 1494,
+      "question_text": "🤦🏻‍♂️",
+      "product": "NXZ ERP",
+      "labels": [
+        "dept-financeiro",
+        "falar-atendente"
+      ],
+      "created_at": "2026-03-20T16:18:44Z"
+    },
+    {
+      "conversation_id": 1494,
+      "question_text": "Certo vou estar solicitado a formalização.",
+      "product": "NXZ ERP",
+      "labels": [
+        "dept-financeiro",
+        "falar-atendente"
+      ],
+      "created_at": "2026-03-20T16:19:13Z"
+    },
+    {
+      "conversation_id": 1494,
+      "question_text": "Mas solicitei dias atrás o encerramento neste e-mail",
+      "product": "NXZ ERP",
+      "labels": [
+        "dept-financeiro",
+        "falar-atendente"
+      ],
+      "created_at": "2026-03-20T16:21:44Z"
+    },
+    {
+      "conversation_id": 1494,
+      "question_text": "Tanto que o comercial entrou em contato após eu encaminhar ele.",
+      "product": "NXZ ERP",
+      "labels": [
+        "dept-financeiro",
+        "falar-atendente"
+      ],
+      "created_at": "2026-03-20T16:22:04Z"
+    },
+    {
+      "conversation_id": 1494,
+      "question_text": "Certo vou realizar a solicitação então.",
+      "product": "NXZ ERP",
+      "labels": [
+        "dept-financeiro",
+        "falar-atendente"
+      ],
+      "created_at": "2026-03-20T16:24:13Z"
+    },
+    {
+      "conversation_id": 1494,
+      "question_text": "O pagamento acabei de fazer",
+      "product": "NXZ ERP",
+      "labels": [
+        "dept-financeiro",
+        "falar-atendente"
+      ],
+      "created_at": "2026-03-20T16:24:18Z"
+    },
+    {
+      "conversation_id": 1494,
+      "question_text": "Ótimo já vou encaminhar para assinatura",
+      "product": "NXZ ERP",
+      "labels": [
+        "dept-financeiro",
+        "falar-atendente"
+      ],
+      "created_at": "2026-03-20T16:27:30Z"
+    },
+    {
+      "conversation_id": 1494,
+      "question_text": "Muito boa tarde.",
+      "product": "NXZ ERP",
+      "labels": [
+        "dept-financeiro",
+        "falar-atendente"
+      ],
+      "created_at": "2026-03-19T19:54:48Z"
+    },
+    {
+      "conversation_id": 1494,
+      "question_text": "Estarei encaminhando ao meu financeiro para realizar o pagamento.",
+      "product": "NXZ ERP",
+      "labels": [
+        "dept-financeiro",
+        "falar-atendente"
+      ],
+      "created_at": "2026-03-19T19:55:08Z"
+    },
+    {
+      "conversation_id": 1494,
+      "question_text": "Boa tarde.\nGostaria de ver com você no dia 05/03 pagamos os boletos cada um no valor de R$550,80 pelo cancelamento dos serviços.\nE essa fatura que você me mandou tem alguma relação com o cancelamento dos serviços?",
+      "product": "NXZ ERP",
+      "labels": [
+        "dept-financeiro",
+        "falar-atendente"
+      ],
+      "created_at": "2026-03-19T21:13:57Z"
+    },
+    {
+      "conversation_id": 1479,
+      "question_text": "**Contato:**\n\n*Nome:* Robson Lojas Skioba\n*Número (1):* +55 43 9875-0156",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T18:46:10Z"
+    },
+    {
+      "conversation_id": 1500,
+      "question_text": "Preciso de um suporte",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T14:47:11Z"
+    },
+    {
+      "conversation_id": 1498,
+      "question_text": "Boa tarde, Pollyana, tudo bem ?\n\nGostaria de confirmar a situação dessas 3 notas que estão com erro no relatório ! \nID Pedido\t Total \tNúmero NF\tStatus NF\nPDV 1 Caixa - GCTOPV/24022\t R$               7,00\t24830\tRascunho\nPDV 1 Caixa - GCTOPV/23339\t R$               3,00\t24173\tRascunho\nPDV 1 Caixa - GCTOPV/23207\t R$               1,00\t24033\tRascunho\n\nNo relatório enviado em anexo das vendas,  elas vieram com a informação de rascunho, com isso, teve a quebra de sequência da numeração! \n\nAinda vão autorizar elas?  Caso não sejam emitidas, fazer o processo de inutilização, com envio da informação para sefaz e nos informar.",
+      "product": "NXZ ERP",
+      "labels": [],
+      "created_at": "2026-03-20T13:00:49Z"
+    },
+    {
+      "conversation_id": 1498,
+      "question_text": "*JORDANIA DIAS:*\n\nGostaria de ver com você sobre duas notas se estão autorizadas mesmo no seu sistema ! \nna soma do relatório enviado, elas não entraram... e quando pesquiso na sefaz elas tbem não existem, me envia novamente o xml delas pra ver se não foi alterado a chave de acesso .. \nNFC-e nº 24323 e 24600.",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T13:12:39Z"
+    },
+    {
+      "conversation_id": 1498,
+      "question_text": "Essa também",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T13:12:40Z"
+    },
+    {
+      "conversation_id": 1498,
+      "question_text": "Essa daqui a contabilidade tá cobrando mais",
+      "product": "NXZ ERP",
+      "labels": [],
+      "created_at": "2026-03-20T13:14:19Z"
+    },
+    {
+      "conversation_id": 1498,
+      "question_text": "Aí pode verificar primeiro ela?",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T13:14:37Z"
+    },
+    {
+      "conversation_id": 1498,
+      "question_text": "24323\n24600\n24033\n24173\n24830",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T13:17:52Z"
+    },
+    {
+      "conversation_id": 1498,
+      "question_text": "Tá bom",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T13:39:38Z"
+    },
+    {
+      "conversation_id": 1498,
+      "question_text": "Deu certo?",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T14:02:55Z"
+    },
+    {
+      "conversation_id": 1498,
+      "question_text": "Meu patrão, seu Vinicius, está falando com vocês aí, aí vou cancelar o atendimento",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T14:56:06Z"
+    },
+    {
+      "conversation_id": 1498,
+      "question_text": "55.406.324/0001-16",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T13:00:33Z"
+    },
+    {
+      "conversation_id": 1498,
+      "question_text": "Preciso de ajuda",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T13:00:38Z"
+    },
+    {
+      "conversation_id": 1497,
+      "question_text": "caso ocorra novamente, consigo fazer esse procedimento.",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T12:24:17Z"
+    },
+    {
+      "conversation_id": 1497,
+      "question_text": "Perfeito! Depois q cancelar, posso lançar o novo né",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T12:32:30Z"
+    },
+    {
+      "conversation_id": 1497,
+      "question_text": "Que não dar duplicidade.",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T12:32:39Z"
+    },
+    {
+      "conversation_id": 1497,
+      "question_text": "Outra dúvida..",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T12:35:41Z"
+    },
+    {
+      "conversation_id": 1497,
+      "question_text": "Precisava do Relatório Monofásico..",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T12:35:50Z"
+    },
+    {
+      "conversation_id": 1497,
+      "question_text": "Com esse passo a passo não estou conseguindo..",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T12:36:17Z"
+    },
+    {
+      "conversation_id": 1497,
+      "question_text": "https://www.nexuz.app/knowledge/article/133",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T12:37:45Z"
+    },
+    {
+      "conversation_id": 1497,
+      "question_text": "Esse aqui",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T12:37:48Z"
+    },
+    {
+      "conversation_id": 1497,
+      "question_text": "Olá.. boa noite!",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T11:44:37Z"
+    },
+    {
+      "conversation_id": 1497,
+      "question_text": "50282101000170",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T11:44:54Z"
+    },
+    {
+      "conversation_id": 1497,
+      "question_text": "Como que faço para excluir um pedido? Coloquei a forma de pagamento errada..",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T11:45:10Z"
+    },
+    {
+      "conversation_id": 1497,
+      "question_text": "Foi ontem..",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T11:54:29Z"
+    },
+    {
+      "conversation_id": 1497,
+      "question_text": "Tem essa possibilidade de cancelar o pedido e colocar de novo?",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T11:55:11Z"
+    },
+    {
+      "conversation_id": 1497,
+      "question_text": "Esse pedido foi dividido para duas pessoas, forma de pagamento: crédito e dinheiro. \n\nColaboradora quando colocou o pagamento em dinheiro, mesma informou q não foi.",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T12:03:49Z"
+    },
+    {
+      "conversation_id": 1497,
+      "question_text": "Como a sessão já foi finalizada, gostaria de saber se tem essa opção?",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T12:04:17Z"
+    },
+    {
+      "conversation_id": 1497,
+      "question_text": "Vou abrir aquii",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T12:05:37Z"
+    },
+    {
+      "conversation_id": 1497,
+      "question_text": "Já passo",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T12:05:41Z"
+    },
+    {
+      "conversation_id": 1497,
+      "question_text": "19:45h",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T12:13:30Z"
+    },
+    {
+      "conversation_id": 1497,
+      "question_text": "Valor: R$ 87,00 reais",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T12:13:42Z"
+    },
+    {
+      "conversation_id": 1497,
+      "question_text": "ta ok",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T12:23:10Z"
+    },
+    {
+      "conversation_id": 1497,
+      "question_text": "me passa o passo como faz o cancelamento?",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-20T12:23:44Z"
+    },
+    {
+      "conversation_id": 1495,
+      "question_text": "Bom dia, tudo bem? Me chamo Laura, sou barista da  Go 24 de maio/michelangelo",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T20:23:34Z"
+    },
+    {
+      "conversation_id": 1495,
+      "question_text": "44052422000186",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T20:24:31Z"
+    },
+    {
+      "conversation_id": 1495,
+      "question_text": "Como faz?",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T20:27:38Z"
+    },
+    {
+      "conversation_id": 1495,
+      "question_text": "E como atualizo?",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T20:36:16Z"
+    },
+    {
+      "conversation_id": 1491,
+      "question_text": "34561474876338",
+      "product": "indefinido",
+      "labels": [
+        "falar-atendente"
+      ],
+      "created_at": "2026-03-19T18:50:53Z"
+    },
+    {
+      "conversation_id": 1489,
+      "question_text": "Preciso de ajuda com o sistema",
+      "product": "NXZ ERP",
+      "labels": [
+        "prod-erp",
+        "falar-atendente"
+      ],
+      "created_at": "2026-03-19T18:46:19Z"
+    },
+    {
+      "conversation_id": 1489,
+      "question_text": "Preciso falar com alguém",
+      "product": "NXZ ERP",
+      "labels": [
+        "prod-erp",
+        "falar-atendente"
+      ],
+      "created_at": "2026-03-19T18:47:09Z"
+    },
+    {
+      "conversation_id": 1488,
+      "question_text": "Atendente",
+      "product": "NXZ ERP",
+      "labels": [
+        "prod-erp",
+        "falar-atendente"
+      ],
+      "created_at": "2026-03-19T18:44:35Z"
+    },
+    {
+      "conversation_id": 1488,
+      "question_text": "Preciso acessar o sistema e não estou conseguindo",
+      "product": "NXZ ERP",
+      "labels": [
+        "prod-erp",
+        "falar-atendente"
+      ],
+      "created_at": "2026-03-19T18:43:49Z"
+    },
+    {
+      "conversation_id": 1487,
+      "question_text": "1234456778990088",
+      "product": "NXZ ERP",
+      "labels": [
+        "dept-financeiro",
+        "falar-atendente"
+      ],
+      "created_at": "2026-03-19T18:40:12Z"
+    },
+    {
+      "conversation_id": 1486,
+      "question_text": "Me ajudem por favor",
+      "product": "NXZ ERP",
+      "labels": [
+        "prod-erp",
+        "falar-atendente"
+      ],
+      "created_at": "2026-03-19T18:39:14Z"
+    },
+    {
+      "conversation_id": 1485,
+      "question_text": "Preciso de ajuda",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T18:37:51Z"
+    },
+    {
+      "conversation_id": 1483,
+      "question_text": "Nota fiscal",
+      "product": "NXZ ERP",
+      "labels": [
+        "prod-erp",
+        "falar-atendente"
+      ],
+      "created_at": "2026-03-19T17:33:51Z"
+    },
+    {
+      "conversation_id": 1481,
+      "question_text": "Sumiu",
+      "product": "indefinido",
+      "labels": [
+        "dept-suporte",
+        "falar-atendente"
+      ],
+      "created_at": "2026-03-19T17:31:53Z"
+    },
+    {
+      "conversation_id": 1481,
+      "question_text": "Produto",
+      "product": "indefinido",
+      "labels": [
+        "dept-suporte",
+        "falar-atendente"
+      ],
+      "created_at": "2026-03-19T17:32:03Z"
+    },
+    {
+      "conversation_id": 1481,
+      "question_text": "Humano",
+      "product": "indefinido",
+      "labels": [
+        "dept-suporte",
+        "falar-atendente"
+      ],
+      "created_at": "2026-03-19T17:32:20Z"
+    },
+    {
+      "conversation_id": 1480,
+      "question_text": "Preciso de ajuda",
+      "product": "indefinido",
+      "labels": [
+        "falar-atendente"
+      ],
+      "created_at": "2026-03-19T17:30:12Z"
+    },
+    {
+      "conversation_id": 1424,
+      "question_text": "Letícia Tie Itocazo Taira",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais",
+        "falar-atendente"
+      ],
+      "created_at": "2026-03-17T19:59:37Z"
+    },
+    {
+      "conversation_id": 1424,
+      "question_text": "CPF 224.227.838-05",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais",
+        "falar-atendente"
+      ],
+      "created_at": "2026-03-17T20:00:14Z"
+    },
+    {
+      "conversation_id": 1424,
+      "question_text": "Vcs não conseguem devolver parte desse dinheiro ? Uma vez que fizemos a rescisão ?",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais",
+        "falar-atendente"
+      ],
+      "created_at": "2026-03-17T20:21:03Z"
+    },
+    {
+      "conversation_id": 1424,
+      "question_text": "E tivemos muitos encargos financeiros por isso 🥲",
+      "product": "NXZ ERP",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais",
+        "falar-atendente"
+      ],
+      "created_at": "2026-03-17T20:21:21Z"
+    },
+    {
+      "conversation_id": 1424,
+      "question_text": "Vou mandar áudio melhor",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais",
+        "falar-atendente"
+      ],
+      "created_at": "2026-03-17T12:23:16Z"
+    },
+    {
+      "conversation_id": 1424,
+      "question_text": "Não pq já tinha pago o plano anual",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais",
+        "falar-atendente"
+      ],
+      "created_at": "2026-03-17T12:32:05Z"
+    },
+    {
+      "conversation_id": 1424,
+      "question_text": "Como informo o financeiro",
+      "product": "NXZ ERP",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais",
+        "falar-atendente"
+      ],
+      "created_at": "2026-03-17T12:32:15Z"
+    },
+    {
+      "conversation_id": 1424,
+      "question_text": "57.214.450/0001-02",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais",
+        "falar-atendente"
+      ],
+      "created_at": "2026-03-17T18:29:06Z"
+    },
+    {
+      "conversation_id": 1424,
+      "question_text": "gocoffeelojaaugusta@gmail.com",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais",
+        "falar-atendente"
+      ],
+      "created_at": "2026-03-17T19:00:47Z"
+    },
+    {
+      "conversation_id": 1474,
+      "question_text": "Mais um mês de folha",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T12:46:53Z"
+    },
+    {
+      "conversation_id": 1474,
+      "question_text": "Qual a data ?",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T14:04:58Z"
+    },
+    {
+      "conversation_id": 1474,
+      "question_text": "Podemos dar dia 31/3 com início em 01/4",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T14:05:39Z"
+    },
+    {
+      "conversation_id": 1474,
+      "question_text": "Daí já foge da multa",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T14:05:45Z"
+    },
+    {
+      "conversation_id": 1474,
+      "question_text": "Vou fazer e e disponibilizar no portal",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T14:06:13Z"
+    },
+    {
+      "conversation_id": 1474,
+      "question_text": "Logo te aviso",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T14:06:16Z"
+    },
+    {
+      "conversation_id": 1474,
+      "question_text": "Ou te envio por e-mail porque o portal hoje está instável",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T14:06:31Z"
+    },
+    {
+      "conversation_id": 1474,
+      "question_text": "Confirma teu e-mail por favor ?",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T14:07:37Z"
+    },
+    {
+      "conversation_id": 1474,
+      "question_text": "Aquele do financeiro ?",
+      "product": "NXZ ERP",
+      "labels": [],
+      "created_at": "2026-03-19T14:07:47Z"
+    },
+    {
+      "conversation_id": 1474,
+      "question_text": "Ou paga a indenização",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T12:34:07Z"
+    },
+    {
+      "conversation_id": 1474,
+      "question_text": "De mais 1 salário",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T12:34:14Z"
+    },
+    {
+      "conversation_id": 1474,
+      "question_text": "Ela estava de férias neh",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T12:34:46Z"
+    },
+    {
+      "conversation_id": 1474,
+      "question_text": "Não podíamos ter feito antes",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T12:34:52Z"
+    },
+    {
+      "conversation_id": 1474,
+      "question_text": "Isso mesmo",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T12:35:09Z"
+    },
+    {
+      "conversation_id": 1474,
+      "question_text": "Ideal é cacelar este aviso",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T12:35:29Z"
+    },
+    {
+      "conversation_id": 1474,
+      "question_text": "Dar o aviso dia 31/3",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T12:36:05Z"
+    },
+    {
+      "conversation_id": 1474,
+      "question_text": "Daí ela cumpre o mês de abril de aviso",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T12:36:20Z"
+    },
+    {
+      "conversation_id": 1474,
+      "question_text": "Daí já recai em maio , terá direito ao % do aumento",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T12:36:43Z"
+    },
+    {
+      "conversation_id": 1474,
+      "question_text": "Está bem",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T12:44:42Z"
+    },
+    {
+      "conversation_id": 1474,
+      "question_text": "Exatamente",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T12:45:29Z"
+    },
+    {
+      "conversation_id": 1474,
+      "question_text": "Vai rolar mais férias mais décimo",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T12:45:44Z"
+    },
+    {
+      "conversation_id": 1474,
+      "question_text": "Mais fgts",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T12:45:48Z"
+    },
+    {
+      "conversation_id": 1474,
+      "question_text": "E o salário adicional entra como indenização e não gera fgts e INSS",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T12:46:12Z"
+    },
+    {
+      "conversation_id": 1474,
+      "question_text": "Sai mais barato que do levar mais um mês adiante",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T12:46:34Z"
+    },
+    {
+      "conversation_id": 1474,
+      "question_text": "Temos um problema",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T12:25:52Z"
+    },
+    {
+      "conversation_id": 1474,
+      "question_text": "Quando foi feito o aviso prévio da Bianca, não foi observado a data base da categoria",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T12:26:33Z"
+    },
+    {
+      "conversation_id": 1474,
+      "question_text": "Ou seja, ela não pode ser dispensada nos 30 dias que antecede a data base, o aviso dela não pode terminar em abril",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T12:27:14Z"
+    },
+    {
+      "conversation_id": 1474,
+      "question_text": "A data base é maio",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T12:27:29Z"
+    },
+    {
+      "conversation_id": 1474,
+      "question_text": "E os 30 dias que antecedem recai em abril",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T12:27:49Z"
+    },
+    {
+      "conversation_id": 1474,
+      "question_text": "Se for dispensada desse modo, tem a multa do Art. 9",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T12:28:19Z"
+    },
+    {
+      "conversation_id": 1474,
+      "question_text": "De 1 salário a mais",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T12:28:35Z"
+    },
+    {
+      "conversation_id": 1474,
+      "question_text": "Sugiro que vocês cancelem o aviso mas que não revelem o motivo",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T12:29:22Z"
+    },
+    {
+      "conversation_id": 1474,
+      "question_text": "Ela precsua aceitar o cancelamento do aviso mas se souber o motivo vai querer continuar desta forma e receber a indenização",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T12:30:22Z"
+    },
+    {
+      "conversation_id": 1474,
+      "question_text": "Pois é , vi agora na CCT",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T12:33:17Z"
+    },
+    {
+      "conversation_id": 1474,
+      "question_text": "Este sindicato é muito chato",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T12:33:26Z"
+    },
+    {
+      "conversation_id": 1474,
+      "question_text": "Melhor falar com ela e diEr que a empresa irá organizar dela ainda este mês",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T12:33:51Z"
+    },
+    {
+      "conversation_id": 1474,
+      "question_text": "Sei lá",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T12:33:54Z"
+    },
+    {
+      "conversation_id": 1474,
+      "question_text": "Porque se ela souber vai querer",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T12:34:01Z"
+    },
+    {
+      "conversation_id": 1474,
+      "question_text": "Bom dia Sabrina tudo bem ?",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T12:25:48Z"
+    },
+    {
+      "conversation_id": 1477,
+      "question_text": "Suporte",
+      "product": "indefinido",
+      "labels": [
+        "fora-do-horario",
+        "dept-suporte",
+        "falar-atendente"
+      ],
+      "created_at": "2026-03-19T14:45:51Z"
+    },
+    {
+      "conversation_id": 1473,
+      "question_text": "Não repassa para o kds o pedido realizado",
+      "product": "NXZ KDS",
+      "labels": [],
+      "created_at": "2026-03-19T12:25:25Z"
+    },
+    {
+      "conversation_id": 1473,
+      "question_text": "Então, além de não saber o que o cliente pediu, não consigo confirmar se o pagamento foi efetuado também. a não ser que fique olhando",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T12:25:51Z"
+    },
+    {
+      "conversation_id": 1473,
+      "question_text": "nenhum pedido",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T12:25:55Z"
+    },
+    {
+      "conversation_id": 1473,
+      "question_text": "fiz 3 testes",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T12:25:57Z"
+    },
+    {
+      "conversation_id": 1473,
+      "question_text": "reiniciei os sistemas",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T12:26:01Z"
+    },
+    {
+      "conversation_id": 1473,
+      "question_text": "limpei s caches",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T12:26:06Z"
+    },
+    {
+      "conversation_id": 1473,
+      "question_text": "Normalmente aparecem até os pedidos do dia anterior, dessa vez sumiu tudo",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T12:26:57Z"
+    },
+    {
+      "conversation_id": 1473,
+      "question_text": "Voltoou",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T12:43:59Z"
+    },
+    {
+      "conversation_id": 1473,
+      "question_text": "Por enquanto seria somente isso",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T13:02:57Z"
+    },
+    {
+      "conversation_id": 1473,
+      "question_text": "*obrigada",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T13:03:03Z"
+    },
+    {
+      "conversation_id": 1473,
+      "question_text": "63625361000143",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T12:14:30Z"
+    },
+    {
+      "conversation_id": 1473,
+      "question_text": "Estou com problema para o repasse dos pedidos para o kds",
+      "product": "NXZ KDS",
+      "labels": [],
+      "created_at": "2026-03-19T12:20:31Z"
+    },
+    {
+      "conversation_id": 1473,
+      "question_text": "Oooi Luiz, tudo bem?",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T12:25:02Z"
+    },
+    {
+      "conversation_id": 1473,
+      "question_text": "Até ontem tudo funcionando normalmente, hoje quando fui concluir minha primeira venda o sistema simplesmente não repassa",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T12:25:10Z"
+    },
+    {
+      "conversation_id": 1439,
+      "question_text": "Dos frapuccinos eu consegui revisar",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão"
+      ],
+      "created_at": "2026-03-18T22:56:09Z"
+    },
+    {
+      "conversation_id": 1439,
+      "question_text": "Queria colocar os novos itens no iFood",
+      "product": "NXZ Delivery",
+      "labels": [
+        "atendimento_padrão"
+      ],
+      "created_at": "2026-03-18T22:56:20Z"
+    },
+    {
+      "conversation_id": 1439,
+      "question_text": "Os lançamentos desse mês",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão"
+      ],
+      "created_at": "2026-03-18T22:56:25Z"
+    },
+    {
+      "conversation_id": 1439,
+      "question_text": "Não precisa subir novamente não",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão"
+      ],
+      "created_at": "2026-03-19T11:41:55Z"
+    },
+    {
+      "conversation_id": 1467,
+      "question_text": "Problema",
+      "product": "indefinido",
+      "labels": [
+        "falar-atendente"
+      ],
+      "created_at": "2026-03-19T01:28:15Z"
+    },
+    {
+      "conversation_id": 1467,
+      "question_text": "Meu sistema esta fora do ar",
+      "product": "indefinido",
+      "labels": [
+        "falar-atendente"
+      ],
+      "created_at": "2026-03-19T01:29:08Z"
+    },
+    {
+      "conversation_id": 1465,
+      "question_text": "Meu sistema esta fora do ar preciso de ajuda",
+      "product": "indefinido",
+      "labels": [
+        "falar-atendente"
+      ],
+      "created_at": "2026-03-19T01:20:06Z"
+    },
+    {
+      "conversation_id": 1444,
+      "question_text": "Ola tudo bem?",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T00:34:13Z"
+    },
+    {
+      "conversation_id": 1443,
+      "question_text": "Ola como vai?",
+      "product": "indefinido",
+      "labels": [
+        "fora-do-horario"
+      ],
+      "created_at": "2026-03-19T00:33:16Z"
+    },
+    {
+      "conversation_id": 1442,
+      "question_text": "Ola teste",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T00:32:14Z"
+    },
+    {
+      "conversation_id": 1441,
+      "question_text": "Ola teste 2 de automação",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-19T00:31:34Z"
+    },
+    {
+      "conversation_id": 1440,
+      "question_text": "Ola teste de automação",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "fora-do-horario"
+      ],
+      "created_at": "2026-03-19T00:27:20Z"
+    },
+    {
+      "conversation_id": 1391,
+      "question_text": "Oi o vídeo está pequeno n dá pra ver nada",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-18T18:58:08Z"
+    },
+    {
+      "conversation_id": 1391,
+      "question_text": "Se eu entro no produto",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-18T18:58:17Z"
+    },
+    {
+      "conversation_id": 1391,
+      "question_text": "Tem 8 variantes",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-18T18:58:34Z"
+    },
+    {
+      "conversation_id": 1391,
+      "question_text": "Como checo qual é qual no iFood?",
+      "product": "NXZ Delivery",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-18T18:58:41Z"
+    },
+    {
+      "conversation_id": 1391,
+      "question_text": "Além disso como faço pra adicionar produto do cardápio no iFood ?",
+      "product": "NXZ Delivery",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-18T18:58:50Z"
+    },
+    {
+      "conversation_id": 1391,
+      "question_text": "Oie boa tarde, como faço para adicionar itens novos no iFood?",
+      "product": "NXZ Delivery",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-18T19:12:58Z"
+    },
+    {
+      "conversation_id": 1391,
+      "question_text": "Ontem recebi um pedido no iFood",
+      "product": "NXZ Delivery",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-16T12:10:44Z"
+    },
+    {
+      "conversation_id": 1391,
+      "question_text": "Chegou errado no sistema da Nexuz",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-16T12:11:31Z"
+    },
+    {
+      "conversation_id": 1391,
+      "question_text": "Como resolvemos?",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-16T14:34:52Z"
+    },
+    {
+      "conversation_id": 1438,
+      "question_text": "**Micheli S. - Agendamento**:\nOlá, tudo bem? Em que posso ajudar?",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão"
+      ],
+      "created_at": "2026-03-18T17:27:26Z"
+    },
+    {
+      "conversation_id": 1436,
+      "question_text": "Ela tem 2 filiais",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-18T14:56:13Z"
+    },
+    {
+      "conversation_id": 1436,
+      "question_text": "33.644.804/0002-63",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-18T14:56:14Z"
+    },
+    {
+      "conversation_id": 1436,
+      "question_text": "33.644.804/0003-44",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-18T14:56:23Z"
+    },
+    {
+      "conversation_id": 1436,
+      "question_text": "Fiscal@jrmartins.com.br e marcia@jrmartins.com.br",
+      "product": "NXZ ERP",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-18T15:09:16Z"
+    },
+    {
+      "conversation_id": 1436,
+      "question_text": "esses dois email para todas as lojas",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-18T16:17:53Z"
+    },
+    {
+      "conversation_id": 1436,
+      "question_text": "fiscal@jrmartins.com.br",
+      "product": "NXZ ERP",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-18T16:21:41Z"
+    },
+    {
+      "conversation_id": 1436,
+      "question_text": "vou verificar o email",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-18T18:33:26Z"
+    },
+    {
+      "conversation_id": 1436,
+      "question_text": "Bom dia, tudo bem",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-18T13:45:04Z"
+    },
+    {
+      "conversation_id": 1436,
+      "question_text": "33.644.804/0001-82",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-18T13:45:28Z"
+    },
+    {
+      "conversation_id": 1436,
+      "question_text": "não estou recebendo os arquivos fiscais no meu email.",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-18T13:45:39Z"
+    },
+    {
+      "conversation_id": 1436,
+      "question_text": "Não. aos xml emitidos pela empresa Amor Espresso NFCE",
+      "product": "NXZ ERP",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-18T14:40:59Z"
+    },
+    {
+      "conversation_id": 1436,
+      "question_text": "contabilidade",
+      "product": "NXZ ERP",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-18T14:52:19Z"
+    },
+    {
+      "conversation_id": 1437,
+      "question_text": "**Bianca B. - Agendamento**:\nPor nada, tenha um ótimo dia",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-18T14:46:05Z"
+    },
+    {
+      "conversation_id": 1437,
+      "question_text": "Atendimento finalizado",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-18T14:46:06Z"
+    },
+    {
+      "conversation_id": 1437,
+      "question_text": "Olá, meu nome é **Mercês**, e vou guia-lo em seu atendimento humano!",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-18T14:46:13Z"
+    },
+    {
+      "conversation_id": 1437,
+      "question_text": "Pra começarmos, preciso de 3 informações rápidas",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-18T14:46:14Z"
+    },
+    {
+      "conversation_id": 1437,
+      "question_text": "Qual seu **NOME**",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-18T14:46:14Z"
+    },
+    {
+      "conversation_id": 1437,
+      "question_text": "Devido falta de atividade, estamos encaminhando sua conversa para nossa fila de atendimento, por favor aguarde que iremos lhe atender em breve!",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-18T15:17:11Z"
+    },
+    {
+      "conversation_id": 1435,
+      "question_text": "Qual seu **NOME**",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-18T12:11:41Z"
+    },
+    {
+      "conversation_id": 1435,
+      "question_text": "Show Sabrina, você possui **CONVÊNIO** com a Clinimercês?\n\nDigite apenas o **NÚMERO** da opção desejada:\n\n1 - Sim\n2 - Não",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-18T12:11:59Z"
+    },
+    {
+      "conversation_id": 1435,
+      "question_text": "Devido falta de atividade, estamos encaminhando sua conversa para nossa fila de atendimento, por favor aguarde que iremos lhe atender em breve!",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-18T12:42:09Z"
+    },
+    {
+      "conversation_id": 1435,
+      "question_text": "**Bianca B. - Agendamento**:\nOlá, tudo bem? Em que posso ajudar?",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-18T12:45:20Z"
+    },
+    {
+      "conversation_id": 1435,
+      "question_text": "**Bianca B. - Agendamento**:\nO único exame que puxou vencido é o da Bianca",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-18T13:18:50Z"
+    },
+    {
+      "conversation_id": 1435,
+      "question_text": "**Bianca B. - Agendamento**:\nSomente o exame clinico",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-18T13:18:57Z"
+    },
+    {
+      "conversation_id": 1435,
+      "question_text": "**Bianca B. - Agendamento**:\nIsso mesmo, é o periódico. Mas como ela está cumprindo o aviso já pode agendar o Demissional da colaboradora",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-18T13:28:30Z"
+    },
+    {
+      "conversation_id": 1435,
+      "question_text": "Olá, meu nome é **Mercês**, e vou guia-lo em seu atendimento humano!",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-18T12:11:40Z"
+    },
+    {
+      "conversation_id": 1435,
+      "question_text": "Pra começarmos, preciso de 3 informações rápidas",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-18T12:11:40Z"
+    },
+    {
+      "conversation_id": 1406,
+      "question_text": "+ ou -",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T12:30:32Z"
+    },
+    {
+      "conversation_id": 1406,
+      "question_text": "Estamos com faturamento praticamente zero nessa unidade da Go Coffee",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T12:30:51Z"
+    },
+    {
+      "conversation_id": 1406,
+      "question_text": "Portanto vamos fechar",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T12:30:55Z"
+    },
+    {
+      "conversation_id": 1406,
+      "question_text": "Envio l e-mail ainda hoje",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T20:20:37Z"
+    },
+    {
+      "conversation_id": 1432,
+      "question_text": "**+55 4198996477 - Walter Frey:**\n\nSabrina, agenda pra hj, já aprovo aqui",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão"
+      ],
+      "created_at": "2026-03-17T20:31:04Z"
+    },
+    {
+      "conversation_id": 1434,
+      "question_text": "45.561.445 0001 89",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-18T11:36:22Z"
+    },
+    {
+      "conversation_id": 1434,
+      "question_text": "Luiz preciso passar este desconto de 6 % por favor",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-18T12:38:33Z"
+    },
+    {
+      "conversation_id": 1434,
+      "question_text": "O Pedra Branca",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-18T12:39:02Z"
+    },
+    {
+      "conversation_id": 1434,
+      "question_text": "De 8 para 6",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-18T12:39:07Z"
+    },
+    {
+      "conversation_id": 1434,
+      "question_text": "Isso meu querido",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-18T13:05:37Z"
+    },
+    {
+      "conversation_id": 1433,
+      "question_text": "44140554000160",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-18T11:31:49Z"
+    },
+    {
+      "conversation_id": 1433,
+      "question_text": "2 assuntos \n Pedi pra Go coffee alterar o preço da empanada de 5 queijos e costelinha barbecue por 15,00",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-18T11:39:55Z"
+    },
+    {
+      "conversation_id": 1433,
+      "question_text": "Outro contratei outra máquina de cartão que vcs indicaram \nMas comentaram que vcs tem que arrumar pra depois enviar\nQueria ver qual a previsão",
+      "product": "NXZ Pay Go",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-18T11:40:31Z"
+    },
+    {
+      "conversation_id": 1433,
+      "question_text": "Alan que vcs indicaram",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-18T11:44:51Z"
+    },
+    {
+      "conversation_id": 1428,
+      "question_text": "Pin testo amanhã",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T20:21:26Z"
+    },
+    {
+      "conversation_id": 1428,
+      "question_text": "Estou precisando neste momento referente a impressora",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T20:21:39Z"
+    },
+    {
+      "conversation_id": 1428,
+      "question_text": "Houve",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T20:22:06Z"
+    },
+    {
+      "conversation_id": 1428,
+      "question_text": "Eu troquei de operadora",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T20:27:15Z"
+    },
+    {
+      "conversation_id": 1428,
+      "question_text": "Mas conectei o cabo",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T20:27:21Z"
+    },
+    {
+      "conversation_id": 1428,
+      "question_text": "É muito complicado?",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T21:52:55Z"
+    },
+    {
+      "conversation_id": 1428,
+      "question_text": "Entendi. Obrigado",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-18T11:51:50Z"
+    },
+    {
+      "conversation_id": 1428,
+      "question_text": "Vcs precisam fazer algo",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-18T11:51:57Z"
+    },
+    {
+      "conversation_id": 1428,
+      "question_text": "Ou so aqui mesmo?",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-18T11:52:04Z"
+    },
+    {
+      "conversation_id": 1428,
+      "question_text": "40.373.793/0001-09",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T15:25:50Z"
+    },
+    {
+      "conversation_id": 1428,
+      "question_text": "Tenho dois assuntos precisando de suporte",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T15:26:04Z"
+    },
+    {
+      "conversation_id": 1428,
+      "question_text": "Primeiro sobre o PIN da conversa de ontem, so tenho o 0908 que é utilizado para desconto",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T15:26:34Z"
+    },
+    {
+      "conversation_id": 1428,
+      "question_text": "E outro ponto",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T15:26:38Z"
+    },
+    {
+      "conversation_id": 1428,
+      "question_text": "Estou com problemas, o sistema nao esta conectando a impressora, nao esta emitindo notas",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T15:26:59Z"
+    },
+    {
+      "conversation_id": 1428,
+      "question_text": "Esse é o erro",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T15:27:27Z"
+    },
+    {
+      "conversation_id": 1428,
+      "question_text": "algum retorno pessoal?",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T19:26:47Z"
+    },
+    {
+      "conversation_id": 1428,
+      "question_text": "tentei usar o que tinha aqui, não deu certo",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T19:34:08Z"
+    },
+    {
+      "conversation_id": 1428,
+      "question_text": "cancelar nota",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T19:34:56Z"
+    },
+    {
+      "conversation_id": 1428,
+      "question_text": "Ola pessoal",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T15:25:32Z"
+    },
+    {
+      "conversation_id": 1430,
+      "question_text": "Como colocar produtos de estoque no sistema",
+      "product": "NXZ ERP",
+      "labels": [
+        "atendimento_padrão"
+      ],
+      "created_at": "2026-03-17T17:42:02Z"
+    },
+    {
+      "conversation_id": 1430,
+      "question_text": "562822552000194",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão"
+      ],
+      "created_at": "2026-03-17T17:45:10Z"
+    },
+    {
+      "conversation_id": 1430,
+      "question_text": "Go coffee balneario shopping",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão"
+      ],
+      "created_at": "2026-03-17T17:45:24Z"
+    },
+    {
+      "conversation_id": 1427,
+      "question_text": "Bom dia. Porque este cookies está com o valor divergentes dos outros?",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T13:31:43Z"
+    },
+    {
+      "conversation_id": 1427,
+      "question_text": "1 deles já era pra ter saído do sistema.",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T20:05:14Z"
+    },
+    {
+      "conversation_id": 1427,
+      "question_text": "O de menor valor",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T20:05:39Z"
+    },
+    {
+      "conversation_id": 1429,
+      "question_text": "Como vejo?",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T20:02:55Z"
+    },
+    {
+      "conversation_id": 1429,
+      "question_text": "Na verdade seria para atualizar o sistema",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T20:08:22Z"
+    },
+    {
+      "conversation_id": 1429,
+      "question_text": "Com os proprios produtos",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T20:08:27Z"
+    },
+    {
+      "conversation_id": 1429,
+      "question_text": "Da gocoffe",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T20:08:30Z"
+    },
+    {
+      "conversation_id": 1429,
+      "question_text": "Atualizar as quantidades de cada produtos em estoque",
+      "product": "NXZ ERP",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T20:08:58Z"
+    },
+    {
+      "conversation_id": 1429,
+      "question_text": "Para ter controle",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T20:09:01Z"
+    },
+    {
+      "conversation_id": 1429,
+      "question_text": "Eu teria q somente entrar c o login gestor",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T20:12:44Z"
+    },
+    {
+      "conversation_id": 1429,
+      "question_text": "Para conseguir?",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T20:12:52Z"
+    },
+    {
+      "conversation_id": 1429,
+      "question_text": "E qual seria o passo a passo para colocar no sistema",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T20:13:09Z"
+    },
+    {
+      "conversation_id": 1429,
+      "question_text": "Preciso de um suporte",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T17:24:51Z"
+    },
+    {
+      "conversation_id": 1429,
+      "question_text": "56282552000194",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T17:25:36Z"
+    },
+    {
+      "conversation_id": 1429,
+      "question_text": "Como faço para colocar produtos do estoque",
+      "product": "NXZ ERP",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T18:54:27Z"
+    },
+    {
+      "conversation_id": 1429,
+      "question_text": "No sistema?",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T18:54:30Z"
+    },
+    {
+      "conversation_id": 1355,
+      "question_text": "Como está a questão daquele chamado que abrimos?",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T19:38:12Z"
+    },
+    {
+      "conversation_id": 1355,
+      "question_text": "Dos CFOP",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T19:42:36Z"
+    },
+    {
+      "conversation_id": 1355,
+      "question_text": "Que vcs me pediram a planilha, ai minha contabilidade mandou",
+      "product": "NXZ ERP",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T19:42:55Z"
+    },
+    {
+      "conversation_id": 1355,
+      "question_text": "Ah, ok, mas eu comentei sobre aquele outro chamado",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T19:43:12Z"
+    },
+    {
+      "conversation_id": 1355,
+      "question_text": "Vcs conseguem me ajudar?",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-13T00:25:40Z"
+    },
+    {
+      "conversation_id": 1355,
+      "question_text": "Isso, estava colocando era para conectar c o sistema agora",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-13T14:09:44Z"
+    },
+    {
+      "conversation_id": 1355,
+      "question_text": "O que precisamos fazer então?",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-13T16:07:42Z"
+    },
+    {
+      "conversation_id": 1425,
+      "question_text": "Favor enviar nota fiscal",
+      "product": "NXZ ERP",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T12:25:08Z"
+    },
+    {
+      "conversation_id": 1425,
+      "question_text": "00121811000574",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T12:25:16Z"
+    },
+    {
+      "conversation_id": 1425,
+      "question_text": "Paga em 25/02",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T12:25:32Z"
+    },
+    {
+      "conversation_id": 1425,
+      "question_text": "não, seria isso, obrigada!",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T18:13:19Z"
+    },
+    {
+      "conversation_id": 1425,
+      "question_text": "a nota não está para nós",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T18:32:04Z"
+    },
+    {
+      "conversation_id": 1425,
+      "question_text": "no nosso cnpj",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T18:32:06Z"
+    },
+    {
+      "conversation_id": 1425,
+      "question_text": "consegue verificar?",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T18:32:11Z"
+    },
+    {
+      "conversation_id": 1426,
+      "question_text": "Olá, bom dia, Sabrina. Como vai?",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão"
+      ],
+      "created_at": "2026-03-17T12:37:54Z"
+    },
+    {
+      "conversation_id": 1426,
+      "question_text": "Como faço pra solicitar o seguro desemprego? Entrei aqui no app da carteira de trabalho digital, mas pede um número de requerimento. Qual seria?",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão"
+      ],
+      "created_at": "2026-03-17T12:38:14Z"
+    },
+    {
+      "conversation_id": 1426,
+      "question_text": "Deu certo sim com esse número, muito obrigado, Sabrina",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão"
+      ],
+      "created_at": "2026-03-17T19:08:44Z"
+    },
+    {
+      "conversation_id": 1394,
+      "question_text": "Bom dia! Eu preciso de um arquivo com as notas fiscais do mês de fevereiro de 2026 para eu encaminhar para a contabilidade. Obrigada!",
+      "product": "NXZ ERP",
+      "labels": [
+        "atendimento_padrão"
+      ],
+      "created_at": "2026-03-16T12:49:06Z"
+    },
+    {
+      "conversation_id": 1394,
+      "question_text": "43.627.677/0001-67 Jeh Coffee LTDA",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão"
+      ],
+      "created_at": "2026-03-16T12:49:35Z"
+    },
+    {
+      "conversation_id": 1409,
+      "question_text": "Necessito que nos envie o arquivo xml de saída do período 01/03/2026 a 06/03/2026, últimos dias de venda das operações para o CNPJ 46.894.076/0002-90.\nJá encerramos porém o contador precisa desse arquivo final.",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-16T23:01:22Z"
+    },
+    {
+      "conversation_id": 1409,
+      "question_text": "Necessito que nos envie o arquivo xml de saída do período 01/03/2026 a 06/03/2026, últimos dias de venda das operações para o CNPJ 46.894.076/0002-90.\nJá encerramos porém o contador precisa desse arquivo final.",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T12:49:06Z"
+    },
+    {
+      "conversation_id": 1409,
+      "question_text": "Somente",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-17T13:41:47Z"
+    },
+    {
+      "conversation_id": 1410,
+      "question_text": "Boa noite teste",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T23:00:49Z"
+    },
+    {
+      "conversation_id": 1408,
+      "question_text": "Boa noite teste podem me ajudar?",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T22:58:25Z"
+    },
+    {
+      "conversation_id": 1407,
+      "question_text": "Ola boa noite",
+      "product": "NXZ ERP",
+      "labels": [
+        "sla_fiscal",
+        "nf_e_certificado",
+        "sla_padrao",
+        "abertura_e_fechamento_de_caixa"
+      ],
+      "created_at": "2026-03-16T22:38:43Z"
+    },
+    {
+      "conversation_id": 1405,
+      "question_text": "Tudo ok.",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T21:15:44Z"
+    },
+    {
+      "conversation_id": 1405,
+      "question_text": "Muito obrigado.",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T21:15:46Z"
+    },
+    {
+      "conversation_id": 1404,
+      "question_text": "499956960001 22",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T20:06:11Z"
+    },
+    {
+      "conversation_id": 1404,
+      "question_text": "Sobre o valor do refrigerante.",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T20:06:38Z"
+    },
+    {
+      "conversation_id": 1404,
+      "question_text": "A Coca tá diferente o valor.",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T20:07:36Z"
+    },
+    {
+      "conversation_id": 1404,
+      "question_text": "Deveria ser 8,00.",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T20:07:49Z"
+    },
+    {
+      "conversation_id": 1404,
+      "question_text": "Aguardando uma resposta.",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T20:30:40Z"
+    },
+    {
+      "conversation_id": 1400,
+      "question_text": "Boa tarde Bianca",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T16:40:05Z"
+    },
+    {
+      "conversation_id": 1400,
+      "question_text": "A contabilidade pediu para solicitar pra inutilizarem as numerações, por gentileza.",
+      "product": "NXZ ERP",
+      "labels": [],
+      "created_at": "2026-03-16T16:40:23Z"
+    },
+    {
+      "conversation_id": 1402,
+      "question_text": "Por gentileza",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T19:17:25Z"
+    },
+    {
+      "conversation_id": 1402,
+      "question_text": "Já chegou",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T19:17:29Z"
+    },
+    {
+      "conversation_id": 1402,
+      "question_text": "Por gentileza",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T19:57:43Z"
+    },
+    {
+      "conversation_id": 1402,
+      "question_text": "Ativa o leite zero lactose",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T19:57:43Z"
+    },
+    {
+      "conversation_id": 1402,
+      "question_text": "Já chegou",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T19:57:43Z"
+    },
+    {
+      "conversation_id": 1402,
+      "question_text": "Tá certo",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T20:04:50Z"
+    },
+    {
+      "conversation_id": 1402,
+      "question_text": "A gente tá vendo aqui mas até agora não apareceu",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T20:17:49Z"
+    },
+    {
+      "conversation_id": 1402,
+      "question_text": "Ainda não está aparecendo",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T20:17:56Z"
+    },
+    {
+      "conversation_id": 1402,
+      "question_text": "Pode verificar",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T20:17:59Z"
+    },
+    {
+      "conversation_id": 1402,
+      "question_text": "52.484.180000128",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T19:17:06Z"
+    },
+    {
+      "conversation_id": 1402,
+      "question_text": "Ativa o leite zero lactose",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T19:17:23Z"
+    },
+    {
+      "conversation_id": 1397,
+      "question_text": "Nao há a opção para NF",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T16:32:17Z"
+    },
+    {
+      "conversation_id": 1397,
+      "question_text": "100.978",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T17:15:10Z"
+    },
+    {
+      "conversation_id": 1397,
+      "question_text": "pede login",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T19:15:05Z"
+    },
+    {
+      "conversation_id": 1397,
+      "question_text": "como faço para cancelar aquele cupom gerado?",
+      "product": "NXZ ERP",
+      "labels": [],
+      "created_at": "2026-03-16T19:39:10Z"
+    },
+    {
+      "conversation_id": 1397,
+      "question_text": "ja consegui fazer. Agora preciso realizar o cancelamento do cupom",
+      "product": "NXZ ERP",
+      "labels": [],
+      "created_at": "2026-03-16T20:03:46Z"
+    },
+    {
+      "conversation_id": 1397,
+      "question_text": "mesmo assim, nao consigo cancelar?",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T20:37:17Z"
+    },
+    {
+      "conversation_id": 1397,
+      "question_text": "era isso",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T20:52:49Z"
+    },
+    {
+      "conversation_id": 1397,
+      "question_text": "47.910.312/0001-04",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T14:02:13Z"
+    },
+    {
+      "conversation_id": 1397,
+      "question_text": "Boa tarde, Bianca",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T16:31:49Z"
+    },
+    {
+      "conversation_id": 1397,
+      "question_text": "Precisava tirar uma danfe de uma venda",
+      "product": "NXZ ERP",
+      "labels": [],
+      "created_at": "2026-03-16T16:31:59Z"
+    },
+    {
+      "conversation_id": 1397,
+      "question_text": "Mas só consigo emitir cupom",
+      "product": "NXZ ERP",
+      "labels": [],
+      "created_at": "2026-03-16T16:32:05Z"
+    },
+    {
+      "conversation_id": 1401,
+      "question_text": "Ola pessoal, tudo bem?",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T17:54:06Z"
+    },
+    {
+      "conversation_id": 1401,
+      "question_text": "40373793000109",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T17:54:34Z"
+    },
+    {
+      "conversation_id": 1401,
+      "question_text": "Estou precisando cancelar uma nota, e o pin que me passou nao dá para cancelar",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T17:55:12Z"
+    },
+    {
+      "conversation_id": 1398,
+      "question_text": "48150046000113",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T15:33:35Z"
+    },
+    {
+      "conversation_id": 1398,
+      "question_text": "Estou tentando cancelar essa compra que coloquei pagamento como débito , mas o cartão da pessoa não passou e ela pagou no dinheiro , mas não tou conseguindo",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T15:33:51Z"
+    },
+    {
+      "conversation_id": 1398,
+      "question_text": "Aparecendo essa mensagem",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T15:33:51Z"
+    },
+    {
+      "conversation_id": 1398,
+      "question_text": "Poderia cancelar a venda e alterar para dinheiro por favor",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T15:34:19Z"
+    },
+    {
+      "conversation_id": 1395,
+      "question_text": "Olá, L'AVENIR COFFEE LTDA - Go Coffee - MS Shopping Norte Sul II!\nQueremos te lembrar que a cobrança gerada para você por NXZ SISTEMAS INTELIGENTES LTDA no valor de R$ 551,00, vence em 15/03/2026 (daqui a 5 dia(s)).\n\nPara efetuar o pagamento e visualizar mais informações da cobrança, acesse o link: https://www.asaas.com/i/iw6if5gdhxu2u9jx?nh=507509425\n\nSe você não reconhece essa cobrança, ou tem alguma dúvida sobre o pagamento, entre em contato com o seu fornecedor:\nTelefone: (41) 99638-8508\nEmail: financeiro@nexuz.com.br",
+      "product": "NXZ ERP",
+      "labels": [],
+      "created_at": "2026-03-16T12:49:37Z"
+    },
+    {
+      "conversation_id": 1395,
+      "question_text": "Estamos tentando efetuar o pagamento deste boleto acima",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T12:49:58Z"
+    },
+    {
+      "conversation_id": 1395,
+      "question_text": "Porém diz que já está pago",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T12:50:02Z"
+    },
+    {
+      "conversation_id": 1395,
+      "question_text": "Pode me ajudar?",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T13:23:42Z"
+    },
+    {
+      "conversation_id": 1375,
+      "question_text": "Olá, boa tarde. Tudo bem e contigo?",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão"
+      ],
+      "created_at": "2026-03-13T16:40:56Z"
+    },
+    {
+      "conversation_id": 1375,
+      "question_text": "Tá certo, vou fazer a revisão e aviso quando assinar, Sabrina. Muito obrigado",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão"
+      ],
+      "created_at": "2026-03-13T16:41:36Z"
+    },
+    {
+      "conversation_id": 1399,
+      "question_text": "Testando automação",
+      "product": "indefinido",
+      "labels": [
+        "aguardando_selecao"
+      ],
+      "created_at": "2026-03-16T16:30:06Z"
+    },
+    {
+      "conversation_id": 1396,
+      "question_text": "42.806.289/0001-80",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T14:00:34Z"
+    },
+    {
+      "conversation_id": 1396,
+      "question_text": "A contabilidade está me perguntando sobre essas 5 nf, poderia verificar pra mim?",
+      "product": "NXZ ERP",
+      "labels": [],
+      "created_at": "2026-03-16T14:01:05Z"
+    },
+    {
+      "conversation_id": 1396,
+      "question_text": "Ok vou avisar para a contabilidade",
+      "product": "NXZ ERP",
+      "labels": [],
+      "created_at": "2026-03-16T15:54:03Z"
+    },
+    {
+      "conversation_id": 1392,
+      "question_text": "Eu preciso de uma ajuda em relação as notas fiscais",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T13:08:08Z"
+    },
+    {
+      "conversation_id": 1392,
+      "question_text": "Vocês teriam como me mandar em um arquivo zipado as notas referente ao mês de fevereiro desse ano? Preciso mandar para a contabilidade",
+      "product": "NXZ ERP",
+      "labels": [],
+      "created_at": "2026-03-16T13:08:39Z"
+    },
+    {
+      "conversation_id": 1392,
+      "question_text": "Ou vocês tem como me ajudar a como fazer isso?",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T13:08:49Z"
+    },
+    {
+      "conversation_id": 1392,
+      "question_text": "Pois pelo que eu vi aqui no sistema eu teria que baixar um por um dos 478 arquivos, queria ver com vocês se existe uma maneira mais prática e fácil de eu fazer esse trabalho",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T13:09:32Z"
+    },
+    {
+      "conversation_id": 1392,
+      "question_text": "Tudo sim e você!",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T13:17:23Z"
+    },
+    {
+      "conversation_id": 1392,
+      "question_text": "Muito obrigada!",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T13:24:28Z"
+    },
+    {
+      "conversation_id": 1390,
+      "question_text": "Testando 3",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T11:53:24Z"
+    },
+    {
+      "conversation_id": 1390,
+      "question_text": "Eu quero falar no comercial",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T11:53:43Z"
+    },
+    {
+      "conversation_id": 1390,
+      "question_text": "Eu quero conhecer os produtos",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T11:54:09Z"
+    },
+    {
+      "conversation_id": 1389,
+      "question_text": "Teste 2 de automação",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T11:49:25Z"
+    },
+    {
+      "conversation_id": 1389,
+      "question_text": "Suporte",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T11:49:33Z"
+    },
+    {
+      "conversation_id": 1389,
+      "question_text": "Teste , meu cnpj xxxxxxx",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T11:50:23Z"
+    },
+    {
+      "conversation_id": 1388,
+      "question_text": "Testando automação",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T11:44:30Z"
+    },
+    {
+      "conversation_id": 1388,
+      "question_text": "Teste de automação",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T11:45:14Z"
+    },
+    {
+      "conversation_id": 1388,
+      "question_text": "Meu cnpj xxxxxxxxxxxx",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T11:45:30Z"
+    },
+    {
+      "conversation_id": 1388,
+      "question_text": "Teste",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-16T11:45:59Z"
+    },
+    {
+      "conversation_id": 1371,
+      "question_text": "**+55 4198996477 - Walter Frey:**\n\nSaldo não fecha",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão"
+      ],
+      "created_at": "2026-03-13T15:24:55Z"
+    },
+    {
+      "conversation_id": 1386,
+      "question_text": "Vc pode transforma ele em um cupom infinito",
+      "product": "NXZ ERP",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-13T18:53:23Z"
+    },
+    {
+      "conversation_id": 1386,
+      "question_text": "Vamos usar ele em outras datas tbm.",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-13T18:53:40Z"
+    },
+    {
+      "conversation_id": 1386,
+      "question_text": "Aí já fica pronto",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-13T18:53:44Z"
+    },
+    {
+      "conversation_id": 1386,
+      "question_text": "Pode ser ?",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-13T18:54:07Z"
+    },
+    {
+      "conversation_id": 1386,
+      "question_text": "Fica ótimo !!",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-13T18:54:46Z"
+    },
+    {
+      "conversation_id": 1386,
+      "question_text": "Obrigada por toda sua atenção",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-13T18:54:53Z"
+    },
+    {
+      "conversation_id": 1386,
+      "question_text": "Cria no cupom tbm ! \nPq assim eu desativo e ativo quando quiser , sem depender de vcs",
+      "product": "NXZ ERP",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-13T18:44:27Z"
+    },
+    {
+      "conversation_id": 1361,
+      "question_text": "C mo vejo isso ?",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-13T13:42:20Z"
+    },
+    {
+      "conversation_id": 1361,
+      "question_text": "A princípio estão todos pagos",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-13T13:49:31Z"
+    },
+    {
+      "conversation_id": 1361,
+      "question_text": "Fiz isola",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-13T16:05:16Z"
+    },
+    {
+      "conversation_id": 1361,
+      "question_text": "Deu certo",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-13T18:34:05Z"
+    },
+    {
+      "conversation_id": 1361,
+      "question_text": "Vamos aguardar",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-13T18:34:07Z"
+    },
+    {
+      "conversation_id": 1361,
+      "question_text": "Bom dia \nTudo bem?",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-13T12:32:17Z"
+    },
+    {
+      "conversation_id": 1361,
+      "question_text": "Está dando isso direto nos dois atendimentos",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-13T12:32:45Z"
+    },
+    {
+      "conversation_id": 1361,
+      "question_text": "Tudo certo",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-13T13:25:04Z"
+    },
+    {
+      "conversation_id": 1361,
+      "question_text": "Já vejo",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-13T13:25:06Z"
+    },
+    {
+      "conversation_id": 1383,
+      "question_text": "Teste de automação",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão"
+      ],
+      "created_at": "2026-03-13T18:05:15Z"
+    },
+    {
+      "conversation_id": 1373,
+      "question_text": "Valerá para ! \nSugestões momo Crunchy \nMonte seu momo \nMilkshake \nBebidas \nGrab’ go \nZero \nVegano \n\nSomente a categoria beefree não vai entrar",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais",
+        "sistema_parado"
+      ],
+      "created_at": "2026-03-13T18:25:47Z"
+    },
+    {
+      "conversation_id": 1373,
+      "question_text": "Terá alguma senha ? Algum código pin ?",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais",
+        "sistema_parado"
+      ],
+      "created_at": "2026-03-13T18:30:35Z"
+    },
+    {
+      "conversation_id": 1373,
+      "question_text": "Pode deixar o código pin",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais",
+        "sistema_parado"
+      ],
+      "created_at": "2026-03-13T18:31:28Z"
+    },
+    {
+      "conversation_id": 1373,
+      "question_text": "Acho necessário",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais",
+        "sistema_parado"
+      ],
+      "created_at": "2026-03-13T18:31:33Z"
+    },
+    {
+      "conversation_id": 1373,
+      "question_text": "Senha atual e 8745",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais",
+        "sistema_parado"
+      ],
+      "created_at": "2026-03-13T18:31:40Z"
+    },
+    {
+      "conversation_id": 1373,
+      "question_text": "Continua o mesmo ?",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais",
+        "sistema_parado"
+      ],
+      "created_at": "2026-03-13T18:31:47Z"
+    },
+    {
+      "conversation_id": 1373,
+      "question_text": "Eu vou fazer um teste",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais",
+        "sistema_parado"
+      ],
+      "created_at": "2026-03-13T18:36:02Z"
+    },
+    {
+      "conversation_id": 1373,
+      "question_text": "E lhe aviso se deu certo",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais",
+        "sistema_parado"
+      ],
+      "created_at": "2026-03-13T18:36:11Z"
+    },
+    {
+      "conversation_id": 1373,
+      "question_text": "Quais são ?",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais",
+        "sistema_parado"
+      ],
+      "created_at": "2026-03-13T18:22:45Z"
+    },
+    {
+      "conversation_id": 1373,
+      "question_text": "20cod",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais",
+        "sistema_parado"
+      ],
+      "created_at": "2026-03-13T18:23:34Z"
+    },
+    {
+      "conversation_id": 1373,
+      "question_text": "Sera apenas para o dia 15/03",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais",
+        "sistema_parado"
+      ],
+      "created_at": "2026-03-13T18:24:17Z"
+    },
+    {
+      "conversation_id": 1373,
+      "question_text": "Gente",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais",
+        "sistema_parado"
+      ],
+      "created_at": "2026-03-13T18:01:16Z"
+    },
+    {
+      "conversation_id": 1373,
+      "question_text": "Que absurdo",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais",
+        "sistema_parado"
+      ],
+      "created_at": "2026-03-13T18:01:19Z"
+    },
+    {
+      "conversation_id": 1373,
+      "question_text": "Ninguém me dá um suporte",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais",
+        "sistema_parado"
+      ],
+      "created_at": "2026-03-13T18:01:29Z"
+    },
+    {
+      "conversation_id": 1373,
+      "question_text": "Absurdo isso",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais",
+        "sistema_parado"
+      ],
+      "created_at": "2026-03-13T18:01:33Z"
+    },
+    {
+      "conversation_id": 1373,
+      "question_text": "Urgente gente",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais",
+        "sistema_parado"
+      ],
+      "created_at": "2026-03-13T18:13:17Z"
+    },
+    {
+      "conversation_id": 1373,
+      "question_text": "CNPJ - 49403544000193",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais",
+        "sistema_parado"
+      ],
+      "created_at": "2026-03-13T15:42:43Z"
+    },
+    {
+      "conversation_id": 1373,
+      "question_text": "Preciso criar um código de desconto",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais",
+        "sistema_parado"
+      ],
+      "created_at": "2026-03-13T15:42:54Z"
+    },
+    {
+      "conversation_id": 1373,
+      "question_text": "Dia 15 teremos uma promoção na loja , e quero um código de 20% de desconto",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais",
+        "sistema_parado"
+      ],
+      "created_at": "2026-03-13T15:44:44Z"
+    },
+    {
+      "conversation_id": 1373,
+      "question_text": "Poderia criar pra mim por gentilidade",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais",
+        "sistema_parado"
+      ],
+      "created_at": "2026-03-13T15:44:54Z"
+    },
+    {
+      "conversation_id": 1373,
+      "question_text": "Poderia criar para mim por gentileza",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais",
+        "sistema_parado"
+      ],
+      "created_at": "2026-03-13T15:45:17Z"
+    },
+    {
+      "conversation_id": 1373,
+      "question_text": "Preciso desse retorno sobre o código",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais",
+        "sistema_parado"
+      ],
+      "created_at": "2026-03-13T17:03:15Z"
+    },
+    {
+      "conversation_id": 1373,
+      "question_text": "Iremos ter a promoção e eu preciso lançar no sistema",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais",
+        "sistema_parado"
+      ],
+      "created_at": "2026-03-13T17:03:42Z"
+    },
+    {
+      "conversation_id": 1373,
+      "question_text": "Preciso desse retorno urgente !",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais",
+        "sistema_parado"
+      ],
+      "created_at": "2026-03-13T17:31:06Z"
+    },
+    {
+      "conversation_id": 1373,
+      "question_text": "Até agora nenhuma resposta de vcs",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais",
+        "sistema_parado"
+      ],
+      "created_at": "2026-03-13T17:31:13Z"
+    },
+    {
+      "conversation_id": 1373,
+      "question_text": "Olá boa tarde !",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais",
+        "sistema_parado"
+      ],
+      "created_at": "2026-03-13T15:42:10Z"
+    },
+    {
+      "conversation_id": 1385,
+      "question_text": "Teste de automação",
+      "product": "indefinido",
+      "labels": [
+        "aguardando_selecao"
+      ],
+      "created_at": "2026-03-13T18:34:42Z"
+    },
+    {
+      "conversation_id": 1384,
+      "question_text": "Teste de automação",
+      "product": "indefinido",
+      "labels": [],
+      "created_at": "2026-03-13T18:31:47Z"
+    },
+    {
+      "conversation_id": 1374,
+      "question_text": "Estou precisando fazer um cupom de 20%",
+      "product": "NXZ ERP",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-13T17:36:44Z"
+    },
+    {
+      "conversation_id": 1374,
+      "question_text": "Estou precisando fazer um cupom de 20%",
+      "product": "NXZ ERP",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-13T18:20:17Z"
+    },
+    {
+      "conversation_id": 1374,
+      "question_text": "49403544000193",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-13T15:44:54Z"
+    },
+    {
+      "conversation_id": 1374,
+      "question_text": "Estou precisando fazer um cupom de 20%",
+      "product": "NXZ ERP",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-13T17:35:52Z"
+    },
+    {
+      "conversation_id": 1353,
+      "question_text": "Tudo bem que depois corrige, mas preciso de ajuda pra corrigir a primeira tela",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-12T21:36:31Z"
+    },
+    {
+      "conversation_id": 1353,
+      "question_text": "Pessoal, o açaí está aparecendo como \"R$ 0\"",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-12T21:36:15Z"
+    },
+    {
+      "conversation_id": 1382,
+      "question_text": "Teste de automação",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão"
+      ],
+      "created_at": "2026-03-13T18:02:01Z"
+    },
+    {
+      "conversation_id": 1381,
+      "question_text": "Testando automação para selecionar departamento",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão"
+      ],
+      "created_at": "2026-03-13T17:51:35Z"
+    },
+    {
+      "conversation_id": 1366,
+      "question_text": "Desculpe chamei errado",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão"
+      ],
+      "created_at": "2026-03-13T14:31:08Z"
+    },
+    {
+      "conversation_id": 1379,
+      "question_text": "Teste mais teste",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-13T17:07:21Z"
+    },
+    {
+      "conversation_id": 1378,
+      "question_text": "Teste 3",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-13T16:59:59Z"
+    },
+    {
+      "conversation_id": 1377,
+      "question_text": "Teste 2",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-13T16:58:30Z"
+    },
+    {
+      "conversation_id": 1376,
+      "question_text": "Teste",
+      "product": "indefinido",
+      "labels": [
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-13T16:52:06Z"
+    },
+    {
+      "conversation_id": 1370,
+      "question_text": "Um dia tudo bem e você?",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão"
+      ],
+      "created_at": "2026-03-13T13:52:50Z"
+    },
+    {
+      "conversation_id": 1370,
+      "question_text": "Está no portal",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão"
+      ],
+      "created_at": "2026-03-13T13:53:04Z"
+    },
+    {
+      "conversation_id": 1370,
+      "question_text": "Na mesma da rescisão",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão"
+      ],
+      "created_at": "2026-03-13T13:55:50Z"
+    },
+    {
+      "conversation_id": 1360,
+      "question_text": "gocoffeebacacheri@gmail.com",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão"
+      ],
+      "created_at": "2026-03-13T12:42:57Z"
+    },
+    {
+      "conversation_id": 1360,
+      "question_text": "Pode chamar ja.",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão"
+      ],
+      "created_at": "2026-03-13T12:45:51Z"
+    },
+    {
+      "conversation_id": 1360,
+      "question_text": "Por onde vc quer fazer a vídeo chamada?",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão"
+      ],
+      "created_at": "2026-03-13T12:57:40Z"
+    },
+    {
+      "conversation_id": 1360,
+      "question_text": "Por aqui mesmo?",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão"
+      ],
+      "created_at": "2026-03-13T12:59:33Z"
+    },
+    {
+      "conversation_id": 1360,
+      "question_text": "Quer entrar pelo any desk?",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão"
+      ],
+      "created_at": "2026-03-13T13:00:25Z"
+    },
+    {
+      "conversation_id": 1360,
+      "question_text": "No meio do caminho, seguindo o vídeo diz que a maquininha não conecta pq o wi fi está ligado. \nEntão desligo o wi fi.\nNo final do processo diz que não é possível conectar a maquininha pq o wi fi está desligado.",
+      "product": "NXZ Pay Go",
+      "labels": [
+        "atendimento_padrão"
+      ],
+      "created_at": "2026-03-13T12:09:30Z"
+    },
+    {
+      "conversation_id": 1356,
+      "question_text": "Eu colocando a opção dinheiro, não vá da diferença no meu caixa?",
+      "product": "NXZ ERP",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-13T11:14:02Z"
+    },
+    {
+      "conversation_id": 1356,
+      "question_text": "Pra lançar ela",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-13T11:25:54Z"
+    },
+    {
+      "conversation_id": 1359,
+      "question_text": "CNPJ - 49403544000193",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-13T12:07:27Z"
+    },
+    {
+      "conversation_id": 1359,
+      "question_text": "CNPJ - 49403544000193",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-13T12:07:34Z"
+    },
+    {
+      "conversation_id": 1358,
+      "question_text": "Quando eu chegar só testo",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-13T12:07:22Z"
+    },
+    {
+      "conversation_id": 1357,
+      "question_text": "Se vc já quiser criar",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-13T12:07:12Z"
+    },
+    {
+      "conversation_id": 1354,
+      "question_text": "Olá boa noite !",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão"
+      ],
+      "created_at": "2026-03-12T22:22:42Z"
+    },
+    {
+      "conversation_id": 1354,
+      "question_text": "A loja está fechada nesse momento , então assim que eu abrir peço ajuda de vocês",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão"
+      ],
+      "created_at": "2026-03-13T12:05:07Z"
+    },
+    {
+      "conversation_id": 1354,
+      "question_text": "Eu preciso criar um cupom de desconto no valor 20% para a promoção do dia do consumidor",
+      "product": "NXZ ERP",
+      "labels": [
+        "atendimento_padrão"
+      ],
+      "created_at": "2026-03-13T12:05:29Z"
+    },
+    {
+      "conversation_id": 1354,
+      "question_text": "CNPJ - 49403544000193",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão"
+      ],
+      "created_at": "2026-03-13T12:05:48Z"
+    },
+    {
+      "conversation_id": 1352,
+      "question_text": "40288652000198",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-12T18:46:12Z"
+    },
+    {
+      "conversation_id": 1352,
+      "question_text": "Estou aqui na loja com ele",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-12T18:59:24Z"
+    },
+    {
+      "conversation_id": 1352,
+      "question_text": "Nosso cliente tem 2 maquinas",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-12T19:03:03Z"
+    },
+    {
+      "conversation_id": 1352,
+      "question_text": "O aplicativo está disponível somente em uma máquina",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-12T19:03:15Z"
+    },
+    {
+      "conversation_id": 1351,
+      "question_text": "55.406.324/0001-16",
+      "product": "indefinido",
+      "labels": [
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-12T14:24:38Z"
+    },
+    {
+      "conversation_id": 1351,
+      "question_text": "Tudo sim",
+      "product": "indefinido",
+      "labels": [
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-12T14:46:52Z"
+    },
+    {
+      "conversation_id": 1351,
+      "question_text": "Muito obrigada",
+      "product": "indefinido",
+      "labels": [
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-12T15:13:47Z"
+    },
+    {
+      "conversation_id": 1348,
+      "question_text": "já atualizei",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-12T13:00:20Z"
+    },
+    {
+      "conversation_id": 1348,
+      "question_text": "não tem essa opção",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-12T13:00:33Z"
+    },
+    {
+      "conversation_id": 1348,
+      "question_text": "agora aparece essa mensagem",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-12T13:07:28Z"
+    },
+    {
+      "conversation_id": 1348,
+      "question_text": "essa de erro",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-12T13:07:51Z"
+    },
+    {
+      "conversation_id": 1348,
+      "question_text": "01/02/2026 a 28/02/2026",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-12T13:09:11Z"
+    },
+    {
+      "conversation_id": 1348,
+      "question_text": "deu certinho aqui",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-12T13:31:13Z"
+    },
+    {
+      "conversation_id": 1348,
+      "question_text": "muito obrigada !!",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-12T13:31:19Z"
+    },
+    {
+      "conversation_id": 1348,
+      "question_text": "como faço para baixar os xml da empresa com cnpj 44.052.422/0001-86",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-12T12:39:39Z"
+    },
+    {
+      "conversation_id": 1348,
+      "question_text": "tudo bem por aqui e você como está ?",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-12T12:42:46Z"
+    },
+    {
+      "conversation_id": 1348,
+      "question_text": "mais eu não tenho nada habilitado",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-12T12:56:25Z"
+    },
+    {
+      "conversation_id": 1348,
+      "question_text": "só aparece essas telas e também não consigo acessar nenhuma delas",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-12T12:57:56Z"
+    },
+    {
+      "conversation_id": 1348,
+      "question_text": "como posso seguir com o video se não tem nada",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão",
+        "dados_fiscais"
+      ],
+      "created_at": "2026-03-12T12:58:22Z"
+    },
+    {
+      "conversation_id": 1347,
+      "question_text": "Como faço para baixar os XML",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão"
+      ],
+      "created_at": "2026-03-12T12:16:36Z"
+    },
+    {
+      "conversation_id": 1347,
+      "question_text": "44.052.422/0001-86",
+      "product": "indefinido",
+      "labels": [
+        "atendimento_padrão"
+      ],
+      "created_at": "2026-03-12T12:18:16Z"
+    }
+  ],
+  "by_product": {
+    "NXZ ERP": 62,
+    "NXZ Go": 0,
+    "NXZ KDS": 2,
+    "NXZ Delivery": 5,
+    "NXZ Pay Go": 2,
+    "indefinido": 443
+  }
+}

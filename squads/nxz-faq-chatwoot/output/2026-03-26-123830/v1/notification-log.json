@@ -1,0 +1,9 @@
+{
+  "notification_date": "2026-03-26T15:59:30Z",
+  "recipient": "Carol Oliveira",
+  "chat_id": "TELEGRAM_NOTIFY_CHAT_ID",
+  "message_sent": true,
+  "faqs_count": 6,
+  "test_accuracy": null,
+  "test_status": "ABORTED"
+}

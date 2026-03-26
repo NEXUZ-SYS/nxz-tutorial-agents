@@ -1,0 +1,126 @@
+{
+  "test_date": "2026-03-26",
+  "total_questions": 12,
+  "questions": [
+    {
+      "id": 1,
+      "product": "NXZ ERP",
+      "original_question": "Tentando cancelar uma venda de ontem no caixa",
+      "canonical_topic": "cancelamento-venda",
+      "expected_faq_slug": "cancelamento-venda-pdv",
+      "expected_faq_title": "Como cancelar uma venda no PDV?",
+      "source_conversation_id": 1350,
+      "evaluation_criteria": "Deve orientar sobre como cancelar uma venda no PDV do NXZ ERP"
+    },
+    {
+      "id": 2,
+      "product": "NXZ ERP",
+      "original_question": "Posso cancelar? E como informar sedaz nesses casos",
+      "canonical_topic": "cancelamento-venda",
+      "expected_faq_slug": "cancelamento-venda-pdv",
+      "expected_faq_title": "Como cancelar uma venda no PDV?",
+      "source_conversation_id": 1499,
+      "evaluation_criteria": "Deve orientar sobre cancelamento de venda e mencionar NF-e/SEFAZ"
+    },
+    {
+      "id": 3,
+      "product": "NXZ ERP",
+      "original_question": "Agora ja nao consigo mais acessar, mas vou tentar amanhã e qualquer coisa retorno",
+      "canonical_topic": "acesso-login",
+      "expected_faq_slug": "acesso-login-sistema",
+      "expected_faq_title": "Como acessar o NXZ ERP e resolver problemas de login?",
+      "source_conversation_id": 1518,
+      "evaluation_criteria": "Deve orientar sobre como resolver problemas de acesso ao sistema"
+    },
+    {
+      "id": 4,
+      "product": "NXZ ERP",
+      "original_question": "No meu já fica aberto o sistema no meu celular\nAí nunca preciso fazer login\nEntão nao lembro",
+      "canonical_topic": "acesso-login",
+      "expected_faq_slug": "acesso-login-sistema",
+      "expected_faq_title": "Como acessar o NXZ ERP e resolver problemas de login?",
+      "source_conversation_id": 1503,
+      "evaluation_criteria": "Deve orientar sobre recuperacao de senha e seguranca de acesso"
+    },
+    {
+      "id": 5,
+      "product": "NXZ ERP",
+      "original_question": "Estou com problemas, o sistema nao esta conectando a impressora, nao esta emitindo notas",
+      "canonical_topic": "impressora-impressao",
+      "expected_faq_slug": "impressora-impressao-cupom",
+      "expected_faq_title": "A impressora nao esta imprimindo cupons — o que fazer?",
+      "source_conversation_id": 1428,
+      "evaluation_criteria": "Deve orientar sobre verificacao de conexao e configuracao de impressora"
+    },
+    {
+      "id": 6,
+      "product": "NXZ ERP",
+      "original_question": "Estou precisando neste momento referente a impressora",
+      "canonical_topic": "impressora-impressao",
+      "expected_faq_slug": "impressora-impressao-cupom",
+      "expected_faq_title": "A impressora nao esta imprimindo cupons — o que fazer?",
+      "source_conversation_id": 1428,
+      "evaluation_criteria": "Deve identificar o tema de impressora e orientar sobre solucao"
+    },
+    {
+      "id": 7,
+      "product": "NXZ ERP",
+      "original_question": "Onde consigo ver os Xmls das vendas?",
+      "canonical_topic": "nota-fiscal",
+      "expected_faq_slug": "emissao-nota-fiscal",
+      "expected_faq_title": "Como emitir e consultar notas fiscais no NXZ ERP?",
+      "source_conversation_id": 1503,
+      "evaluation_criteria": "Deve orientar sobre consulta e exportacao de XMLs no modulo Fiscal"
+    },
+    {
+      "id": 8,
+      "product": "NXZ ERP",
+      "original_question": "Nossa contabilidade nos mandou uma relação de notas de saída idas no relatório como rascunho",
+      "canonical_topic": "nota-fiscal",
+      "expected_faq_slug": "emissao-nota-fiscal",
+      "expected_faq_title": "Como emitir e consultar notas fiscais no NXZ ERP?",
+      "source_conversation_id": 1499,
+      "evaluation_criteria": "Deve orientar sobre notas em rascunho e reenvio para SEFAZ"
+    },
+    {
+      "id": 9,
+      "product": "NXZ ERP",
+      "original_question": "Estamos com um problema no sistema",
+      "canonical_topic": "erros-sistema",
+      "expected_faq_slug": "erros-problemas-sistema",
+      "expected_faq_title": "O sistema esta com erro ou nao abre — o que fazer?",
+      "source_conversation_id": 1350,
+      "evaluation_criteria": "Deve orientar sobre diagnostico e resolucao de problemas gerais do sistema"
+    },
+    {
+      "id": 10,
+      "product": "NXZ ERP",
+      "original_question": "Se a gente resetar o roteador, vai interferir alguma coisa no sistema?",
+      "canonical_topic": "erros-sistema",
+      "expected_faq_slug": "erros-problemas-sistema",
+      "expected_faq_title": "O sistema esta com erro ou nao abre — o que fazer?",
+      "source_conversation_id": 1522,
+      "evaluation_criteria": "Deve orientar sobre impacto de rede no sistema e cuidados com reinicio"
+    },
+    {
+      "id": 11,
+      "product": "NXZ Delivery",
+      "original_question": "Oie boa tarde, como faço para adicionar itens novos no iFood?",
+      "canonical_topic": "integracao-ifood",
+      "expected_faq_slug": "integracao-ifood-rappi",
+      "expected_faq_title": "Como adicionar e gerenciar produtos no iFood e Rappi pelo NXZ Delivery?",
+      "source_conversation_id": 1391,
+      "evaluation_criteria": "Deve orientar sobre como adicionar produtos no iFood via NXZ Delivery"
+    },
+    {
+      "id": 12,
+      "product": "NXZ Delivery",
+      "original_question": "Como checo qual é qual no iFood?",
+      "canonical_topic": "integracao-ifood",
+      "expected_faq_slug": "integracao-ifood-rappi",
+      "expected_faq_title": "Como adicionar e gerenciar produtos no iFood e Rappi pelo NXZ Delivery?",
+      "source_conversation_id": 1391,
+      "evaluation_criteria": "Deve orientar sobre como identificar produtos no iFood via NXZ Delivery"
+    }
+  ]
+}

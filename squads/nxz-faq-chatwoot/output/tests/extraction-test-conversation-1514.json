@@ -1,0 +1,115 @@
+{
+  "extraction_date": "2026-03-26",
+  "period": {
+    "start": "2026-03-20",
+    "end": "2026-03-26"
+  },
+  "total_conversations": 1,
+  "conversations": [
+    {
+      "conversation_id": 1514,
+      "product": "NXZ ERP",
+      "labels": [],
+      "channel": "WhatsApp",
+      "created_at": "2026-03-20T10:59:29Z",
+      "resolved_at": "2026-03-21T16:28:32Z",
+      "messages": [
+        {
+          "role": "customer",
+          "time": "10:59:47.000",
+          "text": "Gostaria de fazer um cupom CFBOQ10"
+        },
+        {
+          "role": "customer",
+          "time": "10:59:50.000",
+          "text": "10%"
+        },
+        {
+          "role": "customer",
+          "time": "11:00:14.000",
+          "text": "Válido até 24 de abril"
+        },
+        {
+          "role": "customer",
+          "time": "11:00:31.000",
+          "text": "Outra coisas no iFood tem opção de whey de ervilha e whey vegano"
+        },
+        {
+          "role": "customer",
+          "time": "11:00:36.000",
+          "text": "Quero manter\nSomente o whey vegano"
+        },
+        {
+          "role": "customer",
+          "time": "11:00:42.000",
+          "text": "Tanto no sistema quanto no iFood"
+        },
+        {
+          "role": "customer",
+          "time": "11:00:45.000",
+          "text": "Ambos são iguais"
+        },
+        {
+          "role": "customer",
+          "time": "11:00:55.000",
+          "text": "Não precisa da descrição de ervilha"
+        },
+        {
+          "role": "agent",
+          "time": "12:09:43.000",
+          "text": "Boa tarde Fernanda. Aqui é o Luiz da Nexuz. Irei cadastrar o cupom."
+        },
+        {
+          "role": "agent",
+          "time": "12:10:36.000",
+          "text": "Sobre o Whey vegano, você só manterá o insumo Whey Vegano, sem o Whey vegetal de ervilha, é isso? Porque hoje são os dois cadastrados como está na ficha técnica da franquia."
+        },
+        {
+          "role": "agent",
+          "time": "12:10:49.000",
+          "text": "Sobre o Ifood, no caso desse item, você pode alterar direto na plataforma do Ifood."
+        },
+        {
+          "role": "customer",
+          "time": "12:17:19.000",
+          "text": "Isso, no final das contas os dois são a mesma coisa, não tem duas opções de whey vegano"
+        },
+        {
+          "role": "customer",
+          "time": "12:17:26.000",
+          "text": "Pode\nManter somente whey vegano pf"
+        },
+        {
+          "role": "agent",
+          "time": "12:23:34.000",
+          "text": "Tudo bem. Assim que tiver finalizado, te aviso aqui."
+        },
+        {
+          "role": "agent",
+          "time": "13:03:33.000",
+          "text": "CFBOQ10 - Cupom ativo."
+        },
+        {
+          "role": "agent",
+          "time": "13:05:37.000",
+          "text": "Como a solicitação de remover o insumo do whey protein vegano que está duplicado nos produtos é um pouco mais demorada, vou pedir para abrir o chamado nesse link.\nhttps://www.nexuz.app/helpdesk/suporte-nexuz-6?contact_form=1\nSolicitações mais complexas ou com prazo um pouco maior gerenciamos por essa plataforma. Peço que preencha e assim que terminarmos daremos um retorno pelo ticket mesmo."
+        },
+        {
+          "role": "agent",
+          "time": "16:28:32.000",
+          "text": "O cliente, Fernanda, solicitou a criação de um cupom de desconto de 10% com validade até 24 de abril. Além disso, ela pediu para manter apenas o 'Whey vegano' no sistema e no iFood, removendo a descrição de 'Whey de ervilha', pois ambos são considerados iguais.\n\nO agente de suporte, Luiz, confirmou a criação do cupom CFBOQ10 e orientou Fernanda a alterar diretamente na plataforma do iFood para o item específico. Para a remoção do insumo duplicado, ele sugeriu que Fernanda preenchesse um formulário de suporte para gerenciar solicitações mais complexas."
+        }
+      ],
+      "context_conversation": {
+        "problema_principal": "Solicitação de criação de **cupom de desconto** CFBOQ10 de 10% e remoção de **insumo duplicado** (Whey de ervilha), mantendo apenas Whey vegano no sistema e iFood",
+        "produto_funcionalidade": "**NXZ ERP** - módulo de cupons e gestão de insumos",
+        "causa_raiz": "nao identificada",
+        "resolucao": "**Cupom CFBOQ10 criado e ativado**. Para remoção do insumo duplicado, orientado a abrir chamado via **helpdesk** para solicitações mais complexas",
+        "observacoes": "Solicitações de alteração de insumos requerem processamento via plataforma de tickets separada devido à complexidade"
+      }
+    }
+  ],
+  "by_product": {
+    "NXZ ERP": 1
+  }
+}

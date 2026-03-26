@@ -1,0 +1,20 @@
+{
+  "test_date": "2026-03-26",
+  "assistant_id": 3,
+  "total_questions": 12,
+  "total_responded": 0,
+  "status": "ABORTED",
+  "abort_reason": "Copilot Threads messages endpoint not available in this Chatwoot version. Thread creation works (POST /captain/copilot_threads returns thread ID), but GET /captain/copilot_threads/{id}/messages returns 404. Tested 5+ endpoint variations, all returned 404 (HTML 'Page not found').",
+  "results_summary": {
+    "ACERTOU": 0,
+    "PARCIAL": 0,
+    "GENERICO": 0,
+    "ERROU": 0,
+    "TIMEOUT": 0,
+    "NOT_TESTED": 12
+  },
+  "accuracy_rate": null,
+  "note": "Este e um teste BASELINE (antes de publicar FAQs). O teste automatizado nao pode ser executado. Carol revisara as FAQs manualmente sem comparativo de acerto do agente.",
+  "threads_created": [38, 40, 41],
+  "results": []
+}

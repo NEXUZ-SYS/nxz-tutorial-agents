@@ -1,0 +1,7 @@
+path,displayName,icon,role,skills
+./agents/extractor.agent.md,Eva Extratora,🗂️,Extrai perguntas reais dos clientes do Chatwoot via API,
+./agents/analyst.agent.md,Ana Analista,📊,Analisa padroes de suporte e gera relatorios de execucao,
+./agents/writer.agent.md,Fred FAQ,✍️,Gera artigos FAQ estruturados por produto e categoria,
+./agents/curator.agent.md,Clara Curadora,🎯,Seleciona perguntas representativas para teste no Playground,
+./agents/tester.agent.md,Tina Teste,🧪,Testa o agente de IA no Playground do Captain via Copilot Threads API,
+./agents/publisher.agent.md,Paulo Publisher,📤,Publica FAQs no Help Center e notifica via Telegram,chatwoot-publish telegram-notify

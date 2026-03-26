@@ -1,0 +1,98 @@
+{
+  "generation_date": "2026-03-26",
+  "portal_slug": "base-de-conhecimento-suporte",
+  "max_per_product": 5,
+  "first_execution": true,
+  "topics": [
+    {
+      "id": 1,
+      "product": "NXZ ERP",
+      "category": "Vendas e PDV",
+      "theme": "Cancelamento de venda",
+      "slug": "cancelamento-venda-pdv",
+      "frequency": 15,
+      "action": "create",
+      "template": "B",
+      "sample_questions": [
+        "Tentando cancelar uma venda de ontem no caixa",
+        "Posso cancelar? E como informar nesses casos",
+        "Como que faço para excluir um pedido? Coloquei a forma de pagamento errada"
+      ]
+    },
+    {
+      "id": 2,
+      "product": "NXZ ERP",
+      "category": "Configuracao e Acesso",
+      "theme": "Acesso e login ao sistema",
+      "slug": "acesso-login-sistema",
+      "frequency": 10,
+      "action": "create",
+      "template": "B",
+      "sample_questions": [
+        "Não estou localizando no meu sistema, para atualizar o certificado",
+        "Agora ja nao consigo mais acessar",
+        "No meu já fica aberto o sistema no meu celular, nunca preciso fazer login"
+      ]
+    },
+    {
+      "id": 3,
+      "product": "NXZ ERP",
+      "category": "Vendas e PDV",
+      "theme": "Impressora e impressao de cupons",
+      "slug": "impressora-impressao-cupom",
+      "frequency": 9,
+      "action": "create",
+      "template": "C",
+      "sample_questions": [
+        "Estou precisando neste momento referente a impressora",
+        "O sistema nao esta conectando a impressora, nao esta emitindo",
+        "Mas só consigo emitir cupom"
+      ]
+    },
+    {
+      "id": 4,
+      "product": "NXZ ERP",
+      "category": "Financeiro e Fiscal",
+      "theme": "Emissao e envio de nota fiscal",
+      "slug": "emissao-nota-fiscal",
+      "frequency": 7,
+      "action": "create",
+      "template": "B",
+      "sample_questions": [
+        "Nota fiscal",
+        "Onde consigo ver os Xmls das vendas?",
+        "A contabilidade já afirmou que houve quebra"
+      ]
+    },
+    {
+      "id": 5,
+      "product": "NXZ ERP",
+      "category": "Configuracao e Acesso",
+      "theme": "Erros e problemas no sistema",
+      "slug": "erros-problemas-sistema",
+      "frequency": 5,
+      "action": "create",
+      "template": "C",
+      "sample_questions": [
+        "Estamos com um problema no sistema",
+        "Sistema apresentando esse problema, sabem como posso resolver?",
+        "Até ontem tudo funcionando normalmente, hoje quando fui concluir deu erro"
+      ]
+    },
+    {
+      "id": 6,
+      "product": "NXZ Delivery",
+      "category": "Integracao iFood e Rappi",
+      "theme": "Integracao iFood e Rappi",
+      "slug": "integracao-ifood-rappi",
+      "frequency": 4,
+      "action": "create",
+      "template": "B",
+      "sample_questions": [
+        "Queria colocar os novos itens no iFood",
+        "Como checo qual é qual no iFood?",
+        "Além disso como faço pra adicionar produto do cardápio no iFood?"
+      ]
+    }
+  ]
+}
