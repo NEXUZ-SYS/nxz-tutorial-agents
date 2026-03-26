@@ -27,6 +27,7 @@ config:
 data:
   - pipeline/data/faq-templates.md
   - pipeline/data/product-categories.md
+  - pipeline/data/telegram-notification-protocol.md
 
 pipeline:
   steps:

@@ -1,0 +1,1170 @@
+{
+  "extraction_date": "2026-03-26",
+  "period": {
+    "start": "2026-03-21",
+    "end": "2026-03-26"
+  },
+  "total_conversations": 19,
+  "conversations": [
+    {
+      "conversation_id": 1527,
+      "product": "NXZ ERP",
+      "labels": [],
+      "channel": "WhatsApp",
+      "created_at": "2026-03-24T17:47:10Z",
+      "resolved_at": "2026-03-26T16:22:48Z",
+      "messages": [
+        {
+          "role": "customer",
+          "time": "17:47:10.000",
+          "text": "Olá"
+        },
+        {
+          "role": "customer",
+          "time": "17:47:41.000",
+          "text": "53145790000160"
+        },
+        {
+          "role": "agent",
+          "time": "18:06:36.000",
+          "text": "Boa tarde tudo bem? Como posso ajudar?\n\n\n"
+        },
+        {
+          "role": "customer",
+          "time": "18:07:25.000",
+          "text": "Ontem chamei vcs, pq nao estava conseguindo atualizar o certificado digital"
+        },
+        {
+          "role": "customer",
+          "time": "18:07:47.000",
+          "text": "Não aparece atualização aqui"
+        },
+        {
+          "role": "agent",
+          "time": "18:14:20.000",
+          "text": "um momento por favor\n\n\n"
+        },
+        {
+          "role": "agent",
+          "time": "19:47:20.000",
+          "text": "Boa tarde Michelle. Aqui é o Luiz da Nexuz. Tudo bem? "
+        },
+        {
+          "role": "agent",
+          "time": "19:47:30.000",
+          "text": "Qual usuário está utilizando para acessar o ERP?"
+        },
+        {
+          "role": "customer",
+          "time": "19:50:53.000",
+          "text": "Nem lembro, mas nunca troquei"
+        },
+        {
+          "role": "customer",
+          "time": "19:51:12.000",
+          "text": "Diferente do que tenho no tablet"
+        },
+        {
+          "role": "agent",
+          "time": "19:51:30.000",
+          "text": "Ele aparece no canto superior direito da tela do sistema. Se possível, pode enviar uma foto! "
+        },
+        {
+          "role": "customer",
+          "time": "19:54:44.000",
+          "text": "Amanhã então chamo novamente, agora estou sem acesso ao not"
+        },
+        {
+          "role": "agent",
+          "time": "20:03:33.000",
+          "text": "Tudo bem Michelle. Ficou a disposição. Tenha um ótimo dia!"
+        },
+        {
+          "role": "customer",
+          "time": "20:04:14.000",
+          "text": "Ah, com relação a máquina a de cartão"
+        },
+        {
+          "role": "customer",
+          "time": "20:04:30.000",
+          "text": "Do sicoob é compatível"
+        },
+        {
+          "role": "customer",
+          "time": "20:04:47.000",
+          "text": "Gostaria de sair da cielo"
+        },
+        {
+          "role": "agent",
+          "time": "20:14:43.000",
+          "text": "Para garantir a integração total com o sistema Nexuz, trabalhamos com os seguintes terminais homologados:\n\n* **Stone:** Ingenico A8, Sunmi P2, GPOS700X, Positivo L300 e L400.\n\n* **Cielo:** A50, A920, A930, GPOS760, GPOS780, M30, P2, P2-A11 e SK800.\n\n* **PagSeguro:** Modelo P2. \n\n* "
+        },
+        {
+          "role": "agent",
+          "time": "20:15:02.000",
+          "text": "Trabalhamos com essas adquirentes e nesses modelos.\n\n\n"
+        },
+        {
+          "role": "customer",
+          "time": "20:15:59.000",
+          "text": "Hum, entendi"
+        },
+        {
+          "role": "agent",
+          "time": "20:17:00.000",
+          "text": "Qualquer dúvida, fico a disposição.;\n\n\n"
+        },
+        {
+          "role": "customer",
+          "time": "18:24:12.000",
+          "text": "Olá"
+        },
+        {
+          "role": "customer",
+          "time": "18:31:35.000",
+          "text": "Olá"
+        },
+        {
+          "role": "customer",
+          "time": "18:31:46.000",
+          "text": "53145790000160"
+        },
+        {
+          "role": "agent",
+          "time": "18:37:14.000",
+          "text": "Boa tarde Michelle. Sou o Luiz da Nexuz. Como posso ajudar? "
+        },
+        {
+          "role": "customer",
+          "time": "18:39:32.000",
+          "text": "Ontem chamei vcs pq nao estava conseguindo renovar o certificado digital"
+        },
+        {
+          "role": "customer",
+          "time": "18:39:55.000",
+          "text": "Nao aparece para renovar"
+        },
+        {
+          "role": "customer",
+          "time": "18:40:13.000",
+          "text": "Amanhã vence meu certificado"
+        },
+        {
+          "role": "customer",
+          "time": "18:40:42.000",
+          "text": "Aparece este usuário"
+        },
+        {
+          "role": "customer",
+          "time": "18:40:52.000",
+          "text": "Ontem me perguntaram mas estava sem acesso"
+        },
+        {
+          "role": "agent",
+          "time": "18:44:26.000",
+          "text": "Sim. Nesse caso, como mencionei ontem, você está acessando o sistema com o usuário PDV, conforme aparece na parte superior direita da tela na foto. Para acessa a opção de atualizar certificado como explica o artigo que te enviei, você precisa acessar o sistema com o usuário GESTOR. "
+        },
+        {
+          "role": "customer",
+          "time": "18:47:03.000",
+          "text": "Como eu troco?"
+        },
+        {
+          "role": "customer",
+          "time": "18:47:19.000",
+          "text": "Não lembro a senha e usuário"
+        },
+        {
+          "role": "customer",
+          "time": "18:58:06.000",
+          "text": "Qual desses acessos?"
+        },
+        {
+          "role": "customer",
+          "time": "18:58:19.000",
+          "text": "Outra coisa, não uso mais o kds"
+        },
+        {
+          "role": "customer",
+          "time": "18:58:31.000",
+          "text": "Até saiu do tablet"
+        },
+        {
+          "role": "agent",
+          "time": "19:01:55.000",
+          "text": "Já tentou clicar em \"Change Password\"?"
+        },
+        {
+          "role": "customer",
+          "time": "19:02:40.000",
+          "text": "Onde?"
+        },
+        {
+          "role": "customer",
+          "time": "19:02:57.000",
+          "text": "Estou aqui"
+        },
+        {
+          "role": "customer",
+          "time": "19:03:22.000",
+          "text": "E com o meu e-mail?"
+        },
+        {
+          "role": "customer",
+          "time": "19:06:13.000",
+          "text": "Consegui"
+        },
+        {
+          "role": "agent",
+          "time": "19:06:53.000",
+          "text": "Nessa imagem, você consegue clicar em mudar sua senha. Ou pode pegar o email e colocar em \"redefinir senha\"\n\n\n"
+        },
+        {
+          "role": "agent",
+          "time": "19:07:00.000",
+          "text": "Conseguiu acessar?\n\n\n"
+        },
+        {
+          "role": "customer",
+          "time": "19:07:09.000",
+          "text": "Sim"
+        },
+        {
+          "role": "customer",
+          "time": "19:07:15.000",
+          "text": "Atualizei aqui"
+        },
+        {
+          "role": "customer",
+          "time": "19:08:00.000",
+          "text": "Referente aos acessos, estou usando hoje somente o Pdv 1"
+        },
+        {
+          "role": "agent",
+          "time": "19:20:53.000",
+          "text": "Cada usuário é utilizado para suas respectivas funções.\n\n\n\n"
+        },
+        {
+          "role": "agent",
+          "time": "19:21:29.000",
+          "text": "Para atualizar o certificado o usuário precisa ter permissões a módulos fiscais e financeiros do sistema e somente o usuário gestor tenha essa permissão.\n\n\n"
+        },
+        {
+          "role": "agent",
+          "time": "19:21:40.000",
+          "text": "Conseguiu encontrar a opção de atualizar certificado?\n\n\n"
+        },
+        {
+          "role": "customer",
+          "time": "19:22:07.000",
+          "text": "já atualizei o certificado"
+        },
+        {
+          "role": "customer",
+          "time": "19:23:03.000",
+          "text": "sobre o kds e o pdv2, eu só estou com 1 tablet em loja hoje"
+        },
+        {
+          "role": "customer",
+          "time": "19:23:12.000",
+          "text": "somente o do caixa"
+        },
+        {
+          "role": "customer",
+          "time": "19:23:27.000",
+          "text": "o valor do sistema continua o mesmo?"
+        },
+        {
+          "role": "agent",
+          "time": "19:23:34.000",
+          "text": "O que aconteceu com o tablet do KDS? Não utiliza mais?\n\n\n"
+        },
+        {
+          "role": "agent",
+          "time": "19:48:37.000",
+          "text": "Ainda está por aí? Quero garantir que sua dúvida seja resolvida, mas caso não haja interação, o chat será finalizado automaticamente em instantes. \n\n\n"
+        },
+        {
+          "role": "customer",
+          "time": "19:49:18.000",
+          "text": "sim"
+        },
+        {
+          "role": "customer",
+          "time": "19:49:29.000",
+          "text": "não utilizo"
+        },
+        {
+          "role": "agent",
+          "time": "19:53:18.000",
+          "text": "Para ter mais informações sobre licença e valores, vou te transferir para o setor responsável. \n\n\n"
+        },
+        {
+          "role": "customer",
+          "time": "19:53:35.000",
+          "text": "Ok"
+        },
+        {
+          "role": "agent",
+          "time": "19:54:05.000",
+          "text": "Cliente não está utilizando KDS e precisa entender se há mudanças no valor pago por não utilizar mais esse usuário."
+        },
+        {
+          "role": "agent",
+          "time": "20:43:54.000",
+          "text": "Boa tarde como vai? Espero que bem! \\\nMeu nome é sabrina, sou responsável pelo financeiro e contratos da Nexuz, vou seguir com seu atendimento.\n\n\n"
+        },
+        {
+          "role": "agent",
+          "time": "20:45:46.000",
+          "text": "Atualmente você paga R$ 529,00 no plano, com 1 usuário, 2 PDVs e 1 KDS.  \\\nVocê quer cancelar 1 PDV e o KDS correto?\n\n\n"
+        },
+        {
+          "role": "customer",
+          "time": "20:51:25.000",
+          "text": "Isso, quero cancelar"
+        },
+        {
+          "role": "customer",
+          "time": "20:51:28.000",
+          "text": "Esses dois"
+        },
+        {
+          "role": "agent",
+          "time": "21:09:42.000",
+          "text": "Certo, como isso, o valor da sua mensalidade passaria a ser de R$281,00 \\\nSó preciso fazer uma observação importante, o KDS é o responsável por fazer o controle de estoque, sem ele não há como fazer o controle de estoque, tudo bem?\n\n\n"
+        },
+        {
+          "role": "customer",
+          "time": "21:21:01.000",
+          "text": "Ok"
+        },
+        {
+          "role": "agent",
+          "time": "11:46:13.000",
+          "text": "Me informe seu e-mail por gentileza, para enviarmos o termo de repactuação para assinatura.\n\n\n"
+        },
+        {
+          "role": "customer",
+          "time": "11:59:16.000",
+          "text": "Michelle.fulber@gmail.com"
+        },
+        {
+          "role": "agent",
+          "time": "13:06:02.000",
+          "text": "Obrigada, enviado para assinatura. O KDS e PDV ficaram ativos até 31/03. A partir de 01/04 serão desativados e a mensalidade já virá com valor atualizado.\n\n\n"
+        },
+        {
+          "role": "agent",
+          "time": "13:06:13.000",
+          "text": "Qualquer dúvida, estamos a disposição.\n\n\n"
+        },
+        {
+          "role": "customer",
+          "time": "13:09:07.000",
+          "text": "Ok"
+        }
+      ],
+      "context_conversation": {
+        "problema_principal": "Cliente com dificuldades para atualizar o **certificado digital** no ERP e dúvidas sobre compatibilidade de **máquina de cartão** Sicoob",
+        "produto_funcionalidade": "NXZ ERP — Certificado Digital / Configuração de Pagamento",
+        "causa_raiz": "Cliente não localizava a opção de atualização do certificado digital e precisava de orientação sobre compatibilidade de máquina de cartão",
+        "resolucao": "Agente orientou sobre atualização do certificado via artigo da central de ajuda e esclareceu sobre compatibilidade da máquina de cartão",
+        "observacoes": "Conversa longa com múltiplos assuntos tratados ao longo de vários dias"
+      }
+    },
+    {
+      "conversation_id": 1532,
+      "product": "NXZ ERP",
+      "labels": [],
+      "channel": "API",
+      "created_at": "2026-03-25T18:08:28Z",
+      "resolved_at": "2026-03-25T20:46:35Z",
+      "messages": [
+        {
+          "role": "agent",
+          "time": "18:08:28.000",
+          "text": "Boa tarde Joyce como vai? Espero que bem!\nSabrina da Nexuz. Enviamos para vocês o termo de rescisão de contrato para assinatura. Preciso por favor que assinem para efetivarmos a rescisão até 31/03"
+        },
+        {
+          "role": "customer",
+          "time": "19:01:59.000",
+          "text": "Boa tarde!"
+        },
+        {
+          "role": "customer",
+          "time": "19:02:16.000",
+          "text": "Vou bem, e você?"
+        },
+        {
+          "role": "customer",
+          "time": "19:02:23.000",
+          "text": "Perfeito! Vou verificar"
+        },
+        {
+          "role": "agent",
+          "time": "20:46:33.000",
+          "text": "Ok obrigada, qualquer dúvida, só nos contactar. \n\n\n"
+        }
+      ],
+      "context_conversation": {
+        "problema_principal": "Envio de **termo de rescisão de contrato** para assinatura do cliente",
+        "produto_funcionalidade": "NXZ ERP — Gestão Contratual",
+        "causa_raiz": "nao identificada",
+        "resolucao": "Termo de rescisão enviado e cliente confirmou que irá verificar e assinar",
+        "observacoes": "Tratativa de cancelamento contratual iniciada pelo time financeiro"
+      }
+    },
+    {
+      "conversation_id": 1528,
+      "product": "NXZ ERP",
+      "labels": [],
+      "channel": "WhatsApp",
+      "created_at": "2026-03-24T17:48:26Z",
+      "resolved_at": "2026-03-25T16:20:14Z",
+      "messages": [
+        {
+          "role": "customer",
+          "time": "17:48:26.000",
+          "text": "Boa tarde!"
+        },
+        {
+          "role": "customer",
+          "time": "17:48:37.000",
+          "text": "43627677000167"
+        },
+        {
+          "role": "agent",
+          "time": "18:00:20.000",
+          "text": "Olá, boa tarde!\\\nTudo bem?\n\nSou a Bianca do time da Nexuz e estou aqui para te ajudar.\n\n\n"
+        },
+        {
+          "role": "agent",
+          "time": "18:00:27.000",
+          "text": "Como posso ajudar? \n\n\n"
+        },
+        {
+          "role": "customer",
+          "time": "18:21:22.000",
+          "text": "Gostaria de realizar o cancelamento de contrato com a Nexus pois migramos para outro sistema"
+        },
+        {
+          "role": "agent",
+          "time": "19:08:45.000",
+          "text": "Certo, vou pedir que encaminhe um e-mail para o financeiro@nexuz.com.br contendo as seguintes informações para iniciarmos o processo de cancelamento e elabora o termo de rescisão por gentileza: \n\nRazão social: \\\nCNPJ: \\\nData do encerramento: \\\nNome do responsável legal: \\\nCPF do responsável legal:\n\n\n"
+        },
+        {
+          "role": "agent",
+          "time": "19:08:56.000",
+          "text": "Aguardo seu e-mail para continuarmos\n\n\n"
+        },
+        {
+          "role": "customer",
+          "time": "13:41:15.000",
+          "text": "Bom dia"
+        },
+        {
+          "role": "customer",
+          "time": "13:41:27.000",
+          "text": "Já encaminhei o e-mail! Muito obrigada"
+        }
+      ],
+      "context_conversation": {
+        "problema_principal": "Cliente solicitou **cancelamento de contrato** por migração para outro sistema",
+        "produto_funcionalidade": "NXZ ERP — Gestão Contratual",
+        "causa_raiz": "Migração do cliente para outro sistema",
+        "resolucao": "Cliente orientado a enviar e-mail para financeiro@nexuz.com.br com dados para iniciar processo de rescisão",
+        "observacoes": "Cliente confirmou envio do e-mail no dia seguinte"
+      }
+    },
+    {
+      "conversation_id": 1525,
+      "product": "NXZ ERP",
+      "labels": [],
+      "channel": "API",
+      "created_at": "2026-03-24T17:01:21Z",
+      "resolved_at": "2026-03-25T12:41:05Z",
+      "messages": [
+        {
+          "role": "agent",
+          "time": "17:01:22.000",
+          "text": "Olá, Luiz! Tudo bem por aí?\n\nEstava revisando aqui o financeiro e notei que a mensalidade de **março**, que venceu no dia **21/03/2026**, ainda aparece em aberto para nós (valor de R$512,56 ).\nAconteceu algum imprevisto ou dificuldade com o boleto? Se você já tiver realizado o pagamento, peço desculpas e peço apenas que me envie o comprovante para eu dar baixa aqui. Para facilitar, estou encaminhando em anexo a segunda via do boleto, se precisar de algo mais é só me avisar! 😊"
+        }
+      ],
+      "context_conversation": {
+        "problema_principal": "Cobrança de **mensalidade de março** em aberto (R$512,56)",
+        "produto_funcionalidade": "NXZ ERP — Financeiro / Cobrança",
+        "causa_raiz": "nao identificada",
+        "resolucao": "nao confirmada",
+        "observacoes": "Mensagem de cobrança enviada pelo agente, sem resposta do cliente nesta conversa"
+      }
+    },
+    {
+      "conversation_id": 1529,
+      "product": "indefinido",
+      "labels": [],
+      "channel": "API",
+      "created_at": "2026-03-24T17:54:43Z",
+      "resolved_at": "2026-03-25T12:37:20Z",
+      "messages": [
+        {
+          "role": "customer",
+          "time": "17:54:44.000",
+          "text": "Boa tarde! Tudo bem?"
+        },
+        {
+          "role": "agent",
+          "time": "17:54:47.000",
+          "text": "Esta mensagem foi excluída"
+        },
+        {
+          "role": "agent",
+          "time": "17:54:47.000",
+          "text": "Esta mensagem foi excluída"
+        },
+        {
+          "role": "agent",
+          "time": "19:58:52.000",
+          "text": "Olá, boa tarde!\\\nTudo bem?\n\nSou a Bianca do time da Nexuz e estou aqui para te ajudar."
+        },
+        {
+          "role": "agent",
+          "time": "19:59:01.000",
+          "text": "Como posso ser útil?\n\n\n"
+        }
+      ],
+      "context_conversation": {
+        "problema_principal": "Cliente entrou em contato mas não informou o problema",
+        "produto_funcionalidade": "indefinido",
+        "causa_raiz": "nao identificada",
+        "resolucao": "nao confirmada",
+        "observacoes": "Conversa sem interação substantiva do cliente"
+      }
+    },
+    {
+      "conversation_id": 1531,
+      "product": "indefinido",
+      "labels": [],
+      "channel": "WhatsApp",
+      "created_at": "2026-03-24T20:52:52Z",
+      "resolved_at": "2026-03-25T11:44:00Z",
+      "messages": [
+        {
+          "role": "customer",
+          "time": "20:52:52.000",
+          "text": "Obrigado"
+        }
+      ],
+      "context_conversation": {
+        "problema_principal": "Mensagem isolada de agradecimento do cliente",
+        "produto_funcionalidade": "indefinido",
+        "causa_raiz": "nao identificada",
+        "resolucao": "nao confirmada",
+        "observacoes": "Conversa com apenas uma mensagem de agradecimento, contexto insuficiente"
+      }
+    },
+    {
+      "conversation_id": 1530,
+      "product": "NXZ ERP",
+      "labels": [],
+      "channel": "WhatsApp",
+      "created_at": "2026-03-24T17:56:47Z",
+      "resolved_at": "2026-03-24T19:47:50Z",
+      "messages": [
+        {
+          "role": "customer",
+          "time": "17:56:47.000",
+          "text": "Boa tarde!"
+        },
+        {
+          "role": "customer",
+          "time": "17:57:21.000",
+          "text": "54347304000159"
+        },
+        {
+          "role": "customer",
+          "time": "17:57:32.000",
+          "text": "Toldo Cafeterias LTDA"
+        },
+        {
+          "role": "customer",
+          "time": "17:58:01.000",
+          "text": "Envio do certificado Digital é para vocês?"
+        },
+        {
+          "role": "agent",
+          "time": "18:00:55.000",
+          "text": "Boa tarde. Sou o Luiz da Nexuz,\n\n\n"
+        },
+        {
+          "role": "agent",
+          "time": "18:01:35.000",
+          "text": "https://ajuda.nexuz.app/hc/ajuda/articles/1767364216-como-atualizar-ou-renovar-seu-certificado-digital-a1\n\n\n"
+        },
+        {
+          "role": "agent",
+          "time": "18:01:55.000",
+          "text": "Pode utilizar esse artigo bem intuitivo para atualizar Robson. \n\n\n"
+        },
+        {
+          "role": "agent",
+          "time": "18:02:04.000",
+          "text": "Caso tenha alguma dúvida, pode entrar em contato comigo. \n\n\n"
+        },
+        {
+          "role": "customer",
+          "time": "18:11:46.000",
+          "text": "Obrigado Luiz"
+        },
+        {
+          "role": "agent",
+          "time": "19:47:46.000",
+          "text": "Ficou a disposição! "
+        }
+      ],
+      "context_conversation": {
+        "problema_principal": "Cliente com dúvida sobre como enviar/atualizar o **certificado digital**",
+        "produto_funcionalidade": "NXZ ERP — Certificado Digital",
+        "causa_raiz": "Cliente não sabia o procedimento para atualizar o certificado digital no sistema",
+        "resolucao": "Agente enviou artigo da central de ajuda com instruções para atualização do certificado digital A1",
+        "observacoes": null
+      }
+    },
+    {
+      "conversation_id": 1522,
+      "product": "NXZ Go",
+      "labels": [],
+      "channel": "WhatsApp",
+      "created_at": "2026-03-24T16:41:18Z",
+      "resolved_at": "2026-03-24T19:37:15Z",
+      "messages": [
+        {
+          "role": "customer",
+          "time": "16:41:18.000",
+          "text": "Olá."
+        },
+        {
+          "role": "customer",
+          "time": "16:41:20.000",
+          "text": "Boa tarde."
+        },
+        {
+          "role": "customer",
+          "time": "16:41:26.000",
+          "text": "499956960001 22"
+        },
+        {
+          "role": "customer",
+          "time": "17:11:46.000",
+          "text": "Aguardando."
+        },
+        {
+          "role": "customer",
+          "time": "17:25:47.000",
+          "text": "Olá"
+        },
+        {
+          "role": "customer",
+          "time": "17:26:22.000",
+          "text": "Se a gente resetar o roteador,  vai interferir alguma coisa no sistema?"
+        },
+        {
+          "role": "customer",
+          "time": "17:26:41.000",
+          "text": "Preciso acertar o horário das câmeras da loja."
+        },
+        {
+          "role": "agent",
+          "time": "17:44:12.000",
+          "text": "Olá, boa tarde! \\\nTudo bem? \n\nSou a Bianca do time da Nexuz e estou aqui para te ajudar."
+        },
+        {
+          "role": "agent",
+          "time": "17:44:19.000",
+          "text": "Como posso ajudar?\n\n\n"
+        },
+        {
+          "role": "customer",
+          "time": "17:46:56.000",
+          "text": "Oi Bianca."
+        },
+        {
+          "role": "customer",
+          "time": "17:47:18.000",
+          "text": "Primeiro tem um produto com preço diferente no sistema. 👇🏻"
+        },
+        {
+          "role": "customer",
+          "time": "17:49:53.000",
+          "text": "Segundo assunto. 👇🏻👇🏻👇🏻"
+        },
+        {
+          "role": "customer",
+          "time": "17:50:05.000",
+          "text": "Se a gente resetar o roteador,  vai interferir alguma coisa no sistema?"
+        },
+        {
+          "role": "customer",
+          "time": "17:50:05.000",
+          "text": "Preciso acertar o horário das câmeras da loja."
+        },
+        {
+          "role": "agent",
+          "time": "17:59:23.000",
+          "text": "Qual deveria ser o valor dos itens da foto? Pra todas as unidades é o mesmo valor? \n\n\n"
+        },
+        {
+          "role": "agent",
+          "time": "18:00:05.000",
+          "text": "Se resetar a internet o que pode deixar de funcionar é a conexão com a impressora fiscal se vocês utilizam IP da rede. \n\nDo Odoo ou NXZ Go não interfere. "
+        },
+        {
+          "role": "customer",
+          "time": "18:02:07.000",
+          "text": "Pois é 1 real????"
+        },
+        {
+          "role": "agent",
+          "time": "18:43:02.000",
+          "text": "Seria quanto o valor de venda do Yougurt Go Fruits? 10 reais? \n\n\n"
+        },
+        {
+          "role": "agent",
+          "time": "18:52:41.000",
+          "text": "Verifiquei aqui e estes foram os valores enviados pela Go Coffee:  \\\nPreço C1 (Opcional) : R$ 12,00\\\nPreço C2 (Opcional) : R$ 14,00\\\nPreço C3 (Opcional) : R$ 16,00\\\nPreço C4 (Opcional) : R$ 18,00"
+        },
+        {
+          "role": "agent",
+          "time": "18:53:15.000",
+          "text": "Agora ficará o valor mínimo de 12 reais. \n\nBasta atualizar seu aplicativo. \n\n\n"
+        },
+        {
+          "role": "agent",
+          "time": "19:37:13.000",
+          "text": "Este atendimento será encerrado devido à falta de interação. Se ainda precisar de suporte, basta enviar  uma nova mensagem e estaremos prontos para ajudar. 😊 "
+        }
+      ],
+      "context_conversation": {
+        "problema_principal": "Produto com **preço divergente** no sistema e dúvida sobre impacto de resetar o **roteador** no funcionamento do sistema",
+        "produto_funcionalidade": "NXZ Go — Cadastro de Produtos / Infraestrutura de Rede",
+        "causa_raiz": "Preço cadastrado incorretamente no sistema para determinado produto",
+        "resolucao": "Agente solicitou informações sobre o valor correto e confirmou que resetar o roteador não impacta o sistema",
+        "observacoes": "Cliente gerencia múltiplas unidades com possíveis preços diferenciados"
+      }
+    },
+    {
+      "conversation_id": 1526,
+      "product": "NXZ ERP",
+      "labels": [],
+      "channel": "WhatsApp",
+      "created_at": "2026-03-24T17:09:50Z",
+      "resolved_at": "2026-03-24T18:04:45Z",
+      "messages": [
+        {
+          "role": "customer",
+          "time": "17:09:50.000",
+          "text": "Olá boa tarde"
+        },
+        {
+          "role": "agent",
+          "time": "17:10:36.000",
+          "text": "Boa tarde Leandro. Aqui é o Luiz da Nexuz. Como posso ajudar? "
+        },
+        {
+          "role": "customer",
+          "time": "17:11:41.000",
+          "text": "54.926.078/0001-60"
+        },
+        {
+          "role": "customer",
+          "time": "17:12:00.000",
+          "text": "Preciso por favor que seja excluído essa forma de pagamento SOFT OPEN"
+        },
+        {
+          "role": "customer",
+          "time": "17:12:23.000",
+          "text": "Ou então coloque uma senha para utilizar essa forma de pagamento"
+        },
+        {
+          "role": "agent",
+          "time": "17:19:15.000",
+          "text": "Entendo. Vou realizar o ajuste. "
+        },
+        {
+          "role": "customer",
+          "time": "17:29:06.000",
+          "text": "Obrigado"
+        },
+        {
+          "role": "agent",
+          "time": "18:03:49.000",
+          "text": "Já foi atualizado Leandro. Qualquer dúvida, fico a disposição.\n\n\n"
+        }
+      ],
+      "context_conversation": {
+        "problema_principal": "Solicitação de **exclusão ou bloqueio** da forma de pagamento **SOFT OPEN** no PDV",
+        "produto_funcionalidade": "NXZ ERP — PDV / Formas de Pagamento",
+        "causa_raiz": "Forma de pagamento SOFT OPEN disponível sem restrição no PDV, permitindo uso indevido",
+        "resolucao": "Agente realizou o ajuste e confirmou atualização da forma de pagamento",
+        "observacoes": null
+      }
+    },
+    {
+      "conversation_id": 1523,
+      "product": "NXZ ERP",
+      "labels": [],
+      "channel": "API",
+      "created_at": "2026-03-24T16:56:38Z",
+      "resolved_at": "2026-03-24T17:16:18Z",
+      "messages": [
+        {
+          "role": "agent",
+          "time": "16:56:39.000",
+          "text": "Olá! Tudo bem por aí?\n\nEstava revisando aqui o financeiro e notei que a mensalidade de **Março**, que venceu no dia **20/03/2026**, ainda aparece em aberto para nós (valor de R$ 321,72).\nAconteceu algum imprevisto ou dificuldade com o boleto? Se você já tiver realizado o pagamento, peço desculpas e peço apenas que me envie o comprovante para eu dar baixa aqui. Para facilitar, estou encaminhando em anexo a segunda via do boleto, se precisar de algo mais é só me avisar! 😊"
+        }
+      ],
+      "context_conversation": {
+        "problema_principal": "Cobrança de **mensalidade de março** em aberto (R$321,72)",
+        "produto_funcionalidade": "NXZ ERP — Financeiro / Cobrança",
+        "causa_raiz": "nao identificada",
+        "resolucao": "nao confirmada",
+        "observacoes": "Mensagem de cobrança enviada pelo agente, sem resposta do cliente nesta conversa"
+      }
+    },
+    {
+      "conversation_id": 1524,
+      "product": "NXZ ERP",
+      "labels": [],
+      "channel": "API",
+      "created_at": "2026-03-24T16:59:01Z",
+      "resolved_at": "2026-03-24T17:16:15Z",
+      "messages": [
+        {
+          "role": "agent",
+          "time": "16:59:01.000",
+          "text": "Olá,! Tudo bem por aí?\n\nEstava revisando aqui o financeiro e notei que a mensalidade de **março**, que venceu no dia **20/03/2026**, do CNPJ 52.361.478/0001-40 ainda aparece em aberto para nós (valor de R$ 164,22 ).\nAconteceu algum imprevisto ou dificuldade com o boleto? Se você já tiver realizado o pagamento, peço desculpas e peço apenas que me envie o comprovante para eu dar baixa aqui. Para facilitar, estou encaminhando em anexo a segunda via do boleto, se precisar de algo mais é só me avisar! 😊"
+        }
+      ],
+      "context_conversation": {
+        "problema_principal": "Cobrança de **mensalidade de março** em aberto para CNPJ específico",
+        "produto_funcionalidade": "NXZ ERP — Financeiro / Cobrança",
+        "causa_raiz": "nao identificada",
+        "resolucao": "nao confirmada",
+        "observacoes": "Mensagem de cobrança enviada pelo agente, sem resposta do cliente nesta conversa"
+      }
+    },
+    {
+      "conversation_id": 1518,
+      "product": "NXZ ERP",
+      "labels": [],
+      "channel": "WhatsApp",
+      "created_at": "2026-03-23T18:53:11Z",
+      "resolved_at": "2026-03-23T20:02:54Z",
+      "messages": [
+        {
+          "role": "customer",
+          "time": "18:53:12.000",
+          "text": "boa tarde"
+        },
+        {
+          "role": "customer",
+          "time": "18:53:31.000",
+          "text": "não estou localizando no meu sistema, para atualizar o certificado"
+        },
+        {
+          "role": "customer",
+          "time": "18:53:36.000",
+          "text": "53145790000160"
+        },
+        {
+          "role": "agent",
+          "time": "19:45:22.000",
+          "text": "Boa tarde Michelle. Aqui é o Luiz da Nexuz.\n\n\n"
+        },
+        {
+          "role": "agent",
+          "time": "19:45:26.000",
+          "text": "https://ajuda.nexuz.app/hc/ajuda/articles/1767364216-como-atualizar-ou-renovar-seu-certificado-digital-a1 \\\nUtiliza esse artigo. \n\n\n"
+        },
+        {
+          "role": "agent",
+          "time": "19:45:53.000",
+          "text": "Caso encontre alguma dúvida, pode me chamar aqui,  que te oriento. O artigo é bem simples e direto ao ponto. Acredito que vá te ajudar!\n\n\n"
+        },
+        {
+          "role": "agent",
+          "time": "19:46:46.000",
+          "text": "Só não se esqueça que para encontrar a opção de atualizar o certificado você precisa estar logada no usuário gestor. No usuário PDV você não encontrará essa opção.\n\n\n"
+        },
+        {
+          "role": "customer",
+          "time": "19:52:39.000",
+          "text": "Recebi por e-mail como fazer, porém não tem atualizar certificado"
+        },
+        {
+          "role": "agent",
+          "time": "19:54:39.000",
+          "text": "O que acontece quando tenta atualizar?\n\n\n"
+        },
+        {
+          "role": "customer",
+          "time": "19:58:43.000",
+          "text": "Agora ja nao consigo mais acessar, mas vou tentar amanhã e qualquer coisa retorno"
+        },
+        {
+          "role": "agent",
+          "time": "19:59:07.000",
+          "text": " Tudo bem então Michelle. Fico a sua disposição!\n\n\n"
+        }
+      ],
+      "context_conversation": {
+        "problema_principal": "Cliente não consegue localizar a opção de **atualizar certificado digital** no sistema",
+        "produto_funcionalidade": "NXZ ERP — Certificado Digital",
+        "causa_raiz": "Cliente estava logada com usuário **PDV** que não possui permissão para atualizar certificado; a opção só aparece no **usuário gestor**",
+        "resolucao": "Agente orientou que a atualização deve ser feita pelo usuário gestor e enviou artigo da central de ajuda",
+        "observacoes": "Mesmo cliente da conversa 1527 (Michelle - Go Coffee RS Cachoeirinha)"
+      }
+    },
+    {
+      "conversation_id": 1517,
+      "product": "indefinido",
+      "labels": [],
+      "channel": "API",
+      "created_at": "2026-03-23T16:59:35Z",
+      "resolved_at": "2026-03-23T17:15:24Z",
+      "messages": [
+        {
+          "role": "customer",
+          "time": "16:59:35.000",
+          "text": "Vou encerrar o nosso atendimento!\n\nPrecisando de qualquer ajuda posteriormente, pode entrar em contato com a gente.\nTenha um bom trabalho e excelente dia!"
+        },
+        {
+          "role": "agent",
+          "time": "16:59:38.000",
+          "text": "Esta mensagem foi excluída"
+        }
+      ],
+      "context_conversation": {
+        "problema_principal": "Mensagem de encerramento de atendimento anterior",
+        "produto_funcionalidade": "indefinido",
+        "causa_raiz": "nao identificada",
+        "resolucao": "nao confirmada",
+        "observacoes": "Conversa sem conteúdo relevante, apenas mensagem de encerramento automatizada"
+      }
+    },
+    {
+      "conversation_id": 1512,
+      "product": "indefinido",
+      "labels": [],
+      "channel": "API",
+      "created_at": "2026-03-23T12:16:35Z",
+      "resolved_at": "2026-03-23T15:16:04Z",
+      "messages": [],
+      "context_conversation": {
+        "problema_principal": "Conversa sem mensagens de conteúdo",
+        "produto_funcionalidade": "indefinido",
+        "causa_raiz": "nao identificada",
+        "resolucao": "nao confirmada",
+        "observacoes": "Conversa vazia, sem mensagens filtráveis"
+      }
+    },
+    {
+      "conversation_id": 1513,
+      "product": "indefinido",
+      "labels": [],
+      "channel": "API",
+      "created_at": "2026-03-23T13:13:22Z",
+      "resolved_at": "2026-03-23T15:07:25Z",
+      "messages": [
+        {
+          "role": "agent",
+          "time": "13:13:22.000",
+          "text": "Olá! 👋 Bem-vindo(a) à Nexuz Sistemas.\n\nComo podemos ajudar?\n\nPara agilizar o seu atendimento, por favor, informe:\n\n- **Tipo de solicitação**: \n- **Nome completo**: \n- **CNPJ**: \n\n⏰ **Tempo de médio resposta:** entre 2 e 4 horas."
+        },
+        {
+          "role": "customer",
+          "time": "13:13:24.000",
+          "text": "**List Menu:**\n\n*Title*: Unknown\n*Description*: Olá! Que bom que está por aqui! 😊\n\nPara que possamos te ajudar da melhor forma possível conte-nos sobre qual assunto você deseja falar, clicando no botão abaixo:\n*Footer*: Unknown\n\n**Section 1:** undefined\n**Line 1:**\n*▪️ Title:* Ser cliente Configr\n*▪️ Description:* Unknown\n*▪️ ID:* 5dd49bab-f81d-46a0-ab7c-7339c31673b9\n\n**Line 2:**\n*▪️ Title:* Consultivo\n*▪️ Description:* (negócios, estratégias, processos, ajuda com chamados...)\n*▪️ ID:* 606da1e9-eeec-45c2-b4bc-966a1fcb5ab2\n\n**Line 3:**\n*▪️ Title:* Financeiro\n*▪️ Description:* (faturas, NF, dúvida sobre valores...).\n*▪️ ID:* 819822c9-e299-42a9-98d4-eb16c54e26f5\n\n**Line 4:**\n*▪️ Title:* Suporte técnico\n*▪️ Description:* (site, dns, certificados...)\n*▪️ ID:* 87266c0e-f3ba-4b65-ab0f-1b75ecb251bc\n\n**Line 5:**\n*▪️ Title:* Dúvidas sobre o  painel\n*▪️ Description:* Unknown\n*▪️ ID:* 58025909-c4a1-4681-adb5-8416c3ccadb3\n\n**Line 6:**\n*▪️ Title:* Encerrar atendimento\n*▪️ Description:* Unknown\n*▪️ ID:* 35bf736f-7242-435f-9473-c2c6a05184b2\n"
+        }
+      ],
+      "context_conversation": {
+        "problema_principal": "Interação inicial com **bot de atendimento** sem continuidade",
+        "produto_funcionalidade": "indefinido",
+        "causa_raiz": "nao identificada",
+        "resolucao": "nao confirmada",
+        "observacoes": "Apenas interação automatizada do bot, sem atendimento humano efetivo"
+      }
+    },
+    {
+      "conversation_id": 1509,
+      "product": "indefinido",
+      "labels": [],
+      "channel": "WhatsApp",
+      "created_at": "2026-03-22T15:48:52Z",
+      "resolved_at": "2026-03-23T13:06:05Z",
+      "messages": [
+        {
+          "role": "customer",
+          "time": "15:48:52.000",
+          "text": "Preciso"
+        },
+        {
+          "role": "customer",
+          "time": "15:48:54.000",
+          "text": "De um suporte"
+        },
+        {
+          "role": "agent",
+          "time": "11:49:30.000",
+          "text": "Bom dia Franciely. Aqui é o Luiz da Nexuz. Como posso ajudar?"
+        },
+        {
+          "role": "agent",
+          "time": "12:29:46.000",
+          "text": "Ainda está por aí? Quero garantir que sua dúvida seja resolvida, mas caso não haja interação, o chat será finalizado automaticamente em instantes."
+        },
+        {
+          "role": "agent",
+          "time": "13:06:02.000",
+          "text": "Este atendimento será encerrado devido à falta de interação. Se ainda precisar de suporte, basta enviar  uma nova mensagem e estaremos prontos para ajudar. 😊 \n\n\n"
+        }
+      ],
+      "context_conversation": {
+        "problema_principal": "Cliente solicitou suporte mas não respondeu ao agente",
+        "produto_funcionalidade": "indefinido",
+        "causa_raiz": "nao identificada",
+        "resolucao": "Atendimento encerrado por falta de interação do cliente",
+        "observacoes": null
+      }
+    },
+    {
+      "conversation_id": 1510,
+      "product": "indefinido",
+      "labels": [],
+      "channel": "WhatsApp",
+      "created_at": "2026-03-22T21:17:28Z",
+      "resolved_at": "2026-03-23T13:05:58Z",
+      "messages": [
+        {
+          "role": "customer",
+          "time": "21:17:28.000",
+          "text": "Olá"
+        },
+        {
+          "role": "agent",
+          "time": "11:49:26.000",
+          "text": "Bom dia Franciely. Aqui é o Luiz da Nexuz. Como posso ajudar?"
+        },
+        {
+          "role": "agent",
+          "time": "12:29:37.000",
+          "text": "Ainda está por aí? Quero garantir que sua dúvida seja resolvida, mas caso não haja interação, o chat será finalizado automaticamente em instantes. \n\n\n"
+        },
+        {
+          "role": "agent",
+          "time": "13:05:57.000",
+          "text": "Este atendimento será encerrado devido à falta de interação. Se ainda precisar de suporte, basta enviar  uma nova mensagem e estaremos prontos para ajudar. 😊 \n\n\n"
+        }
+      ],
+      "context_conversation": {
+        "problema_principal": "Cliente enviou saudação mas não respondeu ao agente",
+        "produto_funcionalidade": "indefinido",
+        "causa_raiz": "nao identificada",
+        "resolucao": "Atendimento encerrado por falta de interação do cliente",
+        "observacoes": null
+      }
+    },
+    {
+      "conversation_id": 1511,
+      "product": "NXZ ERP",
+      "labels": [],
+      "channel": "WhatsApp",
+      "created_at": "2026-03-23T11:52:59Z",
+      "resolved_at": "2026-03-23T12:29:29Z",
+      "messages": [
+        {
+          "role": "customer",
+          "time": "11:53:00.000",
+          "text": "Bom dia!"
+        },
+        {
+          "role": "customer",
+          "time": "11:53:33.000",
+          "text": "466 570 74 0001 04"
+        },
+        {
+          "role": "customer",
+          "time": "11:53:55.000",
+          "text": "Nao esta aparecendo nada"
+        },
+        {
+          "role": "customer",
+          "time": "11:54:06.000",
+          "text": "Sistema apresentando esse problema, sabem como posso resolver?"
+        },
+        {
+          "role": "agent",
+          "time": "12:15:28.000",
+          "text": "Bom dia Franciely. Aqui é o Luiz da Nexuz. Como posso ajudar?"
+        },
+        {
+          "role": "agent",
+          "time": "12:15:42.000",
+          "text": "Bom dia Sergio.\n\n\n"
+        },
+        {
+          "role": "customer",
+          "time": "12:16:48.000",
+          "text": "Oi\nBom dia\nAparentemente ja voltou ao normal"
+        },
+        {
+          "role": "agent",
+          "time": "12:17:32.000",
+          "text": "Fica monitorando e qualquer coisa, pode nos chamar. \n\n\n"
+        },
+        {
+          "role": "customer",
+          "time": "12:23:21.000",
+          "text": "Pode deixar\nMuito obrigado"
+        }
+      ],
+      "context_conversation": {
+        "problema_principal": "**Sistema não exibia conteúdo** na tela, apresentando problema visual",
+        "produto_funcionalidade": "NXZ ERP — Sistema / Interface",
+        "causa_raiz": "Problema temporário no sistema que se resolveu automaticamente",
+        "resolucao": "Sistema voltou ao normal por conta própria antes do atendimento do agente",
+        "observacoes": null
+      }
+    },
+    {
+      "conversation_id": 1508,
+      "product": "indefinido",
+      "labels": [],
+      "channel": "WhatsApp",
+      "created_at": "2026-03-22T15:48:52Z",
+      "resolved_at": "2026-03-23T11:49:52Z",
+      "messages": [
+        {
+          "role": "customer",
+          "time": "15:48:52.000",
+          "text": "Ola"
+        }
+      ],
+      "context_conversation": {
+        "problema_principal": "Cliente enviou apenas saudação sem informar problema",
+        "produto_funcionalidade": "indefinido",
+        "causa_raiz": "nao identificada",
+        "resolucao": "nao confirmada",
+        "observacoes": "Conversa com apenas uma mensagem, contexto insuficiente"
+      }
+    }
+  ],
+  "by_product": {
+    "NXZ ERP": 10,
+    "NXZ Go": 1,
+    "NXZ KDS": 0,
+    "NXZ Delivery": 0,
+    "NXZ Pay Go": 0,
+    "indefinido": 8
+  }
+}

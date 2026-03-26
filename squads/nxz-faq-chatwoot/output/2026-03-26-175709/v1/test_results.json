@@ -1,0 +1,20 @@
+{
+  "test_date": "2026-03-26",
+  "assistant_id": 3,
+  "total_questions": 6,
+  "total_responded": 0,
+  "status": "ABORTED",
+  "abort_reason": "Copilot Threads API messages endpoint returns 404. Threads are created successfully (POST works) but GET /copilot_threads/{id}/messages and GET /copilot_threads/{id} both return 404. Cannot retrieve Captain responses.",
+  "results_summary": {
+    "ACERTOU": 0,
+    "PARCIAL": 0,
+    "GENERICO": 0,
+    "ERROU": 0,
+    "TIMEOUT": 0,
+    "NOT_TESTED": 6
+  },
+  "accuracy_rate": null,
+  "note": "Esta e a primeira execucao (baseline). FAQs ainda nao foram publicadas no Help Center, portanto o Captain nao teria acesso a elas de qualquer forma. O teste sera mais significativo apos a publicacao, na proxima rodada.",
+  "threads_created": [48, 49],
+  "results": []
+}

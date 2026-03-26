@@ -25,9 +25,18 @@ com o valor `-`.
 **O pipeline NUNCA deve preencher decisoes automaticamente. O valor padrao e
 `PENDENTE`, nao `APROVAR`.**
 
-### PASSO 2 — Exibir o caminho do arquivo e a tabela resumo no terminal
+### PASSO 2 — Enviar notificacao Telegram (ANTES de exibir no terminal)
 
-Apos gerar o arquivo, exiba no terminal:
+Siga o protocolo de notificacao Telegram definido em
+`pipeline/data/telegram-notification-protocol.md` com os seguintes parametros:
+
+- ETAPA: "Aprovacao de Topicos"
+- DESCRICAO: "Ha topicos aguardando sua decisao antes que o pipeline continue.\nDecisoes possiveis: APROVAR | REJEITAR | AJUSTAR | ESCALAR\_LUIZ"
+- ARQUIVO: "{caminho_absoluto}/squads/nxz-faq-chatwoot/output/approved-topics.md"
+
+### PASSO 3 — Exibir o caminho do arquivo e a tabela resumo no terminal
+
+Apos enviar o Telegram, exiba no terminal:
 
 ```
 =====================================================
@@ -50,35 +59,6 @@ Quando terminar, retorne aqui e confirme digitando: aprovacao concluida
 ```
 
 Monte a tabela com os dados reais lidos do `topics-to-generate.md`.
-
-### PASSO 3 — Enviar notificacao Telegram
-
-Apos exibir a mensagem no terminal, envie notificacao Telegram para alertar
-Carol de que ha topicos aguardando aprovacao.
-
-Use o caminho absoluto do arquivo na mensagem. Para obter o caminho absoluto,
-use `pwd` e concatene com o caminho relativo.
-
-Execute:
-
-```bash
-source .env && SQUAD_PATH="$(pwd)/squads/nxz-faq-chatwoot/output/approved-topics.md" && node -e "
-const token = process.env.TELEGRAM_BOT_TOKEN;
-const chatId = process.env.TELEGRAM_NOTIFY_CHAT_ID;
-const filePath = process.env.SQUAD_PATH;
-const text = encodeURIComponent('*Checkpoint: nxz-faq-chatwoot*\nEtapa: Aprovacao de Topicos\n\nHa topicos aguardando sua decisao antes que o pipeline continue.\n\nArquivo para revisao: \`' + filePath + '\`\n\nDecisoes possiveis: APROVAR | REJEITAR | AJUSTAR | ESCALAR\\_LUIZ\nAguardando sua acao no terminal.');
-require('https').get('https://api.telegram.org/bot' + token + '/sendMessage?chat_id=' + chatId + '&parse_mode=Markdown&text=' + text, r => r.resume());
-" SQUAD_PATH="$SQUAD_PATH"
-```
-
-Se o comando acima falhar, use `rtk proxy curl`:
-
-```bash
-source .env && SQUAD_PATH="$(pwd)/squads/nxz-faq-chatwoot/output/approved-topics.md" && rtk proxy curl -s -X POST \
-  "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
-  -H "Content-Type: application/json" \
-  -d "{\"chat_id\": \"${TELEGRAM_NOTIFY_CHAT_ID}\", \"parse_mode\": \"Markdown\", \"text\": \"*Checkpoint: nxz-faq-chatwoot*\nEtapa: Aprovacao de Topicos\n\nHa topicos aguardando sua decisao antes que o pipeline continue.\n\nArquivo para revisao: \`${SQUAD_PATH}\`\n\nDecisoes possiveis: APROVAR | REJEITAR | AJUSTAR | ESCALAR\\_LUIZ\nAguardando sua acao no terminal.\"}"
-```
 
 ### PASSO 4 — Aguardar confirmacao do usuario no terminal
 
@@ -127,16 +107,10 @@ decisao `APROVAR` ou `AJUSTAR`.
 - Se SIM: continue para o step 05.
 - Se NAO (todos REJEITAR ou ESCALAR_LUIZ): encerre o pipeline com status `NOOP`,
   registre os escalamentos em `output/pending-escalations.md` e notifique Carol
-  via Telegram:
-
-```bash
-source .env && node -e "
-const token = process.env.TELEGRAM_BOT_TOKEN;
-const chatId = process.env.TELEGRAM_NOTIFY_CHAT_ID;
-const text = encodeURIComponent('*nxz-faq-chatwoot — Pipeline Encerrado*\n\nNenhum topico foi aprovado nesta rodada.\nTodos os topicos foram rejeitados ou escalados.\n\nStatus: NOOP\nConsulte o arquivo \`output/pending-escalations.md\` para os escalamentos pendentes.');
-require('https').get('https://api.telegram.org/bot' + token + '/sendMessage?chat_id=' + chatId + '&parse_mode=Markdown&text=' + text, r => r.resume());
-"
-```
+  via Telegram usando o protocolo em `pipeline/data/telegram-notification-protocol.md`:
+  - ETAPA: "Pipeline Encerrado"
+  - DESCRICAO: "Nenhum topico foi aprovado nesta rodada. Todos foram rejeitados ou escalados.\nStatus: NOOP"
+  - ARQUIVO: "{caminho_absoluto}/squads/nxz-faq-chatwoot/output/pending-escalations.md"
 
 ---
 

@@ -8,6 +8,15 @@ outputFile: squads/nxz-faq-chatwoot/output/review-decisions.md
 
 Carol revisa as FAQs geradas e o relatorio de testes do agente de IA.
 
+## Notificacao Telegram (ANTES de apresentar o material)
+
+Siga o protocolo de notificacao Telegram definido em
+`pipeline/data/telegram-notification-protocol.md` com os seguintes parametros:
+
+- ETAPA: "Revisao Final"
+- DESCRICAO: "As FAQs foram geradas e estao prontas para sua revisao e aprovacao de publicacao.\n\nArquivos para revisao:\n- faqs\_index.md\n- navigation-validation-report.md\n- test\_report.md"
+- ARQUIVO: "{caminho_absoluto}/squads/nxz-faq-chatwoot/output/faqs_index.md"
+
 ## Material para Revisao
 
 Apresente a Carol:

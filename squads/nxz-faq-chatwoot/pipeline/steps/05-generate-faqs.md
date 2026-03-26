@@ -85,11 +85,26 @@ Fontes NAO aceitas:
 
 ### O que fazer quando voce nao tem o caminho correto
 
-Se o artigo precisa descrever navegacao e voce nao tem uma fonte confiavel:
+Se o artigo precisa descrever navegacao e voce nao tem uma fonte confiavel,
+**PARE** e siga o protocolo abaixo antes de continuar.
 
-**PARE** e pergunte ao usuario antes de continuar:
+#### 1. Enviar notificacao Telegram (ANTES de exibir no terminal)
+
+Siga o protocolo de notificacao Telegram definido em
+`pipeline/data/telegram-notification-protocol.md` com os seguintes parametros:
+
+- ETAPA: "Geracao de FAQs"
+- DESCRICAO: "O writer precisa de caminhos de navegacao para continuar.\nTopico bloqueado: [topico] — [produto]\n\nOpcoes:\n(a) Fornecer os caminhos manualmente\n(b) Fornecer URL + login para validacao Playwright\n(c) Gerar artigo sem instrucoes de navegacao"
+- ARQUIVO: "" (vazio)
+
+Substitua `[topico]` e `[produto]` pelos valores reais do artigo sendo gerado.
+
+#### 2. Exibir mensagem no terminal
 
 ```
+=====================================================
+AGUARDANDO INPUT: Caminhos de Navegacao
+=====================================================
 Preciso descrever a navegacao para "[topico]" no [produto], mas nao tenho
 acesso confirmado ao produto para verificar os caminhos corretos.
 
@@ -99,9 +114,14 @@ Deseja:
 (c) Gerar o artigo sem instrucoes de navegacao (apenas conceitual)
 
 Nao vou inventar ou assumir nenhum caminho de menu.
+=====================================================
+Aguardando sua resposta:
 ```
 
-Aguarde a resposta do usuario antes de continuar com este artigo.
+#### 3. Aguardar resposta do usuario no terminal
+
+Apos enviar a notificacao e exibir a mensagem, aguarde a resposta do usuario antes de continuar.
+
 Se o usuario escolher (a), registre o caminho fornecido como
 `source: manual_user_input` no frontmatter do artigo.
 Se o usuario escolher (c), o artigo deve conter uma nota explicita:

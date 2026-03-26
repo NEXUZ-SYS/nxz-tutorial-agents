@@ -1,0 +1,67 @@
+{
+  "test_date": "2026-03-26",
+  "total_questions": 6,
+  "coverage_note": "2 FAQs geradas, 6 perguntas de teste. Topico Certificado Digital tem perguntas reais dos clientes. Topico Cobranca tem perguntas simuladas (conversas originais foram iniciadas pelo agente).",
+  "questions": [
+    {
+      "id": 1,
+      "product": "NXZ ERP",
+      "original_question": "nao estava conseguindo atualizar o certificado digital",
+      "canonical_topic": "atualizacao-certificado-digital",
+      "expected_faq_slug": "como-atualizar-certificado-digital-a1",
+      "expected_faq_title": "Como Atualizar ou Renovar seu Certificado Digital A1",
+      "source_conversation_id": 1527,
+      "evaluation_criteria": "Deve orientar sobre atualizacao do certificado digital A1 no ERP, mencionando acesso pelo usuario Gestor"
+    },
+    {
+      "id": 2,
+      "product": "NXZ ERP",
+      "original_question": "Nao aparece para renovar o certificado",
+      "canonical_topic": "atualizacao-certificado-digital",
+      "expected_faq_slug": "como-atualizar-certificado-digital-a1",
+      "expected_faq_title": "Como Atualizar ou Renovar seu Certificado Digital A1",
+      "source_conversation_id": 1527,
+      "evaluation_criteria": "Deve explicar que a opcao so aparece para usuario Gestor, nao PDV"
+    },
+    {
+      "id": 3,
+      "product": "NXZ ERP",
+      "original_question": "Envio do certificado Digital e para voces?",
+      "canonical_topic": "atualizacao-certificado-digital",
+      "expected_faq_slug": "como-atualizar-certificado-digital-a1",
+      "expected_faq_title": "Como Atualizar ou Renovar seu Certificado Digital A1",
+      "source_conversation_id": 1530,
+      "evaluation_criteria": "Deve orientar que a atualizacao e feita pelo proprio cliente no sistema, em Faturamento > Configuracoes"
+    },
+    {
+      "id": 4,
+      "product": "NXZ ERP",
+      "original_question": "nao estou localizando no meu sistema para atualizar o certificado",
+      "canonical_topic": "atualizacao-certificado-digital",
+      "expected_faq_slug": "como-atualizar-certificado-digital-a1",
+      "expected_faq_title": "Como Atualizar ou Renovar seu Certificado Digital A1",
+      "source_conversation_id": 1518,
+      "evaluation_criteria": "Deve orientar sobre necessidade de logar com usuario Gestor e caminho Faturamento > Configuracoes > Atualizar Certificado"
+    },
+    {
+      "id": 5,
+      "product": "NXZ ERP",
+      "original_question": "como pago minha mensalidade do nexuz?",
+      "canonical_topic": "cobranca-mensalidade",
+      "expected_faq_slug": "como-consultar-e-pagar-mensalidade",
+      "expected_faq_title": "Como Consultar e Pagar sua Mensalidade Nexuz",
+      "source_conversation_id": null,
+      "evaluation_criteria": "Deve orientar sobre boleto bancario e contato com financeiro@nexuz.com.br"
+    },
+    {
+      "id": 6,
+      "product": "NXZ ERP",
+      "original_question": "preciso da segunda via do boleto da mensalidade",
+      "canonical_topic": "cobranca-mensalidade",
+      "expected_faq_slug": "como-consultar-e-pagar-mensalidade",
+      "expected_faq_title": "Como Consultar e Pagar sua Mensalidade Nexuz",
+      "source_conversation_id": null,
+      "evaluation_criteria": "Deve orientar a solicitar segunda via por email financeiro@nexuz.com.br ou WhatsApp"
+    }
+  ]
+}

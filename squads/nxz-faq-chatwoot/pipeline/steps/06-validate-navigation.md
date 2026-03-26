@@ -23,9 +23,27 @@ Antes de qualquer validacao, verifique se voce tem acesso ao produto:
 3. Tente navegar ate a tela de login de cada produto que precisa ser validado.
 
 **Se NAO tiver acesso a um produto** (sem URL configurada, sem sessao, login
-bloqueado), pare imediatamente e informe o usuario:
+bloqueado), siga o protocolo abaixo antes de continuar.
+
+### Protocolo quando nao ha acesso ao produto
+
+#### 1. Enviar notificacao Telegram (ANTES de exibir no terminal)
+
+Siga o protocolo de notificacao Telegram definido em
+`pipeline/data/telegram-notification-protocol.md` com os seguintes parametros:
+
+- ETAPA: "Validacao de Navegacao"
+- DESCRICAO: "O tester nao tem acesso ao produto para validar caminhos de menu.\nProduto bloqueado: [produto]\nArtigos afetados: [lista resumida]\n\nOpcoes:\n(a) Fornecer URL e credenciais de acesso\n(b) Fornecer os caminhos corretos manualmente\n(c) Marcar como requer revisao manual e continuar"
+- ARQUIVO: "" (vazio)
+
+Substitua `[produto]` e `[lista resumida]` pelos valores reais.
+
+#### 2. Exibir mensagem no terminal
 
 ```
+=====================================================
+AGUARDANDO INPUT: Acesso ao Produto
+=====================================================
 Preciso validar caminhos de navegacao para [produto], mas nao tenho acesso.
 
 Artigos que dependem desta validacao:
@@ -37,9 +55,15 @@ Deseja:
 (c) Marcar estes artigos como "requer revisao manual" e continuar sem validacao
 
 Qual a sua preferencia?
+=====================================================
+Aguardando sua resposta:
 ```
 
-Aguarde resposta antes de continuar.
+#### 3. Aguardar resposta do usuario no terminal
+
+Apos enviar a notificacao e exibir a mensagem, aguarde resposta antes de continuar.
+
+---
 
 ## Instrucoes
 
