@@ -43,13 +43,13 @@ pipeline:
       file: pipeline/steps/03-analyze-patterns.md
       agent: analyst
       execution: inline
-      # Outputs: pattern-report.md + topics-to-generate.json
+      # Outputs: pattern-report.md + topics-to-generate.md
 
     - id: checkpoint-topics
       file: pipeline/steps/04-checkpoint-topics.md
       type: checkpoint
       # Carol aprova QUAIS FAQs serao geradas antes do writer comecar
-      # Output: approved-topics.json
+      # Output: approved-topics.md
 
     - id: generate-faqs
       file: pipeline/steps/05-generate-faqs.md

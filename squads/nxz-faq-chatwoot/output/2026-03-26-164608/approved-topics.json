@@ -1,0 +1,1963 @@
+{
+  "checkpoint_date": "2026-03-26",
+  "approved_count": 5,
+  "rejected_count": 0,
+  "escalated_count": 0,
+  "approved_topics": [
+    {
+      "product": "NXZ ERP",
+      "theme": "Exportacao e envio de Notas Fiscais (XML) para contabilidade",
+      "frequency": 14,
+      "action": "Criar",
+      "existing_article": "Como exportar o relatorio mensal de notas (draft, desatualizado)",
+      "representative_examples": [
+        {
+          "conversation_id": 1503,
+          "messages": [
+            {
+              "role": "customer",
+              "time": "19:35:27.000",
+              "text": "Boa tarde"
+            },
+            {
+              "role": "customer",
+              "time": "19:37:47.000",
+              "text": "47145661000179"
+            },
+            {
+              "role": "agent",
+              "time": "19:38:13.000",
+              "text": "Boa tarde Flávia. Aqui é o Luiz da Nexuz. Como posso ajudar?"
+            },
+            {
+              "role": "customer",
+              "time": "19:38:34.000",
+              "text": "Onde consigo ver os Xmls das vendas?"
+            },
+            {
+              "role": "customer",
+              "time": "19:38:41.000",
+              "text": "Como consigo exportar?"
+            },
+            {
+              "role": "agent",
+              "time": "19:41:04.000",
+              "text": "Você é a gestora da loja?"
+            },
+            {
+              "role": "customer",
+              "time": "19:41:24.000",
+              "text": "Sim"
+            },
+            {
+              "role": "customer",
+              "time": "19:41:55.000",
+              "text": "Aconteceu algum problema que a contabilidade não recebeu e estão me pedindo"
+            },
+            {
+              "role": "customer",
+              "time": "19:41:57.000",
+              "text": "Onde acho?"
+            },
+            {
+              "role": "agent",
+              "time": "20:18:24.000",
+              "text": "Vou reenviar para o email deles. Me confirma só se é esse:"
+            },
+            {
+              "role": "customer",
+              "time": "20:19:48.000",
+              "text": "fiscal@contabyu.com.br"
+            },
+            {
+              "role": "customer",
+              "time": "20:19:53.000",
+              "text": "É esse"
+            },
+            {
+              "role": "customer",
+              "time": "20:20:01.000",
+              "text": "O período de fevereiro"
+            },
+            {
+              "role": "agent",
+              "time": "20:21:51.000",
+              "text": "Enviei o arquivo do xml manualmente para o email sollicitado"
+            },
+            {
+              "role": "customer",
+              "time": "20:26:40.000",
+              "text": "Não recebemos"
+            },
+            {
+              "role": "customer",
+              "time": "20:31:21.000",
+              "text": "Poderia reenviar?"
+            },
+            {
+              "role": "agent",
+              "time": "20:32:42.000",
+              "text": "Peço que aguarde alguns minutos. O sistema enviará automaticamente assim que ele finalizar o processo de validação das notas. Como o email ainda não estava configurado e precisei disparar manualmente o envio automatico, pode demorar um pouco. Caso precise urgentemente, pode acessar com o usuário gestor a partir do ERP. Módulo Faturamento > Configurações > Exportar NFe"
+            },
+            {
+              "role": "agent",
+              "time": "20:32:58.000",
+              "text": "Você vai selecionar o período e as informações fiscais necessárias e exportar o arquivo."
+            },
+            {
+              "role": "customer",
+              "time": "20:34:31.000",
+              "text": "Peço que aguarde alguns minutos. O sistema enviará automaticamente assim que ele finalizar o processo de validação das notas. Como o email ainda não estava configurado e precisei disparar manualmente o envio automatico, pode demorar um pouco. Caso precise urgentemente, pode acessar com o usuário gestor a partir do ERP. Módulo Faturamento > Configurações > Exportar NFe"
+            },
+            {
+              "role": "customer",
+              "time": "20:35:01.000",
+              "text": "Encaminhei errado desculpa"
+            },
+            {
+              "role": "customer",
+              "time": "20:35:34.000",
+              "text": "O que é ERP"
+            },
+            {
+              "role": "customer",
+              "time": "20:35:37.000",
+              "text": "?"
+            },
+            {
+              "role": "agent",
+              "time": "20:36:29.000",
+              "text": "O nosso sistema de Backoffice. Onde você tem acesso aos dados do sistema."
+            },
+            {
+              "role": "agent",
+              "time": "20:37:44.000",
+              "text": "https://erp-gocoffee.saas.nexuz.app/web#action=228&model=account.journal&view_type=kanban&menu_id=85&company_id=160&ss=eyJkIjpbWyJzaG93X29uX2Rhc2hib2FyZCIsIj0iLHRydWVdXX0\n\nPra facilitar, pode acessar com esse link."
+            },
+            {
+              "role": "agent",
+              "time": "20:38:44.000",
+              "text": "Flávia, qual o CNPJ da loja que você precisa acessar. Se você não lembra seu email e sua senha, eu posso te ajudar. Mas se você tem mais de uma loja, me confirma qual CNPJ da loja que quer acessar."
+            },
+            {
+              "role": "customer",
+              "time": "20:39:13.000",
+              "text": "47145661000179"
+            },
+            {
+              "role": "customer",
+              "time": "20:39:37.000",
+              "text": "É uma loja só"
+            },
+            {
+              "role": "customer",
+              "time": "20:40:16.000",
+              "text": "No meu já fica aberto o sistema no meu celular\nAí nunca preciso fazer login\nEntão nao lembro"
+            },
+            {
+              "role": "agent",
+              "time": "20:41:03.000",
+              "text": "madegucafe@gmail.com\nsenha 102030"
+            },
+            {
+              "role": "agent",
+              "time": "20:41:12.000",
+              "text": "Usuário - Gestor Jacarepaguá"
+            },
+            {
+              "role": "agent",
+              "time": "20:41:16.000",
+              "text": "Acessa com esse"
+            },
+            {
+              "role": "agent",
+              "time": "20:41:21.000",
+              "text": "Pode usar o link que te enviei."
+            },
+            {
+              "role": "agent",
+              "time": "20:42:07.000",
+              "text": "Vai acessar essas duas telas."
+            },
+            {
+              "role": "customer",
+              "time": "20:44:33.000",
+              "text": "O que eu coloco no campo série?"
+            },
+            {
+              "role": "agent",
+              "time": "20:45:01.000",
+              "text": "A série que é utilizada para transmitir as notas do seu PDV."
+            },
+            {
+              "role": "customer",
+              "time": "20:46:09.000",
+              "text": "Nenhuma nota foi localizada no período"
+            },
+            {
+              "role": "agent",
+              "time": "20:47:08.000",
+              "text": "Me envia um print de como você preencheu os dados da tela."
+            },
+            {
+              "role": "agent",
+              "time": "20:54:00.000",
+              "text": "Você deseja os xmls de nota fiscal eletronica, certo?"
+            },
+            {
+              "role": "customer",
+              "time": "20:54:13.000",
+              "text": "Isso"
+            },
+            {
+              "role": "agent",
+              "time": "20:55:20.000",
+              "text": "Então você selecionou o modelo do documento errado. É NFCe e não NFE (Nota Fiscal Eletronica)."
+            },
+            {
+              "role": "customer",
+              "time": "20:58:22.000",
+              "text": "Seria assim?"
+            },
+            {
+              "role": "agent",
+              "time": "21:02:28.000",
+              "text": "Não."
+            },
+            {
+              "role": "agent",
+              "time": "21:02:37.000",
+              "text": "Em documento, precisa selecionar assim:"
+            },
+            {
+              "role": "agent",
+              "time": "21:09:00.000",
+              "text": "Qualquer dúvida, fico a disposição Flávia."
+            },
+            {
+              "role": "customer",
+              "time": "21:10:15.000",
+              "text": "Obrigada"
+            },
+            {
+              "role": "customer",
+              "time": "21:10:40.000",
+              "text": "Consegui"
+            }
+          ],
+          "context_conversation": {
+            "problema_principal": "Onde consigo ver os Xmls das vendas? | Como consigo exportar? | Aconteceu algum problema que a contabilidade não recebeu e estão me pedindo",
+            "produto_funcionalidade": "NXZ ERP — **Fiscal** (NFe/NFCe/SAT)",
+            "causa_raiz": "**Procedimento administrativo** (financeiro/contratual)",
+            "resolucao": "Qualquer dúvida, fico a disposição Flávia.",
+            "observacoes": "Cliente confirmou resolucao"
+          }
+        },
+        {
+          "conversation_id": 1499,
+          "messages": [
+            {
+              "role": "customer",
+              "time": "14:34:11.000",
+              "text": "Bom dia"
+            },
+            {
+              "role": "customer",
+              "time": "14:36:49.000",
+              "text": "55406324/0001-16"
+            },
+            {
+              "role": "agent",
+              "time": "16:16:01.000",
+              "text": "Boa tarde, como posso ajudar?"
+            },
+            {
+              "role": "customer",
+              "time": "16:54:09.000",
+              "text": "Oi tudo bem"
+            },
+            {
+              "role": "customer",
+              "time": "16:54:42.000",
+              "text": "Nossa contabilidade nos mandou uma relação de notas de saída idas no relatório como rascunho,"
+            },
+            {
+              "role": "customer",
+              "time": "16:55:15.000",
+              "text": "Posso cancelar? E como informar sedaz nesses casos"
+            },
+            {
+              "role": "customer",
+              "time": "16:56:32.000",
+              "text": "Inutilização da nota, com envio da informação para Sefaz"
+            },
+            {
+              "role": "agent",
+              "time": "17:26:33.000",
+              "text": "Vou tranferir você para o suporte, um momento por favor."
+            },
+            {
+              "role": "customer",
+              "time": "17:46:04.000",
+              "text": "Fico no aguardo"
+            },
+            {
+              "role": "agent",
+              "time": "18:07:52.000",
+              "text": "Boa tarde Vinícius. Aqui é o Luiz da Nexuz. Me informe por gentileza o número das notas que precisa conferir."
+            },
+            {
+              "role": "customer",
+              "time": "18:12:20.000",
+              "text": "Olá"
+            },
+            {
+              "role": "customer",
+              "time": "18:12:47.000",
+              "text": "Boa tarde"
+            },
+            {
+              "role": "customer",
+              "time": "18:13:35.000",
+              "text": "As notas são essas"
+            },
+            {
+              "role": "customer",
+              "time": "18:13:52.000",
+              "text": "24022\n23339\n23207"
+            },
+            {
+              "role": "agent",
+              "time": "18:14:33.000",
+              "text": "Só um momento. Irei verificar."
+            },
+            {
+              "role": "customer",
+              "time": "18:14:42.000",
+              "text": "Aí a contabilidade nos orientou a validar , ou cancelar , no caso de cancelamento , inutilização da nota , como proceder esse envio pra sefaz"
+            },
+            {
+              "role": "customer",
+              "time": "18:15:05.000",
+              "text": "Essas notas foram no relatório , mas constam como rascunho"
+            },
+            {
+              "role": "customer",
+              "time": "18:15:10.000",
+              "text": "Certo"
+            },
+            {
+              "role": "customer",
+              "time": "20:21:54.000",
+              "text": "Estou aguardando orientação até agora"
+            },
+            {
+              "role": "customer",
+              "time": "20:22:29.000",
+              "text": "Iniciei conversa com vocês 13h a até agora sem retorno"
+            },
+            {
+              "role": "agent",
+              "time": "20:23:40.000",
+              "text": "Vinicius, solicitações sobre nota fiscal demoram um pouco mais. Estamos com um fluxo alto de atendimento."
+            },
+            {
+              "role": "agent",
+              "time": "20:24:54.000",
+              "text": "Já haviamos respondido a Ana Carla mais cedo com essa mensagem."
+            },
+            {
+              "role": "agent",
+              "time": "20:24:56.000",
+              "text": "24323\n24600\n\nEssas duas notas já estão canceladas.\n\n24033\n24173\n24830\n\nEssas 3 estão como provisórias. Posso reemitir elas para o mês vigente ou cancelar."
+            },
+            {
+              "role": "agent",
+              "time": "20:25:38.000",
+              "text": "E ficamos aguardando o retorno do que será feito com as notas que estão com status de \"Provisórias\"."
+            },
+            {
+              "role": "customer",
+              "time": "20:26:03.000",
+              "text": "Sim. A minha dúvida é, no caso de cancelamento , como inutilizar, cancelar a nota e enviar essa informação pra contabilidade ?"
+            },
+            {
+              "role": "agent",
+              "time": "20:44:28.000",
+              "text": "Se não houve quebra de sequência, não há necessidade. Isso você consegue confirmar com a sua contabilidade. Se realmente for necessário inutilizar o número, consigo fazer para você."
+            },
+            {
+              "role": "customer",
+              "time": "20:45:53.000",
+              "text": "A contabilidade já afirmou que houve quebra"
+            },
+            {
+              "role": "agent",
+              "time": "20:46:29.000",
+              "text": "24323\n24600\n\nSeriam somente essas duas?"
+            },
+            {
+              "role": "customer",
+              "time": "20:47:34.000",
+              "text": "As três que passei"
+            },
+            {
+              "role": "customer",
+              "time": "20:47:43.000",
+              "text": "24022\n23339\n23207"
+            },
+            {
+              "role": "agent",
+              "time": "21:02:18.000",
+              "text": "Vinícius, vamos alinhar as informações para não haver dúvida.\n\nNotei que houve uma pequena confusão nos números que você comparou. As notas que a Ana Carla mencionou (24323, 24600, etc.) são um caso, mas as que você me enviou agora (24022, 23339 e 23207) são outra situação completamente diferente.\n\nFiz a conferência aqui e o cenário é o seguinte:\n\nStatus Real: Essas três notas (24022, 23339 e 23207) já estão autorizadas e transmitidas na SEFAZ. Elas não são provisórias.\n\nAção: Como elas já têm validade jurídica, não existe o procedimento de inutilização. A inutilização só serve para números que nunca foram usados.\n\nConclusão: Se a sua contabilidade as listou como 'rascunho', o erro está na informação que eles receberam ou no relatório que estão consultando, pois no sistema e na SEFAZ elas estão confirmadas.\n\nVou te enviar os XMLs dessas três notas agora. Basta repassar ao seu contador para que ele atualize os registros dele, pois as notas estão 100% regulares."
+            },
+            {
+              "role": "agent",
+              "time": "21:08:45.000",
+              "text": "Vinicius, qualquer dúvida, fico a disposição."
+            }
+          ],
+          "context_conversation": {
+            "problema_principal": "55406324/0001-16 | Oi tudo bem | Nossa contabilidade nos mandou uma relação de notas de saída idas no relatório como rascunho,",
+            "produto_funcionalidade": "NXZ ERP — **Fiscal** (NFe/NFCe/SAT)",
+            "causa_raiz": "**Procedimento administrativo** (financeiro/contratual)",
+            "resolucao": "Vinicius, qualquer dúvida, fico a disposição.",
+            "observacoes": "Solicitacao de cancelamento"
+          }
+        },
+        {
+          "conversation_id": 1436,
+          "messages": [
+            {
+              "role": "customer",
+              "time": "13:45:04.000",
+              "text": "Bom dia, tudo bem"
+            },
+            {
+              "role": "customer",
+              "time": "13:45:28.000",
+              "text": "33.644.804/0001-82"
+            },
+            {
+              "role": "customer",
+              "time": "13:45:39.000",
+              "text": "não estou recebendo os arquivos fiscais no meu email."
+            },
+            {
+              "role": "agent",
+              "time": "14:39:30.000",
+              "text": "Bom dia, como arquivos fiscais você se refere as NF's de prestação de serviço emitidas por nós?"
+            },
+            {
+              "role": "customer",
+              "time": "14:40:59.000",
+              "text": "Não. aos xml emitidos pela empresa Amor Espresso NFCE"
+            },
+            {
+              "role": "agent",
+              "time": "14:41:17.000",
+              "text": "Certo, um momento por favor."
+            },
+            {
+              "role": "agent",
+              "time": "14:41:52.000",
+              "text": "Luiz esse cliente informou que não está recebendo o XML das NFC que ele emite pelo sistema dele"
+            },
+            {
+              "role": "agent",
+              "time": "14:50:38.000",
+              "text": "Bom dia Fabio, tudo bem? Sou o Luiz da Nexuz."
+            },
+            {
+              "role": "agent",
+              "time": "14:50:55.000",
+              "text": "Você faz parte da contabilidade ou da gestão da própria loja?"
+            },
+            {
+              "role": "customer",
+              "time": "14:52:19.000",
+              "text": "contabilidade"
+            },
+            {
+              "role": "agent",
+              "time": "14:55:38.000",
+              "text": "Seria somente dessa loja de CNPJ - 33.644.804/0001-82?"
+            },
+            {
+              "role": "customer",
+              "time": "14:56:13.000",
+              "text": "Ela tem 2 filiais"
+            },
+            {
+              "role": "customer",
+              "time": "14:56:14.000",
+              "text": "33.644.804/0002-63"
+            },
+            {
+              "role": "customer",
+              "time": "14:56:23.000",
+              "text": "33.644.804/0003-44"
+            },
+            {
+              "role": "agent",
+              "time": "14:58:42.000",
+              "text": "Qual o email que você deseja receber os XML's?"
+            },
+            {
+              "role": "customer",
+              "time": "15:09:16.000",
+              "text": "Fiscal@jrmartins.com.br e marcia@jrmartins.com.br"
+            },
+            {
+              "role": "agent",
+              "time": "15:12:48.000",
+              "text": "Aqui foi alterado para um outro email. Seria somente um email ou um para cada loja ?"
+            },
+            {
+              "role": "agent",
+              "time": "15:44:25.000",
+              "text": "Ainda está por aí? Quero garantir que sua dúvida seja resolvida, mas caso não haja interação, o chat será finalizado automaticamente em instantes."
+            },
+            {
+              "role": "customer",
+              "time": "16:17:53.000",
+              "text": "esses dois email para todas as lojas"
+            },
+            {
+              "role": "agent",
+              "time": "16:20:48.000",
+              "text": "Só podemos configurar apenas um email que receberá automaticamente o xml das lojas. Qual será?"
+            },
+            {
+              "role": "customer",
+              "time": "16:21:41.000",
+              "text": "fiscal@jrmartins.com.br"
+            },
+            {
+              "role": "agent",
+              "time": "16:23:30.000",
+              "text": "Só um momento."
+            },
+            {
+              "role": "agent",
+              "time": "18:28:32.000",
+              "text": "O relatório contendo o xml do respectivo mês foi enviado para o email solicitado e já configuramos esse email para receber todos os meses na data prevista, esse relatório de notas mensais."
+            },
+            {
+              "role": "agent",
+              "time": "18:28:36.000",
+              "text": "Ajudo em algo mais?"
+            },
+            {
+              "role": "customer",
+              "time": "18:33:21.000",
+              "text": "obrigado"
+            },
+            {
+              "role": "customer",
+              "time": "18:33:26.000",
+              "text": "vou verificar o email"
+            }
+          ],
+          "context_conversation": {
+            "problema_principal": "Bom dia, tudo bem | não estou recebendo os arquivos fiscais no meu email. | Não. aos xml emitidos pela empresa Amor Espresso NFCE",
+            "produto_funcionalidade": "NXZ ERP — **Fiscal** (NFe/NFCe/SAT)",
+            "causa_raiz": "**Configuracao incorreta** no sistema",
+            "resolucao": "Ajudo em algo mais?",
+            "observacoes": null
+          }
+        }
+      ],
+      "decision": "APROVAR",
+      "observation": "-"
+    },
+    {
+      "product": "NXZ ERP",
+      "theme": "Criacao e gestao de Cupons de Desconto",
+      "frequency": 4,
+      "action": "Criar",
+      "existing_article": null,
+      "representative_examples": [
+        {
+          "conversation_id": 1386,
+          "messages": [
+            {
+              "role": "agent",
+              "time": "18:42:44.000",
+              "text": "Deixa eu dar uma olhada."
+            },
+            {
+              "role": "agent",
+              "time": "18:43:07.000",
+              "text": "Ele não está disponível porque só começara a funcionar no dia 15/03, conforme solicitado."
+            },
+            {
+              "role": "customer",
+              "time": "18:44:27.000",
+              "text": "Cria no cupom tbm ! \nPq assim eu desativo e ativo quando quiser , sem depender de vcs"
+            },
+            {
+              "role": "agent",
+              "time": "18:44:56.000",
+              "text": "Foi criado no cupom Nataly."
+            },
+            {
+              "role": "agent",
+              "time": "18:45:38.000",
+              "text": "Eu apenas criei um vouncher para poder selecionar as categorias que estarão inclusas nessa promoção e usei o mesmo nome para a referência. Mas já mudei para não confundirem."
+            },
+            {
+              "role": "agent",
+              "time": "18:46:15.000",
+              "text": "De qualquer forma, ele só começará a ficar válido no dia 15. Se quiser desativar e ativar, estará disponível também."
+            },
+            {
+              "role": "agent",
+              "time": "18:46:18.000",
+              "text": "Ajudo em algo mais?"
+            },
+            {
+              "role": "agent",
+              "time": "18:49:34.000",
+              "text": "Porque você está com o filtro de cupom ativo. Ele ainda não está ativo porque não chegou a data de inicio."
+            },
+            {
+              "role": "agent",
+              "time": "18:50:14.000",
+              "text": "Exatamente. Eu te informei acima que alterei o nome da categoria. O Vouncher nada mais é que uma forma de padronizar configurações de cupons."
+            },
+            {
+              "role": "customer",
+              "time": "18:53:23.000",
+              "text": "Vc pode transforma ele em um cupom infinito"
+            },
+            {
+              "role": "customer",
+              "time": "18:53:40.000",
+              "text": "Vamos usar ele em outras datas tbm."
+            },
+            {
+              "role": "customer",
+              "time": "18:53:44.000",
+              "text": "Aí já fica pronto"
+            },
+            {
+              "role": "customer",
+              "time": "18:54:07.000",
+              "text": "Pode ser ?"
+            },
+            {
+              "role": "agent",
+              "time": "18:54:30.000",
+              "text": "Posso deixar ele em uma data final bem grande, infinito não tem como. Mas posso colocar ele bem distante, como 2030."
+            },
+            {
+              "role": "agent",
+              "time": "18:54:35.000",
+              "text": "Fica bom assim pra vocês?"
+            },
+            {
+              "role": "customer",
+              "time": "18:54:46.000",
+              "text": "Fica ótimo !!"
+            },
+            {
+              "role": "customer",
+              "time": "18:54:53.000",
+              "text": "Obrigada por toda sua atenção"
+            },
+            {
+              "role": "agent",
+              "time": "18:55:20.000",
+              "text": "Prontinho. Data final alterada Nataly!"
+            },
+            {
+              "role": "agent",
+              "time": "18:55:47.000",
+              "text": "Qualquer dúvida, fico a disposição de vocês. Podem chamar! Contem sempre com a Nexuz."
+            },
+            {
+              "role": "customer",
+              "time": "17:01:54.000",
+              "text": "Olá boa tarde !!"
+            },
+            {
+              "role": "customer",
+              "time": "17:02:07.000",
+              "text": "Gostaria de fazer 1 pedido e retira uma dúvida"
+            },
+            {
+              "role": "customer",
+              "time": "17:02:31.000",
+              "text": "CNPJ - 49403544000193"
+            },
+            {
+              "role": "agent",
+              "time": "17:14:54.000",
+              "text": "Qual o cupom especificamente?"
+            },
+            {
+              "role": "customer",
+              "time": "17:18:35.000",
+              "text": "Fortal em dobro"
+            },
+            {
+              "role": "agent",
+              "time": "17:19:26.000",
+              "text": "esses são os cupons existentes na base de vocês."
+            },
+            {
+              "role": "customer",
+              "time": "17:20:03.000",
+              "text": "Fortal"
+            },
+            {
+              "role": "customer",
+              "time": "17:20:18.000",
+              "text": "Ele e o duo preciso que seja cpf sem limite"
+            },
+            {
+              "role": "agent",
+              "time": "17:20:48.000",
+              "text": "O nome do cupom não é FORTAL. É DUO? Seria isso?"
+            },
+            {
+              "role": "customer",
+              "time": "17:23:59.000",
+              "text": "Vc entendeu ?"
+            },
+            {
+              "role": "agent",
+              "time": "17:24:38.000",
+              "text": "Configurado. Ajudo em algo mais?"
+            },
+            {
+              "role": "customer",
+              "time": "17:26:03.000",
+              "text": "Sim sim"
+            },
+            {
+              "role": "customer",
+              "time": "17:26:12.000",
+              "text": "Isso aqui"
+            },
+            {
+              "role": "customer",
+              "time": "17:26:15.000",
+              "text": "Rsrs"
+            },
+            {
+              "role": "agent",
+              "time": "17:31:11.000",
+              "text": "Na verdade, a opção que aparece no tablet é sobre o **envio digital** da nota para o seu e-mail, para sua conveniência e redução de papel. No entanto, legalmente, o sistema precisa gerar o documento fiscal para registrar a venda no nosso banco de dados e garantir a segurança da operação. Por isso, mesmo que você opte por não receber o arquivo, a nota é gerada automaticamente pelo nosso ERP para estarmos em dia com a legislação."
+            },
+            {
+              "role": "customer",
+              "time": "17:31:54.000",
+              "text": "Graças a Deus"
+            },
+            {
+              "role": "customer",
+              "time": "17:32:04.000",
+              "text": "Obrigada por sua informação"
+            },
+            {
+              "role": "customer",
+              "time": "17:37:05.000",
+              "text": "Só mais uma dúvida 🙋‍♀️"
+            },
+            {
+              "role": "agent",
+              "time": "17:37:32.000",
+              "text": "Sim. Como ajudo?"
+            },
+            {
+              "role": "agent",
+              "time": "17:39:37.000",
+              "text": "Se o pedido foi feito através do nosso sistema, tem nota fiscal."
+            },
+            {
+              "role": "agent",
+              "time": "17:45:14.000",
+              "text": "Como o nosso sistema é totalmente integrado ao iFood através do **NXZ Delivery**, assim que você finaliza o pedido na plataforma, ele é importado automaticamente para o nosso **NXZ ERP**. O surgimento da nota no nosso sistema e o envio para o **KDS (Cozinha)** é a garantia de que seu pedido já está em preparação e devidamente registrado. É essa agilidade que garante que o pedido do cliente chegue no tempo correto e sem erros."
+            },
+            {
+              "role": "customer",
+              "time": "17:46:39.000",
+              "text": "Muito obrigada !!!"
+            },
+            {
+              "role": "agent",
+              "time": "17:47:15.000",
+              "text": "Disponha."
+            }
+          ],
+          "context_conversation": {
+            "problema_principal": "Cria no cupom tbm ! \nPq assim eu desativo e ativo quando quiser , sem depender de vcs | Vc pode transforma ele em um cupom infinito | Vamos usar ele em outras datas tbm.",
+            "produto_funcionalidade": "NXZ ERP — **Fiscal** (NFe/NFCe/SAT)",
+            "causa_raiz": "**Configuracao incorreta** no sistema",
+            "resolucao": "Configurado. Ajudo em algo mais?",
+            "observacoes": "Cliente confirmou resolucao"
+          }
+        },
+        {
+          "conversation_id": 1434,
+          "messages": [
+            {
+              "role": "customer",
+              "time": "11:36:16.000",
+              "text": "Bom dia"
+            },
+            {
+              "role": "customer",
+              "time": "11:36:22.000",
+              "text": "45.561.445 0001 89"
+            },
+            {
+              "role": "customer",
+              "time": "11:36:55.000",
+              "text": "Oi"
+            },
+            {
+              "role": "customer",
+              "time": "11:51:31.000",
+              "text": "Oi"
+            },
+            {
+              "role": "customer",
+              "time": "11:51:32.000",
+              "text": "Oi"
+            },
+            {
+              "role": "customer",
+              "time": "11:51:33.000",
+              "text": "Oi"
+            },
+            {
+              "role": "customer",
+              "time": "11:51:34.000",
+              "text": "O"
+            },
+            {
+              "role": "agent",
+              "time": "11:55:43.000",
+              "text": "Bom dia Ricardo. Aqui é o Luiz da Nexuz. Como posso ajudar?"
+            },
+            {
+              "role": "customer",
+              "time": "12:38:33.000",
+              "text": "Luiz preciso passar este desconto de 6 % por favor"
+            },
+            {
+              "role": "customer",
+              "time": "12:39:02.000",
+              "text": "O Pedra Branca"
+            },
+            {
+              "role": "customer",
+              "time": "12:39:07.000",
+              "text": "De 8 para 6"
+            },
+            {
+              "role": "agent",
+              "time": "12:50:54.000",
+              "text": "Qual seria o cupom?"
+            },
+            {
+              "role": "agent",
+              "time": "12:51:21.000",
+              "text": "Qual seria o cupom?"
+            },
+            {
+              "role": "agent",
+              "time": "12:59:15.000",
+              "text": "Pedra Branca, certo?"
+            },
+            {
+              "role": "customer",
+              "time": "13:05:37.000",
+              "text": "Isso meu querido"
+            },
+            {
+              "role": "agent",
+              "time": "13:07:30.000",
+              "text": "Pronto Ricardo."
+            },
+            {
+              "role": "customer",
+              "time": "13:07:47.000",
+              "text": "Obrigado"
+            },
+            {
+              "role": "agent",
+              "time": "13:08:00.000",
+              "text": "Qualquer dúvida, estamos a disposição."
+            }
+          ],
+          "context_conversation": {
+            "problema_principal": "45.561.445 0001 89 | Luiz preciso passar este desconto de 6 % por favor | O Pedra Branca",
+            "produto_funcionalidade": "NXZ ERP — **Cupom/Voucher**",
+            "causa_raiz": "nao identificada",
+            "resolucao": "Qualquer dúvida, estamos a disposição.",
+            "observacoes": "Cliente confirmou resolucao"
+          }
+        },
+        {
+          "conversation_id": 1373,
+          "messages": [
+            {
+              "role": "customer",
+              "time": "15:42:10.000",
+              "text": "Olá boa tarde !"
+            },
+            {
+              "role": "customer",
+              "time": "15:42:43.000",
+              "text": "CNPJ - 49403544000193"
+            },
+            {
+              "role": "customer",
+              "time": "15:42:54.000",
+              "text": "Preciso criar um código de desconto"
+            },
+            {
+              "role": "customer",
+              "time": "15:44:44.000",
+              "text": "Dia 15 teremos uma promoção na loja , e quero um código de 20% de desconto"
+            },
+            {
+              "role": "customer",
+              "time": "15:44:54.000",
+              "text": "Poderia criar pra mim por gentilidade"
+            },
+            {
+              "role": "customer",
+              "time": "15:45:17.000",
+              "text": "Poderia criar para mim por gentileza"
+            },
+            {
+              "role": "agent",
+              "time": "15:58:09.000",
+              "text": "Boa tarde Nataly. Sou o Luiz da Nexuz. Só um momento enquanto realizo o cadastro."
+            },
+            {
+              "role": "customer",
+              "time": "16:00:21.000",
+              "text": "Tudo bem"
+            },
+            {
+              "role": "customer",
+              "time": "16:11:28.000",
+              "text": "E aí"
+            },
+            {
+              "role": "customer",
+              "time": "17:03:10.000",
+              "text": "Boa tarde !"
+            },
+            {
+              "role": "customer",
+              "time": "17:03:15.000",
+              "text": "Preciso desse retorno sobre o código"
+            },
+            {
+              "role": "customer",
+              "time": "17:03:42.000",
+              "text": "Iremos ter a promoção e eu preciso lançar no sistema"
+            },
+            {
+              "role": "customer",
+              "time": "17:31:06.000",
+              "text": "Preciso desse retorno urgente !"
+            },
+            {
+              "role": "customer",
+              "time": "17:31:13.000",
+              "text": "Até agora nenhuma resposta de vcs"
+            },
+            {
+              "role": "customer",
+              "time": "17:40:45.000",
+              "text": "???"
+            },
+            {
+              "role": "agent",
+              "time": "17:40:46.000",
+              "text": "Olá! 👋 Bem-vindo a Nexuz.\n\nPara iniciarmos seu atendimento, digite:\n\n1 - Para suporte\n\n2 - Para financeiro\n\n3 - Para comercial"
+            },
+            {
+              "role": "agent",
+              "time": "17:40:54.000",
+              "text": "Olá! 👋 Bem-vindo a Nexuz.\n\nPara iniciarmos seu atendimento, digite:\n\n1 - Para suporte\n\n2 - Para financeiro\n\n3 - Para comercial"
+            },
+            {
+              "role": "agent",
+              "time": "17:40:54.000",
+              "text": "Perfeito! Você foi direcionado para o **Suporte**.    \nUm momento, por favor.    \nBreve iremos atender."
+            },
+            {
+              "role": "customer",
+              "time": "17:40:54.000",
+              "text": "1"
+            },
+            {
+              "role": "customer",
+              "time": "18:01:16.000",
+              "text": "Gente"
+            },
+            {
+              "role": "agent",
+              "time": "18:01:16.000",
+              "text": "Ops! Não entendi sua escolha. 🤔 Por favor, digite apenas o número da opção desejada para que eu possa te direcionar:\n\n1 - Suporte\n\n2 - Financeiro\n\n3 - Comercial"
+            },
+            {
+              "role": "customer",
+              "time": "18:01:19.000",
+              "text": "Que absurdo"
+            },
+            {
+              "role": "agent",
+              "time": "18:01:19.000",
+              "text": "Ops! Não entendi sua escolha. 🤔 Por favor, digite apenas o número da opção desejada para que eu possa te direcionar:\n\n1 - Suporte\n\n2 - Financeiro\n\n3 - Comercial"
+            },
+            {
+              "role": "customer",
+              "time": "18:01:24.000",
+              "text": "1"
+            },
+            {
+              "role": "agent",
+              "time": "18:01:24.000",
+              "text": "Perfeito! Você foi direcionado para o **Suporte**.    \nUm momento, por favor.    \nBreve iremos atender."
+            },
+            {
+              "role": "customer",
+              "time": "18:01:29.000",
+              "text": "Ninguém me dá um suporte"
+            },
+            {
+              "role": "agent",
+              "time": "18:01:29.000",
+              "text": "Ops! Não entendi sua escolha. 🤔 Por favor, digite apenas o número da opção desejada para que eu possa te direcionar:\n\n1 - Suporte\n\n2 - Financeiro\n\n3 - Comercial"
+            },
+            {
+              "role": "customer",
+              "time": "18:01:33.000",
+              "text": "Absurdo isso"
+            },
+            {
+              "role": "agent",
+              "time": "18:01:33.000",
+              "text": "Ops! Não entendi sua escolha. 🤔 Por favor, digite apenas o número da opção desejada para que eu possa te direcionar:\n\n1 - Suporte\n\n2 - Financeiro\n\n3 - Comercial"
+            },
+            {
+              "role": "customer",
+              "time": "18:01:35.000",
+              "text": "1"
+            },
+            {
+              "role": "agent",
+              "time": "18:01:35.000",
+              "text": "Perfeito! Você foi direcionado para o **Suporte**.    \nUm momento, por favor.    \nBreve iremos atender."
+            },
+            {
+              "role": "customer",
+              "time": "18:12:49.000",
+              "text": "Olá"
+            },
+            {
+              "role": "agent",
+              "time": "18:12:49.000",
+              "text": "Ops! Não entendi sua escolha. 🤔 Por favor, digite apenas o número da opção desejada para que eu possa te direcionar:\n\n1 - Suporte\n\n2 - Financeiro\n\n3 - Comercial"
+            },
+            {
+              "role": "customer",
+              "time": "18:12:55.000",
+              "text": "1"
+            },
+            {
+              "role": "agent",
+              "time": "18:12:55.000",
+              "text": "Perfeito! Você foi direcionado para o **Suporte**.    \nUm momento, por favor.    \nBreve iremos atender."
+            },
+            {
+              "role": "customer",
+              "time": "18:13:17.000",
+              "text": "Urgente gente"
+            },
+            {
+              "role": "agent",
+              "time": "18:13:17.000",
+              "text": "Ops! Não entendi sua escolha. 🤔 Por favor, digite apenas o número da opção desejada para que eu possa te direcionar:\n\n1 - Suporte\n\n2 - Financeiro\n\n3 - Comercial"
+            },
+            {
+              "role": "customer",
+              "time": "18:13:22.000",
+              "text": "1"
+            },
+            {
+              "role": "agent",
+              "time": "18:13:22.000",
+              "text": "Perfeito! Você foi direcionado para o **Suporte**.    \nUm momento, por favor.    \nBreve iremos atender."
+            },
+            {
+              "role": "customer",
+              "time": "18:13:29.000",
+              "text": "1"
+            },
+            {
+              "role": "agent",
+              "time": "18:13:29.000",
+              "text": "Perfeito! Você foi direcionado para o **Suporte**.    \nUm momento, por favor.    \nBreve iremos atender."
+            },
+            {
+              "role": "customer",
+              "time": "18:13:34.000",
+              "text": "1"
+            },
+            {
+              "role": "agent",
+              "time": "18:13:34.000",
+              "text": "Perfeito! Você foi direcionado para o **Suporte**.    \nUm momento, por favor.    \nBreve iremos atender."
+            },
+            {
+              "role": "customer",
+              "time": "18:14:02.000",
+              "text": "1"
+            },
+            {
+              "role": "agent",
+              "time": "18:14:02.000",
+              "text": "Perfeito! Você foi direcionado para o **Suporte**.    \nUm momento, por favor.    \nBreve iremos atender."
+            },
+            {
+              "role": "agent",
+              "time": "18:22:03.000",
+              "text": "Nataly, peço perdão. Teve algum erro na nossa ferramenta e sua mensagem tinha se perdido."
+            },
+            {
+              "role": "agent",
+              "time": "18:22:27.000",
+              "text": "Preciso de algumas informações sobre o cupom."
+            },
+            {
+              "role": "customer",
+              "time": "18:22:45.000",
+              "text": "Quais são ?"
+            },
+            {
+              "role": "agent",
+              "time": "18:22:45.000",
+              "text": "Ops! Não entendi sua escolha. 🤔 Por favor, digite apenas o número da opção desejada para que eu possa te direcionar:\n\n1 - Suporte\n\n2 - Financeiro\n\n3 - Comercial"
+            },
+            {
+              "role": "customer",
+              "time": "18:22:54.000",
+              "text": "1"
+            },
+            {
+              "role": "agent",
+              "time": "18:22:54.000",
+              "text": "Perfeito! Você foi direcionado para o **Suporte**.    \nUm momento, por favor.    \nBreve iremos atender."
+            },
+            {
+              "role": "customer",
+              "time": "18:23:12.000",
+              "text": "1"
+            },
+            {
+              "role": "agent",
+              "time": "18:23:19.000",
+              "text": "Preciso do nome do cupom"
+            },
+            {
+              "role": "customer",
+              "time": "18:23:34.000",
+              "text": "20cod"
+            },
+            {
+              "role": "agent",
+              "time": "18:23:43.000",
+              "text": "Preciso da validade e para quais produtos será;"
+            },
+            {
+              "role": "customer",
+              "time": "18:24:17.000",
+              "text": "Sera apenas para o dia 15/03"
+            },
+            {
+              "role": "customer",
+              "time": "18:25:47.000",
+              "text": "Valerá para ! \nSugestões momo Crunchy \nMonte seu momo \nMilkshake \nBebidas \nGrab’ go \nZero \nVegano \n\nSomente a categoria beefree não vai entrar"
+            },
+            {
+              "role": "agent",
+              "time": "18:29:58.000",
+              "text": "todas as categorias menos beefree, certo?"
+            },
+            {
+              "role": "customer",
+              "time": "18:30:09.000",
+              "text": "Certo !"
+            },
+            {
+              "role": "agent",
+              "time": "18:30:17.000",
+              "text": "20 % de desconto, cupom 20cod."
+            },
+            {
+              "role": "customer",
+              "time": "18:30:25.000",
+              "text": "Sim sim"
+            },
+            {
+              "role": "agent",
+              "time": "18:30:29.000",
+              "text": "será para as duas lojas?"
+            },
+            {
+              "role": "customer",
+              "time": "18:30:35.000",
+              "text": "Terá alguma senha ? Algum código pin ?"
+            },
+            {
+              "role": "customer",
+              "time": "18:30:41.000",
+              "text": "Sim sim"
+            },
+            {
+              "role": "agent",
+              "time": "18:31:03.000",
+              "text": "Por padrão os cupons são validados com PIN. Mas posso remover essa obrigatoriedade."
+            },
+            {
+              "role": "customer",
+              "time": "18:31:28.000",
+              "text": "Pode deixar o código pin"
+            },
+            {
+              "role": "customer",
+              "time": "18:31:33.000",
+              "text": "Acho necessário"
+            },
+            {
+              "role": "customer",
+              "time": "18:31:40.000",
+              "text": "Senha atual e 8745"
+            },
+            {
+              "role": "customer",
+              "time": "18:31:47.000",
+              "text": "Continua o mesmo ?"
+            },
+            {
+              "role": "agent",
+              "time": "18:33:18.000",
+              "text": "Sim"
+            },
+            {
+              "role": "agent",
+              "time": "18:34:11.000",
+              "text": "Cupom configurado Nataly. Desculpe pela demora. Ajudo em algo mais??"
+            },
+            {
+              "role": "customer",
+              "time": "18:36:02.000",
+              "text": "Eu vou fazer um teste"
+            },
+            {
+              "role": "customer",
+              "time": "18:36:11.000",
+              "text": "E lhe aviso se deu certo"
+            },
+            {
+              "role": "agent",
+              "time": "18:41:18.000",
+              "text": "Perfeito. Qualquer coisa, estou a disposição."
+            }
+          ],
+          "context_conversation": {
+            "problema_principal": "Olá boa tarde ! | CNPJ - 49403544000193 | Preciso criar um código de desconto",
+            "produto_funcionalidade": "NXZ ERP — **Cadastro de Produtos**",
+            "causa_raiz": "nao identificada",
+            "resolucao": "Perfeito. Qualquer coisa, estou a disposição.",
+            "observacoes": "Cliente confirmou resolucao"
+          }
+        }
+      ],
+      "decision": "APROVAR",
+      "observation": "-"
+    },
+    {
+      "product": "NXZ ERP",
+      "theme": "Cancelamento e correcao de vendas no PDV",
+      "frequency": 3,
+      "action": "Criar",
+      "existing_article": null,
+      "representative_examples": [
+        {
+          "conversation_id": 1350,
+          "messages": [
+            {
+              "role": "agent",
+              "time": "13:44:44.000",
+              "text": "Olá, \nTudo bem?\nAqui é da Nexuz Sistemas."
+            },
+            {
+              "role": "customer",
+              "time": "15:05:10.000",
+              "text": "Olá"
+            },
+            {
+              "role": "agent",
+              "time": "15:07:04.000",
+              "text": "Boa tarde Bruna. Sou o Luiz da Nexuz. Como posso ajudar?"
+            },
+            {
+              "role": "customer",
+              "time": "15:07:21.000",
+              "text": "Estamos com um problema no sistema"
+            },
+            {
+              "role": "customer",
+              "time": "15:07:30.000",
+              "text": "Tentando cancelar uma venda de ontem no caixa"
+            },
+            {
+              "role": "customer",
+              "time": "15:07:32.000",
+              "text": "De 18,00"
+            },
+            {
+              "role": "customer",
+              "time": "15:07:36.000",
+              "text": "E ele\nNão tá fechando"
+            },
+            {
+              "role": "customer",
+              "time": "15:07:44.000",
+              "text": "Não estamos conseguindo abrir o caixa de hj"
+            },
+            {
+              "role": "customer",
+              "time": "15:07:45.000",
+              "text": "Por isso"
+            },
+            {
+              "role": "agent",
+              "time": "15:08:03.000",
+              "text": "Qual o motivo do cancelamento dessa venda?"
+            },
+            {
+              "role": "customer",
+              "time": "15:08:10.000",
+              "text": "Não teve"
+            },
+            {
+              "role": "customer",
+              "time": "15:08:12.000",
+              "text": "A venda"
+            },
+            {
+              "role": "agent",
+              "time": "15:08:55.000",
+              "text": "Tem uma venda de 18,00 R$ no sistema, que não existe? Me explica em detalhes o que aconteceu, preciso entender melhor."
+            },
+            {
+              "role": "customer",
+              "time": "15:09:14.000",
+              "text": "A minha barista tá falando com vcs"
+            },
+            {
+              "role": "customer",
+              "time": "15:09:18.000",
+              "text": "Ela vai explicar melhor"
+            },
+            {
+              "role": "customer",
+              "time": "15:09:21.000",
+              "text": "😅"
+            },
+            {
+              "role": "agent",
+              "time": "15:10:20.000",
+              "text": "Tudo bem. Vou seguir com o atendimento com ela então."
+            }
+          ],
+          "context_conversation": {
+            "problema_principal": "Estamos com um problema no sistema | Tentando cancelar uma venda de ontem no caixa | De 18,00",
+            "produto_funcionalidade": "NXZ ERP — **PDV** (Ponto de Venda)",
+            "causa_raiz": "**Bug ou erro** no sistema",
+            "resolucao": "Tudo bem. Vou seguir com o atendimento com ela então.",
+            "observacoes": "Solicitacao de cancelamento"
+          }
+        },
+        {
+          "conversation_id": 1398,
+          "messages": [
+            {
+              "role": "customer",
+              "time": "15:33:21.000",
+              "text": "Bom dia"
+            },
+            {
+              "role": "customer",
+              "time": "15:33:35.000",
+              "text": "48150046000113"
+            },
+            {
+              "role": "customer",
+              "time": "15:33:51.000",
+              "text": "Estou tentando cancelar essa compra que coloquei pagamento como débito , mas o cartão da pessoa não passou e ela pagou no dinheiro , mas não tou conseguindo"
+            },
+            {
+              "role": "customer",
+              "time": "15:33:51.000",
+              "text": "Aparecendo essa mensagem"
+            },
+            {
+              "role": "customer",
+              "time": "15:34:19.000",
+              "text": "Poderia cancelar a venda e alterar para dinheiro por favor"
+            },
+            {
+              "role": "agent",
+              "time": "16:02:44.000",
+              "text": "Estamos com um volume alto de chamados e o retorno pode demorar um pouco. Sua posição na fila está garantida; logo um especialista falará com você."
+            },
+            {
+              "role": "agent",
+              "time": "19:26:19.000",
+              "text": "Olá, boa tarde!\nTudo bem? Sou a Bianca e vou seguir com seu atendimento."
+            },
+            {
+              "role": "agent",
+              "time": "19:27:53.000",
+              "text": "Não foi possível realizar o cancelamento antes pois ainda estava sendo processada. \nVerifiquei em sistema e vi que fora realizada a devolução do pedido. Certo?"
+            }
+          ],
+          "context_conversation": {
+            "problema_principal": "Estou tentando cancelar essa compra que coloquei pagamento como débito , mas o cartão da pessoa não passou e ela pagou no dinheiro , mas não tou conse | Aparecendo essa mensagem | Poderia cancelar a venda e alterar para dinheiro por favor",
+            "produto_funcionalidade": "NXZ ERP",
+            "causa_raiz": "**Procedimento administrativo** (financeiro/contratual)",
+            "resolucao": "Não foi possível realizar o cancelamento antes pois ainda estava sendo processada. \nVerifiquei em sistema e vi que fora realizada a devolução do pedido. Certo?",
+            "observacoes": "Solicitacao de cancelamento"
+          }
+        },
+        {
+          "conversation_id": 1356,
+          "messages": [
+            {
+              "role": "customer",
+              "time": "11:13:25.000",
+              "text": "Olá"
+            },
+            {
+              "role": "customer",
+              "time": "11:13:25.000",
+              "text": "Bom dia"
+            },
+            {
+              "role": "agent",
+              "time": "11:13:53.000",
+              "text": "Bom dia Ana. Aqui é o Luiz da Nexuz, como posso te ajudar?"
+            },
+            {
+              "role": "customer",
+              "time": "11:14:02.000",
+              "text": "Eu colocando a opção dinheiro, não vá da diferença no meu caixa?"
+            },
+            {
+              "role": "agent",
+              "time": "11:14:36.000",
+              "text": "Se refere aquela demanda que mencionou ontem?"
+            },
+            {
+              "role": "customer",
+              "time": "11:15:04.000",
+              "text": "Sim"
+            },
+            {
+              "role": "agent",
+              "time": "11:17:28.000",
+              "text": "Se você não fez as movimentações e recebeu o dinheiro diretamente no caixa. A única coisa que vai fazer é \"simular\" a entrada da cliente, toda vez que ela fizer uma compra. O dinheiro já está no caixa, só que no sistema não consta essa entrada mensal que ela já antecipou. Então basta fazer conforme eu te orientei antes."
+            },
+            {
+              "role": "customer",
+              "time": "11:25:54.000",
+              "text": "Pra lançar ela"
+            },
+            {
+              "role": "agent",
+              "time": "12:01:57.000",
+              "text": "Você vai fazer exatamente a venda que ela está fazendo. Somente colocando no sistema o dinheiro que ela já antecipou do mês todo. Mas fará em partes. Não tem troco porque ela já deu o valor \"exato\""
+            },
+            {
+              "role": "agent",
+              "time": "12:07:59.000",
+              "text": "Ajudo em algo mais?"
+            },
+            {
+              "role": "agent",
+              "time": "13:12:27.000",
+              "text": "Este atendimento será encerrado devido à falta de interação. Se ainda precisar de suporte, basta enviar  uma nova mensagem e estaremos prontos para ajudar. 😊"
+            }
+          ],
+          "context_conversation": {
+            "problema_principal": "Eu colocando a opção dinheiro, não vá da diferença no meu caixa? | Pra lançar ela",
+            "produto_funcionalidade": "NXZ ERP — **PDV** (Ponto de Venda)",
+            "causa_raiz": "nao identificada",
+            "resolucao": "Este atendimento será encerrado devido à falta de interação. Se ainda precisar de suporte, basta enviar  uma nova mensagem e estaremos prontos para ajudar. 😊",
+            "observacoes": "Encerrado por inatividade do cliente"
+          }
+        }
+      ],
+      "decision": "APROVAR",
+      "observation": "-"
+    },
+    {
+      "product": "NXZ ERP",
+      "theme": "Cancelamento e inutilizacao de Notas Fiscais",
+      "frequency": 3,
+      "action": "Criar",
+      "existing_article": null,
+      "representative_examples": [
+        {
+          "conversation_id": 1401,
+          "messages": [
+            {
+              "role": "customer",
+              "time": "17:54:06.000",
+              "text": "Ola pessoal, tudo bem?"
+            },
+            {
+              "role": "customer",
+              "time": "17:54:34.000",
+              "text": "40373793000109"
+            },
+            {
+              "role": "customer",
+              "time": "17:55:12.000",
+              "text": "Estou precisando cancelar uma nota, e o pin que me passou nao dá para cancelar"
+            },
+            {
+              "role": "agent",
+              "time": "18:55:57.000",
+              "text": "Olá, Boa tarde!\n\nSou a Bianca do time de suporte e vou seguir com seu atendimento."
+            },
+            {
+              "role": "agent",
+              "time": "18:57:33.000",
+              "text": "As NFCE's possuem um limite para cancelamento na SEFAZ, sendo de tolerância de 30 minutos."
+            },
+            {
+              "role": "agent",
+              "time": "19:00:54.000",
+              "text": "Qual senha lhe foi passada?"
+            },
+            {
+              "role": "agent",
+              "time": "20:42:57.000",
+              "text": "Este atendimento será encerrado devido à falta de interação. Se ainda precisar de suporte, basta enviar  uma nova mensagem e estaremos prontos para ajudar. 😊"
+            }
+          ],
+          "context_conversation": {
+            "problema_principal": "Ola pessoal, tudo bem? | Estou precisando cancelar uma nota, e o pin que me passou nao dá para cancelar",
+            "produto_funcionalidade": "NXZ ERP — **Fiscal** (NFe/NFCe/SAT)",
+            "causa_raiz": "nao identificada",
+            "resolucao": "Este atendimento será encerrado devido à falta de interação. Se ainda precisar de suporte, basta enviar  uma nova mensagem e estaremos prontos para ajudar. 😊",
+            "observacoes": "Encerrado por inatividade do cliente | Solicitacao de cancelamento"
+          }
+        },
+        {
+          "conversation_id": 1400,
+          "messages": [
+            {
+              "role": "customer",
+              "time": "16:40:05.000",
+              "text": "Boa tarde Bianca"
+            },
+            {
+              "role": "customer",
+              "time": "16:40:23.000",
+              "text": "A contabilidade pediu para solicitar pra inutilizarem as numerações, por gentileza."
+            },
+            {
+              "role": "agent",
+              "time": "20:50:01.000",
+              "text": "Pode seguir este passo a passo com o usuário gestor para inutilização das notas: https://www.nexuz.app/knowledge/article/71"
+            }
+          ],
+          "context_conversation": {
+            "problema_principal": "Boa tarde Bianca | A contabilidade pediu para solicitar pra inutilizarem as numerações, por gentileza.",
+            "produto_funcionalidade": "indefinido",
+            "causa_raiz": "**Falta de conhecimento** do usuario sobre o sistema",
+            "resolucao": "Pode seguir este passo a passo com o usuário gestor para inutilização das notas: https://www.nexuz.app/knowledge/article/71",
+            "observacoes": null
+          }
+        },
+        {
+          "conversation_id": 1396,
+          "messages": [
+            {
+              "role": "customer",
+              "time": "14:00:11.000",
+              "text": "Bom dia"
+            },
+            {
+              "role": "customer",
+              "time": "14:00:34.000",
+              "text": "42.806.289/0001-80"
+            },
+            {
+              "role": "customer",
+              "time": "14:01:05.000",
+              "text": "A contabilidade está me perguntando sobre essas 5 nf, poderia verificar pra mim?"
+            },
+            {
+              "role": "agent",
+              "time": "15:13:27.000",
+              "text": "Olá, bom dia!\nTudo bem? Sou a Bianca e vou seguir com seu atendimento"
+            },
+            {
+              "role": "agent",
+              "time": "15:18:10.000",
+              "text": "Estas numerações não foram encontradas em sistema."
+            },
+            {
+              "role": "customer",
+              "time": "15:54:03.000",
+              "text": "Ok vou avisar para a contabilidade"
+            }
+          ],
+          "context_conversation": {
+            "problema_principal": "A contabilidade está me perguntando sobre essas 5 nf, poderia verificar pra mim? | Ok vou avisar para a contabilidade",
+            "produto_funcionalidade": "indefinido",
+            "causa_raiz": "nao identificada",
+            "resolucao": "Estas numerações não foram encontradas em sistema.",
+            "observacoes": null
+          }
+        }
+      ],
+      "decision": "APROVAR",
+      "observation": "-"
+    },
+    {
+      "product": "NXZ Pay Go",
+      "theme": "Configuracao e integracao da maquininha NXZ Pay Go",
+      "frequency": 4,
+      "action": "Atualizar",
+      "existing_article": "Como Integrar o NXZ PAY GO (Smart POS) com o NXZ GO (draft)",
+      "representative_examples": [
+        {
+          "conversation_id": 1355,
+          "messages": [
+            {
+              "role": "customer",
+              "time": "00:25:40.000",
+              "text": "Vcs conseguem me ajudar?"
+            },
+            {
+              "role": "agent",
+              "time": "11:15:43.000",
+              "text": "Bom dia Eduardo. Aqui é o Luiz da Nexuz. Tudo bem?"
+            },
+            {
+              "role": "agent",
+              "time": "11:15:58.000",
+              "text": "Essa maquininha é nova? Está configurando ela agora?"
+            },
+            {
+              "role": "customer",
+              "time": "14:09:20.000",
+              "text": "Sim ela é nova"
+            },
+            {
+              "role": "customer",
+              "time": "14:09:44.000",
+              "text": "Isso, estava colocando era para conectar c o sistema agora"
+            },
+            {
+              "role": "agent",
+              "time": "15:59:20.000",
+              "text": "Essa maquininha é da PagSeguro? Quando for uma máquina nova, precisa nos avisar para realizarmos alguns passos de configuração"
+            },
+            {
+              "role": "customer",
+              "time": "16:07:35.000",
+              "text": "Ok"
+            },
+            {
+              "role": "customer",
+              "time": "16:07:42.000",
+              "text": "O que precisamos fazer então?"
+            },
+            {
+              "role": "agent",
+              "time": "18:25:09.000",
+              "text": "Irei confirmar algumas informações."
+            },
+            {
+              "role": "agent",
+              "time": "18:48:32.000",
+              "text": "Preciso da informação de serial number Eduardo. Geralmente fica atrás da maquininha."
+            },
+            {
+              "role": "customer",
+              "time": "18:48:42.000",
+              "text": "Ok"
+            },
+            {
+              "role": "agent",
+              "time": "18:58:42.000",
+              "text": "Pronto Eduardo. No caso da maquininha da Pag Seguro, eles solicitam que nós abrirmos um ticket e eles fazem essa vinculação e retornam por email. Pode levar até 2 dias úteis para recebermos. Mas caso aconteça antes, eu entro em contato imediatamente com você para atualizarmos a maquininha e fecharmos a configuração dela. Pode ser?"
+            },
+            {
+              "role": "customer",
+              "time": "19:01:25.000",
+              "text": "Ok, obrigado"
+            },
+            {
+              "role": "agent",
+              "time": "11:39:31.000",
+              "text": "Olá, \nTudo bem?\nAqui é da Nexuz Sistemas."
+            },
+            {
+              "role": "customer",
+              "time": "19:38:08.000",
+              "text": "Boa tarde"
+            },
+            {
+              "role": "customer",
+              "time": "19:38:12.000",
+              "text": "Como está a questão daquele chamado que abrimos?"
+            },
+            {
+              "role": "agent",
+              "time": "19:41:21.000",
+              "text": "Boa tarde Eduardo. Para isso que entrei em contato. Já foi realizado o vinculo por parte da Pag Seguro. Pode atualizar a maquininha e verifica se nosso aplicativo já está disponível."
+            },
+            {
+              "role": "customer",
+              "time": "19:42:36.000",
+              "text": "Dos CFOP"
+            },
+            {
+              "role": "customer",
+              "time": "19:42:55.000",
+              "text": "Que vcs me pediram a planilha, ai minha contabilidade mandou"
+            },
+            {
+              "role": "customer",
+              "time": "19:43:12.000",
+              "text": "Ah, ok, mas eu comentei sobre aquele outro chamado"
+            },
+            {
+              "role": "agent",
+              "time": "19:48:08.000",
+              "text": "A planilha já esta sendo validada e será finalizado assim que o cadastro estiver atualizado."
+            },
+            {
+              "role": "customer",
+              "time": "19:48:31.000",
+              "text": "Ok"
+            },
+            {
+              "role": "agent",
+              "time": "20:03:08.000",
+              "text": "Assim que finalizarmos, te dou um retorno por aqui."
+            },
+            {
+              "role": "agent",
+              "time": "20:03:28.000",
+              "text": "Qualquer dúvida, fico a disposição."
+            }
+          ],
+          "context_conversation": {
+            "problema_principal": "Vcs conseguem me ajudar? | Sim ela é nova | Isso, estava colocando era para conectar c o sistema agora",
+            "produto_funcionalidade": "NXZ Pay Go — **Maquininha de Cartao**",
+            "causa_raiz": "nao identificada",
+            "resolucao": "Qualquer dúvida, fico a disposição.",
+            "observacoes": null
+          }
+        },
+        {
+          "conversation_id": 1352,
+          "messages": [
+            {
+              "role": "customer",
+              "time": "18:45:58.000",
+              "text": "Oi"
+            },
+            {
+              "role": "customer",
+              "time": "18:46:12.000",
+              "text": "40288652000198"
+            },
+            {
+              "role": "customer",
+              "time": "18:48:16.000",
+              "text": "Oi"
+            },
+            {
+              "role": "customer",
+              "time": "18:50:25.000",
+              "text": "Olá"
+            },
+            {
+              "role": "agent",
+              "time": "18:56:51.000",
+              "text": "Boa tarde. O atendimento é sobre a configuração da maquininha? Já estamos em contato com o Julio para configurar."
+            },
+            {
+              "role": "customer",
+              "time": "18:59:23.000",
+              "text": "Ok"
+            },
+            {
+              "role": "customer",
+              "time": "18:59:24.000",
+              "text": "Estou aqui na loja com ele"
+            },
+            {
+              "role": "customer",
+              "time": "19:02:56.000",
+              "text": "Oi"
+            },
+            {
+              "role": "customer",
+              "time": "19:03:03.000",
+              "text": "Nosso cliente tem 2 maquinas"
+            },
+            {
+              "role": "agent",
+              "time": "19:03:15.000",
+              "text": "Vamos manter o atendimento apenas na outra conversa, tudo bem? Se tiver outra dúvida, sobre outro assunto, estou disponível."
+            },
+            {
+              "role": "customer",
+              "time": "19:03:15.000",
+              "text": "O aplicativo está disponível somente em uma máquina"
+            },
+            {
+              "role": "customer",
+              "time": "19:04:15.000",
+              "text": "Ok!"
+            }
+          ],
+          "context_conversation": {
+            "problema_principal": "Estou aqui na loja com ele | Nosso cliente tem 2 maquinas | O aplicativo está disponível somente em uma máquina",
+            "produto_funcionalidade": "NXZ Pay Go — **Maquininha de Cartao**",
+            "causa_raiz": "**Configuracao incorreta** no sistema",
+            "resolucao": "Vamos manter o atendimento apenas na outra conversa, tudo bem? Se tiver outra dúvida, sobre outro assunto, estou disponível.",
+            "observacoes": null
+          }
+        },
+        {
+          "conversation_id": 1433,
+          "messages": [
+            {
+              "role": "customer",
+              "time": "11:31:11.000",
+              "text": "Bom dia"
+            },
+            {
+              "role": "customer",
+              "time": "11:31:15.000",
+              "text": "Tudo bem ?"
+            },
+            {
+              "role": "customer",
+              "time": "11:31:49.000",
+              "text": "44140554000160"
+            },
+            {
+              "role": "agent",
+              "time": "11:39:02.000",
+              "text": "Bom dia Rejane. Aqui é o Luiz da Nexuz. Como posso te ajudar?"
+            },
+            {
+              "role": "customer",
+              "time": "11:39:18.000",
+              "text": "Bom dia Luiz"
+            },
+            {
+              "role": "customer",
+              "time": "11:39:21.000",
+              "text": "Tudo bem"
+            },
+            {
+              "role": "customer",
+              "time": "11:39:55.000",
+              "text": "2 assuntos \n Pedi pra Go coffee alterar o preço da empanada de 5 queijos e costelinha barbecue por 15,00"
+            },
+            {
+              "role": "customer",
+              "time": "11:40:31.000",
+              "text": "Outro contratei outra máquina de cartão que vcs indicaram \nMas comentaram que vcs tem que arrumar pra depois enviar\nQueria ver qual a previsão"
+            },
+            {
+              "role": "agent",
+              "time": "11:41:54.000",
+              "text": "Sobre a alteração de preço, verifiquei aqui e já recebemos o ticket interno da Go Coffee."
+            },
+            {
+              "role": "agent",
+              "time": "11:43:34.000",
+              "text": "Assim que alterarmos o preço, retornamos o contato."
+            },
+            {
+              "role": "agent",
+              "time": "11:44:34.000",
+              "text": "Qual maquininha?"
+            },
+            {
+              "role": "agent",
+              "time": "11:44:46.000",
+              "text": "Já solicitou pra adquirente ?"
+            },
+            {
+              "role": "customer",
+              "time": "11:44:51.000",
+              "text": "Alan que vcs indicaram"
+            },
+            {
+              "role": "agent",
+              "time": "11:47:26.000",
+              "text": "Temos mais de uma parceira. Qual seria a que você contratou?"
+            },
+            {
+              "role": "customer",
+              "time": "11:47:51.000",
+              "text": "Xpay"
+            },
+            {
+              "role": "customer",
+              "time": "11:47:59.000",
+              "text": "Ok"
+            },
+            {
+              "role": "agent",
+              "time": "11:56:42.000",
+              "text": "Verifiquei com o time técnico e a maquininha da Xpay esta passando por uns testes finais, para que não ocorra nenhum problema quando for integrar ao seu sistema, o prazo é de 7 a 10 dias uteis, caso finalize antes eu vou entrar em contato contigo."
+            },
+            {
+              "role": "agent",
+              "time": "13:08:24.000",
+              "text": "Qualquer dúvida, estou a disposição."
+            }
+          ],
+          "context_conversation": {
+            "problema_principal": "Tudo bem ? | Bom dia Luiz | Tudo bem",
+            "produto_funcionalidade": "NXZ Pay Go — **Maquininha de Cartao**",
+            "causa_raiz": "**Procedimento administrativo** (financeiro/contratual)",
+            "resolucao": "Qualquer dúvida, estou a disposição.",
+            "observacoes": null
+          }
+        }
+      ],
+      "decision": "APROVAR",
+      "observation": "-"
+    }
+  ]
+}

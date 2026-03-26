@@ -1,7 +1,7 @@
 {
   "squad": "nxz-faq-chatwoot",
   "status": "running",
-  "step": { "current": 3, "total": 12, "label": "analyze-patterns" },
+  "step": { "current": 5, "total": 12, "label": "generate-faqs" },
   "agents": [
     {
       "id": "extractor",
@@ -15,7 +15,7 @@
       "id": "analyst",
       "name": "Ana Analista",
       "icon": "📊",
-      "status": "working",
+      "status": "done",
       "deliverTo": null,
       "desk": { "col": 2, "row": 1 }
     },
@@ -23,7 +23,7 @@
       "id": "writer",
       "name": "Fred FAQ",
       "icon": "✍️",
-      "status": "idle",
+      "status": "working",
       "deliverTo": null,
       "desk": { "col": 3, "row": 1 }
     },
@@ -53,11 +53,11 @@
     }
   ],
   "handoff": {
-    "from": "extractor",
-    "to": "analyst",
-    "message": "172 conversas extraidas (164 com mensagens de clientes). 56 NXZ ERP, 18 KDS, 7 Go, 3 Pay Go, 1 Delivery, 87 indefinido.",
-    "completedAt": "2026-03-26T16:06:30-03:00"
+    "from": "checkpoint",
+    "to": "writer",
+    "message": "5 topicos aprovados para geracao: Notas Fiscais, Cupons, Cancelamento Vendas, Cancelamento NF, Pay Go.",
+    "completedAt": "2026-03-26T17:02:00-03:00"
   },
-  "startedAt": "2026-03-26T15:57:58-03:00",
-  "updatedAt": "2026-03-26T16:07:00-03:00"
+  "startedAt": "2026-03-26T16:46:08-03:00",
+  "updatedAt": "2026-03-26T17:02:30-03:00"
 }

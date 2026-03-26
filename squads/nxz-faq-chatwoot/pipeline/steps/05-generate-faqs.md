@@ -2,7 +2,7 @@
 id: generate-faqs
 agent: writer
 execution: inline
-inputFile: squads/nxz-faq-chatwoot/output/approved-topics.json
+inputFile: squads/nxz-faq-chatwoot/output/approved-topics.md
 outputFile: squads/nxz-faq-chatwoot/output/faqs_index.md
 ---
 
@@ -16,9 +16,12 @@ dos agentes humanos.
 
 ## Instrucoes
 
-1. Leia os topicos aprovados em `output/approved-topics.json`
-   - Topicos com decisao `AJUSTAR` devem incorporar a observacao de Carol
-   - Topicos com `ESCALAR_LUIZ` NAO devem ser processados aqui
+1. Leia os topicos aprovados em `output/approved-topics.md`
+   - Identifique os blocos delimitados por `<!-- TOPICO_INICIO -->` e `<!-- TOPICO_FIM -->`
+   - Processe apenas blocos onde `**Decisao:**` seja `APROVAR` ou `AJUSTAR`
+   - Blocos com `ESCALAR_LUIZ` ou `REJEITAR` devem ser ignorados
+   - Para topicos com `AJUSTAR`, a observacao de Carol em `**Observacao:**` e
+     obrigatoria — incorpore-a ao escopo do artigo antes de escrever
 2. Leia os templates em `pipeline/data/faq-templates.md`
 3. Leia as categorias em `pipeline/data/product-categories.md`
 4. Para cada topico, **antes de escrever o artigo**, identifique se ele contem
@@ -29,6 +32,38 @@ dos agentes humanos.
 6. Salve em: `output/faqs/{produto-slug}/{categoria-slug}/{slug}.md`
 7. Registre em `output/faqs_index.md` todos os artigos gerados, com o campo
    `navigation_validated: true/false/not_applicable` por artigo.
+
+## Como parsear o approved-topics.md
+
+O arquivo usa marcadores consistentes. Para cada bloco de topico:
+
+- Inicio do bloco: linha `<!-- TOPICO_INICIO -->`
+- Fim do bloco: linha `<!-- TOPICO_FIM -->`
+- Produto: linha com `**Produto:**`
+- Tema: linha com `**Tema:**`
+- Decisao: linha com `**Decisao:**`
+- Observacao de Carol: linha com `**Observacao:**`
+
+Exemplo de leitura:
+
+```
+<!-- TOPICO_INICIO -->
+### Topico 1 — NXZ ERP: Abertura de caixa
+
+**Produto:** NXZ ERP
+**Tema:** Abertura de caixa
+**Frequencia:** 15 conversas
+**Acao Recomendada:** Criar
+**Decisao:** APROVAR
+**Observacao:** -
+
+<!-- TOPICO_FIM -->
+```
+
+Para o conteudo substantivo do artigo (o que o cliente pergunta, o problema
+real, a causa raiz), consulte o arquivo `output/topics-to-generate.md` e localize
+o bloco correspondente pelo mesmo **Produto** e **Tema**. As conversas reais dos
+clientes e o context_conversation estao detalhados la.
 
 ## Regra Critica: Proibido Inventar Caminhos de Menu
 
