@@ -3,73 +3,74 @@
 ## Resumo
 - **Data:** 2026-03-27
 - **Departamento:** Marketing
-- **Nível:** Mínimo (Hierarquia Spaces/Folders/Lists)
-- **Total de operações:** 10
-- **Sucesso (API):** 8
-- **Já existia:** 1 (Space)
-- **Manual required:** 1 (Custom Statuses — API limitation)
+- **Nível:** Mínimo (Hierarquia Spaces/Folders/Lists + Custom Statuses)
+- **Total de operações:** 17
+- **Sucesso (API):** 10 (hierarquia via API v2)
+- **Sucesso (Playwright):** 6 (custom statuses via browser automation)
+- **Recriado:** 1 (Space foi deletado e recriado)
+- **Manual required:** 0
 
 ---
 
 ## Departamento: Marketing
 
 ### Space: Marketing
-- [✅] Já existia — ID: `90174933772`
-- Criado manualmente pelo usuário antes da execução
+- [✅] Criado via API v2 — ID: `90174933917`
+- Recriado após deleção do space anterior (ID: 90174933772)
 
 ### Folder: Conteúdo
-- [✅] Criado via API — ID: `90177771029`
+- [✅] Criado via API — ID: `90177771231`
+- [✅] Custom Statuses configurados via Playwright (nível Folder — herança automática para 4 Lists)
+- Statuses: Backlog → Briefing → Em Produção → Revisão → Agendado → Publicado
 
 #### List: Redes Sociais
-- [✅] Criada via API — ID: `901712369311`
+- [✅] Criada via API — ID: `901712369683`
 - Descrição: Posts, stories, reels para Instagram, LinkedIn, YouTube, TikTok
-- Statuses atuais: to do → complete (padrão)
-- [⚠️ MANUAL] Statuses customizados necessários (ver abaixo)
+- [✅] Statuses herdados do Folder Conteúdo
 
 #### List: Blog & Artigos
-- [✅] Criada via API — ID: `901712369313`
+- [✅] Criada via API — ID: `901712369684`
 - Descrição: Artigos de blog, cases de sucesso, conteúdo SEO
-- [⚠️ MANUAL] Statuses customizados necessários (ver abaixo)
+- [✅] Statuses herdados do Folder Conteúdo
 
 #### List: Email Marketing
-- [✅] Criada via API — ID: `901712369314`
+- [✅] Criada via API — ID: `901712369685`
 - Descrição: Newsletters, automações de email, campanhas de nurturing
-- [⚠️ MANUAL] Statuses customizados necessários (ver abaixo)
+- [✅] Statuses herdados do Folder Conteúdo
 
 #### List: Vídeos
-- [✅] Criada via API — ID: `901712369315`
+- [✅] Criada via API — ID: `901712369686`
 - Descrição: Vídeos tutoriais, cases, conteúdo para YouTube e Reels
-- [⚠️ MANUAL] Statuses customizados necessários (ver abaixo)
+- [✅] Statuses herdados do Folder Conteúdo
 
 ### Folder: Campanhas
-- [✅] Criado via API — ID: `90177771031`
+- [✅] Criado via API — ID: `90177771232`
+- [✅] Custom Statuses configurados via Playwright (nível Folder — herança automática para 2 Lists)
+- Statuses: Planejamento → Em Execução → Pausada → Concluída
 
 #### List: Campanhas Ativas
-- [✅] Criada via API — ID: `901712369316`
+- [✅] Criada via API — ID: `901712369687`
 - Descrição: Campanhas em andamento — lançamentos, promoções, sazonais
-- [⚠️ MANUAL] Statuses customizados necessários (ver abaixo)
+- [✅] Statuses herdados do Folder Campanhas
 
 #### List: Campanhas Concluídas
-- [✅] Criada via API — ID: `901712369317`
+- [✅] Criada via API — ID: `901712369688`
 - Descrição: Arquivo de campanhas finalizadas
-- [⚠️ MANUAL] Statuses customizados necessários (ver abaixo)
+- [✅] Statuses herdados do Folder Campanhas
 
 ### List: Requests Internos (direto no Space)
-- [✅] Criada via API — ID: `901712369318`
+- [✅] Criada via API — ID: `901712369689`
 - Descrição: Pedidos de materiais de marketing de outros departamentos
-- [⚠️ MANUAL] Statuses customizados necessários (ver abaixo)
+- [✅] Custom Statuses configurados via Playwright (nível List)
+- Statuses: Novo → Em Avaliação → Aceito → Em Produção → Entregue / Recusado
 
 ---
 
-## Ações Manuais Pendentes: Custom Statuses
+## Custom Statuses — Configurados Automaticamente
 
-A API do ClickUp **não suporta criação/modificação de statuses programaticamente**. Esta é uma limitação documentada da API v2.
+### Folder Conteúdo (Redes Sociais, Blog, Email, Vídeos)
 
-### Statuses para Lists de Conteúdo (Redes Sociais, Blog, Email, Vídeos)
-
-Configurar no Space Marketing → Folder Conteúdo → cada List:
-
-| Status | Grupo | Cor sugerida |
+| Status | Grupo | Cor |
 |---|---|---|
 | Backlog | Active | Cinza |
 | Briefing | Active | Azul |
@@ -78,29 +79,25 @@ Configurar no Space Marketing → Folder Conteúdo → cada List:
 | Agendado | Active | Roxo |
 | Publicado | Closed | Verde |
 
-**Dica:** Configure os statuses no **Folder Conteúdo** (nível de Folder) para que todas as 4 Lists herdem automaticamente.
+### Folder Campanhas (Campanhas Ativas, Campanhas Concluídas)
 
-### Statuses para Campanhas Ativas e Concluídas
-
-| Status | Grupo | Cor sugerida |
+| Status | Grupo | Cor |
 |---|---|---|
 | Planejamento | Active | Azul |
 | Em Execução | Active | Amarelo |
 | Pausada | Active | Cinza |
 | Concluída | Closed | Verde |
 
-**Dica:** Configure no **Folder Campanhas** para herança automática.
+### List Requests Internos
 
-### Statuses para Requests Internos
-
-| Status | Grupo | Cor sugerida |
+| Status | Grupo | Cor |
 |---|---|---|
 | Novo | Active | Azul |
 | Em Avaliação | Active | Amarelo |
-| Aceito | Active | Verde claro |
+| Aceito | Active | Verde |
 | Em Produção | Active | Laranja |
 | Entregue | Closed | Verde |
-| Recusado | Closed | Vermelho |
+| Recusado | Done | Vermelho |
 
 ---
 
@@ -109,22 +106,24 @@ Configurar no Space Marketing → Folder Conteúdo → cada List:
 | Recurso | ID |
 |---|---|
 | Workspace | 3086998 |
-| Space: Marketing | 90174933772 |
-| Folder: Conteúdo | 90177771029 |
-| Folder: Campanhas | 90177771031 |
-| List: Redes Sociais | 901712369311 |
-| List: Blog & Artigos | 901712369313 |
-| List: Email Marketing | 901712369314 |
-| List: Vídeos | 901712369315 |
-| List: Campanhas Ativas | 901712369316 |
-| List: Campanhas Concluídas | 901712369317 |
-| List: Requests Internos | 901712369318 |
+| Space: Marketing | 90174933917 |
+| Folder: Conteúdo | 90177771231 |
+| Folder: Campanhas | 90177771232 |
+| List: Redes Sociais | 901712369683 |
+| List: Blog & Artigos | 901712369684 |
+| List: Email Marketing | 901712369685 |
+| List: Vídeos | 901712369686 |
+| List: Campanhas Ativas | 901712369687 |
+| List: Campanhas Concluídas | 901712369688 |
+| List: Requests Internos | 901712369689 |
 
 ---
 
 ## Notas Técnicas
 
-- **Método usado:** API v2 do ClickUp via curl (o MCP não suporta criação de Spaces)
+- **Hierarquia criada via:** API v2 do ClickUp (curl direto)
+- **Custom Statuses criados via:** Playwright browser automation (API v2 não suporta)
 - **Token:** Salvo em `.env` como `CLICKUP_API_TOKEN`
-- **Limitação principal:** Custom Statuses não podem ser criados via API — é a feature request mais votada da API do ClickUp
+- **Limitação superada:** Custom Statuses não podem ser criados via API v2 — resolvido com automação de browser
+- **MCP ClickUp:** Usado para consultas, mas não suporta criação de Spaces nem modificação de statuses
 - **Plano recomendado:** Unlimited ($7/user/mês) para Custom Fields ilimitados e 10.000 automações/mês
