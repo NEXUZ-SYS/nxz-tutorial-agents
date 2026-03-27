@@ -1,0 +1,63 @@
+squad:
+  code: nxz-clickup-setup
+  name: "ClickUp Setup — Nexuz"
+  description: >
+    Squad especialista em implantação e configuração do ClickUp para a Nexuz.
+    Configura Spaces, Folders, Lists, Custom Fields, Automações e OKRs para
+    6 departamentos: Marketing, Vendas, Financeiro/Backoffice, Desenvolvimento,
+    Suporte e CS. Usa o MCP do ClickUp para executar configurações diretamente.
+  version: "1.0.0"
+  performance_mode: high
+  created: "2026-03-27"
+
+  skills:
+    - web_search
+    - web_fetch
+
+  data:
+    - pipeline/data/research-brief.md
+    - pipeline/data/domain-framework.md
+    - pipeline/data/quality-criteria.md
+    - pipeline/data/output-examples.md
+    - pipeline/data/anti-patterns.md
+
+  pipeline:
+    - step: 01
+      name: "checkpoint-config"
+      file: pipeline/steps/step-01-checkpoint-config.md
+
+    - step: 02
+      name: "research-clickup-docs"
+      file: pipeline/steps/step-02-research-clickup-docs.md
+
+    - step: 03
+      name: "checkpoint-approve-research"
+      file: pipeline/steps/step-03-checkpoint-approve-research.md
+
+    - step: 04
+      name: "brainstorm-design"
+      file: pipeline/steps/step-04-brainstorm-design.md
+
+    - step: 05
+      name: "checkpoint-approve-design"
+      file: pipeline/steps/step-05-checkpoint-approve-design.md
+
+    - step: 06
+      name: "configure-clickup"
+      file: pipeline/steps/step-06-configure-clickup.md
+
+    - step: 07
+      name: "checkpoint-review-config"
+      file: pipeline/steps/step-07-checkpoint-review-config.md
+
+    - step: 08
+      name: "audit-configuration"
+      file: pipeline/steps/step-08-audit-configuration.md
+
+    - step: 09
+      name: "generate-documentation"
+      file: pipeline/steps/step-09-generate-documentation.md
+
+    - step: 10
+      name: "checkpoint-final-approval"
+      file: pipeline/steps/step-10-checkpoint-final-approval.md

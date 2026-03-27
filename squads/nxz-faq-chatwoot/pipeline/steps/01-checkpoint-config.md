@@ -43,3 +43,19 @@ Selecione o portal desejado.
 
 - Sim (baseline, sem comparativo com rodada anterior)
 - Nao (incluir comparativo com rodada anterior)
+
+### 5. Quais caixas de entrada (inboxes) devem ser incluidas na extracao?
+
+Selecao multipla. Marque todas as inboxes desejadas.
+Inboxes disponiveis no Chatwoot (https://chatwoot.saas.nexuz.app):
+
+- [ ] ID 11 — implantacao
+- [ ] ID 19 — Relacionamento
+- [ ] ID 20 — financeiro
+- [ ] ID 21 — Suporte Nexuz
+- [ ] Todas as inboxes (sem filtro de inbox)
+
+Default recomendado: ID 19 (Relacionamento) + ID 21 (Suporte Nexuz).
+Se nenhuma inbox for selecionada, usar o default recomendado.
+
+Registre a selecao no run-config.md como lista de IDs: inbox_ids: [19, 21]

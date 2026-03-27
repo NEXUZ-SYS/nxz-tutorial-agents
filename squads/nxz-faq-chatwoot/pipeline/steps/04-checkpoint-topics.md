@@ -25,6 +25,19 @@ com o valor `-`.
 **O pipeline NUNCA deve preencher decisoes automaticamente. O valor padrao e
 `PENDENTE`, nao `APROVAR`.**
 
+Para cada topico, inclua tambem o campo `**Conversas:**` com um link relativo
+para o grupo de conversas correspondente no arquivo
+`extracted-conversations-by-topic.md`. O link deve apontar para a ancora do
+topico usando o mesmo slug gerado no step 03. Exemplo:
+
+```
+**Conversas:** [Ver grupo de conversas](extracted-conversations-by-topic.md#topico-1-abertura-de-caixa)
+```
+
+O slug da ancora segue o padrao `topico-{N}-{slug-do-tema}` onde o slug e o
+nome do tema em lowercase, sem acentos, com hifens no lugar de espacos e
+caracteres especiais removidos — identico ao gerado no step 03.
+
 ### PASSO 2 — Enviar notificacao Telegram (ANTES de exibir no terminal)
 
 Siga o protocolo de notificacao Telegram definido em
@@ -147,6 +160,7 @@ devem iniciar como `PENDENTE`.
 **Acao Recomendada:** Criar
 **Decisao:** PENDENTE
 **Observacao:** -
+**Conversas:** [Ver grupo de conversas](extracted-conversations-by-topic.md#topico-1-abertura-de-caixa)
 
 <!-- TOPICO_FIM -->
 
@@ -159,6 +173,7 @@ devem iniciar como `PENDENTE`.
 **Acao Recomendada:** Atualizar
 **Decisao:** PENDENTE
 **Observacao:** -
+**Conversas:** [Ver grupo de conversas](extracted-conversations-by-topic.md#topico-2-configurar-cardapio)
 
 <!-- TOPICO_FIM -->
 ```
@@ -177,7 +192,7 @@ devem iniciar como `PENDENTE`.
 - O campo `**Decisao:**` deve conter exatamente um dos valores: `APROVAR`, `REJEITAR`, `AJUSTAR`, `ESCALAR_LUIZ`
 - O campo `**Observacao:**` e obrigatorio para `AJUSTAR` e `ESCALAR_LUIZ`; para os demais, use `-` se nao houver observacao
 - Os delimitadores `<!-- TOPICO_INICIO -->` e `<!-- TOPICO_FIM -->` devem ser mantidos — o writer usa esses marcadores para parsear
-- NAO alterar os campos **Produto**, **Tema** e **Frequencia** — eles identificam o topico de forma inequivoca
+- NAO alterar os campos **Produto**, **Tema**, **Frequencia** e **Conversas** — eles identificam o topico e dao acesso ao grupo de conversas de referencia
 - Voce tambem pode **adicionar um topico manualmente** — adicione um bloco novo seguindo o mesmo formato, com `**Acao:** Criar` e `**Decisao:** APROVAR` e `**Status Atual:** Manual`.
 - Voce tambem pode **alterar a prioridade** — reordene os blocos de topico se quiser mudar a ordem de geracao.
 
@@ -200,3 +215,4 @@ e aparecem como pendencias no relatorio da rodada. Eles NAO sao gerados agora.
 - O pipeline gerou `approved-topics.md` com decisoes pre-preenchidas (diferente de `PENDENTE`)
 - Carol nao confirma a aprovacao no terminal
 - Nenhum topico aprovado ou ajustado
+- O campo `**Conversas:**` foi omitido em qualquer topico do `approved-topics.md`

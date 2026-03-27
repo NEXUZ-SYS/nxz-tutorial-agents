@@ -23,11 +23,24 @@ entender o problema e a resolucao — nunca como base para o texto publicado.
 
 ## Instrucoes
 
-1. Leia o arquivo de configuracao para obter: periodo, volume
+1. Leia o arquivo de configuracao para obter: periodo, volume, inbox_ids
 2. Leia as credenciais do Chatwoot do arquivo `.env`
 3. Filtre conversas resolvidas no periodo via POST /api/v1/accounts/{account_id}/conversations/filter
    - Status: resolved
    - Periodo: conforme configuracao
+   - Inbox: se inbox_ids estiver definido e nao for "Todas as inboxes", inclua o filtro
+     inbox_id no payload usando o operador "equal_to". Exemplo de payload:
+     ```json
+     {
+       "payload": [
+         {"attribute_key": "status", "filter_operator": "equal_to", "values": ["resolved"], "query_operator": "AND"},
+         {"attribute_key": "created_at", "filter_operator": "is_greater_than", "values": ["YYYY-MM-DD"], "query_operator": "AND"},
+         {"attribute_key": "inbox_id", "filter_operator": "equal_to", "values": [19], "query_operator": null}
+       ]
+     }
+     ```
+     Se inbox_ids contiver mais de uma inbox, execute a requisicao uma vez por inbox_id
+     e una os resultados antes de paginar, mantendo o volume total configurado.
    - Paginar com ?page=N ate atingir o volume configurado
 4. Para cada conversa:
    a. Extraia todas as mensagens via GET /api/v1/accounts/{account_id}/conversations/{id}/messages

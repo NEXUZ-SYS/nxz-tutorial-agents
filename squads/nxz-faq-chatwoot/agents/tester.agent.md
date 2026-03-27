@@ -35,8 +35,8 @@ Threads API que funciona corretamente:
 1. Criar thread: POST /api/v1/accounts/{account_id}/captain/copilot_threads
    - Body: `{"assistant_id": 3, "message": "{pergunta}"}`
 2. Aguardar 10 segundos para processamento
-3. Buscar mensagens do thread: GET /api/v1/accounts/{account_id}/captain/copilot_threads/{thread_id}/messages
-4. Identificar resposta do Captain (sender_type: "Captain::Assistant")
+3. Buscar mensagens do thread: GET /api/v1/accounts/{account_id}/captain/copilot_threads/{thread_id}/copilot_messages
+4. Identificar resposta do Captain (message_type: "assistant", ignorar "assistant_thinking")
 
 ### Classificacao de Respostas
 

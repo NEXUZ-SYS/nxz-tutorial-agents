@@ -1,0 +1,4 @@
+pipeline:
+  name: "ClickUp Setup Pipeline"
+  version: "1.0.0"
+  steps_dir: steps/

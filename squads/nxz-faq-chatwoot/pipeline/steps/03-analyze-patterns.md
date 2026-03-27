@@ -63,13 +63,19 @@ ambiguo, mas NUNCA devem ser usadas como base para o conteudo de FAQs.
 ...
 ```
 
-Tambem gere um arquivo Markdown estruturado para revisao humana e para o writer.
-O Markdown deve incluir, para cada topico, os exemplos representativos com as
-mensagens de role "customer" formatadas como blockquotes e o context_conversation
-em formato de lista — isso da ao writer e a Carol material suficiente para
-entender o problema real sem depender das respostas dos agentes.
+Tambem gere dois arquivos Markdown adicionais:
 
-- outputFile adicional: squads/nxz-faq-chatwoot/output/topics-to-generate.md
+1. `topics-to-generate.md` — estruturado para revisao humana e para o writer,
+   com exemplos representativos das conversas por topico.
+
+2. `extracted-conversations-by-topic.md` — arquivo de referencia com todas as
+   conversas agrupadas por topico, usado para navegacao no checkpoint de
+   aprovacao. Cada grupo deve ter uma ancora HTML no formato
+   `topico-{N}-{slug}` onde N e o numero do topico e slug e o nome do tema
+   em lowercase com hifens (ex: `topico-1-financeiro-cobrancas-mensalidades`).
+
+- outputFile adicional 1: squads/nxz-faq-chatwoot/output/extracted-conversations-by-topic.md
+- outputFile adicional 2: squads/nxz-faq-chatwoot/output/topics-to-generate.md
 
 ### Formato do topics-to-generate.md
 
@@ -165,9 +171,69 @@ Lembrete para o writer: as mensagens de role "agent" dentro dos exemplos estao
 presentes apenas para dar contexto da conversa. O conteudo das FAQs deve ser
 derivado exclusivamente das mensagens de role "customer" e do context_conversation.
 
+### Formato do extracted-conversations-by-topic.md
+
+O arquivo deve listar cada topico com sua ancora e as conversas que o compõem,
+no seguinte formato:
+
+```markdown
+# Conversas por Topico
+**Gerado em:** YYYY-MM-DD
+
+---
+
+<a id="topico-1-financeiro-cobrancas-mensalidades"></a>
+## Topico 1 — NXZ ERP: Financeiro — Cobranças e Mensalidades
+
+**Frequencia:** 17 conversas
+**Conversas incluidas:** #1513, #1479, #1406, ...
+
+### Conversa #1513
+
+**Canal:** WhatsApp
+**Contexto:**
+- **Problema principal:** ...
+- **Produto / Funcionalidade:** ...
+- **Causa raiz:** ...
+- **Resolucao:** ...
+- **Observacoes:** ...
+
+**Mensagens:**
+
+> **[cliente — 10:30]** texto da mensagem
+
+> **[agente — 10:31]** texto da mensagem
+
+---
+
+### Conversa #1479
+
+...
+
+---
+
+<a id="topico-2-nota-fiscal-configuracao-fiscal"></a>
+## Topico 2 — NXZ ERP: Nota Fiscal / Configuração Fiscal
+
+...
+```
+
+**Regras do extracted-conversations-by-topic.md:**
+
+- Cada topico DEVE ter uma ancora `<a id="topico-{N}-{slug}"></a>` imediatamente
+  antes do `## Topico N` correspondente
+- O slug e gerado a partir do nome do tema: lowercase, sem acentos, espacos
+  substituidos por hifens, caracteres especiais removidos
+- Inclua TODAS as conversas do grupo, nao apenas os exemplos representativos
+- O campo `context_conversation` de cada conversa deve ser exibido como lista
+  de bullets com labels em negrito
+- Mensagens devem ser formatadas como blockquotes com role e hora
+- Mantenha separadores `---` entre conversas e entre topicos
+
 ## Veto Conditions
 
 - Nenhum tema com 3+ ocorrencias identificado
 - Arquivo de conversas vazio ou corrompido
 - Campo context_conversation ausente em todas as conversas
 - Array messages ausente ou vazio em todas as conversas
+- Arquivo extracted-conversations-by-topic.md gerado sem ancoras HTML

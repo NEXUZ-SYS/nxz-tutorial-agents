@@ -49,6 +49,14 @@ Squad: `nxz-faq-chatwoot`
 - Artigos com `needs_expert_review: true` são sinalizados para que Carol acione o Luiz Claudio
 **Referência de conhecimento N1:** Luiz Claudio (escalado por Carol quando conteúdo técnico está fora da sua área)
 
+**Inboxes do Chatwoot (mapeamento real, verificado via API em 2026-03-27):**
+- ID 19 — Relacionamento (Channel::Whatsapp) — RECOMENDADO para FAQ
+- ID 21 — Suporte Nexuz (Channel::WebWidget) — RECOMENDADO para FAQ
+- ID 11 — implantacao (Channel::Api) — incluir apenas se quiser FAQs de implantacao
+- ID 20 — financeiro (Channel::Api) — NAO recomendado; cobrancas automatizadas
+
+**Decisao: filtro por inbox_ids (nao channels_filter):** A pergunta #5 do checkpoint-config usa inbox_ids (IDs numericos reais do Chatwoot) em vez de channel_type generico. O run-config.md registra `inbox_ids: [19, 21]`. O step 02-extract-tickets filtra via `attribute_key: inbox_id` na API de filtros do Chatwoot. Motivacao: inboxes sao mais precisas que channel_type — duas inboxes do mesmo tipo (ex: duas WhatsApp) precisariam de filtro distinto.
+
 **Frequência:** quinzenal (padrão inicial); ampliar para semanal após validação de qualidade
 **Idioma:** pt_BR
 

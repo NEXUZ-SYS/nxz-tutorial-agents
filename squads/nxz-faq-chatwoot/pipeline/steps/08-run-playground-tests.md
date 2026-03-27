@@ -21,8 +21,8 @@ Threads API e avaliar se as respostas utilizam as FAQs publicadas corretamente.
    a. Crie um thread: POST /api/v1/accounts/{account_id}/captain/copilot_threads
       - Body: `{"assistant_id": 3, "message": "{pergunta}"}`
    b. Aguarde 10 segundos
-   c. Busque mensagens: GET .../copilot_threads/{thread_id}/messages
-   d. Identifique resposta do Captain (sender_type: "Captain::Assistant")
+   c. Busque mensagens: GET .../copilot_threads/{thread_id}/copilot_messages
+   d. Identifique resposta do Captain (message_type: "assistant", ignorar "assistant_thinking")
    e. Se nao houver resposta em 30s, registre como TIMEOUT
    f. Classifique: ACERTOU, PARCIAL, GENERICO, ERROU ou TIMEOUT
    g. Justifique a classificacao em 1-2 frases

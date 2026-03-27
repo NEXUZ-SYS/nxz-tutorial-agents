@@ -1,7 +1,7 @@
 {
   "squad": "nxz-faq-chatwoot",
   "status": "running",
-  "step": { "current": 10, "total": 12, "label": "checkpoint-review" },
+  "step": { "current": 4, "total": 12, "label": "checkpoint-topics" },
   "agents": [
     {
       "id": "extractor",
@@ -23,7 +23,7 @@
       "id": "writer",
       "name": "Fred FAQ",
       "icon": "✍️",
-      "status": "done",
+      "status": "idle",
       "deliverTo": null,
       "desk": { "col": 3, "row": 1 }
     },
@@ -31,7 +31,7 @@
       "id": "curator",
       "name": "Clara Curadora",
       "icon": "🎯",
-      "status": "done",
+      "status": "idle",
       "deliverTo": null,
       "desk": { "col": 1, "row": 2 }
     },
@@ -39,7 +39,7 @@
       "id": "tester",
       "name": "Tina Teste",
       "icon": "🧪",
-      "status": "done",
+      "status": "idle",
       "deliverTo": null,
       "desk": { "col": 2, "row": 2 }
     },
@@ -47,17 +47,17 @@
       "id": "publisher",
       "name": "Paulo Publisher",
       "icon": "📤",
-      "status": "done",
+      "status": "idle",
       "deliverTo": null,
       "desk": { "col": 3, "row": 2 }
     }
   ],
   "handoff": {
-    "from": "publisher",
+    "from": "analyst",
     "to": "checkpoint",
-    "message": "Notificacao enviada para Carol. 2 FAQs prontas para revisao.",
-    "completedAt": "2026-03-26T18:25:10-03:00"
+    "message": "22 topicos identificados para geracao de FAQ, prontos para aprovacao",
+    "completedAt": "2026-03-27T12:20:00-03:00"
   },
-  "startedAt": "2026-03-26T17:57:09-03:00",
-  "updatedAt": "2026-03-26T18:25:30-03:00"
+  "startedAt": "2026-03-27T12:03:05-03:00",
+  "updatedAt": "2026-03-27T12:21:00-03:00"
 }

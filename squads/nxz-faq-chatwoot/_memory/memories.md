@@ -7,6 +7,8 @@
 - Chatwoot Account: definido em .env (CHATWOOT_ACCOUNT_ID)
 - Captain assistant: NXZ AI (ID: 3)
 - Metodo de teste: Copilot Threads API (Playground retorna saudacao generica)
+- Endpoint de leitura: GET .../copilot_threads/{id}/copilot_messages (NAO /messages)
+- Filtrar message_type: "assistant" (ignorar "assistant_thinking")
 - Validadora: Carol Oliveira (TELEGRAM_NOTIFY_CHAT_ID)
 - Admin: Walter Frey (TELEGRAM_ADMIN_CHAT_ID)
 - Frequencia: Quinzenal

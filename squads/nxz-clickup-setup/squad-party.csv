@@ -1,0 +1,6 @@
+id,name,title,icon,path,execution
+researcher,Duda Documentação,Pesquisadora de docs ClickUp,🔍,./agents/researcher.agent.md,subagent
+architect,Ernesto Estrutura,Arquiteto de Workspace,📐,./agents/architect.agent.md,inline
+configurator,Carlos Configurador,Executor via ClickUp MCP,⚙️,./agents/configurator.agent.md,inline
+reviewer,Rui Revisão,Revisor de Configuração,✅,./agents/reviewer.agent.md,inline
+trainer,Tiago Treinamento,Gerador de Documentação,📚,./agents/trainer.agent.md,inline
