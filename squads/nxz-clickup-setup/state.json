@@ -1,0 +1,55 @@
+{
+  "squad": "nxz-clickup-setup",
+  "status": "running",
+  "step": { "current": 7, "total": 10, "label": "checkpoint-review-config" },
+  "agents": [
+    {
+      "id": "researcher",
+      "name": "Duda Documentação",
+      "icon": "🔍",
+      "status": "done",
+      "deliverTo": null,
+      "desk": { "col": 1, "row": 1 }
+    },
+    {
+      "id": "architect",
+      "name": "Ernesto Estrutura",
+      "icon": "📐",
+      "status": "done",
+      "deliverTo": null,
+      "desk": { "col": 2, "row": 1 }
+    },
+    {
+      "id": "configurator",
+      "name": "Carlos Configurador",
+      "icon": "⚙️",
+      "status": "done",
+      "deliverTo": null,
+      "desk": { "col": 3, "row": 1 }
+    },
+    {
+      "id": "reviewer",
+      "name": "Rui Revisão",
+      "icon": "✅",
+      "status": "idle",
+      "deliverTo": null,
+      "desk": { "col": 1, "row": 2 }
+    },
+    {
+      "id": "trainer",
+      "name": "Tiago Treinamento",
+      "icon": "📚",
+      "status": "idle",
+      "deliverTo": null,
+      "desk": { "col": 2, "row": 2 }
+    }
+  ],
+  "handoff": {
+    "from": "configurator",
+    "to": "checkpoint",
+    "message": "Hierarquia criada via API: 1 Space, 2 Folders, 7 Lists — statuses customizados pendentes (limitação da API)",
+    "completedAt": "2026-03-27T20:40:00Z"
+  },
+  "startedAt": "2026-03-27T20:22:49Z",
+  "updatedAt": "2026-03-27T20:40:30Z"
+}
