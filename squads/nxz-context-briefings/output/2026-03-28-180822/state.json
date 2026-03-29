@@ -1,0 +1,40 @@
+{
+  "squad": "nxz-context-briefings",
+  "status": "completed",
+  "step": { "current": 9, "total": 9, "label": "checkpoint-approval" },
+  "agents": [
+    {
+      "id": "analyst",
+      "name": "Analista de Contexto",
+      "icon": "🔬",
+      "status": "done",
+      "deliverTo": null,
+      "desk": { "col": 1, "row": 1 }
+    },
+    {
+      "id": "navigator",
+      "name": "Navegador de Produto",
+      "icon": "🧭",
+      "status": "done",
+      "deliverTo": null,
+      "desk": { "col": 2, "row": 1 }
+    },
+    {
+      "id": "writer",
+      "name": "Redator de Briefings",
+      "icon": "✍️",
+      "status": "done",
+      "deliverTo": null,
+      "desk": { "col": 3, "row": 1 }
+    }
+  ],
+  "handoff": {
+    "from": "writer",
+    "to": "writer",
+    "message": "Briefing enriquecido com foco em franquias, copy pronto para marketing e casos de uso por segmento",
+    "completedAt": "2026-03-28T18:25:00-03:00"
+  },
+  "startedAt": "2026-03-28T18:08:22-03:00",
+  "updatedAt": "2026-03-28T19:29:58-03:00",
+  "completedAt": "2026-03-28T19:29:58-03:00"
+}

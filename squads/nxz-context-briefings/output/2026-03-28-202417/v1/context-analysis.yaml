@@ -1,0 +1,605 @@
+analysis:
+  product: NXZ Go
+  date: "2026-03-28"
+  analyst: Analista de Contexto
+
+  briefing_config:
+    audience: "Marketing + Vendas"
+    level: Operacional
+    objective: "Context for marketing and sales content generation"
+
+  # ============================================================
+  # EXISTING CONTEXT FILES — Catalog and Gap Analysis
+  # ============================================================
+  existing_contexts:
+
+    - file: "(V_0.1) NXZ GO.md"
+      version: "0.1"
+      title: "Product Briefing: NxzGo — Modo PDV (Caixa)"
+      generated: "2026-03-16"
+      source: "Codebase analysis (v5.13.1)"
+      coverage:
+        modes_covered: [PDV]
+        audiences: [Engineering, DevOps]
+        levels: [operational, tactical]
+        has_examples: false
+        has_practical_scenarios: false
+        has_screenshots: false
+        has_pricing: false
+        has_benefits_language: false
+        cross_references: [Odoo ERP, Firebase, Supabase, KDS, Totem, SAT, NFC-e]
+      content_summary:
+        - "Complete PDV flow from order start to payment confirmation"
+        - "Payment provider matrix (Sumup, Cielo, PagBank, Stone, Pagarme, PIX)"
+        - "Fiscal integration details (SAT/CF-e, NFC-e)"
+        - "Technical architecture (React Native, Context API, CartContext, StoreContext)"
+        - "Business rules (password-protected offline payments, price edit limits, crash recovery)"
+        - "Deploy and distribution (Play Store, APK)"
+      gaps_for_marketing_sales:
+        - "No benefit-oriented language — all descriptions are technical/functional"
+        - "No use cases or customer stories"
+        - "No competitive differentials vs market alternatives"
+        - "No visual descriptions of the interface (no screenshots, no UI walkthrough)"
+        - "No ROI or efficiency metrics (e.g., 'reduces checkout time by X%')"
+        - "No pricing information or plan tiers"
+        - "No copy-ready content (taglines, one-liners, elevator pitch)"
+        - "Payment providers listed as codes (CCD/CCC/CCR) — meaningless for sales"
+
+    - file: "(V_0.1) NXZ Go - Arquitetura.md"
+      version: "0.1"
+      title: "NxzGo — Moober Self Checkout (Architecture Overview)"
+      generated: "2026-03-16"
+      source: "Codebase analysis (v5.13.1)"
+      coverage:
+        modes_covered: [PDV, Totem, KDS, SmartPOS]
+        audiences: [Engineering, Product]
+        levels: [strategic, tactical]
+        has_examples: false
+        has_practical_scenarios: false
+        has_screenshots: false
+        has_pricing: false
+        has_benefits_language: false
+        cross_references: [Odoo ERP, Firebase, Supabase, iFood, Open Delivery, Keeta, 99Food, VCQPad]
+      content_summary:
+        - "Best overview doc — explains what NXZ Go IS and the problem it solves"
+        - "ASCII diagram showing how modes connect via Firebase/Supabase"
+        - "Mode comparison table (config type, use case, typical device)"
+        - "Lists all user types and their relationship to modes"
+        - "Key capabilities list (multi-provider payment, fiscal, white label, offline-first, real-time, multi-device, iFood, printing)"
+      gaps_for_marketing_sales:
+        - "Problem statement exists but is engineering-focused, not pain-point-focused for buyers"
+        - "ASCII diagram is developer-friendly but not marketing-usable"
+        - "Capability list is feature-based, not benefit-based"
+        - "No quantified value propositions"
+        - "No customer testimonials or case studies"
+        - "References internal file names (funcionalidades-pdv.md, comparativo.md) — cross-refs broken for external audiences"
+
+    - file: "(V_0.1) NXZ SMART_POS.md"
+      version: "0.1"
+      title: "Product Briefing: NxzGo — Modo SMART POS"
+      generated: "2026-03-16"
+      source: "Codebase analysis (v5.13.1)"
+      coverage:
+        modes_covered: [SmartPOS]
+        audiences: [Engineering, DevOps]
+        levels: [operational, tactical]
+        has_examples: false
+        has_practical_scenarios: false
+        has_screenshots: false
+        has_pricing: false
+        has_benefits_language: false
+        cross_references: [Cielo LIO, Stone POS, PagBank Moderninha Smart, MSiTef, PlugPag SDK]
+      content_summary:
+        - "Explains Smart POS as a build/hardware variant, not a separate UI mode"
+        - "Native payment adapter architecture per manufacturer"
+        - "MSiTef-specific features (configure, adminMenu, cancellation cache)"
+        - "V3 printing system for native thermal printers"
+        - "Multi-module build system with symlinks"
+        - "Hardware support matrix (Cielo LIO, Stone POS, PagBank Moderninha, MSiTef terminals)"
+      gaps_for_marketing_sales:
+        - "No pitch for 'all-in-one device' value proposition — this is the strongest sales angle for Smart POS"
+        - "No mention of cost savings (one device vs tablet + printer + card reader)"
+        - "No use cases written for target segments (food trucks, delivery, small counters)"
+        - "SDK and build system details are irrelevant for sales"
+        - "Missing: which Cielo/Stone/PagBank terminal models are specifically supported"
+        - "No comparison vs competitors (e.g., iFood Gestor, Linx, Stone PDV)"
+
+    - file: "(V_0.1) NXZ TOTEM.md"
+      version: "0.1"
+      title: "Product Briefing: NxzGo — Modo TOTEM (Self-Service)"
+      generated: "2026-03-16"
+      source: "Codebase analysis (v5.13.1)"
+      coverage:
+        modes_covered: [Totem]
+        audiences: [Engineering, Product]
+        levels: [operational, tactical]
+        has_examples: false
+        has_practical_scenarios: false
+        has_screenshots: false
+        has_pricing: false
+        has_benefits_language: false
+        cross_references: [PDV, KDS, Odoo ERP, Firebase, Supabase, Sentry]
+      content_summary:
+        - "Screensaver/attraction screen with configurable promotional images"
+        - "Welcome screen with customizable messages, logo, wait time estimate"
+        - "Simplified payment (electronic only, 'pay at counter' fallback)"
+        - "Timer-based inactivity management"
+        - "White label system (colors, images, texts, behaviors)"
+        - "Drawer blocked to prevent customer access to admin"
+      gaps_for_marketing_sales:
+        - "Screensaver as marketing tool is mentioned but not positioned as a sales benefit"
+        - "White label customization is a STRONG selling point — not framed that way"
+        - "No mention of queue reduction metrics or customer throughput improvement"
+        - "No hardware recommendations for sales (which tablets, which stands)"
+        - "No visual mockups or descriptions of what the customer actually sees"
+        - "'Pay at counter' fallback is a great anti-abandonment feature — not positioned as such"
+        - "No comparison to competitor totems (McDonald's, Burger King, etc.)"
+
+    - file: "(V_0.1) NXZ KDS funcionalidades.md"
+      version: "0.1"
+      title: "Funcionalidades — KDS (Kitchen Display System)"
+      generated: "2026-03-16"
+      source: "Codebase analysis (v5.13.1)"
+      coverage:
+        modes_covered: [KDS]
+        audiences: [Engineering, Product]
+        levels: [operational]
+        has_examples: false
+        has_practical_scenarios: false
+        has_screenshots: false
+        has_pricing: false
+        has_benefits_language: false
+        cross_references: [iFood, Open Delivery, Keeta, 99Food, VCQPad, Firebase, Supabase, Odoo]
+      content_summary:
+        - "Detailed feature list organized by screen/area"
+        - "Navigation (tabs: Home, Delivery, History)"
+        - "Order card components and actions"
+        - "Production stages (empty > progress > done > confirmed)"
+        - "Category filter system for workstations"
+        - "iFood and Open Delivery integration details"
+        - "Background cron jobs"
+        - "Remote communication via WebSocket"
+      gaps_for_marketing_sales:
+        - "Purely functional feature list — no benefit framing"
+        - "Category filter is a differentiator ('specialized kitchen stations') — not positioned"
+        - "iFood integration is a strong selling point — described technically, not commercially"
+        - "No mention of paper elimination / sustainability angle"
+        - "No workflow improvement narratives"
+
+    - file: "(V_0.1) NXZ KDS.md"
+      version: "0.1"
+      title: "Product Briefing: NxzGo — Modo KDS"
+      generated: "2026-03-16"
+      source: "Codebase analysis (v5.13.1)"
+      coverage:
+        modes_covered: [KDS]
+        audiences: [Engineering, Product]
+        levels: [operational, tactical]
+        has_examples: false
+        has_practical_scenarios: false
+        has_screenshots: false
+        has_pricing: false
+        has_benefits_language: false
+        cross_references: [PDV, Totem, Smart POS, iFood, Open Delivery, Firebase, Supabase, Odoo ERP, Sentry]
+      content_summary:
+        - "Full KDS briefing with architecture, integrations, business rules"
+        - "OrderManager singleton as the heart of KDS"
+        - "Real-time data flow from PDV/Totem to KDS via Firebase"
+        - "iFood priority ordering (unconfirmed orders first)"
+        - "Stage/note preservation during PDV updates"
+        - "Health check and onDisconnect mechanisms"
+      gaps_for_marketing_sales:
+        - "Overlaps significantly with KDS funcionalidades doc — redundancy"
+        - "Architecture details (singleton, EventEmitter) are irrelevant for marketing"
+        - "Real-time capability is a huge selling point — buried in technical jargon"
+        - "Multi-source order aggregation (PDV + Totem + iFood + Open Delivery) is very marketable — not highlighted"
+        - "No visual representation of the KDS interface for sales decks"
+
+    - file: "NXZ Go - Funcionalidades.md"
+      version: "not versioned"
+      title: "Funcionalidades — PDV, Totem e Smart POS"
+      generated: "2026-03-16 (inferred)"
+      source: "Codebase analysis"
+      coverage:
+        modes_covered: [PDV, Totem, SmartPOS]
+        audiences: [Engineering, Product]
+        levels: [operational]
+        has_examples: false
+        has_practical_scenarios: false
+        has_screenshots: false
+        has_pricing: false
+        has_benefits_language: false
+        cross_references: [comparativo.md, Odoo, SAT, MSiTef, iFood]
+      content_summary:
+        - "Most comprehensive feature list for PDV/Totem/Smart POS"
+        - "Covers all screens: attraction, welcome, identification, catalog, customization, cart, payment, success, error"
+        - "Payment provider matrix with dual-channel (Bluetooth + API) explanation"
+        - "Detailed coupon/discount system"
+        - "Administration screens (settings, product availability, MSiTef)"
+        - "Background cron jobs table"
+        - "SAT/CF-e integration flow"
+      gaps_for_marketing_sales:
+        - "This is the most complete doc but 100% technical"
+        - "Product customization via BOM is a restaurant-critical feature — not framed for sales"
+        - "Multi-payment (6+ providers) is a major differentiator — listed as codes"
+        - "Offline-first with auto-sync is extremely valuable — mentioned technically, not as a reliability pitch"
+        - "No 'day in the life' scenarios"
+        - "No comparison to competing POS systems"
+
+    - file: "comparativo.md"
+      version: "not versioned"
+      title: "Comparativo — PDV vs Totem vs Smart POS"
+      generated: "2026-03-16 (inferred)"
+      source: "Codebase analysis"
+      coverage:
+        modes_covered: [PDV, Totem, SmartPOS]
+        audiences: [Engineering, Product, Support]
+        levels: [tactical]
+        has_examples: false
+        has_practical_scenarios: false
+        has_screenshots: false
+        has_pricing: false
+        has_benefits_language: false
+        cross_references: [PDV, Totem, Smart POS, Cielo, Stone, PagBank, MSiTef]
+      content_summary:
+        - "Clear comparison tables showing differences between modes"
+        - "Shared features list (what all three have)"
+        - "PDV vs Totem differences (drawer, payments, price editing, etc.)"
+        - "Smart POS vs PDV/Totem differences (native payment, V3 printing, no KDS)"
+        - "Build and distribution differences"
+      gaps_for_marketing_sales:
+        - "Closest to a sales-useful format, but still technical"
+        - "Could be adapted into a 'which mode is right for you' sales tool"
+        - "Missing: recommended use case per mode"
+        - "Missing: 'starter pack' recommendations (e.g., 'small restaurant: 1 PDV + 1 KDS + 1 Totem')"
+        - "Config values (isPdv, flavor) are developer details, not sales info"
+
+    - file: "fluxos.md"
+      version: "not versioned"
+      title: "Fluxos — Diagramas"
+      generated: "2026-03-16 (inferred)"
+      source: "Codebase analysis"
+      coverage:
+        modes_covered: [PDV, Totem, SmartPOS, KDS]
+        audiences: [Engineering, Product]
+        levels: [operational]
+        has_examples: false
+        has_practical_scenarios: false
+        has_screenshots: false
+        has_pricing: false
+        has_benefits_language: false
+        cross_references: [PDV, Totem, Smart POS, KDS, iFood, Open Delivery, SAT]
+      content_summary:
+        - "7 Mermaid diagrams covering all major flows"
+        - "App initialization flow"
+        - "Complete PDV/Totem/Smart POS order flow"
+        - "Detailed payment flow (cash, Bluetooth+API, API-only, native SDK)"
+        - "KDS order lifecycle"
+        - "KDS category filter flow"
+        - "SAT/CF-e fiscal flow"
+        - "Smart POS initialization flow"
+      gaps_for_marketing_sales:
+        - "Mermaid diagrams are code-based — not usable in marketing materials"
+        - "Flows show EVERY conditional branch — too complex for sales"
+        - "Useful as source for simplified customer journey diagrams"
+        - "Could be simplified into 3-5 step flows for sales decks"
+        - "No 'happy path' focused diagrams for customer-facing materials"
+
+    - file: "(v_ 0.2) Briefing de Contexto de Produtos Nexuz.md"
+      version: "0.2"
+      title: "Briefing de Contexto de Produtos Nexuz"
+      generated: "Unknown"
+      source: "Business/product team"
+      coverage:
+        modes_covered: [PDV, Totem, KDS, Delivery]
+        audiences: [Marketing, Sales, Product, Executive]
+        levels: [strategic, tactical]
+        has_examples: false
+        has_practical_scenarios: false
+        has_screenshots: false
+        has_pricing: true  # SaaS model mentioned
+        has_benefits_language: true  # Partial — value propositions exist
+        cross_references: [NXZ ERP, NXZ Go, NXZ KDS, NXZ Delivery, Stone, Cielo, PagSeguro, SumUp, iFood, Rappi, Oracle Cloud]
+      content_summary:
+        - "High-level product suite overview"
+        - "Problems solved (operational, financial, customer experience)"
+        - "Value propositions (efficiency, unified management, modern experience, scalability)"
+        - "Module descriptions (ERP, Go, KDS, Delivery)"
+        - "Technical differentials (Oracle Cloud, LGPD, consulting)"
+        - "Target audience and commercial strategy (SaaS model)"
+        - "Roadmap (short/medium/long term)"
+        - "KPIs (adoption, retention, NPS, uptime)"
+      gaps_for_marketing_sales:
+        - "BEST existing doc for marketing/sales but too high-level for NXZ Go specifics"
+        - "NXZ Go described in 3 bullet points — needs expansion"
+        - "No mode-specific value propositions (PDV vs Totem vs Smart POS vs KDS)"
+        - "Pricing is mentioned as SaaS but no details"
+        - "Value propositions are generic — need NXZ Go specific versions"
+        - "No customer success metrics or case studies"
+        - "Roadmap items could be used for sales momentum"
+
+    - file: "(v_ 0.2) Briefing de Contexto de Persona da Nexuz.md"
+      version: "0.2"
+      title: "Briefing de Contexto de Persona da Nexuz"
+      generated: "Unknown"
+      source: "Business/product team"
+      coverage:
+        modes_covered: [PDV, Totem, KDS, Delivery]
+        audiences: [Marketing, Sales, Product]
+        levels: [strategic, tactical]
+        has_examples: false
+        has_practical_scenarios: false
+        has_screenshots: false
+        has_pricing: false
+        has_benefits_language: true  # Pain points and solutions mapped
+        cross_references: [NXZ Go, NXZ ERP, NXZ KDS, NXZ Delivery]
+      content_summary:
+        - "5 personas: Cliente Consumidor, Operador de Caixa, Garcom, Gerente, Proprietario"
+        - "Each persona has: profile, needs/pains, objectives, Nexuz solutions"
+        - "Cross-persona connections and pain integration"
+        - "Capacity building and support strategies"
+        - "Success metrics per persona (adoption, NPS, error reduction, retention)"
+      gaps_for_marketing_sales:
+        - "Good persona framework but generic across Nexuz suite"
+        - "Does not map personas to NXZ Go modes specifically"
+        - "Missing: Cozinheiro persona mapped to KDS features"
+        - "Missing: Consumidor journey through Totem step-by-step"
+        - "Missing: Proprietario ROI calculations for NXZ Go investment"
+        - "Pain points are described but not quantified"
+        - "No persona-specific messaging or copy"
+
+  # ============================================================
+  # ADDITIONAL SOURCES
+  # ============================================================
+  additional_sources:
+    - source: "Codebase analysis (/home/walterfrey/Documentos/code/nexuz/nxz_go_play_store)"
+      key_facts_extracted:
+        - "React Native 0.81.1, TypeScript, Android-only, version 5.13.1"
+        - "Internal name: Moober Self Checkout (NxzGo)"
+        - "4 modes: PDV (Caixa), KDS (Kitchen), Totem (Self-service), Smart POS"
+        - "Multi-project builds: playstore, stone, cielo, pagbank, sample"
+        - "6+ payment providers: PagBank, Stone, Cielo, Pagarme, Sumup, PIX"
+        - "Printer support: ESC/POS, Bluetooth, Network, USB, native Smart POS"
+        - "Database: Firebase + Supabase (real-time sync)"
+        - "WebSocket via Odoo Bus for real-time product updates"
+        - "Fiscal: CFe/SAT (modelo 59), NFC-e (modelo 65)"
+        - "Offline mode with auto-sync (orders never lost)"
+        - "Multi-tenant architecture"
+        - "Monitoring: Sentry"
+        - "Tests: Jest (unit) + Maestro (E2E)"
+        - "White label system (colors, logos, texts, screensavers, behaviors)"
+        - "iFood + Open Delivery integration (Keeta, 99Food, VCQPad)"
+      marketing_relevant:
+        - "ONE APP, FOUR MODES — single codebase serves PDV, Totem, KDS, and Smart POS"
+        - "6+ payment providers — maximum flexibility for any operation size"
+        - "Offline-first with auto-sync — operations never stop, even without internet"
+        - "Real-time sync — orders appear on KDS instantly from any source"
+        - "White label — complete brand customization without coding"
+        - "iFood + Open Delivery — unified management of all delivery channels"
+        - "Crash recovery — pending orders are never lost"
+        - "Smart POS — transforms existing card machines into full POS systems"
+        - "Category-based KDS filters — specialized kitchen stations"
+        - "Multi-device — multiple PDVs, Totems, and KDS units operating simultaneously"
+        - "Brazilian fiscal compliance built-in — SAT/CF-e and NFC-e"
+        - "Pay-at-counter fallback — reduces Totem abandonment"
+        - "Dual-channel payment (Bluetooth + API) — faster, more reliable transactions"
+        - "Promotional screensaver on Totem — turns idle time into marketing"
+
+  # ============================================================
+  # CROSS-FILE ANALYSIS
+  # ============================================================
+  cross_analysis:
+    redundancy:
+      - pair: ["(V_0.1) NXZ KDS.md", "(V_0.1) NXZ KDS funcionalidades.md"]
+        overlap: "~70% — both cover KDS features, stages, iFood integration, category filters"
+        recommendation: "Merge into single KDS context doc for briefing"
+      - pair: ["(V_0.1) NXZ GO.md", "NXZ Go - Funcionalidades.md"]
+        overlap: "~60% — PDV briefing duplicates features doc for PDV-specific content"
+        recommendation: "Use funcionalidades as authoritative source, briefing as summary"
+
+    coverage_matrix:
+      PDV:
+        technical_docs: ["(V_0.1) NXZ GO.md", "NXZ Go - Funcionalidades.md", "comparativo.md", "fluxos.md"]
+        marketing_docs: ["(v_ 0.2) Briefing de Contexto de Produtos Nexuz.md (3 lines only)"]
+        coverage_score: "Technical: 9/10, Marketing: 1/10"
+      Totem:
+        technical_docs: ["(V_0.1) NXZ TOTEM.md", "NXZ Go - Funcionalidades.md", "comparativo.md", "fluxos.md"]
+        marketing_docs: ["(v_ 0.2) Briefing de Contexto de Produtos Nexuz.md (1 mention)"]
+        coverage_score: "Technical: 8/10, Marketing: 1/10"
+      KDS:
+        technical_docs: ["(V_0.1) NXZ KDS.md", "(V_0.1) NXZ KDS funcionalidades.md", "fluxos.md"]
+        marketing_docs: ["(v_ 0.2) Briefing de Contexto de Produtos Nexuz.md (3 lines only)"]
+        coverage_score: "Technical: 9/10, Marketing: 1/10"
+      SmartPOS:
+        technical_docs: ["(V_0.1) NXZ SMART_POS.md", "comparativo.md", "fluxos.md"]
+        marketing_docs: []
+        coverage_score: "Technical: 8/10, Marketing: 0/10"
+
+    information_quality:
+      completeness: "Technical documentation is comprehensive (v5.13.1 codebase)"
+      accuracy: "All docs are auto-generated from codebase — high accuracy for current state"
+      freshness: "All V_0.1 docs generated 2026-03-16 — 12 days old, likely current"
+      consistency: "All technical docs follow same structure (Vision, Audience, Features, Stack, Architecture, Integrations, Business Rules, Deploy, State)"
+      audience_mismatch: "ALL V_0.1 docs are engineering-focused; V_0.2 docs are strategic but shallow on NXZ Go"
+
+  # ============================================================
+  # RECOMMENDATIONS FOR MARKETING/SALES BRIEFING
+  # ============================================================
+  recommendations:
+    template_structure:
+      - section: "Elevator Pitch"
+        purpose: "One-paragraph description of NXZ Go for sales decks and website"
+        priority: P0
+        source_available: true
+        source: "(V_0.1) NXZ Go - Arquitetura.md 'Problema que Resolve' section — needs rewrite for buyer language"
+
+      - section: "Value Propositions by Mode"
+        purpose: "3-5 benefit statements per mode (PDV, Totem, KDS, Smart POS) with quantifiable claims"
+        priority: P0
+        source_available: true
+        source: "Technical features from all docs can be translated to benefits"
+
+      - section: "Target Segments and Use Cases"
+        purpose: "Concrete scenarios: 'A food truck owner uses Smart POS to...', 'A fast-food chain uses Totem to...'"
+        priority: P0
+        source_available: true
+        source: "Persona doc + technical audience sections"
+
+      - section: "Feature-Benefit Matrix"
+        purpose: "Table mapping features to business benefits for each persona"
+        priority: P1
+        source_available: true
+        source: "NXZ Go - Funcionalidades.md + Persona doc"
+
+      - section: "Mode Selection Guide"
+        purpose: "'Which mode is right for you?' decision tree based on operation type and size"
+        priority: P1
+        source_available: true
+        source: "comparativo.md — needs simplification and benefit framing"
+
+      - section: "Competitive Differentials"
+        purpose: "What makes NXZ Go different from iFood Gestor, Linx, TOTVs, Stone PDV, etc."
+        priority: P1
+        source_available: false
+        source: "Needs market research — not available in existing docs"
+
+      - section: "Simplified Customer Journeys"
+        purpose: "3-5 step visual flows for: consumer at totem, cashier at PDV, cook at KDS, delivery at Smart POS"
+        priority: P1
+        source_available: true
+        source: "fluxos.md Mermaid diagrams — need simplification to happy-path only"
+
+      - section: "Integration Ecosystem"
+        purpose: "Visual map of all integrations (payment providers, delivery platforms, fiscal, printers)"
+        priority: P2
+        source_available: true
+        source: "Integration tables from all technical docs"
+
+      - section: "White Label and Customization"
+        purpose: "Sales pitch for brand customization — colors, logos, messages, screensavers"
+        priority: P2
+        source_available: true
+        source: "(V_0.1) NXZ TOTEM.md white label section"
+
+      - section: "Hardware Compatibility"
+        purpose: "Supported devices, recommended tablets, compatible card machines"
+        priority: P2
+        source_available: true
+        source: "(V_0.1) NXZ SMART_POS.md hardware section — needs brand/model specifics"
+
+      - section: "Pricing and Plans"
+        purpose: "SaaS tiers, per-device pricing, bundle recommendations"
+        priority: P0
+        source_available: false
+        source: "Only 'SaaS model' mentioned in Produtos doc — needs commercial team input"
+
+      - section: "Customer Stories and Metrics"
+        purpose: "Case studies, ROI data, before/after metrics"
+        priority: P1
+        source_available: false
+        source: "Not available in any existing doc — needs customer success team input"
+
+      - section: "FAQ for Buyers"
+        purpose: "Common sales objections and answers"
+        priority: P2
+        source_available: false
+        source: "Needs sales team input"
+
+    missing_information:
+      - item: "Pricing details (per mode, per device, bundles)"
+        source_suggestion: "Commercial/finance team"
+        priority: P0
+        impact: "Cannot create sales materials without pricing"
+
+      - item: "Customer success stories and ROI metrics"
+        source_suggestion: "Customer success team, existing client interviews"
+        priority: P0
+        impact: "Social proof is essential for sales content"
+
+      - item: "Competitive landscape analysis"
+        source_suggestion: "Market research, sales team knowledge"
+        priority: P1
+        impact: "Cannot position NXZ Go without knowing competitor offerings"
+
+      - item: "UI screenshots and visual assets"
+        source_suggestion: "Product/design team, app store screenshots"
+        priority: P1
+        impact: "Marketing materials need visuals — all current docs are text-only"
+
+      - item: "Implementation timeline and onboarding process"
+        source_suggestion: "Customer success / implementation team"
+        priority: P1
+        impact: "Sales needs to set expectations on time-to-value"
+
+      - item: "Hardware recommendations with specific models and costs"
+        source_suggestion: "Operations/support team"
+        priority: P2
+        impact: "Buyers need to know total cost including hardware"
+
+      - item: "SLA and support details"
+        source_suggestion: "Support team documentation"
+        priority: P2
+        impact: "Enterprise buyers require SLA commitments"
+
+      - item: "Localization and language support details"
+        source_suggestion: "Codebase analysis (currently PT-BR only inferred)"
+        priority: P3
+        impact: "Relevant if targeting international or tourist-area restaurants"
+
+    cross_references:
+      - relationship: "NXZ Go PDV <-> NXZ ERP"
+        type: "dependency"
+        description: "NXZ Go requires Odoo ERP as backend — all config, catalog, fiscal, and sales data flows through ERP"
+        marketing_angle: "Unified ecosystem — POS and back-office in one platform"
+
+      - relationship: "NXZ Go Totem -> NXZ Go KDS"
+        type: "integration"
+        description: "Totem orders appear on KDS in real-time; 'pay at counter' creates draft visible on KDS"
+        marketing_angle: "Seamless kitchen-to-counter workflow"
+
+      - relationship: "NXZ Go KDS <-> iFood/Open Delivery"
+        type: "integration"
+        description: "KDS receives and manages delivery orders from iFood, Keeta, 99Food alongside internal orders"
+        marketing_angle: "One screen for ALL orders — internal and delivery"
+
+      - relationship: "NXZ Go Smart POS <-> Payment Hardware"
+        type: "native_integration"
+        description: "Smart POS uses native SDKs from Cielo, Stone, PagBank — no external devices needed"
+        marketing_angle: "Your card machine becomes a complete POS"
+
+      - relationship: "NXZ Go (all modes) <-> Firebase/Supabase"
+        type: "infrastructure"
+        description: "Real-time sync layer connecting all devices in the same establishment"
+        marketing_angle: "Every device in your restaurant talks to each other in real-time"
+
+      - relationship: "Personas <-> Modes"
+        type: "mapping"
+        description: |
+          Cliente Consumidor -> Totem (self-service)
+          Operador de Caixa -> PDV (cash register)
+          Garcom -> Smart POS (table service) or PDV
+          Gerente -> PDV (admin functions) + KDS (monitoring)
+          Proprietario -> ERP (strategic) + all modes (oversight)
+          Cozinheiro -> KDS (production)
+        marketing_angle: "A solution for every role in the restaurant"
+
+  # ============================================================
+  # SUMMARY FINDINGS
+  # ============================================================
+  summary:
+    total_files_analyzed: 10
+    total_technical_docs: 8
+    total_business_docs: 2
+    overall_technical_coverage: "Excellent — all 4 modes are comprehensively documented at engineering level"
+    overall_marketing_coverage: "Critical gap — virtually no marketing/sales-ready content exists for NXZ Go specifically"
+    key_insight: >
+      The existing context base is rich in technical detail but almost entirely
+      engineering-focused. The V_0.2 business docs provide strategic framing but
+      treat NXZ Go as a minor component of the Nexuz suite rather than a standalone
+      product. For Marketing+Vendas at Operacional level, nearly everything needs
+      to be TRANSLATED from technical language to benefit language. The raw material
+      exists — the transformation is what is missing.
+    top_3_priorities:
+      - "Create benefit-oriented value propositions per mode (translate technical features to business outcomes)"
+      - "Develop use-case scenarios mapped to personas and segments (restaurant types x modes)"
+      - "Obtain missing external data: pricing, customer stories, competitive analysis, UI visuals"

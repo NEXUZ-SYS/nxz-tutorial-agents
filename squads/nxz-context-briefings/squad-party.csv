@@ -1,0 +1,4 @@
+path,displayName,icon,role,skills
+./agents/analyst.agent.md,Analista de Contexto,🔬,Analisa contextos existentes e pesquisa melhores praticas para briefings,
+./agents/navigator.agent.md,Navegador de Produto,🧭,Explora o produto via Playwright para validacao e coleta de dados reais,
+./agents/writer.agent.md,Redator de Briefings,✍️,Redige briefings padronizados seguindo o template de engenharia de contexto,

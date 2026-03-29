@@ -1,0 +1,185 @@
+exploration:
+  product: NXZ ERP
+  platform: Odoo 12 (customizado)
+  database: skioba-teste
+  date: "2026-03-28"
+  method: MCP Odoo (navegacao via API, sem Playwright — produto acessado via dados reais)
+
+  system_overview:
+    installed_modules: 265
+    nxz_custom_modules:
+      - nxz_base (modulo base NXZ)
+      - nxz_account (contabilidade customizada)
+      - nxz_br_nfe (nota fiscal eletronica)
+      - nxz_nfe_contigencia (NFe contingencia)
+      - nxz_cfe_sat (importacao CF-e SAT)
+      - nxz_bus (comunicacao realtime)
+      - nxz_mail (email customizado)
+      - nxz_mrp (producao customizada)
+      - nxz_mrp_average_cost (custo medio producao)
+      - nxz_mrp_bom_fix (correcao BOM UoM)
+      - nxz_mrp_bom_line_replace (substituicao de insumos em BOM)
+      - nxz_mrp_bom_product_state (estado de produto em BOM)
+      - nxz_mrp_pos_cost_update (atualizacao custo POS via MRP)
+      - nxz_partner (parceiros customizado)
+      - nxz_realtime (database realtime)
+      - nxz_franchise_base (base franquias)
+      - nxz_coa_default (plano de contas padrao)
+      - nxz_manager_user (gestao de usuarios)
+      - nxz_recurring_schedule (itens recorrentes)
+      - nxz_remove_quick_create (customizacao many2one)
+      - nxz_account_chart_update (atualizacao plano de contas)
+    total_custom_modules: 21
+
+  multi_company:
+    structure:
+      - name: "[Template] BASE"
+        role: Template padrao para novas unidades
+      - name: "[Grupo] No. Coffee"
+        role: Holding/grupo — empresa atual
+      - name: "No Coffee - Matriz"
+        role: Unidade matriz
+      - name: "No. Coffee - SP Peruibe"
+        role: Filial Peruibe/SP
+      - name: "No. Coffee - SP Santos"
+        role: Filial Santos/SP
+    observation: "Sistema suporta multi-empresa com template replicavel — ideal para franquias"
+
+  navigation_map:
+    top_level_menus:
+      - name: Discuss
+        sequence: 1
+        submenus: []
+        description: "Comunicacao interna (chat, mensagens)"
+      - name: Contacts
+        sequence: 4
+        submenus: [Contacts, Configuration]
+        description: "Cadastro de clientes, fornecedores, parceiros"
+      - name: Sales
+        sequence: 7
+        submenus: [Orders, To Invoice, Products, Reporting, Configuration]
+        description: "Gestao de vendas, pedidos, produtos, faturamento"
+      - name: My Dashboard
+        sequence: 10
+        submenus: [Dashboard Produtos, Contador, Franqueadora, Configuration]
+        description: "Dashboards personalizados por perfil (produtos, contabilidade, franquia)"
+      - name: Point of Sale
+        sequence: 20
+        submenus: [Dashboard, Painel POS, "Faturas a pagar", Product, Reporting, "Vouchers and Coupons", Configuration]
+        description: "PDV — caixa, vendas presenciais, totem, vouchers"
+      - name: Purchase
+        sequence: 25
+        submenus: [Purchase, Control, Reporting, Configuration]
+        description: "Compras — pedidos, controle de recebimento, relatorios"
+      - name: Inventory
+        sequence: 30
+        submenus: [Overview, Operations, Master Data, Reporting, Configuration]
+        description: "Estoque — movimentacoes, inventario, dados mestres"
+      - name: Manufacturing
+        sequence: 35
+        submenus: [Operations, Master Data, Reporting, Configuration]
+        description: "Producao — ordens de producao, fichas tecnicas (BOM), custos"
+      - name: Invoicing
+        sequence: 40
+        submenus: [Overview, Customers, Vendors, "Receber e Pagar", Accounting, Reporting, Configuration]
+        description: "Faturamento — notas fiscais, contas a pagar/receber, contabilidade, relatorios"
+      - name: Maintenance
+        sequence: 110
+        submenus: [Dashboard, Maintenance, Equipments, Reporting]
+        description: "Manutencao de equipamentos"
+      - name: Settings
+        sequence: 500
+        submenus: ["Users & Companies", Translations, "NXZ ERP", "General Settings", "Restful API", "Mass Operations"]
+        description: "Configuracoes gerais, usuarios, empresas, API REST"
+
+  volume_data:
+    products: 205
+    product_categories: 16
+    pos_configs: 5
+    pos_orders: 4676
+    stock_pickings: 4678
+    manufacturing_orders: 4824
+    invoices: 145
+    purchase_orders: 0
+
+  pos_configurations:
+    - name: PDV
+      company: "[Template] BASE"
+      type: Caixa padrao
+      restaurant_mode: true
+    - name: TOTEM
+      company: "[Template] BASE"
+      type: Autoatendimento
+      restaurant_mode: true
+    - name: "PDV 1 Totem - NO. Coffee"
+      company: "No. Coffee - SP Peruibe"
+      type: Totem filial
+      restaurant_mode: true
+    - name: "PDV 1 Totem - NOCFST"
+      company: "No. Coffee - SP Santos"
+      type: Totem filial
+      restaurant_mode: true
+    - name: "PDV 2 IFood - NOCFST"
+      company: "No. Coffee - SP Santos"
+      type: Canal iFood
+      restaurant_mode: true
+      pricelist: "iFood (BRL)"
+
+  product_categories_food_service:
+    - "Acai & Bowls"
+    - "Booster Smoothies"
+    - "Gelada"
+    - "Novidades"
+    - "Para comer"
+    - "Quente"
+    - "Refreshing Smoothies"
+    - "Shots"
+    - "Sucos"
+    - "Timeless Smoothies"
+    - "Insumo"
+    - "descartavel"
+    observation: "Categorias 100% orientadas a food service — nenhuma categoria generica"
+
+  key_integrations_observed:
+    - integration: "PDV ↔ Estoque"
+      evidence: "Cada POS config aponta para stock_location_id — vendas descontam estoque automaticamente"
+    - integration: "PDV ↔ iFood"
+      evidence: "POS config dedicada para iFood com pricelist propria"
+    - integration: "Producao ↔ POS"
+      evidence: "Modulo nxz_mrp_pos_cost_update — custo de producao atualiza preco no POS"
+    - integration: "NFe ↔ Vendas"
+      evidence: "Modulos nxz_br_nfe e nxz_nfe_contigencia para emissao fiscal"
+    - integration: "SAT ↔ Faturamento"
+      evidence: "Modulo nxz_cfe_sat para importacao de cupons fiscais"
+    - integration: "Franquias ↔ Multi-company"
+      evidence: "Modulo nxz_franchise_base + estrutura multi-empresa com template replicavel"
+    - integration: "Realtime ↔ KDS/Go"
+      evidence: "Modulos nxz_bus e nxz_realtime para comunicacao em tempo real com apps"
+
+  brazilian_compliance:
+    - "br_base — modulo base brasileiro"
+    - "br_data_account — plano de contas brasileiro"
+    - "br_data_base — dados base BR (estados, municipios, CEP)"
+    - "br_sale — vendas localizacao BR"
+    - "br_sale_payment — pagamentos BR"
+    - "br_purchase_stock — compras+estoque BR"
+    - "br_account_voucher — vouchers BR"
+    - "br_nfe_import — importacao NFe"
+    - "br_zip — CEP"
+    - "nxz_coa_default — plano de contas padrao NXZ"
+    observation: "Compliance fiscal completa — SPED, NFe, SAT, LGPD"
+
+  discrepancies:
+    - item: "Modulo de Compras sem dados"
+      expected: "Contextos existentes mencionam gestao de compras como funcionalidade"
+      actual: "0 purchase orders no banco — modulo pode nao estar em uso ativo nesta instancia de teste"
+
+  marketing_relevant_highlights:
+    - "21 modulos customizados NXZ — nao e Odoo generico, e ERP sob medida para food service"
+    - "Sistema multi-empresa com template replicavel — escala para franquias"
+    - "Categorias de produto 100% food service (acai, smoothies, sucos, quente, gelada)"
+    - "Integracao nativa iFood com pricelist dedicada"
+    - "Compliance fiscal brasileira completa (NFe, SAT, SPED)"
+    - "Comunicacao realtime entre ERP e apps (KDS, Go, Totem)"
+    - "4.676 pedidos POS + 4.824 ordens de producao — sistema em uso real"
+    - "Custo de producao flui automaticamente para o POS — controle de margem em tempo real"

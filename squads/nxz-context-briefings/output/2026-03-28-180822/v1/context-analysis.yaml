@@ -1,0 +1,664 @@
+analysis:
+  product: NXZ ERP
+  briefing_config:
+    audience: Marketing
+    level: Operacional
+    objective: Context for marketing content generation
+    date: "2026-03-28"
+
+  existing_contexts:
+    - file: "(v_ 0.2) Briefing de Contexto de Persona da Nexuz.md"
+      version: "0.2"
+      description: >
+        Personas do ecossistema Nexuz — perfis de usuario (consumidor, operador de caixa,
+        garcom, gerente de operacao, proprietario) com dores, objetivos e solucoes mapeadas.
+      coverage:
+        products_mentioned:
+          - NXZ ERP
+          - NXZ Go
+          - NXZ KDS
+          - NXZ Delivery
+        audiences:
+          - Marketing
+          - Vendas
+          - Produto
+        levels:
+          - strategic
+          - tactical
+        has_examples: false
+        has_screenshots: false
+        has_step_by_step: false
+        cross_references:
+          - "Briefing de Contexto de Negocios"
+          - "Briefing de Contexto de Produtos"
+      erp_coverage:
+        mentions: 5
+        depth: superficial
+        details:
+          - "PDV Integrado com alertas de estoque"
+          - "Dashboards com indicadores-chaves (vendas, fluxo de caixa, estoque, promocoes)"
+          - "Modulo Financeiro e Contabil"
+          - "Roadmap de IA/BI Avancado"
+      gaps:
+        - "Nao detalha funcionalidades especificas do ERP — apenas mencoes genericas"
+        - "Sem exemplos praticos de uso do ERP por cada persona"
+        - "Sem linguagem de marketing — tom e vocabulario sao tecnicos/consultivos"
+        - "Sem beneficios quantificados (ex: reducao de X% em tempo de operacao)"
+
+    - file: "(v_ 0.4) Briefing de Contexto de Negocios da Nexuz.md"
+      version: "0.4"
+      description: >
+        Contexto de negocios da Nexuz — visao geral, ICP, missao, visao, valores,
+        portfolio de produtos, equipe e estrategia comercial.
+      coverage:
+        products_mentioned:
+          - NXZ ERP
+          - NXZ Go
+          - NXZ KDS
+          - NXZ Delivery
+        audiences:
+          - Vendas
+          - Estrategia
+          - Marketing
+        levels:
+          - strategic
+        has_examples: false
+        has_screenshots: false
+        has_step_by_step: false
+        cross_references:
+          - "Briefing de Contexto de Persona"
+      erp_coverage:
+        mentions: 4
+        depth: superficial
+        details:
+          - "Sistema completo de gestao (compras, producao, vendas, financas, contabilidade, estoque e comunicacao)"
+          - "PDV Integrado ao ERP"
+          - "ERP Financeiro — consolida dados financeiros e operacionais"
+          - "Dashboards com metricas operacionais"
+      gaps:
+        - "Descricao do ERP e generica — lista modulos sem detalhar funcionalidades"
+        - "Sem diferenciacao do ERP frente a concorrentes"
+        - "Sem casos de uso ou cenarios praticos"
+        - "Sem proposta de valor especifica do ERP para marketing"
+        - "Modelo SaaS mencionado sem detalhes de precificacao ou planos"
+
+    - file: "(v_ 0.2) Briefing de Contexto de Produtos Nexuz.md"
+      version: "0.2"
+      description: >
+        Visao geral dos produtos Nexuz — problemas resolvidos, proposta de valor,
+        modulos e funcionalidades, diferenciais tecnicos, publico-alvo, estrategia comercial e roadmap.
+      coverage:
+        products_mentioned:
+          - NXZ ERP
+          - NXZ Go
+          - NXZ KDS
+          - NXZ Delivery
+        audiences:
+          - Produto
+          - Vendas
+          - Marketing
+        levels:
+          - strategic
+          - tactical
+        has_examples: false
+        has_screenshots: false
+        has_step_by_step: false
+        cross_references: []
+      erp_coverage:
+        mentions: 8
+        depth: moderate
+        details:
+          - "Compras & Estoque: controle em tempo real, automacao de requisicoes"
+          - "Vendas & PDV: registro simplificado, promocoes, multiplos meios de pagamento"
+          - "Financas & Contabilidade: fluxo de caixa, relatorios contabeis/fiscais"
+          - "Comunicacao Interna: mensagens e dashboards para alinhamento das equipes"
+          - "Nuvem Oracle Cloud"
+          - "Conformidade LGPD e Fisco"
+          - "Integracoes com adquirentes (Stone, Cielo, PagSeguro, SumUp)"
+      gaps:
+        - "Modulos do ERP listados em topicos rasos — sem detalhamento operacional"
+        - "Sem fluxos de trabalho (workflows) do ERP"
+        - "Sem capturas de tela ou descricao de interface"
+        - "Sem mencao a que o ERP e baseado em Odoo 12"
+        - "Sem informacoes sobre configuracao, customizacao ou modulos especificos do Odoo"
+
+    - file: "(V_0.1) NXZ Go - Arquitetura.md"
+      version: "0.1"
+      description: >
+        Documento tecnico gerado por analise de codebase (v5.13.1). Descreve o NxzGo como
+        plataforma Android multi-modo (PDV, Totem, KDS, Smart POS). Inclui arquitetura,
+        capacidades principais e mapa de documentacao.
+      coverage:
+        products_mentioned:
+          - NXZ Go (PDV)
+          - NXZ Go (Totem)
+          - NXZ Go (KDS)
+          - NXZ Go (Smart POS)
+        audiences:
+          - Engenharia
+          - Produto
+        levels:
+          - tactical
+          - operational
+        has_examples: false
+        has_screenshots: false
+        has_step_by_step: false
+        cross_references:
+          - "comparativo.md"
+          - "funcionalidades-pdv.md"
+          - "funcionalidades-kds.md"
+          - "fluxos.md"
+          - "stack.md"
+      erp_coverage:
+        mentions: 3
+        depth: referencial
+        details:
+          - "ERP Odoo como backend central (catalogo, sessoes POS, vendas, fiscal, configuracoes)"
+          - "Tudo sincronizado com Odoo ERP para controle financeiro e fiscal"
+      gaps:
+        - "Documento inteiramente tecnico — inadequado para marketing sem reescrita"
+        - "ERP mencionado apenas como backend, nao como produto independente"
+
+    - file: "(V_0.1) NXZ GO.md"
+      version: "0.1"
+      description: >
+        Product briefing tecnico do modo PDV (Caixa) do NxzGo. Extremamente detalhado
+        sobre funcionalidades, fluxo de pedido, pagamentos, nota fiscal, stack tecnica
+        e arquitetura.
+      coverage:
+        products_mentioned:
+          - NXZ Go (PDV)
+        audiences:
+          - Engenharia
+          - Produto
+        levels:
+          - operational
+        has_examples: true
+        has_screenshots: false
+        has_step_by_step: true
+        cross_references:
+          - Odoo ERP
+          - Firebase
+          - Supabase
+          - SAT/NFC-e
+      erp_coverage:
+        mentions: 12
+        depth: referencial
+        details:
+          - "Odoo ERP como sistema central (sessoes POS, produtos, categorias, vendas)"
+          - "Configuracoes do POS definidas no Odoo (iface_pos_type)"
+          - "Planta do salao (floor/table hierarchy do Odoo)"
+          - "WebSocket Odoo Bus para atualizacoes em tempo real"
+      gaps:
+        - "ERP e exclusivamente tratado como backend/infraestrutura"
+        - "Nenhuma funcionalidade do ERP em si e descrita — apenas como ele alimenta o NxzGo"
+        - "Tom 100% tecnico/engenharia — nenhum conteudo de marketing"
+
+    - file: "(V_0.1) NXZ KDS funcionalidades.md"
+      version: "0.1"
+      description: >
+        Lista completa de funcionalidades do KDS (Kitchen Display System).
+        Cobre navegacao, pedidos ativos, stages de producao, filtro de categorias,
+        integracoes iFood e Open Delivery, impressao e crons.
+      coverage:
+        products_mentioned:
+          - NXZ KDS
+        audiences:
+          - Engenharia
+          - Produto
+        levels:
+          - operational
+        has_examples: false
+        has_screenshots: false
+        has_step_by_step: false
+        cross_references:
+          - iFood
+          - Open Delivery (Keeta, 99Food, VCQPad)
+          - Firebase/Supabase
+      erp_coverage:
+        mentions: 0
+        depth: none
+        details: []
+      gaps:
+        - "Nenhuma mencao ao ERP"
+        - "Documento puramente tecnico"
+
+    - file: "(V_0.1) NXZ KDS.md"
+      version: "0.1"
+      description: >
+        Product briefing completo do modo KDS. Inclui visao geral, publico-alvo,
+        funcionalidades core, stack tecnica, arquitetura, integracoes e regras de negocio.
+      coverage:
+        products_mentioned:
+          - NXZ KDS
+        audiences:
+          - Engenharia
+          - Produto
+        levels:
+          - operational
+        has_examples: false
+        has_screenshots: false
+        has_step_by_step: true
+        cross_references:
+          - Odoo ERP (configuracoes KDS)
+          - iFood
+          - Open Delivery
+          - Firebase/Supabase
+      erp_coverage:
+        mentions: 3
+        depth: referencial
+        details:
+          - "Odoo ERP para configuracoes KDS e categorias"
+          - "Via Session.getPosConfig e API"
+      gaps:
+        - "ERP tratado apenas como fonte de configuracao"
+        - "Documento tecnico sem utilidade direta para marketing"
+
+    - file: "(V_0.1) NXZ SMART_POS.md"
+      version: "0.1"
+      description: >
+        Product briefing do modo Smart POS — PDV completo em maquininhas inteligentes
+        (Cielo, Stone, PagBank, MSiTef). Detalha pagamento nativo, impressao termica
+        integrada e build multi-modulo.
+      coverage:
+        products_mentioned:
+          - NXZ Go (Smart POS)
+        audiences:
+          - Engenharia
+          - Produto
+        levels:
+          - operational
+        has_examples: true
+        has_screenshots: false
+        has_step_by_step: true
+        cross_references:
+          - Odoo ERP (backend)
+          - Firebase/Supabase
+          - Cielo
+          - Stone
+          - PagBank
+          - MSiTef
+      erp_coverage:
+        mentions: 2
+        depth: referencial
+        details:
+          - "Odoo ERP como backend (sessao, catalogo, vendas)"
+      gaps:
+        - "ERP tratado apenas como backend"
+        - "Documento tecnico sem linguagem de marketing"
+
+    - file: "(V_0.1) NXZ TOTEM.md"
+      version: "0.1"
+      description: >
+        Product briefing do modo Totem (autoatendimento). Detalha screensaver,
+        whitelabel, fluxo simplificado para consumidor final, opcao 'Pagar no balcao'
+        e timer de inatividade.
+      coverage:
+        products_mentioned:
+          - NXZ Go (Totem)
+        audiences:
+          - Engenharia
+          - Produto
+        levels:
+          - operational
+        has_examples: true
+        has_screenshots: false
+        has_step_by_step: true
+        cross_references:
+          - Odoo ERP (whitelabel, catalogo)
+          - Firebase/Supabase
+      erp_coverage:
+        mentions: 2
+        depth: referencial
+        details:
+          - "Toda personalizacao feita via painel Odoo"
+      gaps:
+        - "ERP tratado apenas como painel de configuracao"
+        - "Documento tecnico, mas contem insights uteis para marketing (whitelabel, screensaver como ferramenta de marketing)"
+
+    - file: "comparativo.md"
+      version: unversioned
+      description: >
+        Tabela comparativa entre PDV, Totem e Smart POS. Foca nas diferencas
+        de configuracao, pagamento, impressao e distribuicao.
+      coverage:
+        products_mentioned:
+          - NXZ Go (PDV)
+          - NXZ Go (Totem)
+          - NXZ Go (Smart POS)
+        audiences:
+          - Engenharia
+          - Produto
+        levels:
+          - tactical
+          - operational
+        has_examples: false
+        has_screenshots: false
+        has_step_by_step: false
+        cross_references: []
+      erp_coverage:
+        mentions: 0
+        depth: none
+        details: []
+      gaps:
+        - "Nenhuma mencao ao ERP"
+        - "Formato tabular util, mas com terminologia tecnica"
+
+    - file: "fluxos.md"
+      version: unversioned
+      description: >
+        Diagramas Mermaid dos fluxos de inicializacao, pedido completo (PDV/Totem/Smart POS),
+        pagamento detalhado, ciclo de vida KDS, filtro de categorias, SAT/CF-e e Smart POS.
+      coverage:
+        products_mentioned:
+          - NXZ Go (PDV)
+          - NXZ Go (Totem)
+          - NXZ Go (Smart POS)
+          - NXZ KDS
+        audiences:
+          - Engenharia
+          - Produto
+        levels:
+          - operational
+        has_examples: false
+        has_screenshots: false
+        has_step_by_step: true
+        cross_references:
+          - SAT/CF-e
+          - iFood
+          - Open Delivery
+          - Firebase/Supabase
+      erp_coverage:
+        mentions: 1
+        depth: referencial
+        details:
+          - "Odoo aparece como nodo final nos diagramas"
+      gaps:
+        - "Fluxos sao todos do NxzGo — nenhum fluxo do ERP em si"
+        - "Diagramas Mermaid sao otimos mas inadequados para marketing sem redesenho"
+
+    - file: "NXZ Go - Funcionalidades.md"
+      version: unversioned
+      description: >
+        Lista completa de funcionalidades do PDV, Totem e Smart POS. Documento
+        mais abrangente sobre features — cobre tela inicial, identificacao, catalogo,
+        personalizacao, carrinho, pagamento, impressao, administracao e crons.
+      coverage:
+        products_mentioned:
+          - NXZ Go (PDV)
+          - NXZ Go (Totem)
+          - NXZ Go (Smart POS)
+        audiences:
+          - Engenharia
+          - Produto
+        levels:
+          - operational
+        has_examples: true
+        has_screenshots: false
+        has_step_by_step: true
+        cross_references:
+          - comparativo.md
+          - Odoo ERP
+          - SAT/CF-e
+          - iFood
+      erp_coverage:
+        mentions: 4
+        depth: referencial
+        details:
+          - "Tipo de NF gerido pelo ERP Odoo"
+          - "Planta do salao (floor/table hierarchy do Odoo)"
+          - "Configuracoes via painel Odoo"
+          - "WebSocket Odoo Bus para CRUD de produtos"
+      gaps:
+        - "Funcionalidades do ERP nao sao o foco — apenas como o NxzGo consome o ERP"
+        - "Documento tecnico, mas com descricoes de features uteis para marketing"
+
+  summary:
+    total_files: 12
+    files_with_erp_coverage:
+      superficial: 3  # briefings de persona, negocios e produtos
+      referencial: 7  # documentos do NxzGo que mencionam ERP como backend
+      none: 2         # comparativo.md e funcionalidades KDS
+      deep: 0         # nenhum documento tem cobertura profunda do ERP
+    products_with_dedicated_docs:
+      NXZ_Go_PDV: 2   # briefing + funcionalidades
+      NXZ_Go_Totem: 1
+      NXZ_Go_KDS: 2   # briefing + funcionalidades
+      NXZ_Go_Smart_POS: 1
+      NXZ_Go_Arquitetura: 1
+      NXZ_ERP: 0      # NENHUM documento dedicado ao ERP
+      NXZ_Delivery: 0
+    audience_distribution:
+      engenharia: 9
+      produto: 10
+      marketing: 3   # apenas os 3 briefings gerais
+      vendas: 3
+      estrategia: 1
+    level_distribution:
+      strategic: 3
+      tactical: 4
+      operational: 9
+
+  critical_finding: >
+    O NXZ ERP NAO possui NENHUM documento de contexto dedicado. E o produto
+    central do ecossistema Nexuz (todos os outros dependem dele como backend),
+    mas e mencionado apenas de forma superficial nos 3 briefings gerais e
+    referencialmente nos 9 documentos do NxzGo. Nao existe descricao de suas
+    telas, fluxos, modulos detalhados, diferenciais ou beneficios em linguagem
+    de marketing. Isso e uma lacuna critica para a geracao de conteudo de marketing.
+
+  recommendations:
+    template_structure:
+      - section: "Visao Geral do Produto"
+        purpose: >
+          Descricao do NXZ ERP como produto — o que e, para quem, problema que resolve.
+          Incluir que e baseado em Odoo 12, hospedado em Oracle Cloud, com foco em Food Service.
+        priority: alta
+
+      - section: "Proposta de Valor para Marketing"
+        purpose: >
+          Beneficios traduzidos em linguagem de marketing — reducao de tempo, economia,
+          controle financeiro simplificado, integracao total. Com frases prontas para copy,
+          taglines e argumentos de venda.
+        priority: alta
+
+      - section: "Modulos e Funcionalidades Detalhados"
+        purpose: >
+          Descricao de cada modulo do ERP (Compras, Estoque, Vendas/PDV, Financas,
+          Contabilidade, Comunicacao Interna, Relatorios/BI) com: o que faz, como funciona
+          no dia a dia, prints de tela, beneficio para o usuario.
+        priority: alta
+
+      - section: "Fluxos Operacionais (Workflows)"
+        purpose: >
+          Fluxos passo-a-passo do ERP: abertura de caixa, lancamento de compra, controle
+          de estoque, fechamento financeiro, emissao de relatorios. Essenciais para criar
+          tutoriais, posts educativos e conteudo how-to.
+        priority: alta
+
+      - section: "Capturas de Tela e Elementos Visuais"
+        purpose: >
+          Screenshots anotados das principais telas do ERP para uso em materiais de marketing,
+          landing pages, posts de redes sociais e materiais de vendas.
+        priority: alta
+
+      - section: "Integracao com Ecossistema NXZ"
+        purpose: >
+          Como o ERP se conecta com NXZ Go (PDV/Totem/Smart POS), NXZ KDS, NXZ Delivery
+          e NXZ Pay Go. Diagrama de integracao simplificado para marketing.
+        priority: media
+
+      - section: "Casos de Uso e Cenarios"
+        purpose: >
+          Exemplos praticos por tipo de estabelecimento (restaurante, bar, food truck, franquia).
+          Storytelling de como o ERP resolve problemas reais do dia a dia.
+        priority: media
+
+      - section: "Diferenciais Competitivos"
+        purpose: >
+          O que diferencia o NXZ ERP de concorrentes no setor Food Service
+          (ex: Saipos, Consumer, Goomer, Linx, TOTVS). Tabela comparativa para vendas.
+        priority: media
+
+      - section: "FAQ e Objecoes"
+        purpose: >
+          Perguntas frequentes e respostas para objecoes comuns em marketing/vendas.
+          Util para chatbots, landing pages e materiais de suporte a vendas.
+        priority: baixa
+
+      - section: "Glossario de Termos"
+        purpose: >
+          Traducao de termos tecnicos (BOM, NFC-e, SAT, CF-e, KDS, PDV, webhook, cron)
+          para linguagem acessivel ao publico de marketing e clientes.
+        priority: baixa
+
+    missing_information:
+      - item: "Telas e interface do ERP (screenshots)"
+        source: playwright
+        rationale: >
+          Nenhum dos 12 documentos contem capturas de tela. Para marketing, imagens das
+          telas reais sao essenciais. O ERP pode ser acessado via browser para captura
+          automatizada com Playwright.
+        priority: alta
+
+      - item: "Modulos detalhados do Odoo 12 customizado (Compras, Estoque, Financas, Contabilidade, RH)"
+        source: documentation
+        rationale: >
+          Os briefings listam modulos em uma linha cada. Nao ha descricao do que cada modulo
+          faz na pratica, quais telas tem, quais campos, quais relatorios gera. Esta informacao
+          pode ser extraida do Odoo via MCP (search models, get model schema) e da documentacao existente.
+        priority: alta
+
+      - item: "Fluxos operacionais do ERP (passo a passo)"
+        source: interview
+        rationale: >
+          Nenhum documento descreve os workflows do ERP em si. Os fluxos.md cobrem apenas o NxzGo.
+          Precisa-se de fluxos como: cadastro de produto, abertura de sessao POS, lancamento de
+          compra, fechamento de caixa, conciliacao financeira, emissao de NF.
+        priority: alta
+
+      - item: "Beneficios quantificados (metricas de antes vs depois)"
+        source: interview
+        rationale: >
+          Nenhum documento apresenta dados numericos de impacto (ex: reducao de 40% no tempo
+          de fechamento, aumento de 25% no ticket medio). Essencial para copy de marketing.
+        priority: alta
+
+      - item: "Linguagem de marca e tom de voz"
+        source: interview
+        rationale: >
+          O briefing de negocios lista valores (Empatia, Colaboracao, Evolucao, Transparencia, Respeito)
+          mas nao ha guia de tom de voz, palavras-chave da marca ou diretrizes de comunicacao.
+        priority: media
+
+      - item: "Planos e precificacao do ERP"
+        source: interview
+        rationale: >
+          O modelo SaaS e mencionado mas sem detalhes. Para marketing, saber os planos
+          (modulos incluidos, faixas de preco, diferencas entre planos) e fundamental.
+        priority: media
+
+      - item: "Relatorios e dashboards do ERP (tipos, exemplos)"
+        source: playwright
+        rationale: >
+          Dashboards sao mencionados como diferencial em 3 documentos, mas nenhum descreve
+          quais relatorios existem, que dados mostram ou como se parecem.
+        priority: media
+
+      - item: "Depoimentos e casos de sucesso de clientes"
+        source: interview
+        rationale: >
+          Nao ha nenhum material de social proof. Depoimentos de clientes reais sao
+          fundamentais para marketing de confianca no setor Food Service.
+        priority: media
+
+      - item: "Informacoes sobre NXZ Delivery e NXZ Pay Go"
+        source: documentation
+        rationale: >
+          NXZ Delivery e mencionado nos briefings gerais mas nao possui documento dedicado.
+          NXZ Pay Go nao aparece em nenhum documento do context/. Ambos sao produtos do
+          portfolio e precisam de contexto para marketing completo.
+        priority: baixa
+
+    cross_references:
+      - from: NXZ ERP
+        to: NXZ Go (PDV)
+        relation: backend-frontend
+        integration_points:
+          - "Sessoes POS configuradas no ERP e consumidas pelo NxzGo"
+          - "Catalogo de produtos (categorias, BOMs, precos) gerido no ERP"
+          - "Configuracoes de whitelabel definidas no ERP"
+          - "Vendas processadas pelo NxzGo e sincronizadas ao ERP"
+          - "Nota fiscal (NFC-e) emitida via backend ERP"
+          - "WebSocket Odoo Bus para atualizacoes em tempo real de produtos"
+
+      - from: NXZ ERP
+        to: NXZ Go (Totem)
+        relation: backend-frontend
+        integration_points:
+          - "Mesmos pontos do PDV"
+          - "Configuracoes de whitelabel (cores, logos, textos, screensavers) definidas no ERP"
+          - "Tabelas de preco geridas no ERP"
+
+      - from: NXZ ERP
+        to: NXZ Go (Smart POS)
+        relation: backend-frontend
+        integration_points:
+          - "Mesmos pontos do PDV"
+          - "Configuracao de flavor/terminal gerida no ERP"
+
+      - from: NXZ ERP
+        to: NXZ KDS
+        relation: backend-configuracao
+        integration_points:
+          - "Configuracoes KDS (categorias, filtros) definidas no ERP"
+          - "Dados fiscais e de venda sincronizados via ERP"
+          - "Comandos remotos via WebSocket Odoo Bus"
+
+      - from: NXZ ERP
+        to: NXZ Delivery
+        relation: backend-integracao
+        integration_points:
+          - "Centralizacao de pedidos de multiplas plataformas"
+          - "Sincronizacao de estoque e cardapio"
+          - "Dados de venda e fiscal"
+
+      - from: NXZ Go (PDV/Totem/Smart POS)
+        to: NXZ KDS
+        relation: producer-consumer
+        integration_points:
+          - "Pedidos criados no PDV/Totem aparecem no KDS em tempo real via Firebase/Supabase"
+          - "Drafts e comandas visiveis no KDS para preparacao antecipada"
+          - "Modo BOTH permite alternar entre PDV e KDS no mesmo dispositivo"
+
+      - from: NXZ KDS
+        to: iFood
+        relation: integracao-delivery
+        integration_points:
+          - "Aceite, rejeicao e disputa de pedidos iFood"
+          - "Status do merchant (aberto/fechado)"
+          - "Auto-aceite configuravel"
+          - "Pedidos agendados"
+
+      - from: NXZ KDS
+        to: Open Delivery
+        relation: integracao-delivery
+        integration_points:
+          - "Keeta (Google), 99Food, VCQPad"
+          - "Padrao Open Delivery para novas plataformas"
+
+  document_quality_assessment:
+    strengths:
+      - "Documentos do NxzGo sao extremamente detalhados e bem estruturados (gerados por analise de codebase)"
+      - "Cobertura completa dos modos de operacao do NxzGo (PDV, Totem, KDS, Smart POS)"
+      - "Fluxos Mermaid documentam visualmente os processos end-to-end"
+      - "Comparativo entre modos e claro e util"
+      - "Briefings gerais (v0.2-v0.4) fornecem boa base estrategica"
+    weaknesses:
+      - "Forte desequilibrio: 9/12 documentos cobrem NxzGo, 0/12 cobrem ERP dedicadamente"
+      - "Tom uniformemente tecnico — nenhum documento esta em linguagem de marketing"
+      - "Zero capturas de tela em todos os documentos"
+      - "Zero dados quantificados de impacto/beneficio"
+      - "NXZ Delivery e NXZ Pay Go praticamente ausentes"
+      - "Nao ha versionamento consistente — alguns documentos nao tem versao"
+      - "Documentos tecnicos referenciam arquivos que nao existem (stack.md, funcionalidades-pdv.md como nomes)"

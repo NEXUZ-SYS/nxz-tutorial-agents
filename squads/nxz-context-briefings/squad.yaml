@@ -1,0 +1,70 @@
+code: nxz-context-briefings
+name: "NXZ Context Briefing Creator"
+description: >
+  Squad que cria briefings de contexto padronizados para produtos Nexuz,
+  otimizados para estrategias de engenharia de contexto (AI/LLM). Cada briefing
+  e segmentado por publico-alvo (tech, business, ops) e nivel organizacional
+  (estrategico, tatico, operacional), com exemplos praticos e cross-references
+  entre produtos. Utiliza Playwright para validacao do produto em ambiente real.
+version: "1.0.0"
+skills: []
+
+config:
+  odoo_url: "${ODOO_SAAS_URL}"
+  odoo_user: "${ODOO_SAAS_USER}"
+  odoo_password: "${ODOO_SAAS_PASSWORD}"
+  context_dir: "context/"
+  products:
+    - id: nxz-erp
+      name: "NXZ ERP"
+      description: "Sistema completo de gestao baseado em Odoo 12"
+      relations: ["nxz-go", "nxz-kds", "nxz-delivery", "nxz-pay-go"]
+    - id: nxz-go
+      name: "NXZ Go"
+      description: "Aplicativo/totem de autoatendimento"
+      relations: ["nxz-erp", "nxz-kds"]
+    - id: nxz-kds
+      name: "NXZ KDS"
+      description: "Kitchen Display System"
+      relations: ["nxz-erp", "nxz-go", "nxz-delivery"]
+    - id: nxz-delivery
+      name: "NXZ Delivery"
+      description: "Centralizador de pedidos delivery"
+      relations: ["nxz-erp", "nxz-kds"]
+    - id: nxz-pay-go
+      name: "NXZ Pay Go"
+      description: "Solucao de pagamento mobile"
+      relations: ["nxz-erp", "nxz-go"]
+
+pipeline:
+  steps:
+    - id: checkpoint-config
+      file: pipeline/steps/01-checkpoint-config.md
+      type: checkpoint
+    - id: checkpoint-sources
+      file: pipeline/steps/02-checkpoint-sources.md
+      type: checkpoint
+    - id: analyze-existing
+      file: pipeline/steps/03-analyze-existing.md
+      agent: analyst
+      execution: subagent
+    - id: checkpoint-interview
+      file: pipeline/steps/04-checkpoint-interview.md
+      type: checkpoint
+    - id: explore-product
+      file: pipeline/steps/05-explore-product.md
+      agent: navigator
+      execution: inline
+    - id: checkpoint-review-data
+      file: pipeline/steps/06-checkpoint-review-data.md
+      type: checkpoint
+    - id: write-briefing
+      file: pipeline/steps/07-write-briefing.md
+      agent: writer
+      execution: inline
+    - id: checkpoint-review-draft
+      file: pipeline/steps/08-checkpoint-review-draft.md
+      type: checkpoint
+    - id: checkpoint-approval
+      file: pipeline/steps/09-checkpoint-approval.md
+      type: checkpoint

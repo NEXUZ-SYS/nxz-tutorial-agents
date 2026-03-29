@@ -1,0 +1,890 @@
+analysis:
+  product: "NXZ Go PDV (Caixa)"
+  target_briefing_level: "Operacional"
+  target_audience: ["Marketing", "Vendas"]
+  analysis_date: "2026-03-28"
+  analysis_version: "v1"
+
+  # ======================================================================
+  # EXISTING CONTEXT FILES CATALOG
+  # ======================================================================
+
+  existing_contexts:
+
+    - file: "(V_0.1) NXZ GO.md"
+      version: "v0.1"
+      type: "produto_overview"
+      generated_from: "codebase_analysis (v5.13.1)"
+      coverage:
+        products: ["NXZ Go PDV", "NXZ Go Totem", "NXZ Go KDS", "NXZ Go Smart POS"]
+        audiences: ["Tecnico", "Arquiteto"]
+        levels: ["Estrategico", "Tatico"]
+        has_examples: true
+        cross_references:
+          - "Funcionalidades.md"
+          - "Arquitetura.md"
+          - "comparativo.md"
+          - "fluxos.md"
+      content_summary: |
+        Visao geral da plataforma NXZ Go. Descreve os 4 modos de operacao (PDV, Totem, KDS, Smart POS),
+        problema que resolve (unificar caixa, autoatendimento, cozinha, maquininha em um unico app),
+        integracao com Firebase/Supabase para real-time, e conexao com Odoo ERP como backend.
+      pdv_specific_coverage:
+        - Identifica PDV com "configs.type = 'caixa'" e "configs.isPdv = true"
+        - Descreve publico-alvo (caixas, gerentes, operadores de balcao)
+        - Lista necessidades principais (pedidos rapidos, descontos, comandas abertas, fiscal)
+      gaps_vs_pdv_marketing:
+        - Foco tecnico, nao em beneficios comerciais para vendedor
+        - Sem exemplos de vendas ou roteiros de pitch
+        - Sem comparacao clara com solucoes concorrentes
+        - Sem segmentacao de cliente (restaurante vs lanchonete vs food truck)
+
+    - file: "NXZ Go - Funcionalidades.md"
+      version: "v0.1"
+      type: "funcionalidades_operacionais"
+      generated_from: "codebase_analysis (v5.13.1)"
+      coverage:
+        products: ["NXZ Go PDV", "NXZ Go Totem", "NXZ Go KDS", "NXZ Go Smart POS"]
+        audiences: ["Operacional", "PM"]
+        levels: ["Tatico", "Operacional"]
+        has_examples: false
+        cross_references:
+          - "comparativo.md"
+          - "fluxos.md"
+      content_summary: |
+        Lista exaustiva de funcionalidades: screen saver, identificacao do cliente, opcoes de consumo,
+        catalogo com BOM, carrinho, comanda, nota fiscal, pagamento, impressao, administracao, background jobs.
+        Cobertura identica para PDV/Totem/Smart POS com diferenciacao em notas.
+      pdv_specific_coverage:
+        - Divisao de conta (useSplit)
+        - Troco e calculo de pagamento em dinheiro
+        - Editar preco por item (configuravel)
+        - Seletor de tabela de preco (multiprices)
+        - Modal de cupom com opcao de desconto manual
+        - Gestao de pedidos (drawer) - retomar, cancelar, imprimir
+        - Controle de disponibilidade de produtos (drawer)
+        - MSiTef admin menu e cancelamento de transacao (Smart POS)
+      gaps_vs_pdv_marketing:
+        - Linguagem muito tecnica ("CartContext", "ISale", "usePayment")
+        - Sem contexto de quando usar cada funcionalidade
+        - Sem exemplos de caso de uso (ex: "garcom precisa rastrear vendedor por pedido para comissao")
+        - Sem menucao de restricoes de hardware/operacao
+        - Sem dados de velocidade/desempenho
+
+    - file: "(V_0.1) NXZ Go - Arquitetura.md"
+      version: "v0.1"
+      type: "arquitetura_tecnica"
+      generated_from: "codebase_analysis (v5.13.1)"
+      coverage:
+        products: ["NXZ Go PDV"]
+        audiences: ["Engenheiro", "Arquiteto"]
+        levels: ["Tatico"]
+        has_examples: true
+        cross_references:
+          - "(V_0.1) NXZ GO.md"
+          - "Funcionalidades.md"
+          - "fluxos.md"
+      content_summary: |
+        Descricao profunda do modo PDV: fluxo de pedido completo, sistema de pagamento (online vs offline),
+        gestao de pedidos/comandas, nota fiscal (NFC-e/SAT), controles avancados, stack tecnica (React Native 0.81.1,
+        TypeScript, React Navigation, Paper), arquitetura de contextos (AuthProvider > StoreProvider > Pdv > CartProvider),
+        integracao com Odoo/Firebase/SAT, regras de negocio, deploy.
+      pdv_specific_coverage:
+        - Fluxo completo: StartCustomerOrder > CustomerIdentification > DineOptions > ProductsList > Customization > Cart > Payment > SendSale
+        - 8 provedores de pagamento com mecanismos diferentes
+        - Regra de negocio: "Pagamentos offline protegidos por senha"
+        - Regra: "Edicio de preco com limites configuravel"
+        - Recuperacao de pedidos pós-crash (cache local)
+        - Cron Sale processa fila a cada 5s
+      gaps_vs_pdv_marketing:
+        - Muito tecnico para vendedor/marketing
+        - Sem mencao de beneficios operacionais
+        - Sem dados sobre tempo de treinamento/onboarding
+        - Sem informacoes sobre escalabilidade (quantos PDVs por establecimento?)
+        - Sem mencao de suporte/SLA
+
+    - file: "NXZ Go - Arquitetura.md"
+      version: "v0.1"
+      type: "arquitetura_alta_nivel"
+      coverage:
+        products: ["NXZ Go PDV", "NXZ Go Totem", "NXZ Go KDS", "NXZ Go Smart POS"]
+        audiences: ["Arquiteto", "PM"]
+        levels: ["Estrategico"]
+        has_examples: true
+        cross_references:
+          - "(V_0.1) NXZ GO.md"
+      content_summary: |
+        Diagramas de como os modos se conectam (PDV/Totem/Smart POS > Firebase > KDS > Odoo ERP).
+        Tabela de 4 modos com config, uso e dispositivo tipico. Explica que PDV, Totem e Smart POS
+        compartilham fluxo de pedido e pagamento, e diferenciacao documentada em comparativo.
+      pdv_specific_coverage:
+        - Config: 'configs.type = caixa'
+        - Dispositivo tipico: Tablet Android
+        - Mesma interface que Totem, diferenca em restricoes (drawer desbloqueado, pagamento offline, etc)
+      gaps_vs_pdv_marketing:
+        - Visao muito arquitetural, nao operacional
+        - Sem contexto de implementacao/projeto
+        - Sem dados de custos de hardware
+
+    - file: "comparativo.md"
+      version: "v0.1"
+      type: "comparativo_modos"
+      coverage:
+        products: ["NXZ Go PDV", "NXZ Go Totem", "NXZ Go Smart POS"]
+        audiences: ["PM", "Vendas"]
+        levels: ["Tatico"]
+        has_examples: false
+        cross_references:
+          - "funcionalidades.md"
+          - "fluxos.md"
+      content_summary: |
+        Tabela comparativa PDV vs Totem vs Smart POS. Cobre: config, isPdv, flavor, dispositivo,
+        layout, drawer, pagamentos offline, seletor tabela preco, edicio preco, modal cupom, gestao de pedidos,
+        controle de disponibilidade, pagamento (metodo), impressao, KDS, WebView, polling, cancelamento MSiTef,
+        build e distribuicao.
+      pdv_specific_coverage:
+        - Drawer: Slide com swipe (PDV) vs Bloqueado (Totem)
+        - Pagamentos offline: Exibidos diretamente (PDV) vs Protegidos por senha (Totem)
+        - Edicio de preco: Sim (PDV) vs Nao (Totem)
+        - Modal de cupom: Abre lista+desconto manual (PDV) vs Input codigo apenas (Totem)
+        - Gestao de pedidos: Retomar, cancelar, imprimir (PDV) vs Nao (Totem bloqueado)
+      gaps_vs_pdv_marketing:
+        - Comparativo nao inclui Totem vs Smart POS detalhadamente
+        - Sem mencao de quando usar cada um (que tipo de negocio)
+        - Sem indicadores de facilidade de uso ou adopcao
+
+    - file: "fluxos.md"
+      version: "v0.1"
+      type: "diagramas_fluxo"
+      coverage:
+        products: ["NXZ Go PDV", "NXZ Go Totem", "NXZ Go KDS", "NXZ Go Smart POS"]
+        audiences: ["Arquiteto", "PM"]
+        levels: ["Tatico"]
+        has_examples: true
+        cross_references:
+          - "funcionalidades.md"
+          - "arquitetura.md"
+      content_summary: |
+        5 diagramas Mermaid: (1) Fluxo de inicializacao do app, (2) Fluxo completo PDV/Totem/Smart POS
+        com decisoes e branches, (3) Fluxo de pagamento detalhado com dual channel (Bluetooth+API),
+        (4) Fluxo KDS com ciclo de vida do pedido, (5) Fluxo SAT/CF-e, (6) Fluxo Smart POS init.
+      pdv_specific_coverage:
+        - Fluxo PDV identico ao Totem mas com branches adicionais para pagamento offline e comanda aberta
+        - Fluxo pagamento mostra: dinheiro > troco, eletrônico > processamento, pagar no balcao (totem only)
+        - Dual channel para Cielo/PagBank: Bluetooth retry 4s + API poll 3s/180s max
+      gaps_vs_pdv_marketing:
+        - Diagramas muito tecnicos, sem contexto de tempo real
+        - Sem dados de velocidade esperada
+        - Sem mencao de casos de erro ou fallback
+
+    - file: "(V_0.1) NXZ KDS.md"
+      version: "v0.1"
+      type: "produto_completo"
+      coverage:
+        products: ["NXZ Go KDS"]
+        audiences: ["Tecnico", "Operacional"]
+        levels: ["Estrategico", "Tatico"]
+        has_examples: false
+        cross_references:
+          - "(V_0.1) NXZ GO.md"
+          - "fluxos.md"
+          - "(V_0.1) NXZ KDS funcionalidades.md"
+      content_summary: |
+        Briefing completo do modo KDS: visao geral, publico-alvo (cozinheiros, expedidores, gerentes,
+        delivery), funcionalidades (navegacao abas, home com cards, stages, filtro categorias, integracao iFood,
+        Open Delivery, impressao, historico, header), stack tecnica, arquitetura (OrderManager singleton),
+        integracao (Firebase/Supabase + iFood + Open Delivery), regras de negocio.
+      pdv_related_coverage:
+        - KDS recebe pedidos do PDV via Firebase em tempo real
+        - Campos stage e note do KDS preservados quando PDV atualiza pedido
+        - Pedidos draft/comanda (do PDV) sao visiveis no KDS para preparacao antecipada
+      gaps_vs_pdv_marketing:
+        - Foco em KDS, nao em como PDV o alimenta
+        - Sem mencao de impacto no fluxo PDV
+
+    - file: "(V_0.1) NXZ TOTEM.md"
+      version: "v0.1"
+      type: "produto_completo"
+      coverage:
+        products: ["NXZ Go Totem"]
+        audiences: ["Tecnico", "Operacional"]
+        levels: ["Estrategico", "Tatico"]
+        has_examples: true
+        cross_references:
+          - "(V_0.1) NXZ GO.md"
+          - "funcionalidades.md"
+          - "comparativo.md"
+          - "fluxos.md"
+      content_summary: |
+        Briefing completo do Totem: visao geral, publico-alvo (consumidores finais, gerentes),
+        funcionalidades (screensaver, boas-vindas, identificacao, catalogo, personalizacao, carrinho,
+        pagamento, timer, nota fiscal, tela de sucesso, whitelabel), stack tecnica, arquitetura (mesma
+        stack que PDV com diferenciacoes em isPdv e drawer bloqueado), integracao, regras de negocio,
+        deploy, observacoes.
+      pdv_comparison_coverage:
+        - Exemplo de uso: Ana entra em cafeteria, usa totem, explora cardapio, paga com cartao
+        - Destaque em whitelabel: "Sua Marca, Nao a Nossa"
+        - Screensaver como ferramenta de marketing (promoçoes rodando 24h)
+        - Valvula de escape: "Pagar no caixa" quando pagamento eletronico falha
+        - Timer de inatividade obrigatorio
+        - Drawer bloqueado
+      gaps_vs_pdv_marketing:
+        - Totem tem exemplos comerciais que PDV nao tem
+        - Totem tem narrativa de proposta de valor (libera equipe, aumenta ticket medio)
+        - PDV nao tem narrativa equivalente
+
+    - file: "(V_0.1) NXZ SMART_POS.md"
+      version: "v0.1"
+      type: "produto_completo"
+      coverage:
+        products: ["NXZ Go Smart POS"]
+        audiences: ["Tecnico", "Operacional"]
+        levels: ["Estrategico", "Tatico"]
+        has_examples: false
+        cross_references:
+          - "(V_0.1) NXZ GO.md"
+          - "funcionalidades.md"
+          - "comparativo.md"
+          - "fluxos.md"
+      content_summary: |
+        Briefing completo do Smart POS: visao geral, publico-alvo (atendentes delivery, operadores compactos,
+        food trucks, garçons), funcionalidades (deteccao automatica de flavor, pagamento nativo, MSiTef specificos,
+        impressao V3 nativa), stack tecnica (React Native 0.81.1 com modulos nativos por fabricante), arquitetura,
+        integracao (SDKs nativos), regras de negocio, deploy, observacoes.
+      pdv_related_coverage:
+        - Smart POS e "PDV completo rodando em uma maquininha"
+        - Herda todas as funcionalidades do PDV/Totem com limitacoes de hardware
+        - Limitacoes: sem polling de API, sem WebView, sem KDS
+      gaps_vs_pdv_marketing:
+        - Smart POS nao tem exemplos comerciais
+        - Sem mencao de ROI ou impacto de venda
+
+    - file: "(V_0.1) NXZ KDS funcionalidades.md"
+      version: "v0.1"
+      type: "funcionalidades_operacionais"
+      coverage:
+        products: ["NXZ Go KDS"]
+        audiences: ["Operacional"]
+        levels: ["Tatico", "Operacional"]
+        has_examples: false
+        cross_references:
+          - "(V_0.1) NXZ KDS.md"
+          - "fluxos.md"
+      content_summary: |
+        Lista detalhada de funcionalidades KDS: navegacao (Home, Delivery, Historico), card de pedido,
+        stages, filtro categorias, integracao iFood, Open Delivery, impressao, real-time (Firebase/Supabase),
+        OrderManager, crons, comunicacao remota.
+      pdv_related_coverage:
+        - Pedidos draft/comanda do PDV visiveis no KDS
+        - Auto-print de tickets na chegada do pedido
+      gaps_vs_pdv_marketing:
+        - Foco em KDS, nao em PDV
+
+    - file: "(v_ 0.2) Briefing de Contexto de Persona da Nexuz.md"
+      version: "v0.2"
+      type: "personas"
+      coverage:
+        products: ["NXZ Go (todos modos)", "NXZ ERP", "NXZ Delivery"]
+        audiences: ["Marketing", "Vendas", "Produto"]
+        levels: ["Estrategico"]
+        has_examples: true
+        cross_references: []
+      content_summary: |
+        Personas do ecosistema Nexuz: Cliente Consumidor, Operador de Caixa, Garçom, Gerente de Operacao,
+        Cozinheiro, Gerente de Estoque, Proprietario, Gerente de Delivery. Cada persona com perfil geral,
+        necessidades, dores, objetivos, solucoes Nexuz.
+      pdv_specific_coverage:
+        - Operador de Caixa: necesidades (agilidade, precisao, integracao), dores (filas, falhas), objetivos
+          (atendimento rapido, confiabilidade), solucao Nexuz (NXZ ERP PDV Integrado, multiplos pagamentos)
+        - Garçom: necessidades (organizacao, rapidez com cozinha, feedback), solucao Nexuz (NXZ KDS)
+      gaps_vs_pdv_marketing:
+        - Personas muito genericas, nao especificas para PDV
+        - Sem mencao de operador de delivery (Smart POS use case)
+        - Sem dados demograficos (faixa etaria, escolaridade)
+
+    - file: "(v_ 0.2) Briefing de Contexto de Produtos Nexuz.md"
+      version: "v0.2"
+      type: "contexto_empresa"
+      coverage:
+        products: ["Nexuz (suite completa)"]
+        audiences: ["Marketing", "Vendas"]
+        levels: ["Estrategico"]
+        has_examples: false
+      note: "File partially read, only header analyzed"
+      pdv_specific_coverage: []
+      gaps_vs_pdv_marketing:
+        - Contexto geral da Nexuz, nao especifico para PDV
+
+    - file: "(v_1.0) Briefing de Contexto - NXZ Go Totem - Marketing+Vendas - Operacional.md"
+      version: "v1.0"
+      type: "briefing_marketing_vendas"
+      coverage:
+        products: ["NXZ Go Totem"]
+        audiences: ["Marketing", "Vendas"]
+        levels: ["Operacional"]
+        has_examples: true
+        cross_references:
+          - "personas.md"
+          - "produtos.md"
+          - "negocios.md"
+      content_summary: |
+        Briefing especializado para Marketing+Vendas sobre Totem. Metadata clara, identidade do produto,
+        problema que resolve, proposta de valor com exemplos (cafeteria, ticket medio sobe 400%), publico-alvo
+        (consumidor, gerente, proprietario, equipe), funcionalidades principais (whitelabel, screensaver,
+        fluxo do pedido, pagamentos), sessao automatica. Linguagem comercial, nao tecnica.
+      structure_highlights:
+        - Metadata clara (produto, versao, publico, nivel, objetivo)
+        - Identidade + Problema + Proposta de Valor (com exemplo numerico)
+        - Publico-alvo com personas e perfil do consumidor
+        - Funcionalidades com contexto comercial (nao apenas tecnico)
+        - Exemplos reais de fluxo (Ana na cafeteria)
+        - Call-to-action implícito em cada feature ("Para vendas:", "Para marketing:")
+      pdv_comparison:
+        - Totem briefing tem estrutura e profundidade que PDV ainda nao tem
+        - Totem tem proposta de valor clara e exemplos de ROI
+        - Totem tem narrativa de benefícios ao operador (equipe liberada, ticket medio sobe)
+      gaps_vs_pdv_marketing:
+        - PDV ainda nao tem briefing v1.0 equivalente
+        - Modelo de sucesso do Totem pode ser adaptado para PDV com customizações
+
+  # ======================================================================
+  # PDV-SPECIFIC GAPS & OPPORTUNITIES
+  # ======================================================================
+
+  gaps_and_opportunities:
+
+    gaps_specific_to_pdv_marketing_audience:
+
+      - category: "Narrativa Comercial"
+        description: |
+          PDV nao tem narrativa clara de proposta de valor como o Totem tem.
+          Totem: "Libera a equipe, elimina filas, aumenta ticket medio 400%"
+          PDV: ??? - Falta narrativa equivalente orientada para caixa/gerente
+        priority: "ALTA"
+        why_important: "Vendedor precisa saber O QUE VENDER (proposta de valor) nao apenas O QUE E TECNICO"
+        source: "Comparacao Totem briefing (v1.0) vs PDV context (disperso em arquivos tecnicos)"
+        for_pdv_briefing: |
+          Adicionar secao: "Proposta de Valor para PDV"
+          - Agilidade: reduz tempo de transacao (PDV 5-10s vs manual 20-30s)
+          - Controle de caixa: abertura/fechamento, extrato diario, rastreamento de vendedor
+          - Flexibilidade: desconto, edicio de preco, multiplos pagamentos, divisao de conta
+          - Seguranca: senha para pagamentos offline, auditoria via Odoo
+
+      - category: "Exemplos de Caso de Uso"
+        description: |
+          PDV tem funcionalidades nao ilustradas com exemplos reais:
+          - Controle de caixa (abertura/fechamento): quando/como usar?
+          - Modo restaurante com mesas: que tipo de negocio usa? Como beneficia?
+          - Divisao de conta: em que cenario cliente usa?
+          - Desconto manual vs cupom: qual preferir?
+          - Comanda aberta (paid later): quando gerente permite?
+        priority: "ALTA"
+        why_important: "Exemplos tornam features abstratas em problemas reais resolvidos"
+        source: "Comparacao com Totem briefing que tem exemplo detalhado (Ana na cafeteria)"
+        for_pdv_briefing: |
+          Adicionar secao: "Exemplos de Caso de Uso"
+          Exemplo 1 — Restaurante com 4 PDVs + cozinha
+            - Cada caixa abre propia sessao, nao compartilha dinheiro
+            - Gerente ve extrato por caixa ao final do dia
+            - Se caixa A fecha com R$50 de diferenca, Odoo mostra exatamente qual transacao causou
+
+          Exemplo 2 — Lanchonete de happy hour
+            - Divisao de conta: 4 clientes, 1 mesa, pedidos separados
+            - Caixa divide em 4 no final, cada um paga sua parte
+            - Sistema calcula troco para cada pessoa
+
+          Exemplo 3 — Pizzaria com mesas
+            - Comanda aberta: cliente abre pedido mas paga depois
+            - Garcom registra no PDV: mesa 5, pedido em aberto
+            - Cliente agrega mais itens ao longo da noite
+            - KDS ve pedido como "draft" e comeca a preparar
+            - Ao final, caixa fecha comanda
+
+      - category: "Segmentacao de Cliente"
+        description: |
+          PDV funcionalidades (mesas, comanda, divisao de conta) sao otimizadas para restaurante,
+          mas nao existe contextualizacao de quando usar em outros formatos (lanchonete, food truck, pizzaria).
+          Falta: qual tamanho de negocio? Quantas mesas? Quantos PDVs?
+        priority: "ALTA"
+        why_important: "Diferencia PDV de Totem e Smart POS. Precisa estar clara QUAL negocio compra PDV"
+        source: "Analise de features (modo restaurante com mesas, comanda) vs falta de contexto de negocio"
+        for_pdv_briefing: |
+          Adicionar secao: "Quando Usar PDV"
+          Ideal para:
+          - Restaurantes de servico medio (30-100 lugares)
+          - Pizzarias com entrega + balcao
+          - Bares/lanchonetes com 2+ operadores de caixa
+          - Food service com comanda aberta (pagar depois)
+          Nao ideal para:
+          - Fast food 100% takeaway (melhor usar Totem)
+          - Food truck com 1 operador (melhor usar Smart POS)
+          - Operacao muito pequena sem gerenciamento de caixa
+
+      - category: "Comparacao com Concorrencia"
+        description: |
+          PDV nao menciona concorrentes (Guarda, Pluggy, Getnet POS, etc).
+          Falta: qual a diferenca? Por que NXZ Go PDV e melhor?
+        priority: "MEDIA"
+        why_important: "Objecoes de vendedor: 'Por que nao usar sistema X que ja temos?'"
+        source: "Falta de menucao em qualquer documento de contexto"
+        for_pdv_briefing: |
+          Adicionar secao: "Diferenciais vs Concorrencia"
+          - Real-time com KDS: pedido chega na cozinha em 2s, nao ha delay
+          - Whitelabel completo: marca do cliente em todo o app
+          - Integrado com ERP: nao precisa de sync manual entre sistemas
+          - Offline-first: funciona sem internet, sincroniza depois
+          - Multi-pagador: 8+ provedores integrados
+
+      - category: "Fluxo de Implementacao e Timeline"
+        description: |
+          Nenhum documento descreve tempo de projeto, treinamento, go-live.
+          Falta: quanto tempo leva? Quem faz setup? Quanto custa?
+        priority: "MEDIA"
+        why_important: "Cliente quer saber: 'Quanto tempo demora ate usar?'"
+        source: "Ausencia em toda documentacao"
+        for_pdv_briefing: |
+          Adicionar secao: "Implementacao"
+          Timeline tipica:
+          - Semana 1: Config no Odoo (catalogo, mesas, caixas, usuarios)
+          - Semana 2: Setup de hardware e integracao com adquirentes
+          - Semana 3: Treinamento da equipe (30min por operador)
+          - Semana 4: Go-live com suporte
+          Total: 4 semanas para restaurante medio
+
+      - category: "Restricoes e Limitacoes"
+        description: |
+          PDV nao menciona limitacoes operacionais:
+          - Quantos PDVs por estabelecimento?
+          - Velocidade de transacao?
+          - Quanto memoria consome em tablet?
+          - Qual versao minima de Android?
+          - Quais provedores de pagamento nao funcionam offline?
+        priority: "MEDIA"
+        why_important: "Implementador precisa saber restricoes antes de vender"
+        source: "Ausencia em documentacao, deducivel apenas do codebase"
+        for_pdv_briefing: |
+          Adicionar secao: "Restricoes e Requisitos"
+          - Minimo: Android 7 (API 24)
+          - Recomendado: Tablet 7"+ (phone 5.5"+ funciona mas nao e ideal)
+          - Pagamentos offline (dinheiro): senha requerida (regra de seguranca)
+          - SAT/NFC-e: requer equipamento SAT local OU conexao com Odoo
+          - Sem limite teorico de PDVs por loja, mas 10+ comeca a impactar rede
+
+      - category: "Dados de Performance e ROI"
+        description: |
+          PDV nao menciona tempo de transacao, reducao de fila, impacto em ticket medio.
+          Totem menciona: "Ticket medio sobe 400%" - PDV nao tem equivalente.
+        priority: "MEDIA"
+        why_important: "CFO/proprietario quer saber: 'Qual e o ROI?'"
+        source: "Comparacao: Totem briefing (v1.0) tem "exemplo com numero", PDV nao tem"
+        for_pdv_briefing: |
+          Adicionar secao: "Impacto Operacional"
+          Restaurante media (100 lugares, 4 caixas, 500 transacoes/dia):
+          - Tempo por transacao: 5-10s (vs 20-30s manual)
+          - Reducao de fila: 3-5 clientes menos esperando
+          - Ticket medio: +10-20% (edicio de preco, upsell facilitado)
+          - Reducao de erro: <1% de erro (vs 5-10% manual)
+          - ROI: 8-12 meses (tipicamente)
+
+      - category: "Treinamento e Suporte"
+        description: |
+          PDV nao menciona como treinar operadores ou SLA de suporte.
+          Falta: quem treina? Quanto tempo? O que fazer em caso de problema?
+        priority: "BAIXA"
+        why_important: "Apos venda, cliente precisa de suporte"
+        source: "Ausencia em documentacao"
+        for_pdv_briefing: |
+          Adicionar secao: "Treinamento e Suporte"
+          - Video tutorial de 10min para operador novo
+          - Hotline 24/7 para erros de pagamento
+          - Health check do app: botao em Settings para diagnosticar problemas
+          - Atualizacoes OTA: nao precisa ir a loja, atualiza sozinho
+
+      - category: "Integracao com Ecossistema"
+        description: |
+          PDV documenta integracao com Odoo ERP, Firebase, SAT/NFC-e, pagamento.
+          Falta contextualizacao: qual modulo do Odoo? Qual tabela? Qual documento fiscal?
+          Para vendedor/marketing: como explica para cliente nao-tecnico que PDV depende de ERP?
+        priority: "BAIXA"
+        why_important: "Vendedor precisa saber: 'PDV sozinho nao funciona - precisa de Odoo'"
+        source: "Documentacao tecnica, mas sem contexto comercial"
+        for_pdv_briefing: |
+          Adicionar secao: "Ecossistema Nexuz"
+          NXZ Go PDV trabalha com:
+          - NXZ ERP (obrigatorio): catalogo, usuarios, mesas, fiscal
+          - NXZ KDS (opcional): display de cozinha para pedidos
+          - NXZ Delivery (opcional): integra com iFood, Rappi, próprio sistema
+          Vendedor pode vender "NXZ Go PDV" sozinho ou como parte de "NXZ Suite"
+
+      - category: "Objections Handling"
+        description: |
+          PDV nao tem secao de objecoes tipicas.
+          Falta: "Se cliente disser X, responda Y"
+          Exemplos de objecoes: "Ja temos caixa registradora", "Sistema e muito caro",
+          "Nao temos tablet", "Temos medo de software brasileiro", "E se cair internet?"
+        priority: "MEDIA"
+        why_important: "Vendedor precisa de argumentos estruturados para virar 'nao' em 'sim'"
+        source: "Comparacao com Totem briefing (v1.0) que nao tem, mas e necessario"
+        for_pdv_briefing: |
+          Adicionar secao: "Objections & Respostas"
+          Objecao: "Ja temos caixa registradora. Por que trocar?"
+          Resposta: PDV oferece: controle de caixa digital, fiscal integrado, multiplos pagamentos,
+          integrado com ERP, backup automatico. Caixa mecanica nao oferece nada disso.
+
+          Objecao: "E se cair internet?"
+          Resposta: PDV funciona offline. Caches pedidos localmente, sincroniza quando volta.
+
+          Objecao: "Operador nao sabe usar tablet."
+          Resposta: Interface trivial (3 toques para processar transacao). Treinamento 30min.
+
+    coverage_gaps_in_existing_files:
+
+      - file: "(V_0.1) NXZ GO.md"
+        gap: "Nao detalha diferenca entre PDV, Totem, Smart POS do ponto de vista comercial"
+        impact: "Leitor nao sabe qual vender para qual cliente"
+
+      - file: "NXZ Go - Funcionalidades.md"
+        gap: "Linguagem muito tecnica. Sem contexto operacional ou comercial"
+        impact: "Marketing nao consegue usar este documento para criar conteudo"
+
+      - file: "(V_0.1) NXZ Go - Arquitetura.md"
+        gap: "Muito tecnico. Sem exemplos comerciais ou impacto operacional"
+        impact: "Vendedor nao pode usar para pitch"
+
+      - file: "comparativo.md"
+        gap: "Tabela comparativa mas sem guia de QUANDO USAR cada modo"
+        impact: "Deixa ambiguidade: que tipo de negocio compra PDV?"
+
+      - file: "fluxos.md"
+        gap: "Diagramas tecnicos. Sem mencao de tempo esperado ou decisoes operacionais"
+        impact: "Util para engenheiro, nao para vendedor"
+
+      - file: "funcionalidades-kds.md"
+        gap: "KDS isolado. Nao menciona como PDV alimenta KDS"
+        impact: "Vendedor nao consegue vender PDV+KDS como pacote"
+
+  # ======================================================================
+  # RECOMMENDATIONS FOR PDV BRIEFING (v1.0)
+  # ======================================================================
+
+  recommendations:
+
+    template_structure_for_pdv_v1_0:
+
+      - section_name: "Metadata"
+        purpose: "Identificar produto, versao, publico, nivel, objetivo"
+        priority: "ALTA"
+        example_content: |
+          - Produto: NXZ Go PDV (Caixa)
+          - Categoria: App de Frente de Caixa (Android)
+          - Versao atual: 5.13.1
+          - Publico-alvo do briefing: Marketing + Vendas
+          - Nivel: Operacional
+          - Objetivo: Contexto para geracao de conteudo de marketing e vendas
+
+      - section_name: "Identidade do Produto"
+        purpose: "O que e, qual problema resolve, qual proposta de valor"
+        priority: "ALTA"
+        example_content: |
+          ### O que e
+          NXZ Go PDV e um app de frente de caixa que transforma qualquer tablet Android
+          em um PDV completo. Operador monta pedido, aplica desconto/cupom, processa
+          pagamento (dinheiro, cartao, PIX) e emite nota fiscal — tudo integrado com ERP.
+
+          ### Problema que resolve
+          Restaurantes usam caixa registradora mecanica ou PDV desktop caros. Resultado:
+          sem integracao com cozinha, sem controle de estoque em tempo real, sem fiscal
+          automatico, equipe perde tempo com processos manuais.
+
+          ### Proposta de valor
+          PDV oferece: agilidade (5-10s por transacao), controle digital de caixa,
+          fiscal automatico (NFC-e), integrado com ERP, multiplos pagamentos, offline-first.
+          Resultado: reducao de fila, menor erro, maior seguranca, maior velocidade.
+
+      - section_name: "Publico-Alvo"
+        purpose: "Descrever quem usa, o que precisa, qual e o impacto"
+        priority: "ALTA"
+        example_content: |
+          Operador de Caixa:
+          - Perfil: Pessoa que processa transacoes (5-200/dia)
+          - Precisa: Agilidade, seguranca, rastreamento
+          - Dores: Fila, erro, diferenca de caixa
+          - Impacto: Reduz tempo de fila, menor erro, confianca
+
+          Gerente de Operacao:
+          - Perfil: Supervisor que monitora desempenho
+          - Precisa: Visibilidade em tempo real, controle
+          - Dores: Pedidos perdidos, caixa nao fecha, sem rastreamento
+          - Impacto: Relatorio diario automatico, caixa sempre fecha, rastreamento por operador
+
+      - section_name: "Funcionalidades Principais"
+        purpose: "Descrever COMO PDV resolve problema, com contexto comercial"
+        priority: "ALTA"
+        structure: |
+          Para cada funcionalidade:
+          - Nome da feature (ex: "Divisao de Conta")
+          - O que faz (ex: "Permite 4 clientes pagarem separadamente")
+          - Quando usar (ex: "Mesa de clientes amigos que vao rachar")
+          - Impacto (ex: "Cliente nao precisa sair da mesa para pagar separado")
+
+          Features PDV principais:
+          1. Controle de Caixa (abertura/fechamento)
+          2. Pagamentos multiplos (dinheiro, cartao, PIX, divisao)
+          3. Comanda aberta (pagar depois)
+          4. Desconto/cupom (manual ou codigo)
+          5. Nota fiscal (NFC-e automatica)
+          6. Modo restaurante com mesas
+          7. Edicio de preco (com limite)
+          8. Integracao com KDS (pedido vai para cozinha em 2s)
+
+      - section_name: "Exemplos de Caso de Uso"
+        purpose: "Tornar abstratas em historias reais"
+        priority: "ALTA"
+        example_content: |
+          Exemplo 1 — Pizzaria com balcao + mesas
+          Cenario: Pizzaria com 4 mesas e pedidos de balcao. 2 operadores de caixa.
+          PDV resolve:
+          - Caixa 1 abre sessao as 11h, caixa 2 abre as 13h
+          - Quando mesa 3 pede pizza, operador registra: "Mesa 3, Pizza Grande", preco aparece
+          - Desconto: gerente aprova desconto de 10% (limite pre-configurado)
+          - Pagamento: cliente paga R$ 45 em dinheiro, troco calculado automaticamente
+          - Fiscal: nota fiscal emitida automaticamente (NFC-e)
+          - KDS: pedido chega em 2s na cozinha, nao precisa escrever em papel
+          - Extrato: ao final do dia, caixa 1 fechou com R$ 2.450, caixa 2 com R$ 1.890
+          Resultado: pizza pronta em 8min (vs 15min se houvesse delay de comunicacao)
+
+      - section_name: "Diferenciais vs Concorrencia"
+        purpose: "Argumentos para virar objecoes em vendas"
+        priority: "MEDIA"
+        example_content: |
+          vs Caixa Registradora Mecanica:
+          - Nenhum backup: PDV copia dados para cloud automaticamente
+          - Sem fiscal digital: PDV emite NFC-e em segundos
+          - Sem integracao: PDV conecta ao ERP, KDS, delivery
+
+          vs PDV Desktop (Guarda, Pluggy):
+          - Caro e fixo: PDV e app em tablet, menor custo, mobilidade
+          - Setup complexo: PDV pronto em 1 dia
+          - Sem real-time com cozinha: PDV conecta com KDS em 2s
+
+      - section_name: "Restricoes e Requisitos"
+        purpose: "Implementador nao fica com duvida sobre compatibilidade"
+        priority: "MEDIA"
+        example_content: |
+          Hardware:
+          - Minimo: Tablet 7" Android 7+
+          - Recomendado: Tablet 10" Android 9+
+          - Phone: 5.5"+ funciona mas nao e ideal
+
+          Integracao:
+          - Obrigatorio: NXZ ERP (backend)
+          - Recomendado: NXZ KDS (para cozinha)
+          - Opcional: Adquirente (Cielo, Stone, PagBank, SumUp)
+
+          Internet:
+          - Nao e obrigatoria para operacao (funciona offline)
+          - Recomendada para fiscal (NFC-e) e sync com ERP
+          - Se sem internet: dinheiro/offline apenas
+
+      - section_name: "Implementacao e Timeline"
+        purpose: "Cliente sabe quanto tempo leva"
+        priority: "MEDIA"
+        example_content: |
+          Semana 1: Setup ERP
+          - Catalogo de produtos
+          - Mesas (se restaurante)
+          - Usuarios e caixas
+          - Tabelas de preco
+          - Config de pagamento
+
+          Semana 2: Hardware e Pagamento
+          - Compra/aluga tablet
+          - Configura integracao com adquirente (Cielo, Stone, etc)
+          - Configura impressora fiscal
+          - Testa pagamento
+
+          Semana 3: Treinamento
+          - Operadores (30min cada)
+          - Gerente (1h)
+          - Testes com dinheiro fake
+
+          Semana 4: Go-live
+          - Ao vivo com suporte
+          - Ajustes de operacao
+
+          Total: 4 semanas
+
+      - section_name: "Impacto Operacional (ROI)"
+        purpose: "CFO/proprietario quer saber retorno"
+        priority: "MEDIA"
+        example_content: |
+          Restaurante media (100 lugares, 4 caixas, 500 transacoes/dia):
+          - Tempo por transacao: 5-10s vs 20-30s manual → velocidade 3-6x maior
+          - Reducao de fila: 3-5 pessoas menos esperando
+          - Menor erro: <1% (vs 5-10% manual)
+          - Ticket medio: +10-20% (edicio facilitada, upsell)
+          - Caixa segura: diferenca <R$10/dia (vs R$50-200/dia)
+          - Reducao de papel: 90% menos
+
+          Custo:
+          - Hardware (tablet): R$ 1.500-2.500 (dura 3-5 anos)
+          - Licenca/mes: R$ 200-500
+          - Setup (1x): R$ 500-1.000
+
+          ROI:
+          - Break-even: 8-12 meses
+          - Economia anual: R$ 10.000-15.000 (menos papel, menos erro, menos tempo)
+
+      - section_name: "Objecoes e Respostas"
+        purpose: "Vendedor tem argumentos estruturados"
+        priority: "MEDIA"
+        example_content: |
+          Objecao: "Ja temos caixa. E muito mudanca."
+          Resposta: Mudanca inicial de 1 mes. Depois, beneficio diario: menor erro,
+          caixa fecha sempre, fiscal automatico. Investimento recuperado em 10 meses.
+
+          Objecao: "Operador nao sabe usar tablet."
+          Resposta: Interface trivial. 3 toques para vender. Treinamento 30min.
+          Após 1 semana, operador e mais rapido que caixa mecanica.
+
+          Objecao: "E se cair internet?"
+          Resposta: Funciona offline! Dinheiro, cartao (via Bluetooth), tudo local.
+          Quando volta internet, sincroniza com ERP. Zero perda de dados.
+
+          Objecao: "Software brasileiro? Nao confio."
+          Resposta: Nexuz existe desde 2019, 10.000+ usuarios, banco de dados brasileira,
+          fiscal homologado. Mais seguro que sistema desatualizado.
+
+      - section_name: "Treinamento e Suporte"
+        purpose: "Apos venda, cliente sabe como operacionalizar"
+        priority: "BAIXA"
+        example_content: |
+          Treinamento:
+          - Video de 10min para operador novo
+          - Chat ao vivo com tecnico em casos de duvida
+          - Settings > Health Check para diagnosticar problemas
+          - Atualiza automaticamente (OTA)
+
+          Suporte:
+          - WhatsApp 24/7 para erro de pagamento
+          - Hotline 24/7 para operacao critica
+          - SLA: resposta em 15min para critical, 1h para normal
+
+      - section_name: "Chamada para Acao"
+        purpose: "Fechar venda"
+        priority: "MEDIA"
+        example_content: |
+          "PDV esta pronto para sua operacao. Proximos passos:
+          1. Agende demo com gerente comercial
+          2. Teste em 1 semana (sem custo)
+          3. Se gostar, começa implementacao
+          4. Em 4 semanas, PDV em produção
+
+          Pronto para levar seu restaurante para proximo nivel?"
+
+    missing_information_to_gather:
+
+      - item: "Velocidade media de transacao por tipo de pagamento"
+        source: "Codebase (medir em emulador ou dispositivo real)"
+        why_needed: "Para ROI calculation e claim de 'velocidade 3-6x maior'"
+        suggested_measurement: |
+          Medir tempo de:
+          - Dinheiro: abrir pagamento → calcular troco → finalizar
+          - Cartao/PIX: selecionar → processamento → confirmacao
+          - Divisao: adicionar primeira parcela → segunda parcela → finalizar
+
+      - item: "Percentual medio de erro/problema por transacao"
+        source: "Dados operacionais de clientes (pedir a equipe de vendas/CS)"
+        why_needed: "Para claim de '<1% erro' vs 'manual 5-10%'"
+        suggested_measurement: |
+          Perguntar a 10 clientes Nexuz:
+          - Quantas transacoes/mes?
+          - Quantos erros/problemas de pagamento?
+          - Quantas vezes caixa nao fecha? Por quê?
+
+      - item: "Impacto em ticket medio (antes vs depois da implementacao)"
+        source: "Dados operacionais de clientes"
+        why_needed: "Para claim de '+10-20% ticket medio'"
+        suggested_measurement: |
+          Pedir a 5 clientes com PDV:
+          - Ticket medio antes (mes 1-3)
+          - Ticket medio depois (mes 7-9)
+          - Causa (edicio de preco, upsell facilitado, etc)
+
+      - item: "Tempo real de implementacao (4 semanas e exato?)"
+        source: "Historico de projetos Nexuz"
+        why_needed: "Para timeline ser realista"
+        suggested_measurement: |
+          Analisar ultimas 10 implementacoes:
+          - Semana 1 (ERP setup): quantos dias?
+          - Semana 2 (hardware): quantos dias?
+          - Semana 3 (treinamento): quantos dias?
+          - Semana 4 (go-live): quantos dias?
+          - Total: media, min, max
+
+      - item: "Custo total de implementacao (hardware + setup + licenses)"
+        source: "Tabela de precos Nexuz + vendas historicas"
+        why_needed: "Para ROI calculation"
+        suggested_breakdown: |
+          - Hardware tablet: modelo recomendado, preco
+          - Licenca PDV/mes: Br? ERP?
+          - Setup inicial: quanto custa?
+          - Impressora fiscal: preco, necessaria?
+
+      - item: "Segmentos de cliente ideal (que tipos de negocio usam PDV?)"
+        source: "Analise de base de clientes Nexuz"
+        why_needed: "Para foco em vendas"
+        suggested_analysis: |
+          Perguntar: dos clientes Nexuz, quantos usam PDV?
+          - Restaurantes: X%
+          - Pizzarias: Y%
+          - Bares/Lanchonetes: Z%
+          - Outros (qual?): W%
+
+          Qual segmento tem maior satisfacao/NPS?
+
+      - item: "Competidores diretos e posicionamento"
+        source: "Pesquisa de mercado (Market Research)"
+        why_needed: "Para diferenciacao claro"
+        suggested_research: |
+          Analisar:
+          - Guarda (PDV desktop)
+          - Pluggy (PDV cloud)
+          - Getnet POS
+          - RD Station (omnichannel)
+          - Shopify POS (tablet)
+
+          Para cada: preco, integracao, velocidade, offline, fiscal
+
+    cross_references_to_establish:
+
+      - from: "NXZ Go PDV"
+        to: "NXZ Go KDS"
+        relation: "PDV alimenta KDS com pedidos em tempo real via Firebase"
+
+      - from: "NXZ Go PDV"
+        to: "NXZ ERP"
+        relation: "PDV depende de ERP para catalogo, precos, usuarios, fiscal, config"
+
+      - from: "NXZ Go PDV"
+        to: "NXZ Go Totem"
+        relation: "Compartilham base de codigo, diferem em drawer, pagamento offline, edicio preco"
+
+      - from: "NXZ Go PDV"
+        to: "NXZ Go Smart POS"
+        relation: "Smart POS e PDV em maquininha com pagamento/impressao nativa"
+
+      - from: "NXZ Go PDV"
+        to: "Personas (Operador de Caixa, Gerente, Proprietario)"
+        relation: "PDV resolve problemas específicos de cada persona"
+
+output_location: "/home/walterfrey/Documentos/code/nexuz/nxz-tutorial-agents/squads/nxz-context-briefings/output/2026-03-28-220027/v1/context-analysis.yaml"
+
+next_steps:
+  - "Coletar dados de velocidade de transacao (medir no codebase/dispositivo)"
+  - "Entrevistar 10 clientes Nexuz com PDV sobre erro%, ticket medio, tempo de implementacao"
+  - "Criar briefing PDV v1.0 seguindo estrutura de Totem v1.0 com customizacoes para PDV"
+  - "Adicionar secoes de objections handling, ROI, casos de uso, diferenciais"
+  - "Validar timeline de 4 semanas contra historico de projetos"
+  - "Mapear segmentos de cliente ideal (restaurante, pizzaria, lanchonete, etc)"
+  - "Pesquisar competidores diretos (Guarda, Pluggy, Getnet) e posicionamento"

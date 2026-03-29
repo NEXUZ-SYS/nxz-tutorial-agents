@@ -1,0 +1,197 @@
+exploration:
+  product: NXZ Go PDV (Caixa)
+  platform: "React Native 0.81.1 (Android) + Odoo 12 backend"
+  version: "5.13.1"
+  date: "2026-03-28"
+  method: "Docs de contexto + codebase analysis + dados MCP run anterior"
+
+  identity:
+    description: "Caixa registradora completa para operador de balcao — o modo mais completo do NXZ Go"
+    config_type: "caixa"
+    config_flag: "isPdv = true"
+    typical_device: "Tablet Android"
+    user: "Operador de caixa / Gerente / Garcom"
+    key_difference_from_totem: "PDV e para o OPERADOR (funcionario), Totem e para o CLIENTE"
+
+  pdv_exclusive_features:
+    - id: cash_control
+      name: "Controle de Caixa"
+      description: "Abertura e fechamento de caixa com conferencia de valores"
+      details:
+        - "Abertura de caixa com valor inicial (fundo de troco)"
+        - "Fechamento com conferencia: sistema vs dinheiro fisico"
+        - "Sangria e suprimento durante o turno"
+        - "Relatorio por operador"
+        - "Cash control obrigatorio no template PDV"
+
+    - id: restaurant_mode
+      name: "Modo Restaurante com Mesas"
+      description: "Gestao completa de salao com mesas e comandas"
+      details:
+        - "Planta do salao (floor/table hierarchy do Odoo)"
+        - "Selecao de mesa no carrinho"
+        - "Comandas abertas (open tabs) por mesa"
+        - "Divisao de conta entre clientes na mesma mesa"
+        - "Pedido fica aberto ate cliente pedir a conta"
+        - "Garcom pode adicionar itens a comanda existente"
+
+    - id: order_management
+      name: "Gestao de Pedidos"
+      description: "Tela administrativa para gerenciar todos os pedidos"
+      details:
+        - "Acessivel via drawer lateral (swipe)"
+        - "Lista pedidos em aberto, drafts, comandas"
+        - "Acoes: retomar no carrinho, cancelar, imprimir"
+        - "Exclusivo do PDV — drawer bloqueado no Totem"
+
+    - id: price_editing
+      name: "Edicao de Preco por Item"
+      description: "Operador pode alterar preco de itens individuais"
+      details:
+        - "Habilitado via configs.discount.usePrice"
+        - "Limites configuraveis (min/max)"
+        - "Exclusivo PDV — Totem nao permite"
+
+    - id: coupon_modal
+      name: "Modal de Cupom Avancado"
+      description: "Ao clicar em 'Aplicar' sem digitar codigo, abre painel completo"
+      details:
+        - "Lista de cupons cadastrados (via API do Odoo)"
+        - "Desconto manual: porcentagem ou valor fixo"
+        - "No Totem, usuario precisa digitar o codigo"
+
+    - id: pricelist_selector
+      name: "Seletor de Tabela de Precos"
+      description: "Operador escolhe qual tabela de precos aplicar"
+      details:
+        - "Quando multiplas pricelists configuradas"
+        - "Permite preco diferenciado por canal (balcao vs delivery)"
+        - "Exclusivo PDV — Totem usa pricelist fixa"
+
+    - id: product_availability
+      name: "Controle de Disponibilidade"
+      description: "Toggle de disponibilidade de produtos em tempo real"
+      details:
+        - "Acessivel via drawer lateral"
+        - "Lista paginada de todos os produtos"
+        - "Toggle available_in_pos por produto"
+        - "Status: disponivel, indisponivel, em processo, parcial"
+
+    - id: offline_payments
+      name: "Pagamentos Offline (Dinheiro)"
+      description: "Dinheiro e metodos manuais sem senha"
+      details:
+        - "No PDV: exibidos diretamente, sem senha"
+        - "No Totem: protegidos por senha (evitar manuseio)"
+        - "Calculo automatico de troco (PaymentChange)"
+
+    - id: drawer_navigation
+      name: "Drawer Lateral Completo"
+      description: "Menu deslizante com acesso a funcoes administrativas"
+      details:
+        - "Swipe para abrir (PDV) vs bloqueado (Totem)"
+        - "Opcoes: PDV, KDS (se BOTH), Produtos, Gestao de Pedidos"
+        - "Cancelamento MSiTef (se Smart POS)"
+
+  shared_features_with_totem:
+    - "Catalogo de produtos com categorias visuais e busca"
+    - "Personalizacao de produtos via BOM (tamanhos, sabores, adicionais)"
+    - "Leitor de codigo de barras com multiplicador (1x-20x)"
+    - "Identificacao do cliente (simples, CPF, email, telefone)"
+    - "Opcao dine-in/takeaway"
+    - "Codigo de vendedor por pedido"
+    - "Gorjeta (percentual ou valor fixo)"
+    - "Divisao de conta (split bill)"
+    - "Nota fiscal (NFC-e): imprimir, email, nenhuma"
+    - "Screen saver com imagens promocionais"
+    - "Timer de inatividade"
+    - "Modo imersivo (fullscreen)"
+    - "Comanda aberta / pedido rascunho"
+    - "Recuperacao de pedido pos-crash"
+    - "Whitelabel (cores, logo, textos)"
+    - "Offline-first com sincronizacao"
+
+  payment_integrations:
+    native_sdks:
+      - "Stone (build dedicado)"
+      - "Cielo (build dedicado)"
+      - "PagBank (build dedicado)"
+    api_integrations:
+      - "SumUp (Native SDK Android)"
+      - "Pagarme (API REST)"
+    dual_channel:
+      - "Cielo: Bluetooth + API polling em paralelo"
+      - "PagBank: Bluetooth + API polling em paralelo"
+      - "Stone Fisica: Bluetooth + API polling em paralelo"
+    offline:
+      - "Dinheiro (sem senha no PDV)"
+      - "PIX (QR code na tela)"
+      - "Vouchers/Cupons"
+
+  printer_support:
+    protocols:
+      - "ESC/POS"
+      - "Bluetooth (BLE)"
+      - "Rede (Wi-Fi/Ethernet TCP)"
+      - "USB"
+    print_types:
+      - "DANFE — nota fiscal completa com QR code"
+      - "Receipt — comprovante resumido"
+      - "Ticket — ticket de producao para cozinha"
+      - "Sticker — etiqueta de identificacao"
+    features:
+      - "Impressao automatica configuravel"
+      - "Retry ate 120 tentativas"
+      - "Fallback: envio por email se impressora falhar"
+      - "Tres geracoes de drivers: V1 (RawBT), V2 (BLE/Network/USB), V3 (Smart POS nativo)"
+
+  pdv_order_flow:
+    steps:
+      - "1. Screen Saver → Toque inicia"
+      - "2. Boas-vindas → Novo Pedido ou Recuperar pendente"
+      - "3. Identificacao do Cliente (nome, CPF, email, telefone)"
+      - "4. Opcao de Consumo (comer aqui / levar)"
+      - "5. Catalogo → Selecao de produtos → Personalizacao BOM"
+      - "6. Carrinho → Desconto, cupom, vendedor, mesa, gorjeta"
+      - "7. Comanda aberta (opcional) → Pagar agora ou abrir tab"
+      - "8. Nota Fiscal → Imprimir, email, ou nenhuma"
+      - "9. Pagamento → Dinheiro (troco), cartao, PIX, split"
+      - "10. Envio ao backend → Impressao → Tela de Sucesso"
+    kds_integration: "Pedido aparece no KDS da cozinha em ~2 segundos"
+
+  background_jobs:
+    - name: "Sale"
+      frequency: "5 seg"
+      function: "Processa fila de pedidos, envia ao Odoo, salva no Firebase"
+    - name: "SaleError"
+      function: "Reprocessa pedidos com erro"
+    - name: "NotifyOrders"
+      function: "Notifica pedidos pendentes"
+    - name: "SendEmail"
+      function: "Envia emails de NF"
+    - name: "ClearCache"
+      frequency: "24h"
+      function: "Remove cache expirado"
+
+  realtime_communication:
+    - "WebSocket (Odoo Bus) — CRUD de produtos/categorias em tempo real"
+    - "Acoes remotas: restart, clear cache, debug mode, status, send CFe"
+
+  volume_data_from_previous_run:
+    pos_orders: 4676
+    products: 205
+    categories: 10
+    companies: 5
+
+  marketing_relevant_highlights:
+    - "Modo mais completo do NXZ Go — tudo que o Totem faz + controles avancados"
+    - "Controle de caixa: abertura/fechamento com conferencia, sangria, suprimento"
+    - "Modo restaurante: mesas, comandas abertas, divisao de conta"
+    - "Gestao de pedidos: retomar, cancelar, imprimir via drawer"
+    - "Edicao de preco e desconto manual — flexibilidade para o gerente"
+    - "Multi-adquirente: Stone, Cielo, PagBank, SumUp, Pagarme"
+    - "Offline-first: nunca para de vender"
+    - "Dinheiro sem senha — fluxo rapido no caixa"
+    - "Dual channel (Bluetooth + API): pagamento mais rapido e confiavel"
+    - "4 tipos de impressao: DANFE, receipt, ticket, sticker"
+    - "Mesmo app que o Totem — operacao unificada, dados centralizados"

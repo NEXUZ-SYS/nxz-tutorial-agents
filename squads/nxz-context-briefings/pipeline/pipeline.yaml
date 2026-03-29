@@ -1,0 +1,43 @@
+name: "NXZ Context Briefing Pipeline"
+description: "Pipeline para criacao de briefings de contexto padronizados para engenharia de contexto"
+
+steps:
+  - id: checkpoint-config
+    file: steps/01-checkpoint-config.md
+    type: checkpoint
+
+  - id: checkpoint-sources
+    file: steps/02-checkpoint-sources.md
+    type: checkpoint
+
+  - id: analyze-existing
+    file: steps/03-analyze-existing.md
+    agent: analyst
+    execution: subagent
+    model_tier: powerful
+
+  - id: checkpoint-interview
+    file: steps/04-checkpoint-interview.md
+    type: checkpoint
+
+  - id: explore-product
+    file: steps/05-explore-product.md
+    agent: navigator
+    execution: inline
+
+  - id: checkpoint-review-data
+    file: steps/06-checkpoint-review-data.md
+    type: checkpoint
+
+  - id: write-briefing
+    file: steps/07-write-briefing.md
+    agent: writer
+    execution: inline
+
+  - id: checkpoint-review-draft
+    file: steps/08-checkpoint-review-draft.md
+    type: checkpoint
+
+  - id: checkpoint-approval
+    file: steps/09-checkpoint-approval.md
+    type: checkpoint

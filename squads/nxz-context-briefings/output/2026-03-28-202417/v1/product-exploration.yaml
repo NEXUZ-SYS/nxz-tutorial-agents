@@ -1,0 +1,151 @@
+exploration:
+  product: NXZ Go
+  platform: "React Native 0.81.1 (Android) + Odoo 12 backend"
+  version: "5.13.1"
+  date: "2026-03-28"
+  method: "MCP Odoo (configs reais) + codebase analysis"
+
+  modes:
+    - id: caixa
+      name: PDV (Caixa)
+      description: "Caixa registradora completa para operador de balcao"
+      config_name: "PDV"
+      features_observed:
+        - "Selecao manual de produtos no catalogo visual"
+        - "Controle de caixa (abertura/fechamento com conferencia)"
+        - "Modo restaurante com mesas e comandas"
+        - "Descontos globais por pedido"
+        - "Impressao automatica de recibo"
+        - "Emissao fiscal (NFC-e)"
+        - "Multiplas formas de pagamento"
+
+    - id: totem
+      name: Totem (Autoatendimento)
+      description: "Tela de autoatendimento para o cliente fazer pedido sozinho"
+      config_name: "TOTEM"
+      features_observed:
+        - "Interface visual com categorias de produto com imagens"
+        - "Screensaver configuravel (marketing na tela ociosa)"
+        - "Whitelabel — cores, logo, textos personalizaveis"
+        - "Pagamento integrado (esconde opcao offline no totem)"
+        - "Opcao 'pagar no caixa' com ajuda"
+        - "Sessao automatica (abertura/fechamento sem intervencao)"
+        - "Divisao de conta (split bill)"
+        - "Timer de inatividade"
+
+    - id: kds
+      name: KDS (Kitchen Display System)
+      description: "Tela de cozinha que exibe pedidos em tempo real"
+      features_observed:
+        - "Pedidos em tempo real via Firebase/Supabase"
+        - "Stages de producao (recebido, preparando, pronto)"
+        - "Filtro por categoria (praca quente, fria, bar)"
+        - "Integracao iFood (aceite, rejeicao, disputa)"
+        - "Integracao Open Delivery (Keeta, 99Food)"
+        - "Historico de pedidos"
+        - "Envio de drafts (pedidos pendentes antes do pagamento)"
+
+    - id: smartpos
+      name: Smart POS (Maquininha)
+      description: "PDV completo rodando direto na maquininha de pagamento"
+      builds:
+        - stone: "Maquininha Stone com SDK nativo"
+        - cielo: "Maquininha Cielo com SDK nativo"
+        - pagbank: "Maquininha PagBank com SDK nativo"
+      features_observed:
+        - "PDV completo em tela de maquininha"
+        - "Pagamento nativo (cartao, pix) sem dispositivo externo"
+        - "Impressao termica integrada na maquininha"
+        - "Mesmo catalogo e precos do ERP"
+        - "Funciona offline com sincronizacao"
+
+  pos_configs_in_production:
+    total: 5
+    configs:
+      - name: "PDV"
+        type: caixa
+        company: "[Template] BASE"
+        features: "cash_control, descontos, selecao manual"
+      - name: "TOTEM"
+        type: totem
+        company: "[Template] BASE"
+        features: "cash_control, descontos, selecao manual"
+      - name: "PDV 1 Totem - NO. Coffee (Peruibe)"
+        type: totem
+        company: "No. Coffee - SP Peruibe"
+        features: "sessao automatica, split bill, ajuda ao caixa"
+      - name: "PDV 1 Totem - NOCFST (Santos)"
+        type: totem
+        company: "No. Coffee - SP Santos"
+        features: "cash_control, split bill, selecao manual"
+      - name: "PDV 2 IFood - NOCFST (Santos)"
+        type: ifood
+        company: "No. Coffee - SP Santos"
+        features: "iFood ativo, sessao automatica, split bill, pricelist iFood"
+
+  pos_categories_visual:
+    total: 10
+    categories:
+      - "Novidades"
+      - "Timeless Smoothies"
+      - "Booster Smoothies"
+      - "Gelada"
+      - "Refreshing Smoothies"
+      - "Quente"
+      - "Sucos"
+      - "Shots"
+      - "Acai & Bowls"
+      - "Para comer"
+    observation: "Categorias 100% food service, organizadas por tipo de bebida/comida"
+
+  volume_data:
+    pos_orders: 4676
+    products: 205
+
+  payment_integrations:
+    native_sdks:
+      - "Stone (build dedicado)"
+      - "Cielo (build dedicado)"
+      - "PagBank (build dedicado)"
+    api_integrations:
+      - "SumUp"
+      - "Pagarme"
+    other:
+      - "PIX"
+      - "Dinheiro"
+      - "Vouchers/Cupons"
+
+  printer_support:
+    protocols:
+      - "ESC/POS"
+      - "Bluetooth"
+      - "Rede (Wi-Fi/Ethernet)"
+      - "USB"
+      - "Termica integrada (Smart POS)"
+
+  delivery_integrations:
+    - "iFood (aceite, rejeicao, disputa, auto-aceite, pedidos agendados)"
+    - "Open Delivery (Keeta/Google, 99Food, VCQPad)"
+
+  offline_capabilities:
+    - "Funciona sem internet"
+    - "Vendas salvas localmente"
+    - "Sincronizacao automatica ao reconectar"
+    - "Cache de produtos e configuracoes"
+
+  whitelabel_features:
+    - "Personalizacao de cores (hex)"
+    - "Logo e textos customizaveis"
+    - "Screensaver como ferramenta de marketing"
+    - "Cabecalho e rodape de recibo customizaveis"
+
+  marketing_relevant_highlights:
+    - "Multi-adquirente: Stone, Cielo, PagBank, SumUp, Pagarme — cliente escolhe"
+    - "Offline-first: nunca para de vender, mesmo sem internet"
+    - "Smart POS: PDV completo na maquininha, sem tablet extra"
+    - "Whitelabel: marca do cliente no totem, nao marca NXZ"
+    - "10 categorias visuais food service no catalogo"
+    - "4.676 pedidos processados em producao real"
+    - "Sessao automatica: totem abre e fecha sozinho"
+    - "Integracao iFood nativa: pedidos delivery direto no KDS"
+    - "Screensaver = marketing na tela ociosa do totem"
