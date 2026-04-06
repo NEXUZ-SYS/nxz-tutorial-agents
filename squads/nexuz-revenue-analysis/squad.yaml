@@ -1,0 +1,60 @@
+squad:
+  code: nexuz-revenue-analysis
+  name: "Nexuz Revenue Analysis"
+  description: "Análise de receita Asaas — cruza faturas × assinaturas × antecipações para identificar clientes sem assinaturas ativas e marcar receitas antecipadas"
+  version: "1.0.0"
+  performance_mode: alta_performance
+
+  skills:
+    - asaas_mcp
+    - gsheets
+
+  data:
+    - pipeline/data/research-brief.md
+    - pipeline/data/domain-framework.md
+    - pipeline/data/quality-criteria.md
+    - pipeline/data/output-examples.md
+    - pipeline/data/anti-patterns.md
+
+  pipeline:
+    steps:
+      - id: extract-data
+        name: "Extrair Dados do Asaas"
+        file: pipeline/steps/step-01-extract-data.md
+
+      - id: validate-extraction
+        name: "Validar Extração"
+        type: checkpoint
+        file: pipeline/steps/step-02-validate-extraction.md
+
+      - id: generate-raw-validation
+        name: "Gerar Arquivo de Validação Bruta"
+        file: pipeline/steps/step-03-generate-raw-validation.md
+
+      - id: manual-validation
+        name: "Validação Manual dos Dados"
+        type: checkpoint
+        file: pipeline/steps/step-04-manual-validation.md
+
+      - id: cross-reference-analysis
+        name: "Análise de Cruzamento"
+        file: pipeline/steps/step-05-cross-reference-analysis.md
+
+      - id: review-analysis
+        name: "Revisão da Análise"
+        file: pipeline/steps/step-06-review-analysis.md
+        on_reject: cross-reference-analysis
+
+      - id: approve-report
+        name: "Aprovar Relatório"
+        type: checkpoint
+        file: pipeline/steps/step-07-approve-report.md
+
+      - id: export-to-sheets
+        name: "Exportar para Google Sheets"
+        file: pipeline/steps/step-08-export-to-sheets.md
+
+    checkpoints:
+      - validate-extraction
+      - manual-validation
+      - approve-report

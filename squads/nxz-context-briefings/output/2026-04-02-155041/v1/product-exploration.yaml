@@ -1,0 +1,90 @@
+exploration:
+  product: "NXZ Go — Todos os Modos (Totem, PDV, Smart POS)"
+  date: "2026-04-02"
+  version: "5.13.1"
+  access_method: "MCP Odoo + briefings existentes v1.0"
+
+  dados_reais_odoo:
+    total_pedidos: 3184
+    volume_total_brl: 146715.35
+    produtos_ativos: 182
+    categorias: 16
+    ticket_medio: "R$ 46,07"
+    clientes_cadastrados: 1049
+    empresas_ativas: 5
+    multi_empresa:
+      - "No Coffee - Matriz"
+      - "No. Coffee - SP Peruibe (operacional, 3.184 pedidos)"
+      - "No. Coffee - SP Santos"
+    pos_configs:
+      - name: "PDV 1 Totem - NO. Coffee"
+        company: "No. Coffee - SP Peruibe"
+        restaurant_mode: true
+
+  capacidades_compartilhadas_todos_modos:
+    - offline_first: "Funciona sem internet, sincroniza automaticamente"
+    - multi_adquirente: "Stone, Cielo, PagBank, SumUp, Pagarme, PIX"
+    - whitelabel: "Interface 100% personalizada com marca do cliente"
+    - integracao_kds: "Pedido na cozinha em 2 segundos"
+    - nota_fiscal: "NFC-e integrada com emissão e impressão"
+    - catalogo_visual: "Categorias com imagens, BOM para personalização"
+    - crash_recovery: "Pedidos recuperados automaticamente pós-crash"
+    - sessao_automatica: "Abertura/fechamento por horário"
+    - pricelist: "Preços diferentes por canal/ponto de venda"
+    - cupom_desconto: "Aplicação de cupons e descontos manuais"
+    - monitoramento_sentry: "Erros reportados automaticamente"
+
+  diferenciais_por_modo:
+    totem:
+      foco: "CLIENTE faz o pedido sozinho"
+      hardware: "Qualquer tablet Android"
+      exclusivo:
+        - "Screensaver como ferramenta de marketing 24h"
+        - "Timer de inatividade → volta ao screensaver"
+        - "Modo imersivo (fullscreen sem barra Android)"
+        - "Drawer bloqueado (cliente não acessa admin)"
+        - "Pagar no caixa (válvula de escape)"
+        - "Split bill"
+      argumento_central: "Elimina filas, aumenta ticket médio, libera equipe"
+
+    pdv:
+      foco: "OPERADOR no caixa"
+      hardware: "Tablet Android em suporte fixo"
+      exclusivo:
+        - "Controle de caixa (abertura, sangria, suprimento, fechamento)"
+        - "Modo restaurante com mesas e comandas"
+        - "Edição de preço na hora"
+        - "Modal de cupom/desconto com lista"
+        - "Dinheiro como forma de pagamento padrão"
+        - "Relatório por operador/turno"
+        - "Gestão de disponibilidade de produto"
+      argumento_central: "Caixa completo com controle financeiro, zero surpresa no fechamento"
+
+    smart_pos:
+      foco: "OPERADOR MÓVEL (garçom, food truck, entregador)"
+      hardware: "Maquininha inteligente (Stone, Cielo, PagBank, MSiTef)"
+      exclusivo:
+        - "Pagamento nativo no hardware (zero latência, zero Bluetooth)"
+        - "Impressora térmica integrada (DANFE, comprovante, ticket)"
+        - "Interface compacta para tela 5.5 polegadas"
+        - "Modo BOTH (PDV + KDS no mesmo dispositivo)"
+        - "Cancelamento MSiTef com cache local"
+        - "Build por fabricante (APK específico por terminal)"
+      argumento_central: "PDV completo no bolso — 3 equipamentos em 1"
+
+  concorrentes_identificados:
+    pos_tradicionais:
+      - "Linx"
+      - "TOTVS"
+      - "Saipos"
+      - "Goomer"
+      - "Consumer"
+    autoatendimento:
+      - "Anota AI"
+      - "Goomer"
+      - "Menu Digital iFood"
+
+  wow_moments_demo:
+    1: "Whitelabel instantâneo — marca do prospect no totem/PDV"
+    2: "Pedido → KDS em 2 segundos — fluxo real em tempo real"
+    3: "Multi-modo no mesmo app — alternar Totem/PDV/Smart POS"

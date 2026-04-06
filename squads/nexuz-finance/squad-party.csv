@@ -1,0 +1,6 @@
+id,name,title,icon,path,execution
+diana-dados,Diana Dados,Data Extractor,🔍,./agents/diana-dados.agent.md,subagent
+ricardo-receita,Ricardo Receita,Revenue Analyst,📊,./agents/ricardo-receita.agent.md,inline
+flavia-fluxo,Flavia Fluxo,Cash Flow & DRE Analyst,💰,./agents/flavia-fluxo.agent.md,inline
+renato-relatorio,Renato Relatorio,Report Compiler,📋,./agents/renato-relatorio.agent.md,inline
+carlos-cfo,Carlos CFO,Strategic Reviewer,🎯,./agents/carlos-cfo.agent.md,inline

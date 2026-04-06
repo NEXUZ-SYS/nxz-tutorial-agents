@@ -1,0 +1,13 @@
+pipeline:
+  name: "Nexuz Financial Analysis Pipeline"
+  version: "1.0"
+  steps:
+    - step-01-checkpoint-periodo
+    - step-02-extracao-dados
+    - step-03-checkpoint-validacao-dados
+    - step-04-analise-receita
+    - step-05-analise-fluxo-dre
+    - step-06-compilacao-relatorios
+    - step-07-checkpoint-aprovacao-relatorios
+    - step-08-revisao-estrategica
+    - step-09-checkpoint-aprovacao-final

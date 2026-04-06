@@ -1,0 +1,56 @@
+{
+  "squad": "nexuz-finance",
+  "status": "completed",
+  "step": { "current": 9, "total": 9, "label": "step-09-checkpoint-aprovacao-final" },
+  "agents": [
+    {
+      "id": "diana-dados",
+      "name": "Diana Dados",
+      "icon": "🔍",
+      "status": "done",
+      "deliverTo": null,
+      "desk": { "col": 1, "row": 1 }
+    },
+    {
+      "id": "ricardo-receita",
+      "name": "Ricardo Receita",
+      "icon": "📊",
+      "status": "done",
+      "deliverTo": null,
+      "desk": { "col": 2, "row": 1 }
+    },
+    {
+      "id": "flavia-fluxo",
+      "name": "Flavia Fluxo",
+      "icon": "💰",
+      "status": "done",
+      "deliverTo": null,
+      "desk": { "col": 3, "row": 1 }
+    },
+    {
+      "id": "renato-relatorio",
+      "name": "Renato Relatorio",
+      "icon": "📋",
+      "status": "done",
+      "deliverTo": null,
+      "desk": { "col": 1, "row": 2 }
+    },
+    {
+      "id": "carlos-cfo",
+      "name": "Carlos CFO",
+      "icon": "🎯",
+      "status": "done",
+      "deliverTo": null,
+      "desk": { "col": 2, "row": 2 }
+    }
+  ],
+  "handoff": {
+    "from": "carlos-cfo",
+    "to": "checkpoint",
+    "message": "Parecer CFO: Aprovado com ressalvas. Health Score 55/100. 3 recomendacoes priorizadas.",
+    "completedAt": "2026-04-03T18:25:00-03:00"
+  },
+  "startedAt": "2026-04-03T17:37:03-03:00",
+  "updatedAt": "2026-04-03T18:26:00-03:00",
+  "completedAt": "2026-04-03T18:26:00-03:00"
+}

@@ -1,0 +1,4 @@
+id,name,title,icon,path,execution
+extractor,Elena Extração,Extratora de Dados,🔍,./agents/extractor.agent.md,subagent
+analyst,André Análise,Analista de Receita,📊,./agents/analyst.agent.md,inline
+reviewer,Renata Revisão,Revisora de Qualidade,✅,./agents/reviewer.agent.md,inline

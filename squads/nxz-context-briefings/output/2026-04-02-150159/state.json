@@ -1,0 +1,40 @@
+{
+  "squad": "nxz-context-briefings",
+  "status": "completed",
+  "step": { "current": 9, "total": 9, "label": "checkpoint-approval" },
+  "agents": [
+    {
+      "id": "analyst",
+      "name": "Analista de Contexto",
+      "icon": "🔬",
+      "status": "done",
+      "deliverTo": null,
+      "desk": { "col": 1, "row": 1 }
+    },
+    {
+      "id": "navigator",
+      "name": "Navegador de Produto",
+      "icon": "🧭",
+      "status": "done",
+      "deliverTo": null,
+      "desk": { "col": 2, "row": 1 }
+    },
+    {
+      "id": "writer",
+      "name": "Redator de Briefings",
+      "icon": "✍️",
+      "status": "done",
+      "deliverTo": null,
+      "desk": { "col": 3, "row": 1 }
+    }
+  ],
+  "handoff": {
+    "from": "writer",
+    "to": "writer",
+    "message": "Briefing NXZ Go Smart POS aprovado e salvo em context/.",
+    "completedAt": "2026-04-02T15:20:00-03:00"
+  },
+  "startedAt": "2026-04-02T15:01:59-03:00",
+  "updatedAt": "2026-04-02T15:20:00-03:00",
+  "completedAt": "2026-04-02T15:20:00-03:00"
+}

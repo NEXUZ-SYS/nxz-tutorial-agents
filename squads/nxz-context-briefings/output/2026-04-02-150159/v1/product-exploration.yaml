@@ -1,0 +1,128 @@
+exploration:
+  product: NXZ Go Smart POS
+  date: "2026-04-02"
+  version: "5.13.1 (playstore) / cielo 1.2.2 / stone 1.0.0 / pagbank 1.1.1"
+  access_method: "MCP Odoo + análise de contexto técnico existente (app roda em maquininhas físicas, sem URL web)"
+
+  hardware_suportado:
+    - fabricante: Cielo
+      terminal: "Cielo LIO"
+      application_id: "com.nxz.go"
+      versao: "1.2.2"
+      sdk: "SDK proprietário Cielo"
+    - fabricante: Stone
+      terminal: "Stone POS"
+      application_id: "br.com.nxz.go"
+      versao: "1.0.0"
+      sdk: "SDK proprietário Stone (AAR)"
+    - fabricante: PagBank
+      terminal: "Moderninha Smart"
+      application_id: "com.moober_self_checkout"
+      versao: "1.1.1"
+      sdk: "PlugPag Service Wrapper 1.30.51"
+    - fabricante: Software Express
+      terminal: "Terminais MSiTef"
+      application_id: "N/A"
+      versao: "N/A"
+      sdk: "MSiTef SDK"
+
+  funcionalidades_validadas:
+    pagamento_nativo:
+      descricao: "Pagamento direto no hardware sem APIs externas ou polling"
+      metodos: ["Crédito", "Débito", "Voucher", "PIX"]
+      todos_fabricantes: true
+      fluxo: "App → SDK nativo → hardware (chip/NFC) → resultado → registro"
+
+    impressao_integrada:
+      descricao: "Impressora térmica nativa no terminal (V3)"
+      formatos: ["DANFE (NF completa)", "Receipt (comprovante)", "Ticket (produção/cozinha)", "Sticker (etiqueta)", "Test"]
+      automatica: true
+
+    interface_compacta:
+      descricao: "Layout PhoneView otimizado para telas ~5.5 polegadas"
+      features: ["Categorias em chips horizontais", "Grid compacto", "Carrinho vertical", "Teclado numérico adaptado"]
+
+    integracao_kds:
+      descricao: "Pedidos enviados ao KDS automaticamente"
+      campos_odoo: ["sent_to_kds", "ident_in_kds", "date_in_kds", "allow_sent_pos_to_kds"]
+
+    nota_fiscal_eletronica:
+      descricao: "Emissão de NFe/NFC-e integrada"
+      campos_odoo: ["nfe_number", "ambiente_nfe", "nfe_status", "invoice_eletronic_ids"]
+
+    modo_both:
+      descricao: "Terminal pode alternar entre PDV e KDS no mesmo dispositivo"
+
+    offline_first:
+      descricao: "Funciona sem internet, sincroniza quando reconecta"
+
+    whitelabel:
+      descricao: "Interface personalizável com marca do cliente"
+
+    cancelamento_msitef:
+      descricao: "Cache local de transações permite cancelamento posterior"
+      exclusivo: "MSiTef"
+
+  dados_reais_odoo:
+    total_pedidos: 3184
+    volume_total_brl: 146715.35
+    pedidos_por_estado:
+      done: 3179
+      paid: 3
+      cancel: 1
+      returned: 1
+    pedidos_por_mes_recente:
+      "2026-01": { pedidos: 936, valor: 46924.44 }
+      "2026-02": { pedidos: 713, valor: 33116.49 }
+      "2026-03": { pedidos: 217, valor: 10144.22 }
+      "2025-12": { pedidos: 621, valor: 27754.49 }
+      "2025-11": { pedidos: 679, valor: 28123.41 }
+    ticket_medio_estimado: "R$ 46,07"
+    produtos_ativos: 182
+    categorias_produto:
+      - "Açaí & Bowls"
+      - "Booster Smoothies"
+      - "Gelada"
+      - "Novidades"
+      - "Para comer"
+      - "Quente"
+      - "Refreshing Smoothies"
+      - "Shots"
+      - "Sucos"
+      - "Timeless Smoothies"
+    pos_configs:
+      - name: "PDV 1 Totem - NO. Coffee"
+        company: "No. Coffee - SP Peruibe"
+        restaurant_mode: true
+
+  cross_references:
+    nxz_erp:
+      - "Backend Odoo gerencia sessões, catálogo, vendas, estoque e fiscal"
+      - "Pedidos do Smart POS aparecem como pos.order no ERP"
+      - "Fechamento de caixa e conciliação financeira no ERP"
+    nxz_kds:
+      - "Pedidos do Smart POS são enviados ao KDS automaticamente"
+      - "Campos sent_to_kds e ident_in_kds confirmam integração"
+      - "Modo BOTH permite Smart POS alternar entre PDV e KDS"
+    nxz_delivery:
+      - "Smart POS pode receber pedidos de delivery para cobrança na entrega"
+    nxz_totem:
+      - "Mesmo código base React Native — diferença está no hardware e adapters de pagamento"
+      - "Totem é para o CLIENTE, Smart POS é para o OPERADOR"
+    nxz_pdv:
+      - "Interface PDV é a mesma — Smart POS é a variante em maquininha"
+      - "PDV roda em tablet/celular, Smart POS roda em terminal de pagamento"
+
+  discrepancias:
+    - item: "Não há configuração Smart POS específica no Odoo"
+      expected: "pos.config com tipo Smart POS"
+      actual: "Apenas 1 pos.config genérica (PDV 1 Totem). Smart POS usa a mesma config — diferenciação é no hardware/app, não no backend."
+
+  observacoes_marketing:
+    - "Smart POS é o modo mais 'all-in-one' — tudo em um único dispositivo no bolso"
+    - "Diferencial claro vs maquininhas tradicionais: PDV completo, não só cobrança"
+    - "Multi-fabricante evita vendor lock-in — argumento forte para decisores"
+    - "Pagamento nativo = zero latência, zero dependência externa"
+    - "Impressão integrada elimina necessidade de impressora separada"
+    - "Ideal para operações móveis, compactas e temporárias"
+    - "Dados reais: 3.184 pedidos, R$ 146K, 182 produtos — sistema em produção real"

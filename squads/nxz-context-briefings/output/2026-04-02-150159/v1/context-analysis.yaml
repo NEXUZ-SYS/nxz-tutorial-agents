@@ -1,0 +1,661 @@
+analysis:
+  product: "NXZ Go — Modo Smart POS"
+  audience: "Marketing"
+  organizational_level: "Operacional"
+  objective: "Contexto para geracao de conteudo de marketing"
+  analysis_date: "2026-04-02"
+  analyst: "Analista de Contexto"
+
+  existing_contexts:
+    # ============================================================
+    # PRIMARY SOURCE — Smart POS
+    # ============================================================
+    - file: "(V_0.1) NXZ SMART_POS.md"
+      version: "0.1"
+      date: "2026-03-16"
+      products_covered:
+        - "NXZ Go — Smart POS (Cielo, Stone, PagBank, MSiTef)"
+      information_type: "technical"
+      implicit_audience: "Desenvolvimento / Engenharia"
+      implicit_level: "Operacional-Tecnico"
+      has_practical_examples: false
+      cross_references:
+        - "NXZ Go PDV (mesma base de codigo)"
+        - "NXZ Go Totem (mesma base de codigo)"
+        - "NXZ KDS (modo BOTH)"
+        - "Odoo ERP (backend)"
+        - "Firebase/Supabase (real-time)"
+      coverage:
+        strengths:
+          - "Detalhamento completo da arquitetura nativa por fabricante (Cielo, Stone, PagBank, MSiTef)"
+          - "Documentacao dos SDKs nativos de pagamento e impressao (V3)"
+          - "Fluxo de pagamento nativo bem descrito (sem polling, direto no hardware)"
+          - "Build system multi-modulo com symlinks documentado"
+          - "Diferencas MSiTef (configure, adminMenu, cancelamento, cache)"
+          - "Hardware suportado listado"
+          - "Deploy e distribuicao (APK direto, sem Play Store)"
+          - "Versionamento por modulo"
+        weaknesses:
+          - "100% tecnico — zero linguagem de marketing"
+          - "Sem proposta de valor em linguagem de negocio"
+          - "Sem casos de uso por segmento"
+          - "Sem exemplos praticos de uso no dia a dia"
+          - "Sem copy pronto (headlines, descricoes, CTAs)"
+          - "Sem contexto de mercado ou posicionamento"
+          - "Sem argumentos para objecoes"
+          - "Sem terminologia traduzida para nao-tecnicos"
+          - "Sem personas ou publico-alvo em linguagem de marketing"
+      gaps_for_marketing_briefing:
+        - "Identidade do produto em linguagem acessivel (o que e, problema que resolve, proposta de valor)"
+        - "Personas com cenarios reais de uso"
+        - "Casos de uso por segmento (food truck, delivery, ambulante, garcom)"
+        - "Copy pronto: headlines, sub-headlines, descricoes (25/50/100 palavras), CTAs"
+        - "Argumentos para objecoes comerciais"
+        - "Contexto de mercado (maquininhas inteligentes no Brasil)"
+        - "Posicionamento competitivo (vs maquininhas tradicionais, vs sistemas POS dedicados)"
+        - "Diferenciais-chave traduzidos para beneficios (nao features)"
+        - "Cross-references em linguagem de fluxo de negocio"
+        - "Terminologia e glossario acessivel"
+        - "Tom de voz e diretrizes de comunicacao"
+
+    # ============================================================
+    # NXZ GO OVERVIEW & ARCHITECTURE
+    # ============================================================
+    - file: "(V_0.1) NXZ GO.md"
+      version: "0.1"
+      date: "2026-03-16"
+      products_covered:
+        - "NXZ Go (todos os modos: PDV, Totem, KDS, Smart POS)"
+      information_type: "technical + overview"
+      implicit_audience: "Desenvolvimento / Produto"
+      implicit_level: "Estrategico-Tecnico"
+      has_practical_examples: false
+      cross_references:
+        - "NXZ ERP (Odoo backend)"
+        - "NXZ KDS"
+        - "Firebase/Supabase"
+        - "iFood / Open Delivery"
+        - "comparativo.md"
+        - "fluxos.md"
+      coverage:
+        strengths:
+          - "Visao geral clara do ecossistema NXZ Go"
+          - "Diagrama de conexao entre modos (PDV, Totem, Smart POS, KDS)"
+          - "Tabela de modos com config types e dispositivos tipicos"
+          - "Problema que resolve descrito em linguagem simples"
+        weaknesses:
+          - "Orientado a engenharia, nao a marketing"
+          - "Sem copy ou linguagem de marca"
+      gaps_for_marketing_briefing:
+        - "Util como fonte de contexto geral, mas nao substitui briefing de marketing"
+
+    - file: "(V_0.1) NXZ Go - Arquitetura.md"
+      version: "0.1"
+      date: "2026-03-16"
+      products_covered:
+        - "NXZ Go (arquitetura tecnica geral)"
+      information_type: "technical-architecture"
+      implicit_audience: "Desenvolvimento / Engenharia"
+      implicit_level: "Operacional-Tecnico"
+      has_practical_examples: false
+      cross_references:
+        - "React Native, Odoo, Firebase, Supabase"
+      coverage:
+        strengths:
+          - "Detalhamento da stack tecnica completa"
+          - "Contextos React, providers, navegacao"
+        weaknesses:
+          - "Puramente tecnico — irrelevante direto para marketing"
+      gaps_for_marketing_briefing:
+        - "Pode fornecer dados de stack para materiais tecnico-comerciais se necessario"
+
+    # ============================================================
+    # FUNCIONALIDADES, COMPARATIVO, FLUXOS
+    # ============================================================
+    - file: "NXZ Go - Funcionalidades.md"
+      version: "sem versao"
+      date: "2026-03-16 (inferido)"
+      products_covered:
+        - "NXZ Go PDV"
+        - "NXZ Go Totem"
+        - "NXZ Go Smart POS"
+      information_type: "features"
+      implicit_audience: "Produto / Desenvolvimento"
+      implicit_level: "Operacional-Tecnico"
+      has_practical_examples: false
+      cross_references:
+        - "comparativo.md"
+      coverage:
+        strengths:
+          - "Lista exaustiva de funcionalidades: tela inicial, catalogo, BOM, pagamento, impressao, NF, timer"
+          - "Tabelas de crons e metodos de pagamento"
+          - "Diferenciacao PDV vs Totem marcada"
+        weaknesses:
+          - "Linguagem tecnica (configs, flags, parametros)"
+          - "Sem traducao para beneficios de marketing"
+      gaps_for_marketing_briefing:
+        - "Fonte rica de features para traduzir em beneficios no briefing Smart POS"
+
+    - file: "comparativo.md"
+      version: "sem versao"
+      date: "2026-03-16 (inferido)"
+      products_covered:
+        - "NXZ Go PDV vs Totem vs Smart POS"
+      information_type: "comparative-features"
+      implicit_audience: "Produto / Desenvolvimento"
+      implicit_level: "Operacional"
+      has_practical_examples: false
+      cross_references:
+        - "PDV, Totem, Smart POS"
+      coverage:
+        strengths:
+          - "Tabela clara de diferencas entre os tres modos"
+          - "Principio geral: Smart POS = PDV em maquininha com limitacoes de hardware"
+          - "Limitacoes de Smart POS explicitas (sem KDS, sem WebView, sem polling)"
+          - "Build e distribuicao comparados"
+        weaknesses:
+          - "Linguagem tecnica"
+      gaps_for_marketing_briefing:
+        - "Excelente fonte para tabela comparativa em linguagem de marketing"
+        - "Diferenciais Smart POS vs PDV/Totem podem ser traduzidos em selling points"
+
+    - file: "fluxos.md"
+      version: "sem versao"
+      date: "2026-03-16 (inferido)"
+      products_covered:
+        - "NXZ Go (todos os modos)"
+        - "KDS"
+        - "Smart POS (fluxo de inicializacao)"
+      information_type: "flow-diagrams"
+      implicit_audience: "Produto / Desenvolvimento"
+      implicit_level: "Operacional-Tecnico"
+      has_practical_examples: false
+      cross_references:
+        - "PDV, Totem, Smart POS, KDS, SAT, Firebase"
+      coverage:
+        strengths:
+          - "Diagramas Mermaid completos: inicializacao, pedido, pagamento, KDS, SAT"
+          - "Fluxo de inicializacao Smart POS com selecao de flavor"
+          - "Fluxo de pagamento nativo detalhado"
+        weaknesses:
+          - "Diagramas tecnicos — nao traduzidos para jornada do usuario"
+      gaps_for_marketing_briefing:
+        - "Fluxos podem ser simplificados para jornada do cliente/operador em linguagem de marketing"
+
+    # ============================================================
+    # TOTEM & KDS DOCS
+    # ============================================================
+    - file: "(V_0.1) NXZ TOTEM.md"
+      version: "0.1"
+      date: "2026-03-16"
+      products_covered:
+        - "NXZ Go — Modo Totem"
+      information_type: "technical"
+      implicit_audience: "Desenvolvimento / Produto"
+      implicit_level: "Operacional-Tecnico"
+      has_practical_examples: false
+      cross_references:
+        - "PDV (mesma codebase)"
+        - "KDS (recebe pedidos)"
+        - "Odoo ERP"
+        - "Firebase/Supabase"
+      coverage:
+        strengths:
+          - "Funcionalidades core, whitelabel, timer, screensaver"
+          - "Diferencas PDV vs Totem claras"
+        weaknesses:
+          - "Tecnico, sem linguagem de marketing"
+
+    - file: "(V_0.1) NXZ KDS.md"
+      version: "0.1"
+      date: "2026-03-16"
+      products_covered:
+        - "NXZ Go — Modo KDS"
+      information_type: "technical"
+      implicit_audience: "Desenvolvimento / Produto"
+      implicit_level: "Operacional-Tecnico"
+      has_practical_examples: false
+      cross_references:
+        - "PDV, Totem, Smart POS (fontes de pedidos)"
+        - "iFood, Open Delivery"
+        - "Firebase/Supabase"
+        - "Odoo ERP"
+
+    - file: "(V_0.1) NXZ KDS funcionalidades.md"
+      version: "0.1"
+      date: "2026-03-16 (inferido)"
+      products_covered:
+        - "NXZ Go — Modo KDS"
+      information_type: "features"
+      implicit_audience: "Produto / Desenvolvimento"
+      implicit_level: "Operacional-Tecnico"
+      has_practical_examples: false
+
+    # ============================================================
+    # BUSINESS, PRODUCT & PERSONA BRIEFINGS (GENERAL)
+    # ============================================================
+    - file: "(v_ 0.2) Briefing de Contexto de Produtos Nexuz.md"
+      version: "0.2"
+      date: "sem data explicita"
+      products_covered:
+        - "NXZ ERP"
+        - "NXZ Go"
+        - "NXZ KDS"
+        - "NXZ Delivery"
+      information_type: "business + product"
+      implicit_audience: "Marketing / Vendas / Estrategia"
+      implicit_level: "Estrategico"
+      has_practical_examples: false
+      cross_references:
+        - "Todos os produtos NXZ"
+      coverage:
+        strengths:
+          - "Visao geral do ecossistema, problemas resolvidos, proposta de valor"
+          - "Publico-alvo, estrategia comercial, KPIs"
+          - "Diferenciais tecnicos em linguagem acessivel"
+        weaknesses:
+          - "NXZ Go descrito genericamente (autoatendimento + pagamentos) — sem mencao explicita a Smart POS"
+          - "Sem detalhamento por modo de operacao"
+
+    - file: "(v_ 0.4) Briefing de Contexto de Negocios da Nexuz.md"
+      version: "0.4"
+      date: "sem data explicita"
+      products_covered:
+        - "Nexuz (empresa)"
+        - "Todos os produtos"
+      information_type: "business"
+      implicit_audience: "Marketing / Vendas / Estrategia"
+      implicit_level: "Estrategico"
+      has_practical_examples: false
+      cross_references:
+        - "Todos os produtos NXZ"
+      coverage:
+        strengths:
+          - "ICP detalhado, personas, missao, visao, valores"
+          - "Estrutura organizacional, observacoes finais"
+          - "Linguagem de negocio"
+        weaknesses:
+          - "Nivel alto — sem detalhamento por produto"
+          - "Smart POS nao mencionado"
+
+    - file: "(v_ 0.2) Briefing de Contexto de Persona da Nexuz.md"
+      version: "0.2"
+      date: "sem data explicita"
+      products_covered:
+        - "Nexuz (ecossistema)"
+      information_type: "persona"
+      implicit_audience: "Marketing / Produto"
+      implicit_level: "Estrategico"
+      has_practical_examples: false
+      cross_references:
+        - "NXZ ERP, NXZ Go, NXZ KDS, NXZ Delivery"
+      coverage:
+        strengths:
+          - "5 personas detalhadas com necessidades, dores, objetivos, solucoes"
+          - "Conexao entre personas"
+          - "Metricas de sucesso por persona"
+        weaknesses:
+          - "Personas genericas para o ecossistema — nao especificas do Smart POS"
+          - "Falta persona especifica: atendente de delivery, food truck, ambulante"
+
+    # ============================================================
+    # GOLD STANDARD BRIEFINGS (v1.0) — REFERENCE TEMPLATES
+    # ============================================================
+    - file: "(v_1.0) Briefing de Contexto - NXZ ERP - Marketing - Operacional.md"
+      version: "1.0 (v1.1 no header)"
+      date: "2026-03-28"
+      products_covered:
+        - "NXZ ERP"
+      information_type: "marketing-briefing"
+      implicit_audience: "Marketing"
+      implicit_level: "Operacional"
+      has_practical_examples: true
+      cross_references:
+        - "NXZ Go (PDV/Totem/Smart POS)"
+        - "NXZ KDS"
+        - "NXZ Delivery"
+        - "NXZ Pay Go"
+      coverage:
+        strengths:
+          - "Estrutura completa de briefing de marketing operacional"
+          - "Identidade do produto (o que e, problema, proposta de valor) com exemplo"
+          - "Personas com cenarios reais"
+          - "Funcionalidades traduzidas para beneficios com 'Para vendas' e exemplos"
+          - "Cross-references com mapa de integracao"
+          - "Terminologia/glossario acessivel"
+          - "Contexto de mercado e posicionamento"
+          - "Casos de uso por segmento (cafeteria, restaurante, food truck, franquias, bar, padaria)"
+          - "Copy pronto: headlines, sub-headlines, descricoes 25/50/100, CTAs"
+          - "Argumentos para objecoes"
+          - "Tom de voz definido"
+          - "Dados reais citados (5 PDVs, 4676 pedidos, 205 produtos)"
+        weaknesses:
+          - "Nao cobre Smart POS diretamente (apenas referencia)"
+      template_quality: "GOLD STANDARD — usar como referencia estrutural"
+
+    - file: "(v_1.0) Briefing de Contexto - NXZ Go Totem - Marketing+Vendas - Operacional.md"
+      version: "1.0"
+      date: "2026-03-28"
+      products_covered:
+        - "NXZ Go — Modo Totem"
+      information_type: "marketing-briefing"
+      implicit_audience: "Marketing + Vendas"
+      implicit_level: "Operacional"
+      has_practical_examples: true
+      cross_references:
+        - "NXZ ERP"
+        - "NXZ Go PDV"
+        - "NXZ Go KDS"
+        - "NXZ Go Smart POS"
+      coverage:
+        strengths:
+          - "Mesma estrutura do ERP briefing (gold standard)"
+          - "Identidade com exemplo concreto (ticket medio sobe 400%)"
+          - "Whitelabel como diferencial central"
+          - "Screensaver como ferramenta de marketing"
+          - "Fluxo completo do pedido em 7 etapas"
+          - "Multi-adquirente, offline-first como secoes dedicadas"
+          - "6 casos de uso por segmento"
+          - "Tabela comparativa de posicionamento vs concorrentes"
+          - "Copy pronto, CTAs, argumentos para 8 objecoes"
+          - "Terminologia acessivel"
+        weaknesses:
+          - "Nao cobre Smart POS (foco exclusivo Totem)"
+      template_quality: "GOLD STANDARD — usar como referencia direta para Smart POS"
+
+    - file: "(v_1.0) Briefing de Contexto - NXZ Go PDV - Marketing+Vendas - Operacional.md"
+      version: "1.0"
+      date: "2026-03-28"
+      products_covered:
+        - "NXZ Go — Modo PDV"
+      information_type: "marketing-briefing"
+      implicit_audience: "Marketing + Vendas"
+      implicit_level: "Operacional"
+      has_practical_examples: true
+      cross_references:
+        - "NXZ ERP"
+        - "NXZ Go Totem"
+        - "NXZ Go KDS"
+        - "NXZ Go Smart POS"
+      coverage:
+        strengths:
+          - "Mesma estrutura gold standard"
+          - "Controle de caixa como diferencial #1"
+          - "Modo restaurante (mesas, comandas) detalhado"
+          - "Gestao de pedidos, descontos/cupons avancados"
+          - "Dual-channel de pagamento explicado em linguagem simples"
+          - "6 casos de uso por segmento"
+          - "8 argumentos para objecoes"
+          - "Posicionamento de mercado com tabela comparativa"
+        weaknesses:
+          - "Smart POS mencionado apenas como referencia cruzada"
+      template_quality: "GOLD STANDARD — usar como referencia direta para Smart POS"
+
+  # ============================================================
+  # GAP ANALYSIS — SMART POS FOR MARKETING
+  # ============================================================
+  smart_pos_gap_analysis:
+    what_exists:
+      - source: "(V_0.1) NXZ SMART_POS.md"
+        content_available:
+          - "Visao geral tecnica: Smart POS = variante de build/hardware do NXZ Go"
+          - "Publico-alvo tecnico: atendentes delivery, balcao compacto, food trucks, garcons"
+          - "Funcionalidades core: deteccao de flavor, pagamento nativo, MSiTef, impressao V3, interface compacta"
+          - "Provedores nativos: Cielo, Stone, PagBank, MSiTef com metodos suportados"
+          - "Fluxo de pagamento nativo (5 etapas)"
+          - "Build system multi-modulo"
+          - "Hardware suportado: Cielo LIO, Stone POS, PagBank Moderninha Smart, terminais MSiTef"
+          - "Integracao com Odoo ERP, Firebase/Supabase, SAT/NFC-e, Sentry"
+          - "Regras de negocio (pagamento instantaneo, impressao mandatoria, valores em centavos)"
+          - "Deploy via APK direto, sem Play Store"
+          - "Estado atual: pontos fortes e areas de atencao"
+      - source: "comparativo.md"
+        content_available:
+          - "Smart POS = PDV completo em maquininha"
+          - "Limitacoes: sem KDS, sem WebView, sem polling de pagamento"
+          - "Tudo que PDV/Totem faz, Smart POS tambem faz (com limitacoes hardware)"
+          - "Pagamento via SDK nativo (sem rede)"
+          - "Impressao V3 (termica integrada)"
+          - "Config type pode ser caixa ou totem"
+          - "Layout detectado como Phone"
+      - source: "fluxos.md"
+        content_available:
+          - "Fluxo de inicializacao Smart POS (deteccao de flavor → adapter nativo)"
+          - "Fluxo de pagamento nativo (paymentModule → NativeEventEmitter → resultado)"
+      - source: "(V_0.1) NXZ GO.md"
+        content_available:
+          - "Contexto geral: Smart POS como um dos 4 modos do NXZ Go"
+          - "Diagrama de conexao entre modos"
+      - source: "NXZ Go - Funcionalidades.md"
+        content_available:
+          - "Lista completa de funcionalidades compartilhadas PDV/Totem/Smart POS"
+
+    what_is_missing_for_marketing_briefing:
+      critical:
+        - section: "Identidade do Produto"
+          description: "Falta 'O que e' em linguagem de negocio, 'Problema que resolve' com dores reais, 'Proposta de valor' com beneficios concretos"
+          example_from_totem_briefing: "O NXZ Go Totem e um app de autoatendimento que transforma qualquer tablet Android em um totem de pedido com a marca do cliente."
+          needed_for_smart_pos: "O NXZ Go Smart POS transforma a maquininha de cartao em um terminal completo de venda: pedido + pagamento + impressao em um unico dispositivo, sem tablet, sem celular, sem fio."
+
+        - section: "Proposta de Valor com Exemplo"
+          description: "Falta exemplo concreto de transformacao (antes/depois) como existe nos briefings Totem e PDV"
+          example_from_pdv_briefing: "Restaurante to-go com 2 caixas e 1 totem. Maria abre o caixa as 7h..."
+          needed_for_smart_pos: "Cenario: food truck com Smart POS Stone. Operador monta pedido na maquininha, cobra direto no cartao, imprime comprovante — tudo no mesmo aparelho. Sem tablet extra, sem impressora Bluetooth."
+
+        - section: "Casos de Uso por Segmento"
+          description: "Falta completamente. Os briefings ERP, Totem e PDV tem 5-6 casos cada."
+          suggested_segments:
+            - "Food truck / ambulante — operacao compacta, mobilidade total"
+            - "Delivery — entregador recebe na porta com pagamento nativo"
+            - "Balcao pequeno — 1 dispositivo faz tudo (loja de sushi, crepe)"
+            - "Garcom com maquininha — atendimento e pagamento na mesa"
+            - "Evento / pop-up — montagem rapida sem infra"
+            - "Franquias compactas — quiosque em shopping/praca"
+
+        - section: "Copy Pronto"
+          description: "Falta completamente: headlines, sub-headlines, descricoes 25/50/100 palavras, CTAs"
+          needed:
+            - "Headlines (5-6 opcoes)"
+            - "Sub-headlines (5-6 opcoes)"
+            - "Descricoes curtas (25, 50, 100 palavras)"
+            - "CTAs (4-5 opcoes)"
+
+        - section: "Argumentos para Objecoes"
+          description: "Falta completamente. Objecoes provaveis para Smart POS sao diferentes do Totem/PDV."
+          likely_objections:
+            - "Tela muito pequena para montar pedido"
+            - "Maquininha e so pra pagamento"
+            - "Ja tenho tablet + maquininha separados"
+            - "E se o fabricante mudar o SDK?"
+            - "Performance em hardware limitado"
+            - "Qual maquininha comprar?"
+
+      important:
+        - section: "Contexto de Mercado"
+          description: "Falta posicionamento do Smart POS no mercado de maquininhas inteligentes no Brasil"
+          needed:
+            - "Crescimento de Smart POS no Brasil (Cielo LIO, Stone, PagBank)"
+            - "Diferenciacao: maquininha como PDV vs maquininha so para pagamento"
+            - "Posicionamento vs concorrentes (apps nativos das adquirentes, sistema proprio da maquininha)"
+            - "Tabela comparativa (como nos briefings Totem e PDV)"
+
+        - section: "Terminologia e Glossario"
+          description: "Falta glossario acessivel para nao-tecnicos"
+          terms_to_include:
+            - "Smart POS"
+            - "Flavor / Build nativo"
+            - "SDK nativo"
+            - "Pagamento nativo vs polling"
+            - "Impressao V3 / termica integrada"
+            - "APK direto"
+            - "Maquininha inteligente"
+
+        - section: "Tom de Voz"
+          description: "Falta definicao especifica para comunicacao do Smart POS"
+          suggestion: "Foco: mobilidade, simplicidade, all-in-one. Tom: 'Tudo na palma da mao' — pratico, compacto, profissional."
+
+      nice_to_have:
+        - section: "Personas Especificas"
+          description: "O briefing de personas geral nao cobre personas Smart POS. Faltam personas especificas."
+          suggested_personas:
+            - "Entregador de delivery — recebe pagamento na porta"
+            - "Dono de food truck — precisa de tudo em um dispositivo"
+            - "Garcom mobile — atende e cobra na mesa"
+            - "Operador de quiosque compacto — espaco minimo"
+
+        - section: "Cross-References em linguagem de negocio"
+          description: "Fluxo Smart POS → ERP → KDS precisa ser descrito como jornada do usuario, nao como arquitetura tecnica"
+
+        - section: "Multi-adquirente como diferencial"
+          description: "Secao dedicada (como nos briefings Totem e PDV) mostrando que o Smart POS funciona com Stone, Cielo, PagBank — liberdade de escolha"
+
+        - section: "Offline-first"
+          description: "Secao dedicada sobre operacao offline (mesma abordagem dos briefings Totem e PDV)"
+
+  # ============================================================
+  # RECOMMENDATIONS
+  # ============================================================
+  recommendations:
+    template_structure:
+      description: "Usar a mesma estrutura dos briefings v1.0 de Totem e PDV como template"
+      reference_files:
+        - "(v_1.0) Briefing de Contexto - NXZ Go Totem - Marketing+Vendas - Operacional.md"
+        - "(v_1.0) Briefing de Contexto - NXZ Go PDV - Marketing+Vendas - Operacional.md"
+      proposed_sections:
+        - number: 0
+          name: "Metadata"
+          content: "Produto, categoria, versao, publico, nivel, objetivo, produtos relacionados"
+        - number: 1
+          name: "Identidade do Produto"
+          content: "O que e, Problema que resolve, Proposta de valor + exemplo concreto"
+          primary_source: "(V_0.1) NXZ SMART_POS.md (secoes 1-2)"
+          transformation: "Traduzir linguagem tecnica para beneficios de negocio"
+        - number: 2
+          name: "Publico-Alvo do Produto"
+          content: "Tabela de personas + perfil do operador no Smart POS + exemplo narrativo"
+          primary_source: "(V_0.1) NXZ SMART_POS.md (secao 2) + persona briefing"
+          transformation: "Expandir 4 perfis tecnicos em personas com cenarios reais"
+        - number: 3
+          name: "Funcionalidades Principais"
+          content: "3.1 Pagamento Nativo (diferencial #1), 3.2 Impressao Integrada, 3.3 Fluxo Completo, 3.4 Pagamentos, 3.5 All-in-one, 3.6 Seguranca e Estabilidade, 3.7 NF"
+          primary_source: "(V_0.1) NXZ SMART_POS.md (secao 3) + funcionalidades.md + comparativo.md"
+          transformation: "Cada funcionalidade com 'Para vendas:' e exemplo, como nos briefings gold standard"
+        - number: 4
+          name: "Multi-Adquirente"
+          content: "Tabela de adquirentes suportados, liberdade de escolha"
+          primary_source: "comparativo.md + Smart POS doc (secao 3.1)"
+          transformation: "Copiar formato dos briefings Totem/PDV"
+        - number: 5
+          name: "Offline-First"
+          content: "Operacao sem internet, sincronizacao automatica"
+          primary_source: "PDV/Totem briefings (adaptar)"
+        - number: 6
+          name: "Cross-References"
+          content: "Fluxo Smart POS → ERP → KDS em diagrama simples + tabela de passos"
+          primary_source: "Briefings ERP, Totem, PDV (adaptar diagramas)"
+        - number: 7
+          name: "Terminologia"
+          content: "Glossario acessivel com termos Smart POS"
+          primary_source: "Briefings Totem/PDV (adaptar + adicionar termos Smart POS)"
+        - number: 8
+          name: "Copy Pronto para Marketing"
+          content: "Headlines, sub-headlines, descricoes 25/50/100, CTAs, argumentos para objecoes"
+          primary_source: "A ser criado — nao existe fonte"
+        - number: 9
+          name: "Casos de Uso por Segmento"
+          content: "6 segmentos com setup, operacao e impacto"
+          primary_source: "A ser criado — inspirado nos briefings ERP/Totem/PDV"
+        - number: 10
+          name: "Contexto de Mercado"
+          content: "Posicionamento, concorrentes, tabela comparativa, tom de voz"
+          primary_source: "A ser criado — inspirado nos briefings ERP/Totem/PDV"
+
+    missing_information:
+      can_be_extracted_from_existing_sources:
+        - info: "O que e o Smart POS (definicao acessivel)"
+          source: "(V_0.1) NXZ SMART_POS.md secao 1 + comparativo.md principio geral"
+        - info: "Publico-alvo e cenarios de uso"
+          source: "(V_0.1) NXZ SMART_POS.md secao 2"
+        - info: "Funcionalidades traduzidas para beneficios"
+          source: "(V_0.1) NXZ SMART_POS.md secao 3 + funcionalidades.md + comparativo.md"
+        - info: "Provedores de pagamento e hardware"
+          source: "(V_0.1) NXZ SMART_POS.md secoes 3-4"
+        - info: "Diferenciais vs PDV/Totem"
+          source: "comparativo.md (tabelas de diferencas)"
+        - info: "Fluxos simplificados"
+          source: "fluxos.md (fluxo Smart POS + pagamento nativo)"
+        - info: "Valores da marca, tom de voz, slogan"
+          source: "Briefing de negocios (v0.4) + briefings gold standard"
+        - info: "Estrutura de cross-references"
+          source: "Briefings ERP/Totem/PDV (adaptar)"
+
+      needs_to_be_created:
+        - "Copy pronto (headlines, descricoes, CTAs) — nao existe em nenhuma fonte"
+        - "Argumentos para objecoes especificas de Smart POS"
+        - "Casos de uso por segmento com cenarios narrativos"
+        - "Contexto de mercado de maquininhas inteligentes no Brasil"
+        - "Tabela comparativa de posicionamento vs concorrentes"
+        - "Personas especificas Smart POS com cenarios"
+        - "Terminologia traduzida para nao-tecnicos"
+
+    cross_references:
+      products_to_reference_in_briefing:
+        - product: "NXZ ERP"
+          relationship: "Backend — catalogo, precos, whitelabel, fiscal, estoque, sessoes POS"
+          reference_file: "(v_1.0) Briefing de Contexto - NXZ ERP - Marketing - Operacional.md"
+        - product: "NXZ Go PDV"
+          relationship: "Mesmo app, modo diferente — Smart POS herda todas as funcionalidades PDV"
+          reference_file: "(v_1.0) Briefing de Contexto - NXZ Go PDV - Marketing+Vendas - Operacional.md"
+        - product: "NXZ Go Totem"
+          relationship: "Mesmo app, modo diferente — Smart POS pode funcionar como totem em maquininha"
+          reference_file: "(v_1.0) Briefing de Contexto - NXZ Go Totem - Marketing+Vendas - Operacional.md"
+        - product: "NXZ KDS"
+          relationship: "Recebe pedidos do Smart POS (via Firebase/Supabase) — mas KDS nao roda no Smart POS"
+          reference_file: "(V_0.1) NXZ KDS.md"
+        - product: "NXZ Delivery"
+          relationship: "Smart POS pode ser usado por entregadores para receber pagamento na porta"
+          reference_file: "Mencionado no briefing de produtos (v0.2)"
+
+    key_differentiators_for_smart_pos:
+      description: "Diferenciais unicos do Smart POS que devem ser destacados no briefing de marketing"
+      differentiators:
+        - name: "All-in-one no bolso"
+          technical_fact: "Pedido + pagamento + impressao em um unico dispositivo"
+          marketing_benefit: "Sem tablet, sem impressora Bluetooth, sem fio. Um aparelho faz tudo."
+        - name: "Pagamento nativo instantaneo"
+          technical_fact: "SDK nativo do fabricante, sem polling HTTP, sem latencia de rede"
+          marketing_benefit: "Pagamento processa direto na maquininha — sem esperar, sem depender de internet para cobrar."
+        - name: "Impressao integrada"
+          technical_fact: "Impressora termica V3 integrada no hardware"
+          marketing_benefit: "Comprovante impresso na hora, sem impressora separada, sem Bluetooth."
+        - name: "Mobilidade total"
+          technical_fact: "Dispositivo portatil com bateria propria"
+          marketing_benefit: "Leve pra rua, pro evento, pra mesa do cliente. Vai onde o cliente esta."
+        - name: "Multi-fabricante"
+          technical_fact: "Builds nativos para Cielo, Stone, PagBank, MSiTef"
+          marketing_benefit: "Funciona com a maquininha que voce ja tem. Nao precisa trocar."
+        - name: "PDV completo"
+          technical_fact: "Herda todas as funcionalidades do NXZ Go PDV"
+          marketing_benefit: "Nao e uma maquininha que cobra. E um caixa completo que cabe na mao."
+        - name: "Sem infraestrutura"
+          technical_fact: "Nao requer tablet, impressora externa, ou cabeamento"
+          marketing_benefit: "Zero investimento em equipamento adicional. Basta a maquininha."
+
+    priority_order:
+      description: "Ordem de prioridade para construcao do briefing Smart POS"
+      steps:
+        - priority: 1
+          action: "Extrair e traduzir informacoes do (V_0.1) NXZ SMART_POS.md para linguagem de marketing"
+          sections: ["Identidade", "Publico-Alvo", "Funcionalidades"]
+        - priority: 2
+          action: "Usar comparativo.md para tabela de diferenciais e posicionamento"
+          sections: ["Diferenciais", "Multi-adquirente"]
+        - priority: 3
+          action: "Adaptar estrutura dos briefings gold standard (Totem + PDV)"
+          sections: ["Copy pronto", "Casos de uso", "Objecoes", "Terminologia"]
+        - priority: 4
+          action: "Criar conteudo novo nao disponivel em nenhuma fonte"
+          sections: ["Contexto de mercado", "Headlines", "CTAs", "Cenarios narrativos"]
+        - priority: 5
+          action: "Validar cross-references com briefings existentes (ERP, Totem, PDV, KDS)"
+          sections: ["Cross-references", "Fluxos simplificados"]

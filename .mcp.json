@@ -2,11 +2,32 @@
   "mcpServers": {
     "playwright": {
       "command": "npx",
-      "args": ["@playwright/mcp@latest", "--config", "_opensquad/config/playwright.config.json"]
+      "args": [
+        "@playwright/mcp@latest",
+        "--config",
+        "_opensquad/config/playwright.config.json"
+      ]
     },
     "clickup": {
       "command": "npx",
-      "args": ["-y", "mcp-remote", "https://mcp.clickup.com/mcp"]
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://mcp.clickup.com/mcp"
+      ]
+    },
+    "gsheets": {
+      "command": "uv",
+      "args": [
+        "--directory",
+        "/home/walterfrey/.local/share/mcp-servers/sheets-mcp-server",
+        "run",
+        "sheets",
+        "--creds-file-path",
+        "/home/walterfrey/Documentos/code/nexuz/nxz-tutorial-agents/client_secret_436458091195-lf833qlmma82rmr3ag49h1cagjsb9003.apps.googleusercontent.com.json",
+        "--token-path",
+        "/home/walterfrey/.mcp-google-sheets-token.json"
+      ]
     }
   }
 }

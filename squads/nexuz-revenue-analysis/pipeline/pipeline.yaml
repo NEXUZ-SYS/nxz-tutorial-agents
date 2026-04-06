@@ -1,0 +1,16 @@
+pipeline:
+  name: "Revenue Analysis Pipeline"
+  version: "1.0.0"
+  steps:
+    - step-01-extract-data
+    - step-02-validate-extraction
+    - step-03-generate-raw-validation
+    - step-04-manual-validation
+    - step-05-cross-reference-analysis
+    - step-06-review-analysis
+    - step-07-approve-report
+    - step-08-export-to-sheets
+  checkpoints:
+    - step-02-validate-extraction
+    - step-04-manual-validation
+    - step-07-approve-report

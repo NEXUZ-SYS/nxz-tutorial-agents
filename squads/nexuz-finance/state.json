@@ -1,0 +1,55 @@
+{
+  "squad": "nexuz-finance",
+  "status": "running",
+  "step": { "current": 9, "total": 9, "label": "step-09-checkpoint-aprovacao-final" },
+  "agents": [
+    {
+      "id": "diana-dados",
+      "name": "Diana Dados",
+      "icon": "🔍",
+      "status": "done",
+      "deliverTo": null,
+      "desk": { "col": 1, "row": 1 }
+    },
+    {
+      "id": "ricardo-receita",
+      "name": "Ricardo Receita",
+      "icon": "📊",
+      "status": "done",
+      "deliverTo": null,
+      "desk": { "col": 2, "row": 1 }
+    },
+    {
+      "id": "flavia-fluxo",
+      "name": "Flavia Fluxo",
+      "icon": "💰",
+      "status": "done",
+      "deliverTo": null,
+      "desk": { "col": 3, "row": 1 }
+    },
+    {
+      "id": "renato-relatorio",
+      "name": "Renato Relatorio",
+      "icon": "📋",
+      "status": "done",
+      "deliverTo": null,
+      "desk": { "col": 1, "row": 2 }
+    },
+    {
+      "id": "carlos-cfo",
+      "name": "Carlos CFO",
+      "icon": "🎯",
+      "status": "done",
+      "deliverTo": null,
+      "desk": { "col": 2, "row": 2 }
+    }
+  ],
+  "handoff": {
+    "from": "carlos-cfo",
+    "to": null,
+    "message": "Parecer CFO: Health Score 32/100. Aprovado com ressalvas. Recomendação: capitalização R$ 60K + renegociação Oracle + programa Expansion Delivery.",
+    "completedAt": "2026-04-04T18:35:00-03:00"
+  },
+  "startedAt": "2026-04-04T18:01:33-03:00",
+  "updatedAt": "2026-04-04T18:35:00-03:00"
+}

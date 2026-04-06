@@ -1,0 +1,44 @@
+squad:
+  code: nexuz-finance
+  name: "Nexuz Financial Analysis"
+  description: >
+    Squad de análise financeira para a Nexuz. Composta por CFO, Head e analistas
+    que extraem dados do Asaas, Google Sheets e Odoo para produzir dashboards
+    SaaS (MRR/ARR, Fluxo de Caixa, DRE, Churn, Unit Economics) com visão
+    executiva e operacional.
+  performance_mode: alta-performance
+  audience:
+    - diretoria/socios
+    - gestao-financeira
+
+  skills:
+    - web_search
+    - web_fetch
+    - asaas_mcp     # MCP Docs Asaas — extração de receita e cobranças
+    - google_sheets # Google Sheets — pagamentos Inter e reconciliação
+    # - odoo_mcp    # MCP Odoo (a configurar) — contatos e dados complementares
+
+  data:
+    - pipeline/data/research-brief.md
+    - pipeline/data/domain-framework.md
+    - pipeline/data/quality-criteria.md
+    - pipeline/data/anti-patterns.md
+
+  sources:
+    asaas:
+      type: mcp
+      name: "Docs Asaas"
+      description: "API Asaas para receita, cobranças, inadimplência, clientes"
+      access_token_header: access_token
+      base_url: "https://api.asaas.com"
+    google_sheets:
+      type: spreadsheet
+      description: "Planilha integrada com Inter — pagamentos e reconciliação"
+    odoo:
+      type: mcp
+      name: "A configurar"
+      description: "MCP Odoo para contatos e dados complementares"
+      status: pendente
+
+  pipeline:
+    entry: pipeline/pipeline.yaml

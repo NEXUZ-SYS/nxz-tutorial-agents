@@ -30,6 +30,29 @@
 - **Briefing aprovado e salvo como:** `(v_1.0) Briefing de Contexto - NXZ Go PDV - Marketing+Vendas - Operacional.md`
 - **Diagrama PDV+Totem lado a lado foi bem recebido:** mostra que ambos alimentam a mesma fila no KDS
 
+### Run 2026-04-02-150159 — NXZ Go Smart POS / Marketing / Operacional
+
+- **Aprovado sem ajustes na primeira versao:** estrutura consolidada dos briefings Totem/PDV funciona bem para Smart POS
+- **Smart POS nao tem URL web para explorar:** roda em maquininhas fisicas — dados coletados via MCP Odoo + contexto tecnico existente
+- **Doc tecnico existente (V_0.1) excelente mas 100% tecnico:** zero linguagem de marketing — principal trabalho foi traduzir features tecnicas em beneficios
+- **Narrativa central Smart POS:** OPERADOR MOVEL — diferencia de Totem (CLIENTE) e PDV (CAIXA FIXO)
+- **7 diferenciais-chave:** PDV no bolso, pagamento nativo, impressao integrada, multi-fabricante, offline-first, whitelabel, integracao KDS
+- **6 segmentos de caso de uso:** food truck/ambulante, garcom na mesa, evento/pop-up, delivery na entrega, operacao compacta, rede/franquia movel
+- **8 argumentos para objecoes documentados:** incluindo "maquininha so cobra", "tela pequena", "ja tenho caixa"
+- **Briefing aprovado e salvo como:** `(v_1.0) Briefing de Contexto - NXZ Go Smart POS - Marketing - Operacional.md`
+- **Proximo modo provavel:** KDS (unico modo restante sem briefing dedicado)
+
+### Run 2026-04-02-155041 — NXZ Go (Todos os Modos) / Sales / Operacional
+
+- **Primeiro briefing agrupado:** usuario pediu briefing consolidado cobrindo Totem + PDV + Smart POS para vendas
+- **KDS NAO e modo do NXZ Go:** usuario deixou claro que KDS e sistema de cozinha separado, nao incluir como "modo"
+- **Pricing e confidencial:** nao incluir valores no briefing — vendedor recebe tabela separada
+- **Concorrentes nomeados:** POS tradicionais (Linx, TOTVS, Saipos, Goomer, Consumer) + autoatendimento (Anota AI, Goomer, Menu Digital iFood)
+- **Matriz de decisao em 3 dimensoes:** tipo de operacao, tamanho do negocio, dor principal
+- **3 wow moments para demo:** whitelabel instantaneo, pedido→KDS 2s, multi-modo no mesmo app
+- **Aprovado sem ajustes na primeira versao:** estrutura de 12 secoes funcionou bem
+- **Briefing aprovado e salvo como:** `(v_1.0) Briefing de Contexto - NXZ Go - Sales - Operacional.md`
+
 ## Preferences
 
 - Incluir secao de copy pronto (headlines, descricoes, CTAs) em briefings de marketing

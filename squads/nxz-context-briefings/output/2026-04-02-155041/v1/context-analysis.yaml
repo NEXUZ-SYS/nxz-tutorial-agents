@@ -1,0 +1,459 @@
+# ==============================================================================
+# Context Analysis: NXZ Go — Sales Consolidated Briefing (All Modes)
+# ==============================================================================
+# Product: NXZ Go (Totem + PDV + Smart POS)
+# Audience: Sales (Vendas)
+# Level: Operacional
+# Objective: Base para treinamento de equipe de vendas
+# Date: 2026-04-02
+# Analyst: Analista de Contexto
+# ==============================================================================
+
+metadata:
+  product: "NXZ Go"
+  modes:
+    - Totem (Autoatendimento)
+    - PDV (Caixa)
+    - Smart POS (Maquininha Inteligente)
+  audience: "Sales (Vendas)"
+  level: "Operacional"
+  objective: "Base para treinamento de equipe de vendas"
+  note: "KDS is a separate product, NOT a mode of NXZ Go"
+
+# ==============================================================================
+# 1. WHAT EXISTS FOR SALES
+# ==============================================================================
+existing_sales_content:
+
+  totem_briefing_v1:
+    audience_tag: "Marketing+Vendas"
+    sales_relevant_sections:
+      - section: "Argumentos para Objecoes"
+        coverage: "8 objections with responses (price, usability, payment failure, branding, offline, acquirer compatibility, session management, restaurant mode)"
+        quality: "Good — direct, practical, addresses real buyer concerns"
+      - section: "Casos de Uso por Segmento"
+        coverage: "6 segments (Cafeteria, Fast Food, Praca de Alimentacao, Franquias, Padaria, Evento)"
+        quality: "Good — includes setup description and impact per segment"
+      - section: "Copy Pronto — CTAs"
+        coverage: "4 CTAs (demo, filas, ROI calculator, specialist)"
+        quality: "Marketing-oriented, partially useful for sales"
+      - section: "Contexto de Mercado — Posicionamento"
+        coverage: "Competitive comparison table (6 aspects)"
+        quality: "Useful for sales but lacks specific competitor names"
+      - section: "Headlines/Descricoes"
+        coverage: "Multiple copy variants (25/50/100 words)"
+        quality: "Marketing copy, not sales pitch scripts"
+      - section: "Para vendas quotes"
+        coverage: "Inline sales-oriented quotes throughout feature sections"
+        quality: "Excellent — ready-to-use one-liners for salespeople"
+
+  pdv_briefing_v1:
+    audience_tag: "Marketing+Vendas"
+    sales_relevant_sections:
+      - section: "Argumentos para Objecoes"
+        coverage: "8 objections (existing register, small business, offline, acquirer, gradual adoption, usability, discount control, cost)"
+        quality: "Good — different objections than Totem, complementary"
+      - section: "Casos de Uso por Segmento"
+        coverage: "6 segments (Cafeteria, Restaurante com Mesas, Padaria, Food Court, Franquias, Food Truck)"
+        quality: "Good — includes PDV-specific setup and impact"
+      - section: "Copy Pronto — CTAs"
+        coverage: "4 CTAs"
+        quality: "Marketing-oriented"
+      - section: "Contexto de Mercado"
+        coverage: "Competitive positioning table (8 aspects)"
+        quality: "More detailed than Totem comparison"
+      - section: "Para vendas quotes"
+        coverage: "Inline sales quotes per feature"
+        quality: "Excellent — practical one-liners"
+
+  smart_pos_briefing_v1:
+    audience_tag: "Marketing (NOT Marketing+Vendas)"
+    sales_relevant_sections:
+      - section: "Argumentos para Objecoes"
+        coverage: "8 objections (just a payment device, small screen, specific device, offline, existing system, separate printer, branding, integration)"
+        quality: "Good but framed for marketing, not sales training"
+      - section: "Casos de Uso por Segmento"
+        coverage: "6 segments (Food Truck, Garcom na Mesa, Evento, Delivery, Operacao Compacta, Rede/Franquia)"
+        quality: "Good — unique segments for Smart POS"
+      - section: "Dados Reais do Sistema"
+        coverage: "3,184 orders, R$146,715 volume, R$46.07 avg ticket, ~700 orders/month"
+        quality: "Valuable for sales credibility — only source with real numbers"
+      - section: "Contexto de Mercado"
+        coverage: "Competitive positioning table (8 aspects)"
+        quality: "Good"
+    gap_note: "This briefing was generated for Marketing only — lacks explicit sales framing"
+
+  secondary_sources_useful_for_sales:
+    - source: "comparativo.md"
+      value: "Feature comparison table PDV vs Totem vs Smart POS — essential for 'when to recommend which mode'"
+    - source: "(V_0.1) NXZ GO.md"
+      value: "Architecture diagram showing how all modes connect — good for explaining the ecosystem"
+    - source: "(v_ 0.4) Briefing de Contexto de Negocios da Nexuz.md"
+      value: "ICP definition, personas, business model (SaaS), company values"
+    - source: "(v_ 0.2) Briefing de Contexto de Produtos Nexuz.md"
+      value: "Product portfolio overview, commercial strategy (SaaS model), roadmap"
+    - source: "(v_1.0) NXZ ERP briefing"
+      value: "ERP context critical for sales — NXZ Go is always sold WITH the ERP, not standalone"
+    - source: "fluxos.md"
+      value: "Mermaid diagrams of all flows — useful for demo preparation"
+    - source: "NXZ Go - Funcionalidades.md"
+      value: "Complete feature list with shared vs exclusive features — reference for detailed questions"
+
+# ==============================================================================
+# 2. WHAT IS MISSING FOR SALES TRAINING
+# ==============================================================================
+missing_for_sales:
+
+  critical_gaps:
+
+    - id: "PITCH_SCRIPTS"
+      name: "Pitch scripts per mode and per segment"
+      priority: "CRITICAL"
+      description: >
+        No structured pitch scripts exist. The v1.0 briefings have 'Para vendas' one-liners
+        scattered throughout features, but there is no consolidated elevator pitch per mode,
+        no 30-second/60-second/2-minute pitch variants, and no segment-specific pitches
+        (e.g., how to pitch Totem to a fast food vs a cafeteria).
+      what_exists: "Scattered 'Para vendas' quotes in Totem and PDV briefings; headlines and descriptions in marketing copy"
+      what_is_needed:
+        - "Elevator pitch per mode (30s, 60s, 2min)"
+        - "Segment-specific pitch scripts (Cafeteria, Restaurante, Food Truck, Franquia, Padaria, Bar, Evento, Food Court)"
+        - "Combined ecosystem pitch (why buy NXZ Go + ERP together)"
+        - "Opening questions to qualify the prospect and identify which mode(s) they need"
+
+    - id: "DECISION_MATRIX"
+      name: "Mode recommendation decision matrix"
+      priority: "CRITICAL"
+      description: >
+        No single resource helps a salesperson answer 'Which mode should I recommend?'
+        The comparativo.md has technical differences, but no business-oriented decision tree.
+        A salesperson needs: 'If the client has X need → recommend Y mode.'
+      what_exists: "comparativo.md (technical feature comparison); segment-specific cases in each briefing"
+      what_is_needed:
+        - "Decision tree: questions to ask → mode recommendation"
+        - "Quick reference card: client profile → recommended setup (modes + quantity)"
+        - "Common setups by business type (e.g., Cafeteria = 1 PDV + 1 Totem + 1 KDS)"
+        - "When to sell 1 mode vs multiple modes"
+
+    - id: "PRICING_ROI"
+      name: "Pricing guidance and ROI arguments"
+      priority: "CRITICAL"
+      description: >
+        Zero pricing information exists in any context file. No mention of plan costs,
+        hardware costs, implementation fees, or ROI calculations. The briefings mention
+        'SaaS model' and 'planos mensais' but with no specifics. A salesperson cannot
+        discuss pricing, create proposals, or justify investment without this.
+      what_exists: "Mention of SaaS model in business briefing; Smart POS briefing mentions hardware cost range (R$500-1,500 vs R$3,000-5,000 for traditional PDV setup)"
+      what_is_needed:
+        - "Plan structure and pricing tiers (or at least guidance on how to discuss pricing)"
+        - "Hardware cost guidance per mode (tablet for Totem/PDV, maquininha for Smart POS)"
+        - "ROI calculator inputs: avg ticket increase (Totem), labor savings, error reduction"
+        - "TCO comparison vs competitors (total cost of ownership)"
+        - "Payback period examples per segment"
+
+    - id: "DEMO_FLOW"
+      name: "Demo flow / what to show in a sales call"
+      priority: "HIGH"
+      description: >
+        No demo guide exists. A salesperson doing a product demo has no structured
+        flow for what to show first, which features impress most, or how to tailor
+        the demo to the prospect's segment.
+      what_exists: "Detailed feature descriptions and flow diagrams (fluxos.md)"
+      what_is_needed:
+        - "Demo script per mode (5-minute demo flow)"
+        - "Top 5 'wow moments' per mode to show during demo"
+        - "Demo customization guide by segment (what to emphasize for each business type)"
+        - "'Before vs After' demonstration scenarios"
+        - "How to set up a demo environment (or reference to demo accounts)"
+
+    - id: "COMPETITIVE_POSITIONING"
+      name: "Named competitive comparisons"
+      priority: "HIGH"
+      description: >
+        The briefings have generic competitive tables ('concorrentes tipicos') but never
+        name specific competitors. A salesperson facing 'We already use Saipos/KCMS/Goomer/
+        ifood PDV/Linx' needs specific counter-arguments.
+      what_exists: "Generic competitive positioning tables in all 3 mode briefings; differentiation points"
+      what_is_needed:
+        - "Named competitor comparison matrix (Saipos, KCMS, Goomer, iFood POS, Linx, etc.)"
+        - "Win/loss analysis: why we win against X, why we lose against Y"
+        - "Migration talking points: how to move from competitor X to NXZ"
+        - "Feature parity gaps (what competitors have that we don't — so salesperson isn't surprised)"
+
+  important_gaps:
+
+    - id: "BUNDLE_UPSELL"
+      name: "Bundle/upsell opportunities"
+      priority: "HIGH"
+      description: >
+        No content about upsell paths or bundle recommendations. The ecosystem
+        (ERP + Go modes + KDS + Delivery) has natural upsell paths but they're not
+        documented for sales.
+      what_exists: "Cross-references between products in each briefing; ecosystem diagram in NXZ GO.md"
+      what_is_needed:
+        - "Upsell matrix: if client has X, next sell Y"
+        - "Bundle configurations with naming (e.g., 'Starter', 'Completo', 'Franquia')"
+        - "Land-and-expand strategy documentation"
+        - "Cross-sell triggers (signals that indicate client is ready for next product)"
+
+    - id: "PROSPECT_QUESTIONS"
+      name: "Common prospect questions and answers"
+      priority: "HIGH"
+      description: >
+        The objection handling in briefings covers resistance, but not general
+        informational questions prospects ask during discovery (e.g., 'How long
+        does implementation take?', 'What hardware do I need?', 'Do you integrate
+        with my accountant?', 'What happens if I cancel?').
+      what_exists: "Objection handling tables (8 objections per mode)"
+      what_is_needed:
+        - "FAQ for sales calls (20-30 common questions with answers)"
+        - "Technical questions a salesperson should be able to answer"
+        - "Questions to redirect to technical team"
+        - "Implementation timeline expectations per setup complexity"
+
+    - id: "SALES_PROCESS"
+      name: "Sales process and qualification criteria"
+      priority: "MEDIUM"
+      description: >
+        No documentation about the sales process itself — how to qualify,
+        what the sales cycle looks like, handoff to implementation, etc.
+      what_exists: "Nothing specific to sales process"
+      what_is_needed:
+        - "Qualification checklist (BANT or similar framework)"
+        - "Sales cycle stages and expected actions"
+        - "Handoff process to onboarding/implementation"
+        - "Success stories / case studies with metrics"
+
+    - id: "REAL_DATA_PROOF"
+      name: "Social proof and real data for all modes"
+      priority: "MEDIUM"
+      description: >
+        Only the Smart POS briefing includes real system data (3,184 orders,
+        R$146,715 volume). The Totem mentions 205 products but no transaction data.
+        The PDV briefing has no real data. Salespeople need proof points.
+      what_exists: "Smart POS: 3,184 orders, R$146,715 volume, R$46.07 avg ticket; Totem: 205 products, 10 categories; ERP: 4,676 orders, 5 PDVs"
+      what_is_needed:
+        - "Aggregated metrics across all modes"
+        - "Client testimonials or case studies (even anonymized)"
+        - "Before/after metrics from real implementations"
+        - "Industry benchmark comparisons (avg ticket increase with totem, etc.)"
+
+# ==============================================================================
+# 3. CROSS-MODE CONSOLIDATION OPPORTUNITIES
+# ==============================================================================
+cross_mode_consolidation:
+
+  shared_across_all_modes:
+    description: >
+      These elements are identical or near-identical across Totem, PDV, and Smart POS
+      and should be written ONCE in the consolidated briefing.
+    elements:
+      - name: "Product Identity"
+        detail: "NXZ Go is ONE app with multiple modes — same codebase, same version (5.13.1)"
+      - name: "Offline-First"
+        detail: "All 3 modes work without internet; same mechanism (local cache + auto-sync)"
+      - name: "Multi-Adquirente"
+        detail: "Stone, Cielo, PagBank, SumUp, Pagarme, PIX — same acquirers for all modes"
+      - name: "Whitelabel"
+        detail: "All modes display client's brand (colors, logo, texts). Zero NXZ branding visible to end customer"
+      - name: "Catalogo Visual"
+        detail: "Category-based visual catalog with images, search, barcode reader, BOM personalization"
+      - name: "Nota Fiscal"
+        detail: "NFC-e integrated in all modes (print, email, or skip)"
+      - name: "KDS Integration"
+        detail: "All modes send orders to KDS kitchen display in ~2 seconds"
+      - name: "ERP Backend"
+        detail: "All modes connect to NXZ ERP for catalog, pricing, stock, fiscal"
+      - name: "Crash Recovery"
+        detail: "Pending orders recovered automatically after crash/restart"
+      - name: "Split Bill"
+        detail: "Available in all modes (configurable)"
+      - name: "Screensaver"
+        detail: "Available in all modes as promotional slideshow during inactivity"
+
+  unique_per_mode:
+    totem:
+      - "Drawer bloqueado (no admin access for consumer)"
+      - "Pagar no balcao option (draft to KDS, pay at counter)"
+      - "Timer de inatividade rigoroso (returns to screensaver)"
+      - "No price editing, no manual discounts"
+      - "Modo imersivo (fullscreen, no Android nav bar)"
+      - "Sessao automatica (auto-open/close by schedule)"
+      - "Marketing machine when idle (screensaver as 24h promo display)"
+    pdv:
+      - "Controle de caixa completo (abertura, sangria, suprimento, fechamento com conferencia)"
+      - "Modo restaurante (mesas, comandas abertas, planta do salao)"
+      - "Descontos avancados (edicao de preco, cupons manuais, pricelist selection)"
+      - "Gestao de pedidos (drawer: retomar, cancelar, reimprimir)"
+      - "Controle de disponibilidade de produtos"
+      - "Dual-channel payment (Bluetooth + API simultaneously)"
+      - "Dinheiro com calculo de troco"
+      - "4 tipos de impressao (DANFE, Receipt, Ticket, Sticker)"
+    smart_pos:
+      - "Pagamento nativo no hardware (zero latencia, sem Bluetooth, sem polling)"
+      - "Impressora termica integrada (sem equipamento extra)"
+      - "Interface compacta para tela 5.5 polegadas"
+      - "Modo BOTH (alterna PDV e KDS no mesmo dispositivo)"
+      - "Multi-fabricante (Stone, Cielo, PagBank, MSiTef)"
+      - "Mobilidade total (cabe no bolso, sem infraestrutura fixa)"
+      - "Ideal para delivery com cobranca na entrega"
+
+  consolidation_strategy:
+    recommendation: >
+      Structure the briefing as:
+      1. SHARED SECTION — What NXZ Go is (one app, three modes), common capabilities
+         (offline, multi-acquirer, whitelabel, KDS integration, NF, etc.)
+      2. PER-MODE SECTIONS — Unique differentiators, ideal use cases, specific pitch points
+      3. DECISION MATRIX — When to recommend which mode (cross-referencing all three)
+      4. COMBINED SCENARIOS — How modes work together (PDV+Totem, PDV+Smart POS, all three)
+      5. SALES TOOLKIT — Pitches, objections, FAQs (consolidated, not repeated per mode)
+
+# ==============================================================================
+# 4. KEY DIFFERENTIATORS PER MODE (For Sales Articulation)
+# ==============================================================================
+key_differentiators_for_sales:
+
+  totem:
+    one_liner: "Autoatendimento com a marca do cliente que libera equipe, elimina filas e aumenta ticket medio."
+    top_3_selling_points:
+      - name: "Ticket medio sobe"
+        argument: "Cliente explora o cardapio visual com calma, descobre opcoes e adiciona itens que nao pediria no balcao. Exemplo real: cafe de R$6,50 vira smoothie+bowl de R$34,90."
+      - name: "Equipe liberada"
+        argument: "Atendente que ficava preso no caixa agora ajuda na producao. O totem atende sozinho — 30 pedidos/hora por totem."
+      - name: "Marketing 24h gratis"
+        argument: "Screensaver com promocoes rodando o dia todo. Quando ninguem pede, o totem vende. Quando alguem pede, tambem vende."
+    ideal_for: "Cafeterias, fast food, fast casual, pracas de alimentacao, franquias, padarias com fluxo to-go"
+    hardware: "Qualquer tablet Android (nao precisa de totem dedicado)"
+    killer_objection_response: "'Totem e caro' — Roda em qualquer tablet Android. Sem hardware especial. Whitelabel e screensaver incluidos."
+
+  pdv:
+    one_liner: "Caixa registradora completa em tablet que nunca fecha no escuro — controle financeiro total."
+    top_3_selling_points:
+      - name: "Controle de caixa real"
+        argument: "Abertura com fundo de troco, sangria, suprimento, fechamento com conferencia automatica. O sistema sabe exatamente quanto deveria ter na gaveta."
+      - name: "Modo restaurante completo"
+        argument: "Mesas, comandas abertas, divisao de conta entre amigos. Garcom lanca no tablet, cozinha recebe no KDS. Zero papel."
+      - name: "Flexibilidade de preco e desconto"
+        argument: "Gerente aplica desconto direto no caixa, troca tabela de precos, seleciona cupom — tudo rastreado por operador."
+    ideal_for: "Restaurantes com salao, cafeterias com balcao, padarias, food courts, franquias, qualquer operacao com caixa humano"
+    hardware: "Qualquer tablet Android"
+    killer_objection_response: "'Ja tenho caixa registradora' — Sua caixa envia pedido pra cozinha em 2s, faz controle com conferencia e emite NFC-e automatica? E funciona offline?"
+
+  smart_pos:
+    one_liner: "PDV completo no bolso — pedido, pagamento e impressao em um unico dispositivo."
+    top_3_selling_points:
+      - name: "Tudo em um (3 vira 1)"
+        argument: "Substitui tablet + maquininha + impressora por um unico dispositivo. Setup: ligar e vender. Custo: R$500-1,500 vs R$3,000-5,000 de infraestrutura PDV."
+      - name: "Pagamento nativo zero latencia"
+        argument: "Cobrou, passou. Sem pareamento Bluetooth, sem app externo, sem espera. O cartao encosta e pronto."
+      - name: "Mobilidade total"
+        argument: "Cabe no bolso do garcom, no avental do atendente, no balcao do food truck. Onde tiver cliente, vende."
+    ideal_for: "Food trucks, garcons na mesa, eventos/pop-ups, delivery com cobranca, operacoes compactas (padaria, quiosque), franquias moveis"
+    hardware: "Maquininhas Stone, Cielo LIO, PagBank Moderninha Smart, terminais MSiTef"
+    killer_objection_response: "'Maquininha so serve pra cobrar' — O NXZ Go Smart POS e um PDV completo: catalogo, pedido, personalizacao, desconto, comanda, NF e impressao. Cobrar e so uma das funcoes."
+
+  ecosystem_differentiator:
+    description: >
+      The biggest sales differentiator is that all 3 modes are ONE APP connected to ONE ERP.
+      Competitors sell separate systems that don't talk to each other.
+    key_argument: >
+      PDV + Totem + Smart POS alimentam a mesma fila no KDS, consolidam no mesmo ERP,
+      usam o mesmo catalogo, mesmos precos, mesma marca. Um produto cadastrado no ERP
+      aparece em todos os dispositivos em segundos. Um sistema, nao tres.
+
+# ==============================================================================
+# 5. SOURCE QUALITY ASSESSMENT
+# ==============================================================================
+source_quality:
+
+  primary_sources:
+    - file: "(v_1.0) Totem - Marketing+Vendas"
+      quality: "HIGH"
+      sales_readiness: "GOOD — has 'Para vendas' quotes and objections"
+      gaps: "No pitch script, no pricing, no named competitors"
+
+    - file: "(v_1.0) PDV - Marketing+Vendas"
+      quality: "HIGH"
+      sales_readiness: "GOOD — same structure as Totem, strong objection handling"
+      gaps: "No pitch script, no pricing, no named competitors"
+
+    - file: "(v_1.0) Smart POS - Marketing"
+      quality: "HIGH"
+      sales_readiness: "MODERATE — Marketing only audience, needs sales framing"
+      gaps: "Missing sales-specific framing, no pitch script, no pricing"
+      note: "Only source with real transaction data (3,184 orders, R$146K volume)"
+
+  secondary_sources:
+    - file: "comparativo.md"
+      relevance: "CRITICAL for decision matrix"
+      quality: "HIGH — clean technical comparison"
+
+    - file: "(V_0.1) NXZ GO.md"
+      relevance: "HIGH — ecosystem overview with architecture diagram"
+      quality: "MEDIUM — technical, needs sales translation"
+
+    - file: "NXZ Go - Funcionalidades.md"
+      relevance: "HIGH — complete feature list"
+      quality: "HIGH — well structured with PDV-exclusive markers"
+
+    - file: "(v_ 0.4) Negocios da Nexuz"
+      relevance: "MEDIUM — ICP, personas, business context"
+      quality: "MEDIUM — generic, needs food-service specificity"
+
+    - file: "(v_ 0.2) Produtos Nexuz"
+      relevance: "MEDIUM — product portfolio, commercial model"
+      quality: "MEDIUM — overview level, no depth"
+
+    - file: "(v_1.0) NXZ ERP briefing"
+      relevance: "HIGH — ERP is always sold alongside NXZ Go"
+      quality: "HIGH — well structured, franchise focus useful"
+
+    - file: "fluxos.md"
+      relevance: "MEDIUM — visual flows for demo preparation"
+      quality: "HIGH — complete Mermaid diagrams"
+
+# ==============================================================================
+# 6. RECOMMENDATIONS FOR BRIEFING GENERATION
+# ==============================================================================
+recommendations:
+
+  structure_suggestion:
+    - section: "1. O que e o NXZ Go"
+      content: "One app, three modes. Ecosystem overview. Why it's sold with ERP."
+    - section: "2. Funcionalidades Compartilhadas"
+      content: "Offline-first, multi-adquirente, whitelabel, KDS, NF, catalogo visual — write ONCE"
+    - section: "3. Modo Totem — Diferencial e Pitch"
+      content: "Unique features, pitch script, ideal segments, objections"
+    - section: "4. Modo PDV — Diferencial e Pitch"
+      content: "Unique features, pitch script, ideal segments, objections"
+    - section: "5. Modo Smart POS — Diferencial e Pitch"
+      content: "Unique features, pitch script, ideal segments, objections"
+    - section: "6. Matriz de Decisao"
+      content: "When to recommend each mode, common setups by segment, decision tree"
+    - section: "7. Combinacoes e Upsell"
+      content: "How modes work together, upsell paths, bundle suggestions"
+    - section: "8. Argumentos de Venda Consolidados"
+      content: "Top objections (deduplicated), competitive positioning, ROI arguments"
+    - section: "9. Perguntas Frequentes de Prospects"
+      content: "FAQ for sales calls, technical questions, redirect rules"
+    - section: "10. Toolkit de Demo"
+      content: "What to show per mode, wow moments, segment-specific demo customization"
+
+  content_generation_notes:
+    - "Deduplicate objections: several objections repeat across modes (offline, acquirer, branding) — consolidate with mode-specific variations"
+    - "The Smart POS briefing needs sales framing added (currently Marketing-only)"
+    - "Real data from Smart POS briefing (3,184 orders, R$146K) should be used as proof points but clearly labeled as ecosystem-wide"
+    - "ERP context is essential: NXZ Go is NEVER sold standalone. Every pitch must reference the ERP backbone"
+    - "The 'Para vendas' one-liners from Totem and PDV briefings are excellent — preserve and consolidate them"
+    - "Pricing info does NOT exist in any source — flag this as a required input from the Nexuz team"
+    - "Named competitors are NOT mentioned anywhere — this needs external input or separate research"
+    - "Hardware costs are only hinted at in Smart POS briefing (R$500-1,500) — need more specifics for all modes"
+
+  data_gaps_requiring_external_input:
+    - "Pricing tiers and plan structure"
+    - "Named competitor analysis"
+    - "Real client testimonials or case studies"
+    - "Implementation timeline per setup complexity"
+    - "Sales process documentation (qualification, cycle, handoff)"
+    - "ROI metrics from real deployments (ticket medio increase %, labor savings, etc.)"
+    - "Hardware partner pricing (tablets, maquininhas)"
