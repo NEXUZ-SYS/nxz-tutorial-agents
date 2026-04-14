@@ -1,55 +1,20 @@
 {
   "squad": "nxz-clickup-setup",
-  "status": "completed",
-  "step": { "current": 10, "total": 10, "label": "checkpoint-final-approval" },
+  "status": "running",
+  "step": { "current": 5, "total": 10, "label": "checkpoint-approve-design" },
   "agents": [
-    {
-      "id": "researcher",
-      "name": "Duda Documentação",
-      "icon": "🔍",
-      "status": "done",
-      "deliverTo": null,
-      "desk": { "col": 1, "row": 1 }
-    },
-    {
-      "id": "architect",
-      "name": "Ernesto Estrutura",
-      "icon": "📐",
-      "status": "done",
-      "deliverTo": null,
-      "desk": { "col": 2, "row": 1 }
-    },
-    {
-      "id": "configurator",
-      "name": "Carlos Configurador",
-      "icon": "⚙️",
-      "status": "done",
-      "deliverTo": null,
-      "desk": { "col": 3, "row": 1 }
-    },
-    {
-      "id": "reviewer",
-      "name": "Rui Revisão",
-      "icon": "✅",
-      "status": "done",
-      "deliverTo": null,
-      "desk": { "col": 1, "row": 2 }
-    },
-    {
-      "id": "trainer",
-      "name": "Tiago Treinamento",
-      "icon": "📚",
-      "status": "done",
-      "deliverTo": null,
-      "desk": { "col": 2, "row": 2 }
-    }
+    { "id": "researcher", "name": "Duda Documentação", "icon": "🔍", "status": "done", "deliverTo": null, "desk": { "col": 1, "row": 1 } },
+    { "id": "architect", "name": "Ernesto Estrutura", "icon": "📐", "status": "done", "deliverTo": "configurator", "desk": { "col": 2, "row": 1 } },
+    { "id": "configurator", "name": "Carlos Configurador", "icon": "⚙️", "status": "idle", "deliverTo": null, "desk": { "col": 3, "row": 1 } },
+    { "id": "reviewer", "name": "Rui Revisão", "icon": "✅", "status": "idle", "deliverTo": null, "desk": { "col": 1, "row": 2 } },
+    { "id": "trainer", "name": "Tiago Treinamento", "icon": "📚", "status": "idle", "deliverTo": null, "desk": { "col": 2, "row": 2 } }
   ],
   "handoff": {
-    "from": "checkpoint",
-    "to": null,
-    "message": "Pipeline concluido com sucesso! Marketing configurado: 1 Space, 2 Folders, 7 Lists, 3 conjuntos de custom statuses. Auditoria 8.5/10 APPROVE. Usuario quer rodar para outros departamentos.",
-    "completedAt": "2026-03-27T21:30:00Z"
+    "from": "architect",
+    "to": "configurator",
+    "message": "Design do Space Vendas pronto: Folder CRM (4 Lists) + 4 Docs + Dashboard + Goals, com 9 statuses, 32 custom fields, 17 automações e handoff cross-space para Relacionamento.",
+    "completedAt": "2026-04-13T16:45:00Z"
   },
-  "startedAt": "2026-03-27T20:22:49Z",
-  "updatedAt": "2026-03-27T21:30:00Z"
+  "startedAt": "2026-04-13T16:39:31Z",
+  "updatedAt": "2026-04-13T16:45:00Z"
 }
