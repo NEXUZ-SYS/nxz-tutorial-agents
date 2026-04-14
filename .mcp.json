@@ -1,13 +1,5 @@
 {
   "mcpServers": {
-    "playwright": {
-      "command": "npx",
-      "args": [
-        "@playwright/mcp@latest",
-        "--config",
-        "_opensquad/config/playwright.config.json"
-      ]
-    },
     "clickup": {
       "command": "npx",
       "args": [

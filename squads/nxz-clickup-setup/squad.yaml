@@ -5,14 +5,33 @@ squad:
     Squad especialista em implantação e configuração do ClickUp para a Nexuz.
     Configura Spaces, Folders, Lists, Custom Fields, Automações e OKRs para
     6 departamentos: Marketing, Vendas, Financeiro/Backoffice, Desenvolvimento,
-    Suporte e CS. Usa o MCP do ClickUp para executar configurações diretamente.
-  version: "1.0.0"
+    Suporte e CS. Toda interação com ClickUp é feita **obrigatoriamente** via
+    a skill `clickup-integration` (hybrid MCP + API v2 + Playwright CLI), que
+    consolida a matriz de decisão "qual interface para qual operação" e os
+    aprendizados acumulados (overlay workarounds, converged-ai fallback, etc.).
+  version: "1.1.0"
   performance_mode: high
   created: "2026-03-27"
 
   skills:
     - web_search
     - web_fetch
+    - clickup-integration   # OBRIGATÓRIA — toda interação com o ClickUp passa por esta skill
+                            # (decide MCP vs API v2 vs Playwright CLI; ver skills/clickup-integration/SKILL.md)
+
+  skill_policy:
+    clickup-integration:
+      required: true
+      scope: "Qualquer leitura, criação, atualização ou auditoria em recursos ClickUp
+              (Spaces, Folders, Lists, Statuses, Custom Fields, Views, Automações, Goals).
+              É PROIBIDO chamar o MCP do ClickUp, API v2 ou Playwright diretamente sem
+              passar pelo fluxo documentado em skills/clickup-integration/SKILL.md."
+      enforcement:
+        - "Antes de qualquer operação ClickUp, consultar a matriz de decisão da skill"
+        - "Para UI-only (Statuses, Custom Fields, Automações): usar templates em
+           skills/clickup-integration/scripts/templates/ via run-playwright.sh"
+        - "Parâmetros do Playwright vêm de config.env + .env do projeto — nunca hardcodar"
+        - "Ao encontrar uma nova limitação, atualizar references/known-limitations.md"
 
   data:
     - pipeline/data/research-brief.md

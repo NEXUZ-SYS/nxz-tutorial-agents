@@ -111,13 +111,18 @@ Retornou as 6 views corretas em 2026-04-14.
 
 ---
 
-## SESSÃO 2 — Automações (14 automações) — **PREP FEITO, executar em sessão limpa**
+## SESSÃO 2 — Automações — **EXECUTAR MANUALMENTE** (Playwright inviável)
 
-> **Ajustes 2026-04-14:**
+> **Decisão 2026-04-14 (segunda tentativa):** Após 2 sessões de tentativa com Playwright, confirmado que a nova UI "converged-ai-task" da ClickUp impede automação confiável. Seguir via **guia manual** no arquivo `phase-2-lote-a-manual-guide.md`.
+>
+> **Escopo atual (Lote A):** 4 automações time-in-status (#1, #2, #5, #7). Usuário executa na UI (~15min). Após validação em produção, decidir se Lotes B/C/D valem o esforço ou se ficam permanentemente manuais.
+>
+> **Ajustes 2026-04-14 (primeira tentativa, preservados):**
 > - 7 automações default legadas (tipo `When task created → set custom field`) **deletadas**. Começar do zero.
 > - Escopo reduzido de 16 → 14: pular #9 (@Sabrina) e #11 (@Luiz) até esses usuários serem onboardados. Workspace atual: Carol Oliveira, Matheus Caldeira, Walter Frey.
 > - **Menções sempre com nome completo:** @Carol Oliveira (não @Carol).
-> - Executar essa sessão **em conversa nova** — Playwright em form de automation exige muitas interações precisas.
+>
+> **Bloqueio técnico confirmado:** botões `automation-tab-manage__add-automation-button` e `automation-converged-ai-task-create-button` respondem ao click JS mas o builder não monta — `ReactModalPortal` permanece vazio. O overlay `cdk-overlay-connected-position-bounding-box` do Angular CDK consome eventos. Tentativas testadas sem sucesso: click via ref Playwright, `.click()` via evaluate, mousedown/mouseup dispatch, remoção do overlay antes do click.
 
 **Escopo:** criar 16 automações no List `Leads & Deals`. Executar em **4 lotes de 4**, validando entre lotes.
 
@@ -270,11 +275,57 @@ curl -X POST "https://api.clickup.com/api/v3/workspaces/3086998/docs/2y6mp-6777/
 | 2026-04-14 | Sessão 1 (Views) | 6 views criadas (estrutura nome+tipo) | Filtros/grouping adiados para Sessão 1b |
 | 2026-04-14 | Sessão 1b (Filtros) | Filtros/grouping/sort em 5/6 views aplicados via API v2. Calendar Data demo pendente (manual). | Chave: `cf_<id>` p/ custom fields; `{type:done\|closed}` p/ status groups em NOT-filters |
 | 2026-04-14 | Default task type Deal | `Leads & Deals` default task type alterado para **Deal** (ID 1003) via Playwright (right-click → Tipo de tarefa padrão → Deal). API GET retorna null para todas Lists — limitação do endpoint. | UI valida: header mostra "+ Deal" |
+| 2026-04-14 | Sessão 2 (descoberta) | **Time In Status é CONDIÇÃO, não trigger.** Plano ClickUp ajustado desbloqueou. Padrão correto para as 10 automações time-based descrito abaixo. Sessão interrompida por lock de perfil Playwright. | Nenhuma automação criada ainda — só mapeamento do builder |
+| 2026-04-14 | Sessão 2 (tentativa Playwright) | **Bloqueada.** Nova UI "converged-ai-task" da ClickUp substituiu o builder clássico. Botão Automatizar agora abre dropdown com sugestões IA; rodapé tem "Gerenciar automações" → "+ Adicionar automação", mas o click fecha o dialog sem abrir o builder (overlay `cdk-overlay-connected-position-bounding-box` intercepta). Escopo reduzido mid-session 14→4 (Lote A). Zero automações salvas. | Gerado guia manual em `phase-2-lote-a-manual-guide.md` — usuário vai executar manualmente (~15min) |
 
-**Sessão ativa:** 2 (16 automações). Padrão API descoberto em 1b não se aplica — automations exigem Playwright. Aprendizado: sempre tentar API v2 antes de Playwright (muito mais estável).
+**Sessão ativa:** 2 (Lote A — 4 automações time-in-status). **Modo escolhido: manual** (Playwright inviável).
+**Lotes B/C/D:** adiados até após Lote A validado em produção por ~1 semana.
 
-### Plano de execução Sessão 2
-1. Abrir `https://app.clickup.com/3086998/v/li/901712879969` → botão "Automatizar" (header da List) ou menu (…) → Automatizações
-2. Criar em lotes (A → B → C → D), validando após cada lote
-3. Validação intermediária: abrir página de Automatizações e conferir count/nomes
-4. Notas específicas abaixo (validar no Lote A se Time-in-status exige Business+)
+### Padrão descoberto (Sessão 2 — 2026-04-14)
+Trigger "Tempo em status" **não existe** no menu de triggers. Opções de trigger disponíveis: `Tarefa criada`, `Alterações de status`, `Alterações de campo personalizado`, `A cada...` (scheduled), `Comunicação`, `Datas e horário`, etc.
+
+**"Time In Status" existe como condição** (acessada via botão "Adicionar condição" dentro do builder). Lista completa de condições: Assignee, Current Date Is, Custom Field, Due Date, O nome da tarefa contém, Observador, Priority, Start Date, Status, Tag, Time Estimate, **Time In Status**, Tipo de tarefa.
+
+**Padrão para automações time-based (#1, #2, #5, #6, #7, #8, #10, #13, #14, #15):**
+```
+Trigger:   A cada 4 horas (ou intervalo apropriado)
+Condição 1: Status = <status alvo>
+Condição 2: Time In Status > <threshold> (ex: 48h, 7d)
+Ação:      Adicionar comentário "@Carol Oliveira <mensagem>"
+```
+
+**Padrão para automações status-change (#3, #4, #12, #16):**
+```
+Trigger:   Alterações de status (De: Qualquer → Para: <alvo>)  ou  A cada... (scheduled)
+Ação:      Adicionar comentário ou Enviar e-mail
+```
+
+### Lock Playwright (resolver antes de retomar)
+Sessão 2 travou com Chrome órfão segurando `_opensquad/_browser_profile/SingletonLock` (PID 53070 no snapshot). Próxima sessão: matar processo ou aguardar fechamento antes de reabrir.
+
+### Plano de execução Sessão 2 (retomada) — **MODO MANUAL**
+**Usar:** `phase-2-lote-a-manual-guide.md` (mesmo diretório)
+
+**Passos resumidos para Lote A (4 automações):**
+1. Abrir Lista Leads & Deals no ClickUp
+2. Clicar **Automatizar** → **Gerenciar automações** (rodapé do dropdown) → **+ Adicionar automação**
+3. Trigger: **A cada... → Diariamente** (09:00)
+4. Condição 1: **Status** = <status alvo>
+5. Condição 2: **Time In Status** > <threshold>
+6. Ação: **Adicionar comentário** com `@Carol Oliveira <mensagem>`
+7. **Criar** (salvar)
+8. Repetir 4×
+
+Tabela completa (nomes, status, thresholds, mensagens) no arquivo de guia.
+
+### Se alguma sessão futura quiser retentar Playwright
+Pré-requisitos para nova tentativa valer o esforço:
+- Confirmar que ClickUp ainda usa o padrão `cu-edit-automation__container` OU que rolaram de volta para UI antiga
+- Testar em conta pessoal de desenvolvimento primeiro (sem risco)
+- Avaliar browser_use ou alternativas ao Playwright MCP padrão
+- Considerar: custo real de Playwright p/ 4 automações > 100k tokens vs. 15min manuais do usuário
+
+### Validação final (quando todas criadas)
+```bash
+curl -s "https://api.clickup.com/api/v2/list/901712879969/automation" -H "Authorization: $TOKEN" | jq '.automations[] | {id, name, enabled}'
+```

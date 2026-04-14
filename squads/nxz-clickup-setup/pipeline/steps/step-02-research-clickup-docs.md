@@ -4,9 +4,24 @@ agent: squads/nxz-clickup-setup/agents/researcher
 inputFile: squads/nxz-clickup-setup/pipeline/data/config-focus.md
 outputFile: squads/nxz-clickup-setup/output/research-findings.md
 model_tier: powerful
+required_skills:
+  - clickup-integration
 ---
 
 # Step 02: Pesquisa de Documentação ClickUp
+
+## Skill de referência
+
+Antes de pesquisar na web, consultar o que a skill `clickup-integration` já
+consolida — evita re-descobrir limitações conhecidas:
+
+- `skills/clickup-integration/references/known-limitations.md` — gaps API/MCP
+- `skills/clickup-integration/references/automation-patterns.md` — padrões validados
+- `skills/clickup-integration/references/hierarchy-patterns.md` — design rules
+
+A pesquisa externa deve **complementar** (novidades, casos específicos por
+departamento), não duplicar o que já está documentado. Se encontrar uma nova
+limitação ou padrão durante a pesquisa, atualizar a referência correspondente.
 
 ## Context Loading
 
@@ -14,6 +29,7 @@ Load these files before executing:
 - `squads/nxz-clickup-setup/pipeline/data/config-focus.md` — Departamentos selecionados e nível de customização
 - `squads/nxz-clickup-setup/pipeline/data/research-brief.md` — Pesquisa prévia sobre ClickUp
 - `squads/nxz-clickup-setup/pipeline/data/domain-framework.md` — Framework de implementação
+- `skills/clickup-integration/references/` — aprendizados já consolidados
 
 ## Instructions
 
@@ -26,6 +42,7 @@ Load these files before executing:
    - Views otimizadas
 3. Pesquisar best practices de OKR setup no ClickUp para os departamentos selecionados
 4. Pesquisar ClickUp API/MCP capabilities para configuração programática
+   (cruzar com `known-limitations.md` da skill — não repetir o que já sabemos)
 5. Compilar tudo em um relatório estruturado por departamento
 
 ## Output Format

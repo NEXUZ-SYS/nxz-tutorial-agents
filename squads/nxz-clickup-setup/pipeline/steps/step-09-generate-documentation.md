@@ -3,9 +3,22 @@ execution: inline
 agent: squads/nxz-clickup-setup/agents/trainer
 inputFile: squads/nxz-clickup-setup/output/workspace-design.md
 outputFile: squads/nxz-clickup-setup/output/user-guide.md
+required_skills:
+  - clickup-integration
 ---
 
 # Step 09: Gerar Documentação e Guias
+
+## Skill de referência
+
+A documentação para usuário final **não** invoca a skill em runtime, mas deve
+refletir fielmente o que a skill configurou. Antes de escrever:
+
+- Ler `squads/nxz-clickup-setup/output/configuration-log.md` para saber qual
+  interface criou cada coisa (MCP / API v2 / Playwright CLI)
+- Se houver guias manuais gerados (`phase-X-manual-guide.md` quando converged-ai
+  falhou), **incluir no guia final** como "Automações configuradas manualmente"
+- Nomes de Spaces/Folders/Lists/Fields devem bater exatamente com o ClickUp real
 
 ## Context Loading
 
@@ -13,6 +26,7 @@ Load these files before executing:
 - `squads/nxz-clickup-setup/output/workspace-design.md` — Design do workspace (fluxogramas, hierarquia)
 - `squads/nxz-clickup-setup/output/configuration-log.md` — O que foi efetivamente configurado
 - `squads/nxz-clickup-setup/output/audit-report.md` — Resultado da auditoria
+- `squads/nxz-clickup-setup/output/**/phase-*-manual-guide.md` — Guias manuais (se existirem)
 - `_opensquad/_memory/company.md` — Contexto da empresa Nexuz
 
 ## Instructions
@@ -106,6 +120,7 @@ Load these files before executing:
 
 1. Algum departamento configurado não tem guia de uso
 2. Guia não inclui os fluxogramas Mermaid do design
+3. Automações que viraram guia manual não foram incorporadas ao user-guide
 
 ## Quality Criteria
 
