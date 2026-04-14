@@ -40,4 +40,4 @@ Opensquad uses a persistent Playwright browser profile to keep you logged into s
 - Sessions are stored in `_opensquad/_browser_profile/` (gitignored, private to you)
 - First time accessing a platform, you'll log in manually once
 - Subsequent runs will reuse your saved session
-- **Important:** The native Claude Code Playwright plugin must be disabled. Opensquad uses its own `@playwright/mcp` server configured in `.mcp.json`.
+- **Automation mode:** This project uses Playwright **CLI only** (via scripts / `npx playwright`) — no Playwright MCP server. Automations should be run as CLI scripts that read/write the persistent profile directory.

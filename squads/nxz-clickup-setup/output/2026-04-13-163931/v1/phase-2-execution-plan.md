@@ -277,9 +277,11 @@ curl -X POST "https://api.clickup.com/api/v3/workspaces/3086998/docs/2y6mp-6777/
 | 2026-04-14 | Default task type Deal | `Leads & Deals` default task type alterado para **Deal** (ID 1003) via Playwright (right-click → Tipo de tarefa padrão → Deal). API GET retorna null para todas Lists — limitação do endpoint. | UI valida: header mostra "+ Deal" |
 | 2026-04-14 | Sessão 2 (descoberta) | **Time In Status é CONDIÇÃO, não trigger.** Plano ClickUp ajustado desbloqueou. Padrão correto para as 10 automações time-based descrito abaixo. Sessão interrompida por lock de perfil Playwright. | Nenhuma automação criada ainda — só mapeamento do builder |
 | 2026-04-14 | Sessão 2 (tentativa Playwright) | **Bloqueada.** Nova UI "converged-ai-task" da ClickUp substituiu o builder clássico. Botão Automatizar agora abre dropdown com sugestões IA; rodapé tem "Gerenciar automações" → "+ Adicionar automação", mas o click fecha o dialog sem abrir o builder (overlay `cdk-overlay-connected-position-bounding-box` intercepta). Escopo reduzido mid-session 14→4 (Lote A). Zero automações salvas. | Gerado guia manual em `phase-2-lote-a-manual-guide.md` — usuário vai executar manualmente (~15min) |
+| 2026-04-14 | Sessão 2 (spike retomada) | **UI DESBLOQUEADA.** Botão "Automatizar" → dropdown "Criar automação" (ref `automation-converged-ai-task-create-button` dentro de `cu-automation-converged-ai-task-other-automations-list`) agora **abre o dialog `Automações`** corretamente. Builder funcional: trigger selector, "Adicionar condição", action selector, botão Criar. Escopo 16→14 (pular #9 Sabrina, #11 Luiz — não estão no workspace). Modo de execução: **Playwright via subagent** (contexto isolado). | Path validado: click `[data-test="automation-converged-ai-task-button__button"]` → click `cu-automation-converged-ai-task-other-automations-list [data-test="automation-converged-ai-task-create-button"]` → dialog abre |
 
-**Sessão ativa:** 2 (Lote A — 4 automações time-in-status). **Modo escolhido: manual** (Playwright inviável).
-**Lotes B/C/D:** adiados até após Lote A validado em produção por ~1 semana.
+**Sessão ativa:** 2 (14 automações via Playwright, subagent).
+**Usuários disponíveis:** Carol Oliveira, Walter Frey, Matheus Caldeira. Sabrina/Luiz ainda não no /team.
+**Pulados:** #9 (depende @Sabrina), #11 (depende @Luiz).
 
 ### Padrão descoberto (Sessão 2 — 2026-04-14)
 Trigger "Tempo em status" **não existe** no menu de triggers. Opções de trigger disponíveis: `Tarefa criada`, `Alterações de status`, `Alterações de campo personalizado`, `A cada...` (scheduled), `Comunicação`, `Datas e horário`, etc.
