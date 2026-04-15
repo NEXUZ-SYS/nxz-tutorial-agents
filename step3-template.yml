@@ -1,0 +1,554 @@
+- generic [ref=e3]:
+  - generic [ref=e66]:
+    - generic [ref=e67]:
+      - button "Nxz Sistemas, , Nxz Sistemas" [ref=e69] [cursor=pointer]:
+        - generic "Nxz Sistemas, ," [ref=e71]:
+          - generic [ref=e72]: "N"
+        - generic [ref=e73]: Nxz Sistemas
+        - img [ref=e75]
+      - button [ref=e80] [cursor=pointer]:
+        - img [ref=e81]
+    - generic [ref=e84]:
+      - button "Pesquisar ⌘ K" [ref=e85] [cursor=pointer]:
+        - img [ref=e87]
+        - generic [ref=e89]: Pesquisar
+        - generic [ref=e90]: ⌘ K
+      - button "Lottie animation" [ref=e91] [cursor=pointer]:
+        - img "Lottie animation" [ref=e95]:
+          - img [ref=e97]
+    - generic [ref=e130]:
+      - generic [ref=e133]:
+        - button "Criar tarefa" [ref=e134] [cursor=pointer]:
+          - img [ref=e136]
+        - button "Meu trabalho" [ref=e138] [cursor=pointer]:
+          - img [ref=e140]
+        - button "Bloco de notas" [ref=e142] [cursor=pointer]:
+          - img [ref=e144]
+        - button "Menu suspenso" [ref=e149] [cursor=pointer]:
+          - button "Gravar um clipe" [ref=e150]:
+            - img [ref=e152]
+        - button "Criar lembrete" [ref=e154] [cursor=pointer]:
+          - img [ref=e156]
+        - button "Criar documento" [ref=e158] [cursor=pointer]:
+          - img [ref=e160]
+      - button "Menu suspenso" [ref=e164] [cursor=pointer]:
+        - generic "Matheus Cardozo Caldeira, , online" [ref=e167]:
+          - generic [ref=e168]: MC
+          - img [ref=e170]
+        - img [ref=e173]
+  - generic [ref=e179]:
+    - navigation "Barra lateral" [ref=e181]:
+      - generic [ref=e182]:
+        - generic [ref=e183]:
+          - generic [ref=e184]:
+            - generic [ref=e185]:
+              - link "Início" [ref=e188] [cursor=pointer]:
+                - /url: https://app.clickup.com/3086998/v/l/li/901712369683
+                - img [ref=e1261]
+                - generic [ref=e197]: Início
+              - link "Espaços" [ref=e201] [cursor=pointer]:
+                - /url: https://app.clickup.com/3086998/v/o/s/90174933917
+                - img [ref=e1264]
+                - generic [ref=e210]: Espaços
+              - link "Chat" [ref=e214] [cursor=pointer]:
+                - /url: https://app.clickup.com/3086998/chat/r/launchpad
+                - img [ref=e218]
+                - generic [ref=e223]: Chat
+            - generic [ref=e225]:
+              - link "Planejador 14" [ref=e229] [cursor=pointer]:
+                - /url: https://app.clickup.com/3086998/calendar
+                - generic [ref=e230]:
+                  - img [ref=e234]
+                  - generic [ref=e239]: Planejador
+                  - generic [ref=e240]:
+                    - generic: "14"
+              - link "IA" [ref=e243] [cursor=pointer]:
+                - /url: https://app.clickup.com/3086998/ai
+                - generic [ref=e244]:
+                  - img [ref=e248]
+                  - generic [ref=e253]: IA
+              - link "Equipes" [ref=e257] [cursor=pointer]:
+                - /url: https://app.clickup.com/3086998/teams-pulse
+                - generic [ref=e258]:
+                  - img [ref=e262]
+                  - generic [ref=e267]: Equipes
+              - link "Documentos" [ref=e271] [cursor=pointer]:
+                - /url: https://app.clickup.com/3086998/docs
+                - generic [ref=e272]:
+                  - img [ref=e276]
+                  - generic [ref=e281]: Documentos
+              - link "Painéis" [ref=e284] [cursor=pointer]:
+                - /url: https://app.clickup.com/3086998/hubs/dashboards
+                - generic [ref=e285]:
+                  - img [ref=e289]
+                  - generic [ref=e294]: Painéis
+              - link "Quadros brancos" [ref=e298] [cursor=pointer]:
+                - /url: https://app.clickup.com/3086998/hubs/whiteboards
+                - generic [ref=e299]:
+                  - img [ref=e303]
+                  - generic [ref=e308]: Quadros brancos
+              - link "Formulários" [ref=e311] [cursor=pointer]:
+                - /url: https://app.clickup.com/3086998/forms
+                - generic [ref=e312]:
+                  - img [ref=e316]
+                  - generic [ref=e321]: Formulários
+              - link "Clipes" [ref=e324] [cursor=pointer]:
+                - /url: https://app.clickup.com/3086998/hubs/clips
+                - generic [ref=e325]:
+                  - img [ref=e329]
+                  - generic [ref=e334]: Clipes
+              - link "Metas" [ref=e339] [cursor=pointer]:
+                - /url: https://app.clickup.com/3086998/goals
+                - generic [ref=e340]:
+                  - img [ref=e344]
+                  - generic [ref=e349]: Metas
+              - link "Planilhas de horas" [ref=e354] [cursor=pointer]:
+                - /url: https://app.clickup.com/3086998/time?via=sidebar
+                - generic [ref=e355]:
+                  - img [ref=e359]
+                  - generic [ref=e364]: Planilhas de horas
+          - button "Menu suspenso" [ref=e366] [cursor=pointer]:
+            - img [ref=e368]
+            - generic [ref=e370]:
+              - generic [ref=e1267]:
+                - img [ref=e1269]
+                - generic [ref=e1272]: "14"
+              - img [ref=e1280]
+              - img [ref=e387]
+            - generic [ref=e392]: Mais
+        - button "Convidar" [ref=e401] [cursor=pointer]:
+          - img [ref=e403]
+          - generic [ref=e405]: Convidar
+    - main [ref=e406]:
+      - generic [ref=e409]:
+        - generic [ref=e416]:
+          - generic [ref=e417]:
+            - generic [ref=e418]: Espaços
+            - generic [ref=e419]:
+              - generic [ref=e1282]:
+                - button "Configurações do Spaces":
+                  - generic:
+                    - img
+                  - generic: Configurações do Spaces
+              - generic [ref=e421] [cursor=pointer]:
+                - textbox "Search sidebar..."
+                - img [ref=e423]
+              - button "Fechar barra lateral" [ref=e431] [cursor=pointer]:
+                - img [ref=e433]
+              - button "Criar" [ref=e435]:
+                - button "Criar" [ref=e436] [cursor=pointer]:
+                  - img [ref=e438]
+                  - paragraph [ref=e440]: Criar
+          - generic [ref=e441]:
+            - tree [ref=e444]:
+              - treeitem "Todas as tarefas - Nxz Sistemas" [level=2] [ref=e528]:
+                - generic [ref=e530]:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - img
+                  - link "Todas as tarefas - Nxz Sistemas" [ref=e531] [cursor=pointer]:
+                    - /url: https://app.clickup.com/3086998/v/t/3086998
+                    - generic [ref=e532]: Todas as tarefas - Nxz Sistemas
+              - treeitem "Marketing, , Marketing" [expanded] [level=2] [ref=e533]:
+                - generic [ref=e535]:
+                  - generic "Marketing, ," [ref=e539]:
+                    - generic [ref=e540]: M
+                  - link "Marketing" [ref=e541]:
+                    - /url: https://app.clickup.com/3086998/v/o/s/90174933917
+                    - generic [ref=e543]: Marketing
+                  - generic [ref=e545]:
+                    - button [ref=e546] [cursor=pointer]:
+                      - img [ref=e548]
+                    - button [ref=e550] [cursor=pointer]:
+                      - img [ref=e552]
+              - treeitem "Conteúdo" [expanded] [level=3] [ref=e554]:
+                - generic [ref=e556]:
+                  - img [ref=e560]
+                  - link "Conteúdo" [ref=e562] [cursor=pointer]:
+                    - /url: https://app.clickup.com/3086998/v/f/90177771231/90174933917?pr=90174933917
+                    - generic [ref=e564]: Conteúdo
+                  - generic [ref=e566]:
+                    - button [ref=e567] [cursor=pointer]:
+                      - img [ref=e569]
+                    - button [ref=e571] [cursor=pointer]:
+                      - img [ref=e573]
+              - treeitem "Redes Sociais" [level=4] [ref=e575]:
+                - generic [ref=e577]:
+                  - button [ref=e580] [cursor=pointer]:
+                    - img [ref=e582]
+                  - link "Redes Sociais" [ref=e584] [cursor=pointer]:
+                    - /url: https://app.clickup.com/3086998/v/l/li/901712369683?pr=90174933917
+                    - generic [ref=e586]: Redes Sociais
+              - treeitem "Blog & Artigos" [level=4] [ref=e587]:
+                - generic [ref=e589]:
+                  - button [ref=e592] [cursor=pointer]:
+                    - img [ref=e594]
+                  - link "Blog & Artigos" [ref=e596] [cursor=pointer]:
+                    - /url: https://app.clickup.com/3086998/v/li/901712369684/90177771231?pr=90174933917
+                    - generic [ref=e598]: Blog & Artigos
+              - treeitem "Email Marketing" [level=4] [ref=e599]:
+                - generic [ref=e601]:
+                  - button [ref=e604] [cursor=pointer]:
+                    - img [ref=e606]
+                  - link "Email Marketing" [ref=e608] [cursor=pointer]:
+                    - /url: https://app.clickup.com/3086998/v/li/901712369685/90177771231?pr=90174933917
+                    - generic [ref=e610]: Email Marketing
+              - treeitem "Vídeos" [level=4] [ref=e611]:
+                - generic [ref=e613]:
+                  - button [ref=e616] [cursor=pointer]:
+                    - img [ref=e618]
+                  - link "Vídeos" [ref=e620] [cursor=pointer]:
+                    - /url: https://app.clickup.com/3086998/v/li/901712369686/90177771231?pr=90174933917
+                    - generic [ref=e622]: Vídeos
+              - treeitem "Campanhas" [level=3] [ref=e623]:
+                - generic [ref=e625]:
+                  - img [ref=e629]
+                  - link "Campanhas" [ref=e631] [cursor=pointer]:
+                    - /url: https://app.clickup.com/3086998/v/f/90177771232/90174933917?pr=90174933917
+                    - generic [ref=e633]: Campanhas
+              - treeitem [level=3] [ref=e634]
+              - treeitem "Requests Internos" [level=3] [ref=e635]:
+                - generic [ref=e637]:
+                  - button [ref=e640] [cursor=pointer]:
+                    - img [ref=e642]
+                  - link "Requests Internos" [ref=e644] [cursor=pointer]:
+                    - /url: https://app.clickup.com/3086998/v/li/901712369689/90177771233?pr=90174933917
+                    - generic [ref=e646]: Requests Internos
+              - treeitem "Vendas, , Vendas" [level=2] [ref=e647]:
+                - generic [ref=e649]:
+                  - generic "Vendas, ," [ref=e653]:
+                    - generic [ref=e654]: V
+                  - link "Vendas" [ref=e655] [cursor=pointer]:
+                    - /url: https://app.clickup.com/3086998/v/s/90175210820/1
+                    - generic [ref=e657]: Vendas
+              - treeitem "Novo Espaço" [level=2] [ref=e658]:
+                - generic [ref=e660] [cursor=pointer]:
+                  - img [ref=e664]
+                  - generic [ref=e668]: Novo Espaço
+            - generic:
+              - generic:
+                - button "Configurações do Espaço"
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button "Configurações de pasta"
+            - generic [ref=e899]:
+              - button "Configurações da lista"
+            - generic:
+              - generic:
+                - button "Menu suspenso"
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - button
+        - generic [ref=e902]:
+          - generic [ref=e904]:
+            - generic [ref=e906]:
+              - generic [ref=e908]:
+                - generic [ref=e909]:
+                  - button "Menu suspenso" [ref=e1286] [cursor=pointer]:
+                    - generic [ref=e1288]:
+                      - generic "Marketing, ," [ref=e1290]:
+                        - generic [ref=e1291]: M
+                      - generic [ref=e1295]: Marketing
+                    - img [ref=e1297]
+                  - generic:
+                    - generic:
+                      - generic:
+                        - button "Marketing Configurações do Espaço"
+                - button "Menu suspenso" [ref=e942] [cursor=pointer]:
+                  - img [ref=e944]
+                  - generic [ref=e946]: Favorito
+                - generic [ref=e955]:
+                  - button "Adicionar descrição" [ref=e1301] [cursor=pointer]:
+                    - img [ref=e1303]
+                    - generic [ref=e1305]: Adicionar descrição
+                  - button "Adicionar responsável pelo espaço" [ref=e1306] [cursor=pointer]:
+                    - button "Adicionar responsável pelo espaço" [ref=e1307]:
+                      - img [ref=e964]
+                      - generic [ref=e966]: Adicionar responsável pelo espaço
+                  - generic [ref=e969]:
+                    - button "Adicionar prioridade do espaço" [ref=e1308] [cursor=pointer]:
+                      - button "Adicionar prioridade do espaço" [ref=e1309]:
+                        - img [ref=e975]
+                        - generic [ref=e977]: Adicionar prioridade do espaço
+                    - generic [ref=e978]: Alterar prioridade
+                  - generic [ref=e981]:
+                    - button "Adicionar datas do espaço" [disabled] [ref=e1310]:
+                      - button "Adicionar datas do espaço" [disabled] [ref=e1311] [cursor=pointer]:
+                        - img [ref=e986]
+                        - generic [ref=e988]: Adicionar datas do espaço
+                    - generic [ref=e989]: Alterar datas de início e vencimento
+              - generic [ref=e990]:
+                - generic [ref=e993]:
+                  - button "Adicionar canal e iniciar o SyncUp" [ref=e994] [cursor=pointer]:
+                    - img [ref=e996]
+                  - button [ref=e998] [cursor=pointer]:
+                    - img [ref=e1000]
+                - button "Menu suspenso" [ref=e1004] [cursor=pointer]:
+                  - button "Agentes" [ref=e1006]:
+                    - img [ref=e1008]
+                    - generic [ref=e1011]: Agentes
+                - button "Menu suspenso" [ref=e1014] [cursor=pointer]:
+                  - button "Automatizar" [ref=e1016]:
+                    - img [ref=e1019]
+                    - generic [ref=e1021]: Automatizar
+                - button "Faça uma pergunta sobre este espaço à IA" [ref=e1312] [cursor=pointer]:
+                  - generic [ref=e1027]: Pergunte à IA
+                - button "Compartilhar" [ref=e1030] [cursor=pointer]:
+                  - img [ref=e1032]
+                  - generic [ref=e1034]: Compartilhar
+            - generic [ref=e1038]:
+              - generic [ref=e1313]:
+                - button "Adicionar canal" [ref=e1316] [cursor=pointer]
+                - generic [ref=e1319]:
+                  - link [ref=e1320] [cursor=pointer]:
+                    - /url: https://app.clickup.com/3086998/v/o/s/90174933917
+                    - img [ref=e1326]
+                  - link "Overview" [ref=e1328] [cursor=pointer]:
+                    - /url: https://app.clickup.com/3086998/v/o/s/90174933917
+                    - generic [ref=e1330]: Overview
+                - generic [ref=e1331]:
+                  - generic [ref=e1333]:
+                    - link [ref=e1334] [cursor=pointer]:
+                      - /url: https://app.clickup.com/3086998/v/l/s/90174933917
+                      - img [ref=e1340]
+                    - link "Lista" [ref=e1342] [cursor=pointer]:
+                      - /url: https://app.clickup.com/3086998/v/l/s/90174933917
+                      - generic [ref=e1344]: Lista
+                  - generic [ref=e1346]:
+                    - link [ref=e1347] [cursor=pointer]:
+                      - /url: https://app.clickup.com/3086998/v/b/s/90174933917
+                      - img [ref=e1353]
+                    - link "Quadro" [ref=e1355] [cursor=pointer]:
+                      - /url: https://app.clickup.com/3086998/v/b/s/90174933917
+                      - generic [ref=e1357]: Quadro
+              - button "Visualização Adicionar visualização" [ref=e1362] [cursor=pointer]:
+                - button "Visualização Adicionar visualização" [ref=e1364]:
+                  - img [ref=e1366]
+                  - generic [ref=e1368]: Visualização
+                  - generic [ref=e1369]: Adicionar visualização
+          - generic [ref=e1373]:
+            - alert [ref=e1374]:
+              - paragraph [ref=e1376]: Aproveite ao máximo a sua visão geral! Adicione, reordene e redimensione cartões para personalizar esta página Começar
+              - button "Fechar" [ref=e1377] [cursor=pointer]:
+                - img [ref=e1379]
+            - generic [ref=e1382]:
+              - generic [ref=e1383]:
+                - 'button "Atualização: 2 minutos atrás" [ref=e1907] [cursor=pointer]':
+                  - img [ref=e1388]
+                  - text: "Atualização: 2 minutos atrás"
+                - 'button "Atualização automática: Ligado" [ref=e1392] [cursor=pointer]':
+                  - img [ref=e1394]
+                  - text: "Atualização automática: Ligado"
+              - button [ref=e1401] [cursor=pointer]:
+                - button [ref=e1402]:
+                  - img [ref=e1404]
+              - button [ref=e1407] [cursor=pointer]:
+                - img [ref=e1409]
+              - button "Cartão" [ref=e1413] [cursor=pointer]:
+                - img [ref=e1415]
+                - text: Cartão
+            - generic [ref=e1422]:
+              - generic [ref=e1426]:
+                - generic [ref=e1429]:
+                  - img [ref=e1431]
+                  - button "Recent" [ref=e1437]
+                - generic [ref=e1445]:
+                  - link "Redes Sociais • em Conteúdo" [ref=e1447] [cursor=pointer]:
+                    - /url: /3086998/v/li/901712369683
+                    - img [ref=e1449]
+                    - generic [ref=e1451]:
+                      - generic [ref=e1452]: Redes Sociais
+                      - generic [ref=e1453]: •
+                      - generic [ref=e1454]: em Conteúdo
+                  - link "Conteúdo • em Marketing" [ref=e1456] [cursor=pointer]:
+                    - /url: /3086998/v/o/f/90177771231
+                    - img [ref=e1458]
+                    - generic [ref=e1460]:
+                      - generic [ref=e1461]: Conteúdo
+                      - generic [ref=e1462]: •
+                      - generic [ref=e1463]: em Marketing
+              - generic [ref=e1467]:
+                - generic [ref=e1470]:
+                  - img [ref=e1472]
+                  - button "Docs" [ref=e1478]
+                - generic [ref=e1486]:
+                  - img "Nenhum documento mais usado"
+                  - generic [ref=e1487]: Ainda não há documentos nesta localização.
+                  - button "Adicionar documento" [ref=e1488] [cursor=pointer]
+              - generic [ref=e1492]:
+                - generic [ref=e1495]:
+                  - img [ref=e1497]
+                  - button "Bookmarks" [ref=e1503]
+                - generic [ref=e1512]:
+                  - generic: Os favoritos facilitam salvar itens da ClickUp ou qualquer URL da web.
+                  - button "Adicionar favorito" [ref=e1513] [cursor=pointer]
+              - generic [ref=e1517]:
+                - generic [ref=e1520]:
+                  - img [ref=e1522]
+                  - button "Folders" [ref=e1528]
+                - generic [ref=e1535]:
+                  - button "Conteúdo" [ref=e1537] [cursor=pointer]:
+                    - generic [ref=e1538]:
+                      - img [ref=e1540]
+                      - generic [ref=e1544]: Conteúdo
+                  - button "Campanhas" [ref=e1546] [cursor=pointer]:
+                    - generic [ref=e1547]:
+                      - img [ref=e1549]
+                      - generic [ref=e1553]: Campanhas
+              - generic [ref=e1557]:
+                - generic [ref=e1560]:
+                  - img [ref=e1562]
+                  - button "Lists" [ref=e1568]
+                - generic [ref=e1633]:
+                  - generic [ref=e1634]:
+                    - button "Nome" [ref=e1636]:
+                      - generic [ref=e1637]: Nome
+                      - img [ref=e1639]
+                    - button "Cor" [ref=e1642]:
+                      - generic [ref=e1643]: Cor
+                      - img [ref=e1645]
+                    - button "Progresso" [ref=e1648]:
+                      - generic [ref=e1649]: Progresso
+                      - img [ref=e1651]
+                    - button "Início" [ref=e1654]:
+                      - generic [ref=e1655]: Início
+                      - img [ref=e1657]
+                    - button "Término" [ref=e1660]:
+                      - generic [ref=e1661]: Término
+                      - img [ref=e1663]
+                    - button "Prioridade" [ref=e1666]:
+                      - generic [ref=e1667]: Prioridade
+                      - img [ref=e1669]
+                    - button "Proprietário" [ref=e1672]:
+                      - generic [ref=e1673]: Proprietário
+                      - img [ref=e1675]
+                    - button "Menu suspenso" [ref=e1678] [cursor=pointer]:
+                      - img [ref=e1680]
+                  - generic [ref=e1684]:
+                    - link "Requests Internos" [ref=e1686] [cursor=pointer]:
+                      - /url: https://app.clickup.com/3086998/v/li/901712369689
+                      - img [ref=e1689]
+                      - generic [ref=e1693]: Requests Internos
+                    - generic [ref=e1696] [cursor=pointer]:
+                      - button "-" [ref=e1697]:
+                        - generic [ref=e1698]: "-"
+                      - generic:
+                        - generic:
+                          - button:
+                            - generic:
+                              - img
+                    - generic [ref=e1701]: 0/0
+                    - generic [ref=e1704]:
+                      - button [ref=e1705] [cursor=pointer]:
+                        - img [ref=e1707]
+                      - generic [ref=e1709]: Alterar datas de início e vencimento
+                    - generic [ref=e1712]:
+                      - button [ref=e1713] [cursor=pointer]:
+                        - img [ref=e1715]
+                      - generic [ref=e1717]: Alterar datas de início e vencimento
+                    - button [ref=e1723] [cursor=pointer]:
+                      - img [ref=e1728]
+                  - button "Nova lista" [ref=e1732] [cursor=pointer]:
+                    - img [ref=e1734]
+                    - generic [ref=e1736]: Nova lista
+              - generic [ref=e1588]:
+                - img [ref=e1590]
+                - button "Resources" [ref=e1596]
+              - generic [ref=e1603]:
+                - generic [ref=e1606]:
+                  - img [ref=e1608]
+                  - button "Workload by Status" [ref=e1614]
+                - paragraph [ref=e1739]: Nenhum resultado
+  - dialog [ref=e1742]:
+    - generic:
+      - heading [level=2]
+      - button "Fechar" [ref=e1743] [cursor=pointer]:
+        - img [ref=e1745]
+    - generic [ref=e1794]:
+      - generic [ref=e1795]:
+        - heading "Defina seu fluxo de trabalho" [level=2] [ref=e1796]
+        - paragraph [ref=e1797]: Escolha uma solução pré-configurada ou personalize como quiser com ClickApps avançados, visualizações necessárias e status de tarefas.
+        - generic [ref=e1798]:
+          - button "Iniciante Para tarefas diárias" [ref=e1800] [cursor=pointer]:
+            - heading "Iniciante" [level=3] [ref=e1802]
+            - generic [ref=e1803]: Para tarefas diárias
+          - button "Equipes de marketing Veicule campanhas eficazes" [ref=e1805] [cursor=pointer]:
+            - heading "Equipes de marketing" [level=3] [ref=e1807]
+            - generic [ref=e1808]: Veicule campanhas eficazes
+          - button "Gestão de projetos Planeje, gerencie e execute projetos" [ref=e1810] [cursor=pointer]:
+            - heading "Gestão de projetos" [level=3] [ref=e1812]
+            - generic [ref=e1813]: Planeje, gerencie e execute projetos
+          - button "Produto + engenharia Simplifique o ciclo de vida dos seus produtos" [active] [ref=e1815] [cursor=pointer]:
+            - heading "Produto + engenharia" [level=3] [ref=e1817]
+            - generic [ref=e1818]: Simplifique o ciclo de vida dos seus produtos
+        - generic [ref=e1820]: Personalizar padrões paraProduto + engenharia
+        - generic [ref=e1821]:
+          - button "Visualizações padrão Lista, Quadro, Linha do tempo, Tabela, Carga de trabalho" [ref=e1908] [cursor=pointer]:
+            - generic [ref=e1824]:
+              - img [ref=e1827]
+              - generic [ref=e1829]:
+                - paragraph [ref=e1830]: Visualizações padrão
+                - generic [ref=e1831]: Lista, Quadro, Linha do tempo, Tabela, Carga de trabalho
+            - generic [ref=e1832]:
+              - img [ref=e1835]
+              - img [ref=e1838]
+          - button "Status de tarefas BACKLOG → SCOPING → IN DESIGN → IN DEVELOPMENT → IN REVIEW → TESTING → READY FOR DEVELOPMENT → SHIPPED → CANCELLED" [ref=e1909] [cursor=pointer]:
+            - generic [ref=e1842]:
+              - img [ref=e1845]
+              - generic [ref=e1847]:
+                - paragraph [ref=e1848]: Status de tarefas
+                - generic [ref=e1851]:
+                  - img [ref=e1856]
+                  - text: BACKLOG
+                  - generic [ref=e1860]: →
+                  - img [ref=e1865]
+                  - text: SCOPING
+                  - generic [ref=e1869]: →
+                  - img [ref=e1874]
+                  - text: IN DESIGN
+                  - generic [ref=e1910]: →
+                  - img [ref=e1915]
+                  - text: IN DEVELOPMENT
+                  - generic [ref=e1919]: →
+                  - img [ref=e1924]
+                  - text: IN REVIEW
+                  - generic [ref=e1928]: →
+                  - img [ref=e1933]
+                  - text: TESTING
+                  - generic [ref=e1937]: →
+                  - img [ref=e1942]
+                  - text: READY FOR DEVELOPMENT
+                  - generic [ref=e1946]: →
+                  - img [ref=e1951]
+                  - text: SHIPPED
+                  - generic [ref=e1955]: →
+                  - img [ref=e1960]
+                  - text: CANCELLED
+            - generic [ref=e1878]:
+              - img [ref=e1881]
+              - img [ref=e1884]
+          - button "ClickApps Etiquetas, Estimativas de tempo, Prioridade, Rastreamento de tempo, Aviso incompleto, Sprints, Campos personalizados, Marcos, Pontos da sprint, E-mail, Subtarefas agrupadas, Reações a comentários, Mostrar progresso do status, Aviso de dependência, Reagendar dependências, Múltiplos responsáveis" [ref=e1964] [cursor=pointer]:
+            - generic [ref=e1888]:
+              - img [ref=e1891]
+              - generic [ref=e1893]:
+                - paragraph [ref=e1894]: ClickApps
+                - generic [ref=e1895]: Etiquetas, Estimativas de tempo, Prioridade, Rastreamento de tempo, Aviso incompleto, Sprints, Campos personalizados, Marcos, Pontos da sprint, E-mail, Subtarefas agrupadas, Reações a comentários, Mostrar progresso do status, Aviso de dependência, Reagendar dependências, Múltiplos responsáveis
+            - generic [ref=e1896]:
+              - img [ref=e1899]
+              - img [ref=e1902]
+      - generic [ref=e1904]:
+        - button "Voltar" [ref=e1905] [cursor=pointer]
+        - button "Criar Espaço" [ref=e1906] [cursor=pointer]
+  - generic:
+    - generic:
+      - generic:
+        - status
+    - generic:
+      - generic:
+        - status

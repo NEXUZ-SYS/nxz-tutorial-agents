@@ -1,0 +1,21 @@
+{
+  "squad": "nxz-clickup-setup",
+  "status": "completed",
+  "step": { "current": 10, "total": 10, "label": "checkpoint-final-approval" },
+  "agents": [
+    { "id": "researcher", "name": "Duda Documentação", "icon": "🔍", "status": "done", "deliverTo": null, "desk": { "col": 1, "row": 1 } },
+    { "id": "architect", "name": "Ernesto Estrutura", "icon": "📐", "status": "done", "deliverTo": null, "desk": { "col": 2, "row": 1 } },
+    { "id": "configurator", "name": "Carlos Configurador", "icon": "⚙️", "status": "done", "deliverTo": null, "desk": { "col": 3, "row": 1 } },
+    { "id": "reviewer", "name": "Rui Revisão", "icon": "✅", "status": "done", "deliverTo": null, "desk": { "col": 1, "row": 2 } },
+    { "id": "trainer", "name": "Tiago Treinamento", "icon": "📚", "status": "done", "deliverTo": null, "desk": { "col": 2, "row": 2 } }
+  ],
+  "handoff": {
+    "from": "trainer",
+    "to": null,
+    "message": "Run concluído. Desenvolvimento configurado parcialmente (estrutura sólida); guia de finalização entregue. Score 7.0/10 APPROVE WITH FOLLOW-UP.",
+    "completedAt": "2026-04-14T23:30:00Z"
+  },
+  "startedAt": "2026-04-14T21:24:11Z",
+  "updatedAt": "2026-04-14T23:30:00Z",
+  "completedAt": "2026-04-14T23:30:00Z"
+}
