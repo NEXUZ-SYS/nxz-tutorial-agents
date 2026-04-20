@@ -1,0 +1,34 @@
+pipeline:
+  code: nxz-backoffice-processes-pipeline
+  name: "Desenho de Processo de Backoffice"
+  description: "Do briefing bruto ao Process Design Document revisado, ponta a ponta, tool-agnostic."
+
+  steps:
+    - id: step-01-collect-briefing
+      type: checkpoint
+      file: steps/step-01-collect-briefing.md
+    - id: step-02-analyze-briefing
+      file: steps/step-02-analyze-briefing.md
+    - id: step-03-resolve-briefing-gaps
+      type: checkpoint
+      file: steps/step-03-resolve-briefing-gaps.md
+    - id: step-04-map-process
+      file: steps/step-04-map-process.md
+    - id: step-05-design-process
+      file: steps/step-05-design-process.md
+    - id: step-06-approve-design
+      type: checkpoint
+      file: steps/step-06-approve-design.md
+    - id: step-07-review-design
+      file: steps/step-07-review-design.md
+      on_reject:
+        goto: step-05-design-process
+    - id: step-08-final-approval
+      type: checkpoint
+      file: steps/step-08-final-approval.md
+
+  checkpoints:
+    - step-01-collect-briefing
+    - step-03-resolve-briefing-gaps
+    - step-06-approve-design
+    - step-08-final-approval

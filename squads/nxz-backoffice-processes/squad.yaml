@@ -1,0 +1,50 @@
+squad:
+  code: nxz-backoffice-processes
+  name: "NXZ Backoffice Processes"
+  description: "Squad especialista em desenhar processos de backoffice ponta a ponta (tool-agnostic), a partir de briefings de demanda."
+  icon: "🏗️"
+  language: "Português (Brasil)"
+  performance_mode: "alta-performance"
+  company: nexuz
+
+  skills:
+    - web_search
+    - web_fetch
+
+  data:
+    - pipeline/data/research-brief.md
+    - pipeline/data/domain-framework.md
+    - pipeline/data/quality-criteria.md
+    - pipeline/data/output-examples.md
+    - pipeline/data/anti-patterns.md
+    - pipeline/data/discovery-questions.md
+    - pipeline/data/raci-guide.md
+    - pipeline/data/kpi-design-guide.md
+
+  agents:
+    - id: ana-analise
+      name: "Ana Análise"
+      title: "Briefer / Business Analyst"
+      icon: "🧭"
+      path: "./agents/ana-analise.agent.md"
+    - id: mario-mapeador
+      name: "Mário Mapeador"
+      title: "Process Architect / Mapper"
+      icon: "🗺️"
+      path: "./agents/mario-mapeador.agent.md"
+    - id: paula-processo
+      name: "Paula Processo"
+      title: "Process Designer"
+      icon: "📘"
+      path: "./agents/paula-processo.agent.md"
+    - id: raquel-revisao
+      name: "Raquel Revisão"
+      title: "Governance Reviewer"
+      icon: "🔍"
+      path: "./agents/raquel-revisao.agent.md"
+
+  pipeline:
+    entry: pipeline/pipeline.yaml
+    on_reject:
+      from: step-07-review-design
+      to: step-05-design-process

@@ -32,12 +32,24 @@ const SETTLE = 1200; // ms — converged-ai UI needs generous delays
 const SHORT = 400;
 
 async function safeClick(page, selector, description) {
+  // Wait up to 15s for element to appear; try native click then JS fallback
+  try {
+    await page.waitForSelector(selector, { timeout: 15000 });
+  } catch (e) {
+    throw new Error(`safeClick: selector not found for ${description} (${selector})`);
+  }
+  try {
+    await page.click(selector, { timeout: 5000 });
+    return;
+  } catch (_) {
+    // fallback to dispatchEvent
+  }
   await page.evaluate((sel) => {
     const el = document.querySelector(sel);
     if (!el) throw new Error('not found');
     el.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true, view: window }));
-  }, selector).catch(() => {
-    throw new Error(`safeClick failed on ${description} (${selector})`);
+  }, selector).catch((e) => {
+    throw new Error(`safeClick failed on ${description} (${selector}): ${e.message}`);
   });
 }
 
@@ -54,14 +66,18 @@ test('create-automation', async () => {
   const page = ctx.pages()[0] || await ctx.newPage();
 
   await page.goto(ARGS.list_url, { waitUntil: 'domcontentloaded' });
-  await page.waitForTimeout(3000);
+  await page.waitForTimeout(6000);
 
-  // Open Automatizar → Gerenciar automações → + Adicionar automação
-  await safeClick(page, '[data-test="automation-converged-ai-task-button__button"]', 'Automatizar');
+  // Open Automate → (if needed) Manage → + Add Automation
+  await safeClick(page, '[data-test="automation-converged-ai-task-button__button"]', 'Automate');
   await page.waitForTimeout(SETTLE);
-  await page.click('button.converged-ai-task-manage-button', { timeout: 5000 });
-  await page.waitForTimeout(SETTLE);
-  await safeClick(page, '[data-test="automation-tab-manage__add-automation-button"]', '+ Adicionar automação');
+  // If Manage view not open yet, click the Manage button
+  const addBtnExists = await page.$('[data-test="automation-tab-manage__add-automation-top-button"]');
+  if (!addBtnExists) {
+    const manage = await page.$('button.converged-ai-task-manage-button');
+    if (manage) { await manage.click(); await page.waitForTimeout(SETTLE); }
+  }
+  await safeClick(page, '[data-test="automation-tab-manage__add-automation-top-button"]', '+ Add Automation');
   await page.waitForTimeout(SETTLE);
   await ensureDialogMounted(page);
 

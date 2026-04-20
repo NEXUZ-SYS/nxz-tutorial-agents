@@ -1,0 +1,52 @@
+{
+  "squad": "nxz-backoffice-processes",
+  "status": "completed",
+  "step": {
+    "current": 8,
+    "total": 8,
+    "label": "step-08-final-approval (PUBLICADO)"
+  },
+  "agents": [
+    {
+      "id": "ana-analise",
+      "name": "Ana Análise",
+      "icon": "🧭",
+      "status": "done",
+      "deliverTo": null,
+      "desk": { "col": 1, "row": 1 }
+    },
+    {
+      "id": "mario-mapeador",
+      "name": "Mário Mapeador",
+      "icon": "🗺️",
+      "status": "done",
+      "deliverTo": null,
+      "desk": { "col": 2, "row": 1 }
+    },
+    {
+      "id": "paula-processo",
+      "name": "Paula Processo",
+      "icon": "📘",
+      "status": "done",
+      "deliverTo": null,
+      "desk": { "col": 3, "row": 1 }
+    },
+    {
+      "id": "raquel-revisao",
+      "name": "Raquel Revisão",
+      "icon": "🔍",
+      "status": "done",
+      "deliverTo": null,
+      "desk": { "col": 1, "row": 2 }
+    }
+  ],
+  "handoff": {
+    "from": "raquel-revisao",
+    "to": "checkpoint",
+    "message": "PDD v1.0 PUBLICADO. Score 16/20, APROVADO COM CONDIÇÕES. Condições para D+30/D+60/D+90.",
+    "completedAt": "2026-04-20T12:25:00-03:00"
+  },
+  "startedAt": "2026-04-16T16:59:48-03:00",
+  "updatedAt": "2026-04-20T12:25:00-03:00",
+  "completedAt": "2026-04-20T12:25:00-03:00"
+}

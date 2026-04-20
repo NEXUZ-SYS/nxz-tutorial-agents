@@ -1,0 +1,5 @@
+id,name,title,icon,path,execution
+ana-analise,Ana Análise,Briefer / Business Analyst,🧭,./agents/ana-analise.agent.md,subagent
+mario-mapeador,Mário Mapeador,Process Architect / Mapper,🗺️,./agents/mario-mapeador.agent.md,subagent
+paula-processo,Paula Processo,Process Designer,📘,./agents/paula-processo.agent.md,inline
+raquel-revisao,Raquel Revisão,Governance Reviewer,🔍,./agents/raquel-revisao.agent.md,subagent

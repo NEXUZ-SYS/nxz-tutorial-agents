@@ -283,6 +283,29 @@ curl -X POST "https://api.clickup.com/api/v3/workspaces/3086998/docs/2y6mp-6777/
 **Usuários disponíveis:** Carol Oliveira, Walter Frey, Matheus Caldeira. Sabrina/Luiz ainda não no /team.
 **Pulados:** #9 (depende @Sabrina), #11 (depende @Luiz).
 
+### ✅ Lote A CONCLUÍDO (2026-04-15)
+4 automações criadas e ativas via API interna (JWT replay dentro de `page.evaluate`):
+
+| ID | Nome | Status | Tempo |
+|---|---|---|---|
+| `066fdfae-66ff-4a05-94af-98e33be5a716` | Alerta Qualificado sem avanço (>48h) | qualificado | 48h |
+| `b0d51e0c-3371-48b7-b115-d26e17c48565` | Alerta Primeiro contato estagnado (>16d) | primeiro contato | 16d |
+| `853012ac-b5db-4674-a170-c0c9c46892c4` | Alerta Apresentação sem follow-up (>48h) | apresentação | 48h |
+| `6fe02fe1-b443-4ce2-90ff-cdaa96a5035a` | Alerta Proposta sem retorno (>7d) | proposta enviada | 7d |
+
+**Padrão validado:** trigger `schedule` (cron `0 9 * * *` America/Sao_Paulo) + conditions `[status=any, time_in_status>=Nms]` + action `comment` com texto `@Carol Oliveira ...`.
+
+**Endpoint CREATE:** `POST frontdoor-prod-us-west-2-3.clickup.com/automation/subcategory/{listId}/workflow` → retorna automação com nome default "Automation #N - When schedule is due, then post comment". Segundo call `PUT /automation/workflow/{id}` body `{"name":"..."}` para renomear.
+
+**Scripts novos:**
+- `sniff-automation-create.js` — captura POSTs completos (bodies + headers) durante criação manual
+- `api-create-automations.js` — cria em lote via JWT capturado
+- `rename-and-list-automations.js` — rename + listagem completa
+
+**Observação:** payload manda `@Carol Oliveira` como texto literal (não mention pill). Testar em produção se dispara notificação. `dynamic_mentions: []` na UI parece não impedir — validar na 1ª task que cruzar o threshold.
+
+**✅ Smoke test validado (2026-04-15 16:43):** criada automação temporária com cron `43 16 * * *` e threshold 0ms + task de teste em "qualificado". Disparou pontualmente, ClickBot postou comentário, **Carol recebeu notificação** mesmo com `@Carol Oliveira` como texto literal (sem user_id attribute). Artefatos de teste limpos. Lote A aprovado para produção. Lotes B/C/D podem seguir o mesmo padrão de payload.
+
 ### Padrão descoberto (Sessão 2 — 2026-04-14)
 Trigger "Tempo em status" **não existe** no menu de triggers. Opções de trigger disponíveis: `Tarefa criada`, `Alterações de status`, `Alterações de campo personalizado`, `A cada...` (scheduled), `Comunicação`, `Datas e horário`, etc.
 
@@ -328,6 +351,100 @@ Pré-requisitos para nova tentativa valer o esforço:
 - Considerar: custo real de Playwright p/ 4 automações > 100k tokens vs. 15min manuais do usuário
 
 ### Validação final (quando todas criadas)
+~~`curl -s "https://api.clickup.com/api/v2/list/.../automation" ...`~~ — **endpoint retorna 404, não existe.** Usar API interna (veja "Retomada 2026-04-15" abaixo) ou `list-automations.js` (lê DOM).
+
+---
+
+## RETOMADA 2026-04-15 — Próxima sessão
+
+### Estado atual (verificado 2026-04-15)
+- Lista `Leads & Deals` com **0 automações de teste** (todas #3–#17 deletadas).
+- **Única automação remanescente:** #8 "When task created, then change status" (legada, não tocar).
+- Tentativas anteriores: 15+ automações fantasma criadas por iterações do `create-automation-v4.js` — todas limpas via mix de UI loop + API interna DELETE.
+
+### Regra de prioridade (NOVA — salvar como padrão)
+Sempre tentar nesta ordem antes de escrever Playwright UI:
+1. **API pública REST** (`api.clickup.com/api/v2|v3`) — para hierarquia, tasks, views
+2. **MCP ClickUp** (`mcp__clickup__*`) — para reads
+3. **API interna sniffed** (`frontdoor-prod-us-west-2-3.clickup.com/...`) via `page.evaluate(fetch)` — para automações, features internas
+4. **Playwright UI scripting** — só quando nenhum acima cobre
+
+### API interna de Automações (descoberta 2026-04-15)
+**Autenticação:** JWT curto (não `pk_`). Capturar do próprio browser autenticado via `page.on('request', ...)` — não funciona com curl externo.
+
+**Endpoints confirmados:**
+- `POST /automation/filters/subcategory/{listId}/workflow?paging=true` → lista (`{automations: [...], shortcuts: [...]}`)
+  - Body (capturado da UI): `{"filters":{"actionTypes":[],"conditionTypes":[],"triggerTypes":[],"lastUpdatedBy":[],"active":"ALL"}}`
+  - **Obs:** com `?paging=true` retorna 1 item por call — iterar offset, ou capturar e replay exato
+- `DELETE /automation/workflow/{automationId}` → 204 (NÃO `/automation/subcategory/.../workflow/{id}`)
+- Headers obrigatórios: `authorization: Bearer <jwt>`, `x-csrf: 1`, `x-workspace-id: 3086998`, `content-type: application/json`
+
+**Template pronto:** `skills/clickup-integration/scripts/templates/api-delete-automations.js`
 ```bash
-curl -s "https://api.clickup.com/api/v2/list/901712879969/automation" -H "Authorization: $TOKEN" | jq '.automations[] | {id, name, enabled}'
+bash skills/clickup-integration/scripts/run-playwright.sh api-delete-automations \
+  '{"list_url":"https://app.clickup.com/3086998/v/l/6-901712879969-1","list_id":"901712879969","workspace_id":"3086998","match_regex":"schedule is due.*post comment"}'
+```
+
+### Bug aberto (Sessão 2 — retomada)
+`create-automation-v4.js` seleciona o Status corretamente no DOM (`ROW_BTNS_AFTER_STATUS: ["QUALIFICADO"]`) mas o **FINAL_STATE mostra "Any Status"** quando chega no botão Criar — o commit do combo-box não persiste.
+
+**Hipóteses a testar (Step 2 do plano original):**
+1. Clicar no `cu-status-indicator` interno ao invés do `[data-test="status-list__<slug>"]`
+2. Double-click para confirmar seleção
+3. Após click, pressionar Space ou Enter para confirmar
+4. Verificar se o combo-box é multi-select com checkboxes (pode precisar click + click fora)
+
+**Script de debug isolado recomendado:** `debug-status-commit.js` — só abre builder, adiciona cond status, tenta commit, verifica persistência (ciclo ~15s vs 60s do fluxo completo).
+
+### Plano da próxima sessão (ordem de execução)
+
+**Step 1 — Explorar alternativa API primeiro (15min)**
+- Sniffar as chamadas de criação de automação (abrir builder, preencher tudo manualmente, clicar Criar, capturar `POST /automation/workflow` ou similar)
+- Se o payload for representável em JSON puro, **criar as 4 automações via API interna** e pular Playwright UI completamente
+- Template a criar: `api-create-automation.js` (sniff + POST)
+
+**Step 2 — Se API de criação for inviável, isolar bug do status picker (20min)**
+- Criar `scripts/templates/debug-status-commit.js`
+- Testar 3 variações de click em paralelo
+- Fix aplicado ao `create-automation-v4.js`
+
+**Step 3 — Criar as 4 automações reais**
+Tabela em `phase-2-lote-a-manual-guide.md` (já traduzida para PT):
+| Status | Threshold | Mensagem |
+|---|---|---|
+| Qualificado | 48h | `@Carol Oliveira` qualifique ou mova |
+| Primeiro contato | 16d | `@Carol Oliveira` mova para Nutrição/Perdido |
+| Apresentação agendada | 48h | `@Carol Oliveira` siga o follow-up |
+| Proposta enviada | 7d | `@Carol Oliveira` cobre aceite |
+
+**Step 4 — Validação**
+```js
+// Dentro de uma página ClickUp autenticada, via page.evaluate
+fetch('https://frontdoor-prod-us-west-2-3.clickup.com/automation/filters/subcategory/901712879969/workflow?paging=true', {
+  method: 'POST',
+  headers: {authorization: <bearer>, 'x-csrf':'1', 'x-workspace-id':'3086998', 'content-type':'application/json'},
+  credentials: 'include',
+  body: JSON.stringify({filters:{actionTypes:[],conditionTypes:[],triggerTypes:[],lastUpdatedBy:[],active:"ALL"}})
+})
+```
+Ou simplesmente rodar `list-automations.js` para ver DOM.
+
+### Templates novos disponíveis (skills/clickup-integration/scripts/templates/)
+- `list-automations.js` — enumera via DOM
+- `sniff-automation-api.js` — dumpa XHRs da UI (usar pra descobrir novos endpoints)
+- `api-delete-automations.js` — DELETE em massa via API interna
+- `inspect-auto-row.js` — botões revelados no hover de uma row de automação
+- `inspect-status-picker.js` — HTML do combo-box de status
+- `delete-test-automations.js` — UI loop (fallback; só deleta 1 por run na prática — use api-delete em vez)
+- `create-automation-v4.js` — fluxo completo (COM BUG no status picker)
+
+### Checklist para abrir a nova sessão
+```
+[ ] Ler este arquivo (phase-2-execution-plan.md) — seção "RETOMADA 2026-04-15"
+[ ] Ler skills/clickup-integration/SKILL.md (atualizado com API interna)
+[ ] source .env
+[ ] Step 1: sniff da API de CREATE de automação — `sniff-automation-api.js` + criar uma manual enquanto sniffa
+[ ] Decidir: API pura (ideal) vs debug Playwright (fallback)
+[ ] Executar 4 automações reais
+[ ] Atualizar configuration-log.md
 ```

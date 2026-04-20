@@ -22,7 +22,8 @@ set -euo pipefail
 SKILL_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 PROJECT_ROOT="$(cd "$SKILL_DIR/../.." && pwd)"
 TEMPLATE="${1:-}"
-ARGS="${2:-{}}"
+ARGS="${2-}"
+if [[ -z "$ARGS" ]]; then ARGS='{}'; fi
 
 if [[ -z "$TEMPLATE" ]]; then
   echo "usage: run-playwright.sh <template> '<json-args>' [-- <playwright-flags>]"

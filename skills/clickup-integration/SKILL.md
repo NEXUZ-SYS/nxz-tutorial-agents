@@ -56,6 +56,19 @@ A key learning from the NXZ squad (2026-04): ClickUp recently rolled out a "conv
 
 **Rule of thumb:** MCP for reads, API v2 for structural writes, Playwright CLI for anything the UI owns exclusively.
 
+**Always attempt in this priority order: public API → MCP → internal API (sniffed from UI) → Playwright UI scripting.** Playwright UI is the slowest and most fragile — only use when nothing else works.
+
+### Internal API for Automations (sniffed from web app)
+
+The public `api/v2/list/{id}/automation` endpoint returns 404 — it does not exist. The ClickUp web app uses an **internal API at `frontdoor-prod-us-west-2-3.clickup.com`** that authenticates with a short-lived JWT (not the `pk_` token). You cannot call it with `curl` using the personal token, but you CAN call it from inside an authenticated Playwright page via `page.evaluate(() => fetch(...))` — the JWT and cookies travel automatically.
+
+Confirmed endpoints (from NXZ squad 2026-04):
+- `POST /automation/filters/subcategory/{listId}/workflow?paging=true` — list (returns `{automations: [...], shortcuts: [...]}`, use the real UI request body captured via `page.on('request')`)
+- `DELETE /automation/workflow/{automationId}` — delete (204). NOT `/automation/subcategory/.../workflow/{id}` (that returns 404).
+- Each automation has `id` (uuid), `name`, `parent_id` (= list id), `team_id`, `active`.
+
+Template `scripts/templates/api-delete-automations.js` implements this: opens the list URL, sniffs auth headers + list-call body from the first UI request, then calls DELETE via `page.evaluate` for every automation matching a regex. Completes in ~30s vs. ~10min of UI clicking. Use this pattern for bulk operations on automations (delete, enable/disable, duplicate) before writing any UI script.
+
 ## When to use this skill
 
 Activate whenever the user wants to:
@@ -131,7 +144,10 @@ Instead, use `scripts/run-playwright.sh` which runs a pre-written JS test from `
 Available templates (extend as you learn more patterns):
 - `scripts/templates/login.js` — first-time auth, caches session
 - `scripts/templates/configure-statuses.js` — rename/add/save custom statuses on a Folder or List
-- `scripts/templates/create-automation.js` — build one automation from a JSON spec
+- `scripts/templates/create-automation.js` — build one automation from a JSON spec (converged-ai UI; flaky — see limitations)
+- `scripts/templates/list-automations.js` — enumerate existing automations by reading DOM row text
+- `scripts/templates/api-delete-automations.js` — bulk-delete automations matching a regex via the internal API (sniffs JWT from page, calls DELETE `/automation/workflow/{id}`). **Use this instead of UI loops.**
+- `scripts/templates/sniff-automation-api.js` — reference tool: dumps every XHR hitting `frontdoor-prod-*` while opening the automation panel. Useful when a new internal endpoint is needed.
 - `scripts/templates/create-custom-field.js` — add a custom field to a List
 - `scripts/templates/set-default-task-type.js` — right-click a List → change default type
 
@@ -184,11 +200,7 @@ curl -s "https://api.clickup.com/api/v2/team/$WORKSPACE/space?archived=false" \
   -H "Authorization: $TOKEN" | jq '.spaces[] | {id, name}'
 ```
 
-For automations (only way to check without opening UI):
-```bash
-curl -s "https://api.clickup.com/api/v2/list/$LIST_ID/automation" \
-  -H "Authorization: $TOKEN" | jq '.automations[] | {id, name, enabled}'
-```
+For automations, the public API has no endpoint. Use the internal API via an authenticated Playwright page (see "Internal API for Automations" above), or run `scripts/templates/list-automations.js` which reads DOM row text.
 
 ## Working with Playwright CLI alongside the ClickUp MCP
 
@@ -247,6 +259,11 @@ Only then retry. Never delete the full profile directory — that logs you out.
 This is the known 2026+ ClickUp issue. Options in order:
 1. Try `scripts/templates/create-automation.js` — it uses `dispatchEvent` with `{bubbles:true,cancelable:true}` and a 1200ms settle delay, which bypasses most overlays
 2. If it still fails twice in a row, generate a manual guide and exit gracefully. Don't loop.
+
+### Delete-confirmation modal won't close after synthetic click
+The `cu-modal` destructive button fires the backend delete when clicked via Playwright `force:true` or `page.mouse.click`, but Angular doesn't recognize the synthetic event as user-initiated, so the modal UI stays open and blocks subsequent hovers. Loops end up deleting only 1 row per script run.
+
+**Do not fight this.** Use `api-delete-automations.js` (internal API) for bulk deletes — it bypasses the modal entirely and completes in seconds.
 
 ### Custom Field creation: panel opens but field doesn't save
 The UI needs a click on the Field's "Criar" footer button **after** configuring. Template handles this; if editing the template, preserve the final explicit click — the Enter key doesn't submit.
