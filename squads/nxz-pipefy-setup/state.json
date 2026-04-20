@@ -1,0 +1,50 @@
+{
+  "squad": "nxz-pipefy-setup",
+  "status": "running",
+  "step": { "current": 2, "total": 11, "label": "checkpoint-config" },
+  "agents": [
+    {
+      "id": "researcher",
+      "name": "Rita Pesquisa",
+      "icon": "🔍",
+      "status": "idle",
+      "deliverTo": null,
+      "desk": { "col": 1, "row": 1 }
+    },
+    {
+      "id": "architect",
+      "name": "Paulo Pipes",
+      "icon": "📐",
+      "status": "idle",
+      "deliverTo": null,
+      "desk": { "col": 2, "row": 1 }
+    },
+    {
+      "id": "configurator",
+      "name": "Caio Configurador",
+      "icon": "⚙️",
+      "status": "idle",
+      "deliverTo": null,
+      "desk": { "col": 3, "row": 1 }
+    },
+    {
+      "id": "reviewer",
+      "name": "Vera Validação",
+      "icon": "✅",
+      "status": "idle",
+      "deliverTo": null,
+      "desk": { "col": 1, "row": 2 }
+    },
+    {
+      "id": "trainer",
+      "name": "Teo Treinamento",
+      "icon": "📚",
+      "status": "idle",
+      "deliverTo": null,
+      "desk": { "col": 2, "row": 2 }
+    }
+  ],
+  "handoff": null,
+  "startedAt": "2026-04-20T16:27:23-03:00",
+  "updatedAt": "2026-04-20T16:27:45-03:00"
+}

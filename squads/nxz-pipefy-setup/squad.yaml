@@ -1,0 +1,89 @@
+squad:
+  code: nxz-pipefy-setup
+  name: "Pipefy Setup — Nexuz Vendas"
+  description: >
+    Squad especialista em implantação e configuração do Pipefy para o processo
+    comercial de vendas da Nexuz. Recebe o PDD (Process Design Document) gerado
+    pela squad nxz-backoffice-processes e traduz em pipes, phases, fields,
+    automations e dashboards no Pipefy. Toda interação com Pipefy é feita
+    **obrigatoriamente** via a skill `pipefy-integration` (GraphQL API + Playwright
+    CLI), que consolida a matriz de decisão "qual interface para qual operação"
+    e os aprendizados acumulados.
+  version: "1.0.0"
+  performance_mode: high
+  created: "2026-04-20"
+
+  skills:
+    - web_search
+    - web_fetch
+    - pipefy-integration   # OBRIGATÓRIA — toda interação com Pipefy passa por esta skill
+
+  skill_policy:
+    pipefy-integration:
+      required: true
+      scope: "Qualquer leitura, criação, atualização ou auditoria em recursos Pipefy
+              (Pipes, Phases, Fields, Automations, Connectors, Databases, Dashboards).
+              É PROIBIDO chamar a API GraphQL ou Playwright diretamente sem
+              passar pelo fluxo documentado em skills/pipefy-integration/SKILL.md."
+      enforcement:
+        - "Antes de qualquer operação Pipefy, consultar a matriz de decisão da skill"
+        - "Para UI-only (Dashboards avançados, Conditional Fields visuais): usar templates em
+           skills/pipefy-integration/scripts/templates/ via run-playwright.sh"
+        - "Parâmetros do Playwright vêm de config.env + .env do projeto — nunca hardcodar"
+        - "Ao encontrar uma nova limitação, atualizar references/known-limitations.md"
+
+  input:
+    pdd: squads/nxz-backoffice-processes/output/2026-04-16-165948/v6/process-design-document.md
+    pipefy_dossier: squads/nxz-backoffice-processes/output/2026-04-16-165948/v1/pipefy-dossier.md
+
+  data:
+    - pipeline/data/research-brief.md
+    - pipeline/data/domain-framework.md
+    - pipeline/data/quality-criteria.md
+    - pipeline/data/output-examples.md
+    - pipeline/data/anti-patterns.md
+
+  pipeline:
+    - step: 00
+      name: "select-pdd"
+      file: pipeline/steps/step-00-select-pdd.md
+
+    - step: 01
+      name: "checkpoint-config"
+      file: pipeline/steps/step-01-checkpoint-config.md
+
+    - step: 02
+      name: "research-pipefy-api"
+      file: pipeline/steps/step-02-research-pipefy-api.md
+
+    - step: 03
+      name: "checkpoint-approve-research"
+      file: pipeline/steps/step-03-checkpoint-approve-research.md
+
+    - step: 04
+      name: "design-pipes"
+      file: pipeline/steps/step-04-design-pipes.md
+
+    - step: 05
+      name: "checkpoint-approve-design"
+      file: pipeline/steps/step-05-checkpoint-approve-design.md
+
+    - step: 06
+      name: "configure-pipefy"
+      file: pipeline/steps/step-06-configure-pipefy.md
+
+    - step: 07
+      name: "checkpoint-review-config"
+      file: pipeline/steps/step-07-checkpoint-review-config.md
+
+    - step: 08
+      name: "audit-configuration"
+      file: pipeline/steps/step-08-audit-configuration.md
+
+    - step: 09
+      name: "generate-documentation"
+      file: pipeline/steps/step-09-generate-documentation.md
+
+    - step: 10
+      name: "checkpoint-final-approval"
+      file: pipeline/steps/step-10-checkpoint-final-approval.md

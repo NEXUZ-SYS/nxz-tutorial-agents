@@ -1,0 +1,6 @@
+id,name,title,icon,path,execution
+researcher,Rita Pesquisa,Pesquisadora de docs Pipefy,🔍,./agents/researcher.agent.md,subagent
+architect,Paulo Pipes,Arquiteto de Pipes,📐,./agents/architect.agent.md,inline
+configurator,Caio Configurador,Executor via Pipefy API/CLI,⚙️,./agents/configurator.agent.md,inline
+reviewer,Vera Validação,Revisora de Configuração,✅,./agents/reviewer.agent.md,inline
+trainer,Teo Treinamento,Gerador de Documentação,📚,./agents/trainer.agent.md,inline
