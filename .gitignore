@@ -1,5 +1,6 @@
 # Environment and secrets
 .env
+client_secret_*.json
 
 # Browser sessions (login cookies)
 _opensquad/_browser_profile/
