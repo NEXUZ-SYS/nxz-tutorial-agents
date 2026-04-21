@@ -1,0 +1,39 @@
+{
+  "_description": "Mapping of spec ET IDs to Pipefy email_template IDs, used by Layer 6 automations A-04/05/06/08",
+  "_created_at": "2026-04-21T17:20:13-0300",
+  "pipe_id": "307117441",
+  "templates": {
+    "ET-01": {
+      "pipefy_id": "309594743",
+      "name": "Qualificação D+1",
+      "subject": "{{empresa}}, que bom te conhecer",
+      "fromName": "{{ops_responsavel_nome}} · Nexuz",
+      "fromEmail": "nxz@nxz.one",
+      "toEmail": "{{contatos_do_deal}}"
+    },
+    "ET-02": {
+      "pipefy_id": "309594744",
+      "name": "Qualificação D+3",
+      "subject": "{{nome_contato}}, um insight que pode ajudar a {{empresa}}",
+      "fromName": "{{ops_responsavel_nome}} · Nexuz",
+      "fromEmail": "nxz@nxz.one",
+      "toEmail": "{{contatos_do_deal}}"
+    },
+    "ET-03": {
+      "pipefy_id": "309594745",
+      "name": "Qualificação D+7 (última tentativa)",
+      "subject": "{{nome_contato}}, última tentativa esta semana",
+      "fromName": "{{ops_responsavel_nome}} · Nexuz",
+      "fromEmail": "nxz@nxz.one",
+      "toEmail": "{{contatos_do_deal}}"
+    },
+    "ET-04": {
+      "pipefy_id": "309594746",
+      "name": "Proposta D+3 follow-up",
+      "subject": "{{nome_contato}}, conseguiu avaliar a proposta?",
+      "fromName": "{{ops_responsavel_nome}} · Nexuz",
+      "fromEmail": "nxz@nxz.one",
+      "toEmail": "{{contatos_do_deal}}"
+    }
+  }
+}

@@ -1,0 +1,225 @@
+{
+  "_description": "9 automations to create via internal_api POST /internal_api mutation createAutomation. Plus A-12/A-13 already created via public API = 11 total. A-05/A-06/A-10/A-15/A-16 deferred to external cron (see gap-analysis doc).",
+  "_patterns_discovered": {
+    "pattern_1_sla_email": "sla_based(kindOfSla=late|expired) + send_email_template + condition(current_phase)",
+    "pattern_2_card_moved_update": "card_moved(to_phase_id) + update_card_field(field_map with inputMode=copy_from, value=%{automation_event_execution_datetime})",
+    "pattern_3_sla_http": "sla_based(kindOfSla=late|expired) + send_http_request(httpMethod=POST, url, authenticationType=no_auth) + condition(current_phase)"
+  },
+  "pipe_id": "307117441",
+  "org_id": "302461450",
+  "endpoint": "https://app.pipefy.com/internal_api",
+  "automations": [
+    {
+      "id": "A-01",
+      "name": "A-01 — Marcar Data MQL ao entrar em Qualificação",
+      "variables": {
+        "name": "A-01 — Marcar Data MQL ao entrar em Qualificação",
+        "event_id": "card_moved",
+        "event_repo_id": "307117441",
+        "action_id": "update_card_field",
+        "action_repo_id": "307117441",
+        "event_params": { "to_phase_id": "342928170" },
+        "action_params": {
+          "field_map": [
+            { "fieldId": "428488643", "inputMode": "copy_from", "value": "%{automation_event_execution_datetime}" }
+          ],
+          "fields_map_order": ["428488643"],
+          "card_id": "%{id}"
+        },
+        "condition": {
+          "expressions": [{ "structure_id": 0, "field_address": "", "operation": "", "value": "" }],
+          "expressions_structure": [[0]]
+        }
+      }
+    },
+    {
+      "id": "A-02",
+      "name": "A-02 — Marcar Data SAL ao entrar em Demo Agendada",
+      "variables": {
+        "name": "A-02 — Marcar Data SAL ao entrar em Demo Agendada",
+        "event_id": "card_moved",
+        "event_repo_id": "307117441",
+        "action_id": "update_card_field",
+        "action_repo_id": "307117441",
+        "event_params": { "to_phase_id": "342928171" },
+        "action_params": {
+          "field_map": [
+            { "fieldId": "428488644", "inputMode": "copy_from", "value": "%{automation_event_execution_datetime}" }
+          ],
+          "fields_map_order": ["428488644"],
+          "card_id": "%{id}"
+        },
+        "condition": {
+          "expressions": [{ "structure_id": 0, "field_address": "", "operation": "", "value": "" }],
+          "expressions_structure": [[0]]
+        }
+      }
+    },
+    {
+      "id": "A-03",
+      "name": "A-03 — Marcar Data Ganho ao entrar em GANHO",
+      "variables": {
+        "name": "A-03 — Marcar Data Ganho ao entrar em GANHO",
+        "event_id": "card_moved",
+        "event_repo_id": "307117441",
+        "action_id": "update_card_field",
+        "action_repo_id": "307117441",
+        "event_params": { "to_phase_id": "342928175" },
+        "action_params": {
+          "field_map": [
+            { "fieldId": "428488669", "inputMode": "copy_from", "value": "%{automation_event_execution_datetime}" }
+          ],
+          "fields_map_order": ["428488669"],
+          "card_id": "%{id}"
+        },
+        "condition": {
+          "expressions": [{ "structure_id": 0, "field_address": "", "operation": "", "value": "" }],
+          "expressions_structure": [[0]]
+        }
+      }
+    },
+    {
+      "id": "A-04",
+      "name": "A-04 — Cadência Qualificação D+1 (ET-01)",
+      "variables": {
+        "name": "A-04 — Cadência Qualificação D+1 (ET-01)",
+        "event_id": "sla_based",
+        "event_repo_id": "307117441",
+        "action_id": "send_email_template",
+        "action_repo_id": "307117441",
+        "event_params": { "kindOfSla": "late" },
+        "action_params": { "field_map": [], "email_template_id": "309594743" },
+        "condition": {
+          "expressions": [
+            { "structure_id": 0, "id": "", "field_address": "current_phase", "operation": "equals", "value": "342928170" }
+          ],
+          "expressions_structure": [[0]]
+        }
+      }
+    },
+    {
+      "id": "A-07",
+      "name": "A-07 — SLA Qualificação D+N expired alerta (R6)",
+      "variables": {
+        "name": "A-07 — SLA Qualificação expired alerta (R6)",
+        "event_id": "sla_based",
+        "event_repo_id": "307117441",
+        "action_id": "send_http_request",
+        "action_repo_id": "307117441",
+        "event_params": { "kindOfSla": "expired" },
+        "action_params": {
+          "field_map": [],
+          "httpMethod": "POST",
+          "url": "https://nexuz.com.br/api/webhook/pipefy/alerta-qualif-expired",
+          "authenticationType": "no_auth"
+        },
+        "condition": {
+          "expressions": [
+            { "structure_id": 0, "id": "", "field_address": "current_phase", "operation": "equals", "value": "342928170" }
+          ],
+          "expressions_structure": [[0]]
+        }
+      }
+    },
+    {
+      "id": "A-08",
+      "name": "A-08 — Cadência Proposta D+3 (ET-04)",
+      "variables": {
+        "name": "A-08 — Cadência Proposta D+3 (ET-04)",
+        "event_id": "sla_based",
+        "event_repo_id": "307117441",
+        "action_id": "send_email_template",
+        "action_repo_id": "307117441",
+        "event_params": { "kindOfSla": "late" },
+        "action_params": { "field_map": [], "email_template_id": "309594746" },
+        "condition": {
+          "expressions": [
+            { "structure_id": 0, "id": "", "field_address": "current_phase", "operation": "equals", "value": "342928173" }
+          ],
+          "expressions_structure": [[0]]
+        }
+      }
+    },
+    {
+      "id": "A-09",
+      "name": "A-09 — Proposta D+N expired alerta interno",
+      "variables": {
+        "name": "A-09 — Proposta expired alerta interno",
+        "event_id": "sla_based",
+        "event_repo_id": "307117441",
+        "action_id": "send_http_request",
+        "action_repo_id": "307117441",
+        "event_params": { "kindOfSla": "expired" },
+        "action_params": {
+          "field_map": [],
+          "httpMethod": "POST",
+          "url": "https://nexuz.com.br/api/webhook/pipefy/alerta-proposta-expired",
+          "authenticationType": "no_auth"
+        },
+        "condition": {
+          "expressions": [
+            { "structure_id": 0, "id": "", "field_address": "current_phase", "operation": "equals", "value": "342928173" }
+          ],
+          "expressions_structure": [[0]]
+        }
+      }
+    },
+    {
+      "id": "A-11",
+      "name": "A-11 — Fechamento late sem pagamento",
+      "variables": {
+        "name": "A-11 — Fechamento late sem pagamento",
+        "event_id": "sla_based",
+        "event_repo_id": "307117441",
+        "action_id": "send_http_request",
+        "action_repo_id": "307117441",
+        "event_params": { "kindOfSla": "late" },
+        "action_params": {
+          "field_map": [],
+          "httpMethod": "POST",
+          "url": "https://nexuz.com.br/api/webhook/pipefy/alerta-fechamento-late",
+          "authenticationType": "no_auth"
+        },
+        "condition": {
+          "expressions": [
+            { "structure_id": 0, "id": "", "field_address": "current_phase", "operation": "equals", "value": "342928174" },
+            { "structure_id": 1, "id": "", "field_address": "pagamento_confirmado", "operation": "equals", "value": "Não" }
+          ],
+          "expressions_structure": [[0, 1]]
+        }
+      }
+    },
+    {
+      "id": "A-14",
+      "name": "A-14 — Feedback ao indicador D+N (T-29)",
+      "variables": {
+        "name": "A-14 — Feedback ao indicador (T-29)",
+        "event_id": "sla_based",
+        "event_repo_id": "307117441",
+        "action_id": "send_http_request",
+        "action_repo_id": "307117441",
+        "event_params": { "kindOfSla": "late" },
+        "action_params": {
+          "field_map": [],
+          "httpMethod": "POST",
+          "url": "https://nexuz.com.br/api/webhook/pipefy/feedback-indicador",
+          "authenticationType": "no_auth"
+        },
+        "condition": {
+          "expressions": [
+            { "structure_id": 0, "id": "", "field_address": "current_phase", "operation": "equals", "value": "342928169" },
+            { "structure_id": 1, "id": "", "field_address": "origem", "operation": "equals", "value": "Indicação" }
+          ],
+          "expressions_structure": [[0, 1]]
+        }
+      }
+    }
+  ],
+  "deferred_external_cron": [
+    { "id": "A-05", "reason": "2ª threshold D+3 na mesma fase Qualificação (só tem late+expired por fase)" },
+    { "id": "A-06", "reason": "3ª threshold D+7 na mesma fase Qualificação" },
+    { "id": "A-10", "reason": "2ª threshold D+15 na mesma fase Proposta (após A-08 late + A-09 expired)" },
+    { "id": "A-15", "reason": "Conflito com A-04 (mesma fase Qualif, mesma kind late)" },
+    { "id": "A-16", "reason": "scheduler bloqueia send_http_request e todas actions úteis (actionsBlacklist)" }
+  ]
+}

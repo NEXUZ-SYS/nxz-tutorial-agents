@@ -148,6 +148,60 @@ Motivo descarte (9 motivos + Nutrição expirada), Qual concorrente (cond FC-05)
 
 Nenhuma. A versão final (v2) do pipe foi recriada limpa, sem duplicatas.
 
+## Sessão continuação (2026-04-21) — Layers 5-7
+
+### Layer 7 — Email Templates (4 criados via internal_api /queries)
+
+| ID | Nome | Pipefy ID |
+|---|---|---|
+| ET-01 | Qualificação D+1 | `309594743` |
+| ET-02 | Qualificação D+3 | `309594744` |
+| ET-03 | Qualificação D+7 | `309594745` |
+| ET-04 | Proposta D+3 | `309594746` |
+
+### Layer 6 — Automations (11 nativas + 5 external cron)
+
+**Nativas no Pipefy** (criadas via internal_api `createAutomation`):
+
+| ID | Nome | Event / Action | Pipefy ID |
+|---|---|---|---|
+| A-01 | Marcar Data MQL em Qualificação | card_moved → update_card_field | `306955890` |
+| A-02 | Marcar Data SAL em Demo Agendada | card_moved → update_card_field | `306955891` |
+| A-03 | Marcar Data Ganho em GANHO | card_moved → update_card_field | `306955892` |
+| A-04 | Cadência Qualif D+1 (ET-01) | sla_based late → send_email_template | `306955893` |
+| A-07 | SLA Qualif expired alerta | sla_based expired → send_http_request | `306955920` |
+| A-08 | Cadência Proposta D+3 (ET-04) | sla_based late → send_email_template | `306955894` |
+| A-09 | Proposta expired alerta | sla_based expired → send_http_request | `306955921` |
+| A-11 | Fechamento late sem pagamento | sla_based late → send_http_request | `306955926` |
+| A-12 | Desconto >15% aprovação Gestão | field_updated → send_a_task | (prior session) |
+| A-13 | GANHO automático pgto+contrato | field_updated → move_single_card | (prior session) |
+| A-14 | Feedback ao indicador | sla_based late → send_http_request | `306955930` |
+
+**Deferidas p/ external cron** (ver `external-cron-spec.md`):
+- A-05, A-06: 3º+ thresholds em Qualif (sla_based só aceita par late+expired por fase)
+- A-10: 3º threshold em Proposta
+- A-15: mesclado ao design de A-04 (conflito de fase/kind)
+- A-16: scheduler event bloqueia send_http_request
+
+### Layer 5 — Field Conditions (6 criadas via internal_api /queries)
+
+| ID | Nome | Phase | Pipefy ID |
+|---|---|---|---|
+| FC-01 | Consent LGPD se Inbound | start form | `306681511` |
+| FC-02 | Campos de indicação | start form | `306681512` |
+| FC-03 | Campos de outbound (Reason+ICP) | start form | `306681513` |
+| FC-04 | Aceite verbal se demo com aceite | Pós-demo | `306681514` |
+| FC-05 | Qual concorrente se motivo=6 | DESCARTE | `306681515` |
+| FC-06 | Último canal tentado se motivo=9 | DESCARTE | `306681516` |
+
+### Gaps / Descobertas técnicas
+
+- **Pipefy tem 3 GraphQL endpoints distintos**: `api.pipefy.com/graphql` (público, OAuth), `app.pipefy.com/internal_api` (automations), `app.pipefy.com/queries` (field conditions, email templates).
+- **Replay via internal API requer header `X-CSRF-Token`** — extraído do meta tag `<meta name="csrf-token">` da própria página. Cookies sozinhos dão "Unauthorized".
+- **URL validation no send_http_request** rejeita domínios não-resolvíveis via DNS (incluindo `.internal` reservado). Usando `https://nexuz.com.br/api/webhook/pipefy/*` como placeholder.
+- **FC-03 gap**: PDD lista "LinkedIn do contato" + "Cargo" como fields condicionais Outbound, mas fields não existem no start form. FC-03 só aplica a Reason to Call + ICP. Criar fields e atualizar FC-03 depois.
+- **Scheduler event efetivamente morto**: actionsBlacklist bloqueia tudo útil exceto `schedule_create_card`.
+
 ## Arquivos gerados nesta execução
 
 - `pipe-design.md` — design completo (Mermaid + phases + fields + automações)

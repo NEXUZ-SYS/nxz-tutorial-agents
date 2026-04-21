@@ -53,9 +53,24 @@
 - **Aprovado sem ajustes na primeira versao:** estrutura de 12 secoes funcionou bem
 - **Briefing aprovado e salvo como:** `(v_1.0) Briefing de Contexto - NXZ Go - Sales - Operacional.md`
 
+### Run 2026-04-21-171843 — Playbook de Vendas (Suite Nexuz) / Sales-Ops / Operacional
+
+- **Primeiro briefing tipo "playbook de processo", nao "briefing de produto":** artefato e sobre COMO vender, nao sobre O QUE e o produto — Step 05 Navigator (Playwright) pulado deliberadamente com justificativa no `product-exploration.yaml`
+- **Duas fontes externas foram espinha dorsal:** PDD canonico de vendas (`nxz-backoffice-processes` run 2026-04-16-165948/v6) + design do Pipe Pipefy (`nxz-pipefy-setup` run 2026-04-20-162723/v1). Playbook aterra 1:1 em ambos.
+- **Modo "Playbook v1 pragmatico":** usuario optou por escrever agora com `[a confirmar com Carol]` inline em vez de rodar entrevista cheia — 14 gaps viraram 10 itens de v2 no `state.json`. Entregavel ~50KB em menos tempo que uma entrevista completa.
+- **Defaults inferidos dos args evitaram checkpoint redundante:** usuario rejeitou AskUserQuestion de 4 perguntas reconfirmando produto/publico/nivel/objetivo ja claros nos args (`playbook de vendas qualificacao/fechamento para tipo de ops da nxz`). Salvo como memoria global `feedback_proceed_without_over_questioning`.
+- **Mudanca de referencia durante execucao:** usuario trocou nxz-clickup-setup por nxz-pipefy-setup via ESC + comando novo. Context Briefings deve ser flexivel a isso — ler referencia atual, nao assumir a primeira.
+- **Estrutura de 12 secoes serviu bem:** Visao geral > ICP+Comite > S1 Entrada > S2 Qualificacao > S3+S4 Demo > S5 Proposta > S6+S7 Fechamento > Objecoes > Descarte/Nutricao > Mapa Pipefy > Templates > Checklist diario. Mapa PDD-Pipefy no final e referencia rapida de campo.
+- **Reproducao LITERAL dos 4 templates ET-01..ET-04 do Pipefy:** playbook ganhou consistencia — vendedor ve no playbook exatamente o que o automatico vai enviar.
+- **Banco de 25+ objecoes por etapa (4 S2 + 3 S3/S4 + 14 S5 + 4 S6):** mesmo como v1 inferida, ja da bagagem; v2 substitui pelo real do campo.
+- **Playbook aprovado e salvo como:** `(v_1.0) Playbook de Vendas - Suite Nexuz - Sales-Ops - Operacional.md` em `context/`.
+- **Proxima iteracao sugerida:** v2 com input da Carol preenchendo os 10 gaps; ou rodar `nxz-context-briefings` em nivel Tatico (metricas, SLA, forecast) ou Estrategico (ICP, GTM, estrutura comercial).
+
 ## Preferences
 
 - Incluir secao de copy pronto (headlines, descricoes, CTAs) em briefings de marketing
 - Incluir casos de uso por segmento de food service
 - Validar integracoes antes de incluir — legislacao muda
 - Dados reais do sistema enriquecem o briefing
+- Para briefings tipo "playbook de processo" (vs briefing de produto): pular Step 05 Navigator se artefato nao depende de tela; usar PDD + design de ferramenta como espinha dorsal
+- Preferir "playbook v1 pragmatico com [a confirmar]" sobre entrevista extensa quando usuario sinaliza urgencia

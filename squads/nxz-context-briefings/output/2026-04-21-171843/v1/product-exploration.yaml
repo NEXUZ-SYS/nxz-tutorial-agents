@@ -1,0 +1,25 @@
+exploration:
+  status: "skipped"
+  reason: >
+    Playbook de vendas é um artefato de processo, não de produto. O conteúdo é
+    agnóstico de tela/software (roteiros, perguntas, objeções, templates, checklist
+    de funil). Dados de produto necessários já vieram dos briefings v1.0 por módulo
+    (NXZ Go Sales, PDV, Totem, Smart POS, ERP Marketing) que incluem: wow moments,
+    matriz de decisão, terminologia, dados reais (3.184 pedidos, R$ 146.715, ticket
+    R$ 46,07). A "exploração de produto" neste caso é a leitura do PDD (processo
+    canônico) e do pipe-design.md (instrumentação Pipefy) — ambos já analisados pelo
+    Analista no context-analysis.yaml.
+  alternative_sources_used:
+    - "PDD §5 (regras R1-R40 do processo de vendas)"
+    - "PDD §5A (gates por fase: F-Lead, F-Qualificação, F-Demo, F-Proposta, F-Fechamento, F-GANHO)"
+    - "PDD §6 (cadências por etapa)"
+    - "PDD §13 (motivos de descarte)"
+    - "PDD §14.1 (dashboard Meu Dia)"
+    - "pipe-design.md §3.2-§3.9 (fases P1-P8)"
+    - "specs/02-pipe-vendas.json (definição de fases)"
+    - "specs/03-phase-fields.json (campos por fase)"
+    - "specs/06-automations.json (16 automações A-01 a A-16)"
+    - "specs/07-email-templates.json (4 templates ET-01 a ET-04)"
+  skipped_screenshots: true
+  skipped_web_navigation: true
+  navigator_veto_check: "Gate 'exploration nao tentou acessar o produto' — WAIVED porque o artefato é processo, não tela."

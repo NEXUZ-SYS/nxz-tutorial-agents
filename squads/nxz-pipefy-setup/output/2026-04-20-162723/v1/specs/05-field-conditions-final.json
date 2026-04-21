@@ -1,0 +1,110 @@
+{
+  "_description": "6 Field Conditions via internal_api createFieldCondition mutation. Action 'show' (internal-only, public API só aceita 'hidden'). LinkedIn/Cargo de FC-03 removidos (não existem como fields — ver gap).",
+  "_mutation": "createFieldCondition (name, phaseId, actions, condition) { fieldCondition { id } }",
+  "_endpoint": "https://app.pipefy.com/internal_api",
+  "_gaps": [
+    "FC-03: 'LinkedIn do contato' e 'Cargo' não existem como fields — só apliquei show em Reason to Call + ICP"
+  ],
+  "pipe_id": "307117441",
+  "start_form_phase_id": "342928165",
+  "field_conditions": [
+    {
+      "id": "FC-01",
+      "variables": {
+        "name": "FC-01 — Consent LGPD se Inbound",
+        "phaseId": "342928165",
+        "actions": [
+          { "actionId": "show", "phaseFieldId": "428488624", "whenEvaluator": true }
+        ],
+        "condition": {
+          "expressions": [
+            { "id": "", "field_address": "origem", "value": "Inbound", "operation": "equals", "structure_id": 0 }
+          ],
+          "expressions_structure": [[0]]
+        }
+      }
+    },
+    {
+      "id": "FC-02",
+      "variables": {
+        "name": "FC-02 — Campos de indicação",
+        "phaseId": "342928165",
+        "actions": [
+          { "actionId": "show", "phaseFieldId": "428488625", "whenEvaluator": true },
+          { "actionId": "show", "phaseFieldId": "428488626", "whenEvaluator": true }
+        ],
+        "condition": {
+          "expressions": [
+            { "id": "", "field_address": "origem", "value": "Indicação", "operation": "equals", "structure_id": 0 }
+          ],
+          "expressions_structure": [[0]]
+        }
+      }
+    },
+    {
+      "id": "FC-03",
+      "variables": {
+        "name": "FC-03 — Campos de outbound",
+        "phaseId": "342928165",
+        "actions": [
+          { "actionId": "show", "phaseFieldId": "428488627", "whenEvaluator": true },
+          { "actionId": "show", "phaseFieldId": "428488628", "whenEvaluator": true }
+        ],
+        "condition": {
+          "expressions": [
+            { "id": "", "field_address": "origem", "value": "Outbound", "operation": "equals", "structure_id": 0 }
+          ],
+          "expressions_structure": [[0]]
+        }
+      }
+    },
+    {
+      "id": "FC-04",
+      "variables": {
+        "name": "FC-04 — Aceite verbal se demo com aceite",
+        "phaseId": "342928172",
+        "actions": [
+          { "actionId": "show", "phaseFieldId": "428488650", "whenEvaluator": true }
+        ],
+        "condition": {
+          "expressions": [
+            { "id": "", "field_address": "status_demo", "value": "Realizada com aceite", "operation": "equals", "structure_id": 0 }
+          ],
+          "expressions_structure": [[0]]
+        }
+      }
+    },
+    {
+      "id": "FC-05",
+      "variables": {
+        "name": "FC-05 — Qual concorrente se motivo=6",
+        "phaseId": "342928176",
+        "actions": [
+          { "actionId": "show", "phaseFieldId": "428488673", "whenEvaluator": true }
+        ],
+        "condition": {
+          "expressions": [
+            { "id": "", "field_address": "motivo_descarte", "value": "6. Perdeu pra concorrente", "operation": "equals", "structure_id": 0 }
+          ],
+          "expressions_structure": [[0]]
+        }
+      }
+    },
+    {
+      "id": "FC-06",
+      "variables": {
+        "name": "FC-06 — Último canal tentado se motivo=9",
+        "phaseId": "342928176",
+        "actions": [
+          { "actionId": "show", "phaseFieldId": "428488674", "whenEvaluator": true }
+        ],
+        "condition": {
+          "expressions": [
+            { "id": "", "field_address": "motivo_descarte", "value": "9. Sumiu/sem resposta", "operation": "equals", "structure_id": 0 }
+          ],
+          "expressions_structure": [[0]]
+        }
+      }
+    }
+  ]
+}

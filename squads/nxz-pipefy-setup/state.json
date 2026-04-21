@@ -1,66 +1,28 @@
 {
   "squad": "nxz-pipefy-setup",
-  "status": "paused",
-  "step": { "current": 6, "total": 11, "label": "configure-pipefy (partial: Layers 1-4 + UI customization complete; Layers 5-7 pending)" },
+  "status": "done",
+  "step": { "current": 7, "total": 11, "label": "configure-pipefy (Layers 1-7 complete; review/train pendente)" },
   "agents": [
-    {
-      "id": "researcher",
-      "name": "Rita Pesquisa",
-      "icon": "🔍",
-      "status": "done",
-      "deliverTo": null,
-      "desk": { "col": 1, "row": 1 }
-    },
-    {
-      "id": "architect",
-      "name": "Paulo Pipes",
-      "icon": "📐",
-      "status": "done",
-      "deliverTo": null,
-      "desk": { "col": 2, "row": 1 }
-    },
-    {
-      "id": "configurator",
-      "name": "Caio Configurador",
-      "icon": "⚙️",
-      "status": "paused",
-      "deliverTo": null,
-      "desk": { "col": 3, "row": 1 }
-    },
-    {
-      "id": "reviewer",
-      "name": "Vera Validação",
-      "icon": "✅",
-      "status": "idle",
-      "deliverTo": null,
-      "desk": { "col": 1, "row": 2 }
-    },
-    {
-      "id": "trainer",
-      "name": "Teo Treinamento",
-      "icon": "📚",
-      "status": "idle",
-      "deliverTo": null,
-      "desk": { "col": 2, "row": 2 }
-    }
+    { "id": "researcher", "name": "Rita Pesquisa", "icon": "🔍", "status": "done", "deliverTo": null, "desk": { "col": 1, "row": 1 } },
+    { "id": "architect", "name": "Paulo Pipes", "icon": "📐", "status": "done", "deliverTo": null, "desk": { "col": 2, "row": 1 } },
+    { "id": "configurator", "name": "Caio Configurador", "icon": "⚙️", "status": "done", "deliverTo": null, "desk": { "col": 3, "row": 1 } },
+    { "id": "reviewer", "name": "Vera Validação", "icon": "✅", "status": "pending", "deliverTo": null, "desk": { "col": 1, "row": 2 } },
+    { "id": "trainer", "name": "Teo Treinamento", "icon": "📚", "status": "pending", "deliverTo": null, "desk": { "col": 2, "row": 2 } }
   ],
   "handoff": {
     "from": "configurator",
-    "to": "user",
-    "message": "Pipe Vendas Nexuz — core config completa (2 databases + pipe + 58 fields + 8 mini-guias + UI customization). Pausado para retomada em nova sessão. Ver output/2026-04-20-162723/RESUME.md",
-    "completedAt": "2026-04-20T19:30:00-03:00"
+    "to": "reviewer",
+    "message": "Pipe Vendas Nexuz — configuração end-to-end completa. Databases (2), Pipe + 58 fields, 8 mini-guias, UI custom, 4 email templates, 11 automações nativas (A-01 a A-04, A-07, A-08, A-09, A-11..A-14) + 6 field conditions + spec external cron para A-05/06/10/15/16. Pronto para review.",
+    "completedAt": "2026-04-21T18:00:00-03:00"
   },
   "pendingWork": {
-    "layers": ["5-field-conditions", "6-automations", "7-email-templates"],
-    "specs_ready": [
-      "squads/nxz-pipefy-setup/output/2026-04-20-162723/v1/specs/05-field-conditions.json",
-      "squads/nxz-pipefy-setup/output/2026-04-20-162723/v1/specs/06-automations.json",
-      "squads/nxz-pipefy-setup/output/2026-04-20-162723/v1/specs/07-email-templates.json"
-    ],
+    "layers": [],
     "external_todos": [
+      "Implementar external cron (A-05, A-06, A-10, A-16) — ver output/2026-04-20-162723/v1/external-cron-spec.md",
+      "Criar endpoint webhook https://nexuz.com.br/api/webhook/pipefy/* (4 rotas)",
       "Criar Google Doc Playbook Vendas Nexuz + substituir placeholder PLAYBOOK-VENDAS-NEXUZ",
-      "Webhook receiver para automação A-16 (audit duplicatas)",
-      "Assinar DPAs LGPD antes do go-live (PDD R-09)"
+      "Assinar DPAs LGPD antes do go-live (PDD R-09)",
+      "FC-03: Criar fields 'LinkedIn do contato' e 'Cargo' no start form e incluir em FC-03 (gap documentado)"
     ],
     "ids_created": {
       "org": "302461450",
@@ -75,11 +37,39 @@
       "phase_proposta": "342928173",
       "phase_fechamento": "342928174",
       "phase_ganho": "342928175",
-      "phase_descarte": "342928176"
+      "phase_descarte": "342928176",
+      "email_templates": {
+        "ET-01": "309594743",
+        "ET-02": "309594744",
+        "ET-03": "309594745",
+        "ET-04": "309594746"
+      },
+      "automations_native": {
+        "A-01": "306955890",
+        "A-02": "306955891",
+        "A-03": "306955892",
+        "A-04": "306955893",
+        "A-07": "306955920",
+        "A-08": "306955894",
+        "A-09": "306955921",
+        "A-11": "306955926",
+        "A-12": "already-from-prior-session",
+        "A-13": "already-from-prior-session",
+        "A-14": "306955930"
+      },
+      "automations_external_cron": ["A-05", "A-06", "A-10", "A-15-merged-into-A-04", "A-16"],
+      "field_conditions": {
+        "FC-01": "306681511",
+        "FC-02": "306681512",
+        "FC-03": "306681513",
+        "FC-04": "306681514",
+        "FC-05": "306681515",
+        "FC-06": "306681516"
+      }
     }
   },
-  "resume_instructions": "Ver squads/nxz-pipefy-setup/output/2026-04-20-162723/RESUME.md",
+  "resume_instructions": "Config core do Pipefy concluída. Next: review (Vera) + treinamento (Teo) — ou handoff para time Nexuz implementar external cron.",
   "startedAt": "2026-04-20T16:27:23-03:00",
-  "updatedAt": "2026-04-20T19:30:00-03:00",
-  "pausedAt": "2026-04-20T19:30:00-03:00"
+  "updatedAt": "2026-04-21T18:00:00-03:00",
+  "pausedAt": null
 }

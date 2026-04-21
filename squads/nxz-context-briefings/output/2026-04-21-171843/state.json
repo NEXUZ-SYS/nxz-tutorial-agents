@@ -1,0 +1,50 @@
+{
+  "run_id": "2026-04-21-171843",
+  "squad": "nxz-context-briefings",
+  "version": "v1",
+  "status": "completed",
+  "started_at": "2026-04-21T17:18:43-03:00",
+  "completed_at": "2026-04-21T17:45:00-03:00",
+  "briefing": {
+    "product": "Suíte Nexuz (playbook comercial)",
+    "audience": "Sales-Ops",
+    "level": "Operacional",
+    "objective": "Playbook de qualificação e fechamento para Ops comercial da Nexuz"
+  },
+  "references_used": [
+    "squads/nxz-backoffice-processes/output/2026-04-16-165948/v6/process-design-document.md",
+    "squads/nxz-pipefy-setup/output/2026-04-20-162723/v1/"
+  ],
+  "steps_executed": [
+    {"id": "checkpoint-config", "status": "completed", "notes": "Defaults inferidos dos args do usuário para evitar re-perguntar"},
+    {"id": "checkpoint-sources", "status": "completed"},
+    {"id": "analyze-existing", "status": "completed", "output": "v1/context-analysis.yaml (570 linhas)"},
+    {"id": "checkpoint-interview", "status": "completed", "notes": "Modo pragmático — gaps marcados como [a confirmar com Carol] no v1"},
+    {"id": "explore-product", "status": "skipped", "reason": "Playbook é artefato de processo, não de produto — dados já nos briefings v1.0 existentes"},
+    {"id": "checkpoint-review-data", "status": "completed"},
+    {"id": "write-briefing", "status": "completed", "output": "v1/briefing-draft.md (933 linhas, 49.3 KB)"},
+    {"id": "checkpoint-review-draft", "status": "completed"},
+    {"id": "checkpoint-approval", "status": "completed"}
+  ],
+  "outputs": [
+    "squads/nxz-context-briefings/output/2026-04-21-171843/briefing-config.md",
+    "squads/nxz-context-briefings/output/2026-04-21-171843/additional-sources.md",
+    "squads/nxz-context-briefings/output/2026-04-21-171843/interview-responses.md",
+    "squads/nxz-context-briefings/output/2026-04-21-171843/v1/context-analysis.yaml",
+    "squads/nxz-context-briefings/output/2026-04-21-171843/v1/product-exploration.yaml",
+    "squads/nxz-context-briefings/output/2026-04-21-171843/v1/briefing-draft.md",
+    "context/(v_1.0) Playbook de Vendas - Suite Nexuz - Sales-Ops - Operacional.md"
+  ],
+  "open_items_for_v2": [
+    "Critérios numéricos de ICP (faturamento/unidades mínimos)",
+    "Scripts reais por origem (3.4, 4.3)",
+    "Wow moments validados de demo QS e FS",
+    "Template oficial de PDF de proposta FS",
+    "Tabela de preços operacional",
+    "Banco de objeções reais do campo",
+    "Cases citáveis além de No. Coffee",
+    "Gatilhos de urgência validados",
+    "Templates WhatsApp oficiais (canal primário sem automação)",
+    "Posicionamento de NXZ Pay Go na proposta"
+  ]
+}

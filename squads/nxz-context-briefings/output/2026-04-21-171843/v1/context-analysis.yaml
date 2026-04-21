@@ -1,0 +1,570 @@
+analysis:
+  product: "Suíte Nexuz (playbook comercial)"
+  audience: Sales-Ops
+  level: Operacional
+  objective: >
+    Playbook de vendas (qualificação + fechamento) nível Operacional para o time
+    de Sales-Ops da Nexuz (Food Service). Conteúdo de venda agnóstico de ferramenta,
+    mas cada etapa aterrada no Pipe Pipefy já configurado, com aderência 1:1 ao PDD
+    de vendas canônico (PDD-NXZ-VENDAS-001 v1.0).
+
+  existing_contexts:
+    - file: "(v_ 0.4) Briefing de Contexto de Negócios da Nexuz.md"
+      version: "0.4"
+      coverage:
+        audiences: [Estratégico, Vendas, Marketing]
+        levels: [Estratégico]
+        has_examples: true
+        cross_references: [Produtos, Personas]
+      relevance_for_playbook: alta
+      key_extracts:
+        - "Mercado-alvo: Food Service 'To Go' (restaurantes, bares, cafés, food trucks, catering, franquias) + negócios em digitalização."
+        - "5 dores canônicas: Comunicação ineficiente, Controle de estoque deficiente, Gestão financeira complexa, Experiência do cliente insatisfatória, Implementação demorada."
+        - "Expectativas do ICP: automação, visão unificada, agilidade no atendimento, escalabilidade, suporte especializado FS."
+        - "Onde encontrar ICP: LinkedIn, Facebook, eventos do setor FS, site/blog da Nexuz."
+        - "Portfólio declarado: NXZ ERP, NXZ Go, NXZ KDS, NXZ Delivery (+ NXZ Pay Go no escopo ampliado)."
+      gaps:
+        - "Não fala em ICP segmentado QS/FS (aparece no PDD)."
+        - "Sem estatísticas de win rate, ciclo, ticket — expressamente ausentes (baselines a calibrar)."
+
+    - file: "(v_ 0.2) Briefing de Contexto de Persona da Nexuz.md"
+      version: "0.2"
+      coverage:
+        audiences: [Sales, Marketing, Product]
+        levels: [Operacional]
+        has_examples: true
+        cross_references: [Negócios, Produtos]
+      relevance_for_playbook: alta
+      key_extracts:
+        - "5 personas do comitê de compra: Cliente Consumidor, Operador de Caixa, Garçom, Gerente de Operação, Proprietário/Decisor."
+        - "Proprietário = decisor estratégico (expansão, margem, compliance) — alvo principal da venda."
+        - "Gerente de Operação = influenciador chave (dashboards, indicadores, treinamento, onboarding simples)."
+        - "Operador/Garçom = usuários finais — preocupação com agilidade, erros, registro digital."
+      gaps:
+        - "Não mapeia perguntas de descoberta por persona."
+        - "Não associa cada persona ao Decisor/Influenciador/Operacional/Gatekeeper do PDD (gap a preencher)."
+
+    - file: "(v_ 0.2) Briefing de Contexto de Produtos Nexuz.md"
+      version: "0.2"
+      coverage:
+        audiences: [Sales, Marketing]
+        levels: [Operacional]
+        has_examples: true
+        cross_references: [Negócios, Personas]
+      relevance_for_playbook: alta
+      key_extracts:
+        - "4 módulos principais: NXZ ERP, NXZ Go, NXZ KDS, NXZ Delivery. Diferenciais: integração total, escalabilidade, personalização, suporte FS."
+        - "Modelo SaaS com preço por módulo × unidades × volume."
+        - "Infra Oracle Cloud + LGPD + integrações com adquirentes (Stone/Cielo/PagSeguro/SumUp) e plataformas delivery (iFood/Rappi)."
+        - "KPIs de produto: adoção, retenção, vendas processadas, NPS, uptime."
+      gaps:
+        - "Não menciona NXZ Pay Go explicitamente (escopo ampliado do briefing-config)."
+        - "Sem tabela de preços (confidencial)."
+
+    - file: "(v_1.0) Briefing de Contexto - NXZ Go - Sales - Operacional.md"
+      version: "1.0"
+      coverage:
+        audiences: [Sales]
+        levels: [Operacional]
+        has_examples: true
+        cross_references: [ERP, Totem, PDV, Smart POS, KDS, Delivery]
+      relevance_for_playbook: alta
+      key_extracts:
+        - "Template estrutural do playbook: seções de Pitch 30s, Wow moments, Matriz de Decisão por dor/tamanho/operação, Objeções com respostas, Upsell, Terminologia, Dados reais para credibilidade."
+        - "Regra crítica: KDS NÃO é modo do NXZ Go — sistema separado (reforço da memória do projeto)."
+        - "3 modos do NXZ Go: Totem (cliente), PDV (caixa), Smart POS (operador móvel)."
+        - "Dados reais: 3.184 pedidos processados, R$ 146.715 em vendas, ticket médio R$ 46,07 — usar como prova social em demo/proposta."
+      gaps:
+        - "Agnóstico de funil — não aterra em Pipefy nem em etapas de venda."
+        - "Sem roteiros de qualificação e fechamento de suíte completa (só conteúdo do Go)."
+
+    - file: "(v_1.0) Briefing de Contexto - NXZ Go PDV - Marketing+Vendas - Operacional.md"
+      version: "1.0"
+      coverage:
+        audiences: [Sales, Marketing]
+        levels: [Operacional]
+        has_examples: true
+        cross_references: [NXZ Go, ERP, KDS]
+      relevance_for_playbook: media
+      key_extracts:
+        - "Diferenciais de PDV: controle de caixa (abertura/sangria/fechamento), modo restaurante, edição de preço, relatório por turno."
+        - "Casos de uso: restaurante com mesa, cafeteria alto volume, bar/cervejaria, franquia com PDV padronizado."
+      gaps:
+        - "Conteúdo repetido no Sales Operacional do NXZ Go."
+
+    - file: "(v_1.0) Briefing de Contexto - NXZ Go Totem - Marketing+Vendas - Operacional.md"
+      version: "1.0"
+      coverage:
+        audiences: [Sales, Marketing]
+        levels: [Operacional]
+        has_examples: true
+        cross_references: [NXZ Go, ERP, KDS]
+      relevance_for_playbook: media
+      key_extracts:
+        - "Diferenciais do Totem: whitelabel total, screensaver de marketing 24h, pagar no caixa (zero abandono), modo imersivo, split bill."
+        - "Segmentos-alvo: cafeteria, fast food, praça de alimentação, padaria, pop-up."
+      gaps:
+        - "Mesmas lacunas do PDV (conteúdo tático de funcionalidade, não funil)."
+
+    - file: "(v_1.0) Briefing de Contexto - NXZ Go Smart POS - Marketing - Operacional.md"
+      version: "1.0"
+      coverage:
+        audiences: [Marketing]
+        levels: [Operacional]
+        has_examples: true
+        cross_references: [NXZ Go, ERP]
+      relevance_for_playbook: media
+      key_extracts:
+        - "Pagamento nativo zero latência, impressora integrada, multi-fabricante (Stone/Cielo/PagBank/MSiTef), tudo-em-1 (PDV + maquininha + impressora)."
+        - "Casos de uso: food truck, garçom na mesa, delivery com cobrança, eventos/pop-up — custo R$ 500-1.500 vs R$ 3-5K PDV fixo."
+      gaps:
+        - "Voltado a Marketing; precisa ser traduzido para pitch de vendedor e objeções."
+
+    - file: "(v_1.0) Briefing de Contexto - NXZ ERP - Marketing - Operacional.md"
+      version: "1.0"
+      coverage:
+        audiences: [Marketing]
+        levels: [Operacional]
+        has_examples: true
+        cross_references: [NXZ Go, KDS, Delivery]
+      relevance_for_playbook: alta
+      key_extracts:
+        - "NXZ ERP é backend obrigatório da suíte — toda venda de Go/KDS/Delivery exige ERP."
+        - "Módulos: compras, produção, vendas, finanças, contabilidade, estoque, comunicação interna."
+      gaps:
+        - "Voltado a Marketing — sem roteiro de qualificação nem objeções comerciais de ERP."
+
+    - file: "comparativo.md"
+      version: null
+      coverage:
+        audiences: [Sales, Produto]
+        levels: [Operacional]
+        has_examples: true
+        cross_references: [NXZ Go (Totem/PDV/Smart POS)]
+      relevance_for_playbook: media
+      key_extracts:
+        - "Matriz de diferenças entre PDV, Totem e Smart POS — útil para consultivo em demo."
+        - "Smart POS não roda KDS (limitação de hardware) — reforça separação KDS × NXZ Go."
+      gaps:
+        - "Não cobre ERP/Delivery; não tem amarração com etapa de funil."
+
+    - file: "fluxos.md"
+      version: null
+      coverage: {audiences: [Produto, Sales], levels: [Operacional], has_examples: true, cross_references: []}
+      relevance_for_playbook: baixa
+      key_extracts:
+        - "Fluxos técnicos de operação — útil como referência em demo consultiva FS, não para qualificação."
+      gaps:
+        - "Baixa relevância direta para playbook de vendas."
+
+    - file: "ClickUp — Funil NXZ · v1 0 33c15efd475d8198a444cc26f883cbfd.md"
+      version: "1.0 (histórico)"
+      coverage:
+        audiences: [Sales]
+        levels: [Operacional]
+        has_examples: true
+        cross_references: [Funil antigo]
+      relevance_for_playbook: baixa
+      key_extracts:
+        - "Referência histórica do funil antigo em ClickUp — substituído pelo Pipefy (Fonte 2). Serve apenas para mostrar o que mudou."
+      gaps:
+        - "Desatualizado. Não usar como fonte primária; PDD e Pipe Pipefy são canônicos."
+
+  reference_sources:
+    - name: "PDD Backoffice (Fonte 1 — espinha dorsal)"
+      file: "/home/walterfrey/Documentos/code/nexuz/nxz-tutorial-agents/squads/nxz-backoffice-processes/output/2026-04-16-165948/v6/process-design-document.md"
+      doc_id: "PDD-NXZ-VENDAS-001 v1.0 (2026-04-17)"
+      process_owner: "Caroline Oliveira (Ops de Vendas)"
+      sponsor: "Walter Frey (Gestão)"
+      process_stages:
+        - stage_id: S1A
+          name: "Novo Lead — Inbound"
+          objective: "Receber lead do canal digital (formulário/site), validar dados mínimos e encaminhar para Qualificação."
+          responsible: "Ops de Vendas (Carol)"
+          entry_criteria: ["Nome", "Empresa", "Canal de contato", "Checkbox LGPD"]
+          exit_criteria: ["Dados mínimos OK → Qualificação (R1)", "Inbound com 6/6 no Checklist Binário → pula para Demo Agendada (R4)"]
+          deliverables: ["Card criado no Pipe Vendas (Phase 1)", "Ops responsável atribuído"]
+          sla: "2h úteis para primeira resposta"
+        - stage_id: S1B
+          name: "Novo Lead — Outbound"
+          objective: "Prospect identificado ativamente (LinkedIn, eventos, redes). Criar card com Reason to Call, ICP e LinkedIn."
+          responsible: "Ops de Vendas"
+          entry_criteria: ["Nome", "Cargo", "Empresa", "LinkedIn URL", "Canal preferido", "Reason to Call", "ICP"]
+          exit_criteria: ["Card criado e movido para Qualificação (R2)"]
+          deliverables: ["Card outbound com Reason to Call personalizado"]
+          sla: "48h úteis para criação do card"
+        - stage_id: S1C
+          name: "Novo Lead — Indicação"
+          objective: "Formalizar lead vindo por indicação (parceiro, cliente, contato), registrar 'Quem indicou' e retornar feedback ao indicador."
+          responsible: "Ops de Vendas"
+          entry_criteria: ["Nome", "Empresa", "Canal", "Quem indicou", "Contexto"]
+          exit_criteria: ["Dados validados → Qualificação"]
+          deliverables: ["Card de indicação", "Feedback ao indicador em até 7 dias (T-29)"]
+          sla: "2h úteis para resposta + 7 dias para feedback ao indicador"
+        - stage_id: S2
+          name: "Qualificação"
+          objective: "Executar qualificação 100% humana via 4 toques em 8 dias (D+0/D+1/D+3/D+7). Preencher Checklist Binário 6/6 (fit, faturamento, dor, nº unidades, decisor, urgência)."
+          responsible: "Ops de Vendas"
+          entry_criteria: ["Dados mínimos de entrada preenchidos (GT-01)"]
+          exit_criteria: ["Checklist Binário 6/6 = true (GT-02) → Demo Agendada", "D+8 sem gate → Nutrição ou Descarte (R6)"]
+          deliverables: ["Checklist Binário completo", "ICP classificado (QS/FS/Zona fronteira/Fora ICP)", "Dor central documentada", "Decisor confirmado (papel no comitê)"]
+          sla: "8 dias corridos; alerta D+2 se 48h sem ação"
+        - stage_id: S3
+          name: "Demo Agendada"
+          objective: "Agendar e conduzir demo segmentada: QS (simplificada, mensagem) ou FS (consultiva, PDF)."
+          responsible: "Ops de Vendas"
+          entry_criteria: ["Checklist Binário 6/6", "Data da demo", "Tipo de demo (QS/FS)", "Decisores confirmados para demo", "Cliente vinculado", "Contatos vinculados"]
+          exit_criteria: ["Demo realizada → Pós-demo (qualquer status)"]
+          deliverables: ["Demo executada conforme roteiro QS ou FS", "Notas de descoberta", "Dor confirmada"]
+          sla: "Data da demo + 1 dia útil para registrar desfecho"
+        - stage_id: S4
+          name: "Pós-demo"
+          objective: "Capturar desfecho da demo: aceite verbal, sem aceite, ou no-show. Decidir próximo passo."
+          responsible: "Ops de Vendas"
+          entry_criteria: ["Demo realizada"]
+          exit_criteria: ["Status demo = 'Realizada com aceite' + aceite verbal = true → Proposta (R11)", "'Sem aceite' → Nutrição ou Descarte (R10)", "'No-show' → reagendamento ≤3x ou Nutrição (R9, EXT-05)"]
+          deliverables: ["Status demo registrado", "Aceite verbal documentado (gate absoluto)", "Dor confirmada"]
+          sla: "3 dias corridos"
+        - stage_id: S5
+          name: "Proposta"
+          objective: "Enviar proposta comercial (QS: mensagem; FS: PDF consultivo com diagnóstico, rollout, data de resposta). Executar cadência de follow-up até aceite ou decisão."
+          responsible: "Ops de Vendas (propõe), Gestão (aprova desconto >15%)"
+          entry_criteria: ["Aceite verbal = true", "Dor confirmada", "Data demo realizada"]
+          exit_criteria: ["Aceite proposta = true (GT-07) → Fechamento", "D+15 sem resposta → Nutrição ou Descarte"]
+          deliverables: ["Proposta (mensagem ou PDF)", "Preço base", "Margem aplicada", "Valor proposto final", "MRR", "Módulos contratados"]
+          sla: "15 dias corridos (follow-up D+3 auto, alerta D+7, decisão D+15)"
+        - stage_id: S6
+          name: "Fechamento"
+          objective: "Coletar dados fiscais, emitir cobrança (Financeiro), emitir contrato e coletar assinatura digital (Gestão)."
+          responsible: "Ops de Vendas (orquestra); Financeiro (cobrança); Gestão (contrato)"
+          entry_criteria: ["Aceite proposta = true", "Valor proposto final", "MRR", "Módulos contratados"]
+          exit_criteria: ["Pagamento confirmado = true AND Contrato assinado = true → GANHO automático (R19/GT-08)"]
+          deliverables: ["CNPJ (14 dígitos)", "Razão social", "Boleto emitido", "Pagamento confirmado", "Contrato assinado"]
+          sla: "10 dias corridos (CNPJ 48h + pagamento 5 dias + contrato 3 dias pós-boleto)"
+        - stage_id: S7
+          name: "GANHO"
+          objective: "Transição automática disparada por pagamento + contrato ambos true. Handoff para Implantação."
+          responsible: "Repositório (automação A-13)"
+          entry_criteria: ["Pagamento confirmado + Contrato assinado (F-GANHO)"]
+          exit_criteria: ["Card movido para GANHO + registro de Implantação criado no Pipe Implantação"]
+          deliverables: ["Registro de Implantação com pacote completo (dados fiscais, módulos, dor, MRR, histórico)"]
+          sla: "Automático (ato)"
+        - stage_id: S8
+          name: "DESCARTE"
+          objective: "Registrar encerramento negativo com motivo obrigatório (1 de 9) e campos condicionais."
+          responsible: "Ops de Vendas"
+          entry_criteria: ["Decisão de descarte tomada"]
+          exit_criteria: ["Motivo + campos condicionais preenchidos. Card NUNCA reaberto (R29)."]
+          deliverables: ["Registro de descarte para análise de ICP e aprendizado"]
+          sla: "Imediato; bloqueio automático se motivo vazio (R25)"
+        - stage_id: S_NUT
+          name: "Nutrição (pipe paralelo)"
+          objective: "Manter lead com sinal fraco aquecido. Ciclo 1 (30d) + Ciclo 2 (30d) com revisão humana D+30 e D+60. Descarte automático D+67 se sem decisão."
+          responsible: "Ops de Vendas + Repositório (automação)"
+          entry_criteria: ["Decisão de Nutrição tomada + motivo + ciclo"]
+          exit_criteria: ["Reaquecida → card NOVO em Qualificação (nunca reabre antigo — R23)", "D+67 → Descarte automático (R24)"]
+          deliverables: ["E-mails D+7 e D+15 (ciclo 1), D+37 e D+45 (ciclo 2)", "Revisão humana D+30 e D+60"]
+          sla: "30 + 30 + 7 dias"
+
+      icp:
+        segments: ["QS — Quick Serve (cafeteria, fast food, padaria, food truck, to-go)", "FS — Full Serve (restaurante com mesa, bar/cervejaria, rede com comanda)", "Zona de fronteira (avaliar caso a caso)", "Fora de ICP (descarte imediato)"]
+        size_range: "Faturamento mensal > 0 declarado (a calibrar baseline em D+30). Portes típicos: micro (1-2 pessoas / Smart POS), pequena (3-10 / PDV + opcional Totem), média (10-30 / suíte), grande/franquia (suíte + multi-unidade)."
+        geography: "Brasil. UFs cobertas no cadastro de Conta. Foco inicial sem restrição geográfica explícita."
+        buying_committee: ["Decisor = Proprietário/Sócio (papel obrigatório no Checklist Binário item 5)", "Influenciador = Gerente de Operação", "Operacional = Caixa/Garçom/Cozinha", "Gatekeeper = Secretária/Recepção (identificar cedo)"]
+      disqualification_criteria:
+        - "Fora de ICP (motivo 1): não atende perfil QS/FS, ex: indústria, varejo não-FS."
+        - "Faturamento abaixo (motivo 2): abaixo do mínimo viável a calibrar — [a confirmar na entrevista]."
+        - "Sem orçamento (motivo 3): fit existe mas orçamento indisponível — pode nutrir por 3 meses."
+        - "Tem sistema atual e não quer trocar (motivo 4): satisfação com solução atual — nutrir por 6 meses."
+        - "Projeto adiado/congelado (motivo 5): nutrir 3 meses."
+        - "Perdeu para concorrente (motivo 6): exige campo 'Qual concorrente'."
+        - "Preço acima do aceito (motivo 7): nutrir 3 meses com nova condição."
+        - "Não viu valor/fit técnico (motivo 8): revisar demo; nutrir 6 meses."
+        - "Sumiu/sem resposta (motivo 9): exige campo 'Último canal tentado'. 4 tentativas em 8 dias esgotadas."
+      key_metrics:
+        top_line: ["MT-01 MRR novo (R$/mês)", "MT-02 Nº fechamentos/mês", "MT-03 Ticket médio"]
+        alavanca: ["MA-01 Demos agendadas/mês", "MA-02 Propostas enviadas/mês", "MA-03 Leads outbound/semana"]
+        diagnostico: ["MD-01 Win Rate (GANHO / (GANHO+DESCARTE))", "MD-02/03 Ciclo médio QS (≤30d) e FS (≤45d)", "MD-04 No-show rate (≤15%)", "MD-05 Lead→MQL (≥70%)", "MD-06 MQL→SAL (≥40%)", "MD-07 SAL→Ganho (≥30%)", "MD-08 Ganho→Live (≥95%)", "MD-09 Taxa reativação Nutrição (≥20%)", "MD-10 Distribuição de motivos de descarte"]
+        nota: "Todos os targets são ilustrativos. Baselines reais a calibrar em D+30/D+60 (PDD §8)."
+
+    - name: "Pipe Pipefy (Fonte 2 — aterragem operacional)"
+      file: "/home/walterfrey/Documentos/code/nexuz/nxz-tutorial-agents/squads/nxz-pipefy-setup/output/2026-04-20-162723/v1/"
+      pipe_name: "Vendas"
+      plan: "Enterprise/Unlimited (quota ≥2.000 automation jobs/mês; consumo estimado ~250/mês → 87% folga)"
+      start_form_fields_essenciais: ["Nome do contato", "E-mail", "Telefone/WhatsApp", "Empresa", "Origem (Inbound/Outbound/Indicação/Evento/Parceiro)", "Canal preferido", "Consentimento LGPD (se Inbound)", "Quem indicou (se Indicação)", "Reason to Call/ICP/LinkedIn/Cargo (se Outbound)", "Cliente vinculado (opcional inicialmente)"]
+      phases:
+        - phase_id: "P1"
+          name: "Novo Lead"
+          done: false
+          sla: "2h úteis (Inbound/Indicação) / 48h úteis (Outbound)"
+          required_fields: ["Ops responsável (assignee)", "Campos do Start Form conforme Origem"]
+          key_fields: ["Origem", "Canal preferido", "Consentimento LGPD"]
+          automations: ["A-14 Feedback indicador D+7 (se Origem=Indicação)"]
+          email_templates: []
+          exit_conditions: ["Dados mínimos OK → avança para Qualificação", "Inbound com Checklist 6/6 → pula para Demo Agendada (R4)"]
+        - phase_id: "P2"
+          name: "Qualificação"
+          done: false
+          sla: "8 dias corridos (48h de inatividade dispara alerta)"
+          required_fields: ["Checklist Binário (6 checkboxes)", "Faturamento mensal", "Dor central (long_text)", "Nº unidades", "Urgência (long_text)", "≥1 Contato com papel=Decisor"]
+          key_fields: ["Data MQL (auto)", "Data SAL (auto na saída)"]
+          automations: ["A-01 Marcar Data MQL (ao entrar)", "A-02 Marcar Data SAL (ao sair)", "A-04 E-mail D+1 (ET-01)", "A-05 E-mail D+3 (ET-02)", "A-06 E-mail D+7 (ET-03)", "A-07 Alerta SLA D+8", "A-15 Alerta 48h inativo"]
+          email_templates: ["ET-01 'Que bom te conhecer'", "ET-02 'Um insight que pode ajudar'", "ET-03 'Última tentativa esta semana'"]
+          exit_conditions: ["Checklist 6/6 = true → Demo Agendada (GT-02)", "D+8 sem 6/6 → decidir Nutrição ou Descarte"]
+        - phase_id: "P3"
+          name: "Demo Agendada"
+          done: false
+          sla: "Data da demo + 1 dia útil"
+          required_fields: ["Cliente vinculado", "Contatos vinculados (≥1 decisor)", "Data da demo", "Tipo de demo (QS/FS)", "Quem vai conduzir", "Decisores na demo (texto)"]
+          key_fields: []
+          automations: []
+          email_templates: []
+          exit_conditions: ["Demo realizada (qualquer status) → Pós-demo"]
+        - phase_id: "P4"
+          name: "Pós-demo"
+          done: false
+          sla: "3 dias corridos"
+          required_fields: ["Status demo (Realizada com aceite / sem aceite / No-show)", "Aceite verbal (se aceite)", "Dor confirmada", "Data demo realizada"]
+          key_fields: ["Contagem de reagendamentos"]
+          automations: []
+          email_templates: []
+          exit_conditions: ["Aceite verbal = true → Proposta", "No-show + reagendamentos <3 → reagendar", "No-show + reagendamentos ≥3 → Nutrição (EXT-05)", "Sem aceite → Nutrição ou Descarte"]
+        - phase_id: "P5"
+          name: "Proposta"
+          done: false
+          sla: "15 dias corridos (auto-email D+3, alerta D+7, decisão D+15)"
+          required_fields: ["Data proposta enviada", "Preço base", "Margem aplicada (%)", "Valor proposto final", "MRR", "Módulos contratados", "Aceite proposta (gate absoluto)"]
+          key_fields: ["Desconto (%)", "Proposta (anexo)"]
+          automations: ["A-08 E-mail follow-up D+3 (ET-04)", "A-09 Alerta interno D+7", "A-10 Alerta decisão D+15", "A-12 Desconto >15% → notifica Gestão"]
+          email_templates: ["ET-04 'Conseguiu avaliar a proposta?'"]
+          exit_conditions: ["Aceite proposta = true → Fechamento (GT-07)", "D+15 sem resposta → Nutrição ou Descarte"]
+        - phase_id: "P6"
+          name: "Fechamento"
+          done: false
+          sla: "10 dias (CNPJ 48h + pagamento 5 dias + contrato 3 dias)"
+          required_fields: ["CNPJ (14 dígitos, único)", "Razão social", "Boleto emitido (Financeiro)", "Pagamento confirmado (Financeiro)", "Contrato assinado (Gestão)"]
+          key_fields: []
+          automations: ["A-11 Alerta 5d sem pagamento", "A-13 GANHO automático quando pgto+contrato=true"]
+          email_templates: []
+          exit_conditions: ["Pagamento + contrato ambos true → GANHO automático (R19)"]
+        - phase_id: "P7"
+          name: "GANHO"
+          done: true
+          sla: "Automático"
+          required_fields: []
+          key_fields: ["Data Ganho (auto)", "Notas de handoff"]
+          automations: ["A-03 Marcar Data Ganho"]
+          email_templates: []
+          exit_conditions: ["Handoff para Pipe Implantação (futuro, via create_connected_card)"]
+        - phase_id: "P8"
+          name: "DESCARTE"
+          done: true
+          sla: "Imediato"
+          required_fields: ["Motivo descarte (1 de 9)", "Qual concorrente (se motivo=Perdeu pra concorrente)", "Último canal tentado (se motivo=Sumiu/sem resposta)"]
+          key_fields: ["Data descarte (auto)", "Observação descarte"]
+          automations: []
+          email_templates: []
+          exit_conditions: ["Terminal. Card NUNCA reaberto. Reengajamento = card NOVO em Qualificação."]
+      databases:
+        - name: "Parceiros (abstrata)"
+          purpose: "Registro central de qualquer pessoa/empresa que se relaciona com a Nexuz. Suporta PF (Contatos) e PJ (Empresas). Contém: nome, documento (CPF/CNPJ), categoria (Cliente/Fornecedor/Colaborador/Contato/Prestador), contatos, endereço, papel no comitê (para PF), conta-mãe (para Contatos PF vinculados a uma PJ)."
+          connects_to_phases: ["Phase 3 Demo Agendada (via connector C-02: contatos_vinculados, filtro tipo_pessoa=PF)"]
+        - name: "Clientes (especializada)"
+          purpose: "Especialização de Parceiros com dados comerciais: ICP, porte, nº unidades, faturamento, sistema atual, status comercial, MRR atual, plano contratado, LTV, NPS."
+          connects_to_phases: ["Start Form + Phase 3 (via connector C-01: cliente_vinculado, 1:1)"]
+      mapping_pdd_to_pipe:
+        - pdd_stage: "S1A Novo Lead Inbound"
+          pipefy_phase: "P1 Novo Lead (Origem=Inbound + Consentimento LGPD obrigatório)"
+        - pdd_stage: "S1B Novo Lead Outbound"
+          pipefy_phase: "P1 Novo Lead (Origem=Outbound + Reason to Call/ICP/LinkedIn/Cargo obrigatórios)"
+        - pdd_stage: "S1C Novo Lead Indicação"
+          pipefy_phase: "P1 Novo Lead (Origem=Indicação + Quem indicou obrigatório + A-14 feedback D+7)"
+        - pdd_stage: "S2 Qualificação"
+          pipefy_phase: "P2 Qualificação (6 checkboxes + campos de suporte + A-04/A-05/A-06 cadência e-mail)"
+        - pdd_stage: "S3 Demo Agendada"
+          pipefy_phase: "P3 Demo Agendada (connectors Cliente+Contatos obrigatórios + tipo demo QS/FS)"
+        - pdd_stage: "S4 Pós-demo"
+          pipefy_phase: "P4 Pós-demo (Status demo + Aceite verbal + Dor confirmada)"
+        - pdd_stage: "S5 Proposta"
+          pipefy_phase: "P5 Proposta (precificação completa + A-08 follow-up + A-12 escalação desconto)"
+        - pdd_stage: "S6 Fechamento"
+          pipefy_phase: "P6 Fechamento (CNPJ + pagamento Financeiro + contrato Gestão)"
+        - pdd_stage: "S7 GANHO"
+          pipefy_phase: "P7 GANHO (A-13 automático quando pgto+contrato=true)"
+        - pdd_stage: "S8 DESCARTE"
+          pipefy_phase: "P8 DESCARTE (motivo de 9 + condicionais)"
+        - pdd_stage: "S_NUT Nutrição"
+          pipefy_phase: "[FORA DO PIPE v1] — Nutrição ainda não tem pipe separado implementado; no v1 é sinalizada no próprio card com motivo; implementação como pipe paralelo é gap para v2."
+      notes:
+        - "Field Conditions do Pipefy renderizam na UI mas NÃO bloqueiam via API (Rita research-findings). Scripts devem enviar todos os campos condicionais esperados."
+        - "Pipefy não suporta formula no título nativamente — título de Cliente é sincronizado via automação."
+        - "Janela de envio de e-mails ET-01 a ET-04: Seg-Sex 9h-18h BRT (R36)."
+        - "Sender em v1: e-mail padrão Nexuz; em produção configurar subdomínio dedicado com SPF/DKIM (R-08)."
+
+  gaps_for_playbook:
+    - gap: "Perguntas de descoberta específicas para cada item do Checklist Binário (como o vendedor pergunta sobre faturamento, dor, decisor, urgência em uma conversa de WhatsApp ou ligação)."
+      importance: alta
+      source_to_fill: "entrevista"
+    - gap: "Roteiro de demo QS (simplificada) — wow moments, duração real, CTAs de aceite verbal."
+      importance: alta
+      source_to_fill: "entrevista + NXZ Go Sales Operacional v1.0 (existe guia de demo genérico que pode ser adaptado)"
+    - gap: "Roteiro de demo FS (consultiva com PDF) — estrutura do diagnóstico, rollout proposto, data de resposta."
+      importance: alta
+      source_to_fill: "entrevista"
+    - gap: "Banco de objeções reais que o time de Ops Nexuz escuta (preço, migração do sistema atual, treinamento de equipe, multi-unidade, LGPD/fiscal, integração com adquirente)."
+      importance: alta
+      source_to_fill: "entrevista (Carol operando hoje)"
+    - gap: "Scripts de abertura por origem (cold WhatsApp outbound vs resposta a inbound vs indicação)."
+      importance: alta
+      source_to_fill: "entrevista"
+    - gap: "Gatilhos de urgência aceitáveis para Food Service (sazonalidade, abertura de nova unidade, troca de adquirente, problema fiscal) — precisa validar quais são reais e éticos."
+      importance: média
+      source_to_fill: "entrevista"
+    - gap: "Mini-script de qualificação de decisor (como identificar se está falando com decisor, influenciador, operacional ou gatekeeper) — papel é obrigatório no modelo de dados mas não há script."
+      importance: alta
+      source_to_fill: "entrevista"
+    - gap: "Critérios numéricos de ICP (faturamento mínimo, nº unidades mínimo) — hoje PDD deixa como 'a calibrar'."
+      importance: alta
+      source_to_fill: "entrevista com sponsor (Walter) + PDD §8 calibração D+30"
+    - gap: "Tabela de preços operacional (preço base por produto × margem típica × desconto máximo sem aprovação)."
+      importance: alta
+      source_to_fill: "planilha interna de precificação (citada no PDD §15.1) — entrevista para liberar para o playbook"
+    - gap: "Template de proposta PDF FS (estrutura: diagnóstico → solução → rollout → preço → data de resposta)."
+      importance: alta
+      source_to_fill: "entrevista (pedir exemplo real anônimo)"
+    - gap: "Roteiro de handoff verbal para Implantação no momento do GANHO (o que Ops passa para Relacionamento além do pacote digital automático)."
+      importance: média
+      source_to_fill: "entrevista + PDD §R40"
+    - gap: "Cases de sucesso/prova social para usar em Qualificação e Proposta (No. Coffee citado como multi-unidade ativa — precisa validar quais cases podem ser citados)."
+      importance: média
+      source_to_fill: "entrevista"
+    - gap: "Checklist de pré-demo (como confirmar presença, enviar link, preparar ambiente, demo offline se prospect sem internet)."
+      importance: média
+      source_to_fill: "entrevista"
+    - gap: "Playbook de reengajamento por motivo de descarte (o que falar ao reabrir contato 3/6 meses depois por motivo específico)."
+      importance: baixa
+      source_to_fill: "entrevista"
+
+  recommendations:
+    template_structure:
+      - section: "1. Visão geral do processo comercial Nexuz"
+        purpose: "Fornecer mental model de 1 página: fluxo PDD (S1→S7/S8 + Nutrição), papéis (Ops/Gestão/Financeiro/Relacionamento), marcos POD (Lead/MQL/SAL/Ganho/Live), aterragem no Pipe Pipefy (P1→P8)."
+        priority: alta
+        content_sources: [PDD §1-§2, PDD §7, pipe-design.md §1-§3]
+
+      - section: "2. ICP e comitê de compra — quem é cliente Nexuz e quem decide"
+        purpose: "Critérios objetivos de ICP (QS/FS/Zona/Fora), faixa de faturamento, nº unidades, geografia; mapeamento de personas do comitê (Proprietário=decisor / Gerente=influenciador / Caixa-Garçom=operacional / Gatekeeper)."
+        priority: alta
+        content_sources: [PDD §3.1, Persona v0.2, Negócios v0.4, Produtos v0.2]
+
+      - section: "3. Etapa S1 — Entrada de leads (Inbound/Outbound/Indicação): script de abertura + Pipefy"
+        purpose: "O que fazer em 2h/48h úteis. Script por origem. Campos obrigatórios no Start Form. Como atribuir Ops responsável e vincular Cliente no Pipefy. Feedback ao indicador em até 7 dias."
+        priority: alta
+        content_sources: [PDD §2, §5 R1-R4, §9 SLAs de Entrada, pipe-design §3.2, specs/02-pipe-vendas.json]
+
+      - section: "4. Etapa S2 — Qualificação 100% humana: Checklist Binário + BANT/SPIN + cadência"
+        purpose: "Roteiro de qualificação (perguntas por item do Checklist Binário: fit, faturamento, dor, unidades, decisor, urgência). Amarração com BANT e SPIN (situação/problema/implicação/necessidade). Cadência 4 toques em 8d. Templates ET-01/02/03 do Pipefy. Critério de avanço: Checklist 6/6 = SAL."
+        priority: alta
+        content_sources: [PDD §5 R5-R7, §5A Checklist Binário, §6.1, specs/07-email-templates.json ET-01/02/03]
+
+      - section: "5. Etapa S3 + S4 — Demo (QS vs FS) e Pós-demo: roteiro + aceite verbal"
+        purpose: "Roteiro de demo segmentado: QS simplificada (15 min, wow moments), FS consultiva (30 min, diagnóstico). Wow moments canônicos do NXZ Go Sales v1.0. Como obter aceite verbal (gate absoluto F-Proposta). Como registrar no Pipefy (Status demo, Aceite verbal, Dor confirmada)."
+        priority: alta
+        content_sources: [PDD §5 R8-R10, §5A F-Demo e F-Proposta, §6 cadência, NXZ Go Sales Operacional §7, pipe-design §3.4 P3/P4]
+
+      - section: "6. Etapa S5 — Proposta: precificação + cadência + objeções de preço/migração"
+        purpose: "Como montar proposta (QS mensagem / FS PDF consultivo). Preço base + margem + desconto (limite de 15% sem escalação, GT-11). Cadência 15d com follow-up ET-04 D+3, alerta D+7, decisão D+15. Banco de objeções de preço/migração/treinamento."
+        priority: alta
+        content_sources: [PDD §5 R11-R18, §6.2, §15 Precificação, specs/07-email-templates.json ET-04, pipe-design §3.4 P5]
+
+      - section: "7. Etapa S6 + S7 — Fechamento e GANHO: orquestração Ops × Financeiro × Gestão"
+        purpose: "Coleta de CNPJ (14 dígitos, unicidade R33). Handoff Ops→Financeiro para boleto (5d SLA). Handoff Ops→Gestão para contrato (3d SLA). Transição automática para GANHO (R19/A-13). Handoff para Implantação."
+        priority: alta
+        content_sources: [PDD §5 R19, R31-R33, §4 RACI T-14/T-15/T-16/T-17, §5A F-Fechamento e F-GANHO, §16 handoff, pipe-design §3.4 P6/P7]
+
+      - section: "8. Banco de objeções por etapa + respostas (suíte inteira)"
+        purpose: "Objeções típicas Food Service: 'já tenho sistema', 'é caro', 'vou perder dados na migração', 'minha equipe não vai aprender', 'e se cair a internet', 'e multi-unidade?', 'só preciso de maquininha', 'quero só o totem', 'tenho contabilidade própria'. Respostas ancoradas em produto + dados reais."
+        priority: alta
+        content_sources: [NXZ Go Sales §4/§5, NXZ Go Totem §Objeções, NXZ Go PDV §Objeções, NXZ Go Smart POS §Objeções, Produtos v0.2 §diferenciais]
+
+      - section: "9. Descarte e Nutrição: 9 motivos + regras de reengajamento"
+        purpose: "Como registrar descarte (motivo obrigatório 1/9, campos condicionais). Decisão entre Nutrição e Descarte. Pipe de Nutrição: 2 ciclos de 30d, D+7/D+15 e-mail auto, revisão D+30/D+60, descarte auto D+67. Janela de reengajamento por motivo (3 ou 6 meses)."
+        priority: média
+        content_sources: [PDD §5 R21-R30, §6.3, §13 motivos, §12 EXT-05/06]
+
+      - section: "10. Mapeamento 1:1 — etapa do funil × ação no Pipefy (quick reference)"
+        purpose: "Tabela final que o vendedor consulta no dia-a-dia: 'Estou em X, preciso fazer Y, mover card para Z, preencher campos A/B/C, disparar template T.' Cobre todas as 8 fases + Nutrição."
+        priority: alta
+        content_sources: [pipe-design §3.3-§3.9, specs/03-phase-fields.json, specs/06-automations.json]
+
+      - section: "11. Templates de e-mail e mensagens prontas"
+        purpose: "Reproduzir ET-01 a ET-04 exatamente como configurados + adicionar templates de WhatsApp (canal primário R35) e follow-up humano que NÃO estão automatizados no Pipefy."
+        priority: alta
+        content_sources: [specs/07-email-templates.json, PDD §5 R35-R36]
+
+      - section: "12. Checklist diário de Sales-Ops + métricas e SLAs do Meu Dia"
+        purpose: "O que o Ops verifica toda manhã: cards com alerta SLA, leads D+1/D+3/D+7 para cadência, propostas D+3/D+7/D+15, cards em Fechamento pendentes. Dashboard 'Meu Dia' do PDD §14.1 com 5 cards de progresso."
+        priority: média
+        content_sources: [PDD §10 SLAs internos, §14.1 Meu Dia, §8.2 metas de alavanca]
+
+    must_include:
+      - "Mapeamento 1:1 PDD → Pipefy: cada etapa do funil tem uma fase, com campos obrigatórios, automações disparadas, e templates associados."
+      - "Checklist Binário expandido: por item, exemplos de perguntas para coletar + como registrar no Pipefy."
+      - "Banco de objeções mínimo de 15 objeções reais com resposta + evidência (dado real ou funcionalidade)."
+      - "Templates de e-mail ET-01 a ET-04 reproduzidos exatamente + templates de WhatsApp para canal primário (não existem automatizados)."
+      - "Critérios de descarte por motivo (9 motivos + janela de reengajamento)."
+      - "Matriz de decisão 'qual produto recomendar?' por dor do prospect — especialmente importante porque a suíte tem NXZ Go em 3 modos + ERP + KDS + Delivery + Pay Go."
+      - "Regra crítica: KDS é sistema separado, nunca apresentar como 'modo do NXZ Go'."
+      - "SLA por etapa + o que fazer quando estoura (quem escala para quem)."
+      - "Gates absolutos (aceite verbal antes de Proposta, aceite proposta antes de Fechamento, pagamento+contrato para GANHO) com frase pronta para cobrar do lead."
+      - "Janela de contato LGPD-compliant (Seg-Sex 9h-18h, nunca domingo)."
+      - "Roteiro de handoff para Implantação (o que Ops passa verbalmente além do pacote digital automático)."
+      - "Prova social: dados reais (3.184 pedidos, R$ 146.715 volume, No. Coffee multi-unidade) — validar na entrevista quais podem ser citados."
+
+    cross_references:
+      - from: "Playbook §4 Qualificação"
+        to: "NXZ ERP"
+        relation: "produto vendido (backend obrigatório da suíte)"
+      - from: "Playbook §4 e §5"
+        to: "NXZ Go (Totem/PDV/Smart POS)"
+        relation: "produto vendido (3 modos — demo diferenciada por operação)"
+      - from: "Playbook §5 Demo"
+        to: "NXZ KDS"
+        relation: "produto vendido (sistema separado de cozinha; apresentar quando dor = 'pedido chega errado na cozinha' ou 'cozinha lenta')"
+      - from: "Playbook §5 e §8"
+        to: "NXZ Delivery"
+        relation: "produto vendido (quando prospect faz delivery via iFood/Rappi — centraliza canais)"
+      - from: "Playbook §5 e §6"
+        to: "NXZ Pay Go"
+        relation: "produto vendido (escopo ampliado do briefing — meio de pagamento/adquirente integrado; [a confirmar na entrevista] posicionamento exato)"
+      - from: "Playbook §7 Fechamento"
+        to: "Implantação/Relacionamento (Matheus, Luiz)"
+        relation: "handoff cross-departamento pós-GANHO"
+      - from: "Playbook §12 Checklist diário"
+        to: "Dashboard 'Meu Dia' (PDD §14.1)"
+        relation: "instrumentação operacional diária"
+
+  best_practices_research:
+    principles:
+      - principle: "BANT simplificado (Budget/Authority/Need/Timeline) é suficiente para deals SMB/mid-market de ACV menor; MEDDIC só agrega em deals enterprise (>R$100k ARR)."
+        source: "BANT vs MEDDIC: Choosing the Right Sales Qualification Framework in 2026 — outdoo.ai"
+        applicability: "Nexuz vende SaaS Food Service com ticket mensal médio indicativo baixo (R$128-153/módulo × unidades); BANT é a base correta, com 1 adendo MEDDIC: identificar Economic Buyer (Proprietário = item 5 do Checklist Binário 'Decisor confirmado'). O Checklist Binário do PDD JÁ É uma forma BANT-adjacente (Faturamento=Budget, Decisor=Authority, Dor=Need, Urgência=Timeline) + 2 extras (Fit/ICP e Nº unidades). Fortalecer no playbook: renomear internamente cada item do Checklist ao dimensão BANT correspondente para treinar o Ops."
+      - principle: "Em SaaS B2B moderno (2026), o vendedor é 'champion builder': precisa identificar quem internamente vai defender a compra mesmo quando o vendedor não está na sala."
+        source: "Sales Qualification: BANT, MEDDIC & SPICED for B2B SaaS (2026) — nimitai.com"
+        applicability: "No Food Service, o 'champion' típico é o Gerente de Operação (sofre dor diária de caixa/estoque/cozinha) e o Proprietário só valida financeiramente. No playbook §4, adicionar uma linha: 'após confirmar decisor (Proprietário), procurar o Gerente de Operação como champion interno — ele replica a proposta internamente entre uma reunião e outra'."
+      - principle: "Frameworks híbridos por segmento: BANT para ≤R$25k, MEDDIC para ≥R$100k."
+        source: "BANT vs MEDDIC: Which Sales Qualification Framework Wins? — sybill.ai"
+        applicability: "Nexuz pode evoluir: BANT para QS (Quick Serve, ticket menor), MEDDIC para FS/multi-unidade/franquia (ticket × unidades pode ultrapassar R$100k anuais fácil). Playbook v1: BANT unificado; playbook v2: diferenciar."
+      - principle: "Cadência de 4 toques em 8 dias é o padrão recomendado para inbound SMB SaaS — acima disso, ROI de follow-up cai."
+        source: "BANT qualified leads: modern framework and AI automation in 2026 — monday.com"
+        applicability: "A cadência do PDD §6.1 (D+0/D+1/D+3/D+7, 4 toques em 8d) está ALINHADA com best practice. Reforçar no playbook que D+8 sem resposta é o corte correto para mover para Nutrição — evitar 'over-follow-up' que deteriora reputação e bounce rate."
+      - principle: "Em SaaS 2026, e-mail é canal de backup; o canal primário de qualificação SMB é mensageria (WhatsApp no Brasil, iMessage em outros mercados)."
+        source: "Modern SaaS Qualification (industry consensus, vários resultados)"
+        applicability: "PDD R35 explícita WhatsApp como canal primário. Playbook DEVE ter templates de WhatsApp (curtos, conversacionais) complementando os ET-01/02/03/04 de e-mail. Hoje existem só templates de e-mail no Pipefy; WhatsApp é ação humana do Ops — documentar no playbook."
+
+metadata:
+  generated_by: "nxz-context-briefings - Analista de Contexto (persona)"
+  generated_at: "2026-04-21"
+  run: "2026-04-21-171843"
+  version: "v1"
+  next_step: "Writer consome este YAML + entrevista com usuário para fechar os gaps de conteúdo de venda (roteiros, objeções reais, ICP calibrado) → playbook final em Markdown."

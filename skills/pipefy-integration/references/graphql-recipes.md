@@ -256,6 +256,27 @@ mutation {
 }
 ```
 
+### Create Email Template (⚠️ endpoint interno)
+> **Nota:** `createEmailTemplate` NÃO existe em `https://api.pipefy.com/graphql` (público).
+> Descoberto 2026-04-21 que existe em `https://app.pipefy.com/graphql/core` (interno) e aceita o mesmo Bearer token. Ver `known-limitations.md#14`.
+
+```bash
+curl -s 'https://app.pipefy.com/graphql/core' \
+  -H "Authorization: Bearer $PIPEFY_API_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"query":"mutation($i:createEmailTemplateInput!){createEmailTemplate(input:$i){id name subject fromEmail toEmail}}","variables":{"i":{"repoId":"307117441","name":"ET-01 Confirmação Demo","subject":"Demo confirmada para {{data_da_demo}}","body":"<p>Olá {{nome_contato}},</p>","fromName":"Nexuz Comercial","fromEmail":"comercial@comunica.nexuz.com.br","toEmail":"{{contatos_do_deal}}","locale":"pt-BR","timeZone":"America/Sao_Paulo"}}}' | jq .
+```
+
+**Input fields** (`createEmailTemplateInput`):
+- **Required**: `repoId` (pipe id), `name`, `subject`, `body` (HTML), `fromName`, `fromEmail`, `toEmail`, `locale`, `timeZone`
+- **Optional**: `bccEmail`, `ccEmail`
+- `toEmail` aceita slug de connector/field do pipe em `{{slug}}` — ex.: `{{contatos_do_deal}}` resolve para o email do contato na automação
+
+**Mutations correlatas** (mesmo endpoint):
+- `updateEmailTemplate(input: updateEmailTemplateInput!)` — input tem `id` + campos opcionais
+- `deleteEmailTemplate(input: deleteEmailTemplateInput!)` — input: `{ id }` → retorna `{ success }`
+- `createEmailSignature` / `updateEmailSignature` / `deleteEmailSignature` (mesmo padrão)
+
 ### Create Card
 ```graphql
 mutation {

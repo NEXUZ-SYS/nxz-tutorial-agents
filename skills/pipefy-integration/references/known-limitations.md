@@ -34,6 +34,8 @@
 | 11 | Webhooks SLA não funcionam em Tables | Late/expired só funciona em Pipes | Usar automações internas |
 | 12 | Automações não retornam na query `pipe()` | Precisam de query separada `automations()` | Usar `automations(repoId, organizationId)` |
 | 13 | Quota 300 jobs/mês (Business) | Pode esgotar com funil ativo | Monitorar mensalmente; considerar Enterprise |
+| 14 | **`/graphql` (public) NÃO tem `createEmailTemplate`**, mas `/graphql/core` (interno) tem — e aceita o mesmo Bearer token | Sem o endpoint interno, email templates precisariam ser criados via UI/Playwright | **Descoberto 2026-04-21**: usar `https://app.pipefy.com/graphql/core` com `PIPEFY_API_TOKEN` para `createEmailTemplate`, `updateEmailTemplate`, `deleteEmailTemplate`, `createEmailSignature`, `updateEmailSignature`, `deleteEmailSignature`. Input schema: `name`, `subject`, `body`, `fromName`, `fromEmail`, `toEmail`, `locale`, `timeZone`, `repoId` (todos NOT NULL); `bccEmail`, `ccEmail` opcionais. `toEmail` aceita slug de connector/field do pipe (ex.: `{{contatos_do_deal}}`). |
+| 15 | **`/graphql/core` é endpoint "interno" descoberto via recon network** | Pode mudar sem aviso; não está na documentação pública do Pipefy | Monitorar; se mudar, re-sniffar com `scripts/templates/recon-email-templates.js` |
 
 ## UI-Only Operations (Playwright necessário)
 

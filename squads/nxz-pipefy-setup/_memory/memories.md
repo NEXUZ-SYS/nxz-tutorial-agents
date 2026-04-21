@@ -58,3 +58,44 @@
 Pipefy tem várias configurações UI-only que não existem em mutations GraphQL.
 Padrão estabelecido: **API para o que der + Playwright CLI para o resto**, ambos via skill.
 Template genérico cobre: login 2-step auto, navegação em drawer/modal, CKEditor em iframe.
+
+---
+
+## Continuation (Run 2026-04-21)
+
+### Layers 5-7 concluídas via sniff + replay de /internal_api e /queries
+
+**Padrão validado (Pipefy internal API replay):**
+1. Rodar `sniff-automation-mutation.js` promíscuo (captura TODO POST exceto assets/telemetry).
+2. Usuário faz 1 criação manual na UI → capturamos `url`, `operationName`, `query`, `variables`, `requestHeaders`.
+3. Extrair `X-CSRF-Token` do header capturado (Rails-style, vem do meta tag `<meta name="csrf-token">` na página).
+4. Replay via `page.evaluate` com fetch incluindo `X-CSRF-Token` + `credentials: 'include'`.
+
+**3 endpoints GraphQL descobertos no Pipefy:**
+- `api.pipefy.com/graphql` — público, Bearer token. Aceita delete*, read, maioria de create*. Rejeita `createAutomation` com combos scheduler/sla/card_moved, rejeita `createFieldCondition` ("Algo deu errado").
+- `app.pipefy.com/internal_api` — `createAutomation`, `createEmailTemplate`.
+- `app.pipefy.com/queries` — `createFieldCondition` (apesar do nome, aceita mutations).
+
+**Pipefy peculiaridades novas:**
+- **URL validation in send_http_request**: Pipefy faz DNS lookup. `.internal` TLD rejeitado, `hooks.nexuz.com.br` (subdomínio sem record) rejeitado, `nexuz.com.br/path` (domínio raiz que resolve) aceito. Usar root domain como placeholder.
+- **Event×Action blacklist (scheduler)**: scheduler event bloqueia send_email_template, send_http_request, update_card_field. Só aceita `schedule_create_card`. Efetivamente inutilizável para cadências/alertas.
+- **sla_based só tem 2 thresholds por fase** (`late` + `expired`). 3º+ threshold requer external cron.
+- **FieldCondition action enum público = ["hidden"]**, mas internal aceita `"show"` (não está no schema público).
+- **Start form tem própria phaseId** (`pipe.startFormPhaseId`), não é nenhuma das 8 phases visíveis.
+
+### Outputs criados nesta continuation
+- `skills/pipefy-integration/scripts/templates/sniff-automation-mutation.js` (v4 — promíscuo + captura headers)
+- `skills/pipefy-integration/scripts/templates/bulk-create-automations.js` (replay via /internal_api com CSRF)
+- `skills/pipefy-integration/scripts/templates/bulk-create-field-conditions.js` (replay via /queries com CSRF)
+- `skills/pipefy-integration/scripts/templates/probe-pipefy-auth.js` (diagnóstico de auth)
+- `output/2026-04-20-162723/v1/external-cron-spec.md` (A-05/06/10/16 docs p/ cron externo)
+- `output/2026-04-20-162723/v1/specs/05-field-conditions-final.json` (FCs com IDs reais)
+- `output/2026-04-20-162723/v1/specs/06-automations-final.json` (9 automations + 5 deferidas)
+
+### Reusable learnings para novos pipes
+Reusar o stack `sniff + bulk-create-*` em qualquer pipe Pipefy:
+1. Editar `config.automations[].variables` com IDs do novo pipe (phase_ids, field_ids, template_ids)
+2. Rodar `bulk-create-automations.js`
+3. Mesmo pattern para field conditions
+
+Skill `pipefy-integration` agora cobre end-to-end: create pipe → customize UI → email templates → automations → field conditions. Falta apenas: deletar automações em lote (existe script? criar se precisar).
