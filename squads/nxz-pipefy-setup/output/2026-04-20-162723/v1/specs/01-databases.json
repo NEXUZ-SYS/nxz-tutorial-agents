@@ -1,0 +1,77 @@
+{
+  "_description": "Mutations para criar as tabelas Parceiros (abstrata) e Clientes (especializada). Executar nesta ordem.",
+  "_order": ["createTable:parceiros", "createTableField:parceiros.*", "createTable:clientes", "createTableField:clientes.*", "updateTable:parceiros.title_field", "updateTable:clientes.title_field"],
+  "organization_id": "302461450",
+  "tables": [
+    {
+      "id": "parceiros",
+      "mutation": "createTable",
+      "input": {
+        "organization_id": "$ORG_ID",
+        "name": "Parceiros",
+        "description": "Registro central de qualquer parceiro (PF ou PJ). Clientes, Fornecedores, Colaboradores, Contatos são especializações.",
+        "icon": "globe",
+        "public": false,
+        "authorization": "write_access"
+      },
+      "fields": [
+        { "label": "Nome / Razão Social", "type": "short_text", "required": true, "is_title": true },
+        { "label": "Nome Fantasia", "type": "short_text", "required": false },
+        { "label": "Tipo pessoa", "type": "select", "required": true, "options": ["PF", "PJ"] },
+        { "label": "Documento (CPF ou CNPJ)", "type": "short_text", "required": true, "description": "11 dígitos (CPF) ou 14 (CNPJ), sem máscara" },
+        { "label": "Categoria primária", "type": "label_select", "required": true, "options": ["Cliente", "Fornecedor", "Colaborador", "Contato", "Prestador"], "can_have_multiple_values": true },
+        { "label": "E-mail principal", "type": "email", "required": false },
+        { "label": "Telefone/WhatsApp", "type": "phone", "required": false },
+        { "label": "CEP", "type": "short_text", "required": false },
+        { "label": "Endereço", "type": "long_text", "required": false },
+        { "label": "Cidade", "type": "short_text", "required": false },
+        { "label": "UF", "type": "select", "required": false, "options": ["AC","AL","AP","AM","BA","CE","DF","ES","GO","MA","MT","MS","MG","PA","PB","PR","PE","PI","RJ","RN","RS","RO","RR","SC","SP","SE","TO"] },
+        { "label": "Website", "type": "short_text", "required": false },
+        { "label": "LinkedIn", "type": "short_text", "required": false },
+        { "label": "Instagram", "type": "short_text", "required": false },
+        { "label": "Papel no comitê", "type": "select", "required": false, "options": ["Decisor", "Influenciador", "Operacional", "Gatekeeper"], "description": "Aplicável somente a Contatos (PF)" },
+        { "label": "Status", "type": "select", "required": true, "options": ["Ativo", "Inativo", "Bloqueado"] },
+        { "label": "Data cadastro", "type": "datetime", "required": false, "description": "Preenchido automaticamente na criação" },
+        { "label": "Observações", "type": "long_text", "required": false }
+      ]
+    },
+    {
+      "id": "clientes",
+      "mutation": "createTable",
+      "input": {
+        "organization_id": "$ORG_ID",
+        "name": "Clientes",
+        "description": "Especialização comercial de Parceiros (CTI). Connector 1:1 para Parceiros via campo 'parceiro'. Enforcement por pre-check client-side (ver design-decisions DD-002).",
+        "icon": "briefcase",
+        "public": false,
+        "authorization": "write_access"
+      },
+      "fields": [
+        { "label": "Parceiro", "type": "connector", "required": true, "connector_target": "table:parceiros", "can_connect_multiples": false, "can_create_new_connected": true, "can_connect_existing": true, "is_title_related": true, "description": "CONNECTOR 1:1 — antes de criar, SEMPRE verificar se o parceiro já tem registro em Clientes (DD-002 camada 1)" },
+        { "label": "Segmento/ICP", "type": "select", "required": true, "options": ["QS", "FS", "Zona de fronteira", "Fora de ICP"] },
+        { "label": "Porte", "type": "select", "required": false, "options": ["Micro (1-9)", "Pequena (10-49)", "Média (50-249)", "Grande (250+)"] },
+        { "label": "Nº unidades", "type": "number", "required": false },
+        { "label": "Faturamento mensal", "type": "currency", "required": false },
+        { "label": "Sistema atual", "type": "short_text", "required": false },
+        { "label": "Status comercial", "type": "select", "required": true, "options": ["Prospect", "Proposta em negociação", "Ativo (Live)", "Cancelado"] },
+        { "label": "MRR atual", "type": "currency", "required": false },
+        { "label": "Plano contratado", "type": "checklist_vertical", "required": false, "options": ["ERP", "PDV/Go", "Smart POS", "KDS", "Delivery", "Inteligência", "Manager", "Brain", "Setup-as-a-Service", "Retainer de Performance"] },
+        { "label": "Data primeiro contato", "type": "date", "required": false },
+        { "label": "Data Live (conversão)", "type": "date", "required": false, "description": "Marco POD Live (data de ativação pós-handoff)" },
+        { "label": "LTV estimado", "type": "currency", "required": false },
+        { "label": "NPS atual", "type": "number", "required": false },
+        { "label": "Observações comerciais", "type": "long_text", "required": false }
+      ]
+    }
+  ],
+  "title_field_adjustments": [
+    {
+      "_comment": "Título de Clientes sincronizado via automação A-SYNC-TITLE. Como Pipefy não suporta formula de título, criamos um campo short_text 'Título exibição' e populamos por automação quando o connector parceiro muda.",
+      "table": "clientes",
+      "action": "create_short_text_field_and_automation",
+      "field_label": "Título exibição",
+      "sync_trigger": "record_field_updated(parceiro)",
+      "sync_action": "set_field_value(título_exibição = parceiro.nome_razao_social + ' [C-' + id + ']')"
+    }
+  ]
+}

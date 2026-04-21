@@ -1,0 +1,75 @@
+{
+  "_description": "6 Field Conditions para visibilidade dinâmica. Criadas via createFieldCondition na phase apropriada. Limitação documentada: regras renderizam na UI mas não bloqueiam escrita via API — Caio deve garantir que campos condicionais sejam enviados quando a condição controladora for satisfeita.",
+  "field_conditions": [
+    {
+      "id": "FC-01",
+      "phase": "Novo Lead (start form)",
+      "name": "Consent LGPD obrigatório se Inbound",
+      "controller_field": "Origem",
+      "operator": "equals",
+      "value": "Inbound",
+      "affected_fields": [
+        { "label": "Consentimento LGPD", "visibility": "show", "required_override": true }
+      ]
+    },
+    {
+      "id": "FC-02",
+      "phase": "Novo Lead (start form)",
+      "name": "Campos de indicação",
+      "controller_field": "Origem",
+      "operator": "equals",
+      "value": "Indicação",
+      "affected_fields": [
+        { "label": "Quem indicou", "visibility": "show", "required_override": true },
+        { "label": "Contexto da indicação", "visibility": "show", "required_override": false }
+      ]
+    },
+    {
+      "id": "FC-03",
+      "phase": "Novo Lead (start form)",
+      "name": "Campos de outbound",
+      "controller_field": "Origem",
+      "operator": "equals",
+      "value": "Outbound",
+      "affected_fields": [
+        { "label": "Reason to Call", "visibility": "show", "required_override": true },
+        { "label": "ICP", "visibility": "show", "required_override": true },
+        { "label": "LinkedIn do contato", "visibility": "show", "required_override": true },
+        { "label": "Cargo", "visibility": "show", "required_override": true }
+      ]
+    },
+    {
+      "id": "FC-04",
+      "phase": "Pós-demo",
+      "name": "Aceite verbal obrigatório quando demo realizada com aceite",
+      "controller_field": "Status demo",
+      "operator": "equals",
+      "value": "Realizada com aceite",
+      "affected_fields": [
+        { "label": "Aceite verbal", "visibility": "show", "required_override": true }
+      ]
+    },
+    {
+      "id": "FC-05",
+      "phase": "DESCARTE",
+      "name": "Qual concorrente se motivo=6",
+      "controller_field": "Motivo descarte",
+      "operator": "equals",
+      "value": "6. Perdeu pra concorrente",
+      "affected_fields": [
+        { "label": "Qual concorrente", "visibility": "show", "required_override": true }
+      ]
+    },
+    {
+      "id": "FC-06",
+      "phase": "DESCARTE",
+      "name": "Último canal tentado se motivo=9",
+      "controller_field": "Motivo descarte",
+      "operator": "equals",
+      "value": "9. Sumiu/sem resposta",
+      "affected_fields": [
+        { "label": "Último canal tentado", "visibility": "show", "required_override": true }
+      ]
+    }
+  ]
+}

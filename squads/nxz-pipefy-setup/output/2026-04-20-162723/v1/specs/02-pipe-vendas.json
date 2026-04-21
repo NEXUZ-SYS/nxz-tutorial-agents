@@ -1,0 +1,47 @@
+{
+  "_description": "Criação do Pipe Vendas com 8 phases, labels e start_form_fields em 1 call via createPipe (ou em chamadas separadas se necessário). Fields adicionais por phase ficam em 03-phase-fields.json.",
+  "organization_id": "302461450",
+  "mutation": "createPipe",
+  "input": {
+    "organization_id": "$ORG_ID",
+    "name": "Vendas",
+    "icon": "sales",
+    "noun": "deal",
+    "anyone_can_create_card": false,
+    "public": true,
+    "create_card_label": "Nova oportunidade",
+    "labels": [
+      { "name": "Frio", "color": "#2979FF" },
+      { "name": "Morno", "color": "#FFAB00" },
+      { "name": "Quente", "color": "#FF3D00" },
+      { "name": "QS", "color": "#4CAF50" },
+      { "name": "FS", "color": "#FF9800" },
+      { "name": "Fora ICP", "color": "#757575" }
+    ],
+    "phases": [
+      { "name": "Novo Lead", "done": false, "description": "Recepção de leads (Inbound/Outbound/Indicação/Evento/Parceiro). Ops valida dados mínimos (SLA 2h inbound/indicação, 48h outbound)." },
+      { "name": "Qualificação", "done": false, "description": "Cadência humana D+0/D+1/D+3/D+7. Gate de saída: Checklist Binário 6/6 (fit, faturamento, dor, unidades, decisor, urgência). SLA 8 dias corridos." },
+      { "name": "Demo Agendada", "done": false, "description": "Demo QS (simplificada) ou FS (consultiva). SLA: data demo + 1 dia útil." },
+      { "name": "Pós-demo", "done": false, "description": "Captura desfecho: aceite verbal / sem aceite / no-show. SLA 3 dias." },
+      { "name": "Proposta", "done": false, "description": "Envio + cadência follow-up (D+3 e-mail auto, D+7 alerta, D+15 decisão). Gate: aceite proposta + MRR + módulos. SLA 15 dias." },
+      { "name": "Fechamento", "done": false, "description": "Coleta dados fiscais (CNPJ), Financeiro confirma pagamento, Gestão assina contrato. Transição automática para GANHO quando pgto+contrato=true (R19). SLA total 10 dias." },
+      { "name": "GANHO", "done": true, "description": "Terminal positivo. Entrada automática (A-13). Handoff para Pipe Implantação (fora do escopo v1)." },
+      { "name": "DESCARTE", "done": true, "description": "Terminal negativo. Motivo obrigatório (9 motivos + campos condicionais). Card nunca reaberto (R29)." }
+    ],
+    "start_form_fields": [
+      { "label": "Nome do contato", "type": "short_text", "required": true },
+      { "label": "E-mail", "type": "email", "required": true },
+      { "label": "Telefone/WhatsApp", "type": "phone", "required": true },
+      { "label": "Empresa (razão social ou fantasia)", "type": "short_text", "required": true },
+      { "label": "Origem", "type": "select", "required": true, "options": ["Inbound", "Outbound", "Indicação", "Evento", "Parceiro"] },
+      { "label": "Canal preferido", "type": "select", "required": true, "options": ["WhatsApp", "LinkedIn", "Instagram", "Facebook", "E-mail", "Ligação"] },
+      { "label": "Consentimento LGPD", "type": "checkbox", "required": false, "description": "Obrigatório se Origem=Inbound (via Field Condition FC-01)" },
+      { "label": "Quem indicou", "type": "short_text", "required": false, "description": "Obrigatório se Origem=Indicação (FC-02)" },
+      { "label": "Contexto da indicação", "type": "long_text", "required": false },
+      { "label": "Reason to Call", "type": "long_text", "required": false, "description": "Obrigatório se Origem=Outbound (FC-03)" },
+      { "label": "ICP", "type": "select", "required": false, "options": ["QS", "FS", "Zona de fronteira", "Fora de ICP"], "description": "Obrigatório se Origem=Outbound" },
+      { "label": "LinkedIn do contato", "type": "short_text", "required": false },
+      { "label": "Cargo", "type": "short_text", "required": false }
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "_description": "4 email templates da cadência de Qualificação (3) e Proposta (1). Criados via API (Pipefy Email Template) e referenciados pelas automações A-04 a A-08.",
+  "_sending_window": "Seg-Sex, 9h-18h BRT (R36). Fora desse horário, enfileirar para próximo slot útil.",
+  "_sender_email": "Domínio com SPF/DKIM configurados (R-08 controle). Em v1 usar o e-mail padrão da Nexuz; configurar subdomínio dedicado (e.g., comercial@comunica.nexuz.com.br) antes do go-live produtivo.",
+  "email_templates": [
+    {
+      "id": "ET-01",
+      "name": "Qualificação D+1",
+      "subject": "{{empresa}}, que bom te conhecer",
+      "to": "{{lead_email}}",
+      "from_name": "{{ops_responsavel_nome}} · Nexuz",
+      "body_html": "<p>Olá {{nome_contato}},</p><p>Meu nome é {{ops_responsavel_nome}} e cuido das novas oportunidades aqui na Nexuz. Ontem recebemos o seu interesse sobre a <strong>{{empresa}}</strong> e fico feliz de iniciar essa conversa.</p><p>Posso te chamar no {{canal_preferido}} hoje ou amanhã em algum horário que funcione bem pra você?</p><p>Abraço,<br/>{{ops_responsavel_nome}}<br/>Nexuz — Tecnologia para Food Service</p>",
+      "dynamic_fields": ["nome_contato", "empresa", "ops_responsavel_nome", "canal_preferido"]
+    },
+    {
+      "id": "ET-02",
+      "name": "Qualificação D+3",
+      "subject": "{{nome_contato}}, um insight que pode ajudar a {{empresa}}",
+      "to": "{{lead_email}}",
+      "from_name": "{{ops_responsavel_nome}} · Nexuz",
+      "body_html": "<p>Olá {{nome_contato}},</p><p>Seguindo nossa conversa, preparei um panorama rápido de como operações de Food Service na escala da <strong>{{empresa}}</strong> costumam ganhar visibilidade de margem e eficiência na cozinha ao centralizar PDV + KDS + gestão em uma só camada.</p><p>Se fizer sentido, consigo montar uma demo de 30 minutos focada no seu contexto — me responde por aqui ou no {{canal_preferido}} com 2 horários que funcionam pra você.</p><p>Abraço,<br/>{{ops_responsavel_nome}}</p>",
+      "dynamic_fields": ["nome_contato", "empresa", "ops_responsavel_nome", "canal_preferido"]
+    },
+    {
+      "id": "ET-03",
+      "name": "Qualificação D+7 (última tentativa)",
+      "subject": "{{nome_contato}}, última tentativa esta semana",
+      "to": "{{lead_email}}",
+      "from_name": "{{ops_responsavel_nome}} · Nexuz",
+      "body_html": "<p>Olá {{nome_contato}},</p><p>Essa é a minha última tentativa por enquanto — daqui a pouco eu fecho esse caso pra não ficar te incomodando. Se ainda fizer sentido conversar sobre operação e tecnologia pra <strong>{{empresa}}</strong>, me responde até sexta?</p><p>Caso não seja o momento certo, tudo bem também — responde qualquer coisa que eu tiro do radar. Vou lembrar de você pra reabrir em 90 dias, ok?</p><p>Abraço,<br/>{{ops_responsavel_nome}}</p>",
+      "dynamic_fields": ["nome_contato", "empresa", "ops_responsavel_nome"]
+    },
+    {
+      "id": "ET-04",
+      "name": "Proposta D+3 follow-up",
+      "subject": "{{nome_contato}}, conseguiu avaliar a proposta?",
+      "to": "{{lead_email}}",
+      "from_name": "{{ops_responsavel_nome}} · Nexuz",
+      "body_html": "<p>Olá {{nome_contato}},</p><p>Te enviei a proposta comercial há 3 dias e queria saber se conseguiu dar uma olhada com o time. Estou à disposição para:</p><ul><li>Esclarecer qualquer ponto da proposta</li><li>Ajustar escopo ou prazo se precisar</li><li>Demo adicional com outro decisor</li></ul><p>Valor total proposto: <strong>R$ {{valor_proposto_final}}</strong> (MRR de R$ {{mrr}}).</p><p>Me responde por aqui ou no {{canal_preferido}} quando for possível.</p><p>Abraço,<br/>{{ops_responsavel_nome}}</p>",
+      "dynamic_fields": ["nome_contato", "empresa", "valor_proposto_final", "mrr", "ops_responsavel_nome", "canal_preferido"]
+    }
+  ]
+}

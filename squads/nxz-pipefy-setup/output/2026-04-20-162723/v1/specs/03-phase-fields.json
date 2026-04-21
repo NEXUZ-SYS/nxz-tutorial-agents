@@ -1,0 +1,105 @@
+{
+  "_description": "Fields específicos por phase do Pipe Vendas. Executar via createPhaseField após o createPipe e após capturar os phase IDs. Os labels dos start_form_fields já aparecem automaticamente — aqui somente campos adicionais da phase.",
+  "_phase_id_resolution": "Capturar phase_id de cada phase do response de createPipe e substituir $PHASE_{N}_ID abaixo",
+  "phases": [
+    {
+      "phase": "Novo Lead",
+      "phase_id_var": "$PHASE_1_ID",
+      "fields": [
+        { "label": "Ops responsável", "type": "assignee_select", "required": true, "description": "Gate GT-01: quem assume o lead" },
+        { "label": "Data entrada etapa", "type": "datetime", "required": false, "description": "Auto via automação A-LEAD-TS (marco POD Lead)" },
+        { "label": "— Dados do lead —", "type": "statement" }
+      ]
+    },
+    {
+      "phase": "Qualificação",
+      "phase_id_var": "$PHASE_2_ID",
+      "fields": [
+        { "label": "— Checklist Binário (6 itens) —", "type": "statement" },
+        { "label": "1. Fit confirmado (ICP compatível)", "type": "checkbox", "required": true, "description": "Gate F-Qualif item 1" },
+        { "label": "2. Faturamento declarado", "type": "checkbox", "required": true },
+        { "label": "Faturamento mensal (R$)", "type": "currency", "required": true, "description": "Suporte ao item 2" },
+        { "label": "3. Dor central identificada", "type": "checkbox", "required": true },
+        { "label": "Dor central (descrição)", "type": "long_text", "required": true, "description": "Suporte ao item 3" },
+        { "label": "4. Nº unidades registrado", "type": "checkbox", "required": true },
+        { "label": "Nº unidades", "type": "number", "required": true, "description": "Suporte ao item 4" },
+        { "label": "5. Decisor confirmado", "type": "checkbox", "required": true, "description": "Requer ≥1 Contato com papel=Decisor em contatos_vinculados" },
+        { "label": "6. Urgência declarada", "type": "checkbox", "required": true },
+        { "label": "Urgência (descrição)", "type": "long_text", "required": true },
+        { "label": "— Marcos POD —", "type": "statement" },
+        { "label": "Data MQL", "type": "datetime", "required": false, "description": "Auto via A-01 quando card entra em Qualificação" },
+        { "label": "Data SAL", "type": "datetime", "required": false, "description": "Auto via A-02 quando card sai para Demo Agendada (Checklist 6/6)" }
+      ]
+    },
+    {
+      "phase": "Demo Agendada",
+      "phase_id_var": "$PHASE_3_ID",
+      "fields": [
+        { "label": "Cliente vinculado", "type": "connector", "required": true, "connector_target": "table:clientes", "can_connect_multiples": false, "can_connect_existing": true, "can_create_new_connected": true, "description": "Gate F-Demo: deal precisa ter cliente vinculado" },
+        { "label": "Contatos vinculados", "type": "connector", "required": true, "connector_target": "table:parceiros", "connector_filter": { "tipo_pessoa": "PF" }, "can_connect_multiples": true, "can_connect_existing": true, "can_create_new_connected": true, "description": "Gate F-Demo: ≥1 decisor" },
+        { "label": "Data da demo", "type": "datetime", "required": true },
+        { "label": "Tipo de demo", "type": "radio_horizontal", "required": true, "options": ["QS", "FS"] },
+        { "label": "Quem vai conduzir", "type": "assignee_select", "required": true },
+        { "label": "Decisores presentes na demo (nomes)", "type": "long_text", "required": true, "description": "Gate F-Demo item 4" }
+      ]
+    },
+    {
+      "phase": "Pós-demo",
+      "phase_id_var": "$PHASE_4_ID",
+      "fields": [
+        { "label": "Status demo", "type": "select", "required": true, "options": ["Realizada com aceite", "Realizada sem aceite", "No-show"], "description": "R9, R10" },
+        { "label": "Aceite verbal", "type": "checkbox", "required": false, "description": "Gate F-Proposta (obrigatório via FC-04 se Status=Realizada com aceite)" },
+        { "label": "Contagem de reagendamentos", "type": "number", "required": false, "description": "EXT-05: ≥3 → Nutrição (futuro)" },
+        { "label": "Data da demo realizada", "type": "date", "required": true },
+        { "label": "Dor confirmada", "type": "checkbox", "required": true, "description": "Gate F-Proposta item 4" }
+      ]
+    },
+    {
+      "phase": "Proposta",
+      "phase_id_var": "$PHASE_5_ID",
+      "fields": [
+        { "label": "Data proposta enviada", "type": "date", "required": true },
+        { "label": "Proposta (anexo)", "type": "attachment", "required": false, "description": "FS: PDF consultivo; QS: mensagem simples" },
+        { "label": "Preço base (R$)", "type": "currency", "required": true, "description": "R16: manual v1 via planilha externa" },
+        { "label": "Margem aplicada (%)", "type": "number", "required": true, "description": "R17" },
+        { "label": "Desconto (%)", "type": "number", "required": false, "description": "R13: >15% dispara A-12 (aprovação Gestão)" },
+        { "label": "Valor proposto final (R$)", "type": "currency", "required": true, "description": "R18: Preço base × (1+margem/100) + componentes manuais (setup, assessoria, fidelidade)" },
+        { "label": "MRR (R$)", "type": "currency", "required": true, "description": "Gate F-Fechamento" },
+        { "label": "Módulos contratados", "type": "checklist_vertical", "required": true, "options": ["ERP", "PDV/Go", "Smart POS", "KDS", "Delivery", "Inteligência", "Manager", "Brain", "Setup-as-a-Service", "Retainer de Performance"], "description": "Gate F-Fechamento" },
+        { "label": "— Aceite —", "type": "statement" },
+        { "label": "Aceite proposta", "type": "checkbox", "required": true, "description": "Gate absoluto F-Fechamento (R12)" }
+      ]
+    },
+    {
+      "phase": "Fechamento",
+      "phase_id_var": "$PHASE_6_ID",
+      "fields": [
+        { "label": "CNPJ", "type": "cnpj", "required": true, "description": "R31 (14 dígitos sem máscara), R33 (unicidade em contas ativas). Gate F-GANHO" },
+        { "label": "Razão social", "type": "short_text", "required": true, "description": "Gate F-GANHO" },
+        { "label": "Boleto emitido", "type": "checkbox", "required": false, "description": "Preenchido por Financeiro (T-17 RACI)" },
+        { "label": "Pagamento confirmado", "type": "checkbox", "required": true, "description": "Gate F-GANHO (Financeiro preenche, dispara A-13 se contrato=true)" },
+        { "label": "Contrato assinado", "type": "checkbox", "required": true, "description": "Gate F-GANHO (Gestão preenche, dispara A-13 se pgto=true)" }
+      ]
+    },
+    {
+      "phase": "GANHO",
+      "phase_id_var": "$PHASE_7_ID",
+      "fields": [
+        { "label": "Data Ganho", "type": "datetime", "required": false, "description": "Auto via A-03 quando card entra em GANHO" },
+        { "label": "Handoff Implantação (card)", "type": "short_text", "required": false, "description": "FUTURE: connector para Pipe Implantação (fora do escopo v1)" },
+        { "label": "Notas de handoff", "type": "long_text", "required": false, "description": "R40: pacote handoff (dados fiscais, módulos, dor, prazo, MRR, responsável, histórico)" }
+      ]
+    },
+    {
+      "phase": "DESCARTE",
+      "phase_id_var": "$PHASE_8_ID",
+      "fields": [
+        { "label": "Motivo descarte", "type": "select", "required": true, "options": ["1. Fora de ICP", "2. Faturamento abaixo", "3. Sem orçamento no momento", "4. Tem sistema atual, sem intenção de trocar", "5. Projeto adiado/congelado", "6. Perdeu pra concorrente", "7. Preço acima do aceito", "8. Não viu valor/fit técnico", "9. Sumiu/sem resposta", "Nutrição expirada"], "description": "R25, R26: bloqueio absoluto sem motivo (9 motivos + 1 automático)" },
+        { "label": "Qual concorrente", "type": "short_text", "required": false, "description": "Obrigatório via FC-05 se motivo=6" },
+        { "label": "Último canal tentado", "type": "select", "required": false, "options": ["WhatsApp", "LinkedIn", "Instagram", "Facebook", "E-mail", "Ligação"], "description": "Obrigatório via FC-06 se motivo=9" },
+        { "label": "Observação descarte", "type": "long_text", "required": false },
+        { "label": "Data descarte", "type": "datetime", "required": false, "description": "Auto via automação A-DESC-TS quando entra em DESCARTE" }
+      ]
+    }
+  ]
+}

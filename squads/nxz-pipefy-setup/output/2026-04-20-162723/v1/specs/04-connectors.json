@@ -1,0 +1,42 @@
+{
+  "_description": "4 connectors a criar. Os conectores C-01 e C-02 são criados como phase_fields (type=connector) — já estão em 03-phase-fields.json. Os C-03 e C-04 são campos nas tabelas criados via createTableField com type=connector. Este arquivo centraliza a especificação.",
+  "connectors": [
+    {
+      "id": "C-01",
+      "name": "Vendas → Clientes",
+      "from": { "kind": "pipe", "id": "$PIPE_VENDAS_ID", "phase": "Demo Agendada", "field_label": "Cliente vinculado" },
+      "to": { "kind": "table", "id": "$TABLE_CLIENTES_ID" },
+      "cardinality": "1:1",
+      "properties": { "can_connect_multiples": false, "can_connect_existing": true, "can_create_new_connected": true },
+      "created_via": "createPhaseField (em 03-phase-fields.json Phase Demo Agendada)"
+    },
+    {
+      "id": "C-02",
+      "name": "Vendas → Parceiros (Contatos PF)",
+      "from": { "kind": "pipe", "id": "$PIPE_VENDAS_ID", "phase": "Demo Agendada", "field_label": "Contatos vinculados" },
+      "to": { "kind": "table", "id": "$TABLE_PARCEIROS_ID" },
+      "cardinality": "N:1 (deal → múltiplos contatos; cada contato pode estar em múltiplos deals historicamente)",
+      "properties": { "can_connect_multiples": true, "can_connect_existing": true, "can_create_new_connected": true, "filter_hint": "tipo_pessoa=PF (filtro UX)" },
+      "created_via": "createPhaseField (em 03-phase-fields.json Phase Demo Agendada)"
+    },
+    {
+      "id": "C-03",
+      "name": "Clientes → Parceiros (CTI)",
+      "from": { "kind": "table", "id": "$TABLE_CLIENTES_ID", "field_label": "Parceiro" },
+      "to": { "kind": "table", "id": "$TABLE_PARCEIROS_ID" },
+      "cardinality": "1:1",
+      "properties": { "can_connect_multiples": false, "can_connect_existing": true, "can_create_new_connected": true },
+      "created_via": "createTableField (type=connector) — CRÍTICO: executar DEPOIS de criar ambas as tabelas Parceiros e Clientes",
+      "enforcement_note": "DD-002: Pipefy NÃO enforça unicidade. Implementar pre-check client-side (camada 1) no Caio + audit diário (camada 3 via A-16) para detectar duplicatas."
+    },
+    {
+      "id": "C-04",
+      "name": "Parceiros (Contato PF) → Parceiros (Empresa PJ)",
+      "from": { "kind": "table", "id": "$TABLE_PARCEIROS_ID", "field_label": "Conta mãe (se Contato)" },
+      "to": { "kind": "table", "id": "$TABLE_PARCEIROS_ID" },
+      "cardinality": "N:1 (vários contatos → 1 empresa)",
+      "properties": { "can_connect_multiples": false, "can_connect_existing": true, "can_create_new_connected": false, "self_reference": true, "filter_hint": "tipo_pessoa=PJ (filtro UX)" },
+      "created_via": "createTableField (type=connector, self-reference)"
+    }
+  ]
+}

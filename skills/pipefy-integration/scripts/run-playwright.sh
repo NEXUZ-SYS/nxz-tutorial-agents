@@ -29,7 +29,9 @@ fi
 
 # Parse arguments
 TEMPLATE="${1:?Usage: run-playwright.sh <template> [args_json] [-- extra_flags]}"
-ARGS_JSON="${2:-{}}"
+# NOTE: Can't use ${2:-{}} — bash parses the closing `}` ambiguously and appends literal `}` to $2.
+ARGS_JSON="${2:-}"
+[[ -z "$ARGS_JSON" ]] && ARGS_JSON='{}'
 shift 2 || shift $#
 
 # Separate extra flags (after --)
@@ -54,6 +56,8 @@ export PIPEFY_BROWSER_PROFILE="$PROFILE_DIR"
 # Load Pipefy credentials from .env
 export PIPEFY_API_TOKEN="${PIPEFY_API_TOKEN:-$(grep '^PIPEFY_API_TOKEN=' "$PROJECT_ROOT/.env" 2>/dev/null | cut -d= -f2 || echo '')}"
 export PIPEFY_ORGANIZATION_ID="${PIPEFY_ORGANIZATION_ID:-$(grep '^PIPEFY_ORGANIZATION_ID=' "$PROJECT_ROOT/.env" 2>/dev/null | cut -d= -f2 || echo '')}"
+export PIPEFY_EMAIL="${PIPEFY_EMAIL:-$(grep '^PIPEFY_EMAIL=' "$PROJECT_ROOT/.env" 2>/dev/null | cut -d= -f2 || echo '')}"
+export PIPEFY_PASSWORD="${PIPEFY_PASSWORD:-$(grep '^PIPEFY_PASSWORD=' "$PROJECT_ROOT/.env" 2>/dev/null | cut -d= -f2 || echo '')}"
 
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo "  Pipefy Integration — Playwright CLI"

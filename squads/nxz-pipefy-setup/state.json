@@ -1,13 +1,13 @@
 {
   "squad": "nxz-pipefy-setup",
-  "status": "running",
-  "step": { "current": 2, "total": 11, "label": "checkpoint-config" },
+  "status": "paused",
+  "step": { "current": 7, "total": 11, "label": "configure-pipefy (partial: Layers 1-4 done, 5-7 pending)" },
   "agents": [
     {
       "id": "researcher",
       "name": "Rita Pesquisa",
       "icon": "🔍",
-      "status": "idle",
+      "status": "done",
       "deliverTo": null,
       "desk": { "col": 1, "row": 1 }
     },
@@ -15,7 +15,7 @@
       "id": "architect",
       "name": "Paulo Pipes",
       "icon": "📐",
-      "status": "idle",
+      "status": "done",
       "deliverTo": null,
       "desk": { "col": 2, "row": 1 }
     },
@@ -23,7 +23,7 @@
       "id": "configurator",
       "name": "Caio Configurador",
       "icon": "⚙️",
-      "status": "idle",
+      "status": "paused",
       "deliverTo": null,
       "desk": { "col": 3, "row": 1 }
     },
@@ -44,7 +44,12 @@
       "desk": { "col": 2, "row": 2 }
     }
   ],
-  "handoff": null,
+  "handoff": {
+    "from": "configurator",
+    "to": "user",
+    "message": "Layer 1-4 concluídos (Parceiros + Clientes + Pipe Vendas v2 com start form e 58 fields com help/description). Pausado para teste e validação antes de Layers 5-7.",
+    "completedAt": "2026-04-20T18:00:00-03:00"
+  },
   "startedAt": "2026-04-20T16:27:23-03:00",
-  "updatedAt": "2026-04-20T16:27:45-03:00"
+  "updatedAt": "2026-04-20T18:00:00-03:00"
 }
