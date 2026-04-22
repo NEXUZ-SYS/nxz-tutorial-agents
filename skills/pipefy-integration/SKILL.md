@@ -2,7 +2,7 @@
 name: pipefy-integration
 description: Automate Pipefy workspace configuration using a hybrid approach — GraphQL API for most operations (pipes, phases, fields, cards, automations, webhooks) and Playwright CLI (headed scripts) for UI-only features like advanced Dashboard creation, conditional field visual configuration, and complex automation rules that exceed API capabilities. Use when the user needs to create or configure Pipefy Pipes, Phases, Fields, Automations, Connectors, Databases, or Dashboards end-to-end.
 type: hybrid
-version: 1.0.0
+version: 2.0.0
 categories:
   - pipefy
   - productivity
@@ -22,45 +22,73 @@ script:
 
 ## The core problem
 
-Pipefy **does NOT have an official CLI**. It is a no-code/low-code platform with two
-programmatic interfaces:
-- **GraphQL API** — covers 95%+ of operations: create/update pipes, phases, fields, cards, automations, webhooks, databases, connections, conditional fields
-- **Playwright CLI (Microsoft)** — headless/headed browser automation for the **extremely rare** UI-only operations that the API cannot handle (advanced dashboards, PDF templates, email inbox setup)
+Pipefy **does NOT have an official CLI**. It has THREE programmatic interfaces:
 
-Unlike ClickUp (where automations require UI), Pipefy's API is **extremely capable**.
-Automations, conditional fields, and most config can be done 100% via GraphQL.
-**Playwright is almost never needed** — only for visual configuration that has no API equivalent.
+1. **Public GraphQL API** (`api.pipefy.com/graphql`) — Bearer token; ~90% dos casos
+2. **Internal GraphQL API** (`app.pipefy.com/graphql/core`) — mesmo Bearer token; email templates, algumas automations, UI features não expostas publicamente
+3. **Internal REST API** (`app.pipefy.com/internal_api/*`) — requer CSRF token + cookie de sessão; usado pelo próprio UI Pipefy (ex.: sync fields, field settings, card view config)
+
+**Playwright CLI** é usado apenas para:
+- Operações UI-only sem endpoint (dashboards avançados, PDF templates, email inbox setup)
+- **Replay** de mutations internal_api capturadas via sniff (quando endpoint existe mas requer CSRF)
+
+## 🔴 ANTES de criar qualquer alerta/notificação — verifique o nativo
+
+Pipefy tem **notificações in-app nativas** (sino + email) que disparam AUTOMATICAMENTE:
+- Card atribuído a você → você recebe notificação
+- SLA `late` ou `expired` → assignees + watchers recebem
+- `@mention` em comentário → pessoa mencionada recebe
+- Phase change em card seu → assignee/watchers recebem
+
+**Consequência:** não construa automação de webhook/email para "avisar owner" — Pipefy já faz. Só construa quando precisar alertar pessoas que **NÃO** são assignees (outros papeis, canais coletivos, sistemas externos).
+
+Queries essenciais antes de qualquer desenho de automação:
+
+```graphql
+# Lista actions disponíveis + quais events cada uma aceita
+query { automationActions(repoId: "<PIPE_ID>") { id enabled eventsBlacklist triggerEvents } }
+
+# Lista events (triggers) disponíveis
+query { automationEvents { id actionsBlacklist } }
+```
+
+Ver `references/automation-catalog.md` para resultados completos + decision tree.
 
 ## Decision matrix — which tool for what
 
-| Operation | GraphQL API | Playwright CLI |
-|---|---|---|
-| Create Pipe | ✅ first choice | last resort |
-| Create/update Phase | ✅ | last resort |
-| Create Phase Fields | ✅ | last resort |
-| Set field as required | ✅ | — |
-| Create Labels | ✅ | — |
-| Create Automations | ✅ (covers 99% of cases) | almost never needed |
-| Create Webhooks | ✅ | — |
-| Create Cards | ✅ | — |
-| Move Cards | ✅ | — |
-| Create Database (Table) | ✅ | — |
-| Create Database Records | ✅ | — |
-| Create Connector Fields | ✅ | — |
-| Configure SLA/Late alerts | ✅ (via automation) | — |
-| Create Email Templates | ✅ (via automation action) | — |
-| Conditional Fields | ✅ (createFieldCondition) | — |
-| **Advanced Dashboards (visual)** | ❌ | ✅ **only way** (rare) |
-| **Organization settings** | ❌ | ✅ **only way** (rare) |
-| **PDF Templates** | ❌ | ✅ **only way** (rare) |
-| **Email Inbox setup** | ❌ | ✅ **only way** (rare) |
-| Read pipe/phase/field structure | ✅ | — |
-| Read cards/records | ✅ | — |
+| Operation | Public GraphQL | Internal GraphQL/REST | Playwright |
+|---|---|---|---|
+| Create Pipe | ✅ | — | — |
+| Create/update Phase | ✅ | — | — |
+| Create Phase Fields | ✅ | — | — |
+| Update Phase Field (com label obrigatório) | ✅ | — | — |
+| Create Labels | ✅ | — | — |
+| Create Automations (simples) | ✅ | — | — |
+| Create Automations (scheduler/sla complexas) | ❌ | ✅ `/internal_api` replay | — |
+| Update Automation URL | ✅ `updateAutomation` | — | — |
+| Delete Automation | ✅ `deleteAutomation` | — | — |
+| Create Webhooks | ✅ | — | — |
+| Create Cards | ✅ | — | — |
+| Move Cards | ✅ | — | — |
+| Create Database (Table) | ✅ `authorization: "write"` | — | — |
+| Create Table Field | ✅ (usa `type`, camelCase connector props) | — | — |
+| Delete Table Field | ✅ (snake_case `table_id`) | — | — |
+| Update Table Field type | ❌ type não é updatable | — | Delete + recreate |
+| Create Connector Fields | ✅ | — | — |
+| **own_field_maps (sync fields)** | ❌ | ✅ `PUT /internal_api/settings/fields/{id}` | Playwright replay + CSRF |
+| Configure SLA/Late alerts | ✅ (via automation) | — | — |
+| Email Templates CRUD | ❌ | ✅ `graphql/core` | — |
+| Conditional Fields | ✅ `createFieldCondition` | — | — |
+| **Dashboard visual** | ❌ | ❌ | ✅ **only way** (raro) |
+| **PDF Templates** | ❌ | ❌ | ✅ **only way** (raro) |
+| **Email Inbox setup** | ❌ | ❌ | ✅ **only way** (raro) |
+| Organization settings | ❌ | ❌ | ✅ |
+| Read pipe/phase/field | ✅ | — | — |
+| Read cards/records | ✅ | — | — |
 
-**Rule of thumb:** GraphQL API for EVERYTHING. Playwright CLI is the absolute last resort
-and should be used in fewer than 5% of operations.
+**Rule of thumb:** API pública primeiro. `graphql/core` ou `internal_api` quando a feature é UI-native mas tem endpoint descoberto (precisa CSRF via Playwright). Playwright-only em último caso.
 
-**Priority order: GraphQL API → Playwright CLI (almost never).**
+**Priority order: Public GraphQL → Internal endpoints via Playwright replay → Playwright pura.**
 
 ## When to use this skill
 
@@ -274,6 +302,60 @@ This squad receives a PDD from `nxz-backoffice-processes`. The translation rules
 8. **Separate Done/Lost phases.** Terminal phases: "GANHO" (done=true) and "DESCARTE" (done=true, with required motivo field).
 9. **Email templates per pipe.** Define templates for each automated communication.
 10. **Quota awareness.** Business plan = 300 automation jobs/month. Design automations efficiently.
+11. **Native notifications first.** SLA/assignment alerts to assignees são nativos — não duplique com webhook.
+12. **Connector paralelo para trocar target.** Quando precisa mudar um connector de Pipe/Table X para Y, NÃO tente `deletePhaseField` (bloqueia 85%). Crie novo connector em paralelo, rebatize o antigo como `(legado) ...` e `required=false`. Atualize refs em email templates / automations para o novo slug.
+13. **`label_select` NUNCA em tabelas.** Use `select`/`checklist_vertical`/`radio_*`. label_select foi desenhado para labels de cards em Pipes, não renderiza dropdown em tabelas.
+14. **`anyone_can_create_card`**: default é `false` (mais seguro). Só habilitar se squad precisa intake público.
+
+## Pattern descoberto 2026-04-22: Sync de campos entre cards (own_field_maps)
+
+Pipefy tem "Campos sincronizados" (own_field_maps_attributes) nos connectors — permite pré-preencher campos do registro criado via "Criar novo" no picker:
+
+```
+Deal.connector.criar_novo → registro novo com campos pré-preenchidos
+  ├─ fixed_value: "Ativo"                     # valor constante
+  └─ copy_from: "%{<source_internal_id>}"     # copia de outro campo do card pai
+```
+
+**Endpoint:** `PUT /internal_api/settings/fields/{internal_id}` (JSON:API envelope, precisa CSRF)
+**Script pronto:** `scripts/templates/bulk-apply-field-sync.js`
+**Doc completa:** `references/connector-field-maps.md`
+
+Caso de uso típico: deal tem connector `Cliente` → Clientes e `Contatos do deal` → Contatos. Ao criar um Contato a partir do deal, auto-preencher `Contato.cliente = Deal.cliente` (copy_from).
+
+## Pattern descoberto: Replay de mutations internal_api via Playwright CSRF
+
+Para UI-features que não existem na API pública mas têm endpoint interno:
+
+1. Abrir sniff-* template (captura promíscua de POST/PUT/PATCH)
+2. Usuário faz 1 ação manual na UI → capturamos mutation, headers (X-CSRF-Token), cookies
+3. Extrair payload, parametrizar
+4. Replay via `page.evaluate(fetch)` com CSRF + `credentials: 'include'`
+
+Templates prontos:
+- `sniff-connector-settings.js` — sniff genérico de qualquer config de connector field
+- `bulk-apply-field-sync.js` — replay bulk de own_field_maps
+- `bulk-create-automations.js` — replay de createAutomation
+- `bulk-create-field-conditions.js` — replay de createFieldCondition
+
+## Nível de confiança por layer (heurística)
+
+| Layer | API pública funciona? | Probabilidade de precisar Playwright |
+|---|---|---|
+| Databases (create/update) | ✅ 100% | 0% |
+| Pipe + phases | ✅ 100% | 0% |
+| Phase fields (scalar/select) | ✅ 100% | 0% |
+| Phase fields (connector) | ✅ 100% | 0% |
+| Connectors cross-table | ✅ 100% | 0% |
+| Automations simples (card_moved, field_updated) | ✅ 100% | 0% |
+| Automations sla_based+send_email | ✅ 100% | 0% |
+| Automations scheduler+* | ❌ actionsBlacklist | **External cron (n8n)** |
+| own_field_maps (sync fields) | ❌ não exposto | 100% (internal_api replay) |
+| Email templates CRUD | ⚠️ só via `/graphql/core` | 0% (mas endpoint não-público) |
+| Filtro dinâmico connector | ❓ não confirmado | Provável Playwright |
+| Visualização do card (quais fields aparecem) | ❓ investigar `UpdateCardLeftSidePanels` | Provável internal_api |
+| Dashboards | ❌ | 100% |
+| PDF templates | ❌ | 100% |
 
 ## Error handling
 
@@ -294,11 +376,37 @@ Monitor monthly. If > 80% of 300 jobs used, alert the user to consider Enterpris
 
 ## Reference files
 
-- `references/graphql-recipes.md` — full mutation/query library
-- `references/playwright-patterns.md` — selector cheat sheet for Pipefy UI
-- `references/automation-patterns.md` — trigger/condition/action combos
-- `references/known-limitations.md` — API gaps and UI quirks
-- `references/pdd-to-pipefy-mapping.md` — translation rules from PDD to Pipefy objects
+- `references/graphql-recipes.md` — biblioteca de mutations/queries públicas
+- `references/playwright-patterns.md` — cheat sheet de seletores UI Pipefy
+- `references/automation-patterns.md` — combos trigger/condition/action comuns
+- **`references/automation-catalog.md`** — **catálogo completo** de 14 actions × 10 events com eventsBlacklist, notificações nativas, decision tree (🔴 ler ANTES de desenhar alerta)
+- **`references/connector-field-maps.md`** — sync fields (own_field_maps) via `/internal_api/settings/fields`
+- `references/known-limitations.md` — 29 limitações conhecidas + workarounds
+- `references/pdd-to-pipefy-mapping.md` — regras de tradução PDD → objetos Pipefy
+- `references/pipe-customization-defaults.md` — customizações UI-only (button label, description, etc.)
+
+## Templates Playwright prontos (`scripts/templates/`)
+
+### Sniffing (captura UI → replay programático)
+- `sniff-automation-mutation.js` — sniff promíscuo de createAutomation
+- `sniff-connector-settings.js` — sniff de qualquer config de connector field (filter, sync fields, etc.)
+- `recon-automations.js` — recon de automations existentes
+- `recon-email-templates.js` — recon de email templates
+
+### Bulk operations (replay parametrizado)
+- `bulk-create-automations.js` — cria N automations via `/internal_api` (para combos public GraphQL rejeita)
+- `bulk-create-field-conditions.js` — cria N field conditions via `/queries`
+- `bulk-apply-field-sync.js` — aplica own_field_maps em N connectors via `/internal_api/settings/fields`
+
+### UI configuration (uma vez por pipe)
+- `customize-pipe-settings.js` — button label, description, etc.
+- `create-automation-ui.js` — criar automation via UI (fallback quando internal_api insuficiente)
+
+### Diagnóstico
+- `screenshot-card.js` — screenshot de um card para debug visual
+- `screenshot-card-detailed.js` — screenshot + scroll + HTML dump
+- `probe-pipefy-auth.js` — valida credenciais
+- `login.js` — força login (se sessão expirou)
 
 ## Memory
 
@@ -307,3 +415,22 @@ When a squad completes a Pipefy setup, save learnings to `_opensquad/_memory/` u
 - What required a workaround (document it)
 - Automation quota consumption patterns
 - Customer-specific naming conventions
+
+## Checklist anti-surprise (antes de começar qualquer squad Pipefy)
+
+Todos esses pontos foram descobertos empiricamente — pular algum = retrabalho:
+
+- [ ] `authorization` em `CreateTableInput` é `"write"` / `"read"` — NÃO `"write_access"`
+- [ ] `CreateTableFieldInput` usa `type` (não `type_id`) + camelCase em connector props
+- [ ] `DeleteTableFieldInput` usa `table_id` (snake_case) não `tableId`
+- [ ] `UpdatePhaseFieldInput` exige `label` non-null mesmo em update parcial
+- [ ] Após `createPipe`, deletar as 3 phases default ("Caixa de entrada", "Fazendo", "Concluído")
+- [ ] Start form tem phase própria oculta (`pipe.startFormPhaseId`) — criar fields lá, NÃO na primeira phase visível
+- [ ] Label_select NUNCA em tabelas → usar select/checklist/radio
+- [ ] Para updatePhaseField quando há collision de slug phase_field×table_field → passar `id` + `uuid` juntos
+- [ ] `deletePhaseField` bloqueia ~85% dos types → planejar ou deletar pipe inteiro + recriar
+- [ ] Antes de desenhar alerta, verificar notificações nativas Pipefy (podem já cobrir o caso)
+- [ ] `automationActions(repoId:"<id>")` antes de desenhar automation — retorna eventsBlacklist por action
+- [ ] `scheduler` event + ação útil = bloqueado → usar external cron
+- [ ] Rate limit 500 req/30s → delay 500ms entre mutations
+- [ ] Emojis em JSON: passar `ensure_ascii=False` no `json.dumps` (surrogate pairs quebram GraphQL)

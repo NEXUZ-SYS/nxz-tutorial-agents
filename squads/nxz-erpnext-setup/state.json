@@ -1,0 +1,22 @@
+{
+  "squad": "nxz-erpnext-setup",
+  "status": "running",
+  "step": { "current": 8, "total": 13, "label": "checkpoint-approve-design" },
+  "agents": [
+    { "id": "researcher", "name": "Rita Pesquisa", "icon": "🔍", "status": "done", "deliverTo": null, "desk": { "col": 1, "row": 1 } },
+    { "id": "interviewer", "name": "Ana Analista", "icon": "🎙️", "status": "done", "deliverTo": null, "desk": { "col": 2, "row": 1 } },
+    { "id": "architect", "name": "Paulo Processos", "icon": "📐", "status": "done", "deliverTo": "configurator", "desk": { "col": 3, "row": 1 } },
+    { "id": "configurator", "name": "Caio Configurador", "icon": "⚙️", "status": "idle", "deliverTo": null, "desk": { "col": 1, "row": 2 } },
+    { "id": "reviewer", "name": "Vera Validação", "icon": "✅", "status": "idle", "deliverTo": null, "desk": { "col": 2, "row": 2 } },
+    { "id": "trainer", "name": "Teo Treinamento", "icon": "📚", "status": "idle", "deliverTo": null, "desk": { "col": 3, "row": 2 } }
+  ],
+  "handoff": {
+    "from": "architect",
+    "to": "configurator",
+    "message": "EDD v2 + 3 JSON specs (02-company, 03-fiscal-year, 05-custom-fields) prontos — 14 chamadas API, 7 deltas (1 bloqueante resolvido).",
+    "completedAt": "2026-04-22T15:16:00-03:00"
+  },
+  "run_id": "2026-04-22-150201",
+  "startedAt": "2026-04-22T15:02:01-03:00",
+  "updatedAt": "2026-04-22T15:16:00-03:00"
+}

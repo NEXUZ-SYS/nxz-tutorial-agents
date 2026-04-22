@@ -1,6 +1,6 @@
 # Pipefy — Known Limitations
 
-> Atualizado: 2026-04-20
+> Atualizado: 2026-04-22
 
 ## API Limitations
 
@@ -36,6 +36,20 @@
 | 13 | Quota 300 jobs/mês (Business) | Pode esgotar com funil ativo | Monitorar mensalmente; considerar Enterprise |
 | 14 | **`/graphql` (public) NÃO tem `createEmailTemplate`**, mas `/graphql/core` (interno) tem — e aceita o mesmo Bearer token | Sem o endpoint interno, email templates precisariam ser criados via UI/Playwright | **Descoberto 2026-04-21**: usar `https://app.pipefy.com/graphql/core` com `PIPEFY_API_TOKEN` para `createEmailTemplate`, `updateEmailTemplate`, `deleteEmailTemplate`, `createEmailSignature`, `updateEmailSignature`, `deleteEmailSignature`. Input schema: `name`, `subject`, `body`, `fromName`, `fromEmail`, `toEmail`, `locale`, `timeZone`, `repoId` (todos NOT NULL); `bccEmail`, `ccEmail` opcionais. `toEmail` aceita slug de connector/field do pipe (ex.: `{{contatos_do_deal}}`). |
 | 15 | **`/graphql/core` é endpoint "interno" descoberto via recon network** | Pode mudar sem aviso; não está na documentação pública do Pipefy | Monitorar; se mudar, re-sniffar com `scripts/templates/recon-email-templates.js` |
+| 16 | **`CreateTableInput.authorization` enum = `["read", "write"]`** (não "read_access"/"write_access" como em outros inputs) | Erro de validação silencioso ("Expected 'write' to be one of: read, write") | Sempre usar `write` ou `read` — confirmado 2026-04-22 criando tabela Contatos |
+| 17 | **`CreateTableFieldInput` usa `type` (não `type_id`)** + camelCase connector props | Fields de tabela criados via API falham com "Field is not defined" | Usar: `type`, `canConnectMultiples`, `canConnectExisting`, `canCreateNewConnected`, `connectedRepoId`. **NÃO** usar: `type_id`, `connections`, `connector_pipe_id`, `can_have_multiple_values` |
+| 18 | **`DeleteTableFieldInput` usa `table_id` (snake_case)** e não `tableId` (camelCase) | Confusão vs outros inputs camelCase | Passar `{table_id, id}` com snake_case. Confirmado 2026-04-22 |
+| 19 | **`deleteTableField` funciona** para table fields sem registros referenciados (ao contrário do `deletePhaseField` que bloqueia 85%) | — | Use com confiança para limpar fields em tabelas. Se falhar, verificar se há records referenciando |
+| 20 | **`UpdatePhaseFieldInput` exige `label` non-null** mesmo quando só quer alterar `required`, `index` ou `description` | Falha silenciosa "Expected value to not be null" | Sempre passar `label` atual (GET antes para pegar), não apenas os fields alterados |
+| 21 | **Slug auto-sufixo**: criar phase_field com label já existente no mesmo phase gera `slug_1`, `_2`, etc. automaticamente | — | Comportamento útil para não quebrar referências (ex.: renomear velho campo e criar novo com mesmo label = slug vira `campo_1`). Usamos no refactor Contatos 2026-04-22 |
+| 22 | **`label_select` NÃO renderiza como dropdown em tabelas (Databases)** | Campo aceita `options` no create mas UI mostra vazio — tipo foi desenhado para labels de cards em Pipes | Em tabelas, usar `select`, `checklist_vertical`, `checklist_horizontal`, `radio_vertical`, `radio_horizontal`. Nunca `label_select` |
+| 23 | **`UpdateTableFieldInput` não tem campo `type`** — não é possível mudar tipo de um field via update | Forçado a `deleteTableField` + `createTableField` (OK em tabelas pois delete funciona) | Aceitar o retrabalho; alternativa é não errar o type na criação |
+| 24 | **`updateEmailTemplatePayload` tem campos FLAT** (não nested em `emailTemplate { ... }`) | Query `mutation { updateEmailTemplate { emailTemplate { id } } }` falha | Usar `mutation { updateEmailTemplate { id name toEmail } }` direto. Aplicável em `/graphql/core` |
+| 25 | **Phase fields criados via API podem não renderizar no card drawer em alguns pipes** | Bug observado 2026-04-22 no Pipe Vendas (307117441): Ops responsável, Data entrada, Atividades do deal criadas via API não aparecem no painel "Fase atual". Template CRM (307118663) renderiza normalmente. Causa não isolada (attributes idênticos: synced_with_card, editable, minimal_view, archived, deleted, settings) | **Workaround:** usar start form fields para visibility crítica — start form renderiza sempre. Ou investigar pipe-level config interna |
+| 26 | **`send_a_task` action tem `eventsBlacklist: ['scheduler', 'sla_based', 'card_left_phase']`** | Não é possível criar task interna em resposta a SLA expired, card left phase ou scheduler | Para alertas baseados em SLA, usar: notificação nativa Pipefy (assignee já recebe), `send_email_template`, ou `send_http_request` para n8n |
+| 27 | **Notificações nativas Pipefy existem e são automáticas** — sistema de sino + email integrado | Muitos devs criam webhooks redundantes por não saber disso | Antes de criar automação de alerta, verificar: assignee já é notificado nativamente em `card_late`, `card_expired`, `@mention`, `assignment`, phase change, card inbox email |
+| 28 | **`send_email_template` aceita `toEmail` dinâmico via slug de connector** | — | Exemplo: `toEmail="{{contatos_do_deal}}"` resolve runtime pro email do contato vinculado. Útil para cadências automáticas sem hardcode de endereços |
+| 29 | **Discovery queries essenciais**: `automationActions(repoId: "...")` retorna lista completa de actions disponíveis com eventsBlacklist e triggerEvents; `automationEvents` retorna events disponíveis com actionsBlacklist | Sem essas queries é impossível saber combinações bloqueadas | Sempre rodar antes de desenhar automação — `references/automation-catalog.md` tem os resultados capturados |
 
 ## UI-Only Operations (Playwright necessário)
 

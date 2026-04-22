@@ -1,0 +1,7 @@
+id,name,title,icon,path,execution
+researcher,Rita Pesquisa,Pesquisadora de docs ERPNext/Frappe,🔍,./agents/researcher.agent.md,subagent
+interviewer,Ana Analista,Analista de negócio (entrevista),🎙️,./agents/interviewer.agent.md,inline
+architect,Paulo Processos,Arquiteto de configuração ERPNext,📐,./agents/architect.agent.md,inline
+configurator,Caio Configurador,Executor via REST API / bench CLI,⚙️,./agents/configurator.agent.md,inline
+reviewer,Vera Validação,Revisora de Configuração,✅,./agents/reviewer.agent.md,inline
+trainer,Teo Treinamento,Gerador de Documentação,📚,./agents/trainer.agent.md,inline

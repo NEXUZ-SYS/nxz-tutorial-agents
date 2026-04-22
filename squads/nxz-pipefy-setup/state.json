@@ -1,19 +1,19 @@
 {
   "squad": "nxz-pipefy-setup",
-  "status": "done",
-  "step": { "current": 7, "total": 11, "label": "configure-pipefy (Layers 1-7 complete; review/train pendente)" },
+  "status": "running",
+  "step": { "current": 8, "total": 11, "label": "checkpoint-review-config (refactor contatos aplicado)" },
   "agents": [
     { "id": "researcher", "name": "Rita Pesquisa", "icon": "🔍", "status": "done", "deliverTo": null, "desk": { "col": 1, "row": 1 } },
     { "id": "architect", "name": "Paulo Pipes", "icon": "📐", "status": "done", "deliverTo": null, "desk": { "col": 2, "row": 1 } },
-    { "id": "configurator", "name": "Caio Configurador", "icon": "⚙️", "status": "done", "deliverTo": null, "desk": { "col": 3, "row": 1 } },
-    { "id": "reviewer", "name": "Vera Validação", "icon": "✅", "status": "pending", "deliverTo": null, "desk": { "col": 1, "row": 2 } },
-    { "id": "trainer", "name": "Teo Treinamento", "icon": "📚", "status": "pending", "deliverTo": null, "desk": { "col": 2, "row": 2 } }
+    { "id": "configurator", "name": "Caio Configurador", "icon": "⚙️", "status": "working", "deliverTo": null, "desk": { "col": 3, "row": 1 } },
+    { "id": "reviewer", "name": "Vera Validação", "icon": "✅", "status": "idle", "deliverTo": null, "desk": { "col": 1, "row": 2 } },
+    { "id": "trainer", "name": "Teo Treinamento", "icon": "📚", "status": "idle", "deliverTo": null, "desk": { "col": 2, "row": 2 } }
   ],
   "handoff": {
     "from": "configurator",
     "to": "reviewer",
-    "message": "Pipe Vendas Nexuz — configuração end-to-end completa. Databases (2), Pipe + 58 fields, 8 mini-guias, UI custom, 4 email templates, 11 automações nativas (A-01 a A-04, A-07, A-08, A-09, A-11..A-14) + 6 field conditions + spec external cron para A-05/06/10/15/16. Pronto para review.",
-    "completedAt": "2026-04-21T18:00:00-03:00"
+    "message": "Pipe Vendas Nexuz — configuração end-to-end + refactor Contatos (2026-04-22). Tabela Contatos dedicada (Hwgq9hZN) com connector N:1 → Clientes. Novo phase_field 'Contatos do deal' no start form → Contatos. Antigo marcado legado. 4 email templates atualizados. Pronto para review.",
+    "completedAt": "2026-04-22T09:45:00-03:00"
   },
   "pendingWork": {
     "layers": [],
@@ -22,14 +22,58 @@
       "Criar endpoint webhook https://nexuz.com.br/api/webhook/pipefy/* (4 rotas)",
       "Criar Google Doc Playbook Vendas Nexuz + substituir placeholder PLAYBOOK-VENDAS-NEXUZ",
       "Assinar DPAs LGPD antes do go-live (PDD R-09)",
-      "FC-03: Criar fields 'LinkedIn do contato' e 'Cargo' no start form e incluir em FC-03 (gap documentado)"
+      "[REFACTOR] Rodar sniff-connector-filter.js e capturar mutation de filtro dinâmico no contatos_do_deal_1 (UX cascade)",
+      "[REFACTOR] Migrar deals existentes do campo legado (contatos_do_deal → Parceiros) para novo (contatos_do_deal_1 → Contatos) se houver dados reais"
     ],
     "ids_created": {
       "org": "302461450",
       "table_parceiros": "xcO4_FB_",
       "table_clientes": "XaduYW7H",
+      "table_contatos": "Hwgq9hZN",
+      "legacy_renamed": {
+        "iUu_Ek5r": "[Legacy] Contatos Template",
+        "oeRq6rkd": "[Legacy] Empresas Template",
+        "-WGEyGwJ": "[Legacy] Atividades Template"
+      },
+      "contatos_fields": {
+        "nome_completo": { "id": "nome_completo", "internal_id": "428522449", "type": "short_text" },
+        "e_mail": { "id": "e_mail", "internal_id": "428522450", "type": "email" },
+        "telefone": { "id": "telefone_whatsapp", "internal_id": "428522451", "type": "phone" },
+        "linkedin": { "id": "linkedin", "internal_id": "428522453", "type": "short_text" },
+        "cargo": { "id": "cargo", "internal_id": "428522454", "type": "short_text" },
+        "papel_comite": { "id": "papel_no_comit", "internal_id": "428522455", "type": "select" },
+        "status": { "id": "status", "internal_id": "428522456", "type": "select" },
+        "observacoes": { "id": "observa_es", "internal_id": "428522457", "type": "long_text" },
+        "cliente_connector": { "id": "cliente", "internal_id": "428522458", "type": "connector", "target_table_id": "XaduYW7H" }
+      },
+      "table_atividades": "SWpeb0uP",
+      "atividades_fields": {
+        "assunto": { "internal_id": "428533320", "type": "short_text", "title": true },
+        "tipo": { "internal_id": "428533321", "type": "select" },
+        "status": { "internal_id": "428533322", "type": "select" },
+        "data_hora_planejada": { "internal_id": "428533323", "type": "datetime" },
+        "data_hora_realizada": { "internal_id": "428533324", "type": "datetime" },
+        "responsavel": { "internal_id": "428533325", "type": "assignee_select" },
+        "descricao_briefing": { "internal_id": "428533326", "type": "long_text" },
+        "resultado": { "internal_id": "428533327", "type": "long_text" },
+        "proxima_acao": { "internal_id": "428533329", "type": "short_text" },
+        "cliente_connector": { "internal_id": "428533330", "type": "connector", "target_table_id": "XaduYW7H" },
+        "contato_connector": { "internal_id": "428533331", "type": "connector", "target_table_id": "Hwgq9hZN" }
+      },
+      "atividades_startform_connector": {
+        "internal_id": "428549684",
+        "slug": "atividades_do_deal",
+        "uuid": "2266f99b-d4a9-47f1-a86a-5ae528b04068",
+        "phase_id": "342928165",
+        "note": "Migrado de 6 phase_connectors para 1 start form connector (bug de render phase fields no Pipe Vendas)."
+      },
       "pipe_vendas": "307117441",
       "phase_start_form": "342928165",
+      "start_form_connectors": {
+        "cliente": { "id": "cliente", "internal_id": "428488620", "uuid": "5407fe9f-05b7-4f53-8bcf-0ba671c08f49", "target": "XaduYW7H (Clientes)", "status": "active" },
+        "contatos_do_deal_1": { "id": "contatos_do_deal_1", "internal_id": "428522757", "uuid": "39761305-fe16-49f0-aee9-caa105c01cec", "target": "Hwgq9hZN (Contatos)", "status": "active-new", "description": "Novo campo — versão 2026-04-22 do refactor" },
+        "contatos_do_deal_legacy": { "id": "contatos_do_deal", "internal_id": "428488621", "uuid": "03912ee0-04bc-4fa4-96c4-6a4324b815e0", "target": "xcO4_FB_ (Parceiros)", "status": "legacy", "label": "(legado) Contatos do deal — Parceiros", "required": false, "description": "Campo legado v1 — descontinuar após migração de deals existentes" }
+      },
       "phase_novo_lead": "342928169",
       "phase_qualificacao": "342928170",
       "phase_demo_agendada": "342928171",
@@ -39,23 +83,29 @@
       "phase_ganho": "342928175",
       "phase_descarte": "342928176",
       "email_templates": {
-        "ET-01": "309594743",
-        "ET-02": "309594744",
-        "ET-03": "309594745",
-        "ET-04": "309594746"
+        "ET-01": { "id": "309594743", "name": "Qualificação D+1", "toEmail": "{{contatos_do_deal_1}}" },
+        "ET-02": { "id": "309594744", "name": "Qualificação D+3", "toEmail": "{{contatos_do_deal_1}}" },
+        "ET-03": { "id": "309594745", "name": "Qualificação D+7 (última tentativa)", "toEmail": "{{contatos_do_deal_1}}" },
+        "ET-04": { "id": "309594746", "name": "Proposta D+3 follow-up", "toEmail": "{{contatos_do_deal_1}}" }
       },
       "automations_native": {
         "A-01": "306955890",
         "A-02": "306955891",
         "A-03": "306955892",
         "A-04": "306955893",
-        "A-07": "306955920",
         "A-08": "306955894",
-        "A-09": "306955921",
         "A-11": "306955926",
-        "A-12": "already-from-prior-session",
-        "A-13": "already-from-prior-session",
+        "A-12": "306955837",
+        "A-13": "306955838",
         "A-14": "306955930"
+      },
+      "automations_deleted_2026_04_22": {
+        "A-07": "era 306955920 — redundante com notificação nativa Pipefy",
+        "A-09": "era 306955921 — redundante com notificação nativa Pipefy"
+      },
+      "webhooks_pointing_to_n8n": {
+        "A-11": "https://n8n.nexuz.app/webhook/pipefy/alerta-fechamento-late",
+        "A-14": "https://n8n.nexuz.app/webhook/pipefy/feedback-indicador"
       },
       "automations_external_cron": ["A-05", "A-06", "A-10", "A-15-merged-into-A-04", "A-16"],
       "field_conditions": {
@@ -68,8 +118,8 @@
       }
     }
   },
-  "resume_instructions": "Config core do Pipefy concluída. Next: review (Vera) + treinamento (Teo) — ou handoff para time Nexuz implementar external cron.",
+  "resume_instructions": "Refactor Contatos aplicado 2026-04-22. Próximo: usuário pode rodar sniff-connector-filter.js para capturar mutation do filtro dinâmico no contatos_do_deal_1; Vera faz review; Teo gera documentação.",
   "startedAt": "2026-04-20T16:27:23-03:00",
-  "updatedAt": "2026-04-21T18:00:00-03:00",
+  "updatedAt": "2026-04-22T09:45:00-03:00",
   "pausedAt": null
 }

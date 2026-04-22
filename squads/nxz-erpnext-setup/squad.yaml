@@ -1,0 +1,109 @@
+squad:
+  code: nxz-erpnext-setup
+  name: "ERPNext Setup — Nexuz"
+  description: >
+    Squad especialista em implantação e configuração end-to-end do ERPNext
+    (Frappe v16) como base ERP alternativa para a Nexuz. Cobre ciclo completo:
+    lifecycle da stack Docker (build/up/create-site), provisionamento de usuário
+    AI + API keys, configuração de módulos de negócio (Company, Chart of Accounts,
+    Fiscal Year, Items, Customers, Suppliers, Warehouses), customizações (Custom
+    Doctypes, Custom Fields, Workflows) e integrações (Webhooks, Server Scripts).
+    Adota padrão de **entrevista prévia** para coletar dados do cliente antes de
+    gerar o Design Document (EDD). Toda interação com ERPNext é feita
+    **obrigatoriamente** via a skill `erpnext-integration` (REST API + bench CLI
+    via docker exec + scripts nxz/), que consolida a matriz de decisão e os
+    aprendizados acumulados.
+  version: "1.0.0"
+  performance_mode: high
+  created: "2026-04-22"
+
+  skills:
+    - web_search
+    - web_fetch
+    - erpnext-integration   # OBRIGATÓRIA — toda interação com ERPNext passa por esta skill
+
+  skill_policy:
+    erpnext-integration:
+      required: true
+      scope: "Qualquer leitura, criação, atualização ou auditoria em recursos
+              ERPNext/Frappe (Doctypes, Custom Fields, Workflows, Users, Roles,
+              Webhooks, Server Scripts, Company, COA, Items, Customers, etc.).
+              É PROIBIDO chamar a REST API ou executar bench diretamente sem
+              passar pelo fluxo documentado em skills/erpnext-integration/SKILL.md."
+      enforcement:
+        - "Antes de qualquer operação ERPNext, consultar a matriz de decisão da skill"
+        - "REST API como primeira opção — bench CLI (docker exec) apenas para operações UI-only ou de lifecycle"
+        - "Scripts de lifecycle (build.sh, up.sh, reset.sh, gen-api-key.sh) sempre via wrapper da skill"
+        - "Host header `erpnext.localhost` e porta HTTP_PUBLISH_PORT lidos do .env — nunca hardcodar"
+        - "Ao encontrar uma nova limitação, atualizar references/known-limitations.md"
+
+  input:
+    # Docs oficiais do fork nxz do frappe_docker — fonte de verdade do contrato de acesso
+    docs_dir: ../../../frappe_docker/docs/nxz/
+    docs_index: ../../../frappe_docker/docs/nxz/index.md
+    docs_access_contract: ../../../frappe_docker/docs/nxz/access-contract.md
+    docs_api_access: ../../../frappe_docker/docs/nxz/api-access.md
+    docs_getting_started: ../../../frappe_docker/docs/nxz/getting-started.md
+    docs_apps_workflow: ../../../frappe_docker/docs/nxz/apps-workflow.md
+    docs_lifecycle: ../../../frappe_docker/docs/nxz/lifecycle.md
+    docs_troubleshooting: ../../../frappe_docker/docs/nxz/troubleshooting.md
+
+  data:
+    - pipeline/data/research-brief.md
+    - pipeline/data/domain-framework.md
+    - pipeline/data/quality-criteria.md
+    - pipeline/data/output-examples.md
+    - pipeline/data/anti-patterns.md
+
+  pipeline:
+    - step: 00
+      name: "select-scope"
+      file: pipeline/steps/step-00-select-scope.md
+
+    - step: 01
+      name: "checkpoint-config"
+      file: pipeline/steps/step-01-checkpoint-config.md
+
+    - step: 02
+      name: "interview-config"
+      file: pipeline/steps/step-02-interview-config.md
+
+    - step: 03
+      name: "checkpoint-approve-interview"
+      file: pipeline/steps/step-03-checkpoint-approve-interview.md
+
+    - step: 04
+      name: "research-erpnext"
+      file: pipeline/steps/step-04-research-erpnext.md
+
+    - step: 05
+      name: "checkpoint-approve-research"
+      file: pipeline/steps/step-05-checkpoint-approve-research.md
+
+    - step: 06
+      name: "design-erpnext"
+      file: pipeline/steps/step-06-design-erpnext.md
+
+    - step: 07
+      name: "checkpoint-approve-design"
+      file: pipeline/steps/step-07-checkpoint-approve-design.md
+
+    - step: 08
+      name: "configure-erpnext"
+      file: pipeline/steps/step-08-configure-erpnext.md
+
+    - step: 09
+      name: "checkpoint-review-config"
+      file: pipeline/steps/step-09-checkpoint-review-config.md
+
+    - step: 10
+      name: "audit-configuration"
+      file: pipeline/steps/step-10-audit-configuration.md
+
+    - step: 11
+      name: "generate-documentation"
+      file: pipeline/steps/step-11-generate-documentation.md
+
+    - step: 12
+      name: "checkpoint-final-approval"
+      file: pipeline/steps/step-12-checkpoint-final-approval.md

@@ -1,0 +1,27 @@
+{
+  "layer": 2,
+  "purpose": "Create Company Nxz Sistemas Inteligentes Ltda with native Brazilian COA + tax_id",
+  "idempotency": {
+    "method": "GET",
+    "endpoint": "/api/resource/Company/Nxz%20Sistemas%20Inteligentes%20Ltda",
+    "skip_if_status": 200
+  },
+  "create": {
+    "method": "POST",
+    "endpoint": "/api/resource/Company",
+    "body": {
+      "company_name": "Nxz Sistemas Inteligentes Ltda",
+      "abbr": "NXZ",
+      "default_currency": "BRL",
+      "country": "Brazil",
+      "chart_of_accounts": "Brasileira - Planilha de Contas",
+      "tax_id": "00.000.000/0001-00"
+    }
+  },
+  "notes": [
+    "tax_id nativo substitui Custom Field cnpj (evita colisão com apps BR futuros)",
+    "Template COA correto é 'Brasileira - Planilha de Contas' (não 'Brazil - Default COA')",
+    "Criar Company dispara criação automática do COA (~100+ Accounts) + Cost Centers + Warehouses",
+    "Placeholder de CNPJ 00.000.000/0001-00 — atualizar via PUT quando sponsor fornecer o real"
+  ]
+}

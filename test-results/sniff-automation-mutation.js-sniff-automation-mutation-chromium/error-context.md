@@ -1,0 +1,359 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: sniff-automation-mutation.js >> sniff-automation-mutation
+- Location: scripts/templates/sniff-automation-mutation.js:30:1
+
+# Error details
+
+```
+Error: Channel closed
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - navigation "Atalhos de navegação" [ref=e5]:
+      - list [ref=e6]:
+        - link "Ir para o conteúdo principal" [ref=e7] [cursor=pointer]:
+          - /url: "#pipe-main-content"
+          - generic [ref=e10]: Ir para o conteúdo principal
+        - button "Ir para o formulário inicial" [ref=e15] [cursor=pointer]:
+          - generic [ref=e16]: Ir para o formulário inicial
+    - banner [ref=e18]:
+      - generic [ref=e19]:
+        - link "Nxz Sistemas Inteligentes Ltda" [ref=e22] [cursor=pointer]:
+          - /url: /organizations/302461450
+          - img "Nxz Sistemas Inteligentes Ltda" [ref=e24]
+        - generic [ref=e27]:
+          - generic:
+            - generic:
+              - heading [level=3]
+          - generic [ref=e28]:
+            - generic [ref=e29]:
+              - img [ref=e33]
+              - button "Vendas" [ref=e41] [cursor=pointer]
+            - button "Descrição do Pipe" [ref=e44] [cursor=pointer]:
+              - img [ref=e47]
+        - generic [ref=e49]:
+          - button "Notificações" [ref=e51] [cursor=pointer]:
+            - img [ref=e54]
+          - button "Ajuda" [ref=e57] [cursor=pointer]:
+            - img [ref=e60]
+        - generic [ref=e62]:
+          - generic [ref=e64]: Nxz Sistemas Inteligentes Ltda
+          - button "Conta e recursos" [ref=e66] [cursor=pointer]:
+            - img "Walter Frey" [ref=e68]
+      - generic [ref=e69]:
+        - generic [ref=e74]:
+          - generic [ref=e75]:
+            - generic "Main" [ref=e76]:
+              - navigation [ref=e77]:
+                - list [ref=e79]:
+                  - listitem [ref=e80]:
+                    - generic [ref=e81] [cursor=pointer]:
+                      - img [ref=e84]
+                      - generic [ref=e86]: Pipe
+                  - listitem [ref=e87]:
+                    - generic [ref=e88] [cursor=pointer]:
+                      - img [ref=e91]
+                      - generic [ref=e93]: Agentes de IA
+            - button "Conexões" [ref=e95] [cursor=pointer]:
+              - img [ref=e98]
+              - generic [ref=e100]: Conexões
+              - img [ref=e103]
+          - generic [ref=e106]:
+            - button "Compartilhar formulário - Público para todos com o link" [ref=e107] [cursor=pointer]:
+              - img [ref=e110]
+              - generic [ref=e112]: Compartilhar formulário
+            - generic [ref=e113]:
+              - button "Automatize atividades" [ref=e114] [cursor=pointer]:
+                - img [ref=e117]
+                - generic [ref=e119]: Automatizar
+              - button "Integre outras ferramentas" [ref=e122] [cursor=pointer]:
+                - img [ref=e125]
+                - generic [ref=e127]: Integrar
+            - button "Gerenciar pipe" [ref=e128] [cursor=pointer]:
+              - img [ref=e131]
+              - generic [ref=e133]: Gerenciar
+        - generic [ref=e140]:
+          - generic [ref=e141]:
+            - tablist [ref=e144]:
+              - tab "Fluxo" [ref=e145] [cursor=pointer]:
+                - generic [ref=e146]: Fluxo
+              - tab "Kanban" [selected] [ref=e147] [cursor=pointer]:
+                - generic [ref=e148]: Kanban
+              - tab "Lista" [ref=e149] [cursor=pointer]:
+                - generic [ref=e150]: Lista
+              - tab "Relatórios" [ref=e151] [cursor=pointer]:
+                - generic [ref=e152]: Relatórios
+              - tab "Formulário" [ref=e153] [cursor=pointer]:
+                - generic [ref=e154]: Formulário
+              - tab "Emails" [ref=e155] [cursor=pointer]:
+                - generic [ref=e156]: Emails
+              - tab "Painéis" [ref=e157] [cursor=pointer]:
+                - generic [ref=e158]: Painéis
+              - tab "pipesign" [ref=e159] [cursor=pointer]:
+                - generic [ref=e160]: pipesign
+            - listitem [ref=e165]:
+              - button "Importer" [ref=e166] [cursor=pointer]:
+                - generic [ref=e167]: Importer
+          - generic [ref=e168]:
+            - generic [ref=e170]:
+              - generic [ref=e171]:
+                - img [ref=e174]
+                - searchbox "Procurar cards" [ref=e176]
+              - button "Filtrar cards" [ref=e178] [cursor=pointer]:
+                - img [ref=e181]
+            - button "Minimizar" [ref=e184] [cursor=pointer]:
+              - img [ref=e187]
+    - main [ref=e191]:
+      - generic [ref=e192]:
+        - generic [ref=e193]:
+          - generic [ref=e194]:
+            - generic [ref=e195]:
+              - generic [ref=e197]:
+                - generic [ref=e198]:
+                  - button "Novo Lead" [ref=e203] [cursor=pointer]
+                  - generic [ref=e206]: "1"
+                - button "Adicione um card" [ref=e209] [cursor=pointer]:
+                  - img [ref=e212]
+              - generic [ref=e215]:
+                - generic [ref=e221] [cursor=pointer]:
+                  - generic [ref=e222]:
+                    - generic [ref=e223]: Negócio NXZ
+                    - link "Abrir cards/registros relacionados" [ref=e227]:
+                      - /url: "#openChildrenSummary"
+                      - img [ref=e230]
+                  - generic [ref=e234]:
+                    - generic [ref=e235]:
+                      - img [ref=e238]
+                      - generic [ref=e241]: 4h
+                    - generic [ref=e242]:
+                      - img [ref=e245]
+                      - generic [ref=e249]: 4h
+                    - generic [ref=e250]:
+                      - img [ref=e253]
+                      - generic [ref=e256]: 4h
+                - paragraph [ref=e259]: "Recepção de leads de qualquer origem. Origens: Inbound, Outbound, Indicação, Evento, Parceiro."
+            - button "Clique para adicionar fase" [ref=e262] [cursor=pointer]:
+              - img [ref=e265]
+          - generic [ref=e267]:
+            - generic [ref=e268]:
+              - generic [ref=e271]:
+                - button "Qualificação" [ref=e276] [cursor=pointer]
+                - generic [ref=e279]: "0"
+              - paragraph [ref=e284]: Cadência humana até o Checklist Binário completo (6/6).
+            - button "Clique para adicionar fase" [ref=e287] [cursor=pointer]:
+              - img [ref=e290]
+          - generic [ref=e292]:
+            - generic [ref=e293]:
+              - generic [ref=e296]:
+                - button "Demo Agendada" [ref=e301] [cursor=pointer]
+                - generic [ref=e304]: "0"
+              - paragraph [ref=e309]: Agendamento e execução da demo (QS ou FS conforme ICP).
+            - button "Clique para adicionar fase" [ref=e312] [cursor=pointer]:
+              - img [ref=e315]
+          - generic [ref=e317]:
+            - generic [ref=e318]:
+              - generic [ref=e321]:
+                - button "Pós-demo" [ref=e326] [cursor=pointer]
+                - generic [ref=e329]: "0"
+              - paragraph [ref=e334]: Captura do desfecho da demo (aceite / sem aceite / no-show).
+            - button "Clique para adicionar fase" [ref=e337] [cursor=pointer]:
+              - img [ref=e340]
+          - generic [ref=e342]:
+            - generic [ref=e343]:
+              - generic [ref=e346]:
+                - button "Proposta" [ref=e351] [cursor=pointer]
+                - generic [ref=e354]: "0"
+              - paragraph [ref=e359]: Envio da proposta comercial e cadência de follow-up até decisão.
+            - button "Clique para adicionar fase" [ref=e362] [cursor=pointer]:
+              - img [ref=e365]
+          - generic [ref=e367]:
+            - generic [ref=e371]:
+              - button "Fechamento" [ref=e376] [cursor=pointer]
+              - generic [ref=e379]: "0"
+            - button "Clique para adicionar fase" [ref=e382] [cursor=pointer]:
+              - img [ref=e385]
+          - generic [ref=e387]:
+            - generic [ref=e391]:
+              - generic [ref=e392]:
+                - img [ref=e396]
+                - button "GANHO" [ref=e401] [cursor=pointer]
+              - generic [ref=e404]: "0"
+            - button "Clique para adicionar fase" [ref=e407] [cursor=pointer]:
+              - img [ref=e410]
+          - generic [ref=e416]:
+            - generic [ref=e417]:
+              - img [ref=e421]
+              - button "DESCARTE" [ref=e426] [cursor=pointer]
+            - generic [ref=e429]: "0"
+          - button "Nova fase" [ref=e431] [cursor=pointer]:
+            - img [ref=e434]
+            - generic [ref=e436]: Nova fase
+          - button "Nova oportunidade" [ref=e441] [cursor=pointer]:
+            - img [ref=e444]
+            - generic [ref=e446]: Nova oportunidade
+        - generic [ref=e450]:
+          - generic [ref=e451]:
+            - button "Fechar" [ref=e452] [cursor=pointer]:
+              - img [ref=e455]
+            - generic [ref=e457]:
+              - img [ref=e461]
+              - heading "Configurações - Vendas" [level=2] [ref=e464]
+            - generic [ref=e466]:
+              - tablist [ref=e467]:
+                - tab "Formulário inicial" [ref=e468] [cursor=pointer]:
+                  - generic [ref=e469]: Formulário inicial
+                - tab "Fases" [ref=e470] [cursor=pointer]:
+                  - generic [ref=e471]: Fases
+                - tab "Pessoas" [ref=e472] [cursor=pointer]:
+                  - generic [ref=e473]: Pessoas
+                - tab "Email" [ref=e474] [cursor=pointer]:
+                  - generic [ref=e475]: Email
+                - tab "Automações" [selected] [ref=e476] [cursor=pointer]:
+                  - generic [ref=e477]: Automações
+                - tab "Configurações do pipe" [ref=e478] [cursor=pointer]:
+                  - generic [ref=e479]: Configurações do pipe
+              - button "Assista e aprenda" [ref=e481] [cursor=pointer]:
+                - img [ref=e484]
+                - text: Assista e aprenda
+          - main [ref=e487]:
+            - generic [ref=e489]:
+              - navigation "Navegação" [ref=e490]:
+                - list [ref=e491]:
+                  - listitem [ref=e492]:
+                    - button "Automações" [ref=e493] [cursor=pointer]:
+                      - generic [ref=e494]: Automações
+                    - img [ref=e497]
+                  - listitem [ref=e499]:
+                    - generic [ref=e500]: Nova Automação
+              - generic [ref=e503]:
+                - heading "Nova Automação" [level=2] [ref=e504]
+                - paragraph [ref=e505]:
+                  - text: Escolha um evento no Pipefy e a ação que ele irá desencadear.
+                  - link "Saiba mais." [ref=e506] [cursor=pointer]:
+                    - /url: https://help.pipefy.com/pt-BR/articles/686823-comecando-a-criar-automacoes
+                    - generic [ref=e507]: Saiba mais.
+            - generic [ref=e508]:
+              - generic [ref=e509]:
+                - heading "Sempre que..." [level=3] [ref=e511]
+                - list [ref=e512]:
+                  - listitem [ref=e516]:
+                    - img [ref=e521]
+                    - button "Um card entrar em uma fase" [ref=e524] [cursor=pointer]:
+                      - generic [ref=e527]: Um card entrar em uma fase
+                  - listitem [ref=e531]:
+                    - img [ref=e536]
+                    - button "Um campo for atualizado" [ref=e539] [cursor=pointer]:
+                      - generic [ref=e542]: Um campo for atualizado
+                  - listitem [ref=e546]:
+                    - img [ref=e551]
+                    - button "Um card for criado" [ref=e554] [cursor=pointer]:
+                      - generic [ref=e557]: Um card for criado
+                  - listitem [ref=e561]:
+                    - img [ref=e566]
+                    - button "Uma atividade for recorrente" [ref=e569] [cursor=pointer]:
+                      - generic [ref=e572]: Uma atividade for recorrente
+                  - listitem [ref=e576]:
+                    - img [ref=e581]
+                    - button "Um alerta for acionado" [ref=e584] [cursor=pointer]:
+                      - generic [ref=e587]: Um alerta for acionado
+                  - listitem [ref=e589] [cursor=pointer]:
+                    - img [ref=e594]
+                    - button "Um card sair de uma fase" [ref=e597]:
+                      - generic [ref=e600]: Um card sair de uma fase
+                  - listitem [ref=e604]:
+                    - img [ref=e609]
+                    - button "Um email for recebido" [ref=e612] [cursor=pointer]:
+                      - generic [ref=e615]: Um email for recebido
+                  - listitem [ref=e619]:
+                    - img [ref=e624]
+                    - button "Todos os cards conectados forem movidos para uma fase" [ref=e627] [cursor=pointer]:
+                      - generic [ref=e630]: Todos os cards conectados forem movidos para uma fase
+                  - listitem [ref=e634]:
+                    - img [ref=e639]
+                    - button "Uma resposta for recebida da automação de requisição HTTP Beta" [ref=e642] [cursor=pointer]:
+                      - generic [ref=e644]:
+                        - generic [ref=e645]: Uma resposta for recebida da automação de requisição HTTP
+                        - generic [ref=e649]: Beta
+                  - listitem [ref=e653]:
+                    - img [ref=e658]
+                    - button "Um botão em Interfaces é clicado" [ref=e661] [cursor=pointer]:
+                      - generic [ref=e664]: Um botão em Interfaces é clicado
+              - generic [ref=e666]:
+                - heading "Faça isso..." [level=3] [ref=e668]
+                - list [ref=e669]:
+                  - listitem [ref=e673]:
+                    - img [ref=e678]
+                    - button "Peça à IA" [ref=e681] [cursor=pointer]:
+                      - generic [ref=e684]: Peça à IA
+                  - listitem [ref=e688]:
+                    - img [ref=e693]
+                    - button "Envie uma tarefa Beta" [ref=e696] [cursor=pointer]:
+                      - generic [ref=e698]:
+                        - generic [ref=e699]: Envie uma tarefa
+                        - generic [ref=e703]: Beta
+                  - listitem [ref=e707]:
+                    - img [ref=e712]
+                    - button "Envie um template de email" [ref=e715] [cursor=pointer]:
+                      - generic [ref=e718]: Envie um template de email
+                  - listitem [ref=e720]:
+                    - img [ref=e725]
+                    - button "Mova um card" [ref=e728] [cursor=pointer]:
+                      - generic [ref=e731]: Mova um card
+                  - listitem [ref=e735]:
+                    - img [ref=e740]
+                    - button "Atualize um campo no card ou registro" [ref=e743] [cursor=pointer]:
+                      - generic [ref=e746]: Atualize um campo no card ou registro
+                  - listitem [ref=e750]:
+                    - img [ref=e755]
+                    - button "Crie um card ou registro conectado" [ref=e758] [cursor=pointer]:
+                      - generic [ref=e761]: Crie um card ou registro conectado
+                  - listitem [ref=e765]:
+                    - img [ref=e770]
+                    - button "Crie um card ou registro" [ref=e773] [cursor=pointer]:
+                      - generic [ref=e776]: Crie um card ou registro
+                  - listitem [ref=e780]:
+                    - img [ref=e785]
+                    - button "Mova o card pai" [ref=e788] [cursor=pointer]:
+                      - generic [ref=e791]: Mova o card pai
+                  - listitem [ref=e795]:
+                    - img [ref=e800]
+                    - button "Distribua responsáveis" [ref=e803] [cursor=pointer]:
+                      - generic [ref=e806]: Distribua responsáveis
+                  - listitem [ref=e810]:
+                    - img [ref=e815]
+                    - button "Aplique uma fórmula" [ref=e818] [cursor=pointer]:
+                      - generic [ref=e821]: Aplique uma fórmula
+                  - listitem [ref=e825]:
+                    - img [ref=e830]
+                    - button "Faça uma requisição HTTP Beta" [ref=e833] [cursor=pointer]:
+                      - generic [ref=e835]:
+                        - generic [ref=e836]: Faça uma requisição HTTP
+                        - generic [ref=e840]: Beta
+                  - listitem [ref=e842]:
+                    - img [ref=e847]
+                    - button "Aplique regras de SLA Beta" [ref=e850] [cursor=pointer]:
+                      - generic [ref=e852]:
+                        - generic [ref=e853]: Aplique regras de SLA
+                        - generic [ref=e857]: Beta
+  - iframe [ref=e858]:
+    
+  - generic [ref=e859]:
+    - iframe [ref=e864]:
+      
+    - iframe [ref=e869]:
+      
+  - button "AI" [ref=e871] [cursor=pointer]:
+    - img [ref=e874]
+    - generic [ref=e876]: AI
+```

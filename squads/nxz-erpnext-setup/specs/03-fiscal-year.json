@@ -1,0 +1,45 @@
+{
+  "layer": 2,
+  "purpose": "Create Fiscal Year 2026 for Nxz and set it as current default",
+  "steps": [
+    {
+      "order": 1,
+      "name": "Create Fiscal Year 2026",
+      "idempotency": {
+        "method": "GET",
+        "endpoint": "/api/resource/Fiscal%20Year/2026",
+        "skip_if_status": 200
+      },
+      "create": {
+        "method": "POST",
+        "endpoint": "/api/resource/Fiscal%20Year",
+        "body": {
+          "year": "2026",
+          "year_start_date": "2026-01-01",
+          "year_end_date": "2026-12-31",
+          "companies": [
+            { "company": "Nxz Sistemas Inteligentes Ltda" }
+          ]
+        }
+      }
+    },
+    {
+      "order": 2,
+      "name": "Set current_fiscal_year in Global Defaults",
+      "create": {
+        "method": "POST",
+        "endpoint": "/api/method/frappe.client.set_value",
+        "body": {
+          "doctype": "Global Defaults",
+          "name": "Global Defaults",
+          "fieldname": "current_fiscal_year",
+          "value": "2026"
+        }
+      }
+    }
+  ],
+  "notes": [
+    "Fiscal Year doctype não tem campo is_default no v16 — usar Global Defaults.current_fiscal_year",
+    "companies é child table Fiscal Year Company (campo company reqd=1)"
+  ]
+}

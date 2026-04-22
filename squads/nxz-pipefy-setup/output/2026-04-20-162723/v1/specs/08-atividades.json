@@ -1,0 +1,52 @@
+{
+  "_description": "Atividades v2 — módulo de registro de interações comerciais (ligações, reuniões, emails, tarefas) vinculadas a deals do Pipe Vendas. Inspirado pelo template CRM importado pelo Pipefy, mas limpo e integrado ao setup Nexuz.",
+  "_created": "2026-04-22",
+  "_context": "User pediu transformar a ideia de 'Atividades' do template CRM em feature real do Pipe Vendas Nexuz. Design N:1 com Clientes + N:1 com Contatos; relação com Deal implícita via reverse connector nos phase_fields.",
+
+  "table": {
+    "id": "SWpeb0uP",
+    "name": "Atividades",
+    "organization_id": "302461450",
+    "icon": "check",
+    "public": false,
+    "authorization": "write",
+    "title_field": "assunto",
+    "fields": [
+      { "label": "Assunto", "id": "assunto", "internal_id": "428533320", "type": "short_text", "required": true, "title": true },
+      { "label": "Tipo", "id": "tipo", "internal_id": "428533321", "type": "select", "required": true, "options": ["Ligação", "Reunião", "E-mail", "WhatsApp", "Tarefa", "Visita"] },
+      { "label": "Status", "id": "status", "internal_id": "428533322", "type": "select", "required": true, "options": ["Planejada", "Realizada", "Cancelada", "No-show"] },
+      { "label": "Data/hora planejada", "id": "data_hora_planejada", "internal_id": "428533323", "type": "datetime", "required": true },
+      { "label": "Data/hora realizada", "id": "data_hora_realizada", "internal_id": "428533324", "type": "datetime", "required": false },
+      { "label": "Responsável", "id": "respons_vel", "internal_id": "428533325", "type": "assignee_select", "required": true },
+      { "label": "Descrição/Briefing", "id": "descri_o_briefing", "internal_id": "428533326", "type": "long_text", "required": false },
+      { "label": "Resultado", "id": "resultado", "internal_id": "428533327", "type": "long_text", "required": false },
+      { "label": "Próxima ação", "id": "pr_xima_a_o", "internal_id": "428533329", "type": "short_text", "required": false },
+      { "label": "Cliente", "id": "cliente", "internal_id": "428533330", "type": "connector", "required": true, "target_table_id": "XaduYW7H" },
+      { "label": "Contato", "id": "contato", "internal_id": "428533331", "type": "connector", "required": false, "target_table_id": "Hwgq9hZN" }
+    ]
+  },
+
+  "connector": {
+    "_description": "1 connector no start form do Pipe Vendas (307117441) apontando para tabela Atividades (SWpeb0uP). Multi-select, não obrigatório. Visível em todas as phases (start form fields são sempre renderizados no card drawer).",
+    "_sync_fields": "own_field_maps_attributes aplicado via PUT /internal_api/settings/fields/428549684: Status fixed='Planejada' + Cliente copy_from %{428488620} (deal.cliente)",
+    "_migration_note": "Originalmente criados 6 phase_connectors (um por working phase) em 2026-04-22. Migrado para 1 start form connector porque phase fields do Pipe Vendas não renderizam no card drawer (bug não-resolvido — CRM templates funcionam, nosso pipe não). 6 phase_connectors foram deletados com sucesso via deletePhaseField.",
+    "internal_id": "428549684",
+    "slug": "atividades_do_deal",
+    "uuid": "2266f99b-d4a9-47f1-a86a-5ae528b04068",
+    "phase_id": "342928165",
+    "attributes": {
+      "can_create_connected_cards": true,
+      "can_connect_multiple_cards": true,
+      "can_search_connected_cards": true,
+      "required": false
+    }
+  },
+
+  "open_items_v2": [
+    "Automações de auto-criação de atividade ao entrar em fase (Qualificação/Demo/Pós-demo) — user deferiu para v2",
+    "Filtro dinâmico Contato no connector Atividades.Contato (só contatos do cliente atual) — UX a validar",
+    "Validação: Status=Realizada exige Data/hora realizada (via FieldCondition ou automação com rollback)",
+    "Dashboard de atividades por vendedor / por tipo",
+    "Integração com calendário (export .ics para Data/hora planejada)"
+  ]
+}

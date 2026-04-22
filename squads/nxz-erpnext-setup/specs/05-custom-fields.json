@@ -1,0 +1,86 @@
+{
+  "layer": 5,
+  "purpose": "Create 3 Custom Fields on Company (nxz_ prefix) and populate regime_tributario",
+  "fields": [
+    {
+      "order": 1,
+      "idempotency": {
+        "method": "GET",
+        "endpoint": "/api/resource/Custom%20Field?filters=%5B%5B%22dt%22%2C%22%3D%22%2C%22Company%22%5D%2C%5B%22fieldname%22%2C%22%3D%22%2C%22nxz_regime_tributario%22%5D%5D&fields=%5B%22name%22%5D",
+        "skip_if_nonempty": true
+      },
+      "create": {
+        "method": "POST",
+        "endpoint": "/api/resource/Custom%20Field",
+        "body": {
+          "dt": "Company",
+          "fieldname": "nxz_regime_tributario",
+          "label": "Regime Tributário",
+          "fieldtype": "Select",
+          "options": "\nSimples Nacional\nLucro Presumido\nLucro Real",
+          "insert_after": "tax_id",
+          "reqd": 0
+        }
+      }
+    },
+    {
+      "order": 2,
+      "idempotency": {
+        "method": "GET",
+        "endpoint": "/api/resource/Custom%20Field?filters=%5B%5B%22dt%22%2C%22%3D%22%2C%22Company%22%5D%2C%5B%22fieldname%22%2C%22%3D%22%2C%22nxz_inscricao_estadual%22%5D%5D&fields=%5B%22name%22%5D",
+        "skip_if_nonempty": true
+      },
+      "create": {
+        "method": "POST",
+        "endpoint": "/api/resource/Custom%20Field",
+        "body": {
+          "dt": "Company",
+          "fieldname": "nxz_inscricao_estadual",
+          "label": "Inscrição Estadual",
+          "fieldtype": "Data",
+          "insert_after": "nxz_regime_tributario",
+          "reqd": 0
+        }
+      }
+    },
+    {
+      "order": 3,
+      "idempotency": {
+        "method": "GET",
+        "endpoint": "/api/resource/Custom%20Field?filters=%5B%5B%22dt%22%2C%22%3D%22%2C%22Company%22%5D%2C%5B%22fieldname%22%2C%22%3D%22%2C%22nxz_inscricao_municipal%22%5D%5D&fields=%5B%22name%22%5D",
+        "skip_if_nonempty": true
+      },
+      "create": {
+        "method": "POST",
+        "endpoint": "/api/resource/Custom%20Field",
+        "body": {
+          "dt": "Company",
+          "fieldname": "nxz_inscricao_municipal",
+          "label": "Inscrição Municipal",
+          "fieldtype": "Data",
+          "insert_after": "nxz_inscricao_estadual",
+          "reqd": 0
+        }
+      }
+    }
+  ],
+  "post_create": {
+    "order": 4,
+    "name": "Set regime_tributario value on Nxz Company",
+    "create": {
+      "method": "POST",
+      "endpoint": "/api/method/frappe.client.set_value",
+      "body": {
+        "doctype": "Company",
+        "name": "Nxz Sistemas Inteligentes Ltda",
+        "fieldname": "nxz_regime_tributario",
+        "value": "Simples Nacional"
+      }
+    }
+  },
+  "notes": [
+    "Custom Fields não precisam bench migrate — aplicados imediatamente",
+    "Prefixo nxz_ evita colisão com Custom Fields que apps BR (ex: erpnext_fiscal_br) criam",
+    "tax_id é nativo — não criar Custom Field cnpj para não colidir com futura localização"
+  ]
+}
