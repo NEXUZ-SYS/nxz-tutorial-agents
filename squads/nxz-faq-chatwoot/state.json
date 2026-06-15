@@ -1,63 +1,21 @@
 {
   "squad": "nxz-faq-chatwoot",
   "status": "running",
-  "step": { "current": 4, "total": 12, "label": "checkpoint-topics" },
+  "step": { "current": 2, "total": 12, "label": "extract-tickets" },
   "agents": [
-    {
-      "id": "extractor",
-      "name": "Eva Extratora",
-      "icon": "🗂️",
-      "status": "done",
-      "deliverTo": null,
-      "desk": { "col": 1, "row": 1 }
-    },
-    {
-      "id": "analyst",
-      "name": "Ana Analista",
-      "icon": "📊",
-      "status": "done",
-      "deliverTo": null,
-      "desk": { "col": 2, "row": 1 }
-    },
-    {
-      "id": "writer",
-      "name": "Fred FAQ",
-      "icon": "✍️",
-      "status": "idle",
-      "deliverTo": null,
-      "desk": { "col": 3, "row": 1 }
-    },
-    {
-      "id": "curator",
-      "name": "Clara Curadora",
-      "icon": "🎯",
-      "status": "idle",
-      "deliverTo": null,
-      "desk": { "col": 1, "row": 2 }
-    },
-    {
-      "id": "tester",
-      "name": "Tina Teste",
-      "icon": "🧪",
-      "status": "idle",
-      "deliverTo": null,
-      "desk": { "col": 2, "row": 2 }
-    },
-    {
-      "id": "publisher",
-      "name": "Paulo Publisher",
-      "icon": "📤",
-      "status": "idle",
-      "deliverTo": null,
-      "desk": { "col": 3, "row": 2 }
-    }
+    { "id": "extractor", "name": "Eva Extratora", "icon": "🗂️", "status": "working", "deliverTo": null, "desk": { "col": 1, "row": 1 } },
+    { "id": "analyst", "name": "Ana Analista", "icon": "📊", "status": "idle", "deliverTo": null, "desk": { "col": 2, "row": 1 } },
+    { "id": "writer", "name": "Fred FAQ", "icon": "✍️", "status": "idle", "deliverTo": null, "desk": { "col": 3, "row": 1 } },
+    { "id": "curator", "name": "Clara Curadora", "icon": "🎯", "status": "idle", "deliverTo": null, "desk": { "col": 1, "row": 2 } },
+    { "id": "tester", "name": "Tina Teste", "icon": "🧪", "status": "idle", "deliverTo": null, "desk": { "col": 2, "row": 2 } },
+    { "id": "publisher", "name": "Paulo Publisher", "icon": "📤", "status": "idle", "deliverTo": null, "desk": { "col": 3, "row": 2 } }
   ],
   "handoff": {
-    "from": "analyst",
-    "to": "checkpoint",
-    "message": "22 topicos identificados para geracao de FAQ, prontos para aprovacao",
-    "completedAt": "2026-03-27T12:20:00-03:00"
+    "from": "checkpoint",
+    "to": "extractor",
+    "message": "Configuracao definida: 15 dias, inbox Relacionamento, 10 FAQs/produto, somente analise (sem publicacao)",
+    "completedAt": "2026-06-15T14:16:19+00:00"
   },
-  "startedAt": "2026-03-27T12:03:05-03:00",
-  "updatedAt": "2026-03-27T12:21:00-03:00"
+  "startedAt": "2026-06-15T14:16:19+00:00",
+  "updatedAt": "2026-06-15T14:16:19+00:00"
 }
